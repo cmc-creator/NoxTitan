@@ -110,14 +110,14 @@
       "name": "Titan Rookie",
       "description": "Activate Beast Mode for the first time",
       "unlocked": true,
-      "date": "2026-01-01"
+      "date": "2025-01-01"
     },
     {
       "id": "marathon_runner",
       "name": "Marathon Runner",
       "description": "Maintain Beast Mode for 8 consecutive hours",
       "unlocked": true,
-      "date": "2026-01-02"
+      "date": "2025-01-02"
     },
     {
       "id": "productivity_master",
