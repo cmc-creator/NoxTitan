@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#grad1)"/>
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#feca57;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main Container -->
+  <rect x="100" y="80" width="1000" height="640" rx="20" fill="rgba(255,255,255,0.95)" stroke="#ffffff" stroke-width="2"/>
+  
+  <!-- Header -->
+  <rect x="100" y="80" width="1000" height="80" rx="20" fill="rgba(102, 126, 234, 0.2)"/>
+  
+  <!-- Logo/Title -->
+  <text x="140" y="135" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#667eea">
+    ⚡ NoxTitan
+  </text>
+  <text x="320" y="135" font-family="Arial, sans-serif" font-size="20" fill="#764ba2">
+    Beast Mode Management
+  </text>
+  
+  <!-- Status Indicator -->
+  <circle cx="980" cy="120" r="15" fill="#2ecc71"/>
+  <text x="1000" y="127" font-family="Arial, sans-serif" font-size="14" fill="#2ecc71" font-weight="bold">
+    ACTIVE
+  </text>
+  
+  <!-- Dashboard Title -->
+  <text x="140" y="210" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#2c3e50">
+    Performance Dashboard
+  </text>
+  
+  <!-- Stats Cards -->
+  <!-- Card 1: CPU Usage -->
+  <rect x="140" y="240" width="300" height="140" rx="10" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="160" y="270" font-family="Arial, sans-serif" font-size="16" fill="#7f8c8d">CPU Usage</text>
+  <text x="160" y="320" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#667eea">87%</text>
+  <rect x="160" y="340" width="260" height="8" rx="4" fill="#e0e0e0"/>
+  <rect x="160" y="340" width="226" rx="4" fill="url(#grad2)" height="8"/>
+  
+  <!-- Card 2: Memory -->
+  <rect x="470" y="240" width="300" height="140" rx="10" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="490" y="270" font-family="Arial, sans-serif" font-size="16" fill="#7f8c8d">Memory</text>
+  <text x="490" y="320" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#764ba2">6.4GB</text>
+  <text x="490" y="355" font-family="Arial, sans-serif" font-size="14" fill="#95a5a6">of 16GB</text>
+  
+  <!-- Card 3: Sessions -->
+  <rect x="800" y="240" width="300" height="140" rx="10" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="820" y="270" font-family="Arial, sans-serif" font-size="16" fill="#7f8c8d">Active Sessions</text>
+  <text x="820" y="320" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#2ecc71">3</text>
+  <text x="820" y="355" font-family="Arial, sans-serif" font-size="14" fill="#95a5a6">Beast Mode Active</text>
+  
+  <!-- Profile Section -->
+  <text x="140" y="430" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#2c3e50">
+    Active Profiles
+  </text>
+  
+  <!-- Profile Cards -->
+  <rect x="140" y="450" width="310" height="100" rx="10" fill="#f8f9fa" stroke="#667eea" stroke-width="2"/>
+  <circle cx="170" cy="500" r="20" fill="#667eea"/>
+  <text x="167" y="507" font-family="Arial, sans-serif" font-size="20" fill="#ffffff">💻</text>
+  <text x="210" y="490" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">Developer Mode</text>
+  <text x="210" y="515" font-family="Arial, sans-serif" font-size="14" fill="#7f8c8d">High Performance • 2h 34m</text>
+  <rect x="380" y="480" width="50" height="25" rx="5" fill="#2ecc71"/>
+  <text x="390" y="497" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold">ON</text>
+  
+  <rect x="470" y="450" width="310" height="100" rx="10" fill="#f8f9fa" stroke="#e0e0e0" stroke-width="1"/>
+  <circle cx="500" cy="500" r="20" fill="#764ba2"/>
+  <text x="497" y="507" font-family="Arial, sans-serif" font-size="20" fill="#ffffff">🎮</text>
+  <text x="540" y="490" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#7f8c8d">Gaming Beast</text>
+  <text x="540" y="515" font-family="Arial, sans-serif" font-size="14" fill="#95a5a6">Maximum Power • Ready</text>
+  <rect x="710" y="480" width="50" height="25" rx="5" fill="#95a5a6"/>
+  <text x="717" y="497" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold">OFF</text>
+  
+  <rect x="800" y="450" width="300" height="100" rx="10" fill="#f8f9fa" stroke="#e0e0e0" stroke-width="1"/>
+  <circle cx="830" cy="500" r="20" fill="#3498db"/>
+  <text x="827" y="507" font-family="Arial, sans-serif" font-size="20" fill="#ffffff">🎨</text>
+  <text x="870" y="490" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#7f8c8d">Creative Flow</text>
+  <text x="870" y="515" font-family="Arial, sans-serif" font-size="14" fill="#95a5a6">Medium • Scheduled</text>
+  <rect x="1010" y="480" width="70" height="25" rx="5" fill="#f39c12"/>
+  <text x="1015" y="497" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" font-weight="bold">SCHEDULED</text>
+  
+  <!-- Performance Graph Area -->
+  <text x="140" y="600" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#2c3e50">
+    Performance Timeline
+  </text>
+  
+  <rect x="140" y="620" width="960" height="80" rx="10" fill="#f8f9fa" stroke="#e0e0e0" stroke-width="1"/>
+  
+  <!-- Simple graph visualization -->
+  <polyline points="160,680 220,660 280,670 340,650 400,655 460,640 520,650 580,635 640,645 700,630 760,640 820,625 880,635 940,620 1000,630 1060,615 1080,625" 
+            fill="none" stroke="#667eea" stroke-width="3"/>
+  <circle cx="1080" cy="625" r="5" fill="#667eea"/>
+  
+  <!-- Footer info -->
+  <text x="140" y="680" font-family="Arial, sans-serif" font-size="12" fill="#95a5a6">
+    Last updated: Just now • System health: Excellent • Uptime: 99.9%
+  </text>
+</svg>

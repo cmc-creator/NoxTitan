@@ -1,0 +1,130 @@
+{
+  "noxTitan": {
+    "version": "1.0.0",
+    "name": "NoxTitan Beast Mode Management",
+    "description": "Configuration and sample data for Beast Mode operations"
+  },
+  "profiles": [
+    {
+      "id": "profile_001",
+      "name": "Developer Mode",
+      "level": "high",
+      "settings": {
+        "focusMode": true,
+        "notificationsBlocked": true,
+        "cpuPriority": "high",
+        "memoryAllocation": "80%",
+        "duration": "2 hours"
+      },
+      "activeHours": [
+        "09:00-12:00",
+        "14:00-18:00"
+      ],
+      "triggers": {
+        "automatic": true,
+        "conditions": [
+          "IDE open",
+          "git activity detected"
+        ]
+      }
+    },
+    {
+      "id": "profile_002",
+      "name": "Gaming Beast",
+      "level": "maximum",
+      "settings": {
+        "focusMode": true,
+        "notificationsBlocked": true,
+        "cpuPriority": "realtime",
+        "memoryAllocation": "95%",
+        "graphicsOptimization": true,
+        "networkPriority": "high"
+      },
+      "activeHours": [
+        "19:00-23:00"
+      ],
+      "triggers": {
+        "automatic": true,
+        "conditions": [
+          "game launcher detected",
+          "fullscreen mode"
+        ]
+      }
+    },
+    {
+      "id": "profile_003",
+      "name": "Creative Flow",
+      "level": "medium",
+      "settings": {
+        "focusMode": true,
+        "notificationsBlocked": false,
+        "cpuPriority": "above-normal",
+        "memoryAllocation": "70%",
+        "audioOptimization": true
+      },
+      "activeHours": [
+        "10:00-16:00"
+      ],
+      "triggers": {
+        "automatic": false,
+        "manual": true
+      }
+    }
+  ],
+  "statistics": {
+    "totalActivations": 1247,
+    "totalHours": 3891,
+    "averageSessionDuration": "3.12 hours",
+    "performanceGain": "287%",
+    "userRating": 4.9,
+    "mostUsedProfile": "Developer Mode"
+  },
+  "system": {
+    "monitoring": {
+      "enabled": true,
+      "metricsCollected": [
+        "cpu_usage",
+        "memory_usage",
+        "network_activity",
+        "disk_io",
+        "temperature"
+      ],
+      "samplingRate": "1 second"
+    },
+    "safety": {
+      "overheatingProtection": true,
+      "maxTemperature": "85°C",
+      "autoShutdown": true,
+      "emergencyThrottling": true
+    },
+    "notifications": {
+      "sessionStart": true,
+      "sessionEnd": true,
+      "warningsEnabled": true,
+      "soundEffects": true
+    }
+  },
+  "achievements": [
+    {
+      "id": "titan_rookie",
+      "name": "Titan Rookie",
+      "description": "Activate Beast Mode for the first time",
+      "unlocked": true,
+      "date": "2025-01-01"
+    },
+    {
+      "id": "marathon_runner",
+      "name": "Marathon Runner",
+      "description": "Maintain Beast Mode for 8 consecutive hours",
+      "unlocked": true,
+      "date": "2025-01-02"
+    },
+    {
+      "id": "productivity_master",
+      "name": "Productivity Master",
+      "description": "Complete 100 Beast Mode sessions",
+      "unlocked": false,
+      "progress": "67/100"
+    }
+  ]
+}
