@@ -1,0 +1,2 @@
+# NoxTitan
+Beast Mode Management
