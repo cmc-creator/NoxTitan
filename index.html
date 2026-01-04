@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NoxTitan.com | Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #120015 0%, #23232e 98%);
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      color: #fafafd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      box-shadow: 0 8px 38px #8a4fff44;
+      background: linear-gradient(114deg, #18181d 0%, #404065 95%);
+      border-radius: 28px;
+      padding: 2.6em 2.2em 2em 2.2em;
+      max-width: 420px;
+      width:100%;
+      text-align: center;
+    }
+    .video-logo {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      background: #191929;
+      border-radius: 24px;
+      margin-bottom: 0.9em;
+      box-shadow: 0 0 50px 18px #8a4fff88, 0 0 7px #fff;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      transition: box-shadow 0.24s;
+    }
+    .video-logo:hover {
+      box-shadow: 0 0 90px 34px #8a4fffcc, 0 0 17px #fff;
+    }
+    h1 {
+      font-size: 2.2em;
+      font-weight: 900;
+      letter-spacing: 0.17em;
+      margin-bottom: 0.24em;
+      color: #f3f1ff;
+      text-shadow: 0 2px 22px #b9bac7, 0 0 8px #4f39a2;
+      background: linear-gradient(90deg, #e5e5ed 16%, #8a4fff 78%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      font-size: 1.15em;
+      font-weight: 700;
+      color: #9be3ffd9;
+      margin-bottom: 1.6em;
+      text-shadow: 0 0 11px #8a4fff55;
+    }
+    .coming-text {
+      font-size: 1.5em;
+      font-weight: 900;
+      letter-spacing: 0.09em;
+      margin-bottom: 0.85em;
+      margin-top: 0.6em;
+      color: #f7f7fb;
+      text-shadow: 0 2px 14px #ad6fd987;
+      background: linear-gradient(90deg, #e5e5ed 14%, #ad6fd9 89%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .fake-countdown {
+      margin: 0.7em auto 1.3em auto;
+      font-size: 1.2em;
+      letter-spacing: 0.11em;
+      color: #7bddffdc;
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.72em;
+      background: none;
+      user-select: none;
+    }
+    .fake-countdown span {
+      font-size: 1.1em;
+      display: inline-block;
+      min-width: 27px;
+      text-align: center;
+      background: linear-gradient(90deg,#21222c 5%,#baceff25 100%);
+      border-radius: 6px;
+      box-shadow: 0 0 9px #8a4fff60 inset;
+      padding: 0.3em 0.5em;
+      margin: 0 0.09em;
+      border: 1.3px solid #ad6fd928;
+    }
+    form {
+      display: flex;
+      gap: 0.7em;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.1em;
+    }
+    input[type="email"] {
+      flex: 1;
+      min-width: 0;
+      padding: 0.62em 1em;
+      border: none;
+      border-radius: 12px;
+      font-size: 1em;
+      background: #23253b;
+      color: #48c3e7;
+      font-weight: 600;
+      box-shadow: 0 0 8px #ad6fd94c inset;
+      outline: none;
+      border: 1.5px solid #ad6fd959;
+      transition: box-shadow 0.25s, border 0.25s;
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    }
+    input[type="email"]:focus {
+      box-shadow: 0 0 18px #67daf899;
+      border: 1.5px solid #67daf8d0;
+      background: #1a1b22;
+    }
+    button[type="submit"], .demo-btn {
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      font-weight: bold;
+      background: linear-gradient(90deg,#8a4fff 13%,#60dcff 81%);
+      color: #fff;
+      padding: 0.61em 1.3em;
+      border: none;
+      border-radius: 13px;
+      font-size: 1.12em;
+      cursor: pointer;
+      box-shadow: 0 0 13px #ae7fff4a;
+      border: 1.5px solid #ad6fd959;
+      transition: background 0.3s, box-shadow 0.3s, border 0.23s;
+      letter-spacing: 0.07em;
+    }
+    button[type="submit"]:hover, .demo-btn:hover {
+      background: linear-gradient(90deg,#60dcff 13%,#8a4fff 89%);
+      box-shadow: 0 0 23px #ad6fd980;
+      border: 1.5px solid #ad6fd9a0;
+      color:#181830;
+    }
+    .form-message {
+      margin-bottom: 1em;
+      color: #13b3da;
+      font-size: 1em;
+      font-weight: 600;
+      text-shadow: 0 0 6px #ae7fff70;
+      min-height: 1.2em;
+      text-align:center;
+    }
+    .demo-btn {
+      display: block;
+      margin: 0.7em auto 1.5em auto;
+      font-size: 1.2em;
+      font-weight: 900;
+    }
+    .demo-note {
+      margin-bottom:0.8em;
+      font-size: 0.95em;
+      color: #c8a3ff;
+      font-weight: 700;
+      opacity: 0.81;
+    }
+    .footer {
+      text-align: center;
+      font-size: 0.98em;
+      margin-top: 2.2em;
+      color: #c5d4dfc9;
+      letter-spacing: 0.03em;
+      text-shadow: 0 0 7px #55188b38;
+    }
+    @media (max-width: 540px){
+      .container{padding:1.3em 0.5em;}
+      h1{font-size:1.22em;}
+      .video-logo{width:62px;height:62px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Video logo at top -->
+    <video src="noxtitan-logo.mp4" class="video-logo" autoplay loop muted playsinline></video>
+
+    <h1>NoxTitan.com</h1>
+    <div class="subtitle">Business Management. Forged for Titans.</div>
+    <div class="coming-text">Coming Soon</div>
+
+    <div class="fake-countdown" id="fakeCountdown">
+      <span id="days">14</span>:
+      <span id="hours">09</span>:
+      <span id="minutes">41</span>:
+      <span id="seconds">18</span>
+    </div>
+    <div class="demo-note">(Estimated launch time... or is it?)</div>
+
+    <form id="signupForm" autocomplete="off">
+      <input type="email" id="emailInput" name="email" autocomplete="off" placeholder="Your business email" required>
+      <button type="submit">Join Waitlist</button>
+    </form>
+    <div class="form-message" id="formMessage"></div>
+
+    <button class="demo-btn" onclick="window.open('https://cmc-creator.github.io/NoxTitan/', '_blank')">
+      ▶️ Watch Demo Teaser
+    </button>
+
+    <div class="footer">© 2026 NoxTitan. All rights reserved.</div>
+  </div>
+  <script>
+    // Fake animated countdown
+    const countdownEl = {
+      days: document.getElementById('days'),
+      hours: document.getElementById('hours'),
+      minutes: document.getElementById('minutes'),
+      seconds: document.getElementById('seconds')
+    };
+    let c = { d: 14, h: 9, m: 41, s: 18 };
+    setInterval(()=>{
+      c.s += (Math.random() < 0.5 ? 1 : -1) * Math.ceil(Math.random()*2);
+      if(c.s>59) { c.s=0; c.m++; }
+      if(c.s<0) { c.s=59; c.m--; }
+      c.m += (Math.random()<0.2?1:-1)*Math.round(Math.random());
+      if(c.m>59) { c.m=0; c.h++; }
+      if(c.m<0) { c.m=59; c.h--; }
+      c.h += (Math.random()<0.1?1:-1)*Math.round(Math.random());
+      if(c.h>23){ c.h=0; c.d++; }
+      if(c.h<0){ c.h=23; c.d--; }
+      c.d += (Math.random()<0.04?1:-1)*Math.round(Math.random());
+      if(c.d<1) c.d=14;
+      countdownEl.days.textContent = String(Math.abs(c.d)).padStart(2,'0');
+      countdownEl.hours.textContent = String(Math.abs(c.h)).padStart(2,'0');
+      countdownEl.minutes.textContent = String(Math.abs(c.m)).padStart(2,'0');
+      countdownEl.seconds.textContent = String(Math.abs(c.s)).padStart(2,'0');
+    }, 970);
+
+    // Signup form handler (visual only)
+    document.getElementById('signupForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const email = document.getElementById('emailInput').value;
+      if(!email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)) {
+        document.getElementById('formMessage').textContent = 'Enter a valid business email.';
+        return;
+      }
+      document.getElementById('formMessage').textContent = 'Thanks! You&#39;re on the list.';
+      document.getElementById('signupForm').reset();
+      setTimeout(()=>document.getElementById('formMessage').textContent='',3000);
+    });
+  </script>
+</body>
+</html>
