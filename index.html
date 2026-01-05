@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NoxTitan – Forged for Titans | Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-purple: #7f38b7;
+      --deep-purple: #25024d;
+      --black: #0b0712;
+      --demo-btn: #1d0a29;
+      --white: #fff;
+    }
+    html, body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--black), var(--deep-purple) 100%);
+      overflow-x: hidden;
+    }
+
+    /* Cosmic BG container */
+    .cosmic-bg {
+      position: fixed;
+      inset: 0;
+      width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    /* Galaxies */
+    .galaxy {
+      position: absolute;
+      pointer-events: none;
+      filter: blur(1.2px) brightness(1.18);
+      opacity: 0.24;
+      will-change: transform;
+      animation: floatGalaxy 30s linear infinite alternate;
+    }
+    .galaxy1 { left: 6vw; top: 12vh; width: 16vw; height: 16vw; animation-delay: 0s;}
+    .galaxy2 { right: 7vw; top: 5vh; width: 24vw; height: 24vw; animation-delay: 7s;}
+    .galaxy3 { left: 19vw; bottom: 10vh; width: 12vw; height: 12vw; animation-delay: 13s;}
+    .galaxy4 { right: 16vw; bottom: 10vh; width: 18vw; height: 16vw; animation-delay: 5s;}
+    @keyframes floatGalaxy {
+      0% { transform: scale(1) rotate(0deg) translateY(0);}
+      49% { filter: blur(2.1px) brightness(1.32);}
+      100% { transform: scale(1.07) rotate(360deg) translateY(-8vw);}
+    }
+    /* Stars */
+    .star {
+      position: absolute;
+      border-radius: 50%;
+      background: #fffefc;
+      box-shadow: 0 0 8px #b990ff44;
+      opacity: 0.5;
+      width: 2px; height: 2px;
+      animation: twinkle 4s linear infinite;
+    }
+    @keyframes twinkle {
+      0%,100% { opacity: 0.3;}
+      50% { opacity: 1;}
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      width: 99vw;
+      max-width: 840px;
+      margin: clamp(18px, 5vw, 70px) auto 0 auto;
+      padding: 4.8em 1.2em 2.8em 1.2em;
+      background: linear-gradient(137deg, #0c0115 80%, #54148d 100%);
+      border-radius: 38px;
+      border: 3.5px solid var(--main-purple);
+      box-shadow: 0 8px 90px #7f38b766, 0 4px 64px #25004d3d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo-star {
+      margin-top: -180px;
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo-video {
+      width: min(95vw, 500px);
+      height: min(95vw, 500px);
+      object-fit: contain;
+      border-radius: 60px;
+      background: #181019;
+      box-shadow: 0 0 0 8px #32004d6e, 0 0 90px 26px #bd71ff36, 0 7px 48px #0009;
+      filter: brightness(1.18) contrast(1.13);
+      display: block;
+    }
+    h1 {
+      font-size: 3.2em;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      margin: 0.1em 0 0.0em 0;
+      color: #cfa2ff;
+      background: linear-gradient(90deg, #fff, #7f38b7 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 42px #7f38b7cc, 0 5px 30px #21004dbe;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .subtitle {
+      font-size: 1.3em;
+      font-weight: 700;
+      color: #ae7aff;
+      margin-top:0.27em;
+      margin-bottom: 1.8em;
+      text-align: center;
+      letter-spacing: 0.07em;
+      text-shadow:0 0 22px #7f38b782, 0 2px #000a;
+    }
+    .beastmode {
+      font-size: 1.19em;
+      text-align: center;
+      letter-spacing: 0.09em;
+      color: #fff;
+      text-shadow: 0 0 4px #7f38b7cc, 0 0 30px #1b0036a0;
+      margin: 1em 0 1.12em 0;
+      font-weight:900;
+      text-transform:uppercase;
+      background: linear-gradient(90deg, #fff, #b990ff 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter:brightness(1.14);
+    }
+    .crystal-accent {
+      background: linear-gradient(90deg,#543f72 0%,#ae7aff 58%,#25024d 100%);
+      height: 13px;
+      width: 95%;
+      margin: 2em auto 2.1em auto;
+      border-radius: 7px;
+      opacity: 0.91;
+      box-shadow: 0 1px 44px #b074ff21, 0 0 13px #fff3;
+      animation: accentFlow 7s infinite cubic-bezier(.12,.81,.76,1);
+    }
+    @keyframes accentFlow {
+      0%,100%{opacity:0.91;}
+      42%{opacity:1;}
+      90%{opacity:0.67;}
+    }
+    .coming-text {
+      font-size: 2.2em;
+      font-weight: 900;
+      letter-spacing: 0.19em;
+      color: #fff;
+      margin-top: 0.23em;
+      margin-bottom: 0.41em;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 0 19px #7f38b7cc, 0 0 14px #fff2,0 1px #9e99b7cc;
+      background: linear-gradient(90deg,#fff 0%,#7f38b7 48%,#fff9fb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      border-bottom: 3.2px solid #ae7aff9a;
+      display: inline-block;
+    }
+    .fake-countdown {
+      margin: 1.21em auto 2.2em auto;
+      font-size: 1.6em;
+      font-weight: 900;
+      letter-spacing: 0.20em;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.02em;
+      user-select: none;
+      text-shadow: 0 0 18px #ae7aff2f,0 0 26px #21004d6b;
+    }
+    .fake-countdown span {
+      font-size: 1.24em;
+      display: inline-block;
+      min-width: 46px;
+      text-align: center;
+      background: #18003b;
+      border-radius: 12px;
+      box-shadow: 0 0 13px #ae7aff48 inset;
+      padding: 0.45em 1.1em;
+      margin: 0 0.1em;
+      border: 2.5px solid #ae7affcc;
+      color: #fff;
+      opacity: 1;
+    }
+    .music-controls {
+      display:flex; align-items:center; justify-content:center;
+      gap:0.67em; color:#ae7aff; font-weight:900; font-size:1.17em;
+      margin-top:0.8em; margin-bottom:1.2em;
+    }
+    .music-btn {
+      background: #12021aaf;
+      border: 2.1px solid #ae7aff;
+      color: #fff;
+      font-size: 1.65em;
+      border-radius: 50%;
+      width: 2.25em; height: 2.25em;
+      cursor: pointer;
+      transition: all 0.18s;
+      box-shadow:0 0 11px #ae7aff6e;
+      display:inline-flex;align-items:center;justify-content:center;
+      outline:none;
+    }
+    .music-btn.active, .music-btn:hover {
+      color: #1d0a29;
+      background: linear-gradient(114deg,#ae7aff 58%,#fff 100%);
+      border:2.4px solid #fff;
+      box-shadow:0 0 17px #ae7affcc;
+    }
+    .signup-form {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      margin-bottom: 1em;
+    }
+    input[type="email"] {
+      flex: 2;
+      padding: 1.01em 1.3em;
+      border: none;
+      border-radius: 16px;
+      font-size: 1em;
+      background: #1d1335;
+      color: #ae7aff;
+      font-weight: 600;
+      box-shadow: 0 0 12px #b990ff13 inset;
+      border: 2.2px solid #7f38b7bb;
+      outline: none;
+      transition: box-shadow 0.21s, border 0.22s;
+    }
+    input[type="email"]:focus {
+      box-shadow: 0 0 22px #ae7affad;
+      border: 2.7px solid #ae7affec;
+      background: #180730;
+    }
+    button[type="submit"] {
+      flex: 1;
+      font-weight: 900;
+      background: linear-gradient(90deg,#7f38b7 17%,#fff 100%);
+      color: #1a002b;
+      padding: 1.02em 1.27em;
+      border: none;
+      border-radius: 16px;
+      font-size: 1.19em;
+      box-shadow: 0 0 18px #ae7aff36;
+      border: 2.2px solid #ae7aff55;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.22s, border 0.2s;
+      letter-spacing: 0.1em;
+      margin-right:0.2em;
+    }
+    button[type="submit"]:hover {
+      background: linear-gradient(90deg, #fff, #ae7aff 100%);
+      color:#25024d;
+      border: 2.6px solid #ae7aff;
+      box-shadow: 0 0 22px #fff5;
+    }
+    .form-message {
+      margin-top: 0.22em;
+      min-height: 1.5em;
+      color: #ae7aff;
+      font-size: 1.13em;
+      font-weight: 900;
+      text-shadow: 0 0 6px #ae7aff77;
+      text-align: center;
+      letter-spacing:0.03em;
+    }
+    .demo-btn {
+      display: block;
+      width: 100%;
+      font-size: 1.48em;
+      font-weight: 900;
+      background: var(--demo-btn);
+      color: #fff;
+      border-radius: 18px;
+      padding: 1.1em 2em;
+      margin: 2.3em 0 0.7em 0;
+      box-shadow: 0 0 36px #ae7aff9a, 0 0 2px #fff;
+      cursor: pointer;
+      letter-spacing: 0.21em;
+      text-shadow: 0 0 13px #b990ff8c;
+      text-align:center;
+      border:3px solid #7f38b7cc;
+      outline:none;
+      text-decoration:none;
+      transition:background 0.19s, color 0.21s, border 0.21s, box-shadow 0.23s;
+      filter: brightness(1.13);
+    }
+    .demo-btn:hover, .demo-btn:focus {
+      background: #fff;
+      color: #7f38b7;
+      border:3.1px solid #fff;
+      box-shadow: 0 0 50px #ae7affc3, 0 0 4px #fff;
+      outline:2px solid #7f38b7;
+    }
+    .footer {
+      text-align: center;
+      font-size: 1.12em;
+      margin-top: 2.4em;
+      color: #ae7affcc;
+      letter-spacing: 0.09em;
+      text-shadow: 0 0 14px #7f38b77d;
+      font-weight:900;
+      z-index:2;
+      position:relative;
+    }
+    @media (max-width: 980px) {
+      .container { max-width: 98vw;}
+      .logo-star{margin-top: -40px;}
+    }
+    @media (max-width: 600px) {
+      .container { padding:1em 0.2em; max-width:99vw;}
+      .logo-video{width:90vw;height:90vw;max-width:330px;min-width:72px;}
+      .logo-star{margin-top:-17vw;}
+      h1{font-size:2em;}
+      .demo-btn{font-size:1em;}
+    }
+    @media (max-width: 400px) {
+      .logo-star{margin-top:0;}
+      .logo-video{width:100vw;height:68vw;}
+    }
+  </style>
+</head>
+<body>
+  <div class="cosmic-bg">
+    <!-- SVG galaxies -->
+    <svg class="galaxy galaxy1" viewBox="0 0 180 180"><ellipse cx="90" cy="90" rx="72" ry="34" fill="#b074ff" /><ellipse cx="90" cy="90" rx="54" ry="24" fill="#fff" opacity="0.08"/></svg>
+    <svg class="galaxy galaxy2" viewBox="0 0 180 180"><ellipse cx="85" cy="80" rx="60" ry="36" fill="#ae7aff"/><ellipse cx="85" cy="80" rx="30" ry="12" fill="#fff" opacity="0.06"/></svg>
+    <svg class="galaxy galaxy3" viewBox="0 0 120 120"><ellipse cx="55" cy="60" rx="30" ry="12" fill="#b990ff"/><ellipse cx="55" cy="60" rx="16" ry="5" fill="#fff" opacity="0.07"/></svg>
+    <svg class="galaxy galaxy4" viewBox="0 0 200 120"><ellipse cx="100" cy="60" rx="80" ry="22" fill="#ae7aff"/><ellipse cx="100" cy="60" rx="40" ry="9" fill="#fff" opacity="0.09"/></svg>
+  </div>
+  <div class="container">
+    <div class="logo-star">
+      <video src="noxtitan-logo.mp4" class="logo-video" autoplay loop muted playsinline></video>
+    </div>
+    <h1>NoxTitan</h1>
+    <div class="beastmode">
+      BEASTMODE Management Software — FORGED FOR TITANS
+    </div>
+    <div class="subtitle">
+      Night goddess power, titanic scale.<br>
+      <span style="color:#ae7aff;margin-top:0.1em;">Crystal-Clad. Steel-Strong. Unmatched.</span>
+    </div>
+    <div class="coming-text">Coming Soon</div>
+    <div class="crystal-accent"></div>
+    <div class="fake-countdown" id="fakeCountdown">
+      <span id="days">18</span>:
+      <span id="hours">08</span>:
+      <span id="minutes">36</span>:
+      <span id="seconds">51</span>
+    </div>
+    <!-- MUSIC Controls -->
+    <audio id="bgMusic" src="demo-music.mp3" loop autoplay></audio>
+    <div class="music-controls">
+      <button id="musicBtn" class="music-btn active" aria-label="Toggle music" title="Mute / Unmute">🔊</button>
+      <span id="musicStatus">Music On</span>
+    </div>
+    <form id="signupForm" class="signup-form" autocomplete="off">
+      <input type="email" id="emailInput" name="email" autocomplete="off" placeholder="Your business email" required>
+      <button type="submit">Join Waitlist</button>
+    </form>
+    <div class="form-message" id="formMessage"></div>
+    <a href="demo/index.html" target="_blank" class="demo-btn">
+      ▶️ WATCH DEMO TEASER
+    </a>
+    <div class="footer">
+      © 2026 NoxTitan – Night. Titan. Power.<br>
+      The cosmic union of night goddess and titanic might.
+    </div>
+  </div>
+  <script>
+    // Animated countdown (cosmic style)
+    const countdownEl = {
+      days: document.getElementById('days'),
+      hours: document.getElementById('hours'),
+      minutes: document.getElementById('minutes'),
+      seconds: document.getElementById('seconds')
+    };
+    let c = { d: 18, h: 8, m: 36, s: 51 };
+    setInterval(()=>{
+      c.s += (Math.random() < 0.5 ? 1 : -1) * Math.ceil(Math.random()*2);
+      if(c.s>59) { c.s=0; c.m++; }
+      if(c.s<0) { c.s=59; c.m--; }
+      c.m += (Math.random()<0.2?1:-1)*Math.round(Math.random());
+      if(c.m>59) { c.m=0; c.h++; }
+      if(c.m<0) { c.m=59; c.h--; }
+      c.h += (Math.random()<0.1?1:-1)*Math.round(Math.random());
+      if(c.h>23){ c.h=0; c.d++; }
+      if(c.h<0){ c.h=23; c.d--; }
+      c.d += (Math.random()<0.04?1:-1)*Math.round(Math.random());
+      if(c.d<1) c.d=18;
+      countdownEl.days.textContent = String(Math.abs(c.d)).padStart(2,'0');
+      countdownEl.hours.textContent = String(Math.abs(c.h)).padStart(2,'0');
+      countdownEl.minutes.textContent = String(Math.abs(c.m)).padStart(2,'0');
+      countdownEl.seconds.textContent = String(Math.abs(c.s)).padStart(2,'0');
+    }, 970);
+
+    // Signup form handler
+    document.getElementById('signupForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const email = document.getElementById('emailInput').value;
+      if(!email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)) {
+        document.getElementById('formMessage').textContent = 'Enter a valid business email.';
+        return;
+      }
+      document.getElementById('formMessage').textContent = 'Thanks! You&#39;re on the list.';
+      document.getElementById('signupForm').reset();
+      setTimeout(()=>document.getElementById('formMessage').textContent='',3000);
+    });
+
+    // Music controls
+    const bgMusic = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    const musicStatus = document.getElementById('musicStatus');
+    let musicPlaying = true;
+
+    function setMusicState(on) {
+      if(on) {
+        bgMusic.volume = 0.75;
+        bgMusic.play();
+        musicBtn.textContent = "🔊";
+        musicStatus.textContent = "Music On";
+        musicBtn.classList.add('active');
+        musicPlaying = true;
+      } else {
+        bgMusic.pause();
+        musicBtn.textContent = "🔇";
+        musicStatus.textContent = "Music Off";
+        musicBtn.classList.remove('active');
+        musicPlaying = false;
+      }
+    }
+    setTimeout(()=>{ setMusicState(true); },330);
+    musicBtn.onclick = function() { setMusicState(!musicPlaying); }
+    document.body.addEventListener('touchstart', function(){
+      if(bgMusic.paused) setMusicState(true);
+    }, {once:true});
+    document.body.addEventListener('click', function(){
+      if(bgMusic.paused) setMusicState(true);
+    }, {once:true});
+
+    // Create twinkling stars - haunting cosmic BG
+    function createStars(count){
+      const bg = document.querySelector(".cosmic-bg");
+      for(let i=0; i<count; i++){
+        const star = document.createElement('div');
+        star.className = 'star';
+        const left = Math.random()*100; // vw
+        const top = Math.random()*100; // vh
+        star.style.left = left + 'vw';
+        star.style.top = top + 'vh';
+        star.style.width = star.style.height = (1.4 + Math.random()*2.8) + 'px';
+        star.style.opacity = 0.2 + Math.random()*0.6;
+        star.style.animationDuration = (3 + Math.random()*3.5) + 's';
+        bg.appendChild(star);
+      }
+    }
+    createStars(50);
+  </script>
+</body>
+</html>
