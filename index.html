@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NoxTitan – FORGED FOR TITANS | Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --crystal: #b074ff;
+      --crystal-glow: #d2a7ff;
+      --silver-dark: #666e78;
+      --silver-mid: #b9becf;
+      --silver-light: #f1f3fa;
+      --titan: #1e1335;
+    }
+    html, body {
+      background: linear-gradient(135deg,#181a26 0%, #3b3565 85%, #b074ff 100%);
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .bg-glow {
+      position: fixed; top:0; left:0; width:100vw; height:100vh;
+      z-index: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse 75% 40% at 50% 18%, #b074ff27 6%, transparent 100%),
+                  radial-gradient(ellipse 15% 20% at 88% 0%, #d2a7ff33 0%, transparent 100%);
+      animation: bgmove 16s linear infinite alternate;
+    }
+    @keyframes bgmove {
+      0%,100% { filter: blur(0.8px);}
+      50% { filter: blur(6px);}
+    }
+    .container {
+      position: relative;
+      z-index: 2;
+      width: 98%;
+      max-width: 490px;
+      margin: 0 auto;
+      margin-top: 5vw;
+      background:
+        linear-gradient(118deg, #23243e 1%, #b9becf 51%, #b074ff 100%);
+      box-shadow: 0 10px 52px #ae70ff33, 0 0 38px #8e41ce11, 0 2px 11px #23235866;
+      border-radius: 32px;
+      border: 2.5px solid #b074ffa2;
+      padding: 2.6em 2.1em 2.2em 2.1em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo-video {
+      width: 185px; height: 185px; object-fit: contain;
+      border-radius: 45px;
+      background: #191929;
+      box-shadow: 0 0 0 6px #fff9fb0d, 0 0 120px 24px #b074ff66, 0 0 13px #fff;
+      display: block;
+      margin: 0 auto 1.1em auto;
+      filter: brightness(1.21) contrast(1.11);
+      animation: shineLogo 7s cubic-bezier(.55,.1,.39,.99) infinite;
+    }
+    @keyframes shineLogo {
+      0%,100% { box-shadow: 0 0 0 6px #fff9fb0d, 0 0 120px 24px #b074ff66, 0 0 13px #fff; }
+      58% { box-shadow: 0 0 0 12px #b074ff22, 0 0 230px 54px #fff9fb53, 0 0 34px #b074ffd8;}
+    }
+    h1 {
+      font-size: 2.16em;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      margin: 0 0 0.16em 0;
+      color: #f8f5ff;
+      text-shadow: 0 3px 32px #ae70ffb5, 0 1px 7px #232358;
+      background: linear-gradient(90deg, #f1f3fa 12%, #b074ff 86%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+    }
+    .beastmode {
+      font-size: 1.1em;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #b074ff;
+      text-shadow: 0 0 9px #d2a7ff9a;
+      margin-bottom: 1.6em;
+    }
+    .coming-text {
+      font-size: 1.6em;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      color: #fff;
+      text-align: center;
+      margin-top: 0.5em;
+      margin-bottom: 0.6em;
+      text-transform: uppercase;
+      text-shadow: 0 0 18px #ae70ff77, 0 0 18px #fafbfd0e;
+      background: linear-gradient(90deg,#fff9fb 0%,#b074ff 48%,#fff9fb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      border-bottom: 2px solid #b074ff33;
+      display: inline-block;
+    }
+    .subtitle {
+      font-size: 1.07em;
+      font-weight: 700;
+      color: #adbeffda;
+      text-shadow: 0 0 9px #b074ff52;
+      margin-bottom: 1.25em;
+      letter-spacing: 0.06em;
+    }
+    .crystal-accent {
+      background: linear-gradient(90deg,#fff9fb15 0%,#c7b0fc 60%,#b074ff 100%);
+      height: 10px;
+      width: 88%;
+      margin: 1.4em auto 2em auto;
+      border-radius: 7px;
+      opacity: 0.55;
+      box-shadow: 0 1px 20px #b074ff6f, 0 0 1px #fff inset;
+      animation: glowBar 7s infinite cubic-bezier(.11,1,.77,1);
+    }
+    @keyframes glowBar {
+      0% {opacity:0.55;}
+      60% {opacity:0.98;}
+      100% {opacity:0.55;}
+    }
+    .fake-countdown {
+      margin: 1.1em auto 2em auto;
+      font-size: 1.18em;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      color: #d2a7ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.52em;
+      user-select: none;
+      text-shadow: 0 0 17px #b074ff19;
+    }
+    .fake-countdown span {
+      font-size: 1.25em;
+      display: inline-block;
+      min-width: 38px;
+      text-align: center;
+      background: linear-gradient(120deg,#b074ff29 0%,#fff9fb52 95%);
+      border-radius: 9px;
+      box-shadow: 0 0 15px #c7b0fc71 inset;
+      padding: 0.38em 0.7em;
+      margin: 0 0.12em;
+      border: 1.3px solid #fff9fb45;
+      filter: blur(0.1px);
+    }
+    .signup-form {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 0.7em;
+      margin-bottom: 0.6em;
+    }
+    input[type="email"] {
+      flex: 2;
+      padding: 0.7em 1em;
+      border: none;
+      border-radius: 11px;
+      font-size: 1em;
+      background: #1a153b;
+      color: #c7b0fc;
+      font-weight: 600;
+      box-shadow: 0 0 9px #b074ff3c inset;
+      outline: none;
+      border: 1.3px solid #b074ff5a;
+    }
+    input[type="email"]:focus {
+      box-shadow: 0 0 17px #d2a7ff42;
+      border: 1.5px solid #fff9fb;
+      background: #181430;
+    }
+    button[type="submit"] {
+      flex: 1;
+      font-weight: 800;
+      background: linear-gradient(90deg,#9562fb 15%,#b074ff 90%);
+      color: #fff;
+      padding: 0.68em 1em;
+      border: none;
+      border-radius: 13px;
+      font-size: 1.1em;
+      cursor: pointer;
+      box-shadow: 0 0 11px #b074ff94;
+      border: 1.6px solid #fff9fb55;
+      letter-spacing: 0.07em;
+      transition: background 0.3s, box-shadow 0.3s, border 0.2s;
+    }
+    button[type="submit"]:hover {
+      background: linear-gradient(95deg,#fff9fb 0%,#b074ff 82%);
+      color:#351a5b;
+      border: 1.7px solid #d2a7ffcc;
+      box-shadow: 0 0 19px #fff5;
+    }
+    .form-message {
+      margin-top: 0.38em;
+      min-height: 1.6em;
+      color: #b074ff;
+      font-size: 1.12em;
+      font-weight: 900;
+      text-shadow: 0 0 4px #d2a7ff77;
+      text-align: center;
+    }
+    .demo-btn {
+      display: block;
+      width: 100%;
+      font-size: 1.17em;
+      font-weight: 900;
+      background: linear-gradient(90deg,#8a4fff 13%,#60dcff 81%);
+      color: #fff;
+      border: none;
+      border-radius: 13px;
+      padding: 0.87em 2em;
+      margin: 2.1em 0 0.6em 0;
+      box-shadow: 0 0 34px #ad6fd97a, 0 0 1px #fff;
+      cursor: pointer;
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 8px #ad6fd980;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .demo-btn:hover {
+      background: linear-gradient(87deg,#60dcff 13%,#8a4fff 89%);
+      box-shadow: 0 0 44px #b074fff0;
+      color: #181830;
+    }
+    .footer {
+      text-align: center;
+      font-size: 1em;
+      margin-top: 2.2em;
+      color: #f1defcbb;
+      letter-spacing: 0.07em;
+      text-shadow: 0 0 17px #b074ff2b;
+      font-weight:900;
+      z-index:2;
+      position:relative;
+    }
+    .music-controls {
+      margin-top: 0.5em;
+      margin-bottom: 1.3em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45em;
+      color: #c7b0fc;
+      font-weight: 600;
+      opacity: 0.85;
+      font-size: 1.18em;
+    }
+    .music-btn {
+      background: none;
+      border: none;
+      color: #d2a7ff;
+      font-size: 1.4em;
+      cursor: pointer;
+      padding: 5px;
+      transition: color 0.15s;
+      border-radius: 6px;
+    }
+    .music-btn.active, .music-btn:active {
+      color: #fff;
+      background: #b074ff20;
+    }
+    @media (max-width: 700px) {
+      .container{ max-width:99vw; }
+      .logo-video{width:122px;height:122px;}
+    }
+    @media (max-width: 480px) {
+      .container{padding:0.7em 0.1em;}
+      .logo-video{width:77vw;height:77vw;max-width:168px;min-width:75px;}
+      h1{font-size:1.02em;}
+      .coming-text{font-size: 1em;}
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow"></div>
+  <div class="container">
+    <!-- LOGO VIDEO -->
+    <video src="noxtitan-logo.mp4" class="logo-video" autoplay loop muted playsinline></video>
+
+    <h1>NoxTitan</h1>
+    <div class="beastmode">BEASTMODE Management Software — Forged for TITANS.</div>
+    <div class="coming-text">Coming Soon</div>
+    <div class="subtitle">Unrivaled Power. World-Destroying Capabilities.<br>Your competitors don't stand a chance.</div>
+    <div class="crystal-accent"></div>
+
+    <div class="fake-countdown" id="fakeCountdown">
+      <span id="days">13</span>:
+      <span id="hours">12</span>:
+      <span id="minutes">22</span>:
+      <span id="seconds">28</span>
+    </div>
+
+    <!-- MUSIC Controls -->
+    <audio id="bgMusic" src="demo-music.mp3" loop autoplay></audio>
+    <div class="music-controls">
+      <button id="musicBtn" class="music-btn" aria-label="Toggle music">🔊</button>
+      <span id="musicStatus">Music On</span>
+    </div>
+
+    <!-- SIGNUP FORM -->
+    <form id="signupForm" class="signup-form" autocomplete="off">
+      <input type="email" id="emailInput" name="email" autocomplete="off" placeholder="Your business email" required>
+      <button type="submit">Join Waitlist</button>
+    </form>
+    <div class="form-message" id="formMessage"></div>
+
+    <!-- DEMO BUTTON -->
+    <a href="demo/index.html" target="_blank" class="demo-btn">
+      ▶️ Watch Demo Teaser
+    </a>
+
+    <div class="footer">© 2026 NoxTitan. DOMINATE or be dominated.</div>
+  </div>
+  <script>
+    // Animated countdown
+    const countdownEl = {
+      days: document.getElementById('days'),
+      hours: document.getElementById('hours'),
+      minutes: document.getElementById('minutes'),
+      seconds: document.getElementById('seconds')
+    };
+    let c = { d: 13, h: 12, m: 22, s: 28 };
+    setInterval(()=>{
+      c.s += (Math.random() < 0.5 ? 1 : -1) * Math.ceil(Math.random()*2);
+      if(c.s>59) { c.s=0; c.m++; }
+      if(c.s<0) { c.s=59; c.m--; }
+      c.m += (Math.random()<0.2?1:-1)*Math.round(Math.random());
+      if(c.m>59) { c.m=0; c.h++; }
+      if(c.m<0) { c.m=59; c.h--; }
+      c.h += (Math.random()<0.1?1:-1)*Math.round(Math.random());
+      if(c.h>23){ c.h=0; c.d++; }
+      if(c.h<0){ c.h=23; c.d--; }
+      c.d += (Math.random()<0.04?1:-1)*Math.round(Math.random());
+      if(c.d<1) c.d=13;
+      countdownEl.days.textContent = String(Math.abs(c.d)).padStart(2,'0');
+      countdownEl.hours.textContent = String(Math.abs(c.h)).padStart(2,'0');
+      countdownEl.minutes.textContent = String(Math.abs(c.m)).padStart(2,'0');
+      countdownEl.seconds.textContent = String(Math.abs(c.s)).padStart(2,'0');
+    }, 970);
+    // Signup form handler (visual only)
+    document.getElementById('signupForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const email = document.getElementById('emailInput').value;
+      if(!email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)) {
+        document.getElementById('formMessage').textContent = 'Enter a valid business email.';
+        return;
+      }
+      document.getElementById('formMessage').textContent = 'Thanks! You&#39;re on the list.';
+      document.getElementById('signupForm').reset();
+      setTimeout(()=>document.getElementById('formMessage').textContent='',3100);
+    });
+    // Music controls
+    const bgMusic = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    const musicStatus = document.getElementById('musicStatus');
+    let musicPlaying = true;
+    function setMusicState(on) {
+      if(on) {
+        bgMusic.volume = 0.75;
+        bgMusic.play();
+        musicBtn.textContent = "🔊";
+        musicStatus.textContent = "Music On";
+        musicBtn.classList.add('active');
+        musicPlaying = true;
+      } else {
+        bgMusic.pause();
+        musicBtn.textContent = "🔇";
+        musicStatus.textContent = "Music Off";
+        musicBtn.classList.remove('active');
+        musicPlaying = false;
+      }
+    }
+    // Initial state - Mobile browser require user interaction for sound
+    setTimeout(()=>{
+      setMusicState(true);
+    },550);
+    musicBtn.onclick = function() {
+      setMusicState(!musicPlaying);
+    }
+    // Mobile: resume music on first tap/click if auto-play was blocked
+    document.body.addEventListener('touchstart', function(){
+      if(bgMusic.paused) setMusicState(true);
+    }, {once:true});
+    document.body.addEventListener('click', function(){
+      if(bgMusic.paused) setMusicState(true);
+    }, {once:true});
+  </script>
+</body>
+</html>
