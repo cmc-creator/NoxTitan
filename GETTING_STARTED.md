@@ -227,4 +227,4 @@ Once your site is live:
 
 ---
 
-*Last updated: January 2026*
+*Last updated: January 2025*

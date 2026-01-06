@@ -98,12 +98,12 @@ Read these if you get stuck:
 
 You've successfully deployed when:
 
-- [x] Site is accessible at https://cmc-creator.github.io/NoxTitan/
-- [x] No errors in browser console
-- [x] All images/videos load
-- [x] Music controls work
-- [x] Demo is accessible and functional
-- [x] Works on mobile and desktop
+- [ ] Site is accessible at https://cmc-creator.github.io/NoxTitan/
+- [ ] No errors in browser console
+- [ ] All images/videos load
+- [ ] Music controls work
+- [ ] Demo is accessible and functional
+- [ ] Works on mobile and desktop
 
 ---
 

@@ -106,7 +106,7 @@ This is a demo/presentation site. For business inquiries:
 
 ## 📄 License
 
-© 2026 NoxTitan™. All rights reserved.
+© 2025 NoxTitan™. All rights reserved.
 
 ---
 
