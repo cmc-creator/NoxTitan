@@ -70,6 +70,18 @@ NoxTitan/
 
 ## 🛠️ Local Development
 
+### Using VS Code (Recommended)
+
+If you're using **Visual Studio Code**:
+1. Open the NoxTitan folder in VS Code
+2. Install the "Live Server" extension
+3. Right-click `index.html` → "Open with Live Server"
+4. Edits auto-reload in your browser!
+
+**See [VSCODE_GUIDE.md](VSCODE_GUIDE.md) for complete VS Code setup and workflow.**
+
+### Using Any Editor
+
 Want to test locally? Just open the files:
 
 ```bash

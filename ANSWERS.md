@@ -74,17 +74,23 @@ We've created detailed guides for you:
    - Troubleshooting section
    - No technical knowledge needed
 
-2. **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** ← Complete guide
+2. **[VSCODE_GUIDE.md](VSCODE_GUIDE.md)** ← Using Visual Studio Code?
+   - Complete VS Code workflow
+   - Local preview with Live Server
+   - Git integration in VS Code
+   - **No migration needed!**
+
+3. **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** ← Complete guide
    - Everything about GitHub Pages
    - How to add a custom domain
    - How to update your site
 
-3. **[SETUP_CHECKLIST.md](SETUP_CHECKLIST.md)** ← Quick checklist
+4. **[SETUP_CHECKLIST.md](SETUP_CHECKLIST.md)** ← Quick checklist
    - Print this and check off items
    - Track your progress
    - Testing checklist
 
-4. **[ARCHITECTURE.md](ARCHITECTURE.md)** ← How it works
+5. **[ARCHITECTURE.md](ARCHITECTURE.md)** ← How it works
    - Visual diagrams
    - Technical details
    - Performance info
