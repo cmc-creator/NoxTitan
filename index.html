@@ -128,6 +128,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      /* Ensure overflow is hidden to clip the scaled video */
+      overflow: hidden;
+      position: relative;
     }
     .logo-video {
       width: min(95vw, 500px);
@@ -138,6 +141,19 @@
       box-shadow: 0 0 0 10px #25004d67, 0 0 90px 26px #bd71ff44, 0 7px 48px #000c;
       filter: brightness(1.13) contrast(1.08);
       display: block;
+      /* Hide VEO watermark by scaling and positioning */
+      transform: scale(1.15);
+      object-position: center center;
+    }
+    .logo-star {
+      margin-top: -80px;
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* Ensure overflow is hidden to clip the scaled video */
+      overflow: hidden;
+      position: relative;
     }
     h1 {
       font-size: 3.2em;
