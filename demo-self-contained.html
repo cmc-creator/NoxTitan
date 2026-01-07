@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoxTitan™ - Workforce Management Platform Demo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            background: #0a0a0a;
+            color: white;
+        }
+        
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -2;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .particle {
+            position: fixed;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 20s infinite;
+            z-index: -1;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-100vh) translateX(50px); }
+        }
+        
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .slide {
+            display: none;
+            padding: 50px;
+            text-align: center;
+            animation: slideIn 0.5s ease-out;
+            width: 90%;
+            max-width: 1400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .slide.active {
+            display: flex;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .logo {
+            font-size: 5em;
+            font-weight: 900;
+            background: linear-gradient(90deg, #fff, #f0f0f0, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px rgba(255,255,255,0.5); }
+            50% { text-shadow: 0 0 40px rgba(255,255,255,0.8); }
+        }
+        
+        h2 {
+            font-size: 2.8em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.4em;
+            opacity: 0.95;
+            margin-bottom: 25px;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 15px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        .feature-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .feature-desc {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        
+        .stat-box {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .stat-number {
+            font-size: 4em;
+            font-weight: 900;
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .stat-label {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        ul {
+            list-style: none;
+            text-align: left;
+            max-width: 800px;
+            margin: 30px auto;
+        }
+        
+        li {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 12px;
+            border-left: 5px solid #fff;
+            font-size: 1.3em;
+            transition: all 0.3s ease;
+        }
+        
+        li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            border-radius: 50px;
+            z-index: 1000;
+        }
+        
+        .btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+        
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #00f2fe, #4facfe, #f093fb);
+            transition: width 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .comparison-table {
+            margin: 30px auto;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+        }
+        
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 1.2em;
+        }
+        
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+        
+        .checkmark {
+            font-size: 1.5em;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        .contact-info {
+            font-size: 2em;
+            margin-top: 30px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <div id="particles"></div>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="container">
+        <!-- Slide 1 -->
+        <div class="slide active" data-slide="1">
+            <div class="logo">NOXTITAN™</div>
+            <h2 style="text-align: center;">The ONLY Workforce Platform You'll Ever Need</h2>
+            <p class="subtitle" style="text-align: center;">One Platform. Infinite Possibilities.</p>
+            <div style="text-align: center; margin-top: 40px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                <div class="stat-box" style="flex: 1; min-width: 180px;">
+                    <div class="stat-number">43</div>
+                    <div class="stat-label">Database Models</div>
+                </div>
+                <div class="stat-box" style="flex: 1; min-width: 180px;">
+                    <div class="stat-number">35+</div>
+                    <div class="stat-label">Features</div>
+                </div>
+                <div class="stat-box" style="flex: 1; min-width: 180px;">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Integrations</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Oracle -->
+        <div class="slide" data-slide="2">
+            <h2><span class="emoji">🔮</span> THE ORACLE</h2>
+            <p class="subtitle">Predictive AI That Sees The Future</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-title">Turnover Prediction</div>
+                    <div class="feature-desc">ML predicts who's leaving</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-title">Cost Analysis</div>
+                    <div class="feature-desc">Real-time budget insights</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-title">Smart Scheduling</div>
+                    <div class="feature-desc">Auto-optimized shifts</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-title">Risk Alerts</div>
+                    <div class="feature-desc">Compliance warnings</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Guild -->
+        <div class="slide" data-slide="3">
+            <h2><span class="emoji">🎮</span> THE GUILD</h2>
+            <p class="subtitle">Gamification That Destroys Turnover</p>
+            <ul>
+                <li>🏆 XP for everything: attendance, training, milestones</li>
+                <li>⚔️ Daily/Weekly/Monthly quests with rewards</li>
+                <li>👥 Team guilds compete on leaderboards</li>
+                <li>🎁 Unlock merch, perks, bonuses with XP</li>
+                <li>📈 Public recognition = retention rocket fuel</li>
+            </ul>
+        </div>
+
+        <!-- Slide 4: Merch Store -->
+        <div class="slide" data-slide="4">
+            <h2><span class="emoji">🛍️</span> MERCH STORE</h2>
+            <p class="subtitle">Dual Payment: Payroll OR XP</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px;">
+                <div style="background: rgba(255, 255, 255, 0.2); padding: 35px; border-radius: 20px; text-align: center;">
+                    <div style="font-size: 4em; margin-bottom: 15px;">💰</div>
+                    <h3 style="font-size: 1.8em; margin-bottom: 15px;">Payroll Deduct</h3>
+                    <p style="font-size: 1.2em;">Deduct from paycheck!</p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.2); padding: 35px; border-radius: 20px; text-align: center;">
+                    <div style="font-size: 4em; margin-bottom: 15px;">⚡</div>
+                    <h3 style="font-size: 1.8em; margin-bottom: 15px;">Guild XP</h3>
+                    <p style="font-size: 1.2em;">FREE merch with XP!</p>
+                </div>
+            </div>
+            <p style="margin-top: 30px; font-size: 1.3em; text-align: center;">✅ Printful • Wix • Shopify • WooCommerce • Square • Etsy</p>
+        </div>
+
+        <!-- Slide 5: AI Assistant -->
+        <div class="slide" data-slide="5">
+            <h2><span class="emoji">🤖</span> AI ASSISTANT</h2>
+            <p class="subtitle">ChatGPT-Powered Workforce Copilot</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <div class="feature-title">Natural Language</div>
+                    <div class="feature-desc">"Schedule Bob Friday"</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <div class="feature-title">Auto Summaries</div>
+                    <div class="feature-desc">Reports in seconds</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <div class="feature-title">Training Help</div>
+                    <div class="feature-desc">On-demand answers</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <div class="feature-title">Smart Search</div>
+                    <div class="feature-desc">Find anything instantly</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Physical Security -->
+        <div class="slide" data-slide="6">
+            <h2><span class="emoji">🛡️</span> FORTRESS SECURITY</h2>
+            <p class="subtitle">18+ Hardware Integrations</p>
+            <ul>
+                <li>📹 Security cameras with AI threat detection</li>
+                <li>🚪 Access control with badge/biometric</li>
+                <li>🚨 Panic buttons and emergency alerts</li>
+                <li>🎥 DVR/NVR recording with cloud backup</li>
+                <li>🔐 Door locks, gate controls, intercoms</li>
+            </ul>
+        </div>
+
+        <!-- Slide 7: More Features -->
+        <div class="slide" data-slide="7">
+            <h2><span class="emoji">⚡</span> AND THERE'S MORE</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <div class="feature-title">Scheduling</div>
+                    <div class="feature-desc">Drag & drop calendar</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <div class="feature-title">Time Clock</div>
+                    <div class="feature-desc">GPS + Photo verify</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💵</div>
+                    <div class="feature-title">Payroll</div>
+                    <div class="feature-desc">Auto calculations</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-title">Analytics</div>
+                    <div class="feature-desc">Real-time dashboards</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <div class="feature-title">Training</div>
+                    <div class="feature-desc">LMS with tracking</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-title">Mobile App</div>
+                    <div class="feature-desc">iOS + Android</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Comparison -->
+        <div class="slide" data-slide="8">
+            <h2>NOXTITAN vs "Competitors"</h2>
+            <div class="comparison-table">
+                <div class="comparison-row" style="font-weight: 900; border-bottom: 2px solid rgba(255,255,255,0.5);">
+                    <div>Feature</div>
+                    <div>Others</div>
+                    <div>NoxTitan</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Predictive AI</div>
+                    <div>❌</div>
+                    <div class="checkmark">✅</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Gamification</div>
+                    <div>❌</div>
+                    <div class="checkmark">✅</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Merch Store</div>
+                    <div>❌</div>
+                    <div class="checkmark">✅</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Physical Security</div>
+                    <div>❌</div>
+                    <div class="checkmark">✅</div>
+                </div>
+                <div class="comparison-row">
+                    <div>AI Assistant</div>
+                    <div>❌</div>
+                    <div class="checkmark">✅</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Stats -->
+        <div class="slide" data-slide="9">
+            <h2 style="text-align: center;">WORKFORCE DOMINATION</h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-top: 40px;">
+                <div class="stat-box">
+                    <div class="stat-number">43</div>
+                    <div class="stat-label">Models</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">15K+</div>
+                    <div class="stat-label">Lines</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">APIs</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Pages</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">18</div>
+                    <div class="stat-label">Hardware</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">TypeScript</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Calendar -->
+        <div class="slide" data-slide="10">
+            <h2><span class="emoji">📆</span> INTERACTIVE CALENDAR</h2>
+            <p class="subtitle">Scheduling Made Beautiful</p>
+            <div style="font-size: 8em; margin: 30px 0;">📆</div>
+            <ul>
+                <li>🖱️ Drag & drop shifts in real-time</li>
+                <li>💵 Shift differentials auto-calculated</li>
+                <li>⚠️ Overtime warnings before approval</li>
+                <li>🔄 Employee swap requests built-in</li>
+            </ul>
+        </div>
+
+        <!-- Slide 11: Time Clock -->
+        <div class="slide" data-slide="11">
+            <h2><span class="emoji">⏰</span> TIME CLOCK ENTERPRISE</h2>
+            <p class="subtitle">Every Punch Verified</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <div class="feature-title">GPS Verification</div>
+                    <div class="feature-desc">Location stamped</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <div class="feature-title">Photo Capture</div>
+                    <div class="feature-desc">Selfie at punch</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <div class="feature-title">Badge Support</div>
+                    <div class="feature-desc">RFID/NFC/QR</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-title">Exception Tracking</div>
+                    <div class="feature-desc">Late/early alerts</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Facility Management -->
+        <div class="slide" data-slide="12">
+            <h2><span class="emoji">🏢</span> COMPLETE FACILITY MANAGEMENT</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+                <div style="background: rgba(255, 255, 255, 0.15); padding: 40px; border-radius: 20px;">
+                    <div style="font-size: 5em; margin-bottom: 20px;">🔧</div>
+                    <h3 style="font-size: 2em; margin-bottom: 20px;">ASSET VAULT</h3>
+                    <ul style="margin: 0;">
+                        <li style="margin: 10px 0; padding: 10px; font-size: 1.1em;">Digital signatures</li>
+                        <li style="margin: 10px 0; padding: 10px; font-size: 1.1em;">Payroll deductions</li>
+                        <li style="margin: 10px 0; padding: 10px; font-size: 1.1em;">Maintenance logs</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.15); padding: 40px; border-radius: 20px;">
+                    <div style="font-size: 5em; margin-bottom: 20px;">👥</div>
+                    <h3 style="font-size: 2em; margin-bottom: 20px;">SENTINEL VISITOR</h3>
+                    <ul style="margin: 0;">
+                        <li style="margin: 10px 0; padding: 10px; font-size: 1.1em;">Badge printing</li>
+                        <li style="margin: 10px 0; padding: 10px; font-size: 1.1em;">Watchlist screening</li>
+                        <li style="margin: 10px 0; padding: 10px; font-size: 1.1em;">Complete audit trail</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: CTA -->
+        <div class="slide" data-slide="13">
+            <div class="logo" style="font-size: 6em;">NOXTITAN™</div>
+            <h2 style="font-size: 3em;">Ready to Dominate?</h2>
+            <p class="subtitle" style="font-size: 1.6em;">Stop managing. Start dominating.</p>
+            <div class="contact-info">
+                📧 demo@noxtitan.com<br>
+                🌐 www.noxtitan.com
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="prevSlide()">◀</button>
+        <span id="slideCounter">1 / 13</span>
+        <button class="btn" onclick="nextSlide()">▶</button>
+        <button class="btn" onclick="toggleAutoplay()" id="autoplayBtn">⏸</button>
+    </div>
+
+    <script>
+        // Create particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+        
+        let currentSlide = 1;
+        const totalSlides = 13;
+        let autoplayInterval;
+        
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            if (n > totalSlides) currentSlide = 1;
+            if (n < 1) currentSlide = totalSlides;
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide - 1].classList.add('active');
+            
+            document.getElementById('slideCounter').textContent = `${currentSlide} / ${totalSlides}`;
+            document.getElementById('progressBar').style.width = (currentSlide / totalSlides * 100) + '%';
+        }
+        
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+        
+        function prevSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+        
+        function toggleAutoplay() {
+            const btn = document.getElementById('autoplayBtn');
+            if (autoplayInterval) {
+                clearInterval(autoplayInterval);
+                autoplayInterval = null;
+                btn.textContent = '▶';
+            } else {
+                autoplayInterval = setInterval(nextSlide, 8000);
+                btn.textContent = '⏸';
+            }
+        }
+        
+        // Keyboard controls
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+        
+        // Initialize
+        createParticles();
+        showSlide(1);
+        autoplayInterval = setInterval(nextSlide, 8000);
+    </script>
+</body>
+</html>

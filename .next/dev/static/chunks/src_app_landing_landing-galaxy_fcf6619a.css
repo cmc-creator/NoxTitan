@@ -1,0 +1,70 @@
+/* [project]/src/app/landing/landing-galaxy.css [app-client] (css) */
+.galaxy-bg {
+  background: #000;
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.galaxy-bg:before {
+  content: "";
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(at 15% 25%, #7800ff1a 0%, #0000 70%), radial-gradient(at 80% 70%, #c8c8ff14 0%, #0000 80%), radial-gradient(at 60% 20%, #ffffff0f 0%, #0000 80%);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.galaxy-bg:after {
+  content: "";
+  pointer-events: none;
+  z-index: 2;
+  background: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: .8;
+  }
+
+  50% {
+    opacity: .2;
+  }
+}
+
+.star {
+  opacity: .7;
+  background: #fff;
+  border-radius: 50%;
+  width: 1.2px;
+  height: 1.2px;
+  animation: 2.5s infinite twinkle;
+  position: absolute;
+}
+
+.text-gradient-opposite {
+  background: linear-gradient(to left, #a259ff 0%, #e5e5e5 50%, #000 100%);
+  -webkit-text-fill-color: transparent;
+  color: #0000;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.text-gradient-demo {
+  background: linear-gradient(to left, #c7a6ff 0%, #f5f5f5 60%, #444 100%);
+  -webkit-text-fill-color: transparent;
+  color: #0000;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/*# sourceMappingURL=src_app_landing_landing-galaxy_fcf6619a.css.map*/

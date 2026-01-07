@@ -1,0 +1,812 @@
+/* Global Reset and Base Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-darkest: #0a0a0c; /* Deep Space Black */
+    /* Global Reset and Base Styles */
+    --bg-lighter: #1a1a1e; /* Slightly lighter contrast */
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b0; /* Soft Silver-Blue */
+    --accent-purple: #7C4DFF; /* Vibrant Purple */
+    --accent-purple-glow: rgba(124, 77, 255, 0.6);
+    --accent-silver: #e0e0e0;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --font-stack: 'Inter', system-ui, sans-serif;
+    --section-spacing: 100px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-darkest);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography Utilities */
+h1, h2, h3 {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+h1 { font-size: clamp(3rem, 5vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: 1.5rem; }
+p { color: var(--text-secondary); font-size: 1.1rem; }
+a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+
+/* Container Utility */
+.section-container, .nav-container, .hero-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   Button Styles (Updated for new palette)
+   ========================================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 6px; /* Modern rounded corners */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 0.95rem;
+    font-family: var(--font-stack);
+}
+
+/* Primary Purple Gradient Button */
+.btn-primary {
+    background: linear-gradient(90deg, #7C4DFF 0%, #6200ea 100%);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--accent-purple-glow);
+}
+
+/* Secondary Outline Button (For Login) */
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--accent-purple);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background: rgba(124, 77, 255, 0.1);
+    border-color: #8f66ff;
+}
+
+.btn-large {
+    padding: 16px 36px;
+    font-size: 1.1rem;
+}
+
+.btn-glow {
+    box-shadow: 0 0 20px rgba(124, 77, 255, 0.3);
+}
+
+.btn-full-width {
+    width: 100%;
+}
+
+.text-link {
+    color: var(--accent-purple);
+    font-weight: 600;
+    margin-left: 20px;
+    display: inline-block;
+}
+.text-link:hover { text-decoration: underline; color: #9e7aff; }
+
+
+/* =========================================
+   SECTION 1: Sticky Navigation Bar (Updated)
+   ========================================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: rgba(10, 10, 12, 0.9); /* High transparency dark */
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left-placeholder {
+    flex: 1; /* Takes up space to balance center */
+}
+
+.nav-center {
+    flex: 2;
+    text-align: center;
+}
+
+.nav-tagline {
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+.nav-link:hover {
+    color: var(--accent-purple);
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: rgba(10, 10, 12, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    padding: 8px 0;
+    min-height: 56px;
+    height: 64px;
+}
+.prominent-logo-header {
+    background-color: var(--bg-darkest);
+    padding: 50px 0 30px; /* Space between nav and hero */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo Container for the "Shooting Star" Border Effect */
+.logo-container {
+    position: relative;
+    padding: 6px; /* Space for the border thickness */
+    border-radius: 10px; 
+    overflow: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-darkest);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* The Animated "Shooting Star" Border */
+.logo-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent, 
+        transparent, 
+        transparent, 
+        var(--accent-silver), /* Tail */
+        white /* Head of star */
+    );
+    animation: rotate-border 3s linear infinite;
+    z-index: -2;
+}
+
+/* Inner background to cover center */
+.logo-container::after {
+    content: '';
+    position: absolute;
+    inset: 3px; /* Thickness of visible border */
+    background: var(--bg-darkest);
+    border-radius: 8px;
+    z-index: -1;
+}
+
+@keyframes rotate-border {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Centered Medium Logo Styling */
+.hero-logo-img {
+    display: block;
+    max-height: 90px; /* Medium size as requested */
+    width: auto; 
+    position: relative; 
+    z-index: 1;
+    filter: drop-shadow(0 0 8px rgba(124, 77, 255, 0.2));
+}
+
+
+/* =========================================
+   SECTION 2: Hero Content (Updated positioning)
+   ========================================= */
+.hero-section {
+    /* Less padding on top because logo section is above it now */
+    padding: 20px 0 var(--section-spacing);
+    background: radial-gradient(circle at 70% 30%, rgba(124, 77, 255, 0.08), transparent 50%),
+                linear-gradient(to bottom, var(--bg-darkest), var(--bg-dark));
+}
+
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-headline {
+    margin-bottom: 20px;
+    /* Subtle silver gradient text */
+    background: linear-gradient(to right, #ffffff, var(--accent-silver));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subhead {
+    margin-bottom: 40px;
+    max-width: 550px;
+    font-size: 1.25rem;
+}
+
+/* Dashboard Placeholder Styling */
+.dashboard-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--bg-lighter);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle purple glow around dashboard */
+.dashboard-placeholder::before {
+     content: '';
+     position: absolute;
+     inset: -1px;
+     background: linear-gradient(45deg, transparent, var(--accent-purple-glow), transparent);
+     z-index: -1;
+     filter: blur(20px);
+}
+
+.placeholder-content {
+    text-align: center;
+}
+
+.placeholder-text {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.loading-glow {
+    width: 50px;
+    height: 4px;
+    background: var(--accent-purple);
+    margin: 20px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 15px var(--accent-purple);
+    animation: pulse-loading 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse-loading {
+    0%, 100% { opacity: 0.4; transform: scaleX(0.8); }
+    50% { opacity: 1; transform: scaleX(1.2); }
+}
+
+
+/* =========================================
+   SECTION 3: Social Proof (Trust Bar)
+   ========================================= */
+.trust-bar {
+    padding: 50px 0;
+    background-color: var(--bg-dark);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.trust-headline {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+    color: var(--text-secondary);
+}
+
+.trust-logos {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    opacity: 0.5;
+    mix-blend-mode: luminosity; /* Makes them look metallic/grayscale */
+}
+
+.trust-logo-placeholder {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+}
+
+
+/* =========================================
+   SECTION 4: Agitation & Demo Video
+   ========================================= */
+.video-section {
+    padding: var(--section-spacing) 0;
+    text-align: center;
+    background-color: var(--bg-lighter);
+}
+
+.section-headline {
+    margin-bottom: 20px;
+}
+
+.section-body {
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+/* Enlarged and responsive demo window */
+.live-demo-container {
+    max-width: 1600px;
+    min-width: 320px;
+    margin: 0 auto;
+    width: 95vw;
+    height: 70vh;
+    min-height: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #000;
+    border: 2px solid var(--accent-purple);
+    box-shadow: 0 40px 80px rgba(124,77,255,0.18), 0 2px 24px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.demo-iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    min-width: 320px;
+    border: none;
+    display: block;
+    background: #000;
+}
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.play-button {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, var(--accent-purple), #5e35b1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    box-shadow: 0 0 40px var(--accent-purple-glow);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.play-button:hover { 
+    transform: scale(1.1); 
+    box-shadow: 0 0 60px var(--accent-purple-glow);
+}
+
+.play-icon {
+    width: 0;
+    height: 0;
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+    border-left: 30px solid white;
+    margin-left: 8px;
+}
+
+
+/* =========================================
+   SECTION 5: Comparison Table
+   ========================================= */
+.comparison-section {
+    padding: var(--section-spacing) 0;
+    background-color: var(--bg-dark);
+}
+
+.section-intro {
+    text-align: center;
+    margin-bottom: 70px;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+}
+
+.table-container {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background: var(--bg-lighter);
+}
+
+.comparison-table th, .comparison-table td {
+    padding: 25px 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table th {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    background: var(--bg-darkest);
+}
+
+.feature-col { width: 40%; }
+.competitor-col, .noxtitan-col { width: 30%; text-align: center; }
+
+.noxtitan-col {
+    background-color: rgba(124, 77, 255, 0.08); /* Stronger purple tint for column */
+}
+
+.noxtitan-cell {
+    background-color: rgba(124, 77, 255, 0.08);
+    font-size: 1.5rem;
+}
+
+.feature-name { font-weight: 600; font-size: 1.1rem; }
+.pain-point { display: block; margin-bottom: 10px; font-size: 0.9rem; color: var(--text-secondary); }
+.cross-icon { color: #ff5252; font-size: 1.3rem; opacity: 0.8; }
+.check-icon { 
+    color: #00e676; 
+    font-size: 1.6rem; 
+    text-shadow: 0 0 15px rgba(0, 230, 118, 0.5); 
+}
+
+
+/* =========================================
+   SECTION 6: Stats & ROI
+   ========================================= */
+.stats-section {
+    padding: var(--section-spacing) 0;
+    background-color: var(--bg-darkest);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background glow for stats section */
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(124, 77, 255, 0.1), transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
+    position: relative; /* To sit above background glow */
+}
+
+.stat-number {
+    font-size: clamp(3.5rem, 5vw, 5rem);
+    background: linear-gradient(to bottom right, var(--accent-purple), #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+.stat-desc { font-size: 1.2rem; color: var(--text-secondary); font-weight: 500; }
+
+
+/* =========================================
+   SECTION 7: Testimonials
+   ========================================= */
+.testimonials-section {
+    padding: var(--section-spacing) 0;
+    background-color: var(--bg-dark);
+    text-align: center;
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 70px;
+}
+
+.testimonial-card {
+    background-color: var(--bg-lighter);
+    padding: 50px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border-color: rgba(124, 77, 255, 0.3);
+}
+
+.stars { color: #ffd700; margin-bottom: 25px; font-size: 1.3rem; letter-spacing: 2px; }
+.quote { font-size: 1.15rem; color: var(--text-primary); margin-bottom: 40px; font-style: italic; line-height: 1.7; }
+
+author { display: flex; align-items: center; }
+.author-avatar-placeholder { width: 60px; height: 60px; background: linear-gradient(45deg, var(--bg-dark), var(--bg-darkest)); border: 2px solid var(--border-color); border-radius: 50%; margin-right: 20px; }
+.author-name { display: block; font-weight: 700; font-size: 1.1rem; }
+.author-title { font-size: 0.95rem; color: var(--text-secondary); }
+
+
+/* =========================================
+   SECTION 8: Contact Form
+   ========================================= */
+.contact-section {
+    padding: var(--section-spacing) 0;
+    background-color: var(--bg-lighter);
+    border-top: 1px solid var(--border-color);
+}
+
+.contact-text { max-width: 450px; }
+.contact-headline { margin-bottom: 25px; }
+
+.contact-form-container {
+    background-color: var(--bg-dark);
+    padding: 50px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.form-group { margin-bottom: 30px; }
+.form-group label { display: block; margin-bottom: 12px; font-weight: 600; font-size: 0.95rem; color: var(--text-primary); }
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 18px;
+    background-color: var(--bg-darkest);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 0 3px rgba(124, 77, 255, 0.1);
+}
+select { cursor: pointer; }
+
+
+/* =========================================
+   SECTION 9: Footer & Legal (Updated)
+   ========================================= */
+.footer-cta {
+    padding: var(--section-spacing) 0 0;
+    background: linear-gradient(to bottom, var(--bg-dark), var(--bg-darkest));
+    text-align: center;
+}
+
+.footer-content { margin-bottom: 100px; }
+.footer-headline { font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 50px; }
+
+.footer-legal {
+    border-top: 1px solid var(--border-color);
+    padding: 40px 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    background: #08080a; /* Almost black footer bottom */
+}
+
+.legal-links a {
+    margin: 0 10px;
+    color: var(--text-secondary);
+}
+.legal-links a:hover { color: var(--accent-purple); }
+
+
+/* =========================================
+   AI Chatbot Bubble (Fixed)
+   ========================================= */
+.ai-chatbot-bubble {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--accent-purple), #6200ea);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px var(--accent-purple-glow);
+    cursor: pointer;
+    z-index: 9999;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.ai-chatbot-bubble:hover { 
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 40px var(--accent-purple-glow);
+}
+
+
+/* =========================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================= */
+
+/* Tablet and smaller desktops */
+@media (max-width: 1024px) {
+    .hide-on-tablet { display: none; }
+    
+    /* Adjust Nav for tablet */
+    .nav-container { padding: 0 20px; }
+    .nav-tagline { display: none; } /* Hide tagline to make room */
+    .nav-left-placeholder, .nav-center, .nav-right { flex: 1; } /* Even distribution */
+    .nav-right { justify-content: flex-end; }
+
+    .hero-headline { font-size: 3.5rem; }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .hide-on-mobile { display: none; }
+
+    /* Stack layouts */
+    .split-layout, .grid-3-col, .grid-2-col, .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    /* Nav adjustments for mobile */
+    .navbar { padding: 10px 0; }
+    .nav-container { justify-content: center; }
+    .nav-left-placeholder, .nav-center { display: none; } /* Hide empty space and center on mobile */
+    .nav-right { flex: auto; justify-content: center; }
+    .nav-btn { padding: 8px 14px; font-size: 0.85rem; }
+
+    .nav-btn.btn-primary, .btn-primary.nav-btn {
+        background: linear-gradient(90deg, #7C4DFF 0%, #6200ea 100%);
+        color: white;
+        border: none;
+    }
+
+    /* Hero adjustments */
+    .hero-section { text-align: center; padding-top: 0; }
+    .hero-subhead { margin: 0 auto 40px; }
+    .hero-cta-group { justify-content: center; }
+    .hero-headline { font-size: 2.8rem; }
+    
+    /* Logo adjust */
+    .prominent-logo-header { padding: 30px 0 20px; }
+    .hero-logo-img { max-height: 70px; }
+
+    /* Table scroll helper */
+    .table-container {
+        box-shadow: none;
+        border: none;
+    }
+    .comparison-table th, .comparison-table td { padding: 15px; }
+    .feature-name { font-size: 1rem; }
+    .pain-point { font-size: 0.8rem; }
+
+    /* Form adjust */
+    .contact-form-container { padding: 30px 20px; }
+
+    /* Footer adjust */
+    .footer-headline { font-size: 2.2rem; }
+    .footer-legal { text-align: center; padding: 30px 20px; }
+}
+/* Global Reset and Base Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-darkest: #0a0a0c; /* Deep Space Black */
+    --bg-dark: #121214;    /* Dark Charcoal */
+    --bg-lighter: #1a1a1e; /* Slightly lighter contrast */
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b0; /* Soft Silver-Blue */
+    --accent-purple: #7C4DFF; /* Vibrant Purple */
+    --accent-purple-glow: rgba(124, 77, 255, 0.6);
+    --accent-silver: #e0e0e0;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --font-stack: 'Inter', system-ui, sans-serif;
+    --section-spacing: 100px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-darkest);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography Utilities */
+h1, h2, h3 {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+h1 { font-size: clamp(3rem, 5vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: 1.5rem; }
+p { color: var(--text-secondary); font-size: 1.1rem; }
+a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+
+/* ...rest of CSS omitted for brevity, but will be included in the actual file... */
