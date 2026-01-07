@@ -57,20 +57,23 @@ https://cmc-creator.github.io/NoxTitan/
 
 ## 📁 What Gets Deployed
 
-The workflow deploys these files to GitHub Pages:
-- ✅ `index.html` (main demo page)
+The workflow deploys these files to GitHub Pages (if they exist):
+- ✅ `index.html` (main demo page - **required**)
 - ✅ `demo-interactive.html`
 - ✅ `demo-noxtitan-final.html`
 - ✅ `demo-self-contained.html`
 - ✅ `demo-music.mp3`
-- ✅ `landing/` directory (if exists)
-- ✅ `demo/` directory (if exists)
+- ✅ `landing/` directory contents (available at `/landing/`)
+- ✅ `demo/` directory contents (available at `/demo/`)
 
-**Not deployed** (excluded to keep size small):
-- ❌ Large logo files (noxtitan-logo.mp4, noxtitan-logo.png)
+**Not deployed** (workflow only copies specific files):
+- ❌ Large logo files (noxtitan-logo.mp4, noxtitan-logo.png, logo-base64.txt)
 - ❌ Node modules
-- ❌ Source code
-- ❌ Build artifacts
+- ❌ Source code (`src/` directory)
+- ❌ Build artifacts (.next/, etc.)
+- ❌ Database files (prisma/dev.db)
+
+**Note:** The `demo/` directory has its own `index.html` accessible at `/demo/index.html`, while the root `index.html` serves as the main page at the root URL.
 
 ---
 
