@@ -25,11 +25,11 @@ A comprehensive employee scheduling application built with Next.js, featuring su
 - **Large, Intuitive Calendar Interface** - Beautiful calendar with day, week, and month views
 - **Employee Management** - Complete CRUD operations for managing team members
 - **Shift Scheduling** - Easy shift creation and assignment
-- **Drag-and-Drop** - Visual shift management (Gold/Platinum tiers)
-- **Time-Off Management** - Request and approve employee time off (Gold/Platinum tiers)
-- **Shift Swapping** - Employee-initiated shift trades (Gold/Platinum tiers)
-- **Availability Management** - Track employee availability (Platinum tier)
-- **Advanced Analytics** - Detailed reporting and insights (Platinum tier)
+- **Drag-and-Drop** - Visual shift management (Professional+ tiers)
+- **Time-Off Management** - Request and approve employee time off (Professional+ tiers)
+- **Shift Swapping** - Employee-initiated shift trades (Professional+ tiers)
+- **Availability Management** - Track employee availability (Enterprise+ tiers)
+- **Advanced Analytics** - Detailed reporting and insights (Enterprise+ tiers)
 
 ### 💎 Subscription Tiers
 
