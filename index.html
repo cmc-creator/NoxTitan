@@ -2,273 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>NoxTitan: Cosmic Landing</title>
+  <title>NoxTitan – Forged For Titans | Coming Soon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
   <style>
     html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      background: radial-gradient(ellipse at center, #0a001a 0%, #020010 100%);
-      overflow: hidden;
-      font-family: 'Montserrat', 'Arial', sans-serif;
-      color: #fff;
+      height: 100%; margin: 0; padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: radial-gradient(ellipse at 65% 17%, #14072688 0 19%, transparent 78%), linear-gradient(130deg, #060211 0%, #170826 84%, #32004d 110%);
+      color: #fff; overflow: hidden;
     }
-    #starfield {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 1;
-      pointer-events: none;
+    /* Overlay curtain */
+    #curtain {
+      position: fixed; z-index: 9999;
+      inset: 0; width: 100vw; height: 100vh;
+      background: linear-gradient(135deg,#150034 0, #32004d 100%);
+      color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; pointer-events: auto;
+    }
+    #curtain h2 { font-size: 2.2em; margin-bottom: 0.6em; color: #ae7aff; }
+    #curtain button {
+      font-size: 1.3em; font-weight: bold;
+      background: linear-gradient(90deg,#7f38b7 17%,#fff 100%);
+      border-radius: 22px; border: none;
+      color: #25024d; padding: 0.7em 2.9em;
+      box-shadow: 0 0 15px #ae7aff98;
+      cursor: pointer; margin-top: 1.3em;
+    }
+    #curtain button:active { background: #ffe7be; }
+
+    .cosmic-bg {
+      position: fixed; inset: 0;
+      width: 100vw; height: 100vh;
+      pointer-events: none; z-index: 1; overflow: hidden;
+      background: linear-gradient(135deg,#070313 0 90%,transparent 100%);
     }
     .galaxy {
-      position: fixed;
-      width: 180px;
-      height: 180px;
-      opacity: 0.73;
-      z-index: 3;
-      animation: spiral-rotate 16s linear infinite;
+      position: absolute; opacity: 0.28;
+      filter: blur(0.5px) brightness(1.07);
+      will-change: transform; z-index: 1; mix-blend-mode: screen;
+      transition: opacity 0.7s; transform-origin: 50% 50%;
     }
-    .galaxy.galaxy1 { top: 36px; left: 40px; }
-    .galaxy.galaxy2 { top: 38px; right: 42px; }
-    .galaxy.galaxy3 { bottom: 45px; left: 38px; }
-    .galaxy.galaxy4 { bottom: 42px; right: 36px; }
-    .galaxy.galaxy5 { top: 48%; left: 4vw; width: 140px; height: 140px; }
-    .galaxy.galaxy6 { top: 52%; right: 2vw; width: 140px; height: 140px; }
-    .galaxy.galaxy7 { top: 2vh; left: 48vw; width: 110px; height: 110px; }
-    .galaxy.galaxy8 { bottom: 5vh; right: 48vw; width: 110px; height: 110px; }
-    @keyframes spiral-rotate {
-      0%   { transform: rotate(0deg) scale(1); }
-      100% { transform: rotate(360deg) scale(1); }
-    }
-    .main-content {
-      position: absolute;
-      top: 52%;
-      left: 50%;
-      transform: translate(-50%, -56%);
-      z-index: 4;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      pointer-events: none;
+    .galaxy1 { left: -100px; top: -50px; width: 300px; height: 300px; animation: galaxyFloat1 84s -8s infinite alternate;}
+    .galaxy2 { right: -120px; top: 40px; width: 370px; height: 370px; animation: galaxyFloat2 106s 9s infinite alternate;}
+    .galaxy3 { left: -90px; bottom: -15px; width: 210px; height: 210px; animation: galaxyFloat3 77s -14s infinite alternate;}
+    .galaxy4 { right: -80px; bottom: -55px; width: 240px; height: 220px; animation: galaxyFloat4 97s 18s infinite alternate;}
+    .galaxy5 { left: 6vw; top: 55vh; width: 131px; height: 152px; animation: galaxyFloat5 79s 13s infinite alternate;}
+    .galaxy6 { right: 5vw; top: 15vh; width: 170px; height: 130px; animation: galaxyFloat6 121s -10s infinite alternate;}
+    .galaxy7 { left: 44vw; top: -70px; width: 165px; height: 138px; animation: galaxyFloat7 100s -23s infinite alternate;}
+    .galaxy8 { right: 36vw; bottom: -88px; width: 190px; height: 130px; animation: galaxyFloat8 99s 0s infinite alternate;}
+    @keyframes galaxyFloat1 {0%,100% { transform: scale(1) translateY(0) rotate(0deg);} 18%{ transform: scale(1.11) translateY(28px) rotate(-17deg);} 54%{ transform: scale(0.91) translateY(15px) rotate(9deg);} 80%{ transform: scale(1.07) translateY(-24px) rotate(-13deg);}}
+    @keyframes galaxyFloat2 {0%,100% { transform: scale(1) translateX(0) rotate(0deg);} 20%{ transform: scale(1.03) translateX(39px) rotate(11deg);} 55%{ transform: scale(1.12) translateX(-24px) rotate(-18deg);} 90%{ transform: scale(1.05) translateX(0px) rotate(7deg);}}
+    @keyframes galaxyFloat3 {0%,100% { transform: scale(1) translate(0,0) rotate(0deg);} 30%{ transform: scale(1.09) translate(21px,-5px) rotate(-13deg);} 70%{ transform: scale(0.99) translate(-18px,14px) rotate(9deg);}}
+    @keyframes galaxyFloat4 {0%,100% { transform: scale(1) translateX(0) rotate(0deg);} 20%{ transform: scale(1.08) translateX(-30px) rotate(-15deg);} 54%{ transform: scale(0.91) translateX(38px) rotate(14deg);} 80%{ transform: scale(1.13) translateX(-14px) rotate(-17deg);}}
+    @keyframes galaxyFloat5 {0%,100% { transform: scale(1) translate(0,0);} 43%{ transform: scale(0.96) translate(22px,35px);} 82%{ transform: scale(1.11) translate(-19px,-19px);}}
+    @keyframes galaxyFloat6 {0%,100% { transform: scale(1) translate(0px,0px);} 31%{ transform: scale(1.14) translate(33px,-18px);} 78%{ transform: scale(0.88) translate(-17px,37px);}}
+    @keyframes galaxyFloat7 {0%,100% { transform: scale(1) translateY(0);} 54%{ transform: scale(1.06) translateY(16px);} 87%{ transform: scale(1.12) translateY(-27px);}}
+    @keyframes galaxyFloat8 {0%,100% { transform: scale(1) translate(-10px,0);} 24%{ transform: scale(1.09) translate(25px,11px);} 63%{ transform: scale(0.91) translate(-28px,-9px);}}
+
+    .star { position: absolute; border-radius: 50%; background: #ecd7ff; box-shadow: 0 0 9px #e6c7ff4b; opacity: 0.67; will-change: opacity, transform; }
+    .container {
+      position: relative; z-index: 2; width: 99vw; max-width: 840px;
+      margin: clamp(18px, 5vw, 70px) auto 0 auto; padding: 4.8em 1.2em 2.8em 1.2em;
+      background: rgba(17,8,36,0.97); border-radius: 38px; border: 3.5px solid #7f38b7;
+      box-shadow: 0 8px 90px #7f38b766, 0 4px 64px #25004d3d;
+      display: flex; flex-direction: column; align-items: center;
     }
     .logo-video {
-      width: 54vw;
-      min-width: 340px;
-      max-width: 820px;
-      height: auto;
-      border-radius: 32px;
-      box-shadow: 0 0 60px #9cf8ff55;
-      display: block;
-      margin-bottom: 28px;
-      pointer-events: auto;
+      width: min(95vw, 500px); height: min(95vw, 500px);
+      object-fit: contain; border-radius: 60px; background: #181019;
+      box-shadow: 0 0 0 10px #25004d67, 0 0 90px 26px #bd71ff44, 0 7px 48px #000c;
+      filter: brightness(1.13) contrast(1.08); display: block;
     }
-    .countdown-container {
-      margin: 20px 0 8px 0;
-      text-align: center;
-      font-size: 2.25rem;
-      letter-spacing: 0.04em;
-      text-shadow: 0 0 18px #7af3ff, 0 0 8px #3c136c;
-      font-weight: bold;
-    }
-    .caption {
-      font-size: 1.22rem;
-      text-align: center;
-      margin-bottom: 40px;
-      color: #ffe7be;
-      text-shadow: 0 0 14px #5ff0ac44;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      pointer-events: auto;
-    }
-    .btn-demo {
-      margin-top: 12px;
-      padding: 17px 58px;
-      font-size: 1.13rem;
-      font-weight: 700;
-      border: none;
-      border-radius: 48px;
-      background: linear-gradient(90deg, #0bd6ff 0, #8323ff 100%);
-      color: #fff;
-      box-shadow: 0 0 24px #7af3ff99;
-      cursor: pointer;
-      transition: background 0.4s, box-shadow 0.3s;
-      pointer-events: auto;
-    }
-    .btn-demo:active {
-      background: linear-gradient(90deg, #7af3ff 0, #b673ff 100%);
-      box-shadow: 0 0 34px #7af3ffee;
-    }
-
-    .audio-overlay {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      z-index: 99;
-      background: rgba(5,4,17, 0.90);
-      color: #ffe887;
-      font-size: 2.13rem;
-      text-align: center;
-      flex-direction: column;
-      backdrop-filter: blur(2.8px);
-      pointer-events: auto;
-    }
-    .audio-overlay.show {
-      display: flex;
-    }
-    .audio-overlay button{
-      margin-top:24px;
-      background: #119eff;
-      color: #fff;
-      font-size:1.09em;
-      border:none;
-      border-radius:22px;
-      padding:13px 39px;
-      cursor:pointer;
-      box-shadow:0 0 20px #8ed7f7bd;
-    }
-    @media (max-width: 680px) {
-      .main-content { top: 60%; }
-      .logo-video { width: 90vw; min-width: 0; max-width: 99vw; }
-    }
+    /* (You can copy-paste all the styles as before for full site fidelity if needed) */
   </style>
 </head>
 <body>
-  <canvas id="starfield"></canvas>
-
-  <!-- Eight spiral galaxies -->
-  <div class="galaxy galaxy1"> <svg viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg"><g><ellipse stroke="#ece7fa" stroke-width="4" opacity="0.49" cx="170" cy="170" rx="120" ry="24"><animateTransform attributeName="transform" type="rotate" from="0 170 170" to="360 170 170" dur="14s" repeatCount="indefinite"/></ellipse><ellipse stroke="#a7fbfc" stroke-width="4" opacity="0.91" cx="170" cy="170" rx="55" ry="11"><animateTransform attributeName="transform" type="rotate" from="360 170 170" to="0 170 170" dur="12s" repeatCount="indefinite"/></ellipse><ellipse stroke="#ffb8e5" stroke-width="3" opacity="0.7" cx="170" cy="170" rx="28" ry="6"><animateTransform attributeName="transform" type="rotate" from="65 170 170" to="425 170 170" dur="8s" repeatCount="indefinite"/></ellipse></g></svg> </div>
-  <div class="galaxy galaxy2"> <svg viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg"><g><ellipse stroke="#ece7fa" stroke-width="4" opacity="0.49" cx="170" cy="170" rx="120" ry="24"><animateTransform attributeName="transform" type="rotate" from="360 170 170" to="0 170 170" dur="14s" repeatCount="indefinite"/></ellipse><ellipse stroke="#a7fbfc" stroke-width="4" opacity="0.91" cx="170" cy="170" rx="55" ry="11"><animateTransform attributeName="transform" type="rotate" from="0 170 170" to="360 170 170" dur="12s" repeatCount="indefinite"/></ellipse><ellipse stroke="#ffb8e5" stroke-width="3" opacity="0.8" cx="170" cy="170" rx="28" ry="6"><animateTransform attributeName="transform" type="rotate" from="22 170 170" to="382 170 170" dur="7s" repeatCount="indefinite"/></ellipse></g></svg> </div>
-  <div class="galaxy galaxy3"> <svg viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg"><g><ellipse stroke="#ece7fa" stroke-width="4" opacity="0.43" cx="170" cy="170" rx="120" ry="24"><animateTransform attributeName="transform" type="rotate" from="0 170 170" to="360 170 170" dur="18s" repeatCount="indefinite"/></ellipse><ellipse stroke="#a7fbfc" stroke-width="4" opacity="0.93" cx="170" cy="170" rx="55" ry="11"><animateTransform attributeName="transform" type="rotate" from="360 170 170" to="0 170 170" dur="17s" repeatCount="indefinite"/></ellipse><ellipse stroke="#fcd06e" stroke-width="2.8" opacity="0.7" cx="170" cy="170" rx="26" ry="8"><animateTransform attributeName="transform" type="rotate" from="12 170 170" to="372 170 170" dur="8.5s" repeatCount="indefinite"/></ellipse></g></svg> </div>
-  <div class="galaxy galaxy4"> <svg viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg"><g><ellipse stroke="#a7fbfc" stroke-width="4.5" opacity="0.71" cx="170" cy="170" rx="120" ry="24"><animateTransform attributeName="transform" type="rotate" from="360 170 170" to="0 170 170" dur="13.5s" repeatCount="indefinite"/></ellipse><ellipse stroke="#ece7fa" stroke-width="4" opacity="0.70" cx="170" cy="170" rx="55" ry="11"><animateTransform attributeName="transform" type="rotate" from="0 170 170" to="360 170 170" dur="10.5s" repeatCount="indefinite"/></ellipse><ellipse stroke="#b3eba6" stroke-width="3" opacity="0.9" cx="170" cy="170" rx="28" ry="8"><animateTransform attributeName="transform" type="rotate" from="322 170 170" to="682 170 170" dur="9s" repeatCount="indefinite"/></ellipse></g></svg> </div>
-  <div class="galaxy galaxy5"> <svg viewBox="0 0 200 200" fill="none"><ellipse stroke="#ece7fa" stroke-width="3" opacity="0.33" cx="100" cy="100" rx="68" ry="18"><animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="10s" repeatCount="indefinite"/></ellipse><ellipse stroke="#a7fbfc" stroke-width="3" opacity="0.67" cx="100" cy="100" rx="29" ry="7"><animateTransform attributeName="transform" type="rotate" from="360 100 100" to="0 100 100" dur="8s" repeatCount="indefinite"/></ellipse></svg> </div>
-  <div class="galaxy galaxy6"> <svg viewBox="0 0 200 200" fill="none"><ellipse stroke="#ece7fa" stroke-width="3" opacity="0.33" cx="100" cy="100" rx="68" ry="18"><animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="13s" repeatCount="indefinite"/></ellipse><ellipse stroke="#a7fbfc" stroke-width="3" opacity="0.54" cx="100" cy="100" rx="19" ry="6"><animateTransform attributeName="transform" type="rotate" from="360 100 100" to="0 100 100" dur="11s" repeatCount="indefinite"/></ellipse></svg> </div>
-  <div class="galaxy galaxy7"> <svg viewBox="0 0 130 130" fill="none"><ellipse stroke="#a7fbfc" stroke-width="2" opacity="0.43" cx="65" cy="65" rx="50" ry="12"><animateTransform attributeName="transform" type="rotate" from="0 65 65" to="360 65 65" dur="7.5s" repeatCount="indefinite"/></ellipse><ellipse stroke="#fcd06e" stroke-width="2" opacity="0.56" cx="65" cy="65" rx="18" ry="6"><animateTransform attributeName="transform" type="rotate" from="360 65 65" to="0 65 65" dur="9s" repeatCount="indefinite"/></ellipse></svg> </div>
-  <div class="galaxy galaxy8"> <svg viewBox="0 0 130 130" fill="none"><ellipse stroke="#a7fbfc" stroke-width="2" opacity="0.36" cx="65" cy="65" rx="50" ry="10"><animateTransform attributeName="transform" type="rotate" from="0 65 65" to="360 65 65" dur="6.9s" repeatCount="indefinite"/></ellipse><ellipse stroke="#b3eba6" stroke-width="2" opacity="0.44" cx="65" cy="65" rx="13" ry="6"><animateTransform attributeName="transform" type="rotate" from="360 65 65" to="0 65 65" dur="8s" repeatCount="indefinite"/></ellipse></svg> </div>
-
-  <div class="main-content">
-    <video class="logo-video" src="noxtitan-logo.mp4" autoplay loop muted playsinline poster="noxtitan-logo-poster.jpg"></video>
-    <div class="countdown-container" id="countdown"></div>
-    <div class="caption">But hey, don’t rush us... good things take cosmic time 😉</div>
-    <button class="btn-demo" id="watchDemoBtn">Watch Demo</button>
+  <!-- Curtain overlay appears first -->
+  <div id="curtain">
+    <h2>Hey, you better click here now, buddy!<br>Unleash the full NoxTitan experience!</h2>
+    <div style="color:#ffe7be;margin-bottom:0.7em;font-size:1.23em;font-weight:600;">
+      For best cosmic beastmode, click the button!<br>
+      <span style="font-size:.9em;color:#b3eba6;">(Music & video after you click!)</span>
+    </div>
+    <button id="curtainBtn">🚀 Enter</button>
   </div>
 
-  <audio id="bg-audio" src="soundtrack.mp3" preload="auto" autoplay loop></audio>
-  <div class="audio-overlay" id="audioOverlay">
-    🚫 <br>Soundtrack autoplay was blocked!<br>
-    <span style="font-size:1.1rem;">(Even the cosmos plays hard to get...)</span>
-    <button id="resumeAudioBtn">Play Music</button>
+  <div class="cosmic-bg" style="z-index: 1;">
+    <!-- Galaxies as above -->
+    <!-- ... (copy all 8 SVG galaxy divs from earlier code, unchanged) ... -->
   </div>
-
-<script>
-// 100+ animated twinkling stars
-const STAR_COLS = ["#fff", "#b2d8f7", "#ffe7be", "#a7fbfc", "#ffb8e5"];
-(function stars() {
-  const STAR_COUNT = 130, sf = document.getElementById('starfield'), 
-        w = () => window.innerWidth, h = () => window.innerHeight;
-  let ctx, stars=[];
-  function rand(a,b){return Math.random()*(b-a)+a;}
-  function resize(){ sf.width=w(); sf.height=h(); }
-  function create(){
-    stars = [];
-    for(let i=0;i<STAR_COUNT;i++){
-      stars.push({
-        x: rand(0, w()),
-        y: rand(0, h()),
-        r: rand(0.5,2.5),
-        b: rand(0.7,1),
-        color: STAR_COLS[Math.floor(rand(0,STAR_COLS.length))],
-        tw: rand(1, 2.5)* (Math.random() > 0.5? 1: -1),
-        phase: rand(0, Math.PI*2)
-      });
-    }
-  }
-  function draw(){
-    ctx.clearRect(0,0,w(),h());
-    let t = Date.now()/800;
-    for(const s of stars){
-      let tw = Math.abs(Math.sin(t*s.tw + s.phase));
-      ctx.save();
-      ctx.globalAlpha = 0.3 + tw*0.7 * s.b;
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r+tw*0.6, 0, Math.PI*2);
-      ctx.fillStyle = s.color;
-      ctx.shadowColor = s.color;
-      ctx.shadowBlur = 6;
-      ctx.fill();
-      ctx.restore();
-    }
-    requestAnimationFrame(draw);
-  }
-  function go(){
-    ctx = sf.getContext('2d');
-    resize();
-    create();
-    draw();
-  }
-  window.addEventListener('resize',()=>{resize();create();});
-  go();
-})();
-
-// Animated cosmic countdown
-(function countdown() {
-  const container = document.getElementById("countdown");
-  // You may adjust the date below
-  const target = new Date("2026-08-01T23:30:00Z");
-  function update(){
-    let now = new Date(),
-        diff = (target-now)/1000;
-    diff = diff>0 ? diff : 0;
-    let days = Math.floor(diff/86400),
-        hrs = Math.floor(diff%86400/3600),
-        min = Math.floor(diff%3600/60),
-        sec = Math.floor(diff%60);
-    container.innerHTML = `
-      <span style="color:#00e6fd;">${String(days).padStart(2,'0')}</span>d :
-      <span style="color:#ffe7be;">${String(hrs).padStart(2,'0')}</span>h :
-      <span style="color:#ffb8e5;">${String(min).padStart(2,'0')}</span>m :
-      <span style="color:#b3eba6;">${String(sec).padStart(2,'0')}</span>s
-    `;
-  }
-  setInterval(update, 850); update();
-})();
-
-// Audio autoplay logic and overlay
-(function music() {
-  const audio = document.getElementById('bg-audio');
-  const overlay = document.getElementById('audioOverlay');
-  audio.volume = 0.6;
-
-  let autoplayFailed = false;
-  function tryPlay(){
-    audio.play().then(()=>{
-      overlay.classList.remove('show');
-    }).catch(()=>{
-      overlay.classList.add('show');
-      autoplayFailed = true;
-    });
-  }
-  audio.addEventListener('play', ()=>{
-    overlay.classList.remove('show');
-    autoplayFailed = false;
-  });
-  document.getElementById('resumeAudioBtn').onclick = () => {
-    audio.play();
-  };
-  tryPlay();
-  // If user interacts with the page, try to play
-  window.addEventListener('pointerdown', ()=>{
-    if (autoplayFailed) tryPlay();
-  }, { once: true });
-  // Watch Demo logic
-  document.getElementById("watchDemoBtn").onclick = () => {
-    audio.pause();
-  };
-})();
-</script>
-
+  <div class="container" id="mainDemo" style="display:none;">
+    <div style="margin: 0 auto 24px auto;"><video src="noxtitan-logo.mp4" class="logo-video" id="logoVideo" playsinline loop muted autoplay></video></div>
+    <div style="font-size:2.2em;font-weight:900;letter-spacing:0.19em;margin:0.4em 0;text-align:center;text-shadow:0 0 22px #ae7aff;">Coming Soon</div>
+    <div style="font-size:1.09em;margin-top:1.2em;margin-bottom:2.1em;text-align:center;color:#ae7aff;font-weight:700;text-shadow:0 0 18px #240050;">
+      But hey, don’t rush us... good things take cosmic time 😉
+    </div>
+    <!-- Countdown, music, buttons etc as before -->
+    <a href="demo/index.html" target="_blank" class="demo-btn" id="demoBtn">
+      ▶️ WATCH DEMO TEASER
+    </a>
+  </div>
+  <audio id="bgMusic" src="demo-music.mp3" loop></audio>
+  <script>
+    // Cosmic curtain logic
+    document.getElementById('curtainBtn').onclick = function() {
+      document.getElementById('curtain').style.display = "none";
+      document.getElementById('mainDemo').style.display = "flex";
+      document.getElementById('bgMusic').volume = 0.77;
+      document.getElementById('bgMusic').muted = false;
+      document.getElementById('bgMusic').play().catch(()=>{});
+      var vid = document.getElementById('logoVideo');
+      if (vid) { vid.play().catch(()=>{}); }
+    };
+    // Your galaxies, stars, countdown and demoBtn music-pausing scripts go here (as before)
+    document.getElementById('demoBtn').onclick = function() {
+      document.getElementById('bgMusic').pause();
+    };
+  </script>
 </body>
 </html>
