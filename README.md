@@ -11,7 +11,13 @@ NoxTitan is a comprehensive business management platform forged for titans—cov
 
 ---
 
-A comprehensive employee scheduling application built with Next.js, featuring subscription tiers (Free, Gold, Platinum) and a beautiful, user-friendly calendar interface.
+## 🎭 Live Demo
+
+**Experience the full interactive demo here:** [https://cmc-creator.github.io/NoxTitan/](https://cmc-creator.github.io/NoxTitan/)
+
+---
+
+A comprehensive employee scheduling application built with Next.js, featuring subscription tiers (VIP, Professional, Enterprise, Titan) and a beautiful, user-friendly calendar interface.
 
 ## Features
 
