@@ -6,3 +6,8 @@ node_modules
 
 # GitHub Pages build directory
 _site
+
+# Next.js build files
+.next
+.next/
+*.next
