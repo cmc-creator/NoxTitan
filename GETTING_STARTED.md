@@ -2,23 +2,36 @@
 
 This guide will help you access and use NoxTitan, whether you want to see a quick demo or run the full application.
 
-## 🎯 Choose Your Path
+## ⚠️ IMPORTANT: Understanding What's Available
 
-### Path 1: Quick Demo (No Installation) ⚡
-**Best for:** Quick preview, sharing with others, first-time visitors
+**The full NoxTitan application is NOT available as a live website.** Here's why:
 
-**What you get:** Interactive presentation showcasing NoxTitan's features
+- **GitHub Pages (https://cmc-creator.github.io/NoxTitan/)** = Only shows a **presentation/slideshow** of features
+- **The actual working program** = Must be **run on your own computer** (requires Node.js and setup)
 
-**How to access:**
-1. Click here: **[https://cmc-creator.github.io/NoxTitan/](https://cmc-creator.github.io/NoxTitan/)**
-2. That's it! The demo loads instantly in your browser
+If you visited the GitHub Pages link and only saw a demo presentation, that's expected! To use the actual working program with calendar, employees, database, etc., you need to follow Path 2 below.
 
 ---
 
-### Path 2: Full Application (Development Setup) 💻
-**Best for:** Development, testing all features, full functionality
+## 🎯 Choose Your Path
 
-**What you get:** Complete NoxTitan application with database, scheduling, employee management, and all features
+### Path 1: Presentation Demo (No Installation) ⚡
+**Best for:** Quick preview, sharing with others, first-time visitors
+
+**What you get:** A slideshow presentation showcasing NoxTitan's features (NOT the working program)
+
+**How to access:**
+1. Click here: **[https://cmc-creator.github.io/NoxTitan/](https://cmc-creator.github.io/NoxTitan/)**
+2. That's it! The demo presentation loads instantly in your browser
+
+**⚠️ This is just a presentation.** To use the actual working application, see Path 2 below.
+
+---
+
+### Path 2: Full Application (Local Setup) 💻 ⭐ *This is the actual program*
+**Best for:** Using NoxTitan for real work, testing all features, development
+
+**What you get:** The complete working NoxTitan application with database, scheduling, employee management, and all features
 
 ## Prerequisites
 Before you start, make sure you have:
@@ -127,15 +140,21 @@ npm run db:reset
 
 ## What's the Difference?
 
-| Feature | Live Demo | Full Application |
-|---------|-----------|------------------|
-| Access Method | Web browser (any device) | Local setup required |
-| Setup Time | Instant | 5-10 minutes |
-| Features | Presentation/showcase | Fully functional |
-| Database | No | Yes (SQLite) |
-| Can Edit Data | No | Yes |
-| Offline Use | Yes (some versions) | Yes (after setup) |
-| Best For | Quick preview, sharing | Development, testing |
+| Feature | GitHub Pages Demo | Full Application (The Actual Program) |
+|---------|-------------------|---------------------------------------|
+| **What is it?** | Slideshow presentation | Working web application |
+| **Access Method** | Web browser (any device) | Must run on your computer |
+| **Setup Time** | Instant | 5-10 minutes |
+| **Features** | Presentation/showcase only | Fully functional with all features |
+| **Database** | No | Yes (SQLite) |
+| **Can Add Employees** | No | Yes |
+| **Can Create Shifts** | No | Yes |
+| **Can Edit Data** | No | Yes |
+| **Interactive Calendar** | No (just images) | Yes (drag & drop) |
+| **URL** | https://cmc-creator.github.io/NoxTitan/ | http://localhost:3000 |
+| **Best For** | Quick preview, sharing | Actual use, development, testing |
+
+**Bottom line:** The GitHub Pages demo is like watching a video of the program. To actually USE the program, you must run it locally on your computer.
 
 ## Next Steps
 

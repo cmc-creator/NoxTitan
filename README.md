@@ -13,16 +13,20 @@ NoxTitan is a comprehensive business management platform forged for titans—cov
 
 ## 📍 Where to Access NoxTitan
 
-### 🎭 Option 1: View the Live Demo (No Setup Required)
-**→ [Launch Interactive Demo](https://cmc-creator.github.io/NoxTitan/)**
+> **⚠️ IMPORTANT**: The full NoxTitan application is **NOT available online**. It must be run locally on your computer. The GitHub Pages link below shows only a presentation demo, not the actual working program.
 
-This is a presentation showcase of NoxTitan's features, perfect for:
+### 🎭 Option 1: View the Presentation Demo (No Setup Required)
+**→ [Launch Demo Presentation](https://cmc-creator.github.io/NoxTitan/)**
+
+**This is NOT the actual program** - it's a slideshow presentation that showcases NoxTitan's features. Perfect for:
 - Getting a quick overview of capabilities
 - Sharing with stakeholders
 - Viewing from any device without installation
 
-### 💻 Option 2: Run the Full Application Locally (Development Setup)
-To access the **full working NoxTitan application** with all features:
+**To access the actual working program**, see Option 2 below.
+
+### 💻 Option 2: Run the Full Application Locally ⭐ *This is the actual program*
+To access the **full working NoxTitan application** with all features, you must run it on your own computer:
 
 1. **Prerequisites:** Node.js 18+ and npm
 2. **Install dependencies:**
