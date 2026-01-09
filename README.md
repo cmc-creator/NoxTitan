@@ -140,7 +140,7 @@ npm run dev
 ## Project Structure
 
 ```
-scheduler/
+NoxTitan/
 ├── src/
 │   ├── app/
 │   │   ├── api/              # API routes
