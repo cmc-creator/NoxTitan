@@ -11,9 +11,47 @@ NoxTitan is a comprehensive business management platform forged for titans—cov
 
 ---
 
-## 🎭 Live Demo
+## 📍 Where to Access NoxTitan
 
-**Experience the full interactive demo here:** [https://cmc-creator.github.io/NoxTitan/](https://cmc-creator.github.io/NoxTitan/)
+> **⚠️ IMPORTANT**: The full NoxTitan application is **NOT available online**. It must be run locally on your computer. The GitHub Pages link below shows only a presentation demo, not the actual working program.
+
+### 🎭 Option 1: View the Presentation Demo (No Setup Required)
+**→ [Launch Demo Presentation](https://cmc-creator.github.io/NoxTitan/)**
+
+**This is NOT the actual program** - it's a slideshow presentation that showcases NoxTitan's features. Perfect for:
+- Getting a quick overview of capabilities
+- Sharing with stakeholders
+- Viewing from any device without installation
+
+**To access the actual working program**, see Option 2 below.
+
+### 💻 Option 2: Run the Full Application Locally ⭐ *This is the actual program*
+To access the **full working NoxTitan application** with all features, you must run it on your own computer:
+
+1. **Prerequisites:** Node.js 18+ and npm
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Set up the database:**
+   ```bash
+   npx prisma generate
+   npx prisma migrate dev --name init
+   ```
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+5. **Access the application:**
+   Open [http://localhost:3000](http://localhost:3000) in your browser
+
+The full application includes:
+- ✅ Interactive calendar with drag-and-drop
+- ✅ Employee management system
+- ✅ Time-off requests and approvals
+- ✅ Dashboard with analytics
+- ✅ All subscription tier features
+- ✅ Complete database functionality
 
 ---
 
@@ -80,41 +118,29 @@ A comprehensive employee scheduling application built with Next.js, featuring su
 
 ## Getting Started
 
-### Prerequisites
+👉 **[See detailed setup guide: GETTING_STARTED.md](GETTING_STARTED.md)**
 
-- Node.js 18+ installed on your system
-- npm, yarn, or pnpm package manager
+For detailed setup instructions, see **[Where to Access NoxTitan](#-where-to-access-noxtitan)** above.
 
-### Installation
+**Quick Commands:**
+```bash
+# Install dependencies
+npm install
 
-1. **Clone or navigate to the project directory:**
-   ```bash
-   cd scheduler
-   ```
+# Set up database
+npx prisma generate
+npx prisma migrate dev --name init
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+# Start development server
+npm run dev
 
-3. **Set up the database:**
-   ```bash
-   npx prisma generate
-   npx prisma migrate dev --name init
-   ```
-
-4. **Run the development server:**
-   ```bash
-   npm run dev
-   ```
-
-5. **Open your browser:**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+# Access at http://localhost:3000
+```
 
 ## Project Structure
 
 ```
-scheduler/
+NoxTitan/
 ├── src/
 │   ├── app/
 │   │   ├── api/              # API routes
