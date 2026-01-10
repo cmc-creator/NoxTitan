@@ -1,22 +1,31 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { signIn } from 'next-auth/react';
 import { Calendar, Mail, Lock, User, Phone, AlertCircle, UserPlus } from 'lucide-react';
 
 export default function SignupPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const isVIP = searchParams.get('vip') === 'true';
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     confirmPassword: '',
-    tier: 'PROFESSIONAL',
+    tier: isVIP ? 'TITAN' : 'PROFESSIONAL',
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (isVIP) {
+      setFormData(prev => ({ ...prev, tier: 'TITAN' }));
+    }
+  }, [isVIP]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
@@ -150,19 +159,28 @@ export default function SignupPage() {
               <label className="block text-sm font-semibold text-slate-300 mb-2">
                 Choose Your Plan *
               </label>
-              <select
-                name="tier"
-                value={formData.tier}
-                onChange={handleChange}
-                className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
-              >
-                <option value="PROFESSIONAL">Professional - $499/mo - Up to 50 employees</option>
-                <option value="ENTERPRISE">Enterprise - $1,499/mo - Up to 250 employees + AI features</option>
-                <option value="TITAN">Titan - $2,999/mo - Unlimited employees, white-glove service</option>
-              </select>
-              <p className="text-xs text-slate-400 mt-2">
-                Have a VIP code? Enter it after signup for complimentary access!
-              </p>
+              {isVIP ? (
+                <div className="w-full px-4 py-3 bg-gradient-to-br from-yellow-900/50 to-amber-900/50 border-2 border-yellow-600/40 rounded-lg">
+                  <p className="text-yellow-200 font-bold text-lg">💎 VIP Access - TITAN Plan</p>
+                  <p className="text-yellow-300 text-sm mt-1">Complimentary access • All features unlocked</p>
+                </div>
+              ) : (
+                <select
+                  name="tier"
+                  value={formData.tier}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                >
+                  <option value="PROFESSIONAL">Professional - $499/mo - Up to 50 employees</option>
+                  <option value="ENTERPRISE">Enterprise - $1,499/mo - Up to 250 employees + AI features</option>
+                  <option value="TITAN">Titan - $2,999/mo - Unlimited employees, white-glove service</option>
+                </select>
+              )}
+              {!isVIP && (
+                <p className="text-xs text-slate-400 mt-2">
+                  Have a VIP code? Contact us for complimentary access!
+                </p>
+              )}
             </div>
 
             {/* Password Fields */}

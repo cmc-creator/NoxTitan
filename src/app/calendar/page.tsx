@@ -89,6 +89,35 @@ export default function CalendarPage() {
         <ThemeCustomizer />
       </div>
 
+      {/* Finance Metrics Dashboard */}
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 print:hidden flex-shrink-0">
+        <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-2 border-green-600/40 rounded-xl p-4 shadow-lg">
+          <p className="text-green-200 text-sm font-semibold mb-1">Budget Hours</p>
+          <p className="text-3xl font-bold text-white">2,080</p>
+          <p className="text-xs text-green-300 mt-1">This Week</p>
+        </div>
+        <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border-2 border-blue-600/40 rounded-xl p-4 shadow-lg">
+          <p className="text-blue-200 text-sm font-semibold mb-1">Used Hours</p>
+          <p className="text-3xl font-bold text-white">1,847</p>
+          <p className="text-xs text-blue-300 mt-1">88.8% Utilized</p>
+        </div>
+        <div className="bg-gradient-to-br from-purple-900/50 to-violet-900/50 border-2 border-purple-600/40 rounded-xl p-4 shadow-lg">
+          <p className="text-purple-200 text-sm font-semibold mb-1">FTE Count</p>
+          <p className="text-3xl font-bold text-white">52.3</p>
+          <p className="text-xs text-purple-300 mt-1">Full-Time Equivalent</p>
+        </div>
+        <div className="bg-gradient-to-br from-yellow-900/50 to-amber-900/50 border-2 border-yellow-600/40 rounded-xl p-4 shadow-lg">
+          <p className="text-yellow-200 text-sm font-semibold mb-1">EPOB</p>
+          <p className="text-3xl font-bold text-white">4.2</p>
+          <p className="text-xs text-yellow-300 mt-1">Employees/Occupied Bed</p>
+        </div>
+        <div className="bg-gradient-to-br from-red-900/50 to-rose-900/50 border-2 border-red-600/40 rounded-xl p-4 shadow-lg">
+          <p className="text-red-200 text-sm font-semibold mb-1">Labor Cost</p>
+          <p className="text-3xl font-bold text-white">$87.5K</p>
+          <p className="text-xs text-red-300 mt-1">Weekly Total</p>
+        </div>
+      </div>
+
       <div className="flex-1 overflow-auto bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 border border-slate-700 shadow-2xl min-h-0">
         <InteractiveCalendar showSettings={showSettings} setShowSettings={setShowSettings} />
       </div>

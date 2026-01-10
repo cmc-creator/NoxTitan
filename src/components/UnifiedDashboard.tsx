@@ -17,8 +17,16 @@ export default function UnifiedDashboard() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Unified Command Center</h1>
-          <p className="text-gray-600">Real-time data from all systems working in concert</p>
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-4xl font-bold text-gray-900 mb-2">Command Center</h1>
+              <p className="text-gray-600">Real-time business intelligence and operations hub</p>
+            </div>
+            <div className="px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-violet-900/50 border-2 border-purple-600/40 shadow-lg">
+              <p className="text-xs text-purple-200 mb-1">Current Plan</p>
+              <p className="text-2xl font-bold text-white">{typeof window !== 'undefined' && localStorage.getItem('tier') || 'PROFESSIONAL'}</p>
+            </div>
+          </div>
         </div>
 
         {/* Notifications Banner */}

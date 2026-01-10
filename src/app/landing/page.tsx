@@ -53,8 +53,7 @@ export default function LandingPage() {
           className="h-20 md:h-28 w-auto mb-3 object-contain"
           style={{
             filter: 'drop-shadow(0px 5px 15px rgba(0,0,0,0.9))',
-            mixBlendMode: 'normal',
-            imageRendering: 'high-quality'
+            mixBlendMode: 'normal'
           }}
         />
         <span className="text-base md:text-lg font-bold uppercase text-center tracking-widest" style={{
@@ -106,7 +105,10 @@ export default function LandingPage() {
             Run Your Entire Business in One Place.
           </h1>
           <p className="mt-4 text-lg md:text-2xl text-purple-200 text-center max-w-2xl animate-fade-in text-pop">
-            Stop juggling 15 different apps. Manage your employees, payroll, scheduling, compliance, and operations from a single powerful platform.
+            Stop juggling 15 different apps.
+          </p>
+          <p className="mt-2 text-lg md:text-2xl text-purple-200 text-center max-w-2xl animate-fade-in text-pop">
+            Manage your employees, payroll, scheduling, compliance, and operations from a single powerful platform.
           </p>
           {/* Removed duplicate action buttons below tagline */}
         </div>
@@ -265,7 +267,7 @@ export default function LandingPage() {
       <section id="comparison" className="w-full flex flex-col items-center justify-center py-20">
         <div className="w-full max-w-6xl mx-auto flex flex-col items-center px-4">
           <h2 className="text-4xl md:text-5xl font-extrabold text-center text-white mb-2 animate-fade-in">
-            Stop Bleeding Money on Multiple Subscriptions
+            Stop Bleeding Money on<br />Multiple Subscriptions
           </h2>
           <p className="text-lg md:text-xl text-purple-200 text-center mb-4 animate-fade-in max-w-3xl">
             Replace 8+ expensive systems with one platform. Save $50K-$200K+ annually.
