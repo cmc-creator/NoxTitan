@@ -47,43 +47,43 @@ export default function AIAssistant() {
   const [showSuggestions, setShowSuggestions] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Sample conversation starters
+  // Sales-focused conversation starters
   const suggestions: Suggestion[] = [
     {
       id: '1',
-      title: 'Overtime Alert',
-      description: 'Sarah Johnson is approaching 40 hours this week',
-      icon: <Clock className="w-5 h-5" />,
-      action: 'Review schedule',
+      title: 'Product Features',
+      description: 'Learn about scheduling, payroll, and compliance tools',
+      icon: <Sparkles className="w-5 h-5" />,
+      action: 'Tell me more',
       priority: 'high',
-      category: 'scheduling'
+      category: 'general'
     },
     {
       id: '2',
-      title: 'New OSHA Update',
-      description: 'Updated safety training requirements for healthcare',
-      icon: <Shield className="w-5 h-5" />,
-      action: 'Learn more',
+      title: 'Request a Demo',
+      description: 'See NoxTitan in action with a personalized demo',
+      icon: <Calendar className="w-5 h-5" />,
+      action: 'Schedule demo',
       priority: 'high',
-      category: 'compliance'
+      category: 'general'
     },
     {
       id: '3',
-      title: 'Scheduling Optimization',
-      description: 'I found a way to reduce labor costs by 8% this month',
-      icon: <TrendingUp className="w-5 h-5" />,
-      action: 'Show me',
+      title: 'Pricing Information',
+      description: 'Find the perfect plan for your business size',
+      icon: <DollarSign className="w-5 h-5" />,
+      action: 'View pricing',
       priority: 'medium',
-      category: 'optimization'
+      category: 'general'
     },
     {
       id: '4',
-      title: 'Break Law Reminder',
-      description: 'California requires meal breaks after 5 hours',
-      icon: <AlertCircle className="w-5 h-5" />,
-      action: 'Check compliance',
+      title: 'Contact Sales',
+      description: 'Speak with our team about your specific needs',
+      icon: <Users className="w-5 h-5" />,
+      action: 'Get in touch',
       priority: 'medium',
-      category: 'compliance'
+      category: 'general'
     },
   ];
 
@@ -107,7 +107,7 @@ export default function AIAssistant() {
       if (messages.length === 0) {
         setTimeout(() => {
           addAIMessage(
-            "Hey there! 👋 I'm TeamPulse AI, your friendly scheduling and compliance assistant. I'm constantly learning the latest labor laws, industry regulations, and best practices to help you stay compliant and optimize your workforce.\n\nHow can I help you today?",
+            "👋 Welcome to NoxTitan! I'm here to help you learn about our all-in-one business management platform.\n\n💼 I can answer questions about:\n• Features & capabilities\n• Pricing & plans\n• Scheduling a demo\n• Getting started\n\nWhat would you like to know?",
             'general'
           );
         }, 500);
@@ -157,32 +157,33 @@ export default function AIAssistant() {
     let category: Message['category'] = 'general';
     let confidence = 0.95;
 
-    // Check for specific topics
-    if (lowerMessage.includes('overtime') || lowerMessage.includes('hours')) {
-      response = "Great question about overtime! 📊\n\nBased on current federal law (FLSA), non-exempt employees must receive 1.5x their regular rate for hours worked over 40 in a workweek. However, some states have stricter rules:\n\n• California: Overtime after 8 hours/day OR 40 hours/week\n• Colorado: Overtime after 12 hours/day OR 40 hours/week\n• Nevada: Overtime after 8 hours/day if earning less than 1.5x minimum wage\n\nI'm monitoring Sarah Johnson's schedule and she's currently at 38 hours this week. Would you like me to suggest schedule adjustments to avoid overtime?\n\n(Updated: December 2025 based on latest DOL guidelines)";
-      category = 'compliance';
-    } else if (lowerMessage.includes('break') || lowerMessage.includes('meal') || lowerMessage.includes('rest')) {
-      response = "Let me help you with break requirements! ☕\n\nBreak laws vary significantly by state. Here's what I know:\n\n**California:** \n• 30-min meal break after 5 hours (can waive if shift ≤ 6 hrs)\n• 10-min paid rest break per 4 hours worked\n\n**Federal Law:**\n• Breaks under 20 minutes must be paid\n• Meal breaks 30+ minutes can be unpaid\n\nI've analyzed your current schedules and found 3 shifts this week that may need break adjustments. Want me to show you?\n\nBy the way, why did the coffee file a police report? It got mugged! ☕😄";
-      category = 'compliance';
-    } else if (lowerMessage.includes('optimize') || lowerMessage.includes('save') || lowerMessage.includes('cost')) {
-      response = "I love helping with optimization! 💡\n\nI've analyzed your scheduling patterns and found some opportunities:\n\n1. **Shift Timing** - Moving 3 employees to different shifts could reduce overlap by 12 hours/week\n2. **Cross-Training** - Training 2 staff members in multiple roles could save ~$2,400/month\n3. **Peak Coverage** - Your busiest hours (2-5 PM) are currently understaffed while mornings are overstaffed\n\nImplementing these changes could reduce labor costs by approximately 8-12% without impacting service quality. Would you like me to create a detailed optimization plan?";
-      category = 'optimization';
-    } else if (lowerMessage.includes('law') || lowerMessage.includes('legal') || lowerMessage.includes('regulation')) {
-      response = "I stay up-to-date on all the latest labor laws! 📚\n\nMy knowledge base is continuously updated with:\n• Federal DOL regulations (FLSA, FMLA, ADA)\n• State-specific labor laws for all 50 states\n• Industry standards (OSHA, Joint Commission, etc.)\n• Recent court decisions affecting employment\n\nLast update: January 1, 2026\n\nWhat specific regulation or law can I help you understand? I can explain it in plain English (no legalese, I promise! 😊)";
-      category = 'compliance';
-      confidence = 0.98;
-    } else if (lowerMessage.includes('joke') || lowerMessage.includes('funny')) {
-      const randomJoke = dadJokes[Math.floor(Math.random() * dadJokes.length)];
-      response = `Here's one for you:\n\n${randomJoke}\n\n😄 Hope that brightened your day! Need help with anything else?`;
-      category = 'joke';
-    } else if (lowerMessage.includes('schedule') || lowerMessage.includes('shift')) {
-      response = "I can definitely help with scheduling! 📅\n\nI've been analyzing your scheduling patterns and here's what I've learned:\n\n**Your Team:**\n• 24 active employees\n• Average 186 hours/week scheduled\n• 89% schedule adherence rate\n\n**Smart Suggestions:**\n• Consider scheduling Marcus Williams for Tuesday evening - he has high customer ratings during that shift\n• The Emergency Department typically needs +1 nurse on Friday nights based on historical data\n• You could save 6 overtime hours this week by adjusting Thursday's coverage\n\nWhat would you like me to help you optimize?";
-      category = 'scheduling';
+    // Sales-focused responses
+    if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('pricing')) {
+      response = "💰 **Pricing Information**\n\nNoxTitan offers flexible pricing to fit businesses of all sizes:\n\n**Professional** - $499/month\n• Up to 50 employees\n• Advanced scheduling & time tracking\n• Basic integrations\n• Email support\n\n**Enterprise** - $1,499/month\n• Up to 250 employees  \n• Oracle AI, Compliance Suite, Asset Vault\n• All 60+ integrations\n• Priority support\n\n**Titan** - $2,999/month\n• Unlimited employees\n• White-glove implementation\n• Custom integrations\n• Dedicated account manager\n\n💡 We also save businesses $75K-$139K annually vs. competitors! Want to see a detailed cost comparison?";
+      category = 'general';
+    } else if (lowerMessage.includes('demo') || lowerMessage.includes('trial')) {
+      response = "📺 **Request a Demo**\n\nI'd love to show you NoxTitan in action! Our demos are personalized to your business needs.\n\n**What we'll cover:**\n✅ Live walkthrough of key features\n✅ Your specific use cases\n✅ ROI calculation for your business\n✅ Q&A with our team\n\n**To schedule:**\nPlease provide your:\n• Name\n• Company name\n• Email address\n• Phone number (optional)\n• Best time to meet\n\nOr click 'Request Demo' on our landing page! 🚀";
+      category = 'general';
+    } else if (lowerMessage.includes('feature') || lowerMessage.includes('what can') || lowerMessage.includes('capabilities')) {
+      response = "✨ **NoxTitan Features**\n\nWe're an all-in-one platform that replaces 8+ separate tools:\n\n**Core Features:**\n📅 Advanced scheduling (drag & drop)\n⏰ Time & attendance tracking\n💰 Payroll calculations\n👥 HR management & onboarding\n📊 Reports & analytics\n\n**Enterprise Features:**\n🔮 Oracle AI - Predictive analytics\n🛡️ Compliance Suite (OSHA, CMS, Joint Commission)\n🏦 Asset Vault - Equipment tracking\n🔒 Sentinel - Visitor management\n🎮 Guild - Gamification system\n\n**Average Savings:** $75K-$139K/year vs. competitors!\n\nWhich features interest you most?";
+      category = 'general';
+    } else if (lowerMessage.includes('contact') || lowerMessage.includes('sales') || lowerMessage.includes('talk to someone')) {
+      response = "📞 **Contact Our Team**\n\nI'd be happy to connect you with our sales team!\n\n**Please share:**\n• Your name\n• Company name\n• Email address\n• Phone number\n• What you'd like to discuss\n\nOur team typically responds within 2 hours during business hours.\n\nAlternatively:\n• Email: sales@noxtitan.com\n• Schedule a demo on our website\n• Continue chatting with me - I can answer most questions!\n\nWhat works best for you?";
+      category = 'general';
+    } else if (lowerMessage.includes('email') && (lowerMessage.includes('@') || lowerMessage.includes('name'))) {
+      response = "✅ **Thank you!**\n\nI've captured your information. Our team will reach out to you within 2 business hours!\n\nIn the meantime:\n• Check out our pricing page for detailed plan comparisons\n• Watch our demo video on the landing page\n• Browse our feature documentation\n\n**Quick question:** What's your biggest challenge with employee management right now? This helps us prepare for our conversation! 💼";
+      category = 'general';
+    } else if (lowerMessage.includes('schedule') || lowerMessage.includes('shift') || lowerMessage.includes('calendar')) {
+      response = "📅 **Scheduling Features**\n\nOur scheduling system is built for simplicity and power:\n\n**Key Features:**\n• Drag-and-drop shift assignment\n• Automated shift templates\n• Conflict detection\n• Employee availability tracking\n• Shift swap requests\n• Mobile app access\n• Calendar sync\n\n**Results:**\n✅ 70% faster schedule creation\n✅ 90% reduction in scheduling conflicts\n✅ Save 3-5 hours per week\n\nWant to see it in action? Schedule a demo! 🚀";
+      category = 'general';
     } else if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
-      response = "Hello! 👋 Great to chat with you!\n\nI'm here to help with:\n✅ Compliance questions (labor laws, break rules, etc.)\n✅ Schedule optimization\n✅ Overtime management  \n✅ Industry-specific regulations\n✅ Best practices and tips\n✅ And occasionally, terrible dad jokes! 😄\n\nWhat's on your mind?";
+      response = "Hello! 👋 Welcome to NoxTitan!\n\nI'm your virtual sales assistant. I can help you:\n✅ Learn about our features\n✅ Compare pricing plans\n✅ Schedule a demo\n✅ Answer questions about the platform\n✅ Connect you with our team\n\nWhat brings you here today?";
+      category = 'general';
+    } else if (lowerMessage.includes('save') || lowerMessage.includes('roi') || lowerMessage.includes('benefit')) {
+      response = "💰 **Cost Savings & ROI**\n\nBusinesses using NoxTitan typically save:\n\n**Annual Subscription Savings:** $75K-$139K\n(vs. buying 8+ separate tools)\n\n**Operational Savings:**\n• $480K from reduced turnover\n• 15 hours/week of admin time saved\n• 8-12% reduction in labor costs\n• Faster scheduling = 3-5 hours/week saved\n\n**Payback Period:** 3 weeks average\n\n**Total Year 1 Impact:** $600K+ saved\n\nWant to calculate ROI for your specific business? I can help! 📊";
       category = 'general';
     } else {
-      response = "That's a great question! 🤔\n\nI'm constantly learning and my knowledge base covers:\n\n• **Labor Laws** - Federal and state regulations (Updated daily)\n• **Healthcare Compliance** - HIPAA, Joint Commission, OSHA\n• **Retail Standards** - Fair Labor Standards Act, POS compliance\n• **Hospitality** - Tip pooling, service industry regulations  \n• **Construction** - Safety requirements, union rules\n\nCould you give me a bit more detail about what you need help with? The more specific you are, the better I can assist!\n\nOh, and here's a fun fact: Why don't programmers like nature? Too many bugs! 🐛😄";
+      response = "I'm here to help you learn about NoxTitan! 💼\n\nI can answer questions about:\n• Features & capabilities\n• Pricing & plans ($499-$2,999/month)\n• ROI & cost savings\n• Scheduling a demo\n• Getting in touch with our team\n\nWhat would you like to know? Or if you'd like to speak with someone directly, I can connect you with our sales team! 📞";
       category = 'general';
       confidence = 0.85;
     }
@@ -207,12 +208,14 @@ export default function AIAssistant() {
       setIsTyping(false);
       
       let response = '';
-      if (suggestion.category === 'compliance') {
-        response = `📋 **${suggestion.title}**\n\n${suggestion.description}\n\nBased on my analysis of current regulations, here's what you need to know:\n\n✅ **Action Required:** Review and update training materials\n✅ **Deadline:** Within 30 days of regulation change\n✅ **Affected Employees:** All healthcare staff (24 employees)\n\nI've already drafted a compliance checklist for you. Would you like me to:\n1. Send it to your email\n2. Add reminders to your calendar\n3. Create training assignments\n\nLet me know how I can help! 🚀`;
-      } else if (suggestion.category === 'scheduling') {
-        response = `⏰ **${suggestion.title}**\n\n${suggestion.description}\n\nHere's what I found:\n\n**Current Status:**\n• Sarah: 38.5 hours (Mon-Thu)\n• Scheduled: Friday 8-hour shift\n• Would result in: 46.5 hours (6.5 OT hours)\n\n**My Recommendation:**\n• Option A: Reduce Friday shift to 1.5 hours (avoids OT)\n• Option B: Move Friday shift to next week\n• Option C: Split shift with another team member\n\n**Cost Impact:**\nOption A saves ~$45 in overtime costs\n\nWant me to automatically adjust the schedule? I'll make sure all shifts are covered! 📊`;
+      if (suggestion.title === 'Product Features') {
+        response = `✨ **Product Features**\n\nNoxTitan is an all-in-one platform that replaces 8+ separate tools:\n\n**Core Capabilities:**\n📅 Advanced Scheduling - Drag & drop, templates, conflict detection\n⏰ Time Tracking - Digital time clock, overtime alerts\n💰 Payroll - Automated calculations, direct deposit\n👥 HR Management - Onboarding, documents, performance\n📊 Analytics - Real-time insights, custom reports\n\n**Enterprise Add-ons:**\n🔮 Oracle AI - Predictive analytics\n🛡️ Compliance Suite - OSHA, CMS, Joint Commission\n🏦 Asset Vault - Equipment tracking\n🎮 Guild - Gamification\n\n**Average Result:** $75K-$139K saved annually!\n\nWhich features interest you most?`;
+      } else if (suggestion.title === 'Request a Demo') {
+        response = `📺 **Schedule Your Demo**\n\nI'd love to show you NoxTitan in action!\n\n**What we'll cover:**\n✅ Live platform walkthrough\n✅ Your specific use cases\n✅ ROI calculation\n✅ Implementation process\n✅ Q&A with our team\n\n**To get started, please share:**\n• Your name\n• Company name\n• Email\n• Phone (optional)\n• Preferred time\n\nOr visit our demo page and fill out the form! 🚀`;
+      } else if (suggestion.title === 'Pricing Information') {
+        response = `💰 **Pricing Plans**\n\n**Professional** - $499/month\n• 50 employees\n• Core features + payroll\n• 10 integrations\n• Email support\n\n**Enterprise** - $1,499/month\n• 250 employees\n• Oracle AI, Compliance, Asset Vault\n• 60+ integrations\n• Priority support\n\n**Titan** - $2,999/month\n• Unlimited employees\n• White-glove service\n• Custom integrations\n• Dedicated manager\n\n💡 **Savings:** $75K-$139K/year vs. competitors!\n\nWant a custom quote for your business?`;
       } else {
-        response = `💡 **${suggestion.title}**\n\n${suggestion.description}\n\nI've crunched the numbers and found some exciting opportunities! Here's my analysis:\n\n**Opportunity #1: Shift Timing** ⏰\nAdjusting 3 shifts could save 12 hours/week = $2,160/month\n\n**Opportunity #2: Peak Coverage** 📈  \nRedistributing staff during peak hours improves efficiency by 15%\n\n**Opportunity #3: Cross-Training** 🎓\nTraining 2 staff members = $2,400/month in flexibility savings\n\n**Total Potential Savings:** $4,560/month\n\nShall I create a detailed implementation plan? It'll take me about 2 minutes to generate! ⚡`;
+        response = `📞 **Contact Our Team**\n\nI'd be happy to connect you!\n\n**Please provide:**\n• Name\n• Company\n• Email\n• Phone number\n• What you'd like to discuss\n\nOur sales team responds within 2 hours during business hours.\n\n**Or reach us directly:**\n📧 sales@noxtitan.com\n📱 Schedule a call on our website\n💬 Continue chatting with me!\n\nWhat works best for you?`;
       }
       
       addAIMessage(response, suggestion.category as Message['category']);
@@ -221,26 +224,47 @@ export default function AIAssistant() {
 
   return (
     <>
-      {/* Floating AI Button */}
+      {/* Floating AI Button - Always visible on right side */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-purple-600 to-indigo-600 text-white rounded-full shadow-2xl hover:scale-110 transition-all flex items-center justify-center z-50 group"
+          className="hover:scale-110 transition-all group"
+          style={{ 
+            position: 'fixed',
+            bottom: '24px',
+            right: '24px',
+            zIndex: 9999,
+            background: 'transparent', 
+            border: 'none', 
+            padding: 0,
+            cursor: 'pointer'
+          }}
         >
-          <Bot className="w-8 h-8" />
-          <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full animate-pulse"></span>
+          <img 
+            src="/titan-logo.png.png" 
+            alt="Titan AI" 
+            className="w-20 h-20 object-contain drop-shadow-2xl"
+          />
+          <span className="absolute top-0 right-0 w-4 h-4 bg-green-400 rounded-full animate-pulse"></span>
           
           {/* Tooltip */}
-          <div className="absolute bottom-20 right-0 bg-gray-900 text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-            Ask AI Assistant 🤖
+          <div className="absolute bottom-24 right-0 bg-gray-900 text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            Titan Buddy
             <div className="absolute -bottom-1 right-4 w-2 h-2 bg-gray-900 transform rotate-45"></div>
           </div>
         </button>
       )}
 
-      {/* Chat Window */}
+      {/* Chat Window - Always visible on right side */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 border border-gray-200">
+        <div style={{
+          position: 'fixed',
+          bottom: '24px',
+          right: '24px',
+          width: '384px',
+          height: '600px',
+          zIndex: 9999
+        }} className="bg-white rounded-2xl shadow-2xl flex flex-col border border-gray-200">
           {/* Header */}
           <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-4 rounded-t-2xl flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -249,7 +273,7 @@ export default function AIAssistant() {
                 <span className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></span>
               </div>
               <div>
-                <h3 className="font-bold text-lg">TeamPulse AI</h3>
+                <h3 className="font-bold text-lg">NoxTitan AI</h3>
                 <p className="text-xs text-purple-100">Always learning, always helping</p>
               </div>
             </div>
@@ -265,8 +289,8 @@ export default function AIAssistant() {
           <div className="bg-gradient-to-r from-purple-50 to-indigo-50 px-4 py-2 border-b border-purple-100">
             <div className="flex items-center gap-2 text-xs">
               <Sparkles className="w-4 h-4 text-purple-600" />
-              <span className="text-purple-700 font-semibold">Knowledge Base: </span>
-              <span className="text-gray-600">Updated Jan 1, 2026 • 50 state laws • 12 industries</span>
+              <span className="text-purple-700 font-semibold">Sales Assistant: </span>
+              <span className="text-gray-600">Here to help you find the perfect solution</span>
             </div>
           </div>
 
@@ -374,7 +398,7 @@ export default function AIAssistant() {
               </button>
             </div>
             <p className="text-xs text-gray-500 mt-2 text-center">
-              ✨ Powered by AI • Gold & Platinum feature
+              ✨ Powered by AI • Free for everyone
             </p>
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 import { Crown, HelpCircle, RotateCcw, Store } from 'lucide-react';
 import Link from 'next/link';
+import ThemeSelector from '@/components/ThemeSelector';
 
 export default function SettingsPage() {
   const handleRestartTour = () => {
@@ -12,6 +13,18 @@ export default function SettingsPage() {
 
   return (
     <div className="space-y-6">
+      {/* Theme Customization */}
+      <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg shadow p-6 border-2 border-purple-200">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="text-2xl">🎨</span>
+          <h3 className="text-xl font-bold text-gray-900">Theme & Appearance</h3>
+        </div>
+        <p className="text-gray-600 mb-4">
+          Customize your NoxTitan experience with 30 color themes, 12 professional fonts, and custom backgrounds.
+        </p>
+        <ThemeSelector />
+      </div>
+
       {/* Onboarding Walkthrough Restart */}
       <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg shadow p-6 border-2 border-purple-200">
         <div className="flex items-center gap-3 mb-2">

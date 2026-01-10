@@ -114,7 +114,7 @@ function AIAssistant() {
                 if (messages.length === 0) {
                     setTimeout({
                         "AIAssistant.useEffect": ()=>{
-                            addAIMessage("Hey there! 👋 I'm TeamPulse AI, your friendly scheduling and compliance assistant. I'm constantly learning the latest labor laws, industry regulations, and best practices to help you stay compliant and optimize your workforce.\n\nHow can I help you today?", 'general');
+                            addAIMessage("Hey there! 👋 I'm NoxTitan AI, your intelligent business management assistant. I'm constantly learning the latest labor laws, industry regulations, and best practices to help you stay compliant and optimize your workforce.\n\nHow can I help you today?", 'general');
                         }
                     }["AIAssistant.useEffect"], 500);
                 }
@@ -230,20 +230,27 @@ function AIAssistant() {
         children: [
             !isOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 onClick: ()=>setIsOpen(true),
-                className: "fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-purple-600 to-indigo-600 text-white rounded-full shadow-2xl hover:scale-110 transition-all flex items-center justify-center z-50 group",
+                className: "fixed bottom-6 right-6 hover:scale-110 transition-all z-50 group relative",
+                style: {
+                    background: 'transparent',
+                    border: 'none',
+                    padding: 0
+                },
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bot$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Bot$3e$__["Bot"], {
-                        className: "w-8 h-8"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/AIAssistant.tsx",
-                        lineNumber: 230,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full animate-pulse"
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                        src: "/titan-logo.png.png",
+                        alt: "Titan AI",
+                        className: "w-32 h-32 object-contain drop-shadow-2xl"
                     }, void 0, false, {
                         fileName: "[project]/src/components/AIAssistant.tsx",
                         lineNumber: 231,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "absolute top-0 right-0 w-5 h-5 bg-green-400 rounded-full animate-pulse"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/AIAssistant.tsx",
+                        lineNumber: 236,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -254,13 +261,13 @@ function AIAssistant() {
                                 className: "absolute -bottom-1 right-4 w-2 h-2 bg-gray-900 transform rotate-45"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                lineNumber: 236,
+                                lineNumber: 241,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/AIAssistant.tsx",
-                        lineNumber: 234,
+                        lineNumber: 239,
                         columnNumber: 11
                     }, this)
                 ]
@@ -285,30 +292,30 @@ function AIAssistant() {
                                                 className: "w-8 h-8"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                                lineNumber: 248,
+                                                lineNumber: 253,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "absolute -bottom-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                                lineNumber: 249,
+                                                lineNumber: 254,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/AIAssistant.tsx",
-                                        lineNumber: 247,
+                                        lineNumber: 252,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                 className: "font-bold text-lg",
-                                                children: "TeamPulse AI"
+                                                children: "NoxTitan AI"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                                lineNumber: 252,
+                                                lineNumber: 257,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -316,19 +323,19 @@ function AIAssistant() {
                                                 children: "Always learning, always helping"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                                lineNumber: 253,
+                                                lineNumber: 258,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/AIAssistant.tsx",
-                                        lineNumber: 251,
+                                        lineNumber: 256,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                lineNumber: 246,
+                                lineNumber: 251,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -338,18 +345,18 @@ function AIAssistant() {
                                     className: "w-5 h-5"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/AIAssistant.tsx",
-                                    lineNumber: 260,
+                                    lineNumber: 265,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                lineNumber: 256,
+                                lineNumber: 261,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/AIAssistant.tsx",
-                        lineNumber: 245,
+                        lineNumber: 250,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -361,7 +368,7 @@ function AIAssistant() {
                                     className: "w-4 h-4 text-purple-600"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/AIAssistant.tsx",
-                                    lineNumber: 267,
+                                    lineNumber: 272,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -369,7 +376,7 @@ function AIAssistant() {
                                     children: "Knowledge Base: "
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/AIAssistant.tsx",
-                                    lineNumber: 268,
+                                    lineNumber: 273,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -377,18 +384,18 @@ function AIAssistant() {
                                     children: "Updated Jan 1, 2026 • 50 state laws • 12 industries"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/AIAssistant.tsx",
-                                    lineNumber: 269,
+                                    lineNumber: 274,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/AIAssistant.tsx",
-                            lineNumber: 266,
+                            lineNumber: 271,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/AIAssistant.tsx",
-                        lineNumber: 265,
+                        lineNumber: 270,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -406,7 +413,7 @@ function AIAssistant() {
                                                         className: "w-4 h-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AIAssistant.tsx",
-                                                        lineNumber: 289,
+                                                        lineNumber: 294,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -414,13 +421,13 @@ function AIAssistant() {
                                                         children: "Dad Joke Mode"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AIAssistant.tsx",
-                                                        lineNumber: 290,
+                                                        lineNumber: 295,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                                lineNumber: 288,
+                                                lineNumber: 293,
                                                 columnNumber: 21
                                             }, this),
                                             msg.type === 'ai' && msg.category === 'compliance' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -430,7 +437,7 @@ function AIAssistant() {
                                                         className: "w-4 h-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AIAssistant.tsx",
-                                                        lineNumber: 295,
+                                                        lineNumber: 300,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -438,13 +445,13 @@ function AIAssistant() {
                                                         children: "Compliance Info"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AIAssistant.tsx",
-                                                        lineNumber: 296,
+                                                        lineNumber: 301,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                                lineNumber: 294,
+                                                lineNumber: 299,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -452,7 +459,7 @@ function AIAssistant() {
                                                 children: msg.content
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                                lineNumber: 299,
+                                                lineNumber: 304,
                                                 columnNumber: 19
                                             }, this),
                                             msg.confidence && msg.confidence > 0.9 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -462,7 +469,7 @@ function AIAssistant() {
                                                         className: "w-3 h-3"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AIAssistant.tsx",
-                                                        lineNumber: 302,
+                                                        lineNumber: 307,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -473,13 +480,13 @@ function AIAssistant() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/AIAssistant.tsx",
-                                                        lineNumber: 303,
+                                                        lineNumber: 308,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                                lineNumber: 301,
+                                                lineNumber: 306,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -490,18 +497,18 @@ function AIAssistant() {
                                                 })
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                                lineNumber: 306,
+                                                lineNumber: 311,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/AIAssistant.tsx",
-                                        lineNumber: 280,
+                                        lineNumber: 285,
                                         columnNumber: 17
                                     }, this)
                                 }, msg.id, false, {
                                     fileName: "[project]/src/components/AIAssistant.tsx",
-                                    lineNumber: 276,
+                                    lineNumber: 281,
                                     columnNumber: 15
                                 }, this)),
                             isTyping && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -515,37 +522,37 @@ function AIAssistant() {
                                                 className: "w-2 h-2 bg-purple-600 rounded-full animate-bounce"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                                lineNumber: 318,
+                                                lineNumber: 323,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "w-2 h-2 bg-purple-600 rounded-full animate-bounce delay-100"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                                lineNumber: 319,
+                                                lineNumber: 324,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "w-2 h-2 bg-purple-600 rounded-full animate-bounce delay-200"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                                lineNumber: 320,
+                                                lineNumber: 325,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/AIAssistant.tsx",
-                                        lineNumber: 317,
+                                        lineNumber: 322,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/AIAssistant.tsx",
-                                    lineNumber: 316,
+                                    lineNumber: 321,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                lineNumber: 315,
+                                lineNumber: 320,
                                 columnNumber: 15
                             }, this),
                             showSuggestions && messages.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -556,7 +563,7 @@ function AIAssistant() {
                                         children: "💡 Smart Suggestions:"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AIAssistant.tsx",
-                                        lineNumber: 329,
+                                        lineNumber: 334,
                                         columnNumber: 17
                                     }, this),
                                     suggestions.map((suggestion)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -570,7 +577,7 @@ function AIAssistant() {
                                                         children: suggestion.icon
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AIAssistant.tsx",
-                                                        lineNumber: 337,
+                                                        lineNumber: 342,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -581,7 +588,7 @@ function AIAssistant() {
                                                                 children: suggestion.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                                                lineNumber: 345,
+                                                                lineNumber: 350,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -589,43 +596,43 @@ function AIAssistant() {
                                                                 children: suggestion.description
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                                                lineNumber: 346,
+                                                                lineNumber: 351,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/AIAssistant.tsx",
-                                                        lineNumber: 344,
+                                                        lineNumber: 349,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                                lineNumber: 336,
+                                                lineNumber: 341,
                                                 columnNumber: 21
                                             }, this)
                                         }, suggestion.id, false, {
                                             fileName: "[project]/src/components/AIAssistant.tsx",
-                                            lineNumber: 331,
+                                            lineNumber: 336,
                                             columnNumber: 19
                                         }, this))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                lineNumber: 328,
+                                lineNumber: 333,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 ref: messagesEndRef
                             }, void 0, false, {
                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                lineNumber: 354,
+                                lineNumber: 359,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/AIAssistant.tsx",
-                        lineNumber: 274,
+                        lineNumber: 279,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -643,7 +650,7 @@ function AIAssistant() {
                                         className: "flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600 text-sm"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AIAssistant.tsx",
-                                        lineNumber: 360,
+                                        lineNumber: 365,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -654,18 +661,18 @@ function AIAssistant() {
                                             className: "w-5 h-5"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/AIAssistant.tsx",
-                                            lineNumber: 373,
+                                            lineNumber: 378,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AIAssistant.tsx",
-                                        lineNumber: 368,
+                                        lineNumber: 373,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                lineNumber: 359,
+                                lineNumber: 364,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -673,19 +680,19 @@ function AIAssistant() {
                                 children: "✨ Powered by AI • Gold & Platinum feature"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/AIAssistant.tsx",
-                                lineNumber: 376,
+                                lineNumber: 381,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/AIAssistant.tsx",
-                        lineNumber: 358,
+                        lineNumber: 363,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/AIAssistant.tsx",
-                lineNumber: 243,
+                lineNumber: 248,
                 columnNumber: 9
             }, this)
         ]

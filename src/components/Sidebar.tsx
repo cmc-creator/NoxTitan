@@ -35,6 +35,7 @@ const navigation = [
   { name: 'Sentinel', href: '/sentinel', icon: Shield },
   { name: 'Oracle', href: '/oracle', icon: Sparkles },
   { name: 'Guild', href: '/guild', icon: Trophy },
+  { name: 'Team Activities', href: '/activities', icon: Sparkles },
   { name: 'Merch Store', href: '/merch-store', icon: ShoppingBag },
   { name: 'Analytics', href: '/analytics', icon: TrendingUp },
   { name: 'Payroll', href: '/payroll', icon: DollarSign },
