@@ -79,10 +79,10 @@ export default function LandingPage() {
         <nav className="w-full flex justify-center items-center py-6 bg-gradient-to-b from-black via-[#1a1a1e] to-black shadow-lg sticky top-0 z-50 animate-fade-in">
           <div className="w-full max-w-6xl flex flex-row items-center justify-between px-4">
             <div className="flex flex-1 justify-center gap-6">
-              <a href="#features" className="text-white font-semibold hover:text-purple-400 transition-colors text-pop-light">Features</a>
-              <a href="#comparison" className="text-white font-semibold hover:text-purple-400 transition-colors text-pop-light">Comparison</a>
-              <a href="#demo-section" className="text-white font-semibold hover:text-purple-400 transition-colors text-pop-light">Demo</a>
-              <a href="#contact" className="text-white font-semibold hover:text-purple-400 transition-colors text-pop-light">Contact</a>
+              <a href="#features" className="px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-violet-900/50 border-2 border-purple-600/40 hover:border-purple-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] font-bold shadow-lg transition-all text-white">Features</a>
+              <a href="#comparison" className="px-6 py-3 rounded-xl bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border-2 border-blue-600/40 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] font-bold shadow-lg transition-all text-white">Comparison</a>
+              <a href="#demo-section" className="px-6 py-3 rounded-xl bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-2 border-green-600/40 hover:border-green-400 hover:shadow-[0_0_20px_rgba(34,197,94,0.6)] font-bold shadow-lg transition-all text-white">Demo</a>
+              <a href="#contact" className="px-6 py-3 rounded-xl bg-gradient-to-br from-pink-900/50 to-rose-900/50 border-2 border-pink-600/40 hover:border-pink-400 hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] font-bold shadow-lg transition-all text-white">Contact</a>
             </div>
           </div>
         </nav>

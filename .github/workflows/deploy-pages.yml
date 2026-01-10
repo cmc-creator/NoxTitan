@@ -1,0 +1,66 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Prepare deployment files
+        run: |
+          mkdir -p _site
+          # Copy main files if they exist
+          [ -f "index.html" ] && cp index.html _site/
+          [ -f "demo-interactive.html" ] && cp demo-interactive.html _site/
+          [ -f "demo-noxtitan-final.html" ] && cp demo-noxtitan-final.html _site/
+          [ -f "demo-self-contained.html" ] && cp demo-self-contained.html _site/
+          [ -f "demo-music.mp3" ] && cp demo-music.mp3 _site/
+          
+          # Copy landing directory if it exists (but not demo subdir)
+          if [ -d "landing" ]; then
+            mkdir -p _site/landing
+            cp -r landing/* _site/landing/ 2>/dev/null || true
+          fi
+          
+          # Copy demo directory if it exists
+          if [ -d "demo" ]; then
+            mkdir -p _site/demo
+            cp -r demo/* _site/demo/ 2>/dev/null || true
+          fi
+          
+          # Verify at least index.html exists
+          if [ ! -f "_site/index.html" ]; then
+            echo "Error: index.html not found in deployment"
+            exit 1
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
