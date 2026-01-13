@@ -4,5 +4,9 @@ node_modules
 
 /src/generated/prisma
 
+# Next.js build output
+.next
+out
+
 # GitHub Pages build directory
 _site
