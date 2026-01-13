@@ -268,7 +268,7 @@ Both deployments are configured for automatic updates:
 ## 🆘 Support
 
 For deployment issues or questions:
-- Check the [CHECKPOINT.md](./CHECKPOINT.md) files for recent updates
+- Check the CHECKPOINT files for recent updates and implementation notes
 - Review [README.md](./README.md) for project structure
 - Contact Connie Michelle Consulting & Business Solutions LLC
 
