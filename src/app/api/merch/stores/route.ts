@@ -3,16 +3,12 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { PrismaClient } from '@prisma/client';
 import { PrismaLibSql } from '@prisma/adapter-libsql';
-import { createClient } from '@libsql/client';
 
-const libsql = createClient({
+const adapter = new PrismaLibSql({
   url: process.env.DATABASE_URL || 'file:./prisma/dev.db',
-  syncUrl: process.env.TURSO_DATABASE_URL,
   authToken: process.env.DATABASE_AUTH_TOKEN,
 });
-
-const adapter = new PrismaLibSql(libsql);
-const prisma = new PrismaClient({ adapter: adapter as any });
+const prisma = new PrismaClient({ adapter });
 
 export async function GET(request: NextRequest) {
   try {
