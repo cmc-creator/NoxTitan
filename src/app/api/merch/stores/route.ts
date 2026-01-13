@@ -12,7 +12,7 @@ const libsql = createClient({
 });
 
 const adapter = new PrismaLibSql(libsql);
-const prisma = new PrismaClient({ adapter });
+const prisma = new PrismaClient({ adapter: adapter as any });
 
 export async function GET(request: NextRequest) {
   try {
