@@ -116,17 +116,19 @@ vercel --prod
 
 2. **Create Database:**
    ```bash
-   turso db create noxtitan-prod
+   turso db create noxtitan-prod-[your-name]
    ```
+   
+   > **Note:** Replace `[your-name]` with your own identifier to ensure a unique database name.
 
 3. **Get Connection URL:**
    ```bash
-   turso db show noxtitan-prod --url
+   turso db show noxtitan-prod-[your-name] --url
    ```
 
 4. **Create Auth Token:**
    ```bash
-   turso db tokens create noxtitan-prod
+   turso db tokens create noxtitan-prod-[your-name]
    ```
 
 5. **Update Vercel Environment Variables:**
@@ -181,7 +183,10 @@ vercel --prod
    - In Vercel dashboard, enable Web Analytics
    - Monitor performance and usage
 
-4. **Configure CORS (If needed):**
+4. **Configure CORS (If needed for external API access):**
+   
+   > **Security Warning:** Only configure CORS if your API needs to be accessed from external domains. For most applications, this is not necessary.
+   
    In `next.config.ts`:
    ```typescript
    const nextConfig: NextConfig = {
@@ -190,14 +195,21 @@ vercel --prod
          {
            source: '/api/:path*',
            headers: [
-             { key: 'Access-Control-Allow-Origin', value: '*' },
+             // Replace '*' with your specific domain(s) in production
+             { key: 'Access-Control-Allow-Origin', value: 'https://yourdomain.com' },
              { key: 'Access-Control-Allow-Methods', value: 'GET,POST,PUT,DELETE,OPTIONS' },
+             { key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization' },
            ],
          },
        ];
      },
    };
    ```
+   
+   **Security Best Practices:**
+   - Never use `'*'` for `Access-Control-Allow-Origin` in production
+   - Only allow specific trusted domains
+   - Consider removing CORS headers entirely if not needed
 
 ---
 
