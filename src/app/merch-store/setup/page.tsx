@@ -427,6 +427,7 @@ export default function MerchSetupPage() {
                 {saving ? 'Saving...' : 'Save & Continue'}
               </button>
             </div>
+            </div>
           </div>
         )}
 

@@ -1,0 +1,3 @@
+{
+  "/api/timeclock/webhook/route": "app/api/timeclock/webhook/route.js"
+}
