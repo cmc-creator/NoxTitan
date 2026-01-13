@@ -19,8 +19,11 @@ export default function ConditionalBots() {
     return <AIAssistant />;
   }
   
-  // For authenticated users on private pages, show the full AI assistants
-  if (isAuthenticated) {
+  // Dashboard and authenticated pages - show full AI assistants
+  const isDashboardPage = pathname?.startsWith('/dashboard') || pathname?.startsWith('/calendar') || 
+                          pathname?.startsWith('/employees') || pathname?.startsWith('/oracle');
+  
+  if (isDashboardPage || isAuthenticated) {
     return (
       <>
         {/* Nox and Titan - Full AI Assistants for authenticated users */}

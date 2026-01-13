@@ -1,4 +1,5 @@
 ﻿@import "tailwindcss";
+@import "./globals-glassmorphism.css";
 
 /* Font Family Classes */
 .font-roboto { font-family: 'Roboto', sans-serif; }

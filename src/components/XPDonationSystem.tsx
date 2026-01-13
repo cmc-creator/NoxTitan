@@ -1,0 +1,466 @@
+'use client';
+
+import { useState } from 'react';
+import { Gift, Heart, Users, TrendingUp, Award, AlertCircle, CheckCircle, DollarSign, Lock } from 'lucide-react';
+
+interface XPDonationSystemProps {
+  userId: string;
+  userRole: 'employee' | 'manager' | 'admin';
+}
+
+export default function XPDonationSystem({ userId, userRole }: XPDonationSystemProps) {
+  const [activeTab, setActiveTab] = useState<'give' | 'received' | 'limits'>('give');
+
+  // Current user's donation stats
+  const userDonationStats = {
+    xpBalance: 847, // User's current XP
+    yearlyGiven: 320, // XP donated this year
+    yearlyLimit: 500, // Annual donation cap
+    yearlyReceived: 180, // XP received as gifts
+    lifetimeGiven: 1247,
+    lifetimeReceived: 645,
+    canDonate: true,
+    remainingThisYear: 180, // 500 - 320
+  };
+
+  // Recent donations sent
+  const recentDonations = [
+    {
+      id: 1,
+      recipient: 'Michael Chen',
+      amount: 50,
+      reason: 'Thanks for covering my shift!',
+      date: '2026-01-10',
+      status: 'completed',
+    },
+    {
+      id: 2,
+      recipient: 'Amanda Rodriguez',
+      amount: 75,
+      reason: 'Amazing teamwork on that difficult case',
+      date: '2026-01-08',
+      status: 'completed',
+    },
+    {
+      id: 3,
+      recipient: 'Team - Emergency Dept',
+      amount: 100,
+      reason: 'Great job during that crazy weekend!',
+      date: '2026-01-05',
+      status: 'completed',
+    },
+  ];
+
+  // XP received from others
+  const receivedGifts = [
+    {
+      id: 1,
+      sender: 'Sarah Thompson (Manager)',
+      amount: 100,
+      reason: 'Excellent work on Q4 goals - you crushed it!',
+      date: '2026-01-11',
+    },
+    {
+      id: 2,
+      sender: 'David Park',
+      amount: 50,
+      reason: 'Thanks for training me on that new equipment!',
+      date: '2026-01-09',
+    },
+    {
+      id: 3,
+      sender: 'Jessica Williams',
+      amount: 30,
+      reason: 'You\'re an amazing teammate 💙',
+      date: '2026-01-06',
+    },
+  ];
+
+  // Donation limits by role
+  const roleLimits = {
+    employee: {
+      yearlyMax: 500,
+      singleMax: 100,
+      description: 'Employees can donate up to 500 XP per year, max 100 per gift',
+    },
+    manager: {
+      yearlyMax: 1000,
+      singleMax: 200,
+      description: 'Managers can donate up to 1000 XP per year, max 200 per gift',
+    },
+    admin: {
+      yearlyMax: 2000,
+      singleMax: 500,
+      description: 'Admins can donate up to 2000 XP per year, max 500 per gift',
+    },
+  };
+
+  const currentLimit = roleLimits[userRole];
+
+  // Suggested donation amounts
+  const quickAmounts = [10, 25, 50, 75, 100];
+
+  const [selectedAmount, setSelectedAmount] = useState(50);
+  const [selectedRecipient, setSelectedRecipient] = useState('');
+  const [donationReason, setDonationReason] = useState('');
+
+  const handleDonate = () => {
+    if (selectedAmount > userDonationStats.remainingThisYear) {
+      alert('This would exceed your annual donation limit!');
+      return;
+    }
+    if (selectedAmount > userDonationStats.xpBalance) {
+      alert('Insufficient XP balance!');
+      return;
+    }
+    if (selectedAmount > currentLimit.singleMax) {
+      alert(`Maximum ${currentLimit.singleMax} XP per gift!`);
+      return;
+    }
+    
+    console.log('Donating', selectedAmount, 'XP to', selectedRecipient, 'Reason:', donationReason);
+    // In production: API call to process donation
+  };
+
+  return (
+    <div className="space-y-6">
+      {/* Header with Stats */}
+      <div className="bg-gradient-to-r from-pink-900/40 to-purple-900/40 backdrop-blur-xl rounded-xl p-6 border-2 border-pink-500/30">
+        <div className="flex items-center gap-3 mb-4">
+          <Gift className="w-8 h-8 text-pink-400" />
+          <div>
+            <h2 className="text-2xl font-bold text-white">XP Donation System</h2>
+            <p className="text-pink-200">Share your success with teammates who inspire you!</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="bg-cyan-500/20 rounded-lg p-4 text-center border border-cyan-500/30">
+            <DollarSign className="w-6 h-6 text-cyan-400 mx-auto mb-1" />
+            <p className="text-3xl font-bold text-white">{userDonationStats.xpBalance}</p>
+            <p className="text-sm text-cyan-200">Your XP Balance</p>
+          </div>
+          <div className="bg-green-500/20 rounded-lg p-4 text-center border border-green-500/30">
+            <Heart className="w-6 h-6 text-green-400 mx-auto mb-1" />
+            <p className="text-3xl font-bold text-white">{userDonationStats.remainingThisYear}</p>
+            <p className="text-sm text-green-200">Can Donate This Year</p>
+          </div>
+          <div className="bg-purple-500/20 rounded-lg p-4 text-center border border-purple-500/30">
+            <TrendingUp className="w-6 h-6 text-purple-400 mx-auto mb-1" />
+            <p className="text-3xl font-bold text-white">{userDonationStats.yearlyGiven}</p>
+            <p className="text-sm text-purple-200">Donated This Year</p>
+          </div>
+          <div className="bg-yellow-500/20 rounded-lg p-4 text-center border border-yellow-500/30">
+            <Award className="w-6 h-6 text-yellow-400 mx-auto mb-1" />
+            <p className="text-3xl font-bold text-white">{userDonationStats.yearlyReceived}</p>
+            <p className="text-sm text-yellow-200">Received This Year</p>
+          </div>
+        </div>
+
+        {/* Progress Bar for Annual Limit */}
+        <div className="mt-4">
+          <div className="flex justify-between mb-2">
+            <span className="text-sm text-white font-semibold">Annual Donation Usage</span>
+            <span className="text-sm text-white">
+              {userDonationStats.yearlyGiven} / {userDonationStats.yearlyLimit} XP
+            </span>
+          </div>
+          <div className="w-full bg-slate-700 rounded-full h-3">
+            <div
+              className={`h-3 rounded-full transition-all ${
+                (userDonationStats.yearlyGiven / userDonationStats.yearlyLimit) > 0.8
+                  ? 'bg-gradient-to-r from-red-500 to-orange-500'
+                  : 'bg-gradient-to-r from-green-500 to-emerald-500'
+              }`}
+              style={{ width: `${(userDonationStats.yearlyGiven / userDonationStats.yearlyLimit) * 100}%` }}
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Tabs */}
+      <div className="flex gap-2">
+        <button
+          onClick={() => setActiveTab('give')}
+          className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
+            activeTab === 'give'
+              ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
+              : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+          }`}
+        >
+          <Gift className="w-5 h-5" />
+          Give XP
+        </button>
+        <button
+          onClick={() => setActiveTab('received')}
+          className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
+            activeTab === 'received'
+              ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
+              : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+          }`}
+        >
+          <Heart className="w-5 h-5" />
+          Received
+        </button>
+        <button
+          onClick={() => setActiveTab('limits')}
+          className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
+            activeTab === 'limits'
+              ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
+              : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+          }`}
+        >
+          <AlertCircle className="w-5 h-5" />
+          Limits & Rules
+        </button>
+      </div>
+
+      {/* Give XP Tab */}
+      {activeTab === 'give' && (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Donation Form */}
+          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-xl p-6 border-2 border-pink-500/30">
+            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <Gift className="w-6 h-6 text-pink-400" />
+              Donate XP to Someone Special
+            </h3>
+
+            <div className="space-y-4">
+              {/* Recipient Selection */}
+              <div>
+                <label className="text-white font-semibold mb-2 block">Who deserves recognition?</label>
+                <select
+                  value={selectedRecipient}
+                  onChange={(e) => setSelectedRecipient(e.target.value)}
+                  className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600"
+                >
+                  <option value="">Select a teammate...</option>
+                  <option value="jessica">Jessica Williams - Emergency</option>
+                  <option value="michael">Michael Chen - Respiratory</option>
+                  <option value="amanda">Amanda Rodriguez - Lab</option>
+                  <option value="david">David Park - Surgical</option>
+                  <option value="team-emergency">🎯 Entire Emergency Team</option>
+                  <option value="team-icu">🎯 Entire ICU Team</option>
+                </select>
+              </div>
+
+              {/* Amount Selection */}
+              <div>
+                <label className="text-white font-semibold mb-2 block">How much XP?</label>
+                <div className="grid grid-cols-5 gap-2 mb-3">
+                  {quickAmounts.map(amount => (
+                    <button
+                      key={amount}
+                      onClick={() => setSelectedAmount(amount)}
+                      className={`px-3 py-2 rounded-lg font-bold transition-all ${
+                        selectedAmount === amount
+                          ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white'
+                          : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                      }`}
+                    >
+                      {amount}
+                    </button>
+                  ))}
+                </div>
+                <input
+                  type="range"
+                  min="10"
+                  max={Math.min(currentLimit.singleMax, userDonationStats.remainingThisYear)}
+                  value={selectedAmount}
+                  onChange={(e) => setSelectedAmount(parseInt(e.target.value))}
+                  className="w-full"
+                />
+                <div className="flex justify-between mt-2">
+                  <span className="text-sm text-slate-400">10 XP</span>
+                  <span className="text-lg font-bold text-pink-400">{selectedAmount} XP</span>
+                  <span className="text-sm text-slate-400">{currentLimit.singleMax} XP max</span>
+                </div>
+              </div>
+
+              {/* Reason */}
+              <div>
+                <label className="text-white font-semibold mb-2 block">Why do they deserve this?</label>
+                <textarea
+                  value={donationReason}
+                  onChange={(e) => setDonationReason(e.target.value)}
+                  placeholder="Share why you're recognizing them... (optional but encouraged!)"
+                  className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600"
+                  rows={3}
+                ></textarea>
+              </div>
+
+              {/* Warnings */}
+              {selectedAmount > userDonationStats.remainingThisYear && (
+                <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-3 flex items-start gap-2">
+                  <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-red-200">
+                    This exceeds your annual limit! You can only donate {userDonationStats.remainingThisYear} more XP this year.
+                  </p>
+                </div>
+              )}
+
+              {selectedAmount > userDonationStats.xpBalance && (
+                <div className="bg-orange-500/20 border border-orange-500/30 rounded-lg p-3 flex items-start gap-2">
+                  <AlertCircle className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-orange-200">
+                    Insufficient XP balance! You only have {userDonationStats.xpBalance} XP available.
+                  </p>
+                </div>
+              )}
+
+              {/* Submit Button */}
+              <button
+                onClick={handleDonate}
+                disabled={!selectedRecipient || selectedAmount > userDonationStats.remainingThisYear || selectedAmount > userDonationStats.xpBalance}
+                className="w-full px-6 py-4 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 disabled:from-slate-600 disabled:to-slate-700 disabled:cursor-not-allowed rounded-lg font-bold text-white text-lg transition-all flex items-center justify-center gap-2"
+              >
+                <Gift className="w-6 h-6" />
+                Donate {selectedAmount} XP
+              </button>
+            </div>
+          </div>
+
+          {/* Recent Donations */}
+          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-xl p-6 border-2 border-cyan-500/30">
+            <h3 className="text-xl font-bold text-white mb-4">Recent Donations</h3>
+            <div className="space-y-3">
+              {recentDonations.map(donation => (
+                <div key={donation.id} className="bg-slate-900/50 rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <Users className="w-5 h-5 text-cyan-400" />
+                      <p className="font-bold text-white">{donation.recipient}</p>
+                    </div>
+                    <p className="text-xl font-bold text-pink-400">-{donation.amount} XP</p>
+                  </div>
+                  <p className="text-sm text-slate-300 italic mb-1">&ldquo;{donation.reason}&rdquo;</p>
+                  <p className="text-xs text-slate-500">{donation.date}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Received Tab */}
+      {activeTab === 'received' && (
+        <div className="space-y-4">
+          {receivedGifts.map(gift => (
+            <div
+              key={gift.id}
+              className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 backdrop-blur-xl rounded-xl p-6 border-2 border-green-500/30"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-3">
+                  <Heart className="w-8 h-8 text-pink-400 fill-pink-400" />
+                  <div>
+                    <p className="text-lg font-bold text-white">{gift.sender}</p>
+                    <p className="text-sm text-slate-400">{gift.date}</p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="text-3xl font-bold text-green-400">+{gift.amount} XP</p>
+                  <p className="text-xs text-green-200">Gifted</p>
+                </div>
+              </div>
+              <div className="bg-slate-900/50 rounded-lg p-3">
+                <p className="text-white italic">&ldquo;{gift.reason}&rdquo;</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Limits Tab */}
+      {activeTab === 'limits' && (
+        <div className="space-y-6">
+          {/* Your Limits */}
+          <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/40 backdrop-blur-xl rounded-xl p-6 border-2 border-purple-500/30">
+            <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <Lock className="w-6 h-6 text-purple-400" />
+              Your Donation Limits ({userRole.charAt(0).toUpperCase() + userRole.slice(1)})
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="bg-purple-500/20 rounded-lg p-6 text-center border border-purple-500/30">
+                <p className="text-5xl font-bold text-white mb-2">{currentLimit.yearlyMax}</p>
+                <p className="text-purple-200 font-semibold">Annual Donation Limit</p>
+                <p className="text-xs text-slate-400 mt-2">Resets January 1st each year</p>
+              </div>
+              <div className="bg-pink-500/20 rounded-lg p-6 text-center border border-pink-500/30">
+                <p className="text-5xl font-bold text-white mb-2">{currentLimit.singleMax}</p>
+                <p className="text-pink-200 font-semibold">Max Per Single Gift</p>
+                <p className="text-xs text-slate-400 mt-2">Per transaction limit</p>
+              </div>
+            </div>
+
+            <div className="bg-slate-900/50 rounded-lg p-4">
+              <p className="text-slate-300">{currentLimit.description}</p>
+            </div>
+          </div>
+
+          {/* Rules & Guidelines */}
+          <div className="bg-gradient-to-br from-cyan-900/40 to-blue-900/40 backdrop-blur-xl rounded-xl p-6 border-2 border-cyan-500/30">
+            <h3 className="text-xl font-bold text-white mb-4">Donation Rules & Guidelines</h3>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-white font-semibold">Annual Cap Prevents Gaming</p>
+                  <p className="text-sm text-slate-400">Limited yearly donations prevent XP inflation and maintain system integrity</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-white font-semibold">Can't Exceed Your Balance</p>
+                  <p className="text-sm text-slate-400">You can only donate XP you've actually earned through work</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-white font-semibold">All Donations Are Logged</p>
+                  <p className="text-sm text-slate-400">Timestamp, IP, and reason recorded to prevent abuse</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-white font-semibold">Team Donations Count as Individual</p>
+                  <p className="text-sm text-slate-400">Donating to a team splits XP among members, counts toward your limit</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-white font-semibold">Higher Roles = Higher Limits</p>
+                  <p className="text-sm text-slate-400">Managers (1000/year) and Admins (2000/year) can give more than employees (500/year)</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <AlertCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-white font-semibold">No Refunds or Reversals</p>
+                  <p className="text-sm text-slate-400">Once donated, XP cannot be returned. Double-check before sending!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Why These Limits? */}
+          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-xl p-6 border-2 border-slate-600">
+            <h3 className="text-xl font-bold text-white mb-4">Why Do We Have Donation Limits?</h3>
+            <div className="space-y-3 text-slate-300">
+              <p>💡 <strong>Prevents System Gaming:</strong> Without limits, users could trade XP to artificially boost rankings.</p>
+              <p>💡 <strong>Maintains XP Value:</strong> Scarcity keeps XP meaningful and rewards actually valuable.</p>
+              <p>💡 <strong>Encourages Earning:</strong> Users should earn XP through work, not just receive gifts.</p>
+              <p>💡 <strong>Fair Competition:</strong> Leaderboards stay fair when users can't farm XP through donations.</p>
+              <p>💡 <strong>Thoughtful Recognition:</strong> Limited donations mean each gift is more meaningful and intentional.</p>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

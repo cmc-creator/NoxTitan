@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Palette, Type, Image, X, Search } from 'lucide-react';
+import { Moon, Sun, Palette, Type, Image, X, Search } from 'lucide-react';
 import { useTheme } from '@/lib/theme-context';
 
 export default function ThemeSelector() {
@@ -9,6 +9,7 @@ export default function ThemeSelector() {
   const [showPanel, setShowPanel] = useState(false);
   const [activeTab, setActiveTab] = useState<'colors' | 'fonts' | 'backgrounds'>('colors');
   const [searchTerm, setSearchTerm] = useState('');
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const themes = [
     // Essential Modes
@@ -75,9 +76,24 @@ export default function ThemeSelector() {
     t.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    document.documentElement.classList.toggle('light-mode');
+  };
+
   return (
     <>
-      <div className="relative">
+      <div className="relative flex items-center gap-2">
+        {/* Dark/Light Mode Toggle */}
+        <button
+          onClick={toggleDarkMode}
+          className="flex items-center gap-2 px-3 py-2 bg-white/10 backdrop-blur-sm text-white rounded-lg hover:bg-white/20 transition-all border border-white/20"
+          title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+        >
+          {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+        </button>
+        
+        {/* Theme Customizer */}
         <button 
           onClick={() => setShowPanel(!showPanel)}
           className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-lg hover:bg-white/20 transition-all border border-white/20"

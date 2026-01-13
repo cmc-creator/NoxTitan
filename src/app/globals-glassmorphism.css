@@ -1,0 +1,112 @@
+/* Glassmorphism Theme - Black Frosted Glass with Colored Borders */
+
+.glass-tile {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 30, 0.7) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid;
+  border-radius: 1rem;
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine effect in top left corner */
+.glass-tile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Specific border colors for different contexts */
+.glass-tile-blue {
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.glass-tile-blue:hover {
+  border-color: rgba(59, 130, 246, 0.7);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    0 0 20px rgba(59, 130, 246, 0.4),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.glass-tile-purple {
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+.glass-tile-purple:hover {
+  border-color: rgba(168, 85, 247, 0.7);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    0 0 20px rgba(168, 85, 247, 0.4),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.glass-tile-green {
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.glass-tile-green:hover {
+  border-color: rgba(34, 197, 94, 0.7);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    0 0 20px rgba(34, 197, 94, 0.4),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.glass-tile-red {
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.glass-tile-red:hover {
+  border-color: rgba(239, 68, 68, 0.7);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    0 0 20px rgba(239, 68, 68, 0.4),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.glass-tile-pink {
+  border-color: rgba(236, 72, 153, 0.4);
+}
+
+.glass-tile-pink:hover {
+  border-color: rgba(236, 72, 153, 0.7);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    0 0 20px rgba(236, 72, 153, 0.4),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.glass-tile-yellow {
+  border-color: rgba(234, 179, 8, 0.4);
+}
+
+.glass-tile-yellow:hover {
+  border-color: rgba(234, 179, 8, 0.7);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    0 0 20px rgba(234, 179, 8, 0.4),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.glass-tile-cyan {
+  border-color: rgba(6, 182, 212, 0.4);
+}
+
+.glass-tile-cyan:hover {
+  border-color: rgba(6, 182, 212, 0.7);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    0 0 20px rgba(6, 182, 212, 0.4),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+}

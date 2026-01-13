@@ -443,6 +443,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../src/app/manager-basecamp/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/manager-basecamp">> = Specific
+  const handler = {} as typeof import("../../../src/app/manager-basecamp/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../src/app/merch-store/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/merch-store">> = Specific

@@ -201,12 +201,12 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
       <div className="fixed bottom-6 left-6 z-50 group">
         <button
           onClick={() => setIsOpen(true)}
-          className="relative w-20 h-20 bg-gradient-to-br from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full shadow-2xl flex flex-col items-center justify-center transition-all hover:scale-110"
+          className="relative w-24 h-24 rounded-full shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center transition-all hover:scale-110 overflow-hidden"
+          style={{background: 'transparent'}}
           aria-label="Open Nox AI Assistant"
           title="Nox - Voice & Strategic AI Assistant"
         >
-          <Sparkles className="w-6 h-6 group-hover:animate-pulse" />
-          <span className="text-xs font-bold mt-1 text-pop-light">Nox</span>
+          <img src="/nox-logo.png" alt="Nox" className="w-full h-full object-contain group-hover:scale-110 transition-transform" style={{imageRendering: 'crisp-edges'}} />
           {isListening && (
             <div className="absolute inset-0 rounded-full bg-red-500 animate-ping opacity-75"></div>
           )}
@@ -223,18 +223,35 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
   }
 
   return (
-    <div className="fixed bottom-6 left-6 w-[420px] h-[600px] bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom-8">
+    <>
+      {/* Voice Assistant Toggle with Avatar */}
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="fixed bottom-6 right-28 bg-gradient-to-br from-purple-600 to-pink-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-40 border-2 border-white/30"
+          title="Nox - Voice AI Assistant"
+        >
+          <div className="relative">
+            <Sparkles className="h-7 w-7" />
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
+          </div>
+        </button>
+      )}
+
+      {/* Voice Assistant Window */}
+      {isOpen && (
+        <div className="fixed bottom-6 left-6 w-[420px] h-[600px] bg-slate-900 border-2 border-purple-400 rounded-2xl shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom-8">
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-slate-700 bg-gradient-to-r from-purple-600 to-blue-600">
         <div className="flex items-center gap-3">
-          <div className="relative">
-            <Sparkles className="w-6 h-6 text-white" />
+          <div className="relative w-10 h-10 rounded-full flex items-center justify-center overflow-hidden" style={{background: 'transparent'}}>
+            <img src="/nox-logo.png" alt="Nox" className="w-full h-full object-contain" style={{imageRendering: 'crisp-edges'}} />
             {isSpeaking && (
               <div className="absolute -inset-1 bg-white rounded-full animate-ping opacity-75"></div>
             )}
           </div>
           <div>
-            <h3 className="text-white font-bold">AI Assistant</h3>
+            <h3 className="text-white font-bold">🌙 Nox AI Assistant</h3>
             <p className="text-xs text-blue-100">Voice-enabled • Always learning</p>
           </div>
         </div>
@@ -340,6 +357,8 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
           </div>
         )}
       </div>
-    </div>
+        </div>
+      )}
+    </>
   );
 }

@@ -1,9 +1,14 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
-import { Users, FileText, Calendar, Award, TrendingUp, Clock, DollarSign, AlertCircle, CheckCircle, Shield, Heart, Settings } from 'lucide-react';
+import { Users, FileText, Calendar, Award, TrendingUp, Clock, DollarSign, AlertCircle, CheckCircle, Shield, Heart, Settings, Star, Target, Palette } from 'lucide-react';
+import TalentIdentificationSystem from '@/components/TalentIdentificationSystem';
+import OnboardingRetentionHub from '@/components/OnboardingRetentionHub';
+import ThemeStudioCustomizer from '@/components/ThemeStudioCustomizer';
 
 export default function HRDashboard() {
+  const [showThemeStudio, setShowThemeStudio] = useState(false);
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
       <div className="max-w-7xl mx-auto">
@@ -27,11 +32,44 @@ export default function HRDashboard() {
               </h1>
               <p className="text-purple-200 text-lg">Employee lifecycle, benefits, compliance, and culture management</p>
             </div>
-            <button className="px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white rounded-lg font-semibold transition-all shadow-lg shadow-violet-500/30 flex items-center gap-2">
-              <Settings className="w-5 h-5" />
-              Settings
-            </button>
+            <div className="flex gap-3">
+              <button 
+                onClick={() => setShowThemeStudio(true)}
+                className="px-6 py-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white rounded-lg font-semibold transition-all shadow-lg shadow-pink-500/30 flex items-center gap-2"
+              >
+                <Palette className="w-5 h-5" />
+                Theme Studio
+              </button>
+              <button className="px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white rounded-lg font-semibold transition-all shadow-lg shadow-violet-500/30 flex items-center gap-2">
+                <Settings className="w-5 h-5" />
+                Settings
+              </button>
+            </div>
           </div>
+        </div>
+
+        {/* FEATURED: Talent Identification System */}
+        <div className="mb-8 bg-gradient-to-br from-yellow-900/40 to-orange-900/40 backdrop-blur-xl rounded-2xl p-6 border-2 border-yellow-500/50">
+          <div className="flex items-center gap-3 mb-4">
+            <Star className="w-8 h-8 text-yellow-400 fill-yellow-400" />
+            <div>
+              <h2 className="text-2xl font-bold text-white">High Performers & Talent Pipeline</h2>
+              <p className="text-yellow-200 text-sm">AI-identified strong employees ready for recognition, promotion, mentorship & onboarding roles</p>
+            </div>
+          </div>
+          <TalentIdentificationSystem managerId="current-manager" showNotifications={true} />
+        </div>
+
+        {/* FEATURED: Onboarding & Retention Hub */}
+        <div className="mb-8 bg-gradient-to-br from-cyan-900/40 to-blue-900/40 backdrop-blur-xl rounded-2xl p-6 border-2 border-cyan-500/50">
+          <div className="flex items-center gap-3 mb-4">
+            <Target className="w-8 h-8 text-cyan-400" />
+            <div>
+              <h2 className="text-2xl font-bold text-white">Onboarding & Retention Excellence</h2>
+              <p className="text-cyan-200 text-sm">Track new hire progress, identify retention risks, and implement research-backed retention strategies</p>
+            </div>
+          </div>
+          <OnboardingRetentionHub role="hr" />
         </div>
 
         {/* Quick Stats */}
@@ -280,6 +318,11 @@ export default function HRDashboard() {
           </div>
         </div>
       </div>
+
+      {/* Theme Studio Modal */}
+      {showThemeStudio && (
+        <ThemeStudioCustomizer onClose={() => setShowThemeStudio(false)} />
+      )}
     </div>
   );
 }

@@ -225,12 +225,12 @@ export default function ChatBot() {
         <div className="fixed bottom-6 right-6 z-50 group">
           <button
             onClick={() => setIsOpen(true)}
-            className="relative w-20 h-20 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full shadow-2xl hover:shadow-purple-500/50 transition-all hover:scale-110 flex flex-col items-center justify-center"
+            className="relative w-28 h-28 rounded-full shadow-2xl hover:shadow-purple-500/50 transition-all hover:scale-110 flex items-center justify-center overflow-hidden"
+            style={{background: 'transparent'}}
             aria-label="Open Titan chat"
             title="Titan - Quick Help Assistant"
           >
-            <MessageCircle className="h-6 w-6 text-white group-hover:animate-bounce" />
-            <span className="text-xs font-bold mt-1 text-white text-pop-light">Titan</span>
+            <img src="/titan-logo.png.png" alt="Titan" className="w-full h-full object-contain group-hover:scale-110 transition-transform" style={{imageRendering: 'crisp-edges'}} />
             <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse"></span>
           </button>
           {/* Hover Tooltip */}
@@ -249,8 +249,8 @@ export default function ChatBot() {
           {/* Header */}
           <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-4 rounded-t-2xl flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                <Sparkles className="h-6 w-6 text-purple-600 animate-pulse" />
+              <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden" style={{background: 'transparent'}}>
+                <img src="/logo.png" alt="Titan" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 className="font-bold text-white text-pop-light">⚡ Titan AI Assistant</h3>
@@ -294,12 +294,12 @@ export default function ChatBot() {
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                   message.sender === 'user' 
                     ? 'bg-gradient-to-r from-blue-500 to-cyan-500' 
-                    : 'bg-gradient-to-r from-purple-500 to-pink-500'
+                    : 'bg-gradient-to-r from-purple-500 to-pink-500 p-1'
                 }`}>
                   {message.sender === 'user' ? (
                     <User className="h-4 w-4 text-white" />
                   ) : (
-                    <Bot className="h-4 w-4 text-white" />
+                    <img src="/logo.png" alt="Titan" className="h-full w-full rounded-full object-contain" />
                   )}
                 </div>
                 <div className={`flex flex-col max-w-[75%] ${message.sender === 'user' ? 'items-end' : 'items-start'}`}>
@@ -319,8 +319,8 @@ export default function ChatBot() {
 
             {isTyping && (
               <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 bg-gradient-to-r from-purple-500 to-pink-500">
-                  <Bot className="h-4 w-4 text-white" />
+                <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 bg-gradient-to-r from-purple-500 to-pink-500 p-1">
+                  <img src="/logo.png" alt="Titan" className="h-full w-full rounded-full object-contain" />
                 </div>
                 <div className="bg-gray-100 dark:bg-slate-700 rounded-2xl p-3">
                   <div className="flex gap-1">

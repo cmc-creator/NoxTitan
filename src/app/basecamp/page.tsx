@@ -2,11 +2,24 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Mountain, Home, Calendar, Users, MessageSquare, FileText, TrendingUp, Award, Heart, Lightbulb, BookOpen, DollarSign, ShieldCheck, Bell, Settings, LogOut, ChevronRight, Star, Zap, Coffee, Flame, Target, Gift, PartyPopper, Gamepad2, ThumbsUp } from 'lucide-react';
+import { Mountain, Home, Calendar, Users, MessageSquare, FileText, TrendingUp, Award, Heart, Lightbulb, BookOpen, DollarSign, ShieldCheck, Bell, Settings, LogOut, ChevronRight, Star, Zap, Coffee, Flame, Target, Gift, PartyPopper, Gamepad2, ThumbsUp, CheckCircle, Clock, AlertCircle, Send, UserCheck, Bot, ExternalLink, Mail } from 'lucide-react';
 
 export default function Basecamp() {
   const [userName] = useState('Alex');
   const [showNotifications, setShowNotifications] = useState(false);
+  const [clockedIn, setClockedIn] = useState(false);
+  const [lastClockAction, setLastClockAction] = useState<string | null>(null);
+  const [showTitanChat, setShowTitanChat] = useState(false);
+  const [lateNotificationSent, setLateNotificationSent] = useState(false);
+  const [showTeamMessage, setShowTeamMessage] = useState(false);
+  const [teamMessage, setTeamMessage] = useState('');
+  const [selectedTeamMembers, setSelectedTeamMembers] = useState<string[]>([]);
+  const [titanPersonality, setTitanPersonality] = useState('smart');
+  const [showPersonalityPicker, setShowPersonalityPicker] = useState(false);
+  const [showMoodCheckIn, setShowMoodCheckIn] = useState(true);
+  const [selectedMood, setSelectedMood] = useState<string | null>(null);
+  const [moodAlertSent, setMoodAlertSent] = useState(false);
+  const [showCoworkers, setShowCoworkers] = useState(true);
 
   const encouragements = [
     "You're crushing it today! 🔥",
@@ -32,6 +45,74 @@ export default function Basecamp() {
 
   const randomEncouragement = encouragements[Math.floor(Math.random() * encouragements.length)];
   const randomDadJoke = dadJokes[Math.floor(Math.random() * dadJokes.length)];
+
+  const titanPersonalities = {
+    smart: {
+      name: '🧠 Smart',
+      greeting: 'Hi Alex! I\'m here to optimize your workflow and provide data-driven insights.',
+      style: 'Professional, analytical, efficient'
+    },
+    funny: {
+      name: '😂 Funny',
+      greeting: 'Yo Alex! Ready to crush this shift? I promise not to make too many terrible jokes... okay maybe a few 😎',
+      style: 'Humorous, casual, dad jokes included'
+    },
+    sassy: {
+      name: '💅 Sassy',
+      greeting: 'Well well well, look who decided to show up! Let\'s get this show on the road, honey.',
+      style: 'Confident, playful attitude, witty comebacks'
+    },
+    witty: {
+      name: '🎭 Witty',
+      greeting: 'Ah, Alex returns! Ready for another thrilling episode of "Workplace Adventures"?',
+      style: 'Clever wordplay, subtle humor, quick responses'
+    },
+    goofy: {
+      name: '🤪 Goofy',
+      greeting: 'HEYYYY ALEX!!! 🎉 LET\'S DO THIS THING!!! *does happy dance* 💃',
+      style: 'Enthusiastic, silly, lots of emojis and energy'
+    },
+    vulgar: {
+      name: '🔥 Vulgar',
+      greeting: 'Yo Alex, let\'s get this sh&t done! No time for bull$#%t today, am I right?',
+      style: 'Edgy, censored profanity (f^%k, sh&t, d@mn), blunt'
+    }
+  };
+
+  const moodOptions = [
+    { emoji: '😊', label: 'Great!', value: 'great', color: 'green' },
+    { emoji: '😌', label: 'Good', value: 'good', color: 'blue' },
+    { emoji: '😐', label: 'Okay', value: 'okay', color: 'yellow' },
+    { emoji: '😓', label: 'Stressed', value: 'stressed', color: 'orange', alert: true },
+    { emoji: '😫', label: 'Burnt Out', value: 'burnout', color: 'red', alert: true },
+    { emoji: '😢', label: 'Struggling', value: 'struggling', color: 'red', alert: true },
+    { emoji: '😤', label: 'Frustrated', value: 'frustrated', color: 'orange', alert: true },
+    { emoji: '🤒', label: 'Not Well', value: 'sick', color: 'purple', alert: true }
+  ];
+
+  const todaysCoworkers = [
+    // My Department (Emergency)
+    { name: 'Sarah Johnson', role: 'Nurse Supervisor', dept: 'Emergency', status: 'clocked-in', shift: '7AM-3PM' },
+    { name: 'Michael Chen', role: 'RN', dept: 'Emergency', status: 'clocked-in', shift: '7AM-7PM' },
+    { name: 'Jennifer Lee', role: 'CNA', dept: 'Emergency', status: 'clocked-in', shift: '7AM-3PM' },
+    { name: 'Tom Baker', role: 'Physician', dept: 'Emergency', status: 'on-break', shift: '6AM-6PM' },
+    // Other Departments
+    { name: 'Dr. Martinez', role: 'Psychiatrist', dept: 'Mental Health', status: 'clocked-in', shift: '8AM-5PM' },
+    { name: 'Lisa Rodriguez', role: 'Therapist', dept: 'Mental Health', status: 'scheduled', shift: '9AM-5PM' },
+    { name: 'David Park', role: 'Charge Nurse', dept: 'ICU', status: 'clocked-in', shift: '7AM-7PM' },
+    { name: 'Emily Watson', role: 'RN', dept: 'Med-Surg', status: 'clocked-in', shift: '7AM-3PM' },
+    { name: 'Carlos Garcia', role: 'Lab Tech', dept: 'Laboratory', status: 'clocked-in', shift: '6AM-2PM' },
+    { name: 'Amanda Foster', role: 'X-Ray Tech', dept: 'Radiology', status: 'scheduled', shift: '8AM-4PM' }
+  ];
+
+  const handleMoodSelection = (mood: any) => {
+    setSelectedMood(mood.value);
+    if (mood.alert) {
+      setMoodAlertSent(true);
+      // This would send alert to manager/HR
+    }
+    setTimeout(() => setShowMoodCheckIn(false), 3000);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900">
@@ -111,8 +192,193 @@ export default function Basecamp() {
           </div>
         </div>
 
+        {/* Mood Check-In Modal */}
+        {showMoodCheckIn && (
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 max-w-2xl w-full border-2 border-emerald-500/30 shadow-2xl">
+              <h2 className="text-3xl font-bold text-white mb-2 text-center">How are you feeling today, {userName}?</h2>
+              <p className="text-emerald-200 text-center mb-6">Your wellbeing matters to us 💚</p>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+                {moodOptions.map((mood) => (
+                  <button
+                    key={mood.value}
+                    onClick={() => handleMoodSelection(mood)}
+                    className={`p-4 rounded-xl border-2 transition-all hover:scale-105 ${
+                      mood.color === 'green' ? 'bg-green-500/10 border-green-500/30 hover:border-green-500/60' :
+                      mood.color === 'blue' ? 'bg-blue-500/10 border-blue-500/30 hover:border-blue-500/60' :
+                      mood.color === 'yellow' ? 'bg-yellow-500/10 border-yellow-500/30 hover:border-yellow-500/60' :
+                      mood.color === 'orange' ? 'bg-orange-500/10 border-orange-500/30 hover:border-orange-500/60' :
+                      mood.color === 'red' ? 'bg-red-500/10 border-red-500/30 hover:border-red-500/60' :
+                      'bg-purple-500/10 border-purple-500/30 hover:border-purple-500/60'
+                    }`}
+                  >
+                    <div className="text-4xl mb-2">{mood.emoji}</div>
+                    <div className="text-white font-semibold text-sm">{mood.label}</div>
+                  </button>
+                ))}
+              </div>
+
+              {moodAlertSent && (
+                <div className="p-4 bg-blue-500/20 border border-blue-400/30 rounded-lg mb-4">
+                  <div className="flex items-start gap-3">
+                    <Bell className="w-5 h-5 text-blue-300 mt-0.5" />
+                    <div>
+                      <p className="text-blue-200 font-semibold">Thank you for sharing</p>
+                      <p className="text-blue-300 text-sm mt-1">HR and your manager have been notified and will reach out to support you. You're not alone. 💙</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <button
+                onClick={() => setShowMoodCheckIn(false)}
+                className="w-full py-2 text-slate-400 hover:text-white text-sm transition-colors"
+              >
+                Skip for now
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Today's Coworkers - Critical for Medical/Mental Health */}
+        {showCoworkers && (
+          <div className="bg-gradient-to-br from-emerald-900/30 to-teal-900/30 rounded-2xl p-6 mb-6 border-2 border-emerald-500/30 shadow-xl">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <Users className="w-6 h-6 text-emerald-400" />
+                <h2 className="text-2xl font-bold text-white">Working With You Today</h2>
+              </div>
+              <button
+                onClick={() => setShowCoworkers(!showCoworkers)}
+                className="text-emerald-300 hover:text-emerald-200 text-sm font-semibold"
+              >
+                {showCoworkers ? 'Hide' : 'Show'}
+              </button>
+            </div>
+
+            {/* My Department */}
+            <div className="mb-6">
+              <h3 className="text-lg font-bold text-emerald-300 mb-3 flex items-center gap-2">
+                <div className="w-3 h-3 bg-emerald-400 rounded-full"></div>
+                Your Department: Emergency
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {todaysCoworkers.filter(c => c.dept === 'Emergency').map((coworker, idx) => (
+                  <div key={idx} className="bg-slate-900/50 rounded-lg p-3 border border-emerald-500/20 hover:border-emerald-500/40 transition-all">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm ${
+                          coworker.status === 'clocked-in' ? 'bg-gradient-to-br from-green-500 to-emerald-500' :
+                          coworker.status === 'on-break' ? 'bg-gradient-to-br from-yellow-500 to-orange-500' :
+                          'bg-gradient-to-br from-slate-500 to-slate-600'
+                        }`}>
+                          {coworker.name.split(' ').map(n => n[0]).join('')}
+                        </div>
+                        <div>
+                          <p className="font-semibold text-white">{coworker.name}</p>
+                          <p className="text-xs text-slate-300">{coworker.role}</p>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className={`flex items-center gap-1 text-xs font-semibold mb-1 ${
+                          coworker.status === 'clocked-in' ? 'text-green-300' :
+                          coworker.status === 'on-break' ? 'text-yellow-300' :
+                          'text-slate-400'
+                        }`}>
+                          <div className={`w-2 h-2 rounded-full ${
+                            coworker.status === 'clocked-in' ? 'bg-green-400 animate-pulse' :
+                            coworker.status === 'on-break' ? 'bg-yellow-400' :
+                            'bg-slate-400'
+                          }`}></div>
+                          {coworker.status === 'clocked-in' ? 'Active' :
+                           coworker.status === 'on-break' ? 'On Break' :
+                           'Scheduled'}
+                        </div>
+                        <p className="text-xs text-slate-400">{coworker.shift}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Other Departments */}
+            <div>
+              <h3 className="text-lg font-bold text-blue-300 mb-3 flex items-center gap-2">
+                <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+                Other Departments
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                {todaysCoworkers.filter(c => c.dept !== 'Emergency').map((coworker, idx) => (
+                  <div key={idx} className="bg-slate-900/50 rounded-lg p-3 border border-blue-500/20 hover:border-blue-500/40 transition-all">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-xs ${
+                        coworker.status === 'clocked-in' ? 'bg-gradient-to-br from-blue-500 to-cyan-500' :
+                        'bg-gradient-to-br from-slate-500 to-slate-600'
+                      }`}>
+                        {coworker.name.split(' ').map(n => n[0]).join('')}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="font-semibold text-white text-sm truncate">{coworker.name}</p>
+                        <p className="text-xs text-slate-300">{coworker.role}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-blue-300 font-semibold">{coworker.dept}</span>
+                      <div className={`flex items-center gap-1 text-xs ${
+                        coworker.status === 'clocked-in' ? 'text-green-300' : 'text-slate-400'
+                      }`}>
+                        <div className={`w-1.5 h-1.5 rounded-full ${
+                          coworker.status === 'clocked-in' ? 'bg-green-400 animate-pulse' : 'bg-slate-400'
+                        }`}></div>
+                        {coworker.shift}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-4 p-3 bg-emerald-500/10 rounded-lg border border-emerald-400/30">
+              <p className="text-emerald-200 text-sm">
+                💡 <strong>Tip:</strong> Click on any coworker to send them a quick message or see their full profile
+              </p>
+            </div>
+          </div>
+        )}
+
         {/* Quick Stats Row */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
+          {/* Clock-In Status - CRITICAL */}
+          <div className={`${clockedIn ? 'bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-green-500/30' : 'bg-gradient-to-br from-red-900/50 to-orange-900/50 border-red-500/30'} rounded-xl p-4 border-2`}>
+            <div className="flex items-center justify-between mb-2">
+              {clockedIn ? (
+                <CheckCircle className="w-8 h-8 text-green-400" />
+              ) : (
+                <AlertCircle className="w-8 h-8 text-red-400 animate-pulse" />
+              )}
+              <button 
+                onClick={() => {
+                  setClockedIn(!clockedIn);
+                  setLastClockAction(new Date().toLocaleTimeString());
+                }}
+                className={`px-3 py-1 rounded-lg font-semibold text-sm ${clockedIn ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'} text-white transition-all`}
+              >
+                {clockedIn ? 'Clock Out' : 'Clock In'}
+              </button>
+            </div>
+            <div className={clockedIn ? 'text-green-200' : 'text-red-200'}>
+              <div className="font-bold text-lg">{clockedIn ? 'CLOCKED IN' : 'NOT CLOCKED IN'}</div>
+              {lastClockAction && (
+                <div className="text-xs mt-1">Last action: {lastClockAction}</div>
+              )}
+              {!clockedIn && (
+                <div className="text-xs mt-2 font-semibold text-red-300">⚠️ Fix immediately!</div>
+              )}
+            </div>
+          </div>
+
           <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-purple-500/30">
             <div className="flex items-center justify-between mb-2">
               <Flame className="w-8 h-8 text-orange-400" />
@@ -154,6 +420,233 @@ export default function Basecamp() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left Column - Quick Actions */}
           <div className="lg:col-span-2 space-y-6">
+            {/* Schedule Change Notifications */}
+            <div className="bg-gradient-to-br from-orange-900/30 to-red-900/30 rounded-xl p-6 border-2 border-orange-500/50 shadow-xl">
+              <div className="flex items-center gap-2 mb-4">
+                <Bell className="w-6 h-6 text-orange-400 animate-pulse" />
+                <h2 className="text-2xl font-bold text-white">Schedule Changes</h2>
+                <span className="px-3 py-1 bg-red-500 text-white text-xs font-bold rounded-full animate-pulse">NEW</span>
+              </div>
+              <div className="space-y-3">
+                <div className="bg-red-500/10 backdrop-blur-sm rounded-lg p-4 border border-red-400/30">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <AlertCircle className="w-5 h-5 text-red-300" />
+                        <p className="font-bold text-white">Your shift was changed!</p>
+                      </div>
+                      <p className="text-sm text-orange-100 mb-2">Tomorrow (Tue, Jan 13) • 3:00 PM - 11:00 PM</p>
+                      <p className="text-xs text-orange-200"><strong>Was:</strong> 8:00 AM - 4:00 PM</p>
+                      <p className="text-xs text-orange-200"><strong>Now:</strong> 3:00 PM - 11:00 PM (Evening Shift)</p>
+                      <p className="text-xs text-red-300 mt-2 font-semibold">Changed by: Manager Sarah • 30 minutes ago</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-yellow-500/10 backdrop-blur-sm rounded-lg p-4 border border-yellow-400/30">
+                  <div className="flex items-start gap-3">
+                    <AlertCircle className="w-5 h-5 text-yellow-300 mt-0.5" />
+                    <div className="flex-1">
+                      <p className="font-semibold text-white">Coverage needed: Friday</p>
+                      <p className="text-sm text-yellow-100 mt-1">Can you pick up an extra shift? 11:00 AM - 7:00 PM</p>
+                      <p className="text-xs text-yellow-300 mt-1">2 hours ago</p>
+                      <div className="flex gap-2 mt-3">
+                        <button className="px-4 py-2 bg-green-500 hover:bg-green-600 rounded-lg text-sm font-semibold text-white transition-all">
+                          I can help!
+                        </button>
+                        <button className="px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-sm font-semibold text-white transition-all">
+                          Not available
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Running Late Notification */}
+            <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/30 rounded-xl p-6 border-2 border-yellow-500/30">
+              <div className="flex items-center gap-2 mb-4">
+                <Clock className="w-6 h-6 text-yellow-400" />
+                <h2 className="text-2xl font-bold text-white">Running Late?</h2>
+              </div>
+              <div className="space-y-4">
+                <div className="bg-slate-900/50 rounded-lg p-4">
+                  <p className="text-white mb-3">Let your manager know immediately</p>
+                  <div className="flex gap-3">
+                    <input
+                      type="number"
+                      placeholder="Minutes late"
+                      className="w-32 bg-slate-800 border border-slate-600 rounded-lg px-3 py-2 text-white focus:border-yellow-400 focus:outline-none"
+                    />
+                    <button
+                      onClick={() => setLateNotificationSent(true)}
+                      className="flex-1 px-4 py-2 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 rounded-lg font-semibold text-white transition-all flex items-center justify-center gap-2"
+                    >
+                      <Send className="w-4 h-4" />
+                      Notify Manager
+                    </button>
+                  </div>
+                  {lateNotificationSent && (
+                    <div className="mt-3 p-3 bg-green-500/20 border border-green-400/30 rounded-lg flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <div>
+                        <p className="text-green-300 font-semibold text-sm">Manager notified!</p>
+                        <p className="text-green-400 text-xs flex items-center gap-1 mt-1">
+                          <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                          Read by Manager Sarah at {new Date().toLocaleTimeString()}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Team Messaging */}
+            <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-xl p-6 border-2 border-blue-500/30">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <MessageSquare className="w-6 h-6 text-blue-400" />
+                  <h2 className="text-2xl font-bold text-white">Team Messages</h2>
+                </div>
+                <button
+                  onClick={() => setShowTeamMessage(!showTeamMessage)}
+                  className="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold text-white transition-all"
+                >
+                  New Message
+                </button>
+              </div>
+
+              {showTeamMessage && (
+                <div className="mb-4 p-4 bg-slate-900/50 rounded-lg border border-blue-500/30">
+                  <textarea
+                    value={teamMessage}
+                    onChange={(e) => setTeamMessage(e.target.value)}
+                    placeholder="Urgent message to your team..."
+                    className="w-full h-24 bg-slate-800 border border-slate-600 rounded-lg p-3 text-white placeholder-slate-400 focus:border-blue-400 focus:outline-none resize-none mb-3"
+                  />
+                  <div className="mb-3">
+                    <p className="text-sm text-slate-300 mb-2">Select recipients:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {['All Team', 'Day Shift', 'Night Shift', 'Emergency Dept', 'ICU', 'Custom'].map((group) => (
+                        <button
+                          key={group}
+                          onClick={() => {
+                            if (selectedTeamMembers.includes(group)) {
+                              setSelectedTeamMembers(selectedTeamMembers.filter(g => g !== group));
+                            } else {
+                              setSelectedTeamMembers([...selectedTeamMembers, group]);
+                            }
+                          }}
+                          className={`px-3 py-1 rounded-lg text-sm font-semibold transition-all ${
+                            selectedTeamMembers.includes(group)
+                              ? 'bg-blue-500 text-white'
+                              : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                          }`}
+                        >
+                          {group}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <button className="w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 rounded-lg font-semibold text-white transition-all flex items-center justify-center gap-2">
+                    <Send className="w-4 h-4" />
+                    Send Urgent Message
+                  </button>
+                </div>
+              )}
+
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-600">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                      ME
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <p className="font-semibold text-white">You</p>
+                        <span className="text-xs text-slate-400">15 min ago</span>
+                      </div>
+                      <p className="text-slate-300 text-sm mb-2">"Flat tire on way to work, will be 20 min late 🚗"</p>
+                      <div className="flex items-center gap-2 text-xs">
+                        <div className="flex items-center gap-1 text-green-400">
+                          <UserCheck className="w-3 h-3" />
+                          <span>Read by 3 people</span>
+                        </div>
+                        <button className="text-blue-400 hover:text-blue-300">View receipts</button>
+                      </div>
+                      <div className="mt-2 p-2 bg-green-500/10 border border-green-400/30 rounded text-xs">
+                        <div className="flex items-center gap-1 text-green-300">
+                          <CheckCircle className="w-3 h-3" />
+                          ✓✓ Read by Manager Sarah at 8:15 AM
+                        </div>
+                        <div className="flex items-center gap-1 text-green-300 mt-1">
+                          <CheckCircle className="w-3 h-3" />
+                          ✓ Read by Tom (Team Lead) at 8:17 AM
+                        </div>
+                        <div className="flex items-center gap-1 text-green-300 mt-1">
+                          <CheckCircle className="w-3 h-3" />
+                          ✓ Read by Jennifer at 8:18 AM
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Personal Calendar Integration */}
+            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-purple-500/30">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-6 h-6 text-purple-400" />
+                  <h2 className="text-2xl font-bold text-white">My Calendar</h2>
+                </div>
+                <div className="flex gap-2">
+                  <button className="px-3 py-1 bg-purple-500/20 border border-purple-400/30 rounded-lg text-sm text-purple-300 hover:bg-purple-500/30 transition-all flex items-center gap-1">
+                    <Mail className="w-3 h-3" />
+                    Outlook
+                  </button>
+                  <button className="px-3 py-1 bg-purple-500/20 border border-purple-400/30 rounded-lg text-sm text-purple-300 hover:bg-purple-500/30 transition-all flex items-center gap-1">
+                    <Calendar className="w-3 h-3" />
+                    Google
+                  </button>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="p-4 bg-emerald-500/10 rounded-lg border border-emerald-400/30">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-3 h-3 bg-emerald-400 rounded"></div>
+                    <p className="font-semibold text-white">Work: Morning Shift</p>
+                  </div>
+                  <p className="text-sm text-slate-300">Tomorrow • 8:00 AM - 4:00 PM</p>
+                  <p className="text-xs text-emerald-300 mt-1">Department: Emergency</p>
+                </div>
+                <div className="p-4 bg-blue-500/10 rounded-lg border border-blue-400/30">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-3 h-3 bg-blue-400 rounded"></div>
+                    <p className="font-semibold text-white">Personal: Dentist Appointment</p>
+                  </div>
+                  <p className="text-sm text-slate-300">Wed, Jan 14 • 2:00 PM - 3:00 PM</p>
+                  <p className="text-xs text-blue-300 mt-1">From: Google Calendar</p>
+                </div>
+                <div className="p-4 bg-purple-500/10 rounded-lg border border-purple-400/30">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-3 h-3 bg-purple-400 rounded"></div>
+                    <p className="font-semibold text-white">Reminder: Mom's Birthday</p>
+                  </div>
+                  <p className="text-sm text-slate-300">Sat, Jan 17 • All Day</p>
+                  <p className="text-xs text-purple-300 mt-1">Personal reminder</p>
+                </div>
+                <Link href="/calendar?view=personal" className="block p-3 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg border border-purple-400/30 hover:border-purple-400/60 transition-all text-center">
+                  <p className="text-sm font-semibold text-purple-300 flex items-center justify-center gap-2">
+                    <ExternalLink className="w-4 h-4" />
+                    Manage All Events
+                  </p>
+                </Link>
+              </div>
+            </div>
+
             {/* Quick Actions Hub */}
             <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-emerald-500/30">
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
@@ -250,6 +743,151 @@ export default function Basecamp() {
 
           {/* Right Column - Everything Else */}
           <div className="space-y-6">
+            {/* Titan Employee Assistant Chatbot */}
+            <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 rounded-xl p-6 border-2 border-blue-500/30 shadow-xl">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <Bot className="w-6 h-6 text-cyan-400" />
+                  <h2 className="text-xl font-bold text-white">Titan Assistant</h2>
+                  <span className="text-xs text-cyan-300">({titanPersonalities[titanPersonality as keyof typeof titanPersonalities].name})</span>
+                </div>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => setShowPersonalityPicker(!showPersonalityPicker)}
+                    className="px-3 py-1 bg-purple-500/20 border border-purple-400/30 rounded-lg text-xs font-semibold text-purple-300 hover:bg-purple-500/30 transition-all"
+                  >
+                    Personality
+                  </button>
+                  <button
+                    onClick={() => setShowTitanChat(!showTitanChat)}
+                    className="px-3 py-1 bg-cyan-500/20 border border-cyan-400/30 rounded-lg text-sm font-semibold text-cyan-300 hover:bg-cyan-500/30 transition-all"
+                  >
+                    {showTitanChat ? 'Close' : 'Chat'}
+                  </button>
+                </div>
+              </div>
+
+              {/* Personality Picker */}
+              {showPersonalityPicker && (
+                <div className="mb-4 p-4 bg-slate-900/50 rounded-lg border border-purple-400/30">
+                  <h3 className="text-sm font-bold text-white mb-3">Choose Titan's Personality:</h3>
+                  <div className="grid grid-cols-2 gap-2 mb-3">
+                    {Object.entries(titanPersonalities).map(([key, personality]) => (
+                      <button
+                        key={key}
+                        onClick={() => {
+                          setTitanPersonality(key);
+                          setShowPersonalityPicker(false);
+                        }}
+                        className={`p-3 rounded-lg border-2 transition-all text-left ${
+                          titanPersonality === key
+                            ? 'bg-cyan-500/20 border-cyan-400/60'
+                            : 'bg-slate-800 border-slate-600 hover:border-cyan-400/30'
+                        }`}
+                      >
+                        <div className="font-bold text-white mb-1">{personality.name}</div>
+                        <div className="text-xs text-slate-300">{personality.style}</div>
+                      </button>
+                    ))}
+                  </div>
+                  <p className="text-xs text-cyan-300">💡 Pick the vibe that works for you!</p>
+                </div>
+              )}
+
+              <div className="mb-3 p-3 bg-cyan-500/10 rounded-lg border border-cyan-400/30">
+                <p className="text-sm text-cyan-100">
+                  <strong>Your personal AI assistant!</strong> I can help with:
+                </p>
+                <ul className="text-xs text-cyan-200 mt-2 space-y-1">
+                  <li>• Shift swap requests</li>
+                  <li>• Time-off questions</li>
+                  <li>• Benefits information</li>
+                  <li>• Schedule inquiries</li>
+                  <li>• Policy lookups</li>
+                </ul>
+              </div>
+
+              {showTitanChat && (
+                <div className="space-y-3">
+                  <div className="h-64 bg-slate-900/50 rounded-lg p-3 overflow-y-auto space-y-2">
+                    <div className="flex gap-2">
+                      <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Bot className="w-5 h-5 text-white" />
+                      </div>
+                      <div className="bg-cyan-500/20 rounded-lg p-3 border border-cyan-400/30">
+                        <p className="text-white text-sm">
+                          {titanPersonalities[titanPersonality as keyof typeof titanPersonalities].greeting}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex gap-2 justify-end">
+                      <div className="bg-blue-500/20 rounded-lg p-3 border border-blue-400/30 max-w-xs">
+                        <p className="text-white text-sm">
+                          How do I request a shift swap?
+                        </p>
+                      </div>
+                      <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        A
+                      </div>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Bot className="w-5 h-5 text-white" />
+                      </div>
+                      <div className="bg-cyan-500/20 rounded-lg p-3 border border-cyan-400/30">
+                        <p className="text-white text-sm">
+                          {titanPersonality === 'funny' && 'Alright, shift swapping time! It\'s like trading Pokemon cards but with your work schedule 😂 Here\'s how:'}
+                          {titanPersonality === 'sassy' && 'Oh honey, shift swaps are easy peasy! Let me break it down for you:'}
+                          {titanPersonality === 'witty' && 'Ah, the ancient art of the shift swap. Allow me to illuminate:'}
+                          {titanPersonality === 'goofy' && 'OOOOH SHIFT SWAPS!!! 🎉 THIS IS GONNA BE SO COOL!!! Here\'s what ya do:'}
+                          {titanPersonality === 'vulgar' && 'Shift swaps? Hell yeah, let\'s get this sh&t sorted:'}
+                          {titanPersonality === 'smart' && 'Excellent question. The shift swap protocol involves:'}
+                          <br/>1. Navigate to Calendar → Shift Swaps
+                          <br/>2. Select your target shift
+                          <br/>3. Choose swap partner
+                          <br/>4. Submit for approval
+                          <br/><br/>
+                          <a href="/calendar?tab=swaps" className="text-cyan-300 hover:text-cyan-200 underline">
+                            {titanPersonality === 'goofy' ? 'LET\'S GOOOOO →' : 
+                             titanPersonality === 'vulgar' ? 'F^%k yeah, take me there →' :
+                             titanPersonality === 'sassy' ? 'Show me the way, darling →' :
+                             'Take me there →'}
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      placeholder={
+                        titanPersonality === 'goofy' ? 'TELL ME ANYTHING!!!' :
+                        titanPersonality === 'vulgar' ? 'What\'s up?' :
+                        titanPersonality === 'sassy' ? 'Spill the tea...' :
+                        titanPersonality === 'witty' ? 'Inquire within...' :
+                        'Ask Titan anything...'
+                      }
+                      className="flex-1 bg-slate-800 border border-slate-600 rounded-lg px-3 py-2 text-white placeholder-slate-400 focus:border-cyan-400 focus:outline-none text-sm"
+                    />
+                    <button className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 rounded-lg font-semibold text-white transition-all">
+                      <Send className="w-4 h-4" />
+                    </button>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <button className="px-3 py-1 bg-slate-800 border border-slate-600 rounded-full text-xs text-slate-300 hover:bg-slate-700 transition-all">
+                      Request time off
+                    </button>
+                    <button className="px-3 py-1 bg-slate-800 border border-slate-600 rounded-full text-xs text-slate-300 hover:bg-slate-700 transition-all">
+                      My benefits
+                    </button>
+                    <button className="px-3 py-1 bg-slate-800 border border-slate-600 rounded-full text-xs text-slate-300 hover:bg-slate-700 transition-all">
+                      Upcoming shifts
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+
             {/* Recognition Wall */}
             <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/30 rounded-xl p-6 border-2 border-yellow-500/30">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
