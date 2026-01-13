@@ -11,9 +11,16 @@ NoxTitan is a comprehensive business management platform forged for titans—cov
 
 ---
 
-## 🎭 Live Demo
+## 🎭 Live Demo & Application
 
-**Experience the full interactive demo here:** [https://cmc-creator.github.io/NoxTitan/](https://cmc-creator.github.io/NoxTitan/)
+### 📺 Interactive Demo
+**Experience the full interactive demo presentation:**  
+[https://cmc-creator.github.io/NoxTitan/](https://cmc-creator.github.io/NoxTitan/)
+
+### 🚀 Full NoxTitan Application
+**Access the live application:**  
+Coming soon! The full NoxTitan app will be deployed to Vercel.  
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for deployment instructions.
 
 ---
 
@@ -241,6 +248,16 @@ This is a personal project, but suggestions and feedback are welcome!
 ## License
 
 ISC
+
+## Deployment
+
+NoxTitan has two separate deployments:
+
+1. **Demo Site (GitHub Pages):** Interactive presentation and demo  
+   URL: [https://cmc-creator.github.io/NoxTitan/](https://cmc-creator.github.io/NoxTitan/)
+
+2. **Full Application (Vercel):** Complete Next.js application with all features  
+   See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
 
 ## Support
 
