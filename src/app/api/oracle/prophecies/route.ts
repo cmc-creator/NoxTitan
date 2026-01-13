@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next/auth';
+import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { PrismaClient } from '@prisma/client';
 import { PrismaLibSql } from '@prisma/adapter-libsql';
@@ -8,12 +8,12 @@ import { createClient } from '@libsql/client';
 const libsql = createClient({
   url: process.env.DATABASE_URL || 'file:./prisma/dev.db',
   syncUrl: process.env.TURSO_DATABASE_URL,
-  authToken: process.env.TURSO_AUTH_TOKEN,
+  authToken: process.env.DATABASE_AUTH_TOKEN,
 });
 
 const adapter = new PrismaLibSql({
   url: process.env.DATABASE_URL || 'file:./prisma/dev.db',
-  authToken: process.env.TURSO_AUTH_TOKEN,
+  authToken: process.env.DATABASE_AUTH_TOKEN,
 });
 const prisma = new PrismaClient({ adapter });
 

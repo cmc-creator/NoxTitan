@@ -8,12 +8,12 @@ import { createClient } from '@libsql/client';
 const libsql = createClient({
   url: process.env.DATABASE_URL || 'file:./prisma/dev.db',
   syncUrl: process.env.TURSO_DATABASE_URL,
-  authToken: process.env.TURSO_AUTH_TOKEN,
+  authToken: process.env.DATABASE_AUTH_TOKEN,
 });
 
 const adapter = new PrismaLibSql({
   url: process.env.DATABASE_URL || 'file:./prisma/dev.db',
-  authToken: process.env.TURSO_AUTH_TOKEN,
+  authToken: process.env.DATABASE_AUTH_TOKEN,
 });
 const prisma = new PrismaClient({ adapter });
 
