@@ -1,7 +1,7 @@
 {
-  "name": "teampulse",
+  "name": "noxtitan",
   "version": "1.0.0",
-  "description": "TeamPulse - Workforce Management Platform by Connie Michelle Consulting & Business Solutions LLC",
+  "description": "NoxTitan™ - Business Management Platform by Connie Michelle Consulting & Business Solutions LLC",
   "author": "Connie Michelle Consulting & Business Solutions LLC",
   "license": "PROPRIETARY",
   "private": true,
@@ -14,11 +14,12 @@
     "db:reset": "npx prisma migrate reset --force && npm run db:seed"
   },
   "keywords": [
+    "noxtitan",
     "workforce management",
     "employee scheduling",
+    "business management",
     "healthcare staffing",
-    "compliance tracking",
-    "teampulse"
+    "compliance tracking"
   ],
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
