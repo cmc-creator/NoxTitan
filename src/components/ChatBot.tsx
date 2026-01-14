@@ -66,11 +66,11 @@ export default function ChatBot() {
 
     // Compliance & Labor Laws
     if (lowerMessage.includes('overtime') || lowerMessage.includes('hours worked')) {
-      return "Great question about overtime! 📊\n\nFederal (FLSA): 1.5x pay after 40 hours/week\n\nState variations:\n• California: Overtime after 8 hrs/day OR 40 hrs/week\n• Colorado: Overtime after 12 hrs/day OR 40 hrs/week\n• Nevada: Overtime after 8 hrs/day (if earning < 1.5x minimum wage)\n\nI can help you set up overtime alerts in the scheduler!";
+      return "Great question about overtime! 📊\n\nFederal (FLSA): 1.5x pay after 40 hours/week\n\nState variations:\n• California: Overtime after 8 hrs/day OR 40 hrs/week\n• Colorado: Overtime after 12 hrs/day OR 40 hrs/week\n• Nevada: Overtime after 8 hrs/day (if earning less than 1.5x minimum wage)\n\nI can help you set up overtime alerts in the scheduler!";
     }
 
     if (lowerMessage.includes('break') || lowerMessage.includes('meal') || lowerMessage.includes('rest')) {
-      return "Let me help with break requirements! ☕\n\n**California:**\n• 30-min meal break after 5 hours\n• 10-min paid rest break per 4 hours\n\n**Federal:**\n• Breaks under 20 min must be paid\n• Meal breaks 30+ min can be unpaid\n\nOur Auto-Breaks feature handles this automatically!";
+      return "Let me help with break requirements! ☕\n\n**California:**\n• 30 min meal break after 5 hours\n• 10 min paid rest break per 4 hours\n\n**Federal:**\n• Breaks under 20 min must be paid\n• Meal breaks 30+ min can be unpaid\n\nOur Auto Breaks feature handles this automatically!";
     }
 
     if (lowerMessage.includes('law') || lowerMessage.includes('legal') || lowerMessage.includes('regulation') || lowerMessage.includes('compliance')) {
@@ -79,7 +79,7 @@ export default function ChatBot() {
 
     // Optimization
     if (lowerMessage.includes('optimize') || lowerMessage.includes('save') || lowerMessage.includes('cost') || lowerMessage.includes('reduce')) {
-      return "I love optimization! 💡\n\nQuick wins:\n1. Use Oracle AI predictions for staffing\n2. Cross-train employees for flexibility\n3. Adjust shift times for peak coverage\n4. Monitor overtime before it happens\n\nOur Enterprise tier includes full cost optimization tools!";
+      return "I love optimization! 💡\n\nQuick wins:\n1. Use Oracle AI predictions for staffing\n2. Cross train employees for flexibility\n3. Adjust shift times for peak coverage\n4. Monitor overtime before it happens\n\nOur Enterprise tier includes full cost optimization tools!";
     }
 
     // Jokes
@@ -117,7 +117,7 @@ export default function ChatBot() {
 
     // Subscription tiers
     if (lowerMessage.includes('tier') || lowerMessage.includes('subscription') || lowerMessage.includes('plan') || lowerMessage.includes('upgrade') || lowerMessage.includes('price') || lowerMessage.includes('pricing') || lowerMessage.includes('cost')) {
-      return "We have 3 enterprise tiers (VIP codes available for complimentary access):\n\n**Professional ($499/mo)**: Up to 50 employees, advanced scheduling, time & attendance, payroll, 10 core integrations\n\n**Enterprise ($1,499/mo)**: Up to 250 employees, everything in Professional + Oracle AI, Compliance Suite, Asset Vault, Sentinel, Guild, all 60+ integrations\n\n**Titan ($2,999/mo)**: Unlimited employees, white-glove service, dedicated account manager, 24/7 support, custom development\n\nStill 70-90% cheaper than Paycom, ADP, or Kronos!";
+      return "We have 3 enterprise tiers (VIP codes available for complimentary access):\n\n**Professional ($499/mo)**: Up to 50 employees, advanced scheduling, time and attendance, payroll, 10 core integrations\n\n**Enterprise ($1,499/mo)**: Up to 250 employees, everything in Professional plus Oracle AI, Compliance Suite, Asset Vault, Sentinel, Guild, all 60+ integrations\n\n**Titan ($2,999/mo or custom enterprise pricing)**: Unlimited employees, white-glove service, dedicated account manager, 24/7 priority support, custom development\n\nStill 70 to 90% cheaper than Paycom, ADP, or Kronos!";
     }
 
     // Themes
@@ -362,7 +362,7 @@ export default function ChatBot() {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Ask me anything..."
-                className="flex-1 px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
+                className="flex-1 px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder:text-gray-400"
               />
               <button
                 onClick={handleSend}

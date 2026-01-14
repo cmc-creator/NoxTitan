@@ -68,9 +68,9 @@ export default function LandingPage() {
         </span>
         {/* Action Buttons Row - Cleaned up, no duplicates */}
         <div className="flex flex-row flex-wrap justify-center gap-4 mt-6">
-          <Link href="/signup" className="px-6 py-3 rounded-xl bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-2 border-green-600/40 hover:border-green-400 font-bold shadow-lg transition-all text-white text-pop-light">🚀 Start Free Trial</Link>
-          <Link href="#contact" className="px-6 py-3 rounded-xl bg-gradient-to-br from-blue-900/50 to-indigo-900/50 border-2 border-blue-600/40 hover:border-blue-400 font-bold shadow-lg transition-all text-white text-pop-light">📺 Request Demo</Link>
-          <Link href="/pricing" className="px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-2 border-purple-600/40 hover:border-purple-400 font-bold shadow-lg transition-all text-white text-pop-light">💰 View Pricing</Link>
+          <Link href="/signup" className="px-6 py-3 rounded-xl bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-2 border-green-600/40 hover:border-green-400 font-bold shadow-lg transition-all text-white text-pop-light">Start Free Trial</Link>
+          <Link href="#contact" className="px-6 py-3 rounded-xl bg-gradient-to-br from-blue-900/50 to-indigo-900/50 border-2 border-blue-600/40 hover:border-blue-400 font-bold shadow-lg transition-all text-white text-pop-light">Request Demo</Link>
+          <Link href="/pricing" className="px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-2 border-purple-600/40 hover:border-purple-400 font-bold shadow-lg transition-all text-white text-pop-light">View Pricing</Link>
         </div>
       </div>
 
