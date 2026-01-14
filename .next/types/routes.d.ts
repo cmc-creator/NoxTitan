@@ -4,7 +4,7 @@
 type AppRoutes = "/" | "/accounting" | "/activities" | "/ai-assistant" | "/analytics" | "/announcements" | "/attendance" | "/basecamp" | "/basecamp/benefits" | "/basecamp/games" | "/basecamp/ideas" | "/basecamp/kudos" | "/basecamp/learning" | "/basecamp/login" | "/basecamp/profile" | "/basecamp/team" | "/basecamp/wellness" | "/calendar" | "/compliance" | "/compliance/violations" | "/dashboard" | "/employees" | "/employees/[id]" | "/guild" | "/guild/admin" | "/guild/admin/xp-config" | "/help" | "/hr" | "/hr-planner" | "/hr/analytics" | "/hr/automation" | "/hr/compensation" | "/hr/org-chart" | "/hr/performance" | "/hr/planner" | "/hr/recruiting" | "/hr/self-service" | "/hr/surveys" | "/hr/wellness" | "/import" | "/incentives" | "/integrations" | "/landing" | "/learning" | "/login" | "/manager-basecamp" | "/merch-store" | "/merch-store/setup" | "/messages" | "/notifications" | "/onboarding" | "/oracle" | "/payroll" | "/pricing" | "/privacy" | "/profile" | "/qapi" | "/recognition" | "/reports" | "/sentinel" | "/sentinel/import" | "/sentinel/security" | "/settings" | "/settings/policies" | "/shift-logs" | "/signup" | "/suggestions" | "/support" | "/team-culture" | "/terms" | "/time-off" | "/timeclock" | "/timeclock/devices" | "/training" | "/vault" | "/vault/payroll-flags" | "/vault/treasury"
 type AppRouteHandlerRoutes = "/api/ai-assistant" | "/api/analytics" | "/api/assets" | "/api/assets/assign" | "/api/assets/categories" | "/api/assets/treasury/checkout" | "/api/assets/treasury/overdue" | "/api/auth/[...nextauth]" | "/api/auth/signup" | "/api/automation" | "/api/compliance/violations" | "/api/employees" | "/api/employees/[id]" | "/api/guild/achievements" | "/api/guild/activity" | "/api/guild/admin/achievements" | "/api/guild/admin/activity" | "/api/guild/admin/grant-xp" | "/api/guild/admin/members" | "/api/guild/admin/xp-settings" | "/api/guild/leaderboard" | "/api/guild/profile" | "/api/guild/rewards" | "/api/guild/rewards/purchase" | "/api/hr/automation" | "/api/hr/surveys" | "/api/hr/tasks" | "/api/import" | "/api/merch/items" | "/api/merch/orders" | "/api/merch/stores" | "/api/merch/stores/test" | "/api/merch/sync" | "/api/onboarding/complete" | "/api/oracle/analyze" | "/api/oracle/insights" | "/api/oracle/prophecies" | "/api/oracle/risks/top" | "/api/payroll" | "/api/payroll/deductions" | "/api/reports-analytics" | "/api/security/alerts" | "/api/security/cameras" | "/api/security/doors" | "/api/security/stats" | "/api/shifts" | "/api/sop-policy" | "/api/templates" | "/api/time-off" | "/api/time-off/[id]" | "/api/timeclock" | "/api/timeclock/break" | "/api/timeclock/devices" | "/api/timeclock/webhook" | "/api/visitors/active" | "/api/visitors/import/csv" | "/api/visitors/stats"
 type PageRoutes = never
-type LayoutRoutes = "/" | "/dashboard" | "/landing"
+type LayoutRoutes = "/" | "/accounting" | "/activities" | "/ai-assistant" | "/analytics" | "/announcements" | "/attendance" | "/basecamp" | "/calendar" | "/compliance" | "/dashboard" | "/employees" | "/guild" | "/help" | "/hr" | "/hr-planner" | "/import" | "/incentives" | "/integrations" | "/landing" | "/learning" | "/manager-basecamp" | "/merch-store" | "/messages" | "/notifications" | "/onboarding" | "/oracle" | "/payroll" | "/profile" | "/qapi" | "/recognition" | "/reports" | "/sentinel" | "/settings" | "/shift-logs" | "/suggestions" | "/support" | "/team-culture" | "/time-off" | "/timeclock" | "/training" | "/vault"
 type RedirectRoutes = never
 type RewriteRoutes = never
 type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRoutes | AppRouteHandlerRoutes
@@ -152,8 +152,47 @@ export type ParamsOf<Route extends Routes> = ParamMap[Route]
 
 interface LayoutSlotMap {
   "/": never
+  "/accounting": never
+  "/activities": never
+  "/ai-assistant": never
+  "/analytics": never
+  "/announcements": never
+  "/attendance": never
+  "/basecamp": never
+  "/calendar": never
+  "/compliance": never
   "/dashboard": never
+  "/employees": never
+  "/guild": never
+  "/help": never
+  "/hr": never
+  "/hr-planner": never
+  "/import": never
+  "/incentives": never
+  "/integrations": never
   "/landing": never
+  "/learning": never
+  "/manager-basecamp": never
+  "/merch-store": never
+  "/messages": never
+  "/notifications": never
+  "/onboarding": never
+  "/oracle": never
+  "/payroll": never
+  "/profile": never
+  "/qapi": never
+  "/recognition": never
+  "/reports": never
+  "/sentinel": never
+  "/settings": never
+  "/shift-logs": never
+  "/suggestions": never
+  "/support": never
+  "/team-culture": never
+  "/time-off": never
+  "/timeclock": never
+  "/training": never
+  "/vault": never
 }
 
 

@@ -1,3 +1,3 @@
-module.exports=[25986,a=>{"use strict";var b=a.i(7997);function c({children:a}){return(0,b.jsx)(b.Fragment,{children:a})}a.s(["default",()=>c,"metadata",0,{title:"NoxTitan – Business Management. Forged for Titans.",description:"NoxTitan is the powerful, next-generation business management platform. Built for leaders, forged for titans. Unmatched scheduling, analytics, compliance, and team collaboration."}])}];
+module.exports=[25986,a=>{"use strict";var b=a.i(28881);function c({children:a}){return(0,b.jsx)(b.Fragment,{children:a})}a.s(["default",()=>c,"metadata",0,{title:"NoxTitan – Business Management. Forged for Titans.",description:"NoxTitan is the powerful, next-generation business management platform. Built for leaders, forged for titans. Unmatched scheduling, analytics, compliance, and team collaboration."}])}];
 
 //# sourceMappingURL=src_app_landing_layout_tsx_e88cacd1._.js.map

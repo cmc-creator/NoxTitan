@@ -6,3 +6,12 @@ node_modules
 
 # GitHub Pages build directory
 _site
+
+# Next.js build artifacts
+.next/
+out/
+build/
+dist/
+
+# Production builds
+*.tgz

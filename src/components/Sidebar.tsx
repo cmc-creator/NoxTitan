@@ -23,7 +23,9 @@ import {
   Package,
   Sparkles,
   Trophy,
-  ShoppingBag
+  ShoppingBag,
+  Heart,
+  ClipboardCheck
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -40,6 +42,7 @@ const navigationSections = [
     items: [
       { name: 'Calendar', href: '/calendar', icon: Calendar },
       { name: 'Employees', href: '/employees', icon: Users },
+      { name: 'HR Management', href: '/hr', icon: Heart },
       { name: 'Time Off', href: '/time-off', icon: Clock },
       { name: 'Payroll', href: '/payroll', icon: DollarSign },
     ]
@@ -47,6 +50,7 @@ const navigationSections = [
   {
     title: 'Enterprise Suite',
     items: [
+      { name: 'QAPI Portal', href: '/qapi', icon: ClipboardCheck },
       { name: 'Asset Vault', href: '/vault', icon: Package },
       { name: 'Sentinel', href: '/sentinel', icon: Shield },
       { name: 'Oracle', href: '/oracle', icon: Sparkles },
