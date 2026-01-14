@@ -36,14 +36,15 @@ export default function EmployeesPage() {
       lastName: 'Doe',
       email: 'john.doe@example.com',
       phone: '(555) 123-4567',
-      position: 'Manager',
-      hourlyRate: 25,
+      position: 'Operations Manager',
+      hourlyRate: 28.50,
       isActive: true,
       department: 'Operations',
       color: '#3b82f6',
       employmentType: 'full-time',
       weeklyHourLimit: 40,
       overtimeThreshold: 40,
+      notes: 'Senior manager with 8 years experience. Certified in OSHA compliance and emergency response protocols.'
     },
     {
       id: '2',
@@ -51,14 +52,15 @@ export default function EmployeesPage() {
       lastName: 'Smith',
       email: 'jane.smith@example.com',
       phone: '(555) 234-5678',
-      position: 'Staff',
-      hourlyRate: 18,
+      position: 'Sales Associate',
+      hourlyRate: 22.00,
       isActive: true,
       department: 'Sales',
       color: '#10b981',
-      employmentType: 'part-time',
-      weeklyHourLimit: 28,
-      overtimeThreshold: 28,
+      employmentType: 'full-time',
+      weeklyHourLimit: 40,
+      overtimeThreshold: 40,
+      notes: 'Top performer in Q4 2025. Bilingual (English/Spanish). Customer service excellence award recipient.'
     },
     {
       id: '3',
@@ -66,14 +68,129 @@ export default function EmployeesPage() {
       lastName: 'Johnson',
       email: 'mike.j@example.com',
       phone: '(555) 345-6789',
-      position: 'Staff',
-      hourlyRate: 18,
+      position: 'Technical Support Specialist',
+      hourlyRate: 24.75,
       isActive: true,
       department: 'Support',
       color: '#8b5cf6',
+      employmentType: 'full-time',
+      weeklyHourLimit: 40,
+      overtimeThreshold: 40,
+      notes: 'IT certified with CompTIA A+ and Network+. Handles tier 2 escalations and system administration tasks.'
+    },
+    {
+      id: '4',
+      firstName: 'Sarah',
+      lastName: 'Williams',
+      email: 'sarah.w@example.com',
+      phone: '(555) 456-7890',
+      position: 'Registered Nurse',
+      hourlyRate: 38.50,
+      isActive: true,
+      department: 'Healthcare',
+      color: '#ec4899',
+      employmentType: 'full-time',
+      weeklyHourLimit: 36,
+      overtimeThreshold: 36,
+      notes: 'BSN, RN with 5 years ICU experience. BLS, ACLS, and PALS certified. Float pool qualified for all units.'
+    },
+    {
+      id: '5',
+      firstName: 'David',
+      lastName: 'Martinez',
+      email: 'david.m@example.com',
+      phone: '(555) 567-8901',
+      position: 'Part Time Associate',
+      hourlyRate: 16.50,
+      isActive: true,
+      department: 'Operations',
+      color: '#f59e0b',
+      employmentType: 'part-time',
+      weeklyHourLimit: 25,
+      overtimeThreshold: 25,
+      notes: 'College student with flexible availability. Reliable and punctual. Cross trained in inventory and customer service.'
+    },
+    {
+      id: '6',
+      firstName: 'Emily',
+      lastName: 'Chen',
+      email: 'emily.chen@example.com',
+      phone: '(555) 678-9012',
+      position: 'PRN Nurse',
+      hourlyRate: 42.00,
+      isActive: true,
+      department: 'Healthcare',
+      color: '#06b6d4',
       employmentType: 'prn',
+      weeklyHourLimit: 24,
+      overtimeThreshold: 24,
+      notes: 'PRN staff nurse. Available weekends and holidays. Pediatric specialty certification. On call status.'
+    },
+    {
+      id: '7',
+      firstName: 'Robert',
+      lastName: 'Taylor',
+      email: 'robert.t@example.com',
+      phone: '(555) 789-0123',
+      position: 'Maintenance Technician',
+      hourlyRate: 26.00,
+      isActive: true,
+      department: 'Facilities',
+      color: '#8b5cf6',
+      employmentType: 'full-time',
+      weeklyHourLimit: 40,
+      overtimeThreshold: 40,
+      notes: 'Licensed electrician and HVAC certified. Handles preventive maintenance and emergency repairs. On call rotation.'
+    },
+    {
+      id: '8',
+      firstName: 'Lisa',
+      lastName: 'Anderson',
+      email: 'lisa.a@example.com',
+      phone: '(555) 890-1234',
+      position: 'HR Coordinator',
+      hourlyRate: 25.50,
+      isActive: true,
+      department: 'Human Resources',
+      color: '#ef4444',
+      employmentType: 'full-time',
+      weeklyHourLimit: 40,
+      overtimeThreshold: 40,
+      notes: 'SHRM-CP certified. Manages onboarding, benefits administration, and employee relations. 3 years HR experience.'
+    },
+    {
+      id: '9',
+      firstName: 'James',
+      lastName: 'Brown',
+      email: 'james.b@example.com',
+      phone: '(555) 901-2345',
+      position: 'Warehouse Associate',
+      hourlyRate: 19.00,
+      isActive: false,
+      department: 'Logistics',
+      color: '#6b7280',
+      employmentType: 'full-time',
+      weeklyHourLimit: 40,
+      overtimeThreshold: 40,
+      terminationDate: '2025-12-15',
+      terminationReason: 'Resigned - relocated to another state',
+      notes: 'Forklift certified. Strong safety record. Left on good terms, eligible for rehire.'
+    },
+    {
+      id: '10',
+      firstName: 'Maria',
+      lastName: 'Garcia',
+      email: 'maria.g@example.com',
+      phone: '(555) 012-3456',
+      position: 'Contract Consultant',
+      hourlyRate: 85.00,
+      isActive: true,
+      department: 'IT',
+      color: '#14b8a6',
+      employmentType: 'contract',
       weeklyHourLimit: 20,
       overtimeThreshold: 20,
+      notes: 'Software development consultant. 1099 contractor. Specialized in database optimization and cloud migrations. 90 day contract ending March 2026.'
     },
   ]);
   const [showAddModal, setShowAddModal] = useState(false);
@@ -277,6 +394,11 @@ export default function EmployeesPage() {
               <div className="text-sm text-gray-600 capitalize">
                 <span className="font-semibold">Type:</span> {employee.employmentType} ({employee.weeklyHourLimit} hrs/week)
               </div>
+              {employee.notes && (
+                <div className="text-xs text-gray-500 bg-gray-50 p-2 rounded mt-2 border border-gray-200">
+                  <span className="font-semibold">Notes:</span> {employee.notes}
+                </div>
+              )}
               {!employee.isActive && employee.terminationDate && (
                 <div className="text-sm text-red-600 pt-2 border-t border-gray-200">
                   <span className="font-semibold">Terminated:</span> {new Date(employee.terminationDate).toLocaleDateString()}

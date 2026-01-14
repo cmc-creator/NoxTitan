@@ -53,7 +53,11 @@ export default function ChatBot() {
   };
 
   useEffect(() => {
-    scrollToBottom();
+    // Only scroll to bottom when user sends a message or bot responds
+    // Don't auto-scroll on initial load
+    if (messages.length > 1) {
+      scrollToBottom();
+    }
   }, [messages]);
 
   const getBotResponse = (userMessage: string): string => {
