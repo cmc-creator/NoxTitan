@@ -29,9 +29,9 @@ async function parseExcel(buffer: ArrayBuffer): Promise<any[]> {
   const data: any[] = [];
   const headers: string[] = [];
   
-  // Get headers from first row
+  // Get headers from first row (include empty cells to maintain alignment)
   const firstRow = worksheet.getRow(1);
-  firstRow.eachCell((cell, colNumber) => {
+  firstRow.eachCell({ includeEmpty: true }, (cell, colNumber) => {
     headers[colNumber - 1] = cell.value?.toString() || '';
   });
   
@@ -40,15 +40,22 @@ async function parseExcel(buffer: ArrayBuffer): Promise<any[]> {
     if (rowNumber === 1) return; // Skip header row
     
     const rowData: any = {};
-    row.eachCell((cell, colNumber) => {
+    let hasData = false;
+    
+    row.eachCell({ includeEmpty: true }, (cell, colNumber) => {
       const header = headers[colNumber - 1];
       if (header) {
-        rowData[header] = cell.value;
+        const value = cell.value;
+        rowData[header] = value;
+        // Check if row has any meaningful data (not null/undefined)
+        if (value !== null && value !== undefined) {
+          hasData = true;
+        }
       }
     });
     
-    // Only add non-empty rows
-    if (Object.keys(rowData).length > 0) {
+    // Only add rows that contain at least one non-null/non-undefined value
+    if (hasData) {
       data.push(rowData);
     }
   });
