@@ -1,22 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
+﻿import { NextRequest, NextResponse } from 'next/server';
+import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/lib/auth';
-import { PrismaClient } from '@prisma/client';
-import { PrismaLibSql } from '@prisma/adapter-libsql';
-import { createClient } from '@libsql/client';
+import { prisma } from '@/lib/prisma';
 
-const libsql = createClient({
-  url: process.env.DATABASE_URL || 'file:./prisma/dev.db',
-  syncUrl: process.env.TURSO_DATABASE_URL,
-  authToken: process.env.TURSO_AUTH_TOKEN,
-});
-
-const adapter = new PrismaLibSql(libsql);
-const adapter = new PrismaLibSql({
-  url: process.env.DATABASE_URL || 'file:./prisma/dev.db',
-  authToken: process.env.TURSO_AUTH_TOKEN,
-});
-const prisma = new PrismaClient({ adapter });
 
 export async function GET(request: NextRequest) {
   try {

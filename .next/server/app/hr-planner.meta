@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/hr-planner/layout,_N_T_/hr-planner/page,_N_T_/hr-planner"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/hr-planner/__PAGE__",
+    "/hr-planner",
+    "/_index",
+    "/_head"
+  ]
+}

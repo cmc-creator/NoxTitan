@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/hr/layout,_N_T_/hr/compensation/layout,_N_T_/hr/compensation/page,_N_T_/hr/compensation"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/hr/compensation/__PAGE__",
+    "/hr/compensation",
+    "/hr",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -16,7 +16,7 @@ import {
   BarChart3,
   PieChart,
   FileSpreadsheet,
-  FilePdf,
+  FileDown,
   Search,
   ChevronDown,
   Activity,
@@ -495,7 +495,7 @@ export default function ReportsPage() {
             onClick={exportToPDF}
             className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-all flex items-center gap-2"
           >
-            <FilePdf className="w-4 h-4" />
+            <FileDown className="w-4 h-4" />
             Export PDF
           </button>
           <button

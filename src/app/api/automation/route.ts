@@ -28,7 +28,7 @@ export async function POST(req: Request) {
           action: 'CREATE_AUTOMATION_VALIDATION_FAILED',
           details: JSON.stringify(data),
           userRole: getUserRole(req),
-          status: 'FAILED',
+  
           timestamp: new Date(),
         },
       });
@@ -42,7 +42,7 @@ export async function POST(req: Request) {
           action: 'CREATE_AUTOMATION_UNAUTHORIZED',
           details: JSON.stringify(data),
           userRole: role,
-          status: 'FAILED',
+  
           timestamp: new Date(),
         },
       });
@@ -51,13 +51,13 @@ export async function POST(req: Request) {
     // HIPAA/legal compliance check placeholder
     // TODO: Add real compliance logic
     try {
-      const automation = await prisma.automation.create({ data });
+      const automation = await prisma.automationRule.create({ data });
       await prisma.auditLog.create({
         data: {
           action: 'CREATE_AUTOMATION_SUCCESS',
           details: JSON.stringify(data),
           userRole: role,
-          status: 'SUCCESS',
+  
           timestamp: new Date(),
         },
       });
@@ -68,7 +68,7 @@ export async function POST(req: Request) {
           action: 'CREATE_AUTOMATION_ERROR',
           details: err.message || String(err),
           userRole: role,
-          status: 'FAILED',
+  
           timestamp: new Date(),
         },
       });
@@ -88,15 +88,15 @@ export async function GET(req: Request) {
       let automations;
       if (role === 'user') {
         // Only show active automations to regular users
-        automations = await prisma.automation.findMany({ where: { isActive: true } });
+        automations = await prisma.automationRule.findMany({ where: { isActive: true } });
       } else {
-        automations = await prisma.automation.findMany();
+        automations = await prisma.automationRule.findMany();
       }
       await prisma.auditLog.create({
         data: {
           action: 'LIST_AUTOMATIONS_SUCCESS',
           userRole: role,
-          status: 'SUCCESS',
+  
           details: `Fetched ${automations.length} automations`,
           timestamp: new Date(),
         },
@@ -107,7 +107,7 @@ export async function GET(req: Request) {
         data: {
           action: 'LIST_AUTOMATIONS_ERROR',
           userRole: role,
-          status: 'FAILED',
+  
           details: err.message || String(err),
           timestamp: new Date(),
         },

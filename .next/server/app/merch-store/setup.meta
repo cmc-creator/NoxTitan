@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/merch-store/layout,_N_T_/merch-store/setup/layout,_N_T_/merch-store/setup/page,_N_T_/merch-store/setup"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/merch-store/setup/__PAGE__",
+    "/merch-store/setup",
+    "/merch-store",
+    "/_index",
+    "/_head"
+  ]
+}

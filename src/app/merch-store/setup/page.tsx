@@ -428,6 +428,7 @@ export default function MerchSetupPage() {
               </button>
             </div>
           </div>
+        </div>
         )}
 
         {/* Step 3: Sync & Manage */}

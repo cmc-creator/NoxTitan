@@ -27,7 +27,7 @@ export async function POST(req: Request) {
           action: 'CREATE_REPORT_VALIDATION_FAILED',
           details: JSON.stringify(data),
           userRole: getUserRole(req),
-          status: 'FAILED',
+  
           timestamp: new Date(),
         },
       });
@@ -41,7 +41,7 @@ export async function POST(req: Request) {
           action: 'CREATE_REPORT_UNAUTHORIZED',
           details: JSON.stringify(data),
           userRole: role,
-          status: 'FAILED',
+  
           timestamp: new Date(),
         },
       });
@@ -56,7 +56,7 @@ export async function POST(req: Request) {
           action: 'CREATE_REPORT_SUCCESS',
           details: JSON.stringify(data),
           userRole: role,
-          status: 'SUCCESS',
+  
           timestamp: new Date(),
         },
       });
@@ -67,7 +67,7 @@ export async function POST(req: Request) {
           action: 'CREATE_REPORT_ERROR',
           details: err.message || String(err),
           userRole: role,
-          status: 'FAILED',
+  
           timestamp: new Date(),
         },
       });
@@ -95,7 +95,7 @@ export async function GET(req: Request) {
         data: {
           action: 'LIST_REPORTS_SUCCESS',
           userRole: role,
-          status: 'SUCCESS',
+  
           details: `Fetched ${reports.length} reports`,
           timestamp: new Date(),
         },
@@ -106,7 +106,7 @@ export async function GET(req: Request) {
         data: {
           action: 'LIST_REPORTS_ERROR',
           userRole: role,
-          status: 'FAILED',
+  
           details: err.message || String(err),
           timestamp: new Date(),
         },

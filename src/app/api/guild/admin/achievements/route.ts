@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { prisma } from '@/lib/prisma';
 
 export async function GET(request: NextRequest) {
   try {
@@ -9,7 +7,7 @@ export async function GET(request: NextRequest) {
       include: {
         _count: {
           select: {
-            employeeAchievements: true
+            unlocks: true
           }
         }
       }
@@ -17,7 +15,7 @@ export async function GET(request: NextRequest) {
 
     const formattedAchievements = achievements.map(achievement => ({
       ...achievement,
-      unlockCount: achievement._count.employeeAchievements
+      unlockCount: achievement._count.unlocks
     }));
 
     return NextResponse.json(formattedAchievements);

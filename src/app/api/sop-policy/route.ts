@@ -27,7 +27,7 @@ export async function POST(req: Request) {
           action: 'UPLOAD_SOP_POLICY_VALIDATION_FAILED',
           details: JSON.stringify(data),
           userRole: getUserRole(req),
-          status: 'FAILED',
+  
           timestamp: new Date(),
         },
       });
@@ -41,7 +41,7 @@ export async function POST(req: Request) {
           action: 'UPLOAD_SOP_POLICY_UNAUTHORIZED',
           details: JSON.stringify(data),
           userRole: role,
-          status: 'FAILED',
+  
           timestamp: new Date(),
         },
       });
@@ -58,7 +58,7 @@ export async function POST(req: Request) {
           action: 'UPLOAD_SOP_POLICY_SUCCESS',
           details: JSON.stringify(data),
           userRole: role,
-          status: 'SUCCESS',
+  
           timestamp: new Date(),
         },
       });
@@ -69,7 +69,7 @@ export async function POST(req: Request) {
           action: 'UPLOAD_SOP_POLICY_ERROR',
           details: err.message || String(err),
           userRole: role,
-          status: 'FAILED',
+  
           timestamp: new Date(),
         },
       });
@@ -97,7 +97,7 @@ export async function GET(req: Request) {
         data: {
           action: 'LIST_SOP_POLICY_SUCCESS',
           userRole: role,
-          status: 'SUCCESS',
+  
           details: `Fetched ${documents.length} SOP/policy documents`,
           timestamp: new Date(),
         },
@@ -108,7 +108,7 @@ export async function GET(req: Request) {
         data: {
           action: 'LIST_SOP_POLICY_ERROR',
           userRole: role,
-          status: 'FAILED',
+  
           details: err.message || String(err),
           timestamp: new Date(),
         },

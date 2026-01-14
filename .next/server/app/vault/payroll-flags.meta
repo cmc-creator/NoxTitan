@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/vault/layout,_N_T_/vault/payroll-flags/layout,_N_T_/vault/payroll-flags/page,_N_T_/vault/payroll-flags"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/vault/payroll-flags/__PAGE__",
+    "/vault/payroll-flags",
+    "/vault",
+    "/_index",
+    "/_head"
+  ]
+}

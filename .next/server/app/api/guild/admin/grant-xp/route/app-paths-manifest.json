@@ -1,0 +1,3 @@
+{
+  "/api/guild/admin/grant-xp/route": "app/api/guild/admin/grant-xp/route.js"
+}

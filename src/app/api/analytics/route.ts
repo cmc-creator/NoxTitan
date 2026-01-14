@@ -17,9 +17,9 @@ export async function GET(req: Request) {
     // Example KPIs and charts
     const totalEmployees = await prisma.employee.count();
     const totalShifts = await prisma.shift.count();
-    const totalReports = await prisma.report.count();
-    const totalAutomations = await prisma.automation.count();
-    const activeAutomations = await prisma.automation.count({ where: { isActive: true } });
+    const totalTimeOffRequests = await prisma.timeOffRequest.count();
+    const totalAutomationRules = await prisma.automationRule.count();
+    const activeAutomationRules = await prisma.automationRule.count({ where: { isActive: true } });
     const recentShifts = await prisma.shift.findMany({
       orderBy: { startTime: 'desc' },
       take: 10,
@@ -42,7 +42,6 @@ export async function GET(req: Request) {
       data: {
         action: 'ANALYTICS_DASHBOARD_VIEW',
         userRole: role,
-        status: 'SUCCESS',
         details: 'Viewed analytics dashboard',
         timestamp: new Date(),
       },
@@ -51,9 +50,9 @@ export async function GET(req: Request) {
       kpis: {
         totalEmployees,
         totalShifts,
-        totalReports,
-        totalAutomations,
-        activeAutomations,
+        totalTimeOffRequests,
+        totalAutomationRules,
+        activeAutomationRules,
         payrollTotals: payrollTotals._sum.totalPay || 0,
       },
       recentShifts,
@@ -64,7 +63,6 @@ export async function GET(req: Request) {
       data: {
         action: 'ANALYTICS_DASHBOARD_ERROR',
         userRole: role,
-        status: 'FAILED',
         details: err.message || String(err),
         timestamp: new Date(),
       },
@@ -110,7 +108,6 @@ export async function POST(req: Request) {
       data: {
         action: 'ANALYTICS_CUSTOM_QUERY',
         userRole: role,
-        status: 'SUCCESS',
         details: `Custom query: ${type}`,
         timestamp: new Date(),
       },
@@ -121,7 +118,6 @@ export async function POST(req: Request) {
       data: {
         action: 'ANALYTICS_CUSTOM_QUERY_ERROR',
         userRole: role,
-        status: 'FAILED',
         details: err.message || String(err),
         timestamp: new Date(),
       },
