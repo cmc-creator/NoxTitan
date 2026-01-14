@@ -1,5 +1,4 @@
-import NextAuth from "next-auth";
-import type { NextAuthConfig } from "next-auth";
+import NextAuth, { type NextAuthConfig } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import { prisma } from "./prisma";
@@ -65,10 +64,10 @@ export const authConfig: NextAuthConfig = {
       return session;
     },
   },
-  secret: process.env.NEXTAUTH_SECRET || "your-secret-key-change-in-production",
+  secret: process.env.NEXTAUTH_SECRET || (process.env.NODE_ENV === 'production' ? undefined : 'your-secret-key-change-in-production'),
 };
 
 export const { handlers, auth, signIn, signOut } = NextAuth(authConfig);
 
-// For backward compatibility with v4 code
+// For backward compatibility with v4 code - TODO: Remove after full migration
 export const authOptions = authConfig;
