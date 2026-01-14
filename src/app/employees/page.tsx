@@ -168,11 +168,11 @@ export default function EmployeesPage() {
   });
 
   return (
-    <div className="space-y-6">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900">Employees</h2>
-          <p className="text-gray-500 mt-1">Manage your team members</p>
+          <h2 className="text-3xl font-bold text-white">Employees</h2>
+          <p className="text-purple-200 mt-1">Manage your team members</p>
         </div>
         
         <button 
