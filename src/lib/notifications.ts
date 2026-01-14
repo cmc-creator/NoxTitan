@@ -1,8 +1,8 @@
-import nodemailer from 'nodemailer';
+import { createTransport } from 'nodemailer';
 
 export async function sendEmailNotification(to: string, subject: string, text: string) {
   // Configure your SMTP transport here
-  const transporter = nodemailer.createTransport({
+  const transporter = createTransport({
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT),
     auth: {
