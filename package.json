@@ -1,1 +1,1 @@
-{"name": "your-package-name", "version": "your-version", "dependencies": {"@libsql/client": "^0.8.0", "@prisma/adapter-libsql": "5.20.0"}}
+{\n  "name": "nox-titan",\n  "version": "1.0.0",\n  "private": true,\n  "dependencies": {\n    "@libsql/client": "^0.8.0",\n    "@prisma/adapter-libsql": "5.20.0"\n  }\n}
