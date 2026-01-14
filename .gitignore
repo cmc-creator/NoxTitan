@@ -18,6 +18,9 @@ _site
 out
 build
 
+# TypeScript
+*.tsbuildinfo
+
 # Debug
 npm-debug.log*
 yarn-debug.log*
