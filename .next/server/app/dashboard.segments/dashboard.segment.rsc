@@ -1,6 +1,0 @@
-1:"$Sreact.fragment"
-2:I[22140,["/_next/static/chunks/6d4bdae3f102bee6.js","/_next/static/chunks/5eb41e1cf8f7e5fa.js","/_next/static/chunks/e20bdbced782336d.js","/_next/static/chunks/45fed14091da22de.js"],"default"]
-3:I[18993,["/_next/static/chunks/6d4bdae3f102bee6.js","/_next/static/chunks/5eb41e1cf8f7e5fa.js","/_next/static/chunks/e20bdbced782336d.js","/_next/static/chunks/45fed14091da22de.js"],"default"]
-4:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/984a83fbc03548a5.js"],"default"]
-5:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/984a83fbc03548a5.js"],"default"]
-0:{"buildId":"jkbpp_HvUbCcrtId5yx--","rsc":["$","$1","c",{"children":[[["$","script","script-0",{"src":"/_next/static/chunks/e20bdbced782336d.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/45fed14091da22de.js","async":true}]],["$","div",null,{"className":"flex h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900","children":[["$","$L2",null,{}],["$","div",null,{"className":"flex-1 flex flex-col overflow-hidden","children":[["$","$L3",null,{"userTier":"TITAN"}],["$","main",null,{"className":"flex-1 overflow-y-auto p-6","children":["$","$L4",null,{"parallelRouterKey":"children","template":["$","$L5",null,{}]}]}]]}]]}]]}],"loading":null,"isPartial":false}
