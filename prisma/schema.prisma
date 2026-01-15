@@ -2,7 +2,7 @@
 // Learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["driverAdapters"]
 }
 
@@ -16,63 +16,63 @@ datasource db {
 // ============================================================================
 
 model User {
-  id                   String   @id @default(cuid())
-  email                String   @unique
-  name                 String?
-  passwordHash         String
-  tier                 String   @default("FREE")
-  holidayDifferential  Float    @default(2.0)
-  nightDifferential    Float    @default(1.5)
-  overtimeRate         Float    @default(1.5)
-  weekendDifferential  Float    @default(1.25)
-  createdAt            DateTime @default(now())
-  updatedAt            DateTime @updatedAt
+  id                  String   @id @default(cuid())
+  email               String   @unique
+  name                String?
+  passwordHash        String
+  tier                String   @default("FREE")
+  holidayDifferential Float    @default(2.0)
+  nightDifferential   Float    @default(1.5)
+  overtimeRate        Float    @default(1.5)
+  weekendDifferential Float    @default(1.25)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
 
   // Relations
-  accounts                  Account[]
-  sessions                  Session[]
-  employees                 Employee[]
-  shifts                    Shift[]
-  schedules                 Schedule[]
-  timeOffRequests           TimeOffRequest[]
-  notifications             Notification[]
-  timeClockEntries          TimeClockEntry[]
-  timeClockDevices          TimeClockDevice[]
-  attendanceRecords         AttendanceRecord[]
-  complianceRules           ComplianceRule[]
-  complianceViolations      ComplianceViolation[]
-  hrTasks                   HRTask[]
-  employeeSurveys           EmployeeSurvey[]
-  managerCheckIns           ManagerCheckIn[]
-  automationRules           AutomationRule[]
-  performanceReviews        PerformanceReview[]
-  onboardingWorkflows       OnboardingWorkflow[]
-  assetCategories           AssetCategory[]
-  assets                    Asset[]
-  assetAssignments          AssetAssignment[]
-  maintenanceRecords        MaintenanceRecord[]
-  payrollDeductions         PayrollDeduction[]
-  visitors                  Visitor[]
-  visitorLogs               VisitorLog[]
-  visitorBadges             VisitorBadge[]
-  visitorWatchlists         VisitorWatchlist[]
-  securityCameras           SecurityCamera[]
-  accessControlSystems      AccessControlSystem[]
-  doors                     Door[]
-  accessEvents              AccessEvent[]
-  doorSchedules             DoorSchedule[]
-  securityAlerts            SecurityAlert[]
-  badgeCredentials          BadgeCredential[]
-  prophecies                Prophecy[]
-  riskScores                RiskScore[]
-  predictiveInsights        PredictiveInsight[]
-  guildMembers              GuildMember[]
-  achievements              Achievement[]
-  rewards                   Reward[]
-  quests                    Quest[]
-  merchStores               MerchStore[]
-  merchItems                MerchItem[]
-  merchOrders               MerchOrder[]
+  accounts             Account[]
+  sessions             Session[]
+  employees            Employee[]
+  shifts               Shift[]
+  schedules            Schedule[]
+  timeOffRequests      TimeOffRequest[]
+  notifications        Notification[]
+  timeClockEntries     TimeClockEntry[]
+  timeClockDevices     TimeClockDevice[]
+  attendanceRecords    AttendanceRecord[]
+  complianceRules      ComplianceRule[]
+  complianceViolations ComplianceViolation[]
+  hrTasks              HRTask[]
+  employeeSurveys      EmployeeSurvey[]
+  managerCheckIns      ManagerCheckIn[]
+  automationRules      AutomationRule[]
+  performanceReviews   PerformanceReview[]
+  onboardingWorkflows  OnboardingWorkflow[]
+  assetCategories      AssetCategory[]
+  assets               Asset[]
+  assetAssignments     AssetAssignment[]
+  maintenanceRecords   MaintenanceRecord[]
+  payrollDeductions    PayrollDeduction[]
+  visitors             Visitor[]
+  visitorLogs          VisitorLog[]
+  visitorBadges        VisitorBadge[]
+  visitorWatchlists    VisitorWatchlist[]
+  securityCameras      SecurityCamera[]
+  accessControlSystems AccessControlSystem[]
+  doors                Door[]
+  accessEvents         AccessEvent[]
+  doorSchedules        DoorSchedule[]
+  securityAlerts       SecurityAlert[]
+  badgeCredentials     BadgeCredential[]
+  prophecies           Prophecy[]
+  riskScores           RiskScore[]
+  predictiveInsights   PredictiveInsight[]
+  guildMembers         GuildMember[]
+  achievements         Achievement[]
+  rewards              Reward[]
+  quests               Quest[]
+  merchStores          MerchStore[]
+  merchItems           MerchItem[]
+  merchOrders          MerchOrder[]
 }
 
 model Account {
@@ -137,65 +137,65 @@ model Employee {
   manager Employee? @relation("ManagerSubordinates", fields: [managerId], references: [id])
 
   // Relations
-  subordinates              Employee[]            @relation("ManagerSubordinates")
-  shifts                    Shift[]
-  availabilities            Availability[]
-  timeOffRequests           TimeOffRequest[]
-  shiftSwapsRequesting      ShiftSwap[]           @relation("RequestingEmployee")
-  shiftSwapsTarget          ShiftSwap[]           @relation("TargetEmployee")
-  timeClockEntries          TimeClockEntry[]
-  attendanceRecords         AttendanceRecord[]
-  complianceViolations      ComplianceViolation[]
-  hrTasksAssigned           HRTask[]              @relation("AssignedToEmployee")
-  hrTasksRelated            HRTask[]              @relation("RelatedEmployee")
-  hrTasksManaged            HRTask[]              @relation("ManagerEmployee")
-  employeeSurveys           EmployeeSurvey[]
-  managerCheckInsEmployee   ManagerCheckIn[]      @relation("EmployeeCheckIns")
-  managerCheckInsManager    ManagerCheckIn[]      @relation("ManagerCheckIns")
-  performanceReviewsReviewed PerformanceReview[]  @relation("ReviewedEmployee")
-  performanceReviewsReviewer PerformanceReview[]  @relation("ReviewerEmployee")
-  onboardingWorkflowsEmployee OnboardingWorkflow[] @relation("OnboardingEmployee")
-  onboardingWorkflowsBuddy  OnboardingWorkflow[]  @relation("BuddyEmployee")
-  assetsAssigned            Asset[]
-  assetAssignments          AssetAssignment[]
-  payrollDeductions         PayrollDeduction[]
-  visitorLogsHosted         VisitorLog[]
-  badgeCredentials          BadgeCredential[]     @relation("EmployeeBadge")
-  prophecies                Prophecy[]
-  riskScores                RiskScore[]
-  guildMember               GuildMember?
-  questCompletions          QuestCompletion[]
-  merchOrders               MerchOrder[]
-  accessEvents              AccessEvent[]
+  subordinates                Employee[]            @relation("ManagerSubordinates")
+  shifts                      Shift[]
+  availabilities              Availability[]
+  timeOffRequests             TimeOffRequest[]
+  shiftSwapsRequesting        ShiftSwap[]           @relation("RequestingEmployee")
+  shiftSwapsTarget            ShiftSwap[]           @relation("TargetEmployee")
+  timeClockEntries            TimeClockEntry[]
+  attendanceRecords           AttendanceRecord[]
+  complianceViolations        ComplianceViolation[]
+  hrTasksAssigned             HRTask[]              @relation("AssignedToEmployee")
+  hrTasksRelated              HRTask[]              @relation("RelatedEmployee")
+  hrTasksManaged              HRTask[]              @relation("ManagerEmployee")
+  employeeSurveys             EmployeeSurvey[]
+  managerCheckInsEmployee     ManagerCheckIn[]      @relation("EmployeeCheckIns")
+  managerCheckInsManager      ManagerCheckIn[]      @relation("ManagerCheckIns")
+  performanceReviewsReviewed  PerformanceReview[]   @relation("ReviewedEmployee")
+  performanceReviewsReviewer  PerformanceReview[]   @relation("ReviewerEmployee")
+  onboardingWorkflowsEmployee OnboardingWorkflow[]  @relation("OnboardingEmployee")
+  onboardingWorkflowsBuddy    OnboardingWorkflow[]  @relation("BuddyEmployee")
+  assetsAssigned              Asset[]
+  assetAssignments            AssetAssignment[]
+  payrollDeductions           PayrollDeduction[]
+  visitorLogsHosted           VisitorLog[]
+  badgeCredentials            BadgeCredential[]     @relation("EmployeeBadge")
+  prophecies                  Prophecy[]
+  riskScores                  RiskScore[]
+  guildMember                 GuildMember?
+  questCompletions            QuestCompletion[]
+  merchOrders                 MerchOrder[]
+  accessEvents                AccessEvent[]
 }
 
 model Shift {
-  id             String    @id @default(cuid())
-  userId         String
-  employeeId     String
-  scheduleId     String?
-  title          String?
-  startTime      DateTime
-  endTime        DateTime
-  position       String?
-  notes          String?
-  color          String?
-  isPublished    Boolean   @default(false)
-  breakMinutes   Int       @default(0)
-  isNightShift   Boolean   @default(false)
-  isWeekend      Boolean   @default(false)
-  isHoliday      Boolean   @default(false)
-  overtimeHours  Float     @default(0)
-  totalPay       Float?
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
+  id            String   @id @default(cuid())
+  userId        String
+  employeeId    String
+  scheduleId    String?
+  title         String?
+  startTime     DateTime
+  endTime       DateTime
+  position      String?
+  notes         String?
+  color         String?
+  isPublished   Boolean  @default(false)
+  breakMinutes  Int      @default(0)
+  isNightShift  Boolean  @default(false)
+  isWeekend     Boolean  @default(false)
+  isHoliday     Boolean  @default(false)
+  overtimeHours Float    @default(0)
+  totalPay      Float?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 
-  user            User              @relation(fields: [userId], references: [id], onDelete: Cascade)
-  employee        Employee          @relation(fields: [employeeId], references: [id], onDelete: Cascade)
-  schedule        Schedule?         @relation(fields: [scheduleId], references: [id], onDelete: SetNull)
-  shiftSwaps      ShiftSwap[]
+  user             User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  employee         Employee         @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  schedule         Schedule?        @relation(fields: [scheduleId], references: [id], onDelete: SetNull)
+  shiftSwaps       ShiftSwap[]
   timeClockEntries TimeClockEntry[]
-  prophecies      Prophecy[]
+  prophecies       Prophecy[]
 }
 
 model Schedule {
@@ -250,8 +250,8 @@ model ShiftSwap {
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
 
-  shift              Shift    @relation(fields: [shiftId], references: [id], onDelete: Cascade)
-  requestingEmployee Employee @relation("RequestingEmployee", fields: [requestingEmployeeId], references: [id], onDelete: Cascade)
+  shift              Shift     @relation(fields: [shiftId], references: [id], onDelete: Cascade)
+  requestingEmployee Employee  @relation("RequestingEmployee", fields: [requestingEmployeeId], references: [id], onDelete: Cascade)
   targetEmployee     Employee? @relation("TargetEmployee", fields: [targetEmployeeId], references: [id], onDelete: Cascade)
 }
 
@@ -272,140 +272,140 @@ model Notification {
 // ============================================================================
 
 model TimeClockEntry {
-  id                  String    @id @default(cuid())
-  userId              String
-  employeeId          String
-  shiftId             String?
-  clockIn             DateTime
-  clockOut            DateTime?
-  clockInLat          Float?
-  clockInLng          Float?
-  clockOutLat         Float?
-  clockOutLng         Float?
-  isWithinGeofence    Boolean   @default(true)
-  deviceType          String?
-  deviceId            String?
-  deviceBrand         String?
-  ipAddress           String?
-  photoClockIn        String?
-  photoClockOut       String?
-  biometricId         String?
-  badgeNumber         String?
-  totalHours          Float?
-  isLate              Boolean   @default(false)
-  lateMinutes         Int       @default(0)
-  isEarlyOut          Boolean   @default(false)
-  earlyMinutes        Int       @default(0)
-  missedMealBreak     Boolean   @default(false)
-  status              String    @default("CLOCKED_IN")
-  notes               String?
-  editedBy            String?
-  editReason          String?
-  createdAt           DateTime  @default(now())
-  updatedAt           DateTime  @updatedAt
+  id               String    @id @default(cuid())
+  userId           String
+  employeeId       String
+  shiftId          String?
+  clockIn          DateTime
+  clockOut         DateTime?
+  clockInLat       Float?
+  clockInLng       Float?
+  clockOutLat      Float?
+  clockOutLng      Float?
+  isWithinGeofence Boolean   @default(true)
+  deviceType       String?
+  deviceId         String?
+  deviceBrand      String?
+  ipAddress        String?
+  photoClockIn     String?
+  photoClockOut    String?
+  biometricId      String?
+  badgeNumber      String?
+  totalHours       Float?
+  isLate           Boolean   @default(false)
+  lateMinutes      Int       @default(0)
+  isEarlyOut       Boolean   @default(false)
+  earlyMinutes     Int       @default(0)
+  missedMealBreak  Boolean   @default(false)
+  status           String    @default("CLOCKED_IN")
+  notes            String?
+  editedBy         String?
+  editReason       String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
 
-  user                 User                    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  employee             Employee                @relation(fields: [employeeId], references: [id], onDelete: Cascade)
-  shift                Shift?                  @relation(fields: [shiftId], references: [id], onDelete: SetNull)
+  user                 User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  employee             Employee              @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  shift                Shift?                @relation(fields: [shiftId], references: [id], onDelete: SetNull)
   breakEntries         BreakEntry[]
   complianceViolations ComplianceViolation[]
 }
 
 model BreakEntry {
-  id                 String    @id @default(cuid())
-  timeClockEntryId   String
-  breakType          String    @default("REST")
-  startTime          DateTime
-  endTime            DateTime?
-  duration           Int?
-  isPaid             Boolean   @default(false)
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
+  id               String    @id @default(cuid())
+  timeClockEntryId String
+  breakType        String    @default("REST")
+  startTime        DateTime
+  endTime          DateTime?
+  duration         Int?
+  isPaid           Boolean   @default(false)
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
 
   timeClockEntry TimeClockEntry @relation(fields: [timeClockEntryId], references: [id], onDelete: Cascade)
 }
 
 model TimeClockDevice {
-  id                 String    @id @default(cuid())
-  userId             String
-  name               String
-  brand              String
-  model              String?
-  serialNumber       String?
-  macAddress         String?
-  ipAddress          String?
-  location           String?
-  apiKey             String?
-  apiSecret          String?
-  webhookUrl         String?
-  syncEnabled        Boolean   @default(true)
-  lastSync           DateTime?
-  latitude           Float?
-  longitude          Float?
-  geofenceRadius     Float?
-  requirePhoto       Boolean   @default(false)
-  requireBiometric   Boolean   @default(false)
-  allowEarlyClockIn  Int       @default(15)
-  allowLateClockIn   Int       @default(5)
-  isActive           Boolean   @default(true)
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
+  id                String    @id @default(cuid())
+  userId            String
+  name              String
+  brand             String
+  model             String?
+  serialNumber      String?
+  macAddress        String?
+  ipAddress         String?
+  location          String?
+  apiKey            String?
+  apiSecret         String?
+  webhookUrl        String?
+  syncEnabled       Boolean   @default(true)
+  lastSync          DateTime?
+  latitude          Float?
+  longitude         Float?
+  geofenceRadius    Float?
+  requirePhoto      Boolean   @default(false)
+  requireBiometric  Boolean   @default(false)
+  allowEarlyClockIn Int       @default(15)
+  allowLateClockIn  Int       @default(5)
+  isActive          Boolean   @default(true)
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model AttendanceRecord {
-  id           String    @id @default(cuid())
+  id           String   @id @default(cuid())
   userId       String
   employeeId   String
   date         DateTime
-  status       String    @default("PRESENT")
+  status       String   @default("PRESENT")
   hoursWorked  Float?
-  isLate       Boolean   @default(false)
+  isLate       Boolean  @default(false)
   lateMinutes  Int?
-  leftEarly    Boolean   @default(false)
+  leftEarly    Boolean  @default(false)
   earlyMinutes Int?
   notes        String?
   approvedBy   String?
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 
   user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   employee Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
 }
 
 model ComplianceRule {
-  id                   String   @id @default(cuid())
-  userId               String
-  name                 String
-  description          String?
-  ruleType             String
-  triggerHours         Float?
-  maxConsecutiveHours  Float?
-  minBreakMinutes      Int?
-  isActive             Boolean  @default(true)
-  createdAt            DateTime @default(now())
-  updatedAt            DateTime @updatedAt
+  id                  String   @id @default(cuid())
+  userId              String
+  name                String
+  description         String?
+  ruleType            String
+  triggerHours        Float?
+  maxConsecutiveHours Float?
+  minBreakMinutes     Int?
+  isActive            Boolean  @default(true)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
 
-  user                 User                    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user                 User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
   complianceViolations ComplianceViolation[]
 }
 
 model ComplianceViolation {
-  id                 String    @id @default(cuid())
-  userId             String
-  employeeId         String
-  ruleId             String
-  timeClockEntryId   String?
-  violationDate      DateTime
-  description        String
-  severity           String    @default("MEDIUM")
-  status             String    @default("OPEN")
-  resolvedBy         String?
-  resolvedAt         DateTime?
-  resolution         String?
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
+  id               String    @id @default(cuid())
+  userId           String
+  employeeId       String
+  ruleId           String
+  timeClockEntryId String?
+  violationDate    DateTime
+  description      String
+  severity         String    @default("MEDIUM")
+  status           String    @default("OPEN")
+  resolvedBy       String?
+  resolvedAt       DateTime?
+  resolution       String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
 
   user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
   employee       Employee        @relation(fields: [employeeId], references: [id], onDelete: Cascade)
@@ -501,21 +501,21 @@ model AutomationRule {
 }
 
 model PerformanceReview {
-  id              String   @id @default(cuid())
-  employeeId      String
-  reviewerId      String
-  reviewPeriod    String
-  reviewDate      DateTime
-  overallRating   Float
-  goals           Json?
-  achievements    Json?
-  areasForGrowth  Json?
-  managerNotes    String?
-  employeeNotes   String?
-  status          String   @default("DRAFT")
-  userId          String
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  id             String   @id @default(cuid())
+  employeeId     String
+  reviewerId     String
+  reviewPeriod   String
+  reviewDate     DateTime
+  overallRating  Float
+  goals          Json?
+  achievements   Json?
+  areasForGrowth Json?
+  managerNotes   String?
+  employeeNotes  String?
+  status         String   @default("DRAFT")
+  userId         String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 
   employee Employee @relation("ReviewedEmployee", fields: [employeeId], references: [id], onDelete: Cascade)
   reviewer Employee @relation("ReviewerEmployee", fields: [reviewerId], references: [id], onDelete: Cascade)
@@ -546,15 +546,15 @@ model OnboardingWorkflow {
 // ============================================================================
 
 model AssetCategory {
-  id               String   @id @default(cuid())
-  name             String
-  description      String?
-  icon             String?
-  requiresSerial   Boolean  @default(false)
+  id                String   @id @default(cuid())
+  name              String
+  description       String?
+  icon              String?
+  requiresSerial    Boolean  @default(false)
   depreciationYears Int?
-  userId           String
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
+  userId            String
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 
   user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
   assets Asset[]
@@ -696,45 +696,45 @@ model Visitor {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 
-  user             User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user             User              @relation(fields: [userId], references: [id], onDelete: Cascade)
   visitorLogs      VisitorLog[]
   visitorBadges    VisitorBadge[]
-  badgeCredentials BadgeCredential[]  @relation("VisitorBadge")
+  badgeCredentials BadgeCredential[] @relation("VisitorBadge")
   accessEvents     AccessEvent[]
 }
 
 model VisitorLog {
-  id                  String    @id @default(cuid())
-  visitorId           String
-  hostEmployeeId      String?
-  hostName            String?
-  purpose             String
-  checkInTime         DateTime  @default(now())
-  checkOutTime        DateTime?
-  expectedDuration    Int?
-  actualDuration      Int?
-  building            String?
-  location            String?
-  badgeNumber         String?
-  entryMethod         String    @default("MANUAL")
-  temperature         Float?
-  healthScreenPassed  Boolean   @default(true)
-  ndaSigned           Boolean   @default(false)
-  ndaSignature        String?
-  photoTaken          Boolean   @default(false)
-  photoUrl            String?
-  accessAreas         Json?
-  devicesSurrendered  Json?
-  emergencyContact    String?
-  emergencyPhone      String?
-  status              String    @default("CHECKED_IN")
-  hostNotified        Boolean   @default(false)
-  hostNotifiedAt      DateTime?
-  importSource        String?
-  importId            String?
-  userId              String
-  createdAt           DateTime  @default(now())
-  updatedAt           DateTime  @updatedAt
+  id                 String    @id @default(cuid())
+  visitorId          String
+  hostEmployeeId     String?
+  hostName           String?
+  purpose            String
+  checkInTime        DateTime  @default(now())
+  checkOutTime       DateTime?
+  expectedDuration   Int?
+  actualDuration     Int?
+  building           String?
+  location           String?
+  badgeNumber        String?
+  entryMethod        String    @default("MANUAL")
+  temperature        Float?
+  healthScreenPassed Boolean   @default(true)
+  ndaSigned          Boolean   @default(false)
+  ndaSignature       String?
+  photoTaken         Boolean   @default(false)
+  photoUrl           String?
+  accessAreas        Json?
+  devicesSurrendered Json?
+  emergencyContact   String?
+  emergencyPhone     String?
+  status             String    @default("CHECKED_IN")
+  hostNotified       Boolean   @default(false)
+  hostNotifiedAt     DateTime?
+  importSource       String?
+  importId           String?
+  userId             String
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
 
   visitor      Visitor   @relation(fields: [visitorId], references: [id], onDelete: Cascade)
   hostEmployee Employee? @relation(fields: [hostEmployeeId], references: [id], onDelete: SetNull)
@@ -782,31 +782,31 @@ model VisitorWatchlist {
 // ============================================================================
 
 model SecurityCamera {
-  id             String    @id @default(cuid())
-  name           String
-  location       String
-  building       String?
-  floor          String?
-  cameraType     String
-  manufacturer   String?
-  model          String?
-  ipAddress      String?
-  rtspUrl        String?
-  hlsUrl         String?
-  recordingUrl   String?
-  status         String    @default("ONLINE")
-  isRecording    Boolean   @default(true)
-  hasPTZ         Boolean   @default(false)
-  hasAudio       Boolean   @default(false)
-  resolution     String?
-  fps            Int?
-  fieldOfView    String?
-  coverageArea   String?
-  lastOnline     DateTime?
-  alertsEnabled  Boolean   @default(true)
-  userId         String
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
+  id            String    @id @default(cuid())
+  name          String
+  location      String
+  building      String?
+  floor         String?
+  cameraType    String
+  manufacturer  String?
+  model         String?
+  ipAddress     String?
+  rtspUrl       String?
+  hlsUrl        String?
+  recordingUrl  String?
+  status        String    @default("ONLINE")
+  isRecording   Boolean   @default(true)
+  hasPTZ        Boolean   @default(false)
+  hasAudio      Boolean   @default(false)
+  resolution    String?
+  fps           Int?
+  fieldOfView   String?
+  coverageArea  String?
+  lastOnline    DateTime?
+  alertsEnabled Boolean   @default(true)
+  userId        String
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
 
   user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
   doors          Door[]
@@ -960,27 +960,27 @@ model BadgeCredential {
 // ============================================================================
 
 model Prophecy {
-  id                 String    @id @default(cuid())
-  prophecyType       String
-  severity           String
-  title              String
-  prediction         String
-  confidence         Float
-  targetEmployeeId   String?
-  targetDepartment   String?
-  targetShiftId      String?
-  impactDate         DateTime?
-  dataPoints         Json
-  recommendations    Json
-  status             String    @default("ACTIVE")
-  acknowledgedBy     String?
-  acknowledgedAt     DateTime?
-  outcome            String?
-  actualDate         DateTime?
-  notes              String?
-  userId             String
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
+  id               String    @id @default(cuid())
+  prophecyType     String
+  severity         String
+  title            String
+  prediction       String
+  confidence       Float
+  targetEmployeeId String?
+  targetDepartment String?
+  targetShiftId    String?
+  impactDate       DateTime?
+  dataPoints       Json
+  recommendations  Json
+  status           String    @default("ACTIVE")
+  acknowledgedBy   String?
+  acknowledgedAt   DateTime?
+  outcome          String?
+  actualDate       DateTime?
+  notes            String?
+  userId           String
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
 
   targetEmployee Employee? @relation(fields: [targetEmployeeId], references: [id], onDelete: SetNull)
   shift          Shift?    @relation(fields: [targetShiftId], references: [id], onDelete: SetNull)
@@ -1005,24 +1005,24 @@ model RiskScore {
 }
 
 model PredictiveInsight {
-  id              String   @id @default(cuid())
-  insightType     String
-  category        String
-  title           String
-  description     String
-  impact          String
-  likelihood      Float
-  affectedCount   Int?
-  costImpact      Float?
-  timeframe       String
-  dataSource      Json
-  actionRequired  Boolean  @default(false)
+  id               String   @id @default(cuid())
+  insightType      String
+  category         String
+  title            String
+  description      String
+  impact           String
+  likelihood       Float
+  affectedCount    Int?
+  costImpact       Float?
+  timeframe        String
+  dataSource       Json
+  actionRequired   Boolean  @default(false)
   suggestedActions Json?
-  priority        Int      @default(50)
-  viewedBy        Json?
-  userId          String
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  priority         Int      @default(50)
+  viewedBy         Json?
+  userId           String
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
@@ -1032,29 +1032,29 @@ model PredictiveInsight {
 // ============================================================================
 
 model GuildMember {
-  id             String   @id @default(cuid())
-  employeeId     String   @unique
-  currentLevel   Int      @default(1)
-  levelName      String   @default("Novice")
-  totalXP        Int      @default(0)
-  currentXP      Int      @default(0)
-  xpToNextLevel  Int      @default(100)
-  rank           Int?
-  title          String?
-  avatarUrl      String?
-  badges         Json     @default("[]")
-  streak         Int      @default(0)
-  longestStreak  Int      @default(0)
-  lastActivity   DateTime @default(now())
-  userId         String
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  id            String   @id @default(cuid())
+  employeeId    String   @unique
+  currentLevel  Int      @default(1)
+  levelName     String   @default("Novice")
+  totalXP       Int      @default(0)
+  currentXP     Int      @default(0)
+  xpToNextLevel Int      @default(100)
+  rank          Int?
+  title         String?
+  avatarUrl     String?
+  badges        Json     @default("[]")
+  streak        Int      @default(0)
+  longestStreak Int      @default(0)
+  lastActivity  DateTime @default(now())
+  userId        String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 
-  employee              Employee              @relation(fields: [employeeId], references: [id], onDelete: Cascade)
-  user                  User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
-  xpTransactions        XPTransaction[]
-  employeeAchievements  EmployeeAchievement[]
-  rewardPurchases       RewardPurchase[]
+  employee             Employee              @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  user                 User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  xpTransactions       XPTransaction[]
+  employeeAchievements EmployeeAchievement[]
+  rewardPurchases      RewardPurchase[]
 }
 
 model XPTransaction {
@@ -1138,7 +1138,7 @@ model RewardPurchase {
 }
 
 model Quest {
-  id             String   @id @default(cuid())
+  id             String    @id @default(cuid())
   title          String
   description    String
   questType      String
@@ -1146,12 +1146,12 @@ model Quest {
   xpReward       Int
   objectives     Json
   timeLimit      DateTime?
-  isActive       Boolean  @default(true)
-  isRepeatable   Boolean  @default(false)
+  isActive       Boolean   @default(true)
+  isRepeatable   Boolean   @default(false)
   repeatInterval String?
   userId         String
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
 
   user             User              @relation(fields: [userId], references: [id], onDelete: Cascade)
   questCompletions QuestCompletion[]
@@ -1198,60 +1198,60 @@ model MerchStore {
 }
 
 model MerchItem {
-  id                String   @id @default(cuid())
-  storeId           String
-  externalId        String
-  sku               String?
-  name              String
-  description       String?
-  category          String?
-  price             Float
-  imageUrl          String?
-  images            Json?
-  variants          Json?
-  stockQuantity     Int?
-  isActive          Boolean  @default(true)
-  tags              Json?
-  redeemableWithXP  Boolean  @default(false)
-  xpCost            Int?
-  metadata          Json?
-  userId            String
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
+  id               String   @id @default(cuid())
+  storeId          String
+  externalId       String
+  sku              String?
+  name             String
+  description      String?
+  category         String?
+  price            Float
+  imageUrl         String?
+  images           Json?
+  variants         Json?
+  stockQuantity    Int?
+  isActive         Boolean  @default(true)
+  tags             Json?
+  redeemableWithXP Boolean  @default(false)
+  xpCost           Int?
+  metadata         Json?
+  userId           String
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 
-  store          MerchStore      @relation(fields: [storeId], references: [id], onDelete: Cascade)
-  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  store           MerchStore       @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
   merchOrderItems MerchOrderItem[]
 
   @@unique([storeId, externalId])
 }
 
 model MerchOrder {
-  id                  String    @id @default(cuid())
-  storeId             String
-  employeeId          String
-  orderNumber         String    @unique
-  externalOrderId     String?
-  paymentMethod       String
-  totalAmount         Float
-  xpSpent             Int?
-  status              String    @default("PENDING")
-  shippingAddress     Json?
-  trackingNumber      String?
-  trackingUrl         String?
-  notes               String?
-  payrollDeductionId  String?   @unique
-  fulfilledAt         DateTime?
-  cancelledAt         DateTime?
-  userId              String
-  createdAt           DateTime  @default(now())
-  updatedAt           DateTime  @updatedAt
+  id                 String    @id @default(cuid())
+  storeId            String
+  employeeId         String
+  orderNumber        String    @unique
+  externalOrderId    String?
+  paymentMethod      String
+  totalAmount        Float
+  xpSpent            Int?
+  status             String    @default("PENDING")
+  shippingAddress    Json?
+  trackingNumber     String?
+  trackingUrl        String?
+  notes              String?
+  payrollDeductionId String?   @unique
+  fulfilledAt        DateTime?
+  cancelledAt        DateTime?
+  userId             String
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
 
-  store             MerchStore        @relation(fields: [storeId], references: [id], onDelete: Cascade)
-  employee          Employee          @relation(fields: [employeeId], references: [id], onDelete: Cascade)
-  payrollDeduction  PayrollDeduction? @relation(fields: [payrollDeductionId], references: [id], onDelete: SetNull)
-  user              User              @relation(fields: [userId], references: [id], onDelete: Cascade)
-  merchOrderItems   MerchOrderItem[]
+  store            MerchStore        @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  employee         Employee          @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  payrollDeduction PayrollDeduction? @relation(fields: [payrollDeductionId], references: [id], onDelete: SetNull)
+  user             User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  merchOrderItems  MerchOrderItem[]
 }
 
 model MerchOrderItem {
