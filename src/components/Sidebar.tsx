@@ -114,8 +114,8 @@ export default function Sidebar() {
               {section.items.map((item) => {
                 const isActive = pathname === item.href;
                 const Icon = item.icon;
-                const isCommandCenter = item.isCommandCenter;
-                const hasNotificationBadge = item.hasNotificationBadge;
+                const isCommandCenter = 'isCommandCenter' in item ? item.isCommandCenter : false;
+                const hasNotificationBadge = 'hasNotificationBadge' in item ? item.hasNotificationBadge : false;
                 
                 return (
                   <Link

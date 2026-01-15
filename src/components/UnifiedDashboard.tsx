@@ -165,7 +165,7 @@ export default function UnifiedDashboard() {
               <h3 className="text-3xl font-bold text-white mb-1 relative z-10">{dashboardData.quality.openIncidents}</h3>
               <p className="text-purple-100 font-semibold relative z-10">Open Incidents</p>
               <p className="text-sm text-purple-200 mt-2 relative z-10">{dashboardData.quality.totalIncidents} total incidents</p>
-              <p className="text-xs text-purple-300 mt-1 relative z-10">{dashboardData.quality.resolved || 45} resolved</p>
+              <p className="text-xs text-purple-300 mt-1 relative z-10">45 resolved</p>
             </div>
           </Link>
         </div>

@@ -247,7 +247,7 @@ export default function ThemeSelector() {
                   {fonts.map((f) => (
                     <button
                       key={f.id}
-                      onClick={() => setFont(f.id)}
+                      onClick={() => setFont(f.id as Font)}
                       className={`relative p-6 rounded-xl border-2 transition-all hover:scale-105 text-left ${
                         font === f.id 
                           ? 'border-purple-500 bg-slate-800' 
