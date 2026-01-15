@@ -70,7 +70,7 @@ export default function ChatBot() {
 
     // Compliance & Labor Laws
     if (lowerMessage.includes('overtime') || lowerMessage.includes('hours worked')) {
-      return "Great question about overtime! 📊\n\nFederal (FLSA): 1.5x pay after 40 hours/week\n\nState variations:\n• California: Overtime after 8 hrs/day OR 40 hrs/week\n• Colorado: Overtime after 12 hrs/day OR 40 hrs/week\n• Nevada: Overtime after 8 hrs/day (if earning less than 1.5x minimum wage)\n\nI can help you set up overtime alerts in the scheduler!";
+      return "Great question about overtime! 📊\n\nFederal (FLSA): 1.5x pay after 40 hours/week\n\nState variations:\n• California: Overtime after 8 hrs/day OR 40 hrs/week\n• Colorado: Overtime after 12 hrs/day OR 40 hrs/week\n• Nevada: Overtime after 8 hrs/day (if earning less than 1.5x minimum wage)\n\nI can help you set up overtime alerts in NoxTitan!";
     }
 
     if (lowerMessage.includes('break') || lowerMessage.includes('meal') || lowerMessage.includes('rest')) {
@@ -151,7 +151,7 @@ export default function ChatBot() {
 
     // Help/Support
     if (lowerMessage.includes('help') || lowerMessage.includes('support') || lowerMessage.includes('contact')) {
-      return "I'm here to help! You can also:\n\n• Check the Help section in Settings\n• Email support@scheduler.com\n• Platinum users get priority support with 24-hour response time\n\nWhat specific question can I answer?";
+      return "I'm here to help! You can also:\n\n• Check the Help section in Settings\n• Email support@noxtitan.com\n• Enterprise and Titan tier users get priority support\n\nWhat specific question can I answer?";
     }
 
     // Default response
