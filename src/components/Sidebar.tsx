@@ -23,7 +23,9 @@ import {
   Package,
   Sparkles,
   Trophy,
-  ShoppingBag
+  ShoppingBag,
+  UserCog,
+  Briefcase
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -60,6 +62,14 @@ const navigationSections = [
       { name: 'Recognition', href: '/recognition', icon: Award },
       { name: 'Team Activities', href: '/activities', icon: Sparkles },
       { name: 'Merch Store', href: '/merch-store', icon: ShoppingBag },
+    ]
+  },
+  {
+    title: 'Human Resources',
+    items: [
+      { name: 'HR Dashboard', href: '/hr', icon: UserCog },
+      { name: 'HR Planner', href: '/hr-planner', icon: Briefcase },
+      { name: 'QAPI Portal', href: '/qapi', icon: Shield },
     ]
   },
   {
