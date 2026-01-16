@@ -238,7 +238,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
             </div>
           </div>
           {/* Step indicators */}
-          <div className="flex items-center gap-3 mt-14 overflow-x-auto pb-4 justify-center" style={{paddingTop: '8px'}}>
+          <div className="flex items-center gap-3 mt-3 overflow-x-auto pb-2 justify-center" style={{paddingTop: '8px'}}>
             {steps.map((step, index) => (
               <button
                 key={step.id}
