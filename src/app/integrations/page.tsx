@@ -504,7 +504,7 @@ export default function IntegrationsPage() {
             Integrations Hub
           </h1>
           <p className="text-lg opacity-80">
-            Connect TeamPulse™ with your existing business systems for seamless workflow
+            Connect NoxTitan with your existing business systems for seamless workflow
           </p>
         </div>
 

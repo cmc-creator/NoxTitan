@@ -131,7 +131,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
     {
       id: 'integrations',
       title: 'Powerful Integrations',
-      description: 'Connect TeamPulse™ with 50+ business systems. Sync data seamlessly across your entire tech stack.',
+      description: 'Connect NoxTitan with 50+ business systems. Sync data seamlessly across your entire tech stack.',
       icon: <Link2 className="w-12 h-12 text-indigo-600" />,
       features: [
         'Payroll systems (ADP, Gusto, Paychex, Paycom)',
@@ -161,7 +161,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
     {
       id: 'customization',
       title: 'Personalize Your Experience',
-      description: 'Make TeamPulse™ yours! Choose from 27 beautiful themes and customize the interface to match your brand.',
+      description: 'Make NoxTitan yours! Choose from 27 beautiful themes and customize the interface to match your brand.',
       icon: <Settings className="w-12 h-12 text-pink-600" />,
       features: [
         '27 pre-built themes (light & dark)',

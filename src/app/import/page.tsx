@@ -198,7 +198,7 @@ export default function ImportPage() {
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">Seamless Migration from Any System</h3>
                   <p className="text-slate-300 mb-4">
-                    TeamPulse makes it easy to abandon your old software and import everything in minutes. 
+                    NoxTitan makes it easy to abandon your old software and import everything in minutes. 
                     We support direct integrations with 50+ platforms and can import any CSV or Excel file.
                   </p>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -372,7 +372,7 @@ export default function ImportPage() {
             </div>
 
             <div className="p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
-              <h3 className="text-xl font-bold mb-4 text-white">Map Your Fields to TeamPulse</h3>
+              <h3 className="text-xl font-bold mb-4 text-white">Map Your Fields to NoxTitan</h3>
               <div className="space-y-3">
                 {sampleMapping.map((map, index) => (
                   <div key={index} className={`p-4 rounded-lg flex items-center justify-between ${
@@ -385,7 +385,7 @@ export default function ImportPage() {
                       </div>
                       <ArrowRight className="w-5 h-5 text-slate-500" />
                       <div className="flex-1">
-                        <div className="text-sm text-slate-400">TeamPulse Field</div>
+                        <div className="text-sm text-slate-400">NoxTitan Field</div>
                         {map.ourField ? (
                           <div className="font-semibold text-white">{map.ourField}</div>
                         ) : (
