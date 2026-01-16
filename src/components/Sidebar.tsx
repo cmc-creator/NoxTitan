@@ -25,7 +25,16 @@ import {
   Trophy,
   ShoppingBag,
   UserCog,
-  Briefcase
+  Briefcase,
+  ClipboardCheck,
+  MessageSquare,
+  UserCircle,
+  Lightbulb,
+  Heart,
+  FileText,
+  Coffee,
+  Calculator,
+  HelpCircle
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -42,8 +51,12 @@ const navigationSections = [
     items: [
       { name: 'Calendar', href: '/calendar', icon: Calendar },
       { name: 'Employees', href: '/employees', icon: Users },
+      { name: 'Timeclock', href: '/timeclock', icon: Clock },
+      { name: 'Attendance', href: '/attendance', icon: ClipboardCheck },
       { name: 'Time Off', href: '/time-off', icon: Clock },
+      { name: 'Shift Logs', href: '/shift-logs', icon: FileText },
       { name: 'Payroll', href: '/payroll', icon: DollarSign },
+      { name: 'Accounting', href: '/accounting', icon: Calculator },
     ]
   },
   {
@@ -60,7 +73,10 @@ const navigationSections = [
     items: [
       { name: 'Guild', href: '/guild', icon: Trophy },
       { name: 'Recognition', href: '/recognition', icon: Award },
+      { name: 'Team Culture', href: '/team-culture', icon: Heart },
       { name: 'Team Activities', href: '/activities', icon: Sparkles },
+      { name: 'Basecamp', href: '/basecamp', icon: Coffee },
+      { name: 'Manager Hub', href: '/manager-basecamp', icon: Briefcase },
       { name: 'Merch Store', href: '/merch-store', icon: ShoppingBag },
     ]
   },
@@ -70,19 +86,33 @@ const navigationSections = [
       { name: 'HR Dashboard', href: '/hr', icon: UserCog },
       { name: 'HR Planner', href: '/hr-planner', icon: Briefcase },
       { name: 'QAPI Portal', href: '/qapi', icon: Shield },
+      { name: 'Onboarding', href: '/onboarding', icon: UserCircle },
     ]
   },
   {
-    title: 'Management',
-    items: [
-      { name: 'Analytics', href: '/analytics', icon: TrendingUp },
+    title: 'ManReports', href: '/reports', icon: BarChart3 },
       { name: 'Training', href: '/training', icon: BookOpen },
+      { name: 'Learning', href: '/learning', icon: BookOpen },
       { name: 'AI Assistant', href: '/ai-assistant', icon: Bot },
+      { name: 'Incentives', href: '/incentives', icon: Award },
+    ]
+  },
+  {
+    title: 'Communication',
+    items: [
+      { name: 'Messages', href: '/messages', icon: MessageSquare },
+      { name: 'Announcements', href: '/announcements', icon: Megaphone },
+      { name: 'Suggestions', href: '/suggestions', icon: Lightbulb },
     ]
   },
   {
     title: 'System',
     items: [
+      { name: 'Profile', href: '/profile', icon: UserCircle },
+      { name: 'Settings', href: '/settings', icon: Settings },
+      { name: 'Data Import', href: '/import', icon: Upload },
+      { name: 'Integrations', href: '/integrations', icon: Link2 },
+      { name: 'Help', href: '/help', icon: HelpCircle
       { name: 'Announcements', href: '/announcements', icon: Megaphone },
       { name: 'Data Import', href: '/import', icon: Upload },
       { name: 'Integrations', href: '/integrations', icon: Link2 },
