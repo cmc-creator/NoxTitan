@@ -534,4 +534,8 @@ model AssetAssignment {
   createdAt              DateTime @default(now())
   updatedAt              DateTime @updatedAt
 
-  asset
+  // These are guesses based on your other models:
+  asset    Asset    @relation(fields: [assetId], references: [id], onDelete: Cascade)
+  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
