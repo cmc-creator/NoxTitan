@@ -1,4 +1,4 @@
-// Industry-specific compliance sections for TeamPulse
+// Industry-specific compliance sections for NoxTitan
 import { Shield, AlertTriangle, CheckCircle, Clock, FileText, ExternalLink } from 'lucide-react';
 
 export function OSHASection({ oshaView, setOshaView }: { oshaView: 'general' | 'recordkeeping' | 'training', setOshaView: (view: 'general' | 'recordkeeping' | 'training') => void }) {
