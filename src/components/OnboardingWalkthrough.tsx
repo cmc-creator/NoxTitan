@@ -204,180 +204,168 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
       <Confetti />
       <div className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col border border-purple-700">
         {/* Header */}
-        <div className="p-6 border-b border-gray-200">
-
-            return (
-              <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-                <Confetti />
-                <div className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col border border-purple-700">
-                  {/* Header */}
-                  <div className="p-6 border-b border-gray-200">
-                    <div className="flex items-center justify-between mb-1">
-                      <div className="flex flex-col items-center gap-0.5 w-full mb-0.5">
-                        {/* Use Next.js Image for reliability and premium style */}
-                        <div className="flex items-center justify-center w-36 h-36 mb-2">
-                          {/* Logo removed as requested */}
-                        </div>
-                        <h2 className="text-xl font-extrabold text-white drop-shadow-xl text-center mb-0">Welcome to NoxTitan</h2>
-                        <span className="text-lg font-bold text-pink-200 tracking-widest drop-shadow text-center" style={{ textShadow: '0 0 8px #a78bfa, 0 0 2px #fff' }}>
-                          Business Management. Forged for Titans.
-                        </span>
-                      </div>
-                      <button
-                        onClick={onSkip}
-                        className="p-2 hover:bg-purple-100 rounded-lg transition-all border border-purple-200"
-                        aria-label="Close walkthrough"
-                      >
-                        <X className="w-6 h-6 text-purple-600" />
-                      </button>
-                    </div>
-                    {/* Progress bar */}
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-gray-600">Step {currentStep + 1} of {steps.length}</span>
-                        <span className="text-blue-600 font-semibold">{Math.round(progress)}% Complete</span>
-                      </div>
-                      <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-500"
-                          style={{ width: `${progress}%` }}
-                        ></div>
-                      </div>
-                    </div>
-                    {/* Step indicators */}
-                    <div className="flex items-center gap-3 mt-14 overflow-x-auto pb-4 justify-center" style={{paddingTop: '8px'}}>
-                      {steps.map((step, index) => (
-                        <button
-                          key={step.id}
-                          onClick={() => handleStepClick(index)}
-                          className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold transition-all shadow-lg border-2 mt-1 cursor-pointer ${
-                            index === currentStep
-                              ? 'bg-gradient-to-br from-pink-400 via-purple-500 to-blue-400 text-white scale-110 border-pink-300 ring-4 ring-purple-300'
-                              : completedSteps.has(index) || index <= currentStep
-                              ? 'bg-gradient-to-br from-green-400 to-blue-400 text-white border-green-300 hover:scale-105 hover:ring-2 hover:ring-purple-400'
-                              : 'bg-gradient-to-br from-slate-700 to-slate-900 text-gray-200 border-slate-500 hover:bg-slate-800 opacity-60 cursor-not-allowed'
-                          }`}
-                          style={{ boxShadow: index === currentStep ? '0 0 16px #a78bfa' : undefined }}
-                          disabled={index > currentStep + 1 && !completedSteps.has(index)}
-                          aria-label={`Go to step ${index + 1}`}
-                        >
-                          {completedSteps.has(index) ? <Check className="w-5 h-5" /> : index + 1}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                  {/* Content */}
-                  <div className="flex-1 overflow-y-auto p-8">
-                    <div className="max-w-4xl mx-auto pt-2">
-                      {/* Remove blue star icon for welcome step */}
-                      {currentStep === 0 ? null : (
-                        <div className="flex justify-center mb-6">
-                          {currentStepData.icon}
-                        </div>
-                      )}
-                      {/* Title and Description */}
-                      {/* Only show step title if not welcome step */}
-                      {currentStep !== 0 && (
-                        <h3 className="text-3xl font-bold text-pink-200 mb-4 text-center drop-shadow" style={{ textShadow: '0 0 8px #a78bfa, 0 0 2px #fff' }}>
-                          {currentStepData.title}
-                        </h3>
-                      )}
-                      <p className="text-lg text-white mb-8 text-center drop-shadow" style={{ textShadow: '0 0 8px #a78bfa, 0 0 2px #fff' }}>
-                        {currentStepData.description}
-                      </p>
-                      {/* Features List */}
-                      <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 mb-6">
-                        <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-lg">
-                          <Sparkles className="w-5 h-5 text-blue-600" />
-                          Key Features:
-                        </h4>
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          {currentStepData.features.map((feature, index) => (
-                            <li key={index} className="flex items-start gap-2 bg-white/70 rounded-lg px-3 py-2 shadow-sm">
-                              <div className="flex-shrink-0 w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
-                                <Check className="w-4 h-4 text-white" />
-                              </div>
-                              <span className="text-gray-700 text-sm">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      {/* Quick Tip */}
-                      {currentStep === 0 && (
-                        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                          <p className="text-sm text-amber-900">
-                            <strong>💡 Pro Tip:</strong> You can revisit this walkthrough anytime from Settings → Help & Support
-                          </p>
-                        </div>
-                      )}
-                      {currentStep === 1 && (
-                        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                          <p className="text-sm text-amber-900">
-                            <strong>💡 Pro Tip:</strong> Right-click on any shift to quickly edit, copy, or delete it. Hold Shift to create multi-day shifts!
-                          </p>
-                        </div>
-                      )}
-                      {currentStep === 2 && (
-                        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                          <p className="text-sm text-amber-900">
-                            <strong>💡 Pro Tip:</strong> Click on any employee to view their detailed profile with skills, certifications, and training history.
-                          </p>
-                        </div>
-                      )}
-                      {currentStep === 7 && (
-                        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                          <p className="text-sm text-amber-900">
-                            <strong>💡 Pro Tip:</strong> New managers should start with "From Colleague to Manager" and "Essential Communication Skills" courses.
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  {/* Footer */}
-                  <div className="p-6 border-t border-gray-200 bg-gray-50">
-                    <div className="flex items-center justify-between">
-                      <button
-                        onClick={handlePrevious}
-                        disabled={currentStep === 0}
-                        className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
-                          currentStep === 0
-                            ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                            : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50'
-                        }`}
-                      >
-                        <ChevronLeft className="w-5 h-5" />
-                        Previous
-                      </button>
-                      <button
-                        onClick={onSkip}
-                        className="px-4 py-2 text-gray-600 hover:text-gray-900 transition-all"
-                      >
-                        Skip Tour
-                      </button>
-                      <button
-                        onClick={handleNext}
-                        className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all flex items-center gap-2"
-                      >
-                        {currentStep === steps.length - 1 ? (
-                          <span>
-                            Finish Tour
-                            <Check className="w-5 h-5" />
-                          </span>
-                        ) : (
-                          <span>
-                            Next
-                            <ChevronRight className="w-5 h-5" />
-                          </span>
-                        )}
-                      </button>
-                    </div>
-                  </div>
-                </div>
+        <div className="p-4 border-b border-gray-200">
+          <div className="flex items-center justify-between mb-0">
+            <div className="flex flex-col items-center gap-0 w-full mb-0">
+              {/* Use Next.js Image for reliability and premium style */}
+              <div className="flex items-center justify-center w-20 h-20 mb-1">
+                {/* Logo removed as requested */}
               </div>
-            );
+              <h2 className="text-lg font-extrabold text-white drop-shadow-xl text-center mb-0">Welcome to NoxTitan</h2>
+              <span className="text-base font-bold text-pink-200 tracking-widest drop-shadow text-center" style={{ textShadow: '0 0 8px #a78bfa, 0 0 2px #fff' }}>
+                Business Management. Forged for Titans.
+              </span>
+            </div>
+            <button
+              onClick={onSkip}
+              className="p-2 hover:bg-purple-100 rounded-lg transition-all border border-purple-200"
+              aria-label="Close walkthrough"
+            >
+              <X className="w-6 h-6 text-purple-600" />
+            </button>
+          </div>
+          {/* Progress bar */}
+          <div className="space-y-2">
+            <div className="flex items-center justify-between text-sm">
+              <span className="text-gray-600">Step {currentStep + 1} of {steps.length}</span>
+              <span className="text-blue-600 font-semibold">{Math.round(progress)}% Complete</span>
+            </div>
+            <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-500"
+                style={{ width: `${progress}%` }}
+              ></div>
+            </div>
+          </div>
+          {/* Step indicators */}
+          <div className="flex items-center gap-3 mt-14 overflow-x-auto pb-4 justify-center" style={{paddingTop: '8px'}}>
+            {steps.map((step, index) => (
+              <button
+                key={step.id}
+                onClick={() => handleStepClick(index)}
+                className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold transition-all shadow-lg border-2 mt-1 cursor-pointer ${
+                  index === currentStep
+                    ? 'bg-gradient-to-br from-pink-400 via-purple-500 to-blue-400 text-white scale-110 border-pink-300 ring-4 ring-purple-300'
+                    : completedSteps.has(index) || index <= currentStep
+                    ? 'bg-gradient-to-br from-green-400 to-blue-400 text-white border-green-300 hover:scale-105 hover:ring-2 hover:ring-purple-400'
+                    : 'bg-gradient-to-br from-slate-700 to-slate-900 text-gray-200 border-slate-500 hover:bg-slate-800 opacity-60 cursor-not-allowed'
+                }`}
+                style={{ boxShadow: index === currentStep ? '0 0 16px #a78bfa' : undefined }}
+                disabled={index > currentStep + 1 && !completedSteps.has(index)}
+                aria-label={`Go to step ${index + 1}`}
+              >
+                {completedSteps.has(index) ? <Check className="w-5 h-5" /> : index + 1}
+              </button>
+            ))}
+          </div>
+        </div>
+        {/* Content */}
+        <div className="flex-1 overflow-y-auto p-8">
+          <div className="max-w-4xl mx-auto pt-2">
+            {/* Remove blue star icon for welcome step */}
+            {currentStep === 0 ? null : (
+              <div className="flex justify-center mb-6">
+                {currentStepData.icon}
+              </div>
+            )}
+            {/* Title and Description */}
+            {/* Only show step title if not welcome step */}
+            {currentStep !== 0 && (
+              <h3 className="text-3xl font-bold text-pink-200 mb-4 text-center drop-shadow" style={{ textShadow: '0 0 8px #a78bfa, 0 0 2px #fff' }}>
+                {currentStepData.title}
+              </h3>
+            )}
+            <p className="text-lg text-white mb-8 text-center drop-shadow" style={{ textShadow: '0 0 8px #a78bfa, 0 0 2px #fff' }}>
+              {currentStepData.description}
+            </p>
+            {/* Features List */}
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 mb-6">
+              <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-lg">
+                <Sparkles className="w-5 h-5 text-blue-600" />
+                Key Features:
+              </h4>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {currentStepData.features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-2 bg-white/70 rounded-lg px-3 py-2 shadow-sm">
+                    <div className="flex-shrink-0 w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
+                      <Check className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-gray-700 text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Quick Tip */}
+            {currentStep === 0 && (
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                <p className="text-sm text-amber-900">
+                  <strong>💡 Pro Tip:</strong> You can revisit this walkthrough anytime from Settings → Help & Support
+                </p>
+              </div>
+            )}
+            {currentStep === 1 && (
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                <p className="text-sm text-amber-900">
+                  <strong>💡 Pro Tip:</strong> Right-click on any shift to quickly edit, copy, or delete it. Hold Shift to create multi-day shifts!
+                </p>
+              </div>
+            )}
+            {currentStep === 2 && (
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                <p className="text-sm text-amber-900">
+                  <strong>💡 Pro Tip:</strong> Click on any employee to view their detailed profile with skills, certifications, and training history.
+                </p>
+              </div>
+            )}
+            {currentStep === 7 && (
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                <p className="text-sm text-amber-900">
+                  <strong>💡 Pro Tip:</strong> New managers should start with "From Colleague to Manager" and "Essential Communication Skills" courses.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+        {/* Footer */}
+        <div className="p-6 border-t border-gray-200 bg-gray-50">
+          <div className="flex items-center justify-between">
+            <button
+              onClick={handlePrevious}
+              disabled={currentStep === 0}
+              className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
+                currentStep === 0
+                  ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                  : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50'
+              }`}
+            >
+              <ChevronLeft className="w-5 h-5" />
+              Previous
+            </button>
+            <button
+              onClick={onSkip}
+              className="px-4 py-2 text-gray-600 hover:text-gray-900 transition-all"
+            >
+              Skip Tour
+            </button>
+            <button
+              onClick={handleNext}
+              className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all flex items-center gap-2"
+            >
+              {currentStep === steps.length - 1 ? (
+                <span>
+                  Finish Tour
+                  <Check className="w-5 h-5" />
+                </span>
+              ) : (
+                <span>
+                  Next
+                  <ChevronRight className="w-5 h-5" />
+                </span>
+              )}
+            </button>
+          </div>
         </div>
       </div>
-
     </div>
   );
 }
