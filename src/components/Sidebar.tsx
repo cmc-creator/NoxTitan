@@ -34,7 +34,8 @@ import {
   FileText,
   Coffee,
   Calculator,
-  HelpCircle
+  HelpCircle,
+  GraduationCap
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -44,6 +45,7 @@ const navigationSections = [
     items: [
       { name: 'Command Center', href: '/dashboard', icon: Home, isCommandCenter: true },
       { name: 'Notifications', href: '/notifications', icon: Bell, hasNotificationBadge: true },
+      { name: 'Quick Start Tutorial', href: '#tutorial', icon: GraduationCap, isTutorial: true },
     ]
   },
   {
@@ -124,6 +126,14 @@ const navigationSections = [
 export default function Sidebar() {
   const pathname = usePathname();
 
+  const handleTutorialClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Remove the onboarding completed flag to show it again
+    localStorage.removeItem('onboardingCompleted');
+    // Trigger a page reload to show the onboarding
+    window.location.href = '/dashboard';
+  };
+
   return (
     <div className="flex flex-col w-64 bg-gradient-to-b from-black via-gray-900 to-purple-950 min-h-screen border-r-2 border-purple-600/30 shadow-2xl">
       <div className="flex flex-col items-center justify-center py-4 bg-gradient-to-br from-purple-900 via-purple-700 to-black shadow-xl border-b-4 border-purple-500">
@@ -156,6 +166,20 @@ export default function Sidebar() {
                 const Icon = item.icon;
                 const isCommandCenter = 'isCommandCenter' in item ? item.isCommandCenter : false;
                 const hasNotificationBadge = 'hasNotificationBadge' in item ? item.hasNotificationBadge : false;
+                const isTutorial = 'isTutorial' in item ? item.isTutorial : false;
+                
+                if (isTutorial) {
+                  return (
+                    <button
+                      key={item.name}
+                      onClick={handleTutorialClick}
+                      className="w-full flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all border text-pop-light bg-gradient-to-r from-green-800 via-green-600 to-teal-900 text-white hover:from-green-900 hover:via-green-700 hover:to-teal-950 shadow-[0_0_15px_rgba(34,197,94,0.4)] border-green-600/50 hover:scale-105 font-bold"
+                    >
+                      <Icon className="mr-3 h-4 w-4 drop-shadow-[0_0_8px_rgba(34,197,94,0.8)]" />
+                      {item.name}
+                    </button>
+                  );
+                }
                 
                 return (
                   <Link
