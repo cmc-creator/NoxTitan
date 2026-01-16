@@ -92,7 +92,9 @@ const navigationSections = [
     ]
   },
   {
-    title: 'ManReports', href: '/reports', icon: BarChart3 },
+    title: 'Management',
+    items: [
+      { name: 'Reports', href: '/reports', icon: BarChart3 },
       { name: 'Training', href: '/training', icon: BookOpen },
       { name: 'Learning', href: '/learning', icon: BookOpen },
       { name: 'AI Assistant', href: '/ai-assistant', icon: Bot },
@@ -114,10 +116,7 @@ const navigationSections = [
       { name: 'Settings', href: '/settings', icon: Settings },
       { name: 'Data Import', href: '/import', icon: Upload },
       { name: 'Integrations', href: '/integrations', icon: Link2 },
-      { name: 'Help', href: '/help', icon: HelpCircle
-      { name: 'Announcements', href: '/announcements', icon: Megaphone },
-      { name: 'Data Import', href: '/import', icon: Upload },
-      { name: 'Integrations', href: '/integrations', icon: Link2 },
+      { name: 'Help', href: '/help', icon: HelpCircle },
       { name: 'Support', href: '/support', icon: Headphones },
     ]
   },
