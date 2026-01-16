@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { dataHub } from '@/lib/dataIntegration';
 import SettingsPanel from '@/components/SettingsPanel';
+import OnboardingWalkthrough from '@/components/OnboardingWalkthrough';
 import { 
   Users, Calendar, Clock, AlertTriangle, Shield, TrendingUp, 
   CheckCircle, XCircle, Activity, BarChart3, Bell, ArrowRight, Settings,
@@ -20,6 +21,7 @@ export default function UnifiedDashboard() {
   const [userTier, setUserTier] = useState('PROFESSIONAL');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [settingsComponent, setSettingsComponent] = useState('');
+  const [showOnboarding, setShowOnboarding] = useState(false);
 
   useEffect(() => {
     const tier = localStorage.getItem('tier') || 'PROFESSIONAL';
@@ -28,7 +30,23 @@ export default function UnifiedDashboard() {
     if (typeof document !== 'undefined') {
       document.documentElement.classList.add('dark');
     }
+    
+    // Check if user has completed onboarding
+    const hasCompletedOnboarding = localStorage.getItem('onboardingCompleted');
+    if (!hasCompletedOnboarding) {
+      setShowOnboarding(true);
+    }
   }, []);
+
+  const handleOnboardingComplete = () => {
+    localStorage.setItem('onboardingCompleted', 'true');
+    setShowOnboarding(false);
+  };
+
+  const handleOnboardingSkip = () => {
+    localStorage.setItem('onboardingCompleted', 'true');
+    setShowOnboarding(false);
+  };
 
   const handleSettingsClick = (e: React.MouseEvent, componentName: string) => {
     e.preventDefault();
@@ -1307,6 +1325,13 @@ export default function UnifiedDashboard() {
         <SettingsPanel
           componentName={settingsComponent}
           onClose={() => setSettingsOpen(false)}
+        />
+      )}
+
+      {showOnboarding && (
+        <OnboardingWalkthrough
+          onComplete={handleOnboardingComplete}
+          onSkip={handleOnboardingSkip}
         />
       )}
     </div>
