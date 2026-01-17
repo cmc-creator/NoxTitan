@@ -72,16 +72,16 @@ export default function QuickActionsButton() {
 
   return (
     <>
-      {/* Floating Action Button */}
+      {/* Floating Action Button - Positioned on LEFT to avoid chatbot conflict */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-8 right-8 z-50 w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 rounded-full shadow-2xl hover:shadow-purple-500/50 transition-all hover:scale-110 flex items-center justify-center group"
+        className="fixed bottom-28 left-8 z-50 w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 rounded-full shadow-2xl hover:shadow-purple-500/50 transition-all hover:scale-110 flex items-center justify-center group"
         title="Quick Actions (Cmd+K for search)"
       >
         {isOpen ? (
-          <X className="w-7 h-7 text-white" />
+          <X className="w-6 h-6 text-white" />
         ) : (
-          <Zap className="w-7 h-7 text-white group-hover:rotate-12 transition-transform" />
+          <Zap className="w-6 h-6 text-white group-hover:rotate-12 transition-transform" />
         )}
       </button>
 
@@ -94,8 +94,8 @@ export default function QuickActionsButton() {
             onClick={() => setIsOpen(false)}
           />
           
-          {/* Menu */}
-          <div className="fixed bottom-28 right-8 z-50 w-80 bg-slate-900 rounded-2xl shadow-2xl border border-purple-500/30 overflow-hidden">
+          {/* Menu - Positioned on LEFT side */}
+          <div className="fixed bottom-44 left-8 z-50 w-80 bg-slate-900 rounded-2xl shadow-2xl border border-purple-500/30 overflow-hidden">
             {/* Header */}
             <div className="bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-3">
               <h3 className="text-white font-bold flex items-center gap-2">
