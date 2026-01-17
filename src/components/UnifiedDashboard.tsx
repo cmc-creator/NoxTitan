@@ -197,7 +197,7 @@ export default function UnifiedDashboard() {
               <span className="px-3 py-1 bg-blue-500/20 border border-blue-400/30 rounded-full text-xs font-semibold text-blue-300">Night Shift 11PM-7AM</span>
             </div>
             <div className="flex gap-3">
-              <Link href="/shift-reports?view=all" className="text-blue-300 hover:text-blue-200 text-sm flex items-center gap-1">
+              <Link href="/shift-logs" className="text-blue-300 hover:text-blue-200 text-sm flex items-center gap-1">
                 View History <FolderOpen className="w-4 h-4" />
               </Link>
               <button className="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-lg text-sm font-semibold text-blue-300 hover:bg-blue-500/30 transition-all">
@@ -232,7 +232,7 @@ export default function UnifiedDashboard() {
                   </div>
                 </div>
               </div>
-              <Link href="/shift-reports/write" className="block p-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg border border-blue-400/30 hover:border-blue-400/60 transition-all">
+              <Link href="/shift-logs" className="block p-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg border border-blue-400/30 hover:border-blue-400/60 transition-all">
                 <div className="flex items-center justify-center gap-2 text-blue-300">
                   <FileText className="w-5 h-5" />
                   <span className="font-semibold">Write Day Shift Report</span>
@@ -761,7 +761,7 @@ export default function UnifiedDashboard() {
                 <Users className="w-6 h-6 text-blue-400" />
                 <h2 className="text-xl font-bold text-white">Hiring Pipeline</h2>
               </div>
-              <Link href="/hr/recruitment" className="text-blue-300 hover:text-blue-200 text-sm flex items-center gap-1">
+              <Link href="/hr" className="text-blue-300 hover:text-blue-200 text-sm flex items-center gap-1">
                 View All <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
