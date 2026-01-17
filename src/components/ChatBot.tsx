@@ -32,7 +32,37 @@ export default function ChatBot() {
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [showQuickActions, setShowQuickActions] = useState(true);
+  const [customColor, setCustomColor] = useState('from-pink-600 to-purple-600');
+  const [customAvatar, setCustomAvatar] = useState('💬');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Load customization preferences
+  useEffect(() => {
+    const loadPreferences = () => {
+      const stored = localStorage.getItem('chatbotPreferences');
+      if (stored) {
+        const prefs = JSON.parse(stored);
+        if (prefs.titan) {
+          setCustomColor(prefs.titan.color || 'from-pink-600 to-purple-600');
+          setCustomAvatar(prefs.titan.avatar || '💬');
+        }
+      }
+    };
+
+    loadPreferences();
+
+    // Listen for preference changes
+    const handlePreferenceChange = (event: any) => {
+      const prefs = event.detail;
+      if (prefs?.titan) {
+        setCustomColor(prefs.titan.color || 'from-pink-600 to-purple-600');
+        setCustomAvatar(prefs.titan.avatar || '💬');
+      }
+    };
+
+    window.addEventListener('chatbotPreferencesChanged', handlePreferenceChange);
+    return () => window.removeEventListener('chatbotPreferencesChanged', handlePreferenceChange);
+  }, []);
 
   const quickActions: QuickAction[] = [
     { id: '1', label: 'Schedule Help', icon: <Clock className="w-4 h-4" />, description: 'Create, edit, or manage shifts' },
@@ -251,10 +281,10 @@ export default function ChatBot() {
       {isOpen && (
         <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white dark:bg-slate-800 rounded-2xl shadow-2xl flex flex-col z-50 border border-gray-200 dark:border-slate-700">
           {/* Header */}
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-4 rounded-t-2xl flex items-center justify-between">
+          <div className={`bg-gradient-to-r ${customColor} p-4 rounded-t-2xl flex items-center justify-between`}>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden" style={{background: 'transparent'}}>
-                <img src="/logo.png" alt="Titan" className="w-full h-full object-contain" />
+              <div className="w-10 h-10 rounded-full flex items-center justify-center text-2xl overflow-hidden" style={{background: 'transparent'}}>
+                {customAvatar}
               </div>
               <div>
                 <h3 className="font-bold text-white text-pop-light">⚡ Titan AI Assistant</h3>

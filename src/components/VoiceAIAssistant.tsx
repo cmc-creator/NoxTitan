@@ -22,10 +22,40 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [voiceEnabled, setVoiceEnabled] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [customColor, setCustomColor] = useState('from-purple-600 to-indigo-600');
+  const [customAvatar, setCustomAvatar] = useState('🎤');
   
   const recognitionRef = useRef<any>(null);
   const synthRef = useRef<SpeechSynthesis | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Load customization preferences
+  useEffect(() => {
+    const loadPreferences = () => {
+      const stored = localStorage.getItem('chatbotPreferences');
+      if (stored) {
+        const prefs = JSON.parse(stored);
+        if (prefs.nox) {
+          setCustomColor(prefs.nox.color || 'from-purple-600 to-indigo-600');
+          setCustomAvatar(prefs.nox.avatar || '🎤');
+        }
+      }
+    };
+
+    loadPreferences();
+
+    // Listen for preference changes
+    const handlePreferenceChange = (event: any) => {
+      const prefs = event.detail;
+      if (prefs?.nox) {
+        setCustomColor(prefs.nox.color || 'from-purple-600 to-indigo-600');
+        setCustomAvatar(prefs.nox.avatar || '🎤');
+      }
+    };
+
+    window.addEventListener('chatbotPreferencesChanged', handlePreferenceChange);
+    return () => window.removeEventListener('chatbotPreferencesChanged', handlePreferenceChange);
+  }, []);
 
   // Initialize speech recognition and synthesis
   useEffect(() => {
@@ -240,12 +270,12 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
 
       {/* Voice Assistant Window */}
       {isOpen && (
-        <div className="fixed bottom-6 left-6 w-[420px] h-[600px] bg-slate-900 border-2 border-purple-400 rounded-2xl shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom-8">
+        <div className={`fixed bottom-6 left-6 w-[420px] h-[600px] bg-slate-900 border-2 rounded-2xl shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom-8`} style={{borderColor: customColor.includes('purple') ? '#a855f7' : '#8b5cf6'}}>
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-slate-700 bg-gradient-to-r from-purple-600 to-blue-600">
+      <div className={`flex items-center justify-between p-4 border-b border-slate-700 bg-gradient-to-r ${customColor}`}>
         <div className="flex items-center gap-3">
-          <div className="relative w-10 h-10 rounded-full flex items-center justify-center overflow-hidden" style={{background: 'transparent'}}>
-            <img src="/nox-logo.png" alt="Nox" className="w-full h-full object-contain" style={{imageRendering: 'crisp-edges'}} />
+          <div className="relative w-10 h-10 rounded-full flex items-center justify-center text-2xl overflow-hidden" style={{background: 'transparent'}}>
+            {customAvatar}
             {isSpeaking && (
               <div className="absolute -inset-1 bg-white rounded-full animate-ping opacity-75"></div>
             )}
