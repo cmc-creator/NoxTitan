@@ -120,6 +120,13 @@ export default function FormsPage() {
           </div>
           <div className="flex gap-3">
             <button
+              onClick={() => router.push('/forms/departments')}
+              className="px-6 py-3 bg-white border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 flex items-center gap-2"
+            >
+              <Folder className="w-5 h-5" />
+              Department Portals
+            </button>
+            <button
               onClick={() => router.push('/forms/import')}
               className="px-6 py-3 bg-white border-2 border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50 flex items-center gap-2"
             >
