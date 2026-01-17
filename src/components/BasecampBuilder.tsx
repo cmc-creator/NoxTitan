@@ -51,27 +51,27 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
 
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 z-50 overflow-y-auto">
-      <div className="min-h-screen p-4 md:p-8">
-        <div className="max-w-4xl mx-auto">
+      <div className="min-h-screen p-8">
+        <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
             <Home className="w-16 h-16 text-white mx-auto mb-4" />
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
+            <h1 className="text-5xl font-bold text-white mb-2">
               Welcome to Your Basecamp, {employeeName}! 🎉
             </h1>
-            <p className="text-purple-200 text-lg">
+            <p className="text-purple-200 text-xl">
               Let's personalize your workspace and meet your AI companion
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 space-y-8">
+          <div className="bg-white rounded-2xl shadow-2xl p-10 space-y-8">
             {/* Theme Selection */}
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                 <Sparkles className="w-6 h-6 text-purple-600" />
                 Choose Your Theme
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div className="grid grid-cols-4 gap-4">
                 {themes.map((theme) => (
                   <button
                     key={theme.id}
@@ -92,7 +92,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
             {/* Adventure Mode */}
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Pick Your Adventure</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 {adventures.map((adventure) => (
                   <button
                     key={adventure.id}
@@ -170,7 +170,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Select Personality
                   </label>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-4 gap-4">
                     {personalities.map((personality) => (
                       <button
                         key={personality.id}
@@ -207,9 +207,9 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
             {/* Complete Button */}
             <button
               onClick={() => onComplete(settings)}
-              className="w-full py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg font-bold text-lg transition-all flex items-center justify-center gap-2"
+              className="w-full py-5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg font-bold text-xl transition-all flex items-center justify-center gap-2"
             >
-              <Check className="w-6 h-6" />
+              <Check className="w-7 h-7" />
               Complete Setup & Enter Basecamp
             </button>
           </div>

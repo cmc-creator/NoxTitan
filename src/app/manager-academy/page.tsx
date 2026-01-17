@@ -119,25 +119,25 @@ export default function ManagerAcademyPage() {
   const progressPercent = (completedRequired / requiredModules.length) * 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4 md:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
           <Award className="w-16 h-16 text-yellow-400 mx-auto mb-4" />
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-3">
+          <h1 className="text-5xl font-bold text-white mb-3">
             Manager Academy
           </h1>
-          <p className="text-lg md:text-xl text-purple-200 max-w-3xl mx-auto">
+          <p className="text-xl text-purple-200 max-w-3xl mx-auto">
             Become an exceptional leader with servant leadership principles and best practices
           </p>
         </div>
 
         {/* Progress Card */}
-        <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-6 md:p-8 mb-8 shadow-2xl">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-white text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">Your Progress</h2>
-              <p className="text-purple-100">
+        <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 mb-8 shadow-2xl">
+          <div className="flex items-center justify-between gap-6">
+            <div className="text-white">
+              <h2 className="text-3xl font-bold mb-2">Your Progress</h2>
+              <p className="text-purple-100 text-lg">
                 {completedRequired} of {requiredModules.length} required modules completed
               </p>
             </div>
@@ -179,7 +179,7 @@ export default function ManagerAcademyPage() {
         </div>
 
         {/* Modules Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 gap-6">
           {modules.map((module) => {
             const isCompleted = completedModules.includes(module.id);
             const isActive = activeModule === module.id;
@@ -240,12 +240,12 @@ export default function ManagerAcademyPage() {
         </div>
 
         {/* Leadership Tips */}
-        <div className="mt-12 bg-slate-800 border-2 border-slate-700 rounded-xl p-6 md:p-8">
+        <div className="mt-12 bg-slate-800 border-2 border-slate-700 rounded-xl p-8">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <Heart className="w-8 h-8 text-pink-500" />
             Servant Leadership Core Principles
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-6">
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <span className="text-2xl">🙏</span>
