@@ -94,6 +94,7 @@ const navigationSections = [
   {
     title: 'Management',
     items: [
+      { name: 'Analytics', href: '/analytics', icon: TrendingUp },
       { name: 'Reports', href: '/reports', icon: BarChart3 },
       { name: 'Training', href: '/training', icon: BookOpen },
       { name: 'Learning', href: '/learning', icon: BookOpen },
