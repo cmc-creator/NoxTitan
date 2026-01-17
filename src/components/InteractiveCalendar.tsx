@@ -230,7 +230,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
   // Detect HR-related alerts
   const detectHRAlerts = () => {
-    const alerts = [];
+    const alerts: Array<{type: string; severity: string; employee: string; message: string; action: string}> = [];
     const today = new Date();
     
     mockEmployees.forEach(employee => {
@@ -694,7 +694,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             onClick={() => {
               const weekStart = new Date();
               weekStart.setDate(weekStart.getDate() - weekStart.getDay());
-              const weekShifts = shifts.filter(s => s.start >= weekStart);
+              const weekShifts = events.filter(s => s.start >= weekStart);
               setCopiedWeek(weekShifts);
               alert('Week copied! Click "Paste Week" to apply to another week.');
             }}
@@ -730,8 +730,8 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             onClick={() => {
               if (undoStack.length > 0) {
                 const previous = undoStack[undoStack.length - 1];
-                setRedoStack([...redoStack, shifts]);
-                setShifts(previous);
+                setRedoStack([...redoStack, events]);
+                setEvents(previous);
                 setUndoStack(undoStack.slice(0, -1));
               }
             }}
@@ -745,8 +745,8 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             onClick={() => {
               if (redoStack.length > 0) {
                 const next = redoStack[redoStack.length - 1];
-                setUndoStack([...undoStack, shifts]);
-                setShifts(next);
+                setUndoStack([...undoStack, events]);
+                setEvents(next);
                 setRedoStack(redoStack.slice(0, -1));
               }
             }}
@@ -1981,7 +1981,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                                           claimedViaMarketplace: true,
                                           marketplaceBonus: marketplacePosting.bonus
                                         };
-                                        setShifts(shifts.map(s => s.id === shift.id ? claimedShift : s));
+                                        setEvents(events.map(s => s.id === shift.id ? claimedShift : s));
                                         // Remove from marketplace postings
                                         setMarketplacePostedShifts(prev => prev.filter(p => p.shift.id !== shift.id));
                                       }}
@@ -2127,8 +2127,8 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
         <DnDCalendar
           localizer={localizer}
           events={filteredEvents}
-          startAccessor="start"
-          endAccessor="end"
+          startAccessor={(event: any) => event.start}
+          endAccessor={(event: any) => event.end}
           style={{ height: 700, background: "#fff", borderRadius: 16, boxShadow: "0 2px 16px #0001" }}
           draggableAccessor={() => true}
           resizable

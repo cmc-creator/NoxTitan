@@ -370,9 +370,13 @@ export default function HRFormsPortalPage() {
                     </span>
                   )}
                   {form.isShared ? (
-                    <Unlock className="w-4 h-4 text-green-600" title="Shared with department" />
+                    <div title="Shared with department">
+                      <Unlock className="w-4 h-4 text-green-600" />
+                    </div>
                   ) : (
-                    <Lock className="w-4 h-4 text-gray-400" title="Private" />
+                    <div title="Private">
+                      <Lock className="w-4 h-4 text-gray-400" />
+                    </div>
                   )}
                 </div>
 

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { 
   Plus, Save, Eye, Trash2, GripVertical, Type, AlignLeft, 
-  CheckSquare, ListChecked, Calendar, Upload, Hash, Mail,
+  CheckSquare, ListCheck, Calendar, Upload, Hash, Mail,
   Phone, Link2, Star, ToggleLeft, Signature
 } from 'lucide-react';
 
@@ -33,7 +33,7 @@ const fieldTypes = [
   { type: 'phone', label: 'Phone', icon: Phone },
   { type: 'url', label: 'URL', icon: Link2 },
   { type: 'date', label: 'Date', icon: Calendar },
-  { type: 'select', label: 'Dropdown', icon: ListChecked },
+  { type: 'select', label: 'Dropdown', icon: ListCheck },
   { type: 'multiselect', label: 'Multi-Select', icon: CheckSquare },
   { type: 'checkbox', label: 'Checkboxes', icon: CheckSquare },
   { type: 'radio', label: 'Radio Buttons', icon: ToggleLeft },
