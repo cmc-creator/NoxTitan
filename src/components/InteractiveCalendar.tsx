@@ -38,6 +38,23 @@ interface InteractiveCalendarProps {
   setShowSettings?: (show: boolean) => void;
 }
 
+// API Response type for shifts from Prisma
+interface ShiftAPIResponse {
+  id: string;
+  title?: string | null;
+  startTime: string;
+  endTime: string;
+  employeeId: string;
+  position?: string | null;
+  notes?: string | null;
+  color?: string | null;
+  overtimeHours?: number | null;
+  employee?: {
+    firstName: string;
+    lastName: string;
+  } | null;
+}
+
 export default function InteractiveCalendar({ showSettings: externalShowSettings, setShowSettings: externalSetShowSettings }: InteractiveCalendarProps = {}) {
   const [draggedShift, setDraggedShift] = useState<ShiftEvent | null>(null);
   const [loading, setLoading] = useState(true);
@@ -78,11 +95,11 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           throw new Error('Failed to fetch shifts');
         }
         
-        const shifts = await response.json();
+        const shifts: ShiftAPIResponse[] = await response.json();
         
         // Transform API data to calendar events
-        const transformedEvents: ShiftEvent[] = shifts.map((shift: any) => ({
-          id: shift.id,
+        const transformedEvents: ShiftEvent[] = shifts.map((shift) => ({
+          id: Number(shift.id),
           title: shift.title || `${shift.position || 'Shift'}`,
           start: new Date(shift.startTime),
           end: new Date(shift.endTime),
@@ -91,7 +108,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           location: shift.position || '',
           notes: shift.notes || '',
           color: shift.color || '#3b82f6',
-          isOvertime: shift.overtimeHours > 0,
+          isOvertime: (shift.overtimeHours ?? 0) > 0,
         }));
         
         setEvents(transformedEvents);
