@@ -5,6 +5,8 @@ import { AuthProvider } from "@/lib/auth-context";
 import ConditionalTopNav from "@/components/ConditionalTopNav";
 import Footer from "@/components/Footer";
 import ConditionalBots from "@/components/ConditionalBots";
+import CommandPalette from "@/components/CommandPalette";
+import QuickActionsButton from "@/components/QuickActionsButton";
 
 export const metadata: Metadata = {
   title: "NoxTitan – Business Management. Forged for Titans.",
@@ -37,6 +39,8 @@ export default function RootLayout({
               <Footer />
             </div>
             <ConditionalBots />
+            <CommandPalette />
+            <QuickActionsButton />
           </ThemeProvider>
         </AuthProvider>
       </body>

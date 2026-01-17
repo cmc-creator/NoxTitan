@@ -21,7 +21,8 @@ import {
   Phone,
   Mail,
   Video,
-  HelpCircle
+  HelpCircle,
+  Keyboard
 } from 'lucide-react';
 
 export default function CustomerSupportPage() {
