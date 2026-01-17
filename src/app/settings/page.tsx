@@ -3,6 +3,7 @@
 import { Crown, HelpCircle, RotateCcw, Store } from 'lucide-react';
 import Link from 'next/link';
 import ThemeSelector from '@/components/ThemeSelector';
+import ChatbotCustomizer from '@/components/ChatbotCustomizer';
 
 export default function SettingsPage() {
   const handleRestartTour = () => {
@@ -39,6 +40,10 @@ export default function SettingsPage() {
           Revisit Onboarding Walkthrough
         </button>
       </div>
+
+      {/* Chatbot Customization */}
+      <ChatbotCustomizer />
+
       <div>
         <h2 className="text-3xl font-bold text-gray-900">Settings</h2>
         <p className="text-gray-500 mt-1">Manage your account and preferences</p>
