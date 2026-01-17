@@ -89,6 +89,7 @@ const navigationSections = [
       { name: 'HR Planner', href: '/hr-planner', icon: Briefcase },
       { name: 'QAPI Portal', href: '/qapi', icon: Shield },
       { name: 'Onboarding', href: '/onboarding', icon: UserCircle },
+      { name: 'Forms & Surveys', href: '/forms', icon: FileText },
     ]
   },
   {

@@ -157,6 +157,7 @@ model Employee {
   guildMember             GuildMember?
   questCompletions        QuestCompletion[]
   merchOrders             MerchOrder[]
+  surveyResponses         SurveyResponse[]
 }
 
 // Shift model
@@ -1377,6 +1378,16 @@ enum SurveyType {
   ENGAGEMENT
   EXIT
   PULSE
+  PATIENT_SATISFACTION
+  EMPLOYEE_ENGAGEMENT
+  CULTURE_OF_SAFETY
+  EXIT_INTERVIEW
+  ONBOARDING_FEEDBACK
+  TRAINING_EVALUATION
+  INCIDENT_REPORT
+  SUGGESTION
+  COMPLAINT
+  PERFORMANCE_REVIEW
   CUSTOM
 }
 
@@ -1758,5 +1769,143 @@ model Notification {
   createdAt     DateTime       @default(now())
   
   user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// Survey Integrations
+model SurveyIntegration {
+  id                String              @id @default(cuid())
+  organizationId    String
+  platform          SurveyPlatform
+  apiKey            String? // Encrypted
+  accessToken       String? // Encrypted
+  refreshToken      String? // Encrypted
+  webhookUrl        String?
+  isActive          Boolean             @default(true)
+  syncFrequency     Int                 @default(15) // minutes
+  lastSyncAt        DateTime?
+  settings          Json? // Platform-specific settings
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  
+  responses         SurveyResponse[]
+  mappings          SurveyMapping[]
+}
+
+model SurveyMapping {
+  id                String              @id @default(cuid())
+  integrationId     String
+  externalSurveyId  String // ID from SurveyMonkey, Forms, etc
+  surveyName        String
+  surveyType        SurveyType
+  autoImport        Boolean             @default(true)
+  fieldMappings     Json? // Map external fields to internal fields
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  
+  integration       SurveyIntegration   @relation(fields: [integrationId], references: [id], onDelete: Cascade)
+  responses         SurveyResponse[]
+}
+
+model SurveyResponse {
+  id                String              @id @default(cuid())
+  integrationId     String
+  mappingId         String?
+  externalId        String // Response ID from external platform
+  employeeId        String?
+  respondentEmail   String?
+  respondentName    String?
+  surveyType        SurveyType
+  responses         Json // All Q&A pairs
+  score             Float? // For satisfaction scores
+  sentiment         String? // POSITIVE, NEUTRAL, NEGATIVE
+  tags              String[] // Auto-generated tags
+  isAnonymous       Boolean             @default(false)
+  submittedAt       DateTime
+  importedAt        DateTime            @default(now())
+  
+  integration       SurveyIntegration   @relation(fields: [integrationId], references: [id], onDelete: Cascade)
+  mapping           SurveyMapping?      @relation(fields: [mappingId], references: [id])
+  employee          Employee?           @relation(fields: [employeeId], references: [id])
+}
+
+// Custom Forms Builder
+model FormTemplate {
+  id                String              @id @default(cuid())
+  organizationId    String
+  createdBy         String // User ID
+  name              String
+  description       String?
+  category          FormCategory
+  isPublic          Boolean             @default(false) // Share across departments
+  fields            Json // Array of form fields
+  settings          Json? // Notifications, approvals, etc
+  version           Int                 @default(1)
+  isActive          Boolean             @default(true)
+  usageCount        Int                 @default(0)
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  
+  submissions       FormSubmission[]
+  sharedWith        FormTemplateShare[]
+}
+
+model FormTemplateShare {
+  id                String              @id @default(cuid())
+  templateId        String
+  sharedWithUserId  String?
+  sharedWithRole    String? // MANAGER, HR, ADMIN
+  sharedWithDept    String?
+  canEdit           Boolean             @default(false)
+  canDelete         Boolean             @default(false)
+  createdAt         DateTime            @default(now())
+  
+  template          FormTemplate        @relation(fields: [templateId], references: [id], onDelete: Cascade)
+}
+
+model FormSubmission {
+  id                String              @id @default(cuid())
+  templateId        String
+  submittedBy       String // User or Employee ID
+  submitterName     String
+  submitterEmail    String?
+  responses         Json // All field responses
+  status            FormSubmissionStatus @default(SUBMITTED)
+  approvedBy        String?
+  approvedAt        DateTime?
+  rejectedReason    String?
+  attachments       String[] // File URLs
+  submittedAt       DateTime            @default(now())
+  
+  template          FormTemplate        @relation(fields: [templateId], references: [id], onDelete: Cascade)
+}
+
+enum SurveyPlatform {
+  SURVEYMONKEY
+  MICROSOFT_FORMS
+  GOOGLE_FORMS
+  TYPEFORM
+  QUALTRICS
+  INTERNAL // Custom forms built in-app
+}
+
+enum FormCategory {
+  HR
+  COMPLIANCE
+  TRAINING
+  INCIDENT
+  TIME_OFF
+  PERFORMANCE
+  FEEDBACK
+  SURVEY
+  CUSTOM
+}
+
+enum FormSubmissionStatus {
+  DRAFT
+  SUBMITTED
+  IN_REVIEW
+  APPROVED
+  REJECTED
+  ARCHIVED
 }
 
