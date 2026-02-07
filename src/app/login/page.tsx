@@ -187,8 +187,8 @@ export default function LoginPage() {
           <div className="mt-6 p-4 bg-slate-700/30 rounded-lg border border-slate-600">
             <p className="text-xs font-semibold text-slate-300 mb-2">Demo Credentials:</p>
             <p className="text-xs text-slate-400">
-              Email: admin@scheduler.com<br />
-              Password: admin123
+              Email: demo@nyxtitan.com<br />
+              Password: demo123456
             </p>
           </div>
         </div>
