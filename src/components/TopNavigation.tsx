@@ -9,6 +9,7 @@ export default function TopNavigation() {
   const { isAuthenticated } = useAuth();
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
   const [financeMenuOpen, setFinanceMenuOpen] = useState(false);
+  const [enterpriseMenuOpen, setEnterpriseMenuOpen] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('scheduler-theme') as 'light' | 'dark';
@@ -143,6 +144,69 @@ export default function TopNavigation() {
             Compliance
           </span>
         </Link>
+        
+        {/* Enterprise Dropdown */}
+        <div className="relative" onMouseLeave={() => setEnterpriseMenuOpen(false)}>
+          <button
+            onClick={() => setEnterpriseMenuOpen(!enterpriseMenuOpen)}
+            onMouseEnter={() => setEnterpriseMenuOpen(true)}
+            className="relative px-4 py-2 rounded-lg border-2 border-purple-500/40 bg-gradient-to-b from-purple-900/30 via-black/50 to-purple-900/30 hover:border-purple-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] transition-all group flex items-center gap-2"
+          >
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-purple-100 via-slate-300 to-purple-400"
+                  style={{
+                    textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.6)',
+                    WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
+                    filter: 'brightness(1.4)'
+                  }}>
+              Enterprise
+            </span>
+            <ChevronDown className="w-4 h-4 text-purple-300" />
+          </button>
+          {enterpriseMenuOpen && (
+            <div className="absolute top-full mt-2 right-0 min-w-[200px] bg-gradient-to-b from-purple-950 via-black to-purple-950 border-2 border-purple-500/40 rounded-lg shadow-[0_0_30px_rgba(168,85,247,0.6)] z-50">
+              <Link href="/qapi" className="block px-4 py-3 hover:bg-purple-900/40 border-b border-purple-500/20 transition-colors text-center">
+                <span className="text-transparent bg-clip-text bg-gradient-to-b from-purple-100 via-slate-300 to-purple-400"
+                      style={{
+                        textShadow: '0 1px 2px rgba(0,0,0,0.8)',
+                        WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
+                        filter: 'brightness(1.4)'
+                      }}>
+                  QAPI Portal
+                </span>
+              </Link>
+              <Link href="/vault" className="block px-4 py-3 hover:bg-purple-900/40 border-b border-purple-500/20 transition-colors text-center">
+                <span className="text-transparent bg-clip-text bg-gradient-to-b from-purple-100 via-slate-300 to-purple-400"
+                      style={{
+                        textShadow: '0 1px 2px rgba(0,0,0,0.8)',
+                        WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
+                        filter: 'brightness(1.4)'
+                      }}>
+                  Asset Vault
+                </span>
+              </Link>
+              <Link href="/sentinel" className="block px-4 py-3 hover:bg-purple-900/40 border-b border-purple-500/20 transition-colors text-center">
+                <span className="text-transparent bg-clip-text bg-gradient-to-b from-purple-100 via-slate-300 to-purple-400"
+                      style={{
+                        textShadow: '0 1px 2px rgba(0,0,0,0.8)',
+                        WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
+                        filter: 'brightness(1.4)'
+                      }}>
+                  Sentinel Security
+                </span>
+              </Link>
+              <Link href="/oracle" className="block px-4 py-3 hover:bg-purple-900/40 transition-colors text-center">
+                <span className="text-transparent bg-clip-text bg-gradient-to-b from-purple-100 via-slate-300 to-purple-400"
+                      style={{
+                        textShadow: '0 1px 2px rgba(0,0,0,0.8)',
+                        WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
+                        filter: 'brightness(1.4)'
+                      }}>
+                  Oracle AI
+                </span>
+              </Link>
+            </div>
+          )}
+        </div>
         
         {/* Finance Dropdown */}
         <div className="relative" onMouseLeave={() => setFinanceMenuOpen(false)}>

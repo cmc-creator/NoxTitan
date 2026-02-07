@@ -64,6 +64,7 @@ const navigationSections = [
   {
     title: 'Enterprise Suite',
     items: [
+      { name: 'QAPI Portal', href: '/qapi', icon: ClipboardCheck },
       { name: 'Asset Vault', href: '/vault', icon: Package },
       { name: 'Sentinel', href: '/sentinel', icon: Shield },
       { name: 'Oracle', href: '/oracle', icon: Sparkles },
