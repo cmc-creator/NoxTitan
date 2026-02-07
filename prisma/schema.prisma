@@ -10,11 +10,32 @@ model AuditLog {
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Organization model - Company-wide settings
+model Organization {
+  id                  String   @id @default(cuid())
+  name                String
+  industry            String   // "healthcare", "retail", "construction", etc.
+  logo                String?
+  brandPrimaryColor   String?  @default("#9333ea")
+  brandSecondaryColor String?  @default("#ec4899")
+  brandAccentColor    String?  @default("#06b6d4")
+  timezone            String   @default("America/New_York")
+  complianceSettings  Json?    // State laws, break rules, overtime policies
+  featureFlags        Json?    // Which modules are enabled
+  onboardingConfig    Json?    // Custom onboarding flows and steps
+  setupCompleted      Boolean  @default(false)
+  setupStep           Int      @default(0)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
 }
 
 // User/Organization model
@@ -24,6 +45,8 @@ model User {
   name          String?
   passwordHash  String
   tier          SubscriptionTier @default(PROFESSIONAL)
+  organizationId String?
+  isOrgAdmin    Boolean        @default(false)
   
   // Payroll Settings - Shift Differentials
   nightDifferential   Float?   @default(1.5)    // 1.5x for night shifts (10pm-6am)
@@ -126,6 +149,7 @@ model Employee {
   checkIns                ManagerCheckIn[]
   performanceReviews      PerformanceReview[]
   onboardingWorkflow      OnboardingWorkflow?
+  basecampSettings        BasecampSettings?
   assetAssignments        AssetAssignment[]
   payrollDeductions       PayrollDeduction[]
   visitorLogs             VisitorLog[]
@@ -134,6 +158,7 @@ model Employee {
   guildMember             GuildMember?
   questCompletions        QuestCompletion[]
   merchOrders             MerchOrder[]
+  surveyResponses         SurveyResponse[]
 }
 
 // Shift model
@@ -519,21 +544,62 @@ model PerformanceReview {
 }
 
 model OnboardingWorkflow {
-  id              String   @id @default(cuid())
-  employeeId      String @unique
-  employee        Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  id              String           @id @default(cuid())
+  employeeId      String           @unique
+  employee        Employee         @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  templateId      String?
+  type            OnboardingType   @default(EMPLOYEE)
+  currentStep     Int              @default(0)
   status          OnboardingStatus @default(NOT_STARTED)
   startDate       DateTime
   completionDate  DateTime?
   tasks           Json
-  completedTasks  Json @default("[]")
+  completedTasks  Json             @default("[]")
+  completedSteps  Json             @default("[]")
+  customizations  Json?            // Basecamp settings, preferences
   buddyId         String?
-  buddy           Employee? @relation("OnboardingBuddy", fields: [buddyId], references: [id], onDelete: SetNull)
-  progress        Int @default(0)
+  buddy           Employee?        @relation("OnboardingBuddy", fields: [buddyId], references: [id], onDelete: SetNull)
+  progress        Int              @default(0)
   userId          String
-  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
+// Onboarding Templates - Reusable flows for different roles/industries
+model OnboardingTemplate {
+  id              String         @id @default(cuid())
+  name            String
+  description     String?
+  type            OnboardingType
+  industry        String?        // "healthcare", "retail", etc. - null = universal
+  steps           Json           // Array of step configurations
+  estimatedDays   Int?           @default(7)
+  isActive        Boolean        @default(true)
+  isDefault       Boolean        @default(false)
+  customizable    Boolean        @default(true)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+}
+
+// Basecamp Settings - Employee's personalized workspace
+model BasecampSettings {
+  id                String   @id @default(cuid())
+  employeeId        String   @unique
+  theme             String   @default("default")
+  adventureMode     String?  // Guild theme: "tomb-raider", "treasure-hunt", etc.
+  basebotName       String?  @default("Basebot")
+  basebotAvatar     String?  @default("🤖")
+  basebotPersonality String? @default("friendly")
+  basebotVoice      String?  @default("standard")
+  dashboardLayout   Json?    // Widget arrangement and preferences
+  notificationPrefs Json?    // Push, email, SMS preferences
+  quickActions      Json?    // Customized quick action buttons
+  favoritePages     Json?    // Pinned/starred pages
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  employee          Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
 }
 
 // Asset Management Models
@@ -1313,6 +1379,16 @@ enum SurveyType {
   ENGAGEMENT
   EXIT
   PULSE
+  PATIENT_SATISFACTION
+  EMPLOYEE_ENGAGEMENT
+  CULTURE_OF_SAFETY
+  EXIT_INTERVIEW
+  ONBOARDING_FEEDBACK
+  TRAINING_EVALUATION
+  INCIDENT_REPORT
+  SUGGESTION
+  COMPLAINT
+  PERFORMANCE_REVIEW
   CUSTOM
 }
 
@@ -1346,6 +1422,13 @@ enum OnboardingStatus {
   IN_PROGRESS
   COMPLETED
   DELAYED
+}
+
+enum OnboardingType {
+  ADMIN
+  EMPLOYEE
+  MANAGER
+  CUSTOM
 }
 
 enum AssetStatus {
@@ -1687,5 +1770,143 @@ model Notification {
   createdAt     DateTime       @default(now())
   
   user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// Survey Integrations
+model SurveyIntegration {
+  id                String              @id @default(cuid())
+  organizationId    String
+  platform          SurveyPlatform
+  apiKey            String? // Encrypted
+  accessToken       String? // Encrypted
+  refreshToken      String? // Encrypted
+  webhookUrl        String?
+  isActive          Boolean             @default(true)
+  syncFrequency     Int                 @default(15) // minutes
+  lastSyncAt        DateTime?
+  settings          Json? // Platform-specific settings
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  
+  responses         SurveyResponse[]
+  mappings          SurveyMapping[]
+}
+
+model SurveyMapping {
+  id                String              @id @default(cuid())
+  integrationId     String
+  externalSurveyId  String // ID from SurveyMonkey, Forms, etc
+  surveyName        String
+  surveyType        SurveyType
+  autoImport        Boolean             @default(true)
+  fieldMappings     Json? // Map external fields to internal fields
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  
+  integration       SurveyIntegration   @relation(fields: [integrationId], references: [id], onDelete: Cascade)
+  responses         SurveyResponse[]
+}
+
+model SurveyResponse {
+  id                String              @id @default(cuid())
+  integrationId     String
+  mappingId         String?
+  externalId        String // Response ID from external platform
+  employeeId        String?
+  respondentEmail   String?
+  respondentName    String?
+  surveyType        SurveyType
+  responses         Json // All Q&A pairs
+  score             Float? // For satisfaction scores
+  sentiment         String? // POSITIVE, NEUTRAL, NEGATIVE
+  tags              String[] // Auto-generated tags
+  isAnonymous       Boolean             @default(false)
+  submittedAt       DateTime
+  importedAt        DateTime            @default(now())
+  
+  integration       SurveyIntegration   @relation(fields: [integrationId], references: [id], onDelete: Cascade)
+  mapping           SurveyMapping?      @relation(fields: [mappingId], references: [id])
+  employee          Employee?           @relation(fields: [employeeId], references: [id])
+}
+
+// Custom Forms Builder
+model FormTemplate {
+  id                String              @id @default(cuid())
+  organizationId    String
+  createdBy         String // User ID
+  name              String
+  description       String?
+  category          FormCategory
+  isPublic          Boolean             @default(false) // Share across departments
+  fields            Json // Array of form fields
+  settings          Json? // Notifications, approvals, etc
+  version           Int                 @default(1)
+  isActive          Boolean             @default(true)
+  usageCount        Int                 @default(0)
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  
+  submissions       FormSubmission[]
+  sharedWith        FormTemplateShare[]
+}
+
+model FormTemplateShare {
+  id                String              @id @default(cuid())
+  templateId        String
+  sharedWithUserId  String?
+  sharedWithRole    String? // MANAGER, HR, ADMIN
+  sharedWithDept    String?
+  canEdit           Boolean             @default(false)
+  canDelete         Boolean             @default(false)
+  createdAt         DateTime            @default(now())
+  
+  template          FormTemplate        @relation(fields: [templateId], references: [id], onDelete: Cascade)
+}
+
+model FormSubmission {
+  id                String              @id @default(cuid())
+  templateId        String
+  submittedBy       String // User or Employee ID
+  submitterName     String
+  submitterEmail    String?
+  responses         Json // All field responses
+  status            FormSubmissionStatus @default(SUBMITTED)
+  approvedBy        String?
+  approvedAt        DateTime?
+  rejectedReason    String?
+  attachments       String[] // File URLs
+  submittedAt       DateTime            @default(now())
+  
+  template          FormTemplate        @relation(fields: [templateId], references: [id], onDelete: Cascade)
+}
+
+enum SurveyPlatform {
+  SURVEYMONKEY
+  MICROSOFT_FORMS
+  GOOGLE_FORMS
+  TYPEFORM
+  QUALTRICS
+  INTERNAL // Custom forms built in-app
+}
+
+enum FormCategory {
+  HR
+  COMPLIANCE
+  TRAINING
+  INCIDENT
+  TIME_OFF
+  PERFORMANCE
+  FEEDBACK
+  SURVEY
+  CUSTOM
+}
+
+enum FormSubmissionStatus {
+  DRAFT
+  SUBMITTED
+  IN_REVIEW
+  APPROVED
+  REJECTED
+  ARCHIVED
 }
 

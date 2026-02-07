@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth/next';
-import { authOptions } from '@/lib/auth';
+import { auth } from '@/lib/auth';
 
 // This is a simple AI assistant API
 // For production, integrate with OpenAI, Anthropic, or your preferred LLM
 
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await auth();
     if (!session?.user?.id) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -59,7 +58,7 @@ function generateContextualResponse(message: string, context: string, userRole: 
 
     // Reporting/Analytics
     if (lowerMessage.includes('report') || lowerMessage.includes('analytic') || lowerMessage.includes('data') || lowerMessage.includes('metric')) {
-      return "TeamPulse has powerful analytics! I can show you:\n\n📊 Employee engagement trends\n📊 Turnover predictions (based on survey scores)\n📊 Manager effectiveness metrics\n📊 Time-to-fill for open positions\n📊 Training completion rates\n📊 Compliance violation patterns\n\nWhich metrics are most important for your organization?";
+      return "NoxTitan has powerful analytics! I can show you:\n\n📊 Employee engagement trends\n📊 Turnover predictions (based on survey scores)\n📊 Manager effectiveness metrics\n📊 Time-to-fill for open positions\n📊 Training completion rates\n📊 Compliance violation patterns\n\nWhich metrics are most important for your organization?";
     }
   }
 

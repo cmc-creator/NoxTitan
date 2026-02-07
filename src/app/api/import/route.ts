@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth/next';
-import { authOptions } from '@/lib/auth';
+import { auth } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import * as Papa from 'papaparse';
-import * as XLSX from 'xlsx';
+import ExcelJS from 'exceljs';
 
 // Helper function to parse CSV
 function parseCSV(text: string): Promise<any[]> {
@@ -16,16 +15,56 @@ function parseCSV(text: string): Promise<any[]> {
   });
 }
 
-// Helper function to parse Excel
-function parseExcel(buffer: ArrayBuffer): any[] {
-  const workbook = XLSX.read(buffer, { type: 'array' });
-  const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-  return XLSX.utils.sheet_to_json(firstSheet);
+// Helper function to parse Excel using ExcelJS
+async function parseExcel(buffer: ArrayBuffer): Promise<any[]> {
+  const workbook = new ExcelJS.Workbook();
+  await workbook.xlsx.load(buffer);
+  
+  const worksheet = workbook.worksheets[0];
+  if (!worksheet) {
+    throw new Error('No worksheet found in Excel file');
+  }
+
+  const data: any[] = [];
+  const headers: string[] = [];
+  
+  // Get headers from first row (include empty cells to maintain alignment)
+  const firstRow = worksheet.getRow(1);
+  firstRow.eachCell({ includeEmpty: true }, (cell, colNumber) => {
+    headers[colNumber - 1] = cell.value?.toString() || '';
+  });
+  
+  // Process data rows
+  worksheet.eachRow((row, rowNumber) => {
+    if (rowNumber === 1) return; // Skip header row
+    
+    const rowData: any = {};
+    let hasData = false;
+    
+    row.eachCell({ includeEmpty: true }, (cell, colNumber) => {
+      const header = headers[colNumber - 1];
+      if (header) {
+        const value = cell.value;
+        rowData[header] = value;
+        // Check if row has any meaningful data (not null/undefined)
+        if (value !== null && value !== undefined) {
+          hasData = true;
+        }
+      }
+    });
+    
+    // Only add rows that contain at least one non-null/non-undefined value
+    if (hasData) {
+      data.push(rowData);
+    }
+  });
+  
+  return data;
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await auth();
     if (!session?.user?.id) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -48,7 +87,7 @@ export async function POST(request: NextRequest) {
       data = await parseCSV(text);
     } else if (fileName.endsWith('.xlsx') || fileName.endsWith('.xls')) {
       const buffer = await file.arrayBuffer();
-      data = parseExcel(buffer);
+      data = await parseExcel(buffer);
     } else {
       return NextResponse.json({ error: 'Unsupported file type' }, { status: 400 });
     }

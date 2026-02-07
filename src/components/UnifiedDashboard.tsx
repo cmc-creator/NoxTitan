@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { dataHub } from '@/lib/dataIntegration';
 import SettingsPanel from '@/components/SettingsPanel';
+import OnboardingWalkthrough from '@/components/OnboardingWalkthrough';
 import { 
   Users, Calendar, Clock, AlertTriangle, Shield, TrendingUp, 
   CheckCircle, XCircle, Activity, BarChart3, Bell, ArrowRight, Settings,
@@ -20,6 +21,7 @@ export default function UnifiedDashboard() {
   const [userTier, setUserTier] = useState('PROFESSIONAL');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [settingsComponent, setSettingsComponent] = useState('');
+  const [showOnboarding, setShowOnboarding] = useState(false);
 
   useEffect(() => {
     const tier = localStorage.getItem('tier') || 'PROFESSIONAL';
@@ -28,7 +30,23 @@ export default function UnifiedDashboard() {
     if (typeof document !== 'undefined') {
       document.documentElement.classList.add('dark');
     }
+    
+    // Check if user has completed onboarding
+    const hasCompletedOnboarding = localStorage.getItem('onboardingCompleted');
+    if (!hasCompletedOnboarding) {
+      setShowOnboarding(true);
+    }
   }, []);
+
+  const handleOnboardingComplete = () => {
+    localStorage.setItem('onboardingCompleted', 'true');
+    setShowOnboarding(false);
+  };
+
+  const handleOnboardingSkip = () => {
+    localStorage.setItem('onboardingCompleted', 'true');
+    setShowOnboarding(false);
+  };
 
   const handleSettingsClick = (e: React.MouseEvent, componentName: string) => {
     e.preventDefault();
@@ -165,7 +183,7 @@ export default function UnifiedDashboard() {
               <h3 className="text-3xl font-bold text-white mb-1 relative z-10">{dashboardData.quality.openIncidents}</h3>
               <p className="text-purple-100 font-semibold relative z-10">Open Incidents</p>
               <p className="text-sm text-purple-200 mt-2 relative z-10">{dashboardData.quality.totalIncidents} total incidents</p>
-              <p className="text-xs text-purple-300 mt-1 relative z-10">{dashboardData.quality.resolved || 45} resolved</p>
+              <p className="text-xs text-purple-300 mt-1 relative z-10">45 resolved</p>
             </div>
           </Link>
         </div>
@@ -179,7 +197,7 @@ export default function UnifiedDashboard() {
               <span className="px-3 py-1 bg-blue-500/20 border border-blue-400/30 rounded-full text-xs font-semibold text-blue-300">Night Shift 11PM-7AM</span>
             </div>
             <div className="flex gap-3">
-              <Link href="/shift-reports?view=all" className="text-blue-300 hover:text-blue-200 text-sm flex items-center gap-1">
+              <Link href="/shift-logs" className="text-blue-300 hover:text-blue-200 text-sm flex items-center gap-1">
                 View History <FolderOpen className="w-4 h-4" />
               </Link>
               <button className="px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-lg text-sm font-semibold text-blue-300 hover:bg-blue-500/30 transition-all">
@@ -214,7 +232,7 @@ export default function UnifiedDashboard() {
                   </div>
                 </div>
               </div>
-              <Link href="/shift-reports/write" className="block p-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg border border-blue-400/30 hover:border-blue-400/60 transition-all">
+              <Link href="/shift-logs" className="block p-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg border border-blue-400/30 hover:border-blue-400/60 transition-all">
                 <div className="flex items-center justify-center gap-2 text-blue-300">
                   <FileText className="w-5 h-5" />
                   <span className="font-semibold">Write Day Shift Report</span>
@@ -743,7 +761,7 @@ export default function UnifiedDashboard() {
                 <Users className="w-6 h-6 text-blue-400" />
                 <h2 className="text-xl font-bold text-white">Hiring Pipeline</h2>
               </div>
-              <Link href="/hr/recruitment" className="text-blue-300 hover:text-blue-200 text-sm flex items-center gap-1">
+              <Link href="/hr" className="text-blue-300 hover:text-blue-200 text-sm flex items-center gap-1">
                 View All <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -1307,6 +1325,13 @@ export default function UnifiedDashboard() {
         <SettingsPanel
           componentName={settingsComponent}
           onClose={() => setSettingsOpen(false)}
+        />
+      )}
+
+      {showOnboarding && (
+        <OnboardingWalkthrough
+          onComplete={handleOnboardingComplete}
+          onSkip={handleOnboardingSkip}
         />
       )}
     </div>

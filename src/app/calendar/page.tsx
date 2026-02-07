@@ -60,6 +60,46 @@ export default function CalendarPage() {
         </div>
       </div>
 
+      {/* Weather & Quick Info */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 print:hidden flex-shrink-0">
+        <div className="bg-gradient-to-br from-cyan-900/50 to-blue-900/50 border-2 border-cyan-600/40 rounded-xl p-4 shadow-lg">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-cyan-200 text-sm font-semibold mb-1">Today's Weather</p>
+              <p className="text-3xl font-bold text-white">72°F</p>
+              <p className="text-xs text-cyan-300 mt-1">Partly Cloudy</p>
+            </div>
+            <div className="text-5xl">⛅</div>
+          </div>
+        </div>
+        <div className="bg-gradient-to-br from-purple-900/50 to-violet-900/50 border-2 border-purple-600/40 rounded-xl p-4 shadow-lg">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-purple-200 text-sm font-semibold mb-1">Scheduled Today</p>
+              <p className="text-3xl font-bold text-white">24</p>
+              <p className="text-xs text-purple-300 mt-1">Employees Clocked In</p>
+            </div>
+            <div className="text-5xl">👥</div>
+          </div>
+        </div>
+        <div className="bg-gradient-to-br from-amber-900/50 to-yellow-900/50 border-2 border-amber-600/40 rounded-xl p-4 shadow-lg">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-amber-200 text-sm font-semibold mb-1">Open Shifts</p>
+              <p className="text-3xl font-bold text-white">3</p>
+              <p className="text-xs text-amber-300 mt-1">Need Coverage</p>
+            </div>
+            <div className="text-5xl">📋</div>
+          </div>
+        </div>
+      </div>
+
+      {/* THE CALENDAR - Main Focus */}
+      <div className="flex-1 overflow-auto bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 border border-slate-700 shadow-2xl min-h-0">
+        <InteractiveCalendar showSettings={showSettings} setShowSettings={setShowSettings} />
+      </div>
+
+      {/* Action Buttons */}
       <div className="flex flex-wrap gap-4 print:hidden flex-shrink-0">
         <Link
           href="/dashboard"
@@ -89,7 +129,7 @@ export default function CalendarPage() {
         <ThemeCustomizer />
       </div>
 
-      {/* Finance Metrics Dashboard */}
+      {/* Finance Metrics Dashboard - Supporting Info */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4 print:hidden flex-shrink-0">
         <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-2 border-green-600/40 rounded-xl p-4 shadow-lg">
           <p className="text-green-200 text-sm font-semibold mb-1">Budget Hours</p>
@@ -116,10 +156,6 @@ export default function CalendarPage() {
           <p className="text-3xl font-bold text-white">$87.5K</p>
           <p className="text-xs text-red-300 mt-1">Weekly Total</p>
         </div>
-      </div>
-
-      <div className="flex-1 overflow-auto bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 border border-slate-700 shadow-2xl min-h-0">
-        <InteractiveCalendar showSettings={showSettings} setShowSettings={setShowSettings} />
       </div>
     </div>
   );

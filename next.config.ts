@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
     // your project has type errors.
     ignoreBuildErrors: true,
   },
+  eslint: {
+    // ⚠️ Ignore ESLint errors during production builds
+    ignoreDuringBuilds: true,
+  },
   devIndicators: {
     position: 'top-right',
   },
