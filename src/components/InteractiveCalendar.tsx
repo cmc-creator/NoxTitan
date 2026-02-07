@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Calendar, dateFnsLocalizer, Event as CalendarEvent } from "react-big-calendar";
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
 import { format } from "date-fns/format";
@@ -38,8 +38,27 @@ interface InteractiveCalendarProps {
   setShowSettings?: (show: boolean) => void;
 }
 
+// API Response type for shifts from Prisma
+interface ShiftAPIResponse {
+  id: string;
+  title?: string | null;
+  startTime: string;
+  endTime: string;
+  employeeId: string;
+  position?: string | null;
+  notes?: string | null;
+  color?: string | null;
+  overtimeHours?: number | null;
+  employee?: {
+    firstName: string;
+    lastName: string;
+  } | null;
+}
+
 export default function InteractiveCalendar({ showSettings: externalShowSettings, setShowSettings: externalSetShowSettings }: InteractiveCalendarProps = {}) {
   const [draggedShift, setDraggedShift] = useState<ShiftEvent | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   
   // Helper to create dates for this week
   const getThisWeekDate = (dayOffset: number, hour: number) => {
@@ -53,66 +72,62 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
     return targetDate;
   };
 
-  const [events, setEvents] = useState<ShiftEvent[]>([
-    // Monday - Nursing Day Shift
-    { id: 1, title: "Day Shift - Nursing", start: getThisWeekDate(0, 7), end: getThisWeekDate(0, 15), employeeName: "Sarah Martinez", employeeId: "1", location: "Floor 3", color: "#3b82f6", isOvertime: false },
-    { id: 2, title: "Day Shift - Nursing", start: getThisWeekDate(0, 7), end: getThisWeekDate(0, 15), employeeName: "Daniel Garcia", employeeId: "12", location: "Floor 2", color: "#3b82f6", isOvertime: false },
-    { id: 3, title: "Evening Shift - Nursing", start: getThisWeekDate(0, 15), end: getThisWeekDate(0, 23), employeeName: "Angela Rodriguez", employeeId: "7", location: "Floor 3", color: "#8b5cf6", isOvertime: false },
-    { id: 4, title: "Night Shift - Nursing", start: getThisWeekDate(0, 23), end: getThisWeekDate(1, 7), employeeName: "Marcus Chen", employeeId: "2", location: "Floor 2", color: "#6366f1", isOvertime: false },
+  // Initialize with empty array - will be populated from API
+  const [events, setEvents] = useState<ShiftEvent[]>([]);
+  
+  // Fetch shifts from API on component mount
+  useEffect(() => {
+    const fetchShifts = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        // Calculate date range for current month
+        const now = new Date();
+        const startDate = new Date(now.getFullYear(), now.getMonth(), 1);
+        const endDate = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+        
+        const response = await fetch(
+          `/api/shifts?startDate=${startDate.toISOString()}&endDate=${endDate.toISOString()}`
+        );
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch shifts');
+        }
+        
+        const shifts: ShiftAPIResponse[] = await response.json();
+        
+        // Transform API data to calendar events
+        const transformedEvents: ShiftEvent[] = shifts.map((shift) => ({
+          id: Number(shift.id),
+          title: shift.title || `${shift.position || 'Shift'}`,
+          start: new Date(shift.startTime),
+          end: new Date(shift.endTime),
+          employeeName: shift.employee ? `${shift.employee.firstName} ${shift.employee.lastName}` : 'Unknown',
+          employeeId: shift.employeeId,
+          location: shift.position || '',
+          notes: shift.notes || '',
+          color: shift.color || '#3b82f6',
+          isOvertime: (shift.overtimeHours ?? 0) > 0,
+        }));
+        
+        setEvents(transformedEvents);
+      } catch (err) {
+        console.error('Error fetching shifts:', err);
+        setError(err instanceof Error ? err.message : 'Failed to load shifts');
+        // Keep mock data as fallback for demo purposes
+        setEvents([
+          { id: 1, title: "Day Shift - Nursing", start: getThisWeekDate(0, 7), end: getThisWeekDate(0, 15), employeeName: "Sarah Martinez", employeeId: "1", location: "Floor 3", color: "#3b82f6", isOvertime: false },
+          { id: 2, title: "Day Shift - Nursing", start: getThisWeekDate(0, 7), end: getThisWeekDate(0, 15), employeeName: "Daniel Garcia", employeeId: "12", location: "Floor 2", color: "#3b82f6", isOvertime: false },
+          { id: 3, title: "Evening Shift - Nursing", start: getThisWeekDate(0, 15), end: getThisWeekDate(0, 23), employeeName: "Angela Rodriguez", employeeId: "7", location: "Floor 3", color: "#8b5cf6", isOvertime: false },
+        ]);
+      } finally {
+        setLoading(false);
+      }
+    };
     
-    // Monday - Emergency
-    { id: 5, title: "Day Shift - Emergency", start: getThisWeekDate(0, 6), end: getThisWeekDate(0, 18), employeeName: "Jennifer Thompson", employeeId: "3", location: "ER", color: "#ef4444", isOvertime: false },
-    { id: 6, title: "Day Shift - Emergency", start: getThisWeekDate(0, 8), end: getThisWeekDate(0, 16), employeeName: "Michelle Brooks", employeeId: "11", location: "ER", color: "#ef4444", isOvertime: false },
-    { id: 7, title: "Night Shift - Emergency", start: getThisWeekDate(0, 18), end: getThisWeekDate(1, 6), employeeName: "James Wilson", employeeId: "6", location: "ER", color: "#dc2626", isOvertime: false },
-    
-    // Tuesday - Radiology
-    { id: 8, title: "Day Shift - Radiology", start: getThisWeekDate(1, 8), end: getThisWeekDate(1, 16), employeeName: "David Kim", employeeId: "4", location: "Imaging", color: "#10b981", isOvertime: false },
-    { id: 9, title: "Evening Shift - Radiology", start: getThisWeekDate(1, 16), end: getThisWeekDate(2, 0), employeeName: "Lisa Anderson", employeeId: "9", location: "Imaging", color: "#059669", isOvertime: false, isCallout: true },
-    { id: 10, title: "Night Shift - Radiology", start: getThisWeekDate(1, 23), end: getThisWeekDate(2, 7), employeeName: "Kevin Martinez", employeeId: "14", location: "Imaging", color: "#047857", isOvertime: false },
-    
-    // Wednesday - Laboratory
-    { id: 11, title: "Day Shift - Lab", start: getThisWeekDate(2, 7), end: getThisWeekDate(2, 15), employeeName: "Nicole Johnson", employeeId: "15", location: "Lab A", color: "#f59e0b", isOvertime: false },
-    { id: 12, title: "Evening Shift - Lab", start: getThisWeekDate(2, 15), end: getThisWeekDate(2, 23), employeeName: "Rachel Foster", employeeId: "5", location: "Lab A", color: "#d97706", isOvertime: false },
-    { id: 13, title: "Night Shift - Lab", start: getThisWeekDate(2, 23), end: getThisWeekDate(3, 7), employeeName: "Christopher Lee", employeeId: "10", location: "Lab B", color: "#b45309", isOvertime: false },
-    
-    // Thursday - Pharmacy
-    { id: 14, title: "Day Shift - Pharmacy", start: getThisWeekDate(3, 8), end: getThisWeekDate(3, 16), employeeName: "Robert Taylor", employeeId: "8", location: "Main Pharmacy", color: "#8b5cf6", isOvertime: false },
-    { id: 15, title: "Evening Shift - Pharmacy", start: getThisWeekDate(3, 16), end: getThisWeekDate(4, 0), employeeName: "Amanda White", employeeId: "13", location: "Main Pharmacy", color: "#7c3aed", isOvertime: false },
-    
-    // Friday - Full Coverage
-    { id: 16, title: "Day Shift - Nursing", start: getThisWeekDate(4, 7), end: getThisWeekDate(4, 15), employeeName: "Sarah Martinez", employeeId: "1", location: "Floor 3", color: "#3b82f6", isOvertime: false },
-    { id: 17, title: "Day Shift - Emergency", start: getThisWeekDate(4, 6), end: getThisWeekDate(4, 18), employeeName: "Jennifer Thompson", employeeId: "3", location: "ER", color: "#ef4444", isOvertime: false },
-    { id: 18, title: "Day Shift - Lab", start: getThisWeekDate(4, 7), end: getThisWeekDate(4, 15), employeeName: "Nicole Johnson", employeeId: "15", location: "Lab A", color: "#f59e0b", isOvertime: false },
-    { id: 19, title: "Evening Shift - Nursing", start: getThisWeekDate(4, 15), end: getThisWeekDate(4, 23), employeeName: "Angela Rodriguez", employeeId: "7", location: "Floor 2", color: "#8b5cf6", isOvertime: false },
-    { id: 20, title: "Night Shift - Emergency", start: getThisWeekDate(4, 18), end: getThisWeekDate(5, 6), employeeName: "James Wilson", employeeId: "6", location: "ER", color: "#dc2626", isOvertime: false },
-    
-    // Saturday - Weekend Coverage
-    { id: 21, title: "Day Shift - Nursing", start: getThisWeekDate(5, 7), end: getThisWeekDate(5, 15), employeeName: "Daniel Garcia", employeeId: "12", location: "Floor 3", color: "#3b82f6", isOvertime: false },
-    { id: 22, title: "Day Shift - Emergency", start: getThisWeekDate(5, 8), end: getThisWeekDate(5, 16), employeeName: "Michelle Brooks", employeeId: "11", location: "ER", color: "#ef4444", isOvertime: false },
-    { id: 23, title: "Night Shift - Nursing", start: getThisWeekDate(5, 23), end: getThisWeekDate(6, 7), employeeName: "Marcus Chen", employeeId: "2", location: "Floor 2", color: "#6366f1", isOvertime: false },
-    
-    // Sunday - Weekend Coverage
-    { id: 24, title: "Day Shift - Lab", start: getThisWeekDate(6, 7), end: getThisWeekDate(6, 15), employeeName: "Nicole Johnson", employeeId: "15", location: "Lab A", color: "#f59e0b", isOvertime: false },
-    { id: 25, title: "Evening Shift - Lab", start: getThisWeekDate(6, 15), end: getThisWeekDate(6, 23), employeeName: "Rachel Foster", employeeId: "5", location: "Lab B", color: "#d97706", isOvertime: false },
-    { id: 26, title: "Night Shift - Emergency", start: getThisWeekDate(6, 18), end: getThisWeekDate(0, 6), employeeName: "James Wilson", employeeId: "6", location: "ER", color: "#dc2626", isOvertime: false },
-    
-    // VARIED SHIFT LENGTHS - Demonstrating Flexibility
-    // 14-hour shift (Double shift coverage)
-    { id: 27, title: "Extended Shift - Nursing", start: getThisWeekDate(1, 6), end: getThisWeekDate(1, 20), employeeName: "Sarah Martinez", employeeId: "1", location: "Floor 3", color: "#3b82f6", isOvertime: true, notes: "14hr double shift" },
-    
-    // 12-hour shifts (Standard ER/ICU)
-    { id: 28, title: "12hr Day - Emergency", start: getThisWeekDate(2, 7), end: getThisWeekDate(2, 19), employeeName: "Jennifer Thompson", employeeId: "3", location: "ER", color: "#ef4444", isOvertime: false },
-    { id: 29, title: "12hr Night - Emergency", start: getThisWeekDate(3, 19), end: getThisWeekDate(4, 7), employeeName: "James Wilson", employeeId: "6", location: "ER", color: "#dc2626", isOvertime: false },
-    
-    // 10-hour shifts (Four-day workweek model)
-    { id: 30, title: "10hr Shift - Radiology", start: getThisWeekDate(3, 8), end: getThisWeekDate(3, 18), employeeName: "David Kim", employeeId: "4", location: "Imaging", color: "#10b981", isOvertime: false },
-    { id: 31, title: "10hr Shift - Lab", start: getThisWeekDate(4, 8), end: getThisWeekDate(4, 18), employeeName: "Christopher Lee", employeeId: "10", location: "Lab B", color: "#b45309", isOvertime: false },
-    
-    // 4-hour part-time shifts (Students, PRN, relief coverage)
-    { id: 32, title: "Part-Time - Pharmacy", start: getThisWeekDate(1, 14), end: getThisWeekDate(1, 18), employeeName: "Amanda White", employeeId: "13", location: "Main Pharmacy", color: "#7c3aed", isOvertime: false, notes: "PRN coverage" },
-    { id: 33, title: "Part-Time - Nursing", start: getThisWeekDate(2, 10), end: getThisWeekDate(2, 14), employeeName: "Daniel Garcia", employeeId: "12", location: "Floor 2", color: "#3b82f6", isOvertime: false, notes: "Relief staff" },
-    { id: 34, title: "Part-Time - Lab", start: getThisWeekDate(5, 16), end: getThisWeekDate(5, 20), employeeName: "Nicole Johnson", employeeId: "15", location: "Lab A", color: "#f59e0b", isOvertime: false, notes: "Evening relief" },
-  ]);
+    fetchShifts();
+  }, []);
   
   const [employeeSearch, setEmployeeSearch] = useState("");
   const [selectedDepartment, setSelectedDepartment] = useState("all");
