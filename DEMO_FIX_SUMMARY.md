@@ -28,10 +28,10 @@ Your GitHub Pages demo was not working because the GitHub Actions workflow was t
 ### 2. Updated Documentation
 **Files:** `GITHUB_PAGES_SETUP.md` and `README.md`
 
-- Added live demo URL: **https://cmc-creator.github.io/NoxTitan/**
+- Added live demo URL: **https://cmc-creator.github.io/NyxTitan/**
 - Updated instructions for automated deployment
 - Listed all available demo files
-- Corrected project name from "TeamPulse" to "NoxTitan™"
+- Corrected project name from "NyxTitan" to "NyxTitan™"
 
 ## How to Deploy Your Demo
 
@@ -39,7 +39,7 @@ Your GitHub Pages demo was not working because the GitHub Actions workflow was t
 Once this PR is merged to the `main` branch:
 1. GitHub Actions will automatically run
 2. Your demo files will be deployed to GitHub Pages
-3. Demo will be live at: https://cmc-creator.github.io/NoxTitan/
+3. Demo will be live at: https://cmc-creator.github.io/NyxTitan/
 
 ### Option 2: Manual Trigger 🔄
 You can manually trigger deployment anytime:
@@ -54,9 +54,9 @@ You can manually trigger deployment anytime:
 All these files are now deployed automatically:
 - ✅ `index.html` - Main demo (executive presentation with music)
 - ✅ `demo-interactive.html` - Interactive version
-- ✅ `demo-noxtitan-final.html` - Final polished version
+- ✅ `demo-nyxtitan-final.html` - Final polished version
 - ✅ `demo-self-contained.html` - Offline version
-- ✅ `noxtitan-logo.png` - Logo asset
+- ✅ `nyxtitan-logo.png` - Logo asset
 - ✅ `demo-music.mp3` - Background music
 
 ## Next Steps
@@ -64,12 +64,12 @@ All these files are now deployed automatically:
 ### To Get Your Demo Live:
 1. **Merge this PR to main branch**
 2. **Wait 2-3 minutes** for GitHub Actions to complete
-3. **Visit:** https://cmc-creator.github.io/NoxTitan/
+3. **Visit:** https://cmc-creator.github.io/NyxTitan/
 4. **Share your demo!** 🎊
 
 ### To Share Your Demo:
 ```
-https://cmc-creator.github.io/NoxTitan/
+https://cmc-creator.github.io/NyxTitan/
 ```
 
 Perfect for:

@@ -72,7 +72,7 @@ export default function SurveyIntegrationsPage() {
       description: 'Sync Microsoft Forms responses automatically',
       setupInstructions: [
         'Sign in with your Microsoft 365 account',
-        'Authorize NoxTitan to access Forms',
+        'Authorize NyxTitan to access Forms',
         'Select which forms to sync',
         'Configure sync frequency (real-time or scheduled)',
       ],
@@ -99,7 +99,7 @@ export default function SurveyIntegrationsPage() {
       setupInstructions: [
         'Log in to your Typeform account',
         'Navigate to Settings > Webhooks',
-        'Create a new webhook pointing to NoxTitan',
+        'Create a new webhook pointing to NyxTitan',
         'Copy your API token',
         'Paste the token below',
       ],

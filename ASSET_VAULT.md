@@ -1,7 +1,7 @@
 # 🔐 Asset Vault - Inventory & Equipment Management
 
 ## Overview
-The **Asset Vault** is your comprehensive solution for tracking, managing, and maintaining all company assets - from computers and phones to vehicles and uniforms. Built into TeamPulse™, it provides enterprise-level asset management that rivals standalone systems.
+The **Asset Vault** is your comprehensive solution for tracking, managing, and maintaining all company assets - from computers and phones to vehicles and uniforms. Built into NyxTitan™, it provides enterprise-level asset management that rivals standalone systems.
 
 ---
 
@@ -241,7 +241,7 @@ From asset details:
 ## 📈 Competitive Advantages
 
 ### vs. Asset Panda
-✅ **Integrated with TeamPulse™** - No separate system to manage
+✅ **Integrated with NyxTitan™** - No separate system to manage
 ✅ **Direct employee linkage** - Tied to your existing employee database
 ✅ **Voice AI support** - Ask "What assets does John have?"
 ✅ **Built-in notifications** - Automatic reminders in your workflow
@@ -253,7 +253,7 @@ From asset details:
 ✅ **Integrated reporting** - Part of your overall analytics
 
 ### vs. EZOfficeInventory
-✅ **Lower cost** - Included in TeamPulse™ subscription
+✅ **Lower cost** - Included in NyxTitan™ subscription
 ✅ **Unified system** - One platform for everything
 ✅ **Better UX** - Gorgeous gradient design
 ✅ **Faster** - Built on modern Next.js stack
@@ -308,7 +308,7 @@ From asset details:
 
 The Asset Vault isn't just another inventory system - it's **intelligently integrated** into your workforce management platform:
 
-- **Voice AI Integration**: "Hey TeamPulse, what laptop is Sarah using?"
+- **Voice AI Integration**: "Hey NyxTitan, what laptop is Sarah using?"
 - **Employee Profiles**: See all assets on employee detail pages
 - **Onboarding Workflows**: Auto-assign equipment to new hires
 - **Offboarding**: Checklist ensures all assets returned

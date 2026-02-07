@@ -85,7 +85,7 @@ export default function ManagerAcademyPage() {
     },
     {
       id: 'platform-mastery',
-      title: 'NoxTitan Platform Mastery',
+      title: 'NyxTitan Platform Mastery',
       icon: <BookOpen className="w-8 h-8" />,
       duration: '35 min',
       color: 'from-indigo-600 to-purple-600',

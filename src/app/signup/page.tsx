@@ -100,7 +100,7 @@ function SignupForm() {
           <div className="flex items-center justify-center mb-4">
             <Calendar className="w-16 h-16 text-blue-400" />
           </div>
-          <h1 className="text-4xl font-bold text-white mb-2">NoxTitan™</h1>
+          <h1 className="text-4xl font-bold text-white mb-2">NyxTitan™</h1>
           <p className="text-slate-400">Create your account</p>
           <p className="text-xs text-slate-500 mt-2">by Connie Michelle Consulting & Business Solutions LLC</p>
         </div>

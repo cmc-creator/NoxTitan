@@ -1,4 +1,4 @@
-# 🎬 TeamPulse™ Presentation Slides
+# 🎬 NyxTitan™ Presentation Slides
 
 ## How to Create Your PowerPoint/Google Slides Video
 
@@ -33,7 +33,7 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-**Speaker Notes:** "Introducing TeamPulse - the enterprise workforce management platform that does it ALL. 43 database models, 35+ features, 6 platform integrations. This is the future."
+**Speaker Notes:** "Introducing NyxTitan - the enterprise workforce management platform that does it ALL. 43 database models, 35+ features, 6 platform integrations. This is the future."
 
 **Timing:** 5 seconds
 
@@ -197,13 +197,13 @@ MONITORED. LOGGED. PROTECTED.
 ---
 
 ### SLIDE 8: Comparison Table
-**Background:** White with dramatic spotlight on TeamPulse column
+**Background:** White with dramatic spotlight on NyxTitan column
 **Layout:**
 
 ```
 HOW WE DESTROY THE COMPETITION
 
-Feature            │ TeamPulse │ Paycom │  ADP  │ Kronos
+Feature            │ NyxTitan │ Paycom │  ADP  │ Kronos
 ───────────────────┼───────────┼────────┼───────┼────────
 Predictive AI      │    ✅     │   ❌   │  ❌   │   ❌
 Gamification       │    ✅     │   ❌   │  ❌   │   ❌
@@ -216,7 +216,7 @@ Paycom? ADP? Kronos?
 THEY DON'T EVEN COME CLOSE.
 ```
 
-**Speaker Notes:** "Paycom? ADP? Kronos? They don't even come CLOSE. Look at that. TeamPulse dominates every category. This is the only platform you'll ever need."
+**Speaker Notes:** "Paycom? ADP? Kronos? They don't even come CLOSE. Look at that. NyxTitan dominates every category. This is the only platform you'll ever need."
 
 **Timing:** 7 seconds
 
@@ -263,8 +263,8 @@ prevents turnover, and turns employees into champions.
 
 
            ┌────────────────────────────┐
-           │  📧 hello@teampulse.com   │
-           │  🌐 teampulse.com          │
+           │  📧 hello@nyxtitan.com   │
+           │  🌐 nyxtitan.com          │
            └────────────────────────────┘
 
 
@@ -272,7 +272,7 @@ prevents turnover, and turns employees into champions.
            Ready for Enterprise.
 ```
 
-**Speaker Notes:** "TeamPulse. The future of workforce management is HERE. Ready to dominate your industry? Let's talk."
+**Speaker Notes:** "NyxTitan. The future of workforce management is HERE. Ready to dominate your industry? Let's talk."
 
 **Timing:** 6 seconds
 

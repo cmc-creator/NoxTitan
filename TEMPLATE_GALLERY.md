@@ -1,7 +1,7 @@
-# NoxTitan™ Template & Form Gallery
+# NyxTitan™ Template & Form Gallery
 
 ## Legal & HIPAA Compliance Notice
-All templates and forms are designed to support HIPAA, labor law, and privacy compliance. Users must ensure that any customized or uploaded documents meet their organization’s legal requirements. NoxTitan™ provides secure storage, access controls, and audit logging for all documents. For compliance support, contact legal@noxtitan.com.
+All templates and forms are designed to support HIPAA, labor law, and privacy compliance. Users must ensure that any customized or uploaded documents meet their organization’s legal requirements. NyxTitan™ provides secure storage, access controls, and audit logging for all documents. For compliance support, contact legal@nyxtitan.com.
 
 ## Available Templates & Forms
 - SOP templates (customizable for any department)
@@ -29,4 +29,4 @@ All templates and forms are designed to support HIPAA, labor law, and privacy co
 
 ---
 
-For legal, privacy, and HIPAA compliance support, contact legal@noxtitan.com or privacy@noxtitan.com.
+For legal, privacy, and HIPAA compliance support, contact legal@nyxtitan.com or privacy@nyxtitan.com.

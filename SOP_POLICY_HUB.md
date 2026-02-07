@@ -1,7 +1,7 @@
-# NoxTitan™ SOP, Policy & Procedures Hub
+# NyxTitan™ SOP, Policy & Procedures Hub
 
 ## Legal & HIPAA Compliance Notice
-All documents, workflows, and templates in this hub are designed to support HIPAA, labor law, and privacy compliance. Users must ensure their organization’s policies meet all applicable regulations. NoxTitan™ provides audit trails, access controls, and encryption for sensitive data. For compliance assistance, contact legal@noxtitan.com.
+All documents, workflows, and templates in this hub are designed to support HIPAA, labor law, and privacy compliance. Users must ensure their organization’s policies meet all applicable regulations. NyxTitan™ provides audit trails, access controls, and encryption for sensitive data. For compliance assistance, contact legal@nyxtitan.com.
 
 ## Features
 - Centralized repository for SOPs, policies, and procedures
@@ -26,4 +26,4 @@ All documents, workflows, and templates in this hub are designed to support HIPA
 
 ---
 
-For legal, privacy, and HIPAA compliance support, contact legal@noxtitan.com or privacy@noxtitan.com.
+For legal, privacy, and HIPAA compliance support, contact legal@nyxtitan.com or privacy@nyxtitan.com.

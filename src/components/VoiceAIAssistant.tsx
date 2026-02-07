@@ -109,7 +109,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
     const welcomes: Record<string, string> = {
       'hr-planner': "Hi! I see you're in the HR Planner. I can help you create check-in reminders, schedule surveys, or set up automation rules. What would you like to do?",
       'employees': "Looking at employees? I can help you onboard new hires, schedule performance reviews, or set up satisfaction surveys. Just ask!",
-      'dashboard': "Welcome! I'm your AI assistant. I can help you navigate NoxTitan, set up automations, or answer questions about HR workflows. How can I assist you today?",
+      'dashboard': "Welcome! I'm your AI assistant. I can help you navigate NyxTitan, set up automations, or answer questions about HR workflows. How can I assist you today?",
       'surveys': "Need help with employee surveys? I can create 30/60/90 day check-ins, pulse surveys, or custom feedback forms. What would you like to set up?",
       'performance': "Managing performance reviews? I can help schedule reviews, set up review cycles, or track employee goals. What do you need?",
     };

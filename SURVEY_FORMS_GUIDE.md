@@ -1,7 +1,7 @@
 # Survey Integration & Forms System - Setup Guide
 
 ## Overview
-NoxTitan now includes a comprehensive survey integration system that connects with popular survey platforms and provides a custom form builder for creating internal forms and templates.
+NyxTitan now includes a comprehensive survey integration system that connects with popular survey platforms and provides a custom form builder for creating internal forms and templates.
 
 ## Features
 
@@ -113,22 +113,22 @@ Real-time insights from all connected surveys:
 2. Go to **Settings** > **API & Webhooks**
 3. Click **Generate API Key**
 4. Copy the API key
-5. In NoxTitan, click **Connect SurveyMonkey**
+5. In NyxTitan, click **Connect SurveyMonkey**
 6. Paste your API key
 7. Copy the webhook URL provided: `https://nox-titan.vercel.app/api/webhooks/surveymonkey`
 8. In SurveyMonkey, add this webhook URL to enable real-time sync
 9. Click **Connect Integration**
 
 #### For Microsoft Forms:
-1. Click **Connect Microsoft Forms** in NoxTitan
+1. Click **Connect Microsoft Forms** in NyxTitan
 2. Sign in with your Microsoft 365 account
-3. Authorize NoxTitan to access Forms
+3. Authorize NyxTitan to access Forms
 4. Select which forms to sync
 5. Configure sync frequency
 6. Click **Connect Integration**
 
 #### For Google Forms:
-1. Click **Connect Google Forms** in NoxTitan
+1. Click **Connect Google Forms** in NyxTitan
 2. Sign in with your Google Workspace account
 3. Grant permission to read Forms responses
 4. Enable Google Sheets integration
@@ -140,7 +140,7 @@ Real-time insights from all connected surveys:
 2. Navigate to **Settings** > **Webhooks**
 3. Create new webhook pointing to: `https://nox-titan.vercel.app/api/webhooks/typeform`
 4. Copy your API token from Typeform settings
-5. In NoxTitan, click **Connect Typeform**
+5. In NyxTitan, click **Connect Typeform**
 6. Paste API token
 7. Click **Connect Integration**
 
@@ -481,7 +481,7 @@ model FormSubmission {
 
 ### Support
 For additional help:
-- Email: support@noxtitan.com
+- Email: support@nyxtitan.com
 - In-app chat: Click Titan (bottom right)
 - Knowledge Base: `/help`
 - Video tutorials: Coming soon!
@@ -513,7 +513,7 @@ For additional help:
 
 ## Summary
 
-The Survey Integration & Forms System provides a complete solution for gathering, analyzing, and acting on feedback from patients, employees, and customers. By connecting popular survey platforms and providing a powerful custom form builder, NoxTitan eliminates the need for separate survey tools and consolidates all feedback in one place.
+The Survey Integration & Forms System provides a complete solution for gathering, analyzing, and acting on feedback from patients, employees, and customers. By connecting popular survey platforms and providing a powerful custom form builder, NyxTitan eliminates the need for separate survey tools and consolidates all feedback in one place.
 
 **Key Benefits:**
 ✨ Real-time data sync from multiple platforms

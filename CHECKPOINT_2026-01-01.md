@@ -1,15 +1,15 @@
 # Checkpoint - 2026-01-02
 
 ## Summary
-- All branding, logo, and music requirements for the NoxTitan demo are complete.
-- index.html and noxtitan-logo.png are ready for GitHub Pages deployment.
+- All branding, logo, and music requirements for the NyxTitan demo are complete.
+- index.html and nyxtitan-logo.png are ready for GitHub Pages deployment.
 - Local server and file management steps have been validated.
 - User is in the process of confirming file visibility and demo functionality on GitHub.
 
 ## Files at Checkpoint
-- demo-noxtitan-final.html: Final branded demo
+- demo-nyxtitan-final.html: Final branded demo
 - index.html: Copy for GitHub Pages
-- noxtitan-logo.png: User-provided logo
+- nyxtitan-logo.png: User-provided logo
 
 ## Next Steps
 - Confirm both files are uploaded and visible in the GitHub repository.
@@ -18,7 +18,7 @@
 ---
 
 Checkpoint created on 2026-01-02.
-# TeamPulse™ Checkpoint - January 1, 2026
+# NyxTitan™ Checkpoint - January 1, 2026
 
 ## Major Features Added
 
@@ -102,7 +102,7 @@ Checkpoint created on 2026-01-02.
 4. `src/app/learning/page.tsx` - Changed 👨‍💼 to 🚀
 
 ## Business Value
-- **Market Differentiation**: Makes TeamPulse the easiest system to migrate to
+- **Market Differentiation**: Makes NyxTitan the easiest system to migrate to
 - **Sales Enabler**: "Abandon your old software in minutes" messaging
 - **Industry Agnostic**: Works for healthcare, retail, hospitality, manufacturing, etc.
 - **Competitive Advantage**: Most competing systems make migration difficult

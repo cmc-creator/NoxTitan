@@ -1,7 +1,7 @@
 # Why GitHub Pages Shows the Demo (And How to Deploy the Full App)
 
 ## Your Question
-> "why is this link https://cmc-creator.github.io/NoxTitan/ still showing the demo, it should be showing the product last pushed from VS this morning, right?"
+> "why is this link https://cmc-creator.github.io/NyxTitan/ still showing the demo, it should be showing the product last pushed from VS this morning, right?"
 
 ## The Answer
 
@@ -23,7 +23,7 @@ The link shows the demo **by design**, and here's why:
 
 ### Why This Matters
 
-NoxTitan is a **full-stack Next.js application** that needs:
+NyxTitan is a **full-stack Next.js application** that needs:
 1. Node.js server runtime
 2. API routes for backend operations
 3. Database connections
@@ -41,7 +41,7 @@ Your code is ready - it just needs the right platform!
 1. **Go to:** https://vercel.com
 2. **Sign up** with your GitHub account
 3. **Click "Add New Project"**
-4. **Select your NoxTitan repository**
+4. **Select your NyxTitan repository**
 5. **Click "Deploy"** (Vercel auto-configures everything)
 6. **Done!** Your full app will be live at: `your-project.vercel.app`
 
@@ -57,8 +57,8 @@ Your code is ready - it just needs the right platform!
 
 | What | Where | Why |
 |------|-------|-----|
-| **Static Demo** | GitHub Pages<br/>https://cmc-creator.github.io/NoxTitan/ | Quick showcase/presentation |
-| **Full Product** | Vercel (after you deploy)<br/>https://noxtitan.vercel.app | Runs your Next.js app with all features |
+| **Static Demo** | GitHub Pages<br/>https://cmc-creator.github.io/NyxTitan/ | Quick showcase/presentation |
+| **Full Product** | Vercel (after you deploy)<br/>https://nyxtitan.vercel.app | Runs your Next.js app with all features |
 | **Your Code** | GitHub Repository | ✅ All there, ready to deploy! |
 
 ## What Happens Next

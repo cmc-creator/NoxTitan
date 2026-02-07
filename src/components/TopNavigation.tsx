@@ -70,12 +70,12 @@ export default function TopNavigation() {
                     WebkitTextStroke: '0.5px rgba(200,200,255,0.5)',
                     filter: 'brightness(1.8) contrast(1.2)'
                   }}>
-              NoxTitan
+              NyxTitan
             </span>
             {/* Top highlight shine */}
             <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-100 to-transparent opacity-90"
                   style={{ WebkitTextStroke: '0px' }}>
-              NoxTitan
+              NyxTitan
             </span>
             {/* Animated glossy shine sweep */}
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent bg-clip-text text-transparent opacity-40"
@@ -84,7 +84,7 @@ export default function TopNavigation() {
                     animation: 'shine 4s ease-in-out infinite',
                     WebkitTextStroke: '0px'
                   }}>
-              NoxTitan
+              NyxTitan
             </span>
           </span>
           <span className="hidden md:inline text-xs font-black px-2 py-1 rounded-md bg-gradient-to-b from-purple-900/40 via-black/60 to-purple-900/40 border-2 border-purple-400/50 ml-2 shadow-[0_0_15px_rgba(168,85,247,0.6)]" 

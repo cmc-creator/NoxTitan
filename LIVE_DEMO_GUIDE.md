@@ -8,7 +8,7 @@
 1. **Go to [Vercel](https://vercel.com)**
 2. **Sign in with GitHub** (free account)
 3. **Click "Add New Project"**
-4. **Import your `NoxTitan` repository**
+4. **Import your `NyxTitan` repository**
 5. **Configure:**
    - Framework Preset: **Next.js** (auto-detected)
    - Build Command: `npm run build`
@@ -20,7 +20,7 @@
    NEXTAUTH_URL=https://your-app.vercel.app
    ```
 7. **Click "Deploy"**
-8. **Done!** You'll get a link like: `https://noxtitan.vercel.app`
+8. **Done!** You'll get a link like: `https://nyxtitan.vercel.app`
 
 **Share this link with your HR Director & CFO!**
 
@@ -31,13 +31,13 @@
 1. **Go to [Netlify](https://netlify.com)**
 2. **Sign in with GitHub**
 3. **Click "Add new site" → "Import an existing project"**
-4. **Connect to GitHub** → Select `NoxTitan` repo
+4. **Connect to GitHub** → Select `NyxTitan` repo
 5. **Configure:**
    - Build command: `npm run build`
    - Publish directory: `.next`
    - Framework: Next.js
 6. **Deploy**
-7. **Get your link:** `https://noxtitan.netlify.app`
+7. **Get your link:** `https://nyxtitan.netlify.app`
 
 ---
 
@@ -71,7 +71,7 @@
    - Source: `gh-pages` branch
    - Save
 
-5. **Access at:** `https://cmc-creator.github.io/NoxTitan`
+5. **Access at:** `https://cmc-creator.github.io/NyxTitan`
 
 ---
 
@@ -140,7 +140,7 @@
 ## 🎤 DEMO SCRIPT (5-10 minutes)
 
 **Opening (30 seconds):**
-"This is NoxTitan - the most comprehensive workforce management platform designed specifically for [their industry]. It combines scheduling, HR excellence, gamification, and enterprise tools in one beautiful interface."
+"This is NyxTitan - the most comprehensive workforce management platform designed specifically for [their industry]. It combines scheduling, HR excellence, gamification, and enterprise tools in one beautiful interface."
 
 **Feature Walk (3-5 minutes):**
 1. "Let me show you the Command Center - this is what your team sees every day..."
@@ -253,5 +253,5 @@ Show them the future of employee engagement and workforce management!
 ---
 
 **Created:** January 12, 2026, 9:15 PM
-**Platform:** NoxTitan by Connie Michelle Consulting & Business Solutions LLC
+**Platform:** NyxTitan by Connie Michelle Consulting & Business Solutions LLC
 **Tagline:** *Forged for Titans*

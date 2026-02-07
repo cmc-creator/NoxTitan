@@ -50,7 +50,7 @@ export default function TopBar({ userTier = 'PROFESSIONAL' }: TopBarProps) {
       <div className="flex items-center justify-between px-6 py-4">
         <div>
           <h1 className="text-2xl font-bold text-white">
-            NoxTitan Business Suite
+            NyxTitan Business Suite
           </h1>
           <p className="text-sm text-purple-200 mt-1">
             All-in-one platform for scheduling, HR, payroll, compliance & more

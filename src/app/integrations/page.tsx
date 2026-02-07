@@ -504,7 +504,7 @@ export default function IntegrationsPage() {
             Integrations Hub
           </h1>
           <p className="text-lg opacity-80">
-            Connect NoxTitan with your existing business systems for seamless workflow
+            Connect NyxTitan with your existing business systems for seamless workflow
           </p>
         </div>
 

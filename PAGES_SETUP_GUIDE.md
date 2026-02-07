@@ -1,8 +1,8 @@
-# GitHub Pages Setup Guide for NoxTitan Demo
+# GitHub Pages Setup Guide for NyxTitan Demo
 
 ## 🎯 Quick Start - Get Your Demo Live in 5 Minutes!
 
-Your demo files are ready and the GitHub Actions workflow is configured. Follow these simple steps to make your demo live at `https://cmc-creator.github.io/NoxTitan/`
+Your demo files are ready and the GitHub Actions workflow is configured. Follow these simple steps to make your demo live at `https://cmc-creator.github.io/NyxTitan/`
 
 ---
 
@@ -20,7 +20,7 @@ This PR includes:
 ## Step 2: Enable GitHub Pages in Repository Settings
 
 1. **Go to your repository on GitHub:**
-   - Visit: https://github.com/cmc-creator/NoxTitan
+   - Visit: https://github.com/cmc-creator/NyxTitan
 
 2. **Open Settings:**
    - Click the **Settings** tab (gear icon) in the top menu
@@ -45,12 +45,12 @@ This PR includes:
 After the workflow completes, your demo will be available at:
 
 ```
-https://cmc-creator.github.io/NoxTitan/
+https://cmc-creator.github.io/NyxTitan/
 ```
 
 **Test it:**
 - Open the URL in your browser
-- You should see the NoxTitan Executive Demo
+- You should see the NyxTitan Executive Demo
 - The demo includes interactive slides with music
 
 ---
@@ -60,14 +60,14 @@ https://cmc-creator.github.io/NoxTitan/
 The workflow deploys these files to GitHub Pages (if they exist):
 - ✅ `index.html` (main demo page - **required**)
 - ✅ `demo-interactive.html`
-- ✅ `demo-noxtitan-final.html`
+- ✅ `demo-nyxtitan-final.html`
 - ✅ `demo-self-contained.html`
 - ✅ `demo-music.mp3`
 - ✅ `landing/` directory contents (available at `/landing/`)
 - ✅ `demo/` directory contents (available at `/demo/`)
 
 **Not deployed** (workflow only copies specific files):
-- ❌ Large logo files (noxtitan-logo.mp4, noxtitan-logo.png, logo-base64.txt)
+- ❌ Large logo files (nyxtitan-logo.mp4, nyxtitan-logo.png, logo-base64.txt)
 - ❌ Node modules
 - ❌ Source code (`src/` directory)
 - ❌ Build artifacts (.next/, etc.)
@@ -146,7 +146,7 @@ To update the demo:
 
 **View live URL:**
 - Settings → Pages → Your site is live at [URL]
-- Or just visit: https://cmc-creator.github.io/NoxTitan/
+- Or just visit: https://cmc-creator.github.io/NyxTitan/
 
 ---
 
@@ -156,16 +156,16 @@ Once live, share your demo:
 
 **Direct Link:**
 ```
-https://cmc-creator.github.io/NoxTitan/
+https://cmc-creator.github.io/NyxTitan/
 ```
 
 **Short Link Options:**
 - Use bit.ly or tinyurl.com to create a shorter link
-- Example: `bit.ly/noxtitan-demo`
+- Example: `bit.ly/nyxtitan-demo`
 
 **Embed in Email:**
 ```html
-Check out our live demo: <a href="https://cmc-creator.github.io/NoxTitan/">NoxTitan Demo</a>
+Check out our live demo: <a href="https://cmc-creator.github.io/NyxTitan/">NyxTitan Demo</a>
 ```
 
 ---
@@ -186,7 +186,7 @@ Check out our live demo: <a href="https://cmc-creator.github.io/NoxTitan/">NoxTi
 - [ ] GitHub Pages enabled in Settings
 - [ ] Source set to "GitHub Actions"
 - [ ] Workflow ran successfully (green checkmark in Actions)
-- [ ] Demo URL loads: https://cmc-creator.github.io/NoxTitan/
+- [ ] Demo URL loads: https://cmc-creator.github.io/NyxTitan/
 - [ ] Music and interactivity working
 - [ ] Link shared with team/clients
 

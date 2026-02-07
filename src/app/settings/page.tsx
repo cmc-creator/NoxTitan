@@ -21,7 +21,7 @@ export default function SettingsPage() {
           <h3 className="text-xl font-bold text-gray-900">Theme & Appearance</h3>
         </div>
         <p className="text-gray-600 mb-4">
-          Customize your NoxTitan experience with 30 color themes, 12 professional fonts, and custom backgrounds.
+          Customize your NyxTitan experience with 30 color themes, 12 professional fonts, and custom backgrounds.
         </p>
         <ThemeSelector />
       </div>
@@ -296,7 +296,7 @@ export default function SettingsPage() {
             <div>
               <p className="font-medium text-gray-900">New User? Take the Platform Tour</p>
               <p className="text-sm text-gray-600 mt-1">
-                Learn about all the amazing features NoxTitan™ has to offer with our interactive walkthrough
+                Learn about all the amazing features NyxTitan™ has to offer with our interactive walkthrough
               </p>
             </div>
             <button
@@ -318,7 +318,7 @@ export default function SettingsPage() {
               </p>
             </a>
             <a
-              href="mailto:support@noxtitan.com"
+              href="mailto:support@nyxtitan.com"
               className="p-4 border-2 border-gray-200 rounded-lg hover:border-blue-400 transition-all"
             >
               <p className="font-medium text-gray-900 mb-1">📧 Contact Support</p>

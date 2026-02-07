@@ -141,8 +141,8 @@ export default function Sidebar() {
     <div className="flex flex-col w-64 bg-gradient-to-b from-black via-gray-900 to-purple-950 min-h-screen border-r-2 border-purple-600/30 shadow-2xl">
       <div className="flex flex-col items-center justify-center py-4 bg-gradient-to-br from-purple-900 via-purple-700 to-black shadow-xl border-b-4 border-purple-500">
         <img 
-          src="/noxtitan-name-logo.png" 
-          alt="NoxTitan" 
+          src="/nyxtitan-name-logo.png" 
+          alt="NyxTitan" 
           className="h-10 object-contain"
           style={{filter: 'brightness(1.2) drop-shadow(0 4px 12px rgba(168,85,247,0.6))'}}
         />

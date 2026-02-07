@@ -8,7 +8,7 @@ export default function PrivacyPage() {
         <div className="space-y-6 text-slate-200">
           <section>
             <h2 className="text-2xl font-bold text-purple-300 mb-3">1. Information We Collect</h2>
-            <p className="mb-2">NoxTitan™ collects the following information to provide and improve our services:</p>
+            <p className="mb-2">NyxTitan™ collects the following information to provide and improve our services:</p>
             <ul className="list-disc pl-6 space-y-1">
               <li>Account information (name, email, company details)</li>
               <li>Employee data (names, schedules, contact information)</li>
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="text-2xl font-bold text-purple-300 mb-3">7. Children's Privacy</h2>
-            <p>NoxTitan is not intended for users under 18 years of age. We do not knowingly collect information from children.</p>
+            <p>NyxTitan is not intended for users under 18 years of age. We do not knowingly collect information from children.</p>
           </section>
 
           <section>
@@ -76,8 +76,8 @@ export default function PrivacyPage() {
             <p>For privacy-related questions or to exercise your rights, contact us at:</p>
             <p className="mt-2">
               <strong>Connie Michelle Consulting & Business Solutions LLC</strong><br />
-              Email: privacy@noxtitan.com<br />
-              Subject Line: Privacy Inquiry - NoxTitan
+              Email: privacy@nyxtitan.com<br />
+              Subject Line: Privacy Inquiry - NyxTitan
             </p>
           </section>
         </div>

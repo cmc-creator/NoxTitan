@@ -58,7 +58,7 @@ function generateContextualResponse(message: string, context: string, userRole: 
 
     // Reporting/Analytics
     if (lowerMessage.includes('report') || lowerMessage.includes('analytic') || lowerMessage.includes('data') || lowerMessage.includes('metric')) {
-      return "NoxTitan has powerful analytics! I can show you:\n\n📊 Employee engagement trends\n📊 Turnover predictions (based on survey scores)\n📊 Manager effectiveness metrics\n📊 Time-to-fill for open positions\n📊 Training completion rates\n📊 Compliance violation patterns\n\nWhich metrics are most important for your organization?";
+      return "NyxTitan has powerful analytics! I can show you:\n\n📊 Employee engagement trends\n📊 Turnover predictions (based on survey scores)\n📊 Manager effectiveness metrics\n📊 Time-to-fill for open positions\n📊 Training completion rates\n📊 Compliance violation patterns\n\nWhich metrics are most important for your organization?";
     }
   }
 

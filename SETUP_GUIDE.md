@@ -1,8 +1,8 @@
-# NoxTitan Setup Guide
+# NyxTitan Setup Guide
 
 ## ✅ Build Fixes Completed (Feb 7, 2026)
 
-This document summarizes the build fixes and setup completed for NoxTitan.
+This document summarizes the build fixes and setup completed for NyxTitan.
 
 ## Issues Fixed
 
@@ -39,7 +39,7 @@ This document summarizes the build fixes and setup completed for NoxTitan.
 - **Employees**: 5 demo employees
 
 ### Demo Credentials
-- **Email**: demo@teampulse.com
+- **Email**: demo@nyxtitan.com
 - **Password**: Check `prisma/seed.ts` for the password
 - **Tier**: GOLD
 
@@ -159,7 +159,7 @@ NextAuth v5 (beta) has several breaking changes from v4:
 
 ## Support & Documentation
 
-- **Project**: NoxTitan - Business Management Platform
+- **Project**: NyxTitan - Business Management Platform
 - **Tech Stack**: Next.js 15, TypeScript, Prisma, NextAuth v5
 - **Status**: Ready for development and testing
 - **Last Updated**: February 7, 2026

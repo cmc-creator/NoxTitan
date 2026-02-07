@@ -1,7 +1,7 @@
 # Pull Request #29 - Location and Status
 
 ## Quick Answer
-**Pull Request #29 is located at:** https://github.com/cmc-creator/NoxTitan/pull/29
+**Pull Request #29 is located at:** https://github.com/cmc-creator/NyxTitan/pull/29
 
 ## Detailed Information
 
@@ -34,9 +34,9 @@
 - **Review Comments**: 0
 
 ### Links
-- **PR URL**: https://github.com/cmc-creator/NoxTitan/pull/29
-- **Diff**: https://github.com/cmc-creator/NoxTitan/pull/29.diff
-- **Patch**: https://github.com/cmc-creator/NoxTitan/pull/29.patch
+- **PR URL**: https://github.com/cmc-creator/NyxTitan/pull/29
+- **Diff**: https://github.com/cmc-creator/NyxTitan/pull/29.diff
+- **Patch**: https://github.com/cmc-creator/NyxTitan/pull/29.patch
 
 ## Original Prompt
 The PR was created in response to the question: "where is the pull request 29"

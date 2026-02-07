@@ -319,7 +319,7 @@ export default function ThemeSelector() {
                       { id: 'blue-chrome', name: 'Blue Chrome', path: '/backgrounds/blue-chrome.jpg' },
                       { id: 'black-brushed', name: 'Black Brushed', path: '/backgrounds/black-brushed.jpg' },
                       { id: 'purple-bokeh', name: 'Purple Bokeh', path: '/backgrounds/purple-bokeh.jpg' },
-                      { id: 'noxtitan-logo', name: 'NoxTitan Crystals', path: '/backgrounds/noxtitan-logo.jpg' },
+                      { id: 'nyxtitan-logo', name: 'NyxTitan Crystals', path: '/backgrounds/nyxtitan-logo.jpg' },
                       { id: 'red-gold-metal', name: 'Red Gold Metal', path: '/backgrounds/red-gold-metal.jpg' },
                       { id: 'tuscany-sunset', name: 'Tuscany Sunset', path: '/backgrounds/tuscany-sunset.jpg' },
                       { id: 'misty-forest', name: 'Misty Forest', path: '/backgrounds/misty-forest.jpg' },

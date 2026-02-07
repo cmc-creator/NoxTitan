@@ -41,7 +41,7 @@ Keeping them engaged...
 
 **VISUAL:** 
 - Screen SHATTERS into particles
-- TeamPulse™ logo EXPLODES onto screen in purple/blue gradient
+- NyxTitan™ logo EXPLODES onto screen in purple/blue gradient
 - Particles reform into the dashboard
 
 **TEXT (Bold, Animated):**
@@ -51,7 +51,7 @@ The ONLY workforce platform you'll ever need
 ```
 
 **VOICEOVER (Powerful, confident):**
-> "Introducing TeamPulse. The ONE platform to rule them ALL."
+> "Introducing NyxTitan. The ONE platform to rule them ALL."
 
 ---
 
@@ -160,7 +160,7 @@ The ONLY workforce platform you'll ever need
 **VISUAL:** Split screen comparison table SLAMS onto screen
 
 ```
-                TeamPulse  |  Paycom  |  ADP  |  Kronos
+                NyxTitan  |  Paycom  |  ADP  |  Kronos
 ─────────────────────────────────────────────────────────
 Predictive AI      ✅      |    ❌    |  ❌   |   ❌
 Gamification       ✅      |    ❌    |  ❌   |   ❌
@@ -170,7 +170,7 @@ Voice AI           ✅      |    ❌    |  ❌   |   ❌
 Easy Setup         ✅      |    ❌    |  ❌   |   ❌
 ```
 
-**VISUAL:** Competitor logos fade to gray, TeamPulse logo GLOWS BRIGHT
+**VISUAL:** Competitor logos fade to gray, NyxTitan logo GLOWS BRIGHT
 
 **VOICEOVER:**
 > "Paycom? ADP? Kronos? They don't even come CLOSE."
@@ -209,7 +209,7 @@ Easy Setup         ✅      |    ❌    |  ❌   |   ❌
 
 **VISUAL:**
 - All feature screens CONVERGE into center
-- EXPLODE into TeamPulse™ logo
+- EXPLODE into NyxTitan™ logo
 - Logo rotates in 3D with particle effects
 - Tagline appears beneath in gradient text
 
@@ -221,7 +221,7 @@ BETTER THAN ANYTHING OUT THERE.
 ```
 
 **VOICEOVER (Powerful closer):**
-> "TeamPulse. The future of workforce management... is HERE."
+> "NyxTitan. The future of workforce management... is HERE."
 
 ---
 
@@ -235,8 +235,8 @@ BETTER THAN ANYTHING OUT THERE.
 
 Ready to dominate your industry?
 
-👉 Schedule Demo: teampulse.com
-✉️ hello@teampulse.com
+👉 Schedule Demo: nyxtitan.com
+✉️ hello@nyxtitan.com
 ```
 
 **Small text at bottom:**
@@ -273,7 +273,7 @@ Ready to dominate your industry?
 **Visual Effects:**
 - Particle explosions on transitions
 - Glitch effects for "broken" systems
-- Neon glow on TeamPulse branding
+- Neon glow on NyxTitan branding
 - Motion blur on fast cuts
 - Screen shake on bass drops
 - Color grade: Vibrant purples/blues
@@ -296,7 +296,7 @@ Ready to dominate your industry?
 - "ONE platform to rule them ALL" → BASS DROP
 - "LEVEL UP!" → Sparkle sound effect
 - "Fort Knox-Level Security" → Lock sound
-- "TeamPulse... is HERE" → FINAL CRESCENDO
+- "NyxTitan... is HERE" → FINAL CRESCENDO
 
 ---
 
@@ -312,7 +312,7 @@ Ready to dominate your industry?
 > "Enterprise-grade. AI-powered. Limited beta access. Apply now."
 
 **Option 4 (Direct):**
-> "Want this for your business? You know what to do. teampulse.com"
+> "Want this for your business? You know what to do. nyxtitan.com"
 
 ---
 
@@ -325,7 +325,7 @@ Ready to dominate your industry?
 - Problem (10s) → Features montage (35s) → Comparison (10s) → CTA (5s)
 
 **15-Second Teaser:**
-- Just the comparison table + "TeamPulse. Coming soon."
+- Just the comparison table + "NyxTitan. Coming soon."
 
 ---
 

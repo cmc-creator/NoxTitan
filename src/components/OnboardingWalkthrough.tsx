@@ -40,7 +40,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
   const steps: OnboardingStep[] = [
     {
       id: 'welcome',
-      title: 'Welcome to NoxTitan! 🎉',
+      title: 'Welcome to NyxTitan! 🎉',
       description: `Your all-in-one workforce management platform. Let's take a quick tour of everything you can do! (Don't worry, no actual titans were harmed in the making of this software.)\n\nDad joke: Why did the calendar get promoted? It had a lot of dates!`,
       icon: null,
       features: [
@@ -131,7 +131,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
     {
       id: 'integrations',
       title: 'Powerful Integrations',
-      description: 'Connect NoxTitan with 50+ business systems. Sync data seamlessly across your entire tech stack.',
+      description: 'Connect NyxTitan with 50+ business systems. Sync data seamlessly across your entire tech stack.',
       icon: <Link2 className="w-12 h-12 text-indigo-600" />,
       features: [
         'Payroll systems (ADP, Gusto, Paychex, Paycom)',
@@ -161,7 +161,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
     {
       id: 'customization',
       title: 'Personalize Your Experience',
-      description: 'Make NoxTitan yours! Choose from 27 beautiful themes and customize the interface to match your brand.',
+      description: 'Make NyxTitan yours! Choose from 27 beautiful themes and customize the interface to match your brand.',
       icon: <Settings className="w-12 h-12 text-pink-600" />,
       features: [
         '27 pre-built themes (light & dark)',
@@ -211,7 +211,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
               <div className="flex items-center justify-center w-20 h-20 mb-1">
                 {/* Logo removed as requested */}
               </div>
-              <h2 className="text-lg font-extrabold text-white drop-shadow-xl text-center mb-0">Welcome to NoxTitan</h2>
+              <h2 className="text-lg font-extrabold text-white drop-shadow-xl text-center mb-0">Welcome to NyxTitan</h2>
               <span className="text-base font-bold text-pink-200 tracking-widest drop-shadow text-center" style={{ textShadow: '0 0 8px #a78bfa, 0 0 2px #fff' }}>
                 Business Management. Forged for Titans.
               </span>

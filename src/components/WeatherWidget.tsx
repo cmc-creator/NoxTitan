@@ -9,7 +9,7 @@ interface WeatherData {
 const dadJokes = [
   "Why did the sun go to school? To get a little brighter!",
   "Cloudy with a chance of... coffee breaks.",
-  "Rain or shine, NoxTitan keeps your schedule on track!",
+  "Rain or shine, NyxTitan keeps your schedule on track!",
   "If it rains cats and dogs, just hope you don't step in a poodle.",
   "Forecast: 100% chance of business domination."
 ];
