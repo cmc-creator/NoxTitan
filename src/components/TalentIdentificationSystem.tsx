@@ -358,7 +358,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
                   <div key={key} className="bg-slate-900/50 rounded-lg p-4">
                     <div className="flex justify-between items-center mb-2">
                       <p className="text-sm text-slate-300 capitalize">{key.replace(/([A-Z])/g, ' $1')}</p>
-                      <p className="text-xl font-bold text-white">{value}{typeof value === 'number' && value <= 5 ? '' : '%'}</p>
+                      <p className="text-xl font-bold text-white">{String(value)}{typeof value === 'number' && value <= 5 ? '' : '%'}</p>
                     </div>
                     <div className="w-full bg-slate-700 rounded-full h-2">
                       <div 

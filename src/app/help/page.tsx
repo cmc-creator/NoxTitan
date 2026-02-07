@@ -21,7 +21,8 @@ import {
   Phone,
   Mail,
   Video,
-  HelpCircle
+  HelpCircle,
+  Keyboard
 } from 'lucide-react';
 
 export default function CustomerSupportPage() {
@@ -54,7 +55,7 @@ export default function CustomerSupportPage() {
   const helpArticles = [
     {
       id: 'KB-001',
-      title: 'Getting Started with TeamPulse',
+      title: 'Getting Started with NoxTitan',
       category: 'Basics',
       views: 2847,
       helpful: 234,
@@ -414,7 +415,7 @@ export default function CustomerSupportPage() {
                 </div>
                 <h3 className="font-bold text-gray-900 mb-1">Email Support</h3>
                 <p className="text-sm text-gray-600 mb-3">All plans</p>
-                <p className="text-blue-600 font-semibold">support@teampulse.com</p>
+                <p className="text-blue-600 font-semibold">support@noxtitan.com</p>
               </div>
 
               <div className="bg-white rounded-xl shadow-md p-6 text-center">

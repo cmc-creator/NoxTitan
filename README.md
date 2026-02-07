@@ -13,7 +13,36 @@ NoxTitan is a comprehensive business management platform forged for titans—cov
 
 ## 🎭 Live Demo
 
-**Experience the full interactive demo here:** [https://cmc-creator.github.io/NoxTitan/](https://cmc-creator.github.io/NoxTitan/)
+**Experience the interactive demo here:** [https://cmc-creator.github.io/NoxTitan/](https://cmc-creator.github.io/NoxTitan/)
+
+> **Note:** The GitHub Pages link shows a static demo/presentation. The full NoxTitan application requires a Node.js server and should be deployed to Vercel, Netlify, or similar platforms. See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for instructions.
+
+---
+
+## 📦 Deployment
+
+### For the Full Application (Recommended)
+
+The complete NoxTitan application with all features requires a Node.js server environment:
+
+**Deploy to Vercel (Free & Easy):**
+1. Go to [vercel.com](https://vercel.com)
+2. Sign in with GitHub
+3. Import the NoxTitan repository
+4. Click Deploy - Done! ✅
+
+**See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for:**
+- Detailed Vercel deployment steps
+- Alternative platforms (Netlify, Railway, VPS)
+- Environment variable configuration
+- Local development setup
+
+### GitHub Pages vs Full Deployment
+
+| Platform | What's Deployed | Best For |
+|----------|-----------------|----------|
+| **GitHub Pages** | Static demo HTML | Quick showcase/presentation |
+| **Vercel/Netlify** | Full Next.js app | Production use with all features |
 
 ---
 

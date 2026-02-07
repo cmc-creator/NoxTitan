@@ -1,17 +1,8 @@
 import 'dotenv/config';
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
-import { PrismaLibSql } from '@prisma/adapter-libsql';
-import { createClient } from '@libsql/client';
 
-const config = {
-  url: process.env.DATABASE_URL || 'file:./prisma/dev.db'
-};
-
-console.log('Database URL:', config.url);
-
-const adapter = new PrismaLibSql(config);
-const prisma = new PrismaClient({ adapter });
+const prisma = new PrismaClient();
 
 async function main() {
   console.log('🌱 Seeding database...');

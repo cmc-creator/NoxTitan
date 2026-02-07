@@ -985,7 +985,7 @@ export default function PayrollPage() {
                 Payroll System Integrations
               </h2>
               <p className="opacity-70 mb-6">
-                Connect TeamPulse™ with your payroll system to automatically sync hours and streamline payroll processing
+                Connect NoxTitan with your payroll system to automatically sync hours and streamline payroll processing
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

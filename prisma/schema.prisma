@@ -1,5 +1,13 @@
-// This is your Prisma schema file
-// Learn more about it in the docs: https://pris.ly/d/prisma-schema
+// Audit logging for compliance
+model AuditLog {
+  id        String   @id @default(cuid())
+  action    String
+  details   String?
+  userRole  String
+  timestamp DateTime @default(now())
+}
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
   provider        = "prisma-client-js"
@@ -11,166 +19,151 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// ============================================================================
-// AUTHENTICATION & USER MANAGEMENT
-// ============================================================================
-
-model User {
+// Organization model - Company-wide settings
+model Organization {
   id                  String   @id @default(cuid())
-  email               String   @unique
-  name                String?
-  passwordHash        String
-  tier                String   @default("FREE")
-  holidayDifferential Float    @default(2.0)
-  nightDifferential   Float    @default(1.5)
-  overtimeRate        Float    @default(1.5)
-  weekendDifferential Float    @default(1.25)
+  name                String
+  industry            String   // "healthcare", "retail", "construction", etc.
+  logo                String?
+  brandPrimaryColor   String?  @default("#9333ea")
+  brandSecondaryColor String?  @default("#ec4899")
+  brandAccentColor    String?  @default("#06b6d4")
+  timezone            String   @default("America/New_York")
+  complianceSettings  Json?    // State laws, break rules, overtime policies
+  featureFlags        Json?    // Which modules are enabled
+  onboardingConfig    Json?    // Custom onboarding flows and steps
+  setupCompleted      Boolean  @default(false)
+  setupStep           Int      @default(0)
   createdAt           DateTime @default(now())
   updatedAt           DateTime @updatedAt
+}
 
-  // Relations
-  accounts             Account[]
-  sessions             Session[]
-  employees            Employee[]
-  shifts               Shift[]
-  schedules            Schedule[]
-  timeOffRequests      TimeOffRequest[]
-  notifications        Notification[]
-  timeClockEntries     TimeClockEntry[]
-  timeClockDevices     TimeClockDevice[]
-  attendanceRecords    AttendanceRecord[]
-  complianceRules      ComplianceRule[]
+// User/Organization model
+model User {
+  id            String         @id @default(cuid())
+  email         String         @unique
+  name          String?
+  passwordHash  String
+  tier          SubscriptionTier @default(PROFESSIONAL)
+  organizationId String?
+  isOrgAdmin    Boolean        @default(false)
+  
+  // Payroll Settings - Shift Differentials
+  nightDifferential   Float?   @default(1.5)    // 1.5x for night shifts (10pm-6am)
+  weekendDifferential Float?   @default(1.25)   // 1.25x for weekends
+  holidayDifferential Float?   @default(2.0)    // 2.0x for holidays
+  overtimeRate        Float?   @default(1.5)    // 1.5x after 40 hours/week
+  
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  employees     Employee[]
+  shifts        Shift[]
+  schedules     Schedule[]
+  timeOffRequests TimeOffRequest[]
+  notifications Notification[]
+  timeClockEntries TimeClockEntry[]
+  timeClockDevices TimeClockDevice[]
+  attendanceRecords AttendanceRecord[]
+  complianceRules ComplianceRule[]
   complianceViolations ComplianceViolation[]
-  hrTasks              HRTask[]
-  employeeSurveys      EmployeeSurvey[]
-  managerCheckIns      ManagerCheckIn[]
-  automationRules      AutomationRule[]
-  performanceReviews   PerformanceReview[]
-  onboardingWorkflows  OnboardingWorkflow[]
-  assetCategories      AssetCategory[]
-  assets               Asset[]
-  assetAssignments     AssetAssignment[]
-  maintenanceRecords   MaintenanceRecord[]
-  payrollDeductions    PayrollDeduction[]
-  visitors             Visitor[]
-  visitorLogs          VisitorLog[]
-  visitorBadges        VisitorBadge[]
-  visitorWatchlists    VisitorWatchlist[]
-  securityCameras      SecurityCamera[]
-  accessControlSystems AccessControlSystem[]
-  doors                Door[]
-  accessEvents         AccessEvent[]
-  doorSchedules        DoorSchedule[]
-  securityAlerts       SecurityAlert[]
-  badgeCredentials     BadgeCredential[]
-  prophecies           Prophecy[]
-  riskScores           RiskScore[]
-  predictiveInsights   PredictiveInsight[]
-  guildMembers         GuildMember[]
-  achievements         Achievement[]
-  rewards              Reward[]
-  quests               Quest[]
-  merchStores          MerchStore[]
-  merchItems           MerchItem[]
-  merchOrders          MerchOrder[]
+  hrTasks                 HRTask[]
+  surveys                 EmployeeSurvey[]
+  checkIns                ManagerCheckIn[]
+  automationRules         AutomationRule[]
+  performanceReviews      PerformanceReview[]
+  onboardingWorkflows     OnboardingWorkflow[]
+  assetCategories         AssetCategory[]
+  assets                  Asset[]
+  assetAssignments        AssetAssignment[]
+  maintenanceRecords      MaintenanceRecord[]
+  payrollDeductions       PayrollDeduction[]
+  visitors                Visitor[]
+  visitorLogs             VisitorLog[]
+  visitorBadges           VisitorBadge[]
+  visitorWatchlist        VisitorWatchlist[]
+  securityCameras         SecurityCamera[]
+  accessControlSystems    AccessControlSystem[]
+  doors                   Door[]
+  accessEvents            AccessEvent[]
+  doorSchedules           DoorSchedule[]
+  securityAlerts          SecurityAlert[]
+  badgeCredentials        BadgeCredential[]
+  prophecies              Prophecy[]
+  riskScores              RiskScore[]
+  predictiveInsights      PredictiveInsight[]
+  guildMembers            GuildMember[]
+  achievements            Achievement[]
+  rewards                 Reward[]
+  quests                  Quest[]
+  merchStores             MerchStore[]
+  merchItems              MerchItem[]
+  merchOrders             MerchOrder[]
 }
 
-model Account {
-  userId            String
-  type              String
-  provider          String
-  providerAccountId String
-  refresh_token     String?
-  access_token      String?
-  expires_at        Int?
-  token_type        String?
-  scope             String?
-  id_token          String?
-  session_state     String?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@id([provider, providerAccountId])
+// Subscription tiers
+enum SubscriptionTier {
+  VIP
+  PROFESSIONAL
+  ENTERPRISE
+  TITAN
 }
 
-model Session {
-  sessionToken String   @unique
-  userId       String
-  expires      DateTime
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model VerificationToken {
-  identifier String
-  token      String
-  expires    DateTime
-
-  @@id([identifier, token])
-}
-
-// ============================================================================
-// EMPLOYEE MANAGEMENT
-// ============================================================================
-
+// Employee model
 model Employee {
-  id         String   @id @default(cuid())
-  userId     String
-  firstName  String
-  lastName   String
-  email      String
-  phone      String?
-  position   String?
-  hourlyRate Float?
-  color      String?
-  isActive   Boolean  @default(true)
-  managerId  String?
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+          assetsAssigned Asset[] @relation("AssignedTo")
+        assignedAssets         Asset[] @relation("AssignedAssets")
+      maintenanceRecords      MaintenanceRecord[] @relation("MaintenanceEmployees")
+      assignedMaintenance    MaintenanceRecord[] @relation("MaintenanceAssignedTo")
+      accessEvents           AccessEvent[] @relation("AccessEventEmployee")
+      assignedAccessEvents   AccessEvent[] @relation("AccessEventAssignedTo")
+      targetProphecies       Prophecy[] @relation("ProphecyTargetEmployee")
+    assignedTasks     HRTask[]    @relation("AssignedTasks")
+    relatedTasks      HRTask[]    @relation("RelatedTasks")
+    managerTasks      HRTask[]    @relation("ManagerTasks")
+    managedCheckIns   ManagerCheckIn[] @relation("ManagerCheckIns")
+    reviewsGiven      PerformanceReview[] @relation("ReviewsGiven")
+    buddyFor          OnboardingWorkflow[] @relation("OnboardingBuddy")
+  id            String         @id @default(cuid())
+  userId        String
+  firstName     String
+  lastName      String
+  email         String
+  phone         String?
+  position      String?
+  hourlyRate    Float?
+  color         String?        // For calendar display
+  avatar        String?        // Profile picture URL or base64
 
-  user    User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  manager Employee? @relation("ManagerSubordinates", fields: [managerId], references: [id])
-
-  // Relations
-  subordinates                Employee[]            @relation("ManagerSubordinates")
-  shifts                      Shift[]
-  availabilities              Availability[]
-  timeOffRequests             TimeOffRequest[]
-  shiftSwapsRequesting        ShiftSwap[]           @relation("RequestingEmployee")
-  shiftSwapsTarget            ShiftSwap[]           @relation("TargetEmployee")
-  timeClockEntries            TimeClockEntry[]
-  attendanceRecords           AttendanceRecord[]
-  complianceViolations        ComplianceViolation[]
-  hrTasksAssigned             HRTask[]              @relation("AssignedToEmployee")
-  hrTasksRelated              HRTask[]              @relation("RelatedEmployee")
-  hrTasksManaged              HRTask[]              @relation("ManagerEmployee")
-  employeeSurveys             EmployeeSurvey[]
-  managerCheckInsEmployee     ManagerCheckIn[]      @relation("EmployeeCheckIns")
-  managerCheckInsManager      ManagerCheckIn[]      @relation("ManagerCheckIns")
-  performanceReviewsReviewed  PerformanceReview[]   @relation("ReviewedEmployee")
-  performanceReviewsReviewer  PerformanceReview[]   @relation("ReviewerEmployee")
-  onboardingWorkflowsEmployee OnboardingWorkflow[]  @relation("OnboardingEmployee")
-  onboardingWorkflowsBuddy    OnboardingWorkflow[]  @relation("BuddyEmployee")
-  assetsAssigned              Asset[]
-  assetAssignments            AssetAssignment[]
-  payrollDeductions           PayrollDeduction[]
-  visitorLogsHosted           VisitorLog[]
-  badgeCredentials            BadgeCredential[]     @relation("EmployeeBadge")
-  prophecies                  Prophecy[]
-  riskScores                  RiskScore[]
-  guildMember                 GuildMember?
-  questCompletions            QuestCompletion[]
-  merchOrders                 MerchOrder[]
-  accessEvents                AccessEvent[]
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  timeClockEntries TimeClockEntry[]
+  swapRequests  ShiftSwap[]
+  shifts        Shift[]
+  schedules     Schedule[]
+  availability  Availability[]
+  timeOffRequests TimeOffRequest[]
+  attendanceRecords AttendanceRecord[]
+  complianceViolations ComplianceViolation[]
+  hrTasks                 HRTask[]
+  surveys                 EmployeeSurvey[]
+  checkIns                ManagerCheckIn[]
+  performanceReviews      PerformanceReview[]
+  onboardingWorkflow      OnboardingWorkflow?
+  basecampSettings        BasecampSettings?
+  assetAssignments        AssetAssignment[]
+  payrollDeductions       PayrollDeduction[]
+  visitorLogs             VisitorLog[]
+  badgeCredentials        BadgeCredential[]
+  riskScores              RiskScore[]
+  guildMember             GuildMember?
+  questCompletions        QuestCompletion[]
+  merchOrders             MerchOrder[]
+  surveyResponses         SurveyResponse[]
 }
 
+// Shift model
 model Shift {
-  id            String   @id @default(cuid())
+  id            String         @id @default(cuid())
   userId        String
   employeeId    String
   scheduleId    String?
@@ -180,503 +173,572 @@ model Shift {
   position      String?
   notes         String?
   color         String?
-  isPublished   Boolean  @default(false)
-  breakMinutes  Int      @default(0)
-  isNightShift  Boolean  @default(false)
-  isWeekend     Boolean  @default(false)
-  isHoliday     Boolean  @default(false)
-  overtimeHours Float    @default(0)
+  isPublished   Boolean        @default(false)
+  breakMinutes  Int?           @default(0)
+  isNightShift  Boolean        @default(false)
+  isWeekend     Boolean        @default(false)
+  isHoliday     Boolean        @default(false)
+  overtimeHours Float?         @default(0)
   totalPay      Float?
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-
-  user             User             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  employee         Employee         @relation(fields: [employeeId], references: [id], onDelete: Cascade)
-  schedule         Schedule?        @relation(fields: [scheduleId], references: [id], onDelete: SetNull)
-  shiftSwaps       ShiftSwap[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  employee      Employee       @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  schedule      Schedule?      @relation(fields: [scheduleId], references: [id], onDelete: SetNull)
   timeClockEntries TimeClockEntry[]
-  prophecies       Prophecy[]
+  swapRequests  ShiftSwap[]
 }
 
+// Schedule (for organizing multiple shifts)
 model Schedule {
-  id          String   @id @default(cuid())
-  userId      String
-  name        String
-  startDate   DateTime
-  endDate     DateTime
-  isPublished Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+    users User[]
+  id            String         @id @default(cuid())
+  userId        String
+  name          String
+  startDate     DateTime
+  endDate       DateTime
+  isPublished   Boolean        @default(false)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
 
-  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  shifts Shift[]
+  shifts        Shift[]
+  employees     Employee[]
 }
 
+// Employee availability
 model Availability {
-  id          String   @id @default(cuid())
-  employeeId  String
-  dayOfWeek   Int
-  startTime   String
-  endTime     String
-  isAvailable Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  id            String         @id @default(cuid())
+  employeeId    String
+  dayOfWeek     Int            // 0-6 (Sunday-Saturday)
+  startTime     String         // "09:00"
+  endTime       String         // "17:00"
+  isAvailable   Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  employee      Employee       @relation(fields: [employeeId], references: [id], onDelete: Cascade)
 }
 
+// Time-off requests
 model TimeOffRequest {
-  id         String   @id @default(cuid())
-  userId     String
-  employeeId String
-  startDate  DateTime
-  endDate    DateTime
-  reason     String?
-  status     String   @default("PENDING")
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-
-  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  id            String         @id @default(cuid())
+  userId        String
+  employeeId    String
+  startDate     DateTime
+  endDate       DateTime
+  reason        String?
+  status        RequestStatus  @default(PENDING)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  employee      Employee       @relation(fields: [employeeId], references: [id], onDelete: Cascade)
 }
 
+// Shift swap requests
 model ShiftSwap {
-  id                   String   @id @default(cuid())
-  shiftId              String
+  id                String         @id @default(cuid())
+  shiftId           String
   requestingEmployeeId String
-  targetEmployeeId     String?
-  message              String?
-  status               String   @default("PENDING")
-  createdAt            DateTime @default(now())
-  updatedAt            DateTime @updatedAt
-
-  shift              Shift     @relation(fields: [shiftId], references: [id], onDelete: Cascade)
-  requestingEmployee Employee  @relation("RequestingEmployee", fields: [requestingEmployeeId], references: [id], onDelete: Cascade)
-  targetEmployee     Employee? @relation("TargetEmployee", fields: [targetEmployeeId], references: [id], onDelete: Cascade)
+  targetEmployeeId  String?
+  message           String?
+  status            RequestStatus  @default(PENDING)
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+  
+  shift             Shift          @relation(fields: [shiftId], references: [id], onDelete: Cascade)
+  requestingEmployee Employee      @relation(fields: [requestingEmployeeId], references: [id], onDelete: Cascade)
 }
 
-model Notification {
-  id        String   @id @default(cuid())
-  userId    String
-  type      String
-  title     String
-  message   String
-  isRead    Boolean  @default(false)
-  createdAt DateTime @default(now())
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+// Request status enum
+enum RequestStatus {
+  PENDING
+  APPROVED
+  REJECTED
 }
 
-// ============================================================================
-// TIME CLOCK & ATTENDANCE SYSTEM
-// ============================================================================
-
+// Time Clock Entry - Punch In/Out tracking
 model TimeClockEntry {
-  id               String    @id @default(cuid())
-  userId           String
-  employeeId       String
-  shiftId          String?
-  clockIn          DateTime
-  clockOut         DateTime?
-  clockInLat       Float?
-  clockInLng       Float?
-  clockOutLat      Float?
-  clockOutLng      Float?
-  isWithinGeofence Boolean   @default(true)
-  deviceType       String?
-  deviceId         String?
-  deviceBrand      String?
-  ipAddress        String?
-  photoClockIn     String?
-  photoClockOut    String?
-  biometricId      String?
-  badgeNumber      String?
-  totalHours       Float?
-  isLate           Boolean   @default(false)
-  lateMinutes      Int       @default(0)
-  isEarlyOut       Boolean   @default(false)
-  earlyMinutes     Int       @default(0)
-  missedMealBreak  Boolean   @default(false)
-  status           String    @default("CLOCKED_IN")
-  notes            String?
-  editedBy         String?
-  editReason       String?
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
+  id            String         @id @default(cuid())
+  userId        String
+  employeeId    String
+  shiftId       String?
+  
+  // Clock data
+  clockIn       DateTime
+  clockOut      DateTime?
+  
+  // Location tracking (GPS/Geofencing)
+  clockInLat    Float?
+  clockInLng    Float?
+  clockOutLat   Float?
+  clockOutLng   Float?
+  isWithinGeofence Boolean     @default(true)
+  
+  // Device/Hardware info
+  deviceType    String?        // "hardware", "mobile", "web", "kiosk"
+  deviceId      String?        // MAC address, device identifier
+  deviceBrand   String?        // "Kronos", "ADP", "Lathem", etc.
+  ipAddress     String?
+  
+  // Verification
+  photoClockIn  String?        // URL to photo taken at clock-in
+  photoClockOut String?        // URL to photo taken at clock-out
+  biometricId   String?        // Fingerprint/face ID
+  badgeNumber   String?        // RFID/badge number
+  
+  // Calculated fields
+  totalHours    Float?
+  isLate        Boolean        @default(false)
+  lateMinutes   Int?           @default(0)
+  isEarlyOut    Boolean        @default(false)
 
-  user                 User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
-  employee             Employee              @relation(fields: [employeeId], references: [id], onDelete: Cascade)
-  shift                Shift?                @relation(fields: [shiftId], references: [id], onDelete: SetNull)
-  breakEntries         BreakEntry[]
+  earlyMinutes  Int?           @default(0)
+  
+  // Break tracking
+  breakEntries  BreakEntry[]
   complianceViolations ComplianceViolation[]
+  
+  // Meal break compliance
+  missedMealBreak Boolean      @default(false)
+  
+  // Status
+  status        ClockStatus    @default(CLOCKED_IN)
+  notes         String?
+  editedBy      String?        // Manager who edited entry
+  editReason    String?
+  
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  employee      Employee       @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  shift         Shift?         @relation(fields: [shiftId], references: [id], onDelete: SetNull)
 }
 
+// Break tracking (meal, rest breaks)
 model BreakEntry {
-  id               String    @id @default(cuid())
+  id            String         @id @default(cuid())
   timeClockEntryId String
-  breakType        String    @default("REST")
-  startTime        DateTime
-  endTime          DateTime?
-  duration         Int?
-  isPaid           Boolean   @default(false)
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
-
+  breakType     BreakType      @default(REST)
+  startTime     DateTime
+  endTime       DateTime?
+  duration      Int?           // minutes
+  isPaid        Boolean        @default(false)
+  
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
   timeClockEntry TimeClockEntry @relation(fields: [timeClockEntryId], references: [id], onDelete: Cascade)
 }
 
+// Time clock hardware integration
 model TimeClockDevice {
-  id                String    @id @default(cuid())
-  userId            String
-  name              String
-  brand             String
-  model             String?
-  serialNumber      String?
-  macAddress        String?
-  ipAddress         String?
-  location          String?
-  apiKey            String?
-  apiSecret         String?
-  webhookUrl        String?
-  syncEnabled       Boolean   @default(true)
-  lastSync          DateTime?
-  latitude          Float?
-  longitude         Float?
-  geofenceRadius    Float?
-  requirePhoto      Boolean   @default(false)
-  requireBiometric  Boolean   @default(false)
-  allowEarlyClockIn Int       @default(15)
-  allowLateClockIn  Int       @default(5)
-  isActive          Boolean   @default(true)
-  createdAt         DateTime  @default(now())
-  updatedAt         DateTime  @updatedAt
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id            String         @id @default(cuid())
+  userId        String
+  
+  name          String         // "Front Desk Clock"
+  brand         String         // "Kronos", "ADP", "Lathem", etc.
+  model         String?
+  serialNumber  String?
+  macAddress    String?
+  ipAddress     String?
+  location      String?        // "Building A - Entrance"
+  
+  // Integration settings
+  apiKey        String?
+  apiSecret     String?
+  webhookUrl    String?
+  syncEnabled   Boolean        @default(true)
+  lastSync      DateTime?
+  
+  // Geofencing
+  latitude      Float?
+  longitude     Float?
+  geofenceRadius Float?        // meters
+  
+  // Settings
+  requirePhoto  Boolean        @default(false)
+  requireBiometric Boolean     @default(false)
+  allowEarlyClockIn Int?       @default(15)  // minutes before shift
+  allowLateClockIn  Int?       @default(5)   // minutes after shift start
+  
+  isActive      Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
+// Attendance tracking and patterns
 model AttendanceRecord {
-  id           String   @id @default(cuid())
-  userId       String
-  employeeId   String
-  date         DateTime
-  status       String   @default("PRESENT")
-  hoursWorked  Float?
-  isLate       Boolean  @default(false)
-  lateMinutes  Int?
-  leftEarly    Boolean  @default(false)
-  earlyMinutes Int?
-  notes        String?
-  approvedBy   String?
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-
-  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  id            String         @id @default(cuid())
+  userId        String
+  employeeId    String
+  date          DateTime
+  
+  status        AttendanceStatus @default(PRESENT)
+  hoursWorked   Float?
+  isLate        Boolean        @default(false)
+  lateMinutes   Int?
+  leftEarly     Boolean        @default(false)
+  earlyMinutes  Int?
+  
+  notes         String?
+  approvedBy    String?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  employee      Employee       @relation(fields: [employeeId], references: [id], onDelete: Cascade)
 }
 
+// Compliance rules and violations
 model ComplianceRule {
-  id                  String   @id @default(cuid())
-  userId              String
-  name                String
-  description         String?
-  ruleType            String
-  triggerHours        Float?
-  maxConsecutiveHours Float?
-  minBreakMinutes     Int?
-  isActive            Boolean  @default(true)
-  createdAt           DateTime @default(now())
-  updatedAt           DateTime @updatedAt
-
-  user                 User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
-  complianceViolations ComplianceViolation[]
+  id            String         @id @default(cuid())
+  userId        String
+  
+  name          String         // "Meal Break - 6+ hours"
+  description   String?
+  ruleType      ComplianceType
+  
+  // Thresholds
+  triggerHours  Float?         // Hours before meal break required
+  maxConsecutiveHours Float?   // Max hours without break
+  minBreakMinutes Int?         // Minimum break duration
+  
+  isActive      Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  violations    ComplianceViolation[]
 }
 
 model ComplianceViolation {
-  id               String    @id @default(cuid())
-  userId           String
-  employeeId       String
-  ruleId           String
+  id            String         @id @default(cuid())
+  userId        String
+  employeeId    String
+  ruleId        String
   timeClockEntryId String?
-  violationDate    DateTime
-  description      String
-  severity         String    @default("MEDIUM")
-  status           String    @default("OPEN")
-  resolvedBy       String?
-  resolvedAt       DateTime?
-  resolution       String?
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
-
-  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
-  employee       Employee        @relation(fields: [employeeId], references: [id], onDelete: Cascade)
-  rule           ComplianceRule  @relation(fields: [ruleId], references: [id], onDelete: Cascade)
+  
+  violationDate DateTime
+  description   String
+  severity      ViolationSeverity @default(MEDIUM)
+  status        ViolationStatus   @default(OPEN)
+  
+  resolvedBy    String?
+  resolvedAt    DateTime?
+  resolution    String?
+  
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  employee      Employee       @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  rule          ComplianceRule @relation(fields: [ruleId], references: [id], onDelete: Cascade)
   timeClockEntry TimeClockEntry? @relation(fields: [timeClockEntryId], references: [id], onDelete: SetNull)
 }
 
-// ============================================================================
-// HR MANAGEMENT FEATURES
-// ============================================================================
-
+// HR Management Models
 model HRTask {
-  id                String    @id @default(cuid())
-  title             String
-  description       String?
-  type              String
-  priority          String    @default("MEDIUM")
-  status            String    @default("PENDING")
-  dueDate           DateTime
-  completedAt       DateTime?
-  assignedToId      String?
+    employees Employee[]
+  id              String   @id @default(cuid())
+  title           String
+  description     String?
+  type            HRTaskType
+  priority        TaskPriority @default(MEDIUM)
+  status          TaskStatus @default(PENDING)
+  dueDate         DateTime
+  completedAt     DateTime?
+  assignedToId    String?
+  assignedTo      Employee? @relation("AssignedTasks", fields: [assignedToId], references: [id], onDelete: SetNull)
   relatedEmployeeId String?
-  managerId         String?
-  automationRuleId  String?
-  userId            String
-  createdAt         DateTime  @default(now())
-  updatedAt         DateTime  @updatedAt
-
-  assignedTo      Employee?       @relation("AssignedToEmployee", fields: [assignedToId], references: [id], onDelete: SetNull)
-  relatedEmployee Employee?       @relation("RelatedEmployee", fields: [relatedEmployeeId], references: [id], onDelete: SetNull)
-  manager         Employee?       @relation("ManagerEmployee", fields: [managerId], references: [id], onDelete: SetNull)
-  automationRule  AutomationRule? @relation(fields: [automationRuleId], references: [id], onDelete: SetNull)
-  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  relatedEmployee Employee? @relation("RelatedTasks", fields: [relatedEmployeeId], references: [id], onDelete: Cascade)
+  managerId       String?
+  manager         Employee? @relation("ManagerTasks", fields: [managerId], references: [id], onDelete: SetNull)
+  automationRuleId String?
+  automationRule  AutomationRule? @relation(fields: [automationRuleId], references: [id])
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model EmployeeSurvey {
-  id            String    @id @default(cuid())
-  employeeId    String
-  surveyType    String
-  dayMilestone  Int
-  scheduledDate DateTime
-  sentAt        DateTime?
-  completedAt   DateTime?
-  score         Int?
-  feedback      String?
-  responses     Json?
-  userId        String
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-
-  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
-  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id              String   @id @default(cuid())
+  employeeId      String
+  employee        Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  surveyType      SurveyType
+  dayMilestone    Int
+  scheduledDate   DateTime
+  sentAt          DateTime?
+  completedAt     DateTime?
+  score           Int?
+  feedback        String?
+  responses       Json?
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model ManagerCheckIn {
-  id             String    @id @default(cuid())
-  employeeId     String
-  managerId      String
-  scheduledDate  DateTime
-  completedAt    DateTime?
-  notes          String?
-  topics         Json?
-  actionItems    Json?
-  employeeRating Int?
-  managerRating  Int?
-  userId         String
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
-
-  employee Employee @relation("EmployeeCheckIns", fields: [employeeId], references: [id], onDelete: Cascade)
-  manager  Employee @relation("ManagerCheckIns", fields: [managerId], references: [id], onDelete: Cascade)
-  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id              String   @id @default(cuid())
+  employeeId      String
+  employee        Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  managerId       String
+  manager         Employee @relation("ManagerCheckIns", fields: [managerId], references: [id], onDelete: Cascade)
+  scheduledDate   DateTime
+  completedAt     DateTime?
+  notes           String?
+  topics          Json?
+  actionItems     Json?
+  employeeRating  Int?
+  managerRating   Int?
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model AutomationRule {
-  id            String    @id @default(cuid())
-  name          String
-  description   String?
-  triggerType   String
-  triggerConfig Json
-  actionType    String
-  actionConfig  Json
-  isActive      Boolean   @default(true)
-  lastRun       DateTime?
-  nextRun       DateTime?
-  runCount      Int       @default(0)
-  userId        String
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-
-  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  hrTasks HRTask[]
+  id              String   @id @default(cuid())
+  name            String
+  description     String?
+  triggerType     AutomationTrigger
+  triggerConfig   Json
+  actionType      AutomationAction
+  actionConfig    Json
+  isActive        Boolean @default(true)
+  lastRun         DateTime?
+  nextRun         DateTime?
+  runCount        Int @default(0)
+  tasks           HRTask[]
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model PerformanceReview {
-  id             String   @id @default(cuid())
-  employeeId     String
-  reviewerId     String
-  reviewPeriod   String
-  reviewDate     DateTime
-  overallRating  Float
-  goals          Json?
-  achievements   Json?
-  areasForGrowth Json?
-  managerNotes   String?
-  employeeNotes  String?
-  status         String   @default("DRAFT")
-  userId         String
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
-
-  employee Employee @relation("ReviewedEmployee", fields: [employeeId], references: [id], onDelete: Cascade)
-  reviewer Employee @relation("ReviewerEmployee", fields: [reviewerId], references: [id], onDelete: Cascade)
-  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id              String   @id @default(cuid())
+  employeeId      String
+  employee        Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  reviewerId      String
+  reviewer        Employee @relation("ReviewsGiven", fields: [reviewerId], references: [id])
+  reviewPeriod    String
+  reviewDate      DateTime
+  overallRating   Float
+  goals           Json?
+  achievements    Json?
+  areasForGrowth  Json?
+  managerNotes    String?
+  employeeNotes   String?
+  status          ReviewStatus @default(DRAFT)
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model OnboardingWorkflow {
-  id             String    @id @default(cuid())
-  employeeId     String    @unique
-  status         String    @default("NOT_STARTED")
-  startDate      DateTime
-  completionDate DateTime?
-  tasks          Json
-  completedTasks Json      @default("[]")
-  buddyId        String?
-  progress       Int       @default(0)
-  userId         String
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
-
-  employee Employee  @relation("OnboardingEmployee", fields: [employeeId], references: [id], onDelete: Cascade)
-  buddy    Employee? @relation("BuddyEmployee", fields: [buddyId], references: [id], onDelete: SetNull)
-  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id              String           @id @default(cuid())
+  employeeId      String           @unique
+  employee        Employee         @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  templateId      String?
+  type            OnboardingType   @default(EMPLOYEE)
+  currentStep     Int              @default(0)
+  status          OnboardingStatus @default(NOT_STARTED)
+  startDate       DateTime
+  completionDate  DateTime?
+  tasks           Json
+  completedTasks  Json             @default("[]")
+  completedSteps  Json             @default("[]")
+  customizations  Json?            // Basecamp settings, preferences
+  buddyId         String?
+  buddy           Employee?        @relation("OnboardingBuddy", fields: [buddyId], references: [id], onDelete: SetNull)
+  progress        Int              @default(0)
+  userId          String
+  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
 }
 
-// ============================================================================
-// ASSET VAULT & TREASURY
-// ============================================================================
+// Onboarding Templates - Reusable flows for different roles/industries
+model OnboardingTemplate {
+  id              String         @id @default(cuid())
+  name            String
+  description     String?
+  type            OnboardingType
+  industry        String?        // "healthcare", "retail", etc. - null = universal
+  steps           Json           // Array of step configurations
+  estimatedDays   Int?           @default(7)
+  isActive        Boolean        @default(true)
+  isDefault       Boolean        @default(false)
+  customizable    Boolean        @default(true)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+}
 
-model AssetCategory {
+// Basecamp Settings - Employee's personalized workspace
+model BasecampSettings {
   id                String   @id @default(cuid())
-  name              String
-  description       String?
-  icon              String?
-  requiresSerial    Boolean  @default(false)
-  depreciationYears Int?
-  userId            String
+  employeeId        String   @unique
+  theme             String   @default("default")
+  adventureMode     String?  // Guild theme: "tomb-raider", "treasure-hunt", etc.
+  basebotName       String?  @default("Basebot")
+  basebotAvatar     String?  @default("🤖")
+  basebotPersonality String? @default("friendly")
+  basebotVoice      String?  @default("standard")
+  dashboardLayout   Json?    // Widget arrangement and preferences
+  notificationPrefs Json?    // Push, email, SMS preferences
+  quickActions      Json?    // Customized quick action buttons
+  favoritePages     Json?    // Pinned/starred pages
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
+  
+  employee          Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+}
 
-  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  assets Asset[]
+// Asset Management Models
+model AssetCategory {
+  id              String   @id @default(cuid())
+  name            String
+  description     String?
+  icon            String?
+  requiresSerial  Boolean  @default(false)
+  depreciationYears Int?
+  assets          Asset[]
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model Asset {
-  id                 String    @id @default(cuid())
-  assetTag           String    @unique
-  name               String
-  description        String?
-  categoryId         String
-  serialNumber       String?
-  barcode            String?
-  qrCode             String?
-  manufacturer       String?
-  model              String?
-  purchaseDate       DateTime?
-  purchasePrice      Float?
-  currentValue       Float?
-  warrantyExpiry     DateTime?
-  status             String    @default("AVAILABLE")
-  condition          String    @default("GOOD")
-  location           String?
-  building           String?
-  room               String?
-  notes              String?
-  photoUrl           String?
-  documentsJson      Json?
-  assignedToId       String?
-  assignedDate       DateTime?
+        assignedAssets MaintenanceRecord[] @relation("AssignedAssets")
+      assets MaintenanceRecord[] @relation("MaintenanceAssets")
+    assignedEmployees Employee[] @relation("AssignedAssets")
+    maintenanceRecords     MaintenanceRecord[] @relation("MaintenanceAsset")
+  id              String   @id @default(cuid())
+  assetTag        String   @unique
+  name            String
+  description     String?
+  categoryId      String
+  category        AssetCategory @relation(fields: [categoryId], references: [id])
+  serialNumber    String?
+  barcode         String?
+  qrCode          String?
+  manufacturer    String?
+  model           String?
+  purchaseDate    DateTime?
+  purchasePrice   Float?
+  currentValue    Float?
+  warrantyExpiry  DateTime?
+  status          AssetStatus @default(AVAILABLE)
+  condition       AssetCondition @default(GOOD)
+  location        String?
+  building        String?
+  room            String?
+  notes           String?
+  photoUrl        String?
+  documentsJson   Json?
+  assignedToId    String?
+  assignedTo      Employee? @relation("AssignedTo", fields: [assignedToId], references: [id], onDelete: SetNull)
+  assignedDate    DateTime?
   expectedReturnDate DateTime?
-  userId             String
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
-
-  category           AssetCategory       @relation(fields: [categoryId], references: [id], onDelete: Cascade)
-  assignedTo         Employee?           @relation(fields: [assignedToId], references: [id], onDelete: SetNull)
-  user               User                @relation(fields: [userId], references: [id], onDelete: Cascade)
-  assetAssignments   AssetAssignment[]
-  maintenanceRecords MaintenanceRecord[]
-  payrollDeductions  PayrollDeduction[]
+  payrollDeductions PayrollDeduction[]
+  assignments     AssetAssignment[]
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model AssetAssignment {
-  id                     String    @id @default(cuid())
-  assetId                String
-  employeeId             String
-  checkOutDate           DateTime  @default(now())
-  checkOutBy             String
-  checkInDate            DateTime?
-  checkInBy              String?
-  expectedReturnDate     DateTime?
-  returnCondition        String?
-  notes                  String?
-  digitalSignature       String?
-  employeeAcknowledgment Boolean   @default(false)
-  acknowledgedValue      Float?
-  signedAt               DateTime?
-  signatureIp            String?
-  isOverdue              Boolean   @default(false)
-  overdueDate            DateTime?
-  payrollFlagged         Boolean   @default(false)
-  payrollFlaggedDate     DateTime?
-  deductionAmount        Float?
-  deductionApplied       Boolean   @default(false)
-  userId                 String
-  createdAt              DateTime  @default(now())
-  updatedAt              DateTime  @updatedAt
-
-  asset    Asset    @relation(fields: [assetId], references: [id], onDelete: Cascade)
-  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
-  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id              String   @id @default(cuid())
+  assetId         String
+  asset           Asset @relation(fields: [assetId], references: [id], onDelete: Cascade)
+  employeeId      String
+  employee        Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  checkOutDate    DateTime @default(now())
+  checkOutBy      String
+  checkInDate     DateTime?
+  checkInBy       String?
+  expectedReturnDate DateTime?
+  returnCondition AssetCondition?
+  notes           String?
+  // Treasury Digital Signature
+  digitalSignature String? // Base64 signature image
+  employeeAcknowledgment Boolean @default(false)
+  acknowledgedValue Float? // Employee acknowledged they're responsible for this value
+  signedAt        DateTime?
+  signatureIp     String?
+  // Payroll Deduction Tracking
+  isOverdue       Boolean @default(false)
+  overdueDate     DateTime?
+  payrollFlagged  Boolean @default(false)
+  payrollFlaggedDate DateTime?
+  deductionAmount Float?
+  deductionApplied Boolean @default(false)
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model MaintenanceRecord {
-  id                  String    @id @default(cuid())
-  assetId             String
-  maintenanceType     String
-  scheduledDate       DateTime?
-  completedDate       DateTime?
-  performedBy         String?
-  cost                Float?
-  description         String?
-  notes               String?
-  status              String    @default("SCHEDULED")
+      assets Asset[] @relation("MaintenanceAssets")
+      accessEvents AccessEvent[] @relation("AccessEventMaintenanceRecords")
+      prophecies Prophecy[] @relation("ProphecyMaintenanceRecords")
+      assignedAssets Asset[] @relation("AssignedAssets")
+    employees Employee[] @relation("MaintenanceEmployees")
+    assignedToId String?
+    employee Employee? @relation("MaintenanceAssignedTo", fields: [assignedToId], references: [id])
+  id              String   @id @default(cuid())
+  assetId         String
+  asset           Asset @relation("MaintenanceAsset", fields: [assetId], references: [id], onDelete: Cascade)
+  maintenanceType MaintenanceType
+  scheduledDate   DateTime?
+  completedDate   DateTime?
+  performedBy     String?
+  cost            Float?
+  description     String?
+  notes           String?
+  status          MaintenanceStatus @default(SCHEDULED)
   nextMaintenanceDate DateTime?
-  userId              String
-  createdAt           DateTime  @default(now())
-  updatedAt           DateTime  @updatedAt
-
-  asset Asset @relation(fields: [assetId], references: [id], onDelete: Cascade)
-  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model PayrollDeduction {
-  id            String    @id @default(cuid())
-  employeeId    String
-  assetId       String?
-  assignmentId  String?
-  deductionType String
-  amount        Float
-  reason        String
-  status        String    @default("PENDING")
-  scheduledDate DateTime
-  appliedDate   DateTime?
-  approvedBy    String?
-  approvedDate  DateTime?
-  notes         String?
-  userId        String
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-
-  employee    Employee     @relation(fields: [employeeId], references: [id], onDelete: Cascade)
-  asset       Asset?       @relation(fields: [assetId], references: [id], onDelete: SetNull)
-  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
-  merchOrders MerchOrder[]
+  id              String   @id @default(cuid())
+  employeeId      String
+  employee        Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  assetId         String?
+  asset           Asset? @relation(fields: [assetId], references: [id], onDelete: SetNull)
+  assignmentId    String?
+  deductionType   DeductionType
+  amount          Float
+  reason          String
+  status          DeductionStatus @default(PENDING)
+  scheduledDate   DateTime // When to apply the deduction
+  appliedDate     DateTime?
+  approvedBy      String?
+  approvedDate    DateTime?
+  notes           String?
+  merchOrder      MerchOrder?
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
-// ============================================================================
-// SENTINEL - VISITOR MANAGEMENT
-// ============================================================================
-
+// Visitor Management Models
 model Visitor {
   id              String   @id @default(cuid())
   firstName       String
@@ -685,585 +747,1166 @@ model Visitor {
   phone           String?
   company         String?
   photoUrl        String?
-  idNumber        String?
+  idNumber        String? // Driver's license, passport, etc.
   idType          String?
   vehiclePlate    String?
   notes           String?
-  isWatchlist     Boolean  @default(false)
+  isWatchlist     Boolean @default(false)
   watchlistReason String?
-  isVIP           Boolean  @default(false)
+  isVIP           Boolean @default(false)
+  visits          VisitorLog[]
+  badges          VisitorBadge[]
+  accessEvents    AccessEvent[]
+  badgeCredentials BadgeCredential[]
   userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
-
-  user             User              @relation(fields: [userId], references: [id], onDelete: Cascade)
-  visitorLogs      VisitorLog[]
-  visitorBadges    VisitorBadge[]
-  badgeCredentials BadgeCredential[] @relation("VisitorBadge")
-  accessEvents     AccessEvent[]
 }
 
 model VisitorLog {
-  id                 String    @id @default(cuid())
-  visitorId          String
-  hostEmployeeId     String?
-  hostName           String?
-  purpose            String
-  checkInTime        DateTime  @default(now())
-  checkOutTime       DateTime?
-  expectedDuration   Int?
-  actualDuration     Int?
-  building           String?
-  location           String?
-  badgeNumber        String?
-  entryMethod        String    @default("MANUAL")
-  temperature        Float?
-  healthScreenPassed Boolean   @default(true)
-  ndaSigned          Boolean   @default(false)
-  ndaSignature       String?
-  photoTaken         Boolean   @default(false)
-  photoUrl           String?
-  accessAreas        Json?
-  devicesSurrendered Json?
-  emergencyContact   String?
-  emergencyPhone     String?
-  status             String    @default("CHECKED_IN")
-  hostNotified       Boolean   @default(false)
-  hostNotifiedAt     DateTime?
-  importSource       String?
-  importId           String?
-  userId             String
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
-
-  visitor      Visitor   @relation(fields: [visitorId], references: [id], onDelete: Cascade)
-  hostEmployee Employee? @relation(fields: [hostEmployeeId], references: [id], onDelete: SetNull)
-  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id              String   @id @default(cuid())
+  visitorId       String
+  visitor         Visitor @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  hostEmployeeId  String?
+  hostEmployee    Employee? @relation(fields: [hostEmployeeId], references: [id], onDelete: SetNull)
+  hostName        String? // In case host is not an employee
+  purpose         String
+  checkInTime     DateTime @default(now())
+  checkOutTime    DateTime?
+  expectedDuration Int? // In minutes
+  actualDuration  Int? // Calculated on checkout
+  building        String?
+  location        String?
+  badgeNumber     String?
+  entryMethod     EntryMethod @default(MANUAL)
+  temperature     Float? // For health screening
+  healthScreenPassed Boolean @default(true)
+  ndaSigned       Boolean @default(false)
+  ndaSignature    String? // Base64 signature
+  photoTaken      Boolean @default(false)
+  photoUrl        String?
+  accessAreas     Json? // Array of allowed areas
+  devicesSurrendered Json? // List of devices left at desk
+  emergencyContact String?
+  emergencyPhone  String?
+  status          VisitorStatus @default(CHECKED_IN)
+  hostNotified    Boolean @default(false)
+  hostNotifiedAt  DateTime?
+  importSource    String? // "Tally", "GoogleForms", "Manual", etc.
+  importId        String? // Original ID from import source
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model VisitorBadge {
-  id           String    @id @default(cuid())
-  visitorId    String
-  badgeNumber  String    @unique
-  qrCode       String?
-  issuedDate   DateTime  @default(now())
-  returnedDate DateTime?
-  status       String    @default("ACTIVE")
-  badgeType    String?
-  userId       String
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
-
-  visitor Visitor @relation(fields: [visitorId], references: [id], onDelete: Cascade)
-  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id              String   @id @default(cuid())
+  visitorId       String
+  visitor         Visitor @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  badgeNumber     String @unique
+  qrCode          String? // QR code for quick checkout
+  issuedDate      DateTime @default(now())
+  returnedDate    DateTime?
+  status          BadgeStatus @default(ACTIVE)
+  badgeType       String? // "Visitor", "Contractor", "VIP", etc.
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model VisitorWatchlist {
-  id        String    @id @default(cuid())
-  name      String
-  email     String?
-  phone     String?
-  idNumber  String?
-  reason    String
-  severity  String
-  addedBy   String
-  expiresAt DateTime?
-  notes     String?
-  isActive  Boolean   @default(true)
-  userId    String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id              String   @id @default(cuid())
+  name            String
+  email           String?
+  phone           String?
+  idNumber        String?
+  reason          String
+  severity        WatchlistSeverity
+  addedBy         String
+  expiresAt       DateTime?
+  notes           String?
+  isActive        Boolean @default(true)
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
-// ============================================================================
-// SECURITY SYSTEMS
-// ============================================================================
-
+// Security System Models
 model SecurityCamera {
-  id            String    @id @default(cuid())
-  name          String
-  location      String
-  building      String?
-  floor         String?
-  cameraType    String
-  manufacturer  String?
-  model         String?
-  ipAddress     String?
-  rtspUrl       String?
-  hlsUrl        String?
-  recordingUrl  String?
-  status        String    @default("ONLINE")
-  isRecording   Boolean   @default(true)
-  hasPTZ        Boolean   @default(false)
-  hasAudio      Boolean   @default(false)
-  resolution    String?
-  fps           Int?
-  fieldOfView   String?
-  coverageArea  String?
-  lastOnline    DateTime?
-  alertsEnabled Boolean   @default(true)
-  userId        String
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-
-  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
-  doors          Door[]
-  accessEvents   AccessEvent[]
-  securityAlerts SecurityAlert[]
-}
-
-model AccessControlSystem {
-  id           String    @id @default(cuid())
-  name         String
-  systemType   String
-  manufacturer String?
-  model        String?
-  ipAddress    String?
-  apiEndpoint  String?
-  apiKey       String?
-  status       String    @default("ONLINE")
-  lastSync     DateTime?
-  userId       String
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
-
-  user  User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-  doors Door[]
-}
-
-model Door {
-  id              String    @id @default(cuid())
+  id              String   @id @default(cuid())
   name            String
   location        String
   building        String?
   floor           String?
-  doorType        String
-  accessSystemId  String?
-  cameraId        String?
-  status          String    @default("CLOSED")
-  isLocked        Boolean   @default(true)
-  requiresBadge   Boolean   @default(true)
-  allowedRoles    Json?
-  emergencyUnlock Boolean   @default(false)
-  lastAccess      DateTime?
+  cameraType      CameraType
+  manufacturer    String? // Axis, Hikvision, Dahua, etc.
+  model           String?
+  ipAddress       String?
+  rtspUrl         String? // Live stream URL
+  hlsUrl          String? // HTTP Live Streaming URL
+  recordingUrl    String? // Playback/archive URL
+  status          DeviceStatus @default(ONLINE)
+  isRecording     Boolean @default(true)
+  hasPTZ          Boolean @default(false) // Pan-Tilt-Zoom
+  hasAudio        Boolean @default(false)
+  resolution      String? // "1080p", "4K", etc.
+  fps             Int? // Frames per second
+  fieldOfView     String? // e.g., "Wide", "90°", etc.
+  coverageArea    String? // Description of what it covers
+  lastOnline      DateTime?
+  alertsEnabled   Boolean @default(true)
+  accessEvents    AccessEvent[]
+  securityAlerts  SecurityAlert[]
+  doors           Door[]
   userId          String
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
 
-  accessSystem  AccessControlSystem? @relation(fields: [accessSystemId], references: [id], onDelete: SetNull)
-  camera        SecurityCamera?      @relation(fields: [cameraId], references: [id], onDelete: SetNull)
-  user          User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
-  accessEvents  AccessEvent[]
-  doorSchedules DoorSchedule[]
+model AccessControlSystem {
+  id              String   @id @default(cuid())
+  name            String
+  systemType      AccessSystemType
+  manufacturer    String? // HID, Lenel, Honeywell, Brivo, etc.
+  model           String?
+  ipAddress       String?
+  apiEndpoint     String?
+  apiKey          String?
+  status          DeviceStatus @default(ONLINE)
+  lastSync        DateTime?
+  doors           Door[]
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Door {
+  id              String   @id @default(cuid())
+  name            String
+  location        String
+  building        String?
+  floor           String?
+  doorType        DoorType
+  accessSystemId  String?
+  accessSystem    AccessControlSystem? @relation(fields: [accessSystemId], references: [id], onDelete: SetNull)
+  cameraId        String?
+  camera          SecurityCamera? @relation(fields: [cameraId], references: [id], onDelete: SetNull)
+  status          DoorStatus @default(CLOSED)
+  isLocked        Boolean @default(true)
+  requiresBadge   Boolean @default(true)
+  allowedRoles    Json? // Array of roles/groups
+  emergencyUnlock Boolean @default(false) // Fire alarm auto-unlock
+  lastAccess      DateTime?
+  accessEvents    AccessEvent[]
+  schedules       DoorSchedule[]
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model AccessEvent {
-  id           String   @id @default(cuid())
-  doorId       String
-  employeeId   String?
-  visitorId    String?
-  badgeNumber  String?
-  eventType    String
-  status       String
-  timestamp    DateTime @default(now())
-  cameraId     String?
-  photoUrl     String?
-  videoUrl     String?
-  deniedReason String?
-  method       String?
-  userId       String
-  createdAt    DateTime @default(now())
-
-  door     Door            @relation(fields: [doorId], references: [id], onDelete: Cascade)
-  employee Employee?       @relation(fields: [employeeId], references: [id], onDelete: SetNull)
-  visitor  Visitor?        @relation(fields: [visitorId], references: [id], onDelete: SetNull)
-  camera   SecurityCamera? @relation(fields: [cameraId], references: [id], onDelete: SetNull)
-  user     User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+    maintenanceRecords     MaintenanceRecord[] @relation("AccessEventMaintenanceRecords")
+  employee Employee? @relation("AccessEventEmployee", fields: [employeeId], references: [id])
+  id              String   @id @default(cuid())
+  doorId          String
+  door            Door @relation(fields: [doorId], references: [id], onDelete: Cascade)
+  employeeId      String?
+  assignedToId    String?
+  assignedTo      Employee? @relation("AccessEventAssignedTo", fields: [assignedToId], references: [id], onDelete: SetNull)
+  visitorId       String?
+  visitor         Visitor? @relation(fields: [visitorId], references: [id], onDelete: SetNull)
+  badgeNumber     String?
+  eventType       AccessEventType
+  status          AccessStatus
+  timestamp       DateTime @default(now())
+  cameraId        String?
+  camera          SecurityCamera? @relation(fields: [cameraId], references: [id], onDelete: SetNull)
+  photoUrl        String? // Photo captured at access attempt
+  videoUrl        String? // Video clip URL
+  deniedReason    String?
+  method          String? // "Badge", "PIN", "Biometric", "Mobile", etc.
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
 }
 
 model DoorSchedule {
-  id            String   @id @default(cuid())
-  doorId        String
-  name          String
-  dayOfWeek     Json
-  startTime     String
-  endTime       String
-  isUnlocked    Boolean  @default(false)
-  allowedGroups Json?
-  isActive      Boolean  @default(true)
-  userId        String
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-
-  door Door @relation(fields: [doorId], references: [id], onDelete: Cascade)
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id              String   @id @default(cuid())
+  doorId          String
+  door            Door @relation(fields: [doorId], references: [id], onDelete: Cascade)
+  name            String
+  dayOfWeek       Json // Array like ["Monday", "Tuesday"]
+  startTime       String // "08:00"
+  endTime         String // "18:00"
+  isUnlocked      Boolean @default(false) // Unlocked during this time
+  allowedGroups   Json? // Array of allowed employee groups
+  isActive        Boolean @default(true)
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model SecurityAlert {
-  id             String    @id @default(cuid())
-  alertType      String
-  severity       String
-  title          String
-  description    String
-  doorId         String?
-  cameraId       String?
-  employeeId     String?
-  visitorId      String?
-  timestamp      DateTime  @default(now())
-  acknowledgedBy String?
-  acknowledgedAt DateTime?
-  resolvedBy     String?
-  resolvedAt     DateTime?
-  status         String    @default("ACTIVE")
-  photoUrl       String?
-  videoUrl       String?
-  notes          String?
-  userId         String
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
-
-  camera SecurityCamera? @relation(fields: [cameraId], references: [id], onDelete: SetNull)
-  user   User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id              String   @id @default(cuid())
+  alertType       AlertType
+  severity        AlertSeverity
+  title           String
+  description     String
+  doorId          String?
+  cameraId        String?
+  camera          SecurityCamera? @relation(fields: [cameraId], references: [id], onDelete: SetNull)
+  employeeId      String?
+  visitorId       String?
+  timestamp       DateTime @default(now())
+  acknowledgedBy  String?
+  acknowledgedAt  DateTime?
+  resolvedBy      String?
+  resolvedAt      DateTime?
+  status          AlertStatus @default(ACTIVE)
+  photoUrl        String?
+  videoUrl        String?
+  notes           String?
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model BadgeCredential {
-  id               String    @id @default(cuid())
-  employeeId       String?
-  visitorId        String?
-  badgeNumber      String    @unique
-  cardFormat       String?
-  facilityCode     String?
-  cardNumber       String?
-  qrCode           String?
-  mobileCredential String?
-  isActive         Boolean   @default(true)
-  activatedDate    DateTime  @default(now())
-  expirationDate   DateTime?
-  accessLevel      String?
-  allowedDoors     Json?
-  allowedAreas     Json?
-  deactivatedBy    String?
-  deactivatedAt    DateTime?
-  userId           String
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
-
-  employee Employee? @relation("EmployeeBadge", fields: [employeeId], references: [id], onDelete: SetNull)
-  visitor  Visitor?  @relation("VisitorBadge", fields: [visitorId], references: [id], onDelete: SetNull)
-  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id              String   @id @default(cuid())
+  employeeId      String?
+  employee        Employee? @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  visitorId       String?
+  visitor         Visitor? @relation(fields: [visitorId], references: [id], onDelete: Cascade)
+  badgeNumber     String @unique
+  cardFormat      String? // "26-bit Wiegand", "125kHz Prox", etc.
+  facilityCode    String?
+  cardNumber      String?
+  qrCode          String?
+  mobileCredential String? // For phone-based access
+  isActive        Boolean @default(true)
+  activatedDate   DateTime @default(now())
+  expirationDate  DateTime?
+  accessLevel     String? // "Employee", "Contractor", "Visitor", "Executive"
+  allowedDoors    Json? // Array of door IDs
+  allowedAreas    Json? // Array of area names
+  deactivatedBy   String?
+  deactivatedAt   DateTime?
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
-// ============================================================================
-// ORACLE - PREDICTIVE AI & ANALYTICS
-// ============================================================================
-
+// Oracle - Predictive AI Analytics Models
 model Prophecy {
-  id               String    @id @default(cuid())
-  prophecyType     String
-  severity         String
-  title            String
-  prediction       String
-  confidence       Float
+    maintenanceRecords     MaintenanceRecord[] @relation("ProphecyMaintenanceRecords")
+  id              String   @id @default(cuid())
+  prophecyType    ProphecyType
+  severity        ProphecySeverity
+  title           String
+  prediction      String // The main prophecy text
+  confidence      Float // 0-100 confidence score
   targetEmployeeId String?
+  targetEmployee  Employee? @relation("ProphecyTargetEmployee", fields: [targetEmployeeId], references: [id], onDelete: Cascade)
   targetDepartment String?
-  targetShiftId    String?
-  impactDate       DateTime?
-  dataPoints       Json
-  recommendations  Json
-  status           String    @default("ACTIVE")
-  acknowledgedBy   String?
-  acknowledgedAt   DateTime?
-  outcome          String?
-  actualDate       DateTime?
-  notes            String?
-  userId           String
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
-
-  targetEmployee Employee? @relation(fields: [targetEmployeeId], references: [id], onDelete: SetNull)
-  shift          Shift?    @relation(fields: [targetShiftId], references: [id], onDelete: SetNull)
-  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  targetShiftId   String?
+  impactDate      DateTime? // When this is predicted to happen
+  dataPoints      Json // Supporting data that led to this prediction
+  recommendations Json // Array of suggested actions
+  status          ProphecyStatus @default(ACTIVE)
+  acknowledgedBy  String?
+  acknowledgedAt  DateTime?
+  outcome         ProphecyOutcome?
+  actualDate      DateTime?
+  notes           String?
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model RiskScore {
-  id             String   @id @default(cuid())
-  employeeId     String
-  riskType       String
-  score          Float
-  factors        Json
-  trend          String
-  lastCalculated DateTime @default(now())
-  history        Json?
-  userId         String
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
-
-  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
-  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id              String   @id @default(cuid())
+  employeeId      String
+  employee        Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  riskType        RiskType
+  score           Float // 0-100 risk score
+  factors         Json // Array of contributing factors
+  trend           String // "INCREASING", "STABLE", "DECREASING"
+  lastCalculated  DateTime @default(now())
+  history         Json? // Historical scores for trending
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model PredictiveInsight {
-  id               String   @id @default(cuid())
-  insightType      String
-  category         String
-  title            String
-  description      String
-  impact           String
-  likelihood       Float
-  affectedCount    Int?
-  costImpact       Float?
-  timeframe        String
-  dataSource       Json
-  actionRequired   Boolean  @default(false)
+  id              String   @id @default(cuid())
+  insightType     InsightType
+  category        String
+  title           String
+  description     String
+  impact          InsightImpact
+  likelihood      Float // 0-100 probability
+  affectedCount   Int? // Number of employees/shifts affected
+  costImpact      Float? // Predicted financial impact
+  timeframe       String // "This Week", "Next 7 Days", "This Month"
+  dataSource      Json // What data was analyzed
+  actionRequired  Boolean @default(false)
   suggestedActions Json?
-  priority         Int      @default(50)
-  viewedBy         Json?
-  userId           String
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  priority        Int @default(50) // 0-100 priority score
+  viewedBy        Json? // Array of user IDs who viewed it
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
-// ============================================================================
-// GUILD - GAMIFICATION SYSTEM
-// ============================================================================
-
+// Guild - Gamified Learning & Culture Models
 model GuildMember {
-  id            String   @id @default(cuid())
-  employeeId    String   @unique
-  currentLevel  Int      @default(1)
-  levelName     String   @default("Novice")
-  totalXP       Int      @default(0)
-  currentXP     Int      @default(0)
-  xpToNextLevel Int      @default(100)
-  rank          Int?
-  title         String?
-  avatarUrl     String?
-  badges        Json     @default("[]")
-  streak        Int      @default(0)
-  longestStreak Int      @default(0)
-  lastActivity  DateTime @default(now())
-  userId        String
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-
-  employee             Employee              @relation(fields: [employeeId], references: [id], onDelete: Cascade)
-  user                 User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
-  xpTransactions       XPTransaction[]
-  employeeAchievements EmployeeAchievement[]
-  rewardPurchases      RewardPurchase[]
+  id              String   @id @default(cuid())
+  employeeId      String @unique
+  employee        Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  currentLevel    Int @default(1) // 1-100
+  levelName       String @default("Novice") // Novice, Apprentice, Journeyman, Expert, Master, Grandmaster
+  totalXP         Int @default(0)
+  currentXP       Int @default(0) // XP in current level
+  xpToNextLevel   Int @default(100)
+  rank            Int? // Leaderboard position
+  title           String? // Custom title earned
+  avatarUrl       String?
+  badges          Json @default("[]") // Array of badge IDs
+  streak          Int @default(0) // Current on-time clock-in streak
+  longestStreak   Int @default(0)
+  lastActivity    DateTime @default(now())
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  xpTransactions  XPTransaction[]
+  achievements    EmployeeAchievement[]
+  rewardPurchases RewardPurchase[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model XPTransaction {
-  id            String   @id @default(cuid())
-  guildMemberId String
-  amount        Int
-  type          String
-  source        String
-  relatedId     String?
-  multiplier    Float    @default(1.0)
-  createdAt     DateTime @default(now())
-
-  guildMember GuildMember @relation(fields: [guildMemberId], references: [id], onDelete: Cascade)
+  id              String   @id @default(cuid())
+  guildMemberId   String
+  guildMember     GuildMember @relation(fields: [guildMemberId], references: [id], onDelete: Cascade)
+  amount          Int // Can be positive or negative
+  type            XPTransactionType
+  source          String // Description of what earned/spent it
+  relatedId       String? // ID of related entity (shift, training, etc.)
+  multiplier      Float @default(1.0) // Bonus multipliers for events
+  createdAt       DateTime @default(now())
 }
 
 model Achievement {
-  id          String   @id @default(cuid())
-  name        String
-  description String
-  icon        String
-  category    String
-  rarity      String
-  xpReward    Int
-  requirement Json
-  hidden      Boolean  @default(false)
-  userId      String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  user                 User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
-  employeeAchievements EmployeeAchievement[]
+  id              String   @id @default(cuid())
+  name            String
+  description     String
+  icon            String // Icon name or emoji
+  category        AchievementCategory
+  rarity          AchievementRarity
+  xpReward        Int
+  requirement     Json // Conditions to unlock
+  hidden          Boolean @default(false) // Secret achievements
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  unlocks         EmployeeAchievement[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model EmployeeAchievement {
-  id            String   @id @default(cuid())
-  guildMemberId String
-  achievementId String
-  unlockedAt    DateTime @default(now())
-  progress      Float?
-
-  guildMember GuildMember @relation(fields: [guildMemberId], references: [id], onDelete: Cascade)
-  achievement Achievement @relation(fields: [achievementId], references: [id], onDelete: Cascade)
-
+  id              String   @id @default(cuid())
+  guildMemberId   String
+  guildMember     GuildMember @relation(fields: [guildMemberId], references: [id], onDelete: Cascade)
+  achievementId   String
+  achievement     Achievement @relation(fields: [achievementId], references: [id], onDelete: Cascade)
+  unlockedAt      DateTime @default(now())
+  progress        Float? // For progressive achievements
+  
   @@unique([guildMemberId, achievementId])
 }
 
 model Reward {
-  id                     String    @id @default(cuid())
-  name                   String
-  description            String
-  category               String
-  xpCost                 Int
-  stockQuantity          Int?
-  imageUrl               String?
-  isActive               Boolean   @default(true)
-  expiresAt              DateTime?
-  redemptionCode         String?
+  id              String   @id @default(cuid())
+  name            String
+  description     String
+  category        RewardCategory
+  xpCost          Int
+  stockQuantity   Int? // null = unlimited
+  imageUrl        String?
+  isActive        Boolean @default(true)
+  expiresAt       DateTime?
+  redemptionCode  String? // For gift cards
   redemptionInstructions String?
-  userId                 String
-  createdAt              DateTime  @default(now())
-  updatedAt              DateTime  @updatedAt
-
-  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  rewardPurchases RewardPurchase[]
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  purchases       RewardPurchase[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model RewardPurchase {
-  id             String    @id @default(cuid())
-  guildMemberId  String
-  rewardId       String
-  xpSpent        Int
-  status         String    @default("PENDING")
-  redemptionCode String?
-  redeemedAt     DateTime?
-  notes          String?
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
-
-  guildMember GuildMember @relation(fields: [guildMemberId], references: [id], onDelete: Cascade)
-  reward      Reward      @relation(fields: [rewardId], references: [id], onDelete: Cascade)
+  id              String   @id @default(cuid())
+  guildMemberId   String
+  guildMember     GuildMember @relation(fields: [guildMemberId], references: [id], onDelete: Cascade)
+  rewardId        String
+  reward          Reward @relation(fields: [rewardId], references: [id], onDelete: Cascade)
+  xpSpent         Int
+  status          RewardStatus @default(PENDING)
+  redemptionCode  String?
+  redeemedAt      DateTime?
+  notes           String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model Quest {
-  id             String    @id @default(cuid())
-  title          String
-  description    String
-  questType      String
-  difficulty     String
-  xpReward       Int
-  objectives     Json
-  timeLimit      DateTime?
-  isActive       Boolean   @default(true)
-  isRepeatable   Boolean   @default(false)
-  repeatInterval String?
-  userId         String
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
-
-  user             User              @relation(fields: [userId], references: [id], onDelete: Cascade)
-  questCompletions QuestCompletion[]
+  id              String   @id @default(cuid())
+  title           String
+  description     String
+  questType       QuestType
+  difficulty      QuestDifficulty
+  xpReward        Int
+  objectives      Json // Array of objectives
+  timeLimit       DateTime? // Optional deadline
+  isActive        Boolean @default(true)
+  isRepeatable    Boolean @default(false)
+  repeatInterval  String? // "daily", "weekly", "monthly"
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  completions     QuestCompletion[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model QuestCompletion {
-  id          String    @id @default(cuid())
-  questId     String
-  employeeId  String
-  progress    Json
-  completedAt DateTime?
-  xpAwarded   Int?
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-
-  quest    Quest    @relation(fields: [questId], references: [id], onDelete: Cascade)
-  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  id              String   @id @default(cuid())
+  questId         String
+  quest           Quest @relation(fields: [questId], references: [id], onDelete: Cascade)
+  employeeId      String
+  employee        Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  progress        Json // Current progress on objectives
+  completedAt     DateTime?
+  xpAwarded       Int?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
-// ============================================================================
-// MERCH STORE INTEGRATION
-// ============================================================================
-
+// Merch Store Integration Models
 model MerchStore {
-  id            String    @id @default(cuid())
-  name          String
-  platform      String
-  storeUrl      String?
-  apiKey        String?
-  apiSecret     String?
-  webhookSecret String?
-  webhookUrl    String?
-  isActive      Boolean   @default(true)
-  syncEnabled   Boolean   @default(true)
-  lastSyncAt    DateTime?
-  settings      Json?
-  userId        String
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-
-  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
-  merchItems  MerchItem[]
-  merchOrders MerchOrder[]
+  id              String   @id @default(cuid())
+  name            String
+  platform        MerchPlatform
+  storeUrl        String?
+  apiKey          String? // Encrypted
+  apiSecret       String? // Encrypted
+  webhookSecret   String? // For validating webhooks
+  webhookUrl      String? // Our webhook endpoint
+  isActive        Boolean @default(true)
+  syncEnabled     Boolean @default(true)
+  lastSyncAt      DateTime?
+  settings        Json? // Platform-specific settings
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items           MerchItem[]
+  orders          MerchOrder[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model MerchItem {
-  id               String   @id @default(cuid())
-  storeId          String
-  externalId       String
-  sku              String?
-  name             String
-  description      String?
-  category         String?
-  price            Float
-  imageUrl         String?
-  images           Json?
-  variants         Json?
-  stockQuantity    Int?
-  isActive         Boolean  @default(true)
-  tags             Json?
-  redeemableWithXP Boolean  @default(false)
-  xpCost           Int?
-  metadata         Json?
-  userId           String
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
-
-  store           MerchStore       @relation(fields: [storeId], references: [id], onDelete: Cascade)
-  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  merchOrderItems MerchOrderItem[]
-
+  id              String   @id @default(cuid())
+  storeId         String
+  store           MerchStore @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  externalId      String // Product ID from external platform
+  sku             String?
+  name            String
+  description     String?
+  category        String?
+  price           Float
+  imageUrl        String?
+  images          Json? // Array of additional image URLs
+  variants        Json? // Size, color, etc.
+  stockQuantity   Int?
+  isActive        Boolean @default(true)
+  tags            Json? // Array of tags
+  redeemableWithXP Boolean @default(false) // Can use Guild XP
+  xpCost          Int? // If redeemable with XP
+  metadata        Json? // Additional platform data
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  orderItems      MerchOrderItem[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
   @@unique([storeId, externalId])
 }
 
 model MerchOrder {
-  id                 String    @id @default(cuid())
-  storeId            String
-  employeeId         String
-  orderNumber        String    @unique
-  externalOrderId    String?
-  paymentMethod      String
-  totalAmount        Float
-  xpSpent            Int?
-  status             String    @default("PENDING")
-  shippingAddress    Json?
-  trackingNumber     String?
-  trackingUrl        String?
-  notes              String?
-  payrollDeductionId String?   @unique
-  fulfilledAt        DateTime?
-  cancelledAt        DateTime?
-  userId             String
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
-
-  store            MerchStore        @relation(fields: [storeId], references: [id], onDelete: Cascade)
-  employee         Employee          @relation(fields: [employeeId], references: [id], onDelete: Cascade)
-  payrollDeduction PayrollDeduction? @relation(fields: [payrollDeductionId], references: [id], onDelete: SetNull)
-  user             User              @relation(fields: [userId], references: [id], onDelete: Cascade)
-  merchOrderItems  MerchOrderItem[]
+  id              String   @id @default(cuid())
+  storeId         String
+  store           MerchStore @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  employeeId      String
+  employee        Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  orderNumber     String @unique
+  externalOrderId String? // Order ID from external platform
+  paymentMethod   MerchPaymentMethod
+  totalAmount     Float
+  xpSpent         Int? // If paid with XP
+  status          MerchOrderStatus @default(PENDING)
+  shippingAddress Json?
+  trackingNumber  String?
+  trackingUrl     String?
+  notes           String?
+  payrollDeduction PayrollDeduction? @relation(fields: [payrollDeductionId], references: [id])
+  payrollDeductionId String? @unique
+  fulfilledAt     DateTime?
+  cancelledAt     DateTime?
+  userId          String
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items           MerchOrderItem[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 model MerchOrderItem {
-  id          String   @id @default(cuid())
-  orderId     String
-  itemId      String
-  quantity    Int
-  unitPrice   Float
-  variantInfo Json?
-  subtotal    Float
-  createdAt   DateTime @default(now())
-
-  order MerchOrder @relation(fields: [orderId], references: [id], onDelete: Cascade)
-  item  MerchItem  @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  id              String   @id @default(cuid())
+  orderId         String
+  order           MerchOrder @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  itemId          String
+  item            MerchItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  quantity        Int
+  unitPrice       Float
+  variantInfo     Json? // Selected size, color, etc.
+  subtotal        Float
+  createdAt       DateTime @default(now())
 }
+
+// Enums for time tracking
+enum ClockStatus {
+  CLOCKED_IN
+  CLOCKED_OUT
+  ON_BREAK
+  MISSED_PUNCH
+  EDITED
+}
+
+enum BreakType {
+  MEAL
+  REST
+  UNPAID
+}
+
+enum AttendanceStatus {
+  PRESENT
+  ABSENT
+  LATE
+  HALF_DAY
+  SICK
+  VACATION
+  PERSONAL
+  EXCUSED
+  UNEXCUSED
+}
+
+enum ComplianceType {
+  MEAL_BREAK
+  REST_BREAK
+  OVERTIME_LIMIT
+  CONSECUTIVE_HOURS
+  WEEKLY_HOURS
+  MINOR_HOURS
+  CUSTOM
+}
+
+enum ViolationSeverity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum ViolationStatus {
+  OPEN
+  ACKNOWLEDGED
+  RESOLVED
+  DISMISSED
+}
+
+enum HRTaskType {
+  CHECK_IN
+  SURVEY
+  REVIEW
+  ONBOARDING
+  OFFBOARDING
+  TRAINING
+  DOCUMENT
+  COMPLIANCE
+  CUSTOM
+}
+
+enum TaskPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum TaskStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  OVERDUE
+  CANCELLED
+}
+
+enum SurveyType {
+  ONBOARDING
+  SATISFACTION
+  ENGAGEMENT
+  EXIT
+  PULSE
+  PATIENT_SATISFACTION
+  EMPLOYEE_ENGAGEMENT
+  CULTURE_OF_SAFETY
+  EXIT_INTERVIEW
+  ONBOARDING_FEEDBACK
+  TRAINING_EVALUATION
+  INCIDENT_REPORT
+  SUGGESTION
+  COMPLAINT
+  PERFORMANCE_REVIEW
+  CUSTOM
+}
+
+enum AutomationTrigger {
+  HIRE_DATE
+  ANNIVERSARY
+  TIME_INTERVAL
+  SURVEY_SCHEDULED
+  REVIEW_DUE
+  CUSTOM_DATE
+}
+
+enum AutomationAction {
+  CREATE_TASK
+  SEND_SURVEY
+  SCHEDULE_CHECKIN
+  SEND_NOTIFICATION
+  CREATE_REVIEW
+  UPDATE_STATUS
+}
+
+enum ReviewStatus {
+  DRAFT
+  PENDING
+  COMPLETED
+  CANCELLED
+}
+
+enum OnboardingStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+  DELAYED
+}
+
+enum OnboardingType {
+  ADMIN
+  EMPLOYEE
+  MANAGER
+  CUSTOM
+}
+
+enum AssetStatus {
+  AVAILABLE
+  ASSIGNED
+  IN_MAINTENANCE
+  RETIRED
+  LOST
+  DAMAGED
+}
+
+enum AssetCondition {
+  EXCELLENT
+  GOOD
+  FAIR
+  POOR
+  DAMAGED
+}
+
+enum MaintenanceType {
+  PREVENTIVE
+  CORRECTIVE
+  INSPECTION
+  UPGRADE
+  REPAIR
+  CLEANING
+}
+
+enum MaintenanceStatus {
+  SCHEDULED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  OVERDUE
+}
+
+enum DeductionType {
+  UNRETURNED_ASSET
+  DAMAGED_ASSET
+  LOST_ASSET
+  LATE_RETURN
+  UNIFORM
+  EQUIPMENT
+  OTHER
+}
+
+enum DeductionStatus {
+  PENDING
+  APPROVED
+  APPLIED
+  CANCELLED
+  DISPUTED
+}
+
+enum EntryMethod {
+  MANUAL
+  QR_CODE
+  BADGE_SCAN
+  TALLY_IMPORT
+  GOOGLE_FORM
+  MICROSOFT_FORM
+  API
+}
+
+enum VisitorStatus {
+  CHECKED_IN
+  CHECKED_OUT
+  ESCORTED
+  OVERDUE
+  DENIED
+}
+
+enum BadgeStatus {
+  ACTIVE
+  RETURNED
+  LOST
+  EXPIRED
+}
+
+enum WatchlistSeverity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum CameraType {
+  DOME
+  BULLET
+  PTZ
+  FISHEYE
+  THERMAL
+  LICENSE_PLATE
+  INDOOR
+  OUTDOOR
+}
+
+enum DeviceStatus {
+  ONLINE
+  OFFLINE
+  MAINTENANCE
+  ERROR
+}
+
+enum AccessSystemType {
+  HID
+  LENEL
+  HONEYWELL
+  BRIVO
+  OPENPATH
+  KISI
+  SALTO
+  GENETEC
+  OTHER
+}
+
+enum DoorType {
+  ENTRY
+  EXIT
+  INTERIOR
+  EMERGENCY
+  ELEVATOR
+  PARKING
+  RESTRICTED
+}
+
+enum DoorStatus {
+  CLOSED
+  OPEN
+  HELD_OPEN
+  FORCED_OPEN
+  ALARM
+}
+
+enum AccessEventType {
+  GRANTED
+  DENIED
+  TAILGATE
+  FORCED
+  PROPPED
+  EMERGENCY_UNLOCK
+}
+
+enum AccessStatus {
+  ALLOWED
+  DENIED_INVALID_BADGE
+  DENIED_EXPIRED
+  DENIED_NO_ACCESS
+  DENIED_TIME_RESTRICTION
+  DENIED_WATCHLIST
+  ALARM
+}
+
+enum AlertType {
+  DOOR_FORCED
+  DOOR_HELD_OPEN
+  TAILGATING
+  INVALID_ACCESS
+  CAMERA_OFFLINE
+  SYSTEM_ERROR
+  WATCHLIST_DETECTED
+  AFTER_HOURS_ACCESS
+  MULTIPLE_FAILED_ATTEMPTS
+}
+
+enum AlertSeverity {
+  INFO
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum AlertStatus {
+  ACTIVE
+  ACKNOWLEDGED
+  RESOLVED
+  FALSE_ALARM
+}
+
+enum ProphecyType {
+  FLIGHT_RISK
+  BURNOUT
+  OVERTIME_VIOLATION
+  STAFFING_SHORTAGE
+  PERFORMANCE_DECLINE
+  ATTENDANCE_ISSUE
+  TRAINING_LAPSE
+  COMPLIANCE_RISK
+  TURNOVER_SPIKE
+}
+
+enum ProphecySeverity {
+  INFO
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum ProphecyStatus {
+  ACTIVE
+  ACKNOWLEDGED
+  MONITORING
+  RESOLVED
+  PREVENTED
+}
+
+enum ProphecyOutcome {
+  ACCURATE
+  PREVENTED
+  FALSE_POSITIVE
+  MISSED
+}
+
+enum RiskType {
+  FLIGHT_RISK
+  BURNOUT_RISK
+  ATTENDANCE_RISK
+  PERFORMANCE_RISK
+  COMPLIANCE_RISK
+}
+
+enum InsightType {
+  SCHEDULING
+  STAFFING
+  PERFORMANCE
+  COMPLIANCE
+  COST
+  RETENTION
+}
+
+enum InsightImpact {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum XPTransactionType {
+  EARNED_CLOCK_IN
+  EARNED_ON_TIME
+  EARNED_TRAINING
+  EARNED_SHIFT_PICKUP
+  EARNED_PERFECT_WEEK
+  EARNED_SURVEY
+  EARNED_ACHIEVEMENT
+  EARNED_QUEST
+  EARNED_SHIFT_COVERAGE
+  EARNED_BONUS
+  SPENT_REWARD
+  ADJUSTED
+}
+
+enum AchievementCategory {
+  ATTENDANCE
+  TRAINING
+  PERFORMANCE
+  TEAMWORK
+  MILESTONE
+  SPECIAL
+}
+
+enum AchievementRarity {
+  COMMON
+  UNCOMMON
+  RARE
+  EPIC
+  LEGENDARY
+}
+
+enum RewardCategory {
+  GIFT_CARD
+  PTO
+  MERCHANDISE
+  PARKING
+  SCHEDULE_PRIORITY
+  FOOD
+  EXPERIENCE
+  CUSTOM
+}
+
+enum RewardStatus {
+  PENDING
+  APPROVED
+  FULFILLED
+  CANCELLED
+}
+
+enum QuestType {
+  DAILY
+  WEEKLY
+  MONTHLY
+  SPECIAL_EVENT
+  STORY
+}
+
+enum QuestDifficulty {
+  EASY
+  MEDIUM
+  HARD
+  EPIC
+}
+
+enum MerchPlatform {
+  PRINTFUL
+  WIX
+  SHOPIFY
+  WOOCOMMERCE
+  SQUARE
+  ETSY
+  CUSTOM_WEBHOOK
+}
+
+enum MerchPaymentMethod {
+  PAYROLL_DEDUCTION
+  GUILD_XP
+  MIXED // Part XP, part payroll
+}
+
+enum MerchOrderStatus {
+  PENDING
+  PROCESSING
+  FULFILLED
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+// Notifications
+model Notification {
+  id            String         @id @default(cuid())
+  userId        String
+  type          String
+  title         String
+  message       String
+  isRead        Boolean        @default(false)
+  createdAt     DateTime       @default(now())
+  
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// Survey Integrations
+model SurveyIntegration {
+  id                String              @id @default(cuid())
+  organizationId    String
+  platform          SurveyPlatform
+  apiKey            String? // Encrypted
+  accessToken       String? // Encrypted
+  refreshToken      String? // Encrypted
+  webhookUrl        String?
+  isActive          Boolean             @default(true)
+  syncFrequency     Int                 @default(15) // minutes
+  lastSyncAt        DateTime?
+  settings          Json? // Platform-specific settings
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  
+  responses         SurveyResponse[]
+  mappings          SurveyMapping[]
+}
+
+model SurveyMapping {
+  id                String              @id @default(cuid())
+  integrationId     String
+  externalSurveyId  String // ID from SurveyMonkey, Forms, etc
+  surveyName        String
+  surveyType        SurveyType
+  autoImport        Boolean             @default(true)
+  fieldMappings     Json? // Map external fields to internal fields
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  
+  integration       SurveyIntegration   @relation(fields: [integrationId], references: [id], onDelete: Cascade)
+  responses         SurveyResponse[]
+}
+
+model SurveyResponse {
+  id                String              @id @default(cuid())
+  integrationId     String
+  mappingId         String?
+  externalId        String // Response ID from external platform
+  employeeId        String?
+  respondentEmail   String?
+  respondentName    String?
+  surveyType        SurveyType
+  responses         Json // All Q&A pairs
+  score             Float? // For satisfaction scores
+  sentiment         String? // POSITIVE, NEUTRAL, NEGATIVE
+  tags              String[] // Auto-generated tags
+  isAnonymous       Boolean             @default(false)
+  submittedAt       DateTime
+  importedAt        DateTime            @default(now())
+  
+  integration       SurveyIntegration   @relation(fields: [integrationId], references: [id], onDelete: Cascade)
+  mapping           SurveyMapping?      @relation(fields: [mappingId], references: [id])
+  employee          Employee?           @relation(fields: [employeeId], references: [id])
+}
+
+// Custom Forms Builder
+model FormTemplate {
+  id                String              @id @default(cuid())
+  organizationId    String
+  createdBy         String // User ID
+  name              String
+  description       String?
+  category          FormCategory
+  isPublic          Boolean             @default(false) // Share across departments
+  fields            Json // Array of form fields
+  settings          Json? // Notifications, approvals, etc
+  version           Int                 @default(1)
+  isActive          Boolean             @default(true)
+  usageCount        Int                 @default(0)
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  
+  submissions       FormSubmission[]
+  sharedWith        FormTemplateShare[]
+}
+
+model FormTemplateShare {
+  id                String              @id @default(cuid())
+  templateId        String
+  sharedWithUserId  String?
+  sharedWithRole    String? // MANAGER, HR, ADMIN
+  sharedWithDept    String?
+  canEdit           Boolean             @default(false)
+  canDelete         Boolean             @default(false)
+  createdAt         DateTime            @default(now())
+  
+  template          FormTemplate        @relation(fields: [templateId], references: [id], onDelete: Cascade)
+}
+
+model FormSubmission {
+  id                String              @id @default(cuid())
+  templateId        String
+  submittedBy       String // User or Employee ID
+  submitterName     String
+  submitterEmail    String?
+  responses         Json // All field responses
+  status            FormSubmissionStatus @default(SUBMITTED)
+  approvedBy        String?
+  approvedAt        DateTime?
+  rejectedReason    String?
+  attachments       String[] // File URLs
+  submittedAt       DateTime            @default(now())
+  
+  template          FormTemplate        @relation(fields: [templateId], references: [id], onDelete: Cascade)
+}
+
+enum SurveyPlatform {
+  SURVEYMONKEY
+  MICROSOFT_FORMS
+  GOOGLE_FORMS
+  TYPEFORM
+  QUALTRICS
+  INTERNAL // Custom forms built in-app
+}
+
+enum FormCategory {
+  HR
+  COMPLIANCE
+  TRAINING
+  INCIDENT
+  TIME_OFF
+  PERFORMANCE
+  FEEDBACK
+  SURVEY
+  CUSTOM
+}
+
+enum FormSubmissionStatus {
+  DRAFT
+  SUBMITTED
+  IN_REVIEW
+  APPROVED
+  REJECTED
+  ARCHIVED
+}
+

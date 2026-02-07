@@ -32,7 +32,37 @@ export default function ChatBot() {
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [showQuickActions, setShowQuickActions] = useState(true);
+  const [customColor, setCustomColor] = useState('from-pink-600 to-purple-600');
+  const [customAvatar, setCustomAvatar] = useState('💬');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Load customization preferences
+  useEffect(() => {
+    const loadPreferences = () => {
+      const stored = localStorage.getItem('chatbotPreferences');
+      if (stored) {
+        const prefs = JSON.parse(stored);
+        if (prefs.titan) {
+          setCustomColor(prefs.titan.color || 'from-pink-600 to-purple-600');
+          setCustomAvatar(prefs.titan.avatar || '💬');
+        }
+      }
+    };
+
+    loadPreferences();
+
+    // Listen for preference changes
+    const handlePreferenceChange = (event: any) => {
+      const prefs = event.detail;
+      if (prefs?.titan) {
+        setCustomColor(prefs.titan.color || 'from-pink-600 to-purple-600');
+        setCustomAvatar(prefs.titan.avatar || '💬');
+      }
+    };
+
+    window.addEventListener('chatbotPreferencesChanged', handlePreferenceChange);
+    return () => window.removeEventListener('chatbotPreferencesChanged', handlePreferenceChange);
+  }, []);
 
   const quickActions: QuickAction[] = [
     { id: '1', label: 'Schedule Help', icon: <Clock className="w-4 h-4" />, description: 'Create, edit, or manage shifts' },
@@ -70,7 +100,7 @@ export default function ChatBot() {
 
     // Compliance & Labor Laws
     if (lowerMessage.includes('overtime') || lowerMessage.includes('hours worked')) {
-      return "Great question about overtime! 📊\n\nFederal (FLSA): 1.5x pay after 40 hours/week\n\nState variations:\n• California: Overtime after 8 hrs/day OR 40 hrs/week\n• Colorado: Overtime after 12 hrs/day OR 40 hrs/week\n• Nevada: Overtime after 8 hrs/day (if earning less than 1.5x minimum wage)\n\nI can help you set up overtime alerts in the scheduler!";
+      return "Great question about overtime! 📊\n\nFederal (FLSA): 1.5x pay after 40 hours/week\n\nState variations:\n• California: Overtime after 8 hrs/day OR 40 hrs/week\n• Colorado: Overtime after 12 hrs/day OR 40 hrs/week\n• Nevada: Overtime after 8 hrs/day (if earning less than 1.5x minimum wage)\n\nI can help you set up overtime alerts in NoxTitan!";
     }
 
     if (lowerMessage.includes('break') || lowerMessage.includes('meal') || lowerMessage.includes('rest')) {
@@ -151,7 +181,7 @@ export default function ChatBot() {
 
     // Help/Support
     if (lowerMessage.includes('help') || lowerMessage.includes('support') || lowerMessage.includes('contact')) {
-      return "I'm here to help! You can also:\n\n• Check the Help section in Settings\n• Email support@scheduler.com\n• Platinum users get priority support with 24-hour response time\n\nWhat specific question can I answer?";
+      return "I'm here to help! You can also:\n\n• Check the Help section in Settings\n• Email support@noxtitan.com\n• Enterprise and Titan tier users get priority support\n\nWhat specific question can I answer?";
     }
 
     // Default response
@@ -251,10 +281,10 @@ export default function ChatBot() {
       {isOpen && (
         <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white dark:bg-slate-800 rounded-2xl shadow-2xl flex flex-col z-50 border border-gray-200 dark:border-slate-700">
           {/* Header */}
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-4 rounded-t-2xl flex items-center justify-between">
+          <div className={`bg-gradient-to-r ${customColor} p-4 rounded-t-2xl flex items-center justify-between`}>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden" style={{background: 'transparent'}}>
-                <img src="/logo.png" alt="Titan" className="w-full h-full object-contain" />
+              <div className="w-10 h-10 rounded-full flex items-center justify-center text-2xl overflow-hidden" style={{background: 'transparent'}}>
+                {customAvatar}
               </div>
               <div>
                 <h3 className="font-bold text-white text-pop-light">⚡ Titan AI Assistant</h3>

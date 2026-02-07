@@ -23,7 +23,19 @@ import {
   Package,
   Sparkles,
   Trophy,
-  ShoppingBag
+  ShoppingBag,
+  UserCog,
+  Briefcase,
+  ClipboardCheck,
+  MessageSquare,
+  UserCircle,
+  Lightbulb,
+  Heart,
+  FileText,
+  Coffee,
+  Calculator,
+  HelpCircle,
+  GraduationCap
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -33,6 +45,7 @@ const navigationSections = [
     items: [
       { name: 'Command Center', href: '/dashboard', icon: Home, isCommandCenter: true },
       { name: 'Notifications', href: '/notifications', icon: Bell, hasNotificationBadge: true },
+      { name: 'Quick Start Tutorial', href: '#tutorial', icon: GraduationCap, isTutorial: true },
     ]
   },
   {
@@ -40,8 +53,12 @@ const navigationSections = [
     items: [
       { name: 'Calendar', href: '/calendar', icon: Calendar },
       { name: 'Employees', href: '/employees', icon: Users },
+      { name: 'Timeclock', href: '/timeclock', icon: Clock },
+      { name: 'Attendance', href: '/attendance', icon: ClipboardCheck },
       { name: 'Time Off', href: '/time-off', icon: Clock },
+      { name: 'Shift Logs', href: '/shift-logs', icon: FileText },
       { name: 'Payroll', href: '/payroll', icon: DollarSign },
+      { name: 'Accounting', href: '/accounting', icon: Calculator },
     ]
   },
   {
@@ -58,24 +75,51 @@ const navigationSections = [
     items: [
       { name: 'Guild', href: '/guild', icon: Trophy },
       { name: 'Recognition', href: '/recognition', icon: Award },
+      { name: 'Team Culture', href: '/team-culture', icon: Heart },
       { name: 'Team Activities', href: '/activities', icon: Sparkles },
+      { name: 'Basecamp', href: '/basecamp', icon: Coffee },
+      { name: 'Manager Hub', href: '/manager-basecamp', icon: Briefcase },
       { name: 'Merch Store', href: '/merch-store', icon: ShoppingBag },
+    ]
+  },
+  {
+    title: 'Human Resources',
+    items: [
+      { name: 'HR Dashboard', href: '/hr', icon: UserCog },
+      { name: 'HR Planner', href: '/hr-planner', icon: Briefcase },
+      { name: 'QAPI Portal', href: '/qapi', icon: Shield },
+      { name: 'Onboarding', href: '/onboarding', icon: UserCircle },
+      { name: 'Forms & Surveys', href: '/forms', icon: FileText },
     ]
   },
   {
     title: 'Management',
     items: [
       { name: 'Analytics', href: '/analytics', icon: TrendingUp },
+      { name: 'Reports', href: '/reports', icon: BarChart3 },
+      { name: 'Manager Academy', href: '/manager-academy', icon: GraduationCap },
       { name: 'Training', href: '/training', icon: BookOpen },
+      { name: 'Learning', href: '/learning', icon: BookOpen },
       { name: 'AI Assistant', href: '/ai-assistant', icon: Bot },
+      { name: 'Incentives', href: '/incentives', icon: Award },
+    ]
+  },
+  {
+    title: 'Communication',
+    items: [
+      { name: 'Messages', href: '/messages', icon: MessageSquare },
+      { name: 'Announcements', href: '/announcements', icon: Megaphone },
+      { name: 'Suggestions', href: '/suggestions', icon: Lightbulb },
     ]
   },
   {
     title: 'System',
     items: [
-      { name: 'Announcements', href: '/announcements', icon: Megaphone },
+      { name: 'Profile', href: '/profile', icon: UserCircle },
+      { name: 'Settings', href: '/settings', icon: Settings },
       { name: 'Data Import', href: '/import', icon: Upload },
       { name: 'Integrations', href: '/integrations', icon: Link2 },
+      { name: 'Help', href: '/help', icon: HelpCircle },
       { name: 'Support', href: '/support', icon: Headphones },
     ]
   },
@@ -83,6 +127,14 @@ const navigationSections = [
 
 export default function Sidebar() {
   const pathname = usePathname();
+
+  const handleTutorialClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Remove the onboarding completed flag to show it again
+    localStorage.removeItem('onboardingCompleted');
+    // Trigger a page reload to show the onboarding
+    window.location.href = '/dashboard';
+  };
 
   return (
     <div className="flex flex-col w-64 bg-gradient-to-b from-black via-gray-900 to-purple-950 min-h-screen border-r-2 border-purple-600/30 shadow-2xl">
@@ -114,8 +166,22 @@ export default function Sidebar() {
               {section.items.map((item) => {
                 const isActive = pathname === item.href;
                 const Icon = item.icon;
-                const isCommandCenter = item.isCommandCenter;
-                const hasNotificationBadge = item.hasNotificationBadge;
+                const isCommandCenter = 'isCommandCenter' in item ? item.isCommandCenter : false;
+                const hasNotificationBadge = 'hasNotificationBadge' in item ? item.hasNotificationBadge : false;
+                const isTutorial = 'isTutorial' in item ? item.isTutorial : false;
+                
+                if (isTutorial) {
+                  return (
+                    <button
+                      key={item.name}
+                      onClick={handleTutorialClick}
+                      className="w-full flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all border text-pop-light bg-gradient-to-r from-green-800 via-green-600 to-teal-900 text-white hover:from-green-900 hover:via-green-700 hover:to-teal-950 shadow-[0_0_15px_rgba(34,197,94,0.4)] border-green-600/50 hover:scale-105 font-bold"
+                    >
+                      <Icon className="mr-3 h-4 w-4 drop-shadow-[0_0_8px_rgba(34,197,94,0.8)]" />
+                      {item.name}
+                    </button>
+                  );
+                }
                 
                 return (
                   <Link

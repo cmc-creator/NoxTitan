@@ -121,11 +121,7 @@ export default function ManagerBasecamp() {
 
       {/* Customizers */}
       {showChatCustomizer && (
-        <ChatbotCustomizer
-          currentAvatar={noxAvatar}
-          onSave={(avatar) => setNoxAvatar(avatar)}
-          onClose={() => setShowChatCustomizer(false)}
-        />
+        <ChatbotCustomizer />
       )}
 
       {showDashboardCustomizer && (
