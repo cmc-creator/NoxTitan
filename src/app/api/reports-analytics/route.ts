@@ -50,14 +50,26 @@ export async function POST(req: Request) {
     // HIPAA/legal compliance check placeholder
     // TODO: Add real compliance logic
     try {
-      // TODO: Add Report model to Prisma schema or use a different approach
-      // For now, just log the report request
-      const report = { id: Date.now().toString(), ...data, createdAt: new Date() };
+      // Create report using Prisma
+      const report = await prisma.report.create({
+        data: {
+          userId: data.userId || 'default-user-id', // TODO: Get from session
+          name: data.name,
+          type: data.type,
+          description: data.description,
+          dateFrom: data.dateFrom ? new Date(data.dateFrom) : undefined,
+          dateTo: data.dateTo ? new Date(data.dateTo) : undefined,
+          filters: data.filters || {},
+          data: data.reportData || {},
+          format: data.format || 'json',
+          status: 'completed'
+        }
+      });
       
       await prisma.auditLog.create({
         data: {
           action: 'CREATE_REPORT_SUCCESS',
-          details: JSON.stringify(data),
+          details: JSON.stringify({ reportId: report.id, name: data.name, type: data.type }),
           userRole: role,
   
           timestamp: new Date(),
@@ -87,9 +99,14 @@ export async function GET(req: Request) {
     // Role-based access control
     const role = getUserRole(req);
     try {
-      // TODO: Add Report model to Prisma schema or use a different approach
-      // For now, return empty array
-      const reports: any[] = [];
+      // Fetch reports from database
+      // TODO: Add userId filter from session
+      const reports = await prisma.report.findMany({
+        orderBy: {
+          createdAt: 'desc'
+        },
+        take: 100 // Limit to last 100 reports
+      });
       
       await prisma.auditLog.create({
         data: {
