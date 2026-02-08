@@ -56,39 +56,39 @@ export default function UnifiedDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-transparent p-8">
+    <div className="min-h-screen bg-transparent p-4 sm:p-6 md:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <div>
-            <h1 className="text-5xl font-bold text-white mb-2 drop-shadow-lg">Command Center</h1>
-            <p className="text-lg text-purple-300">Real-time business intelligence and operations hub</p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">Command Center</h1>
+            <p className="text-base sm:text-lg text-purple-300">Real-time business intelligence and operations hub</p>
           </div>
         </div>
 
         {/* Active Notifications - Enhanced */}
-        <div className="glass-tile glass-tile-yellow mb-6 p-6">
-          <div className="flex items-center justify-between mb-4 relative z-10">
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-yellow-500/20 rounded-lg">
-                <Bell className="w-6 h-6 text-yellow-300 animate-pulse" />
+        <div className="glass-tile glass-tile-yellow mb-6 p-4 sm:p-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 mb-4 relative z-10">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="p-2 bg-yellow-500/20 rounded-lg flex-shrink-0">
+                <Bell className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-300 animate-pulse" />
               </div>
-              <h2 className="text-xl font-bold text-white">2 Active Notifications</h2>
+              <h2 className="text-lg sm:text-xl font-bold text-white">2 Active Notifications</h2>
             </div>
-            <Link href="/notifications" className="text-yellow-300 hover:text-yellow-200 text-sm flex items-center gap-1">
+            <Link href="/notifications" className="text-yellow-300 hover:text-yellow-200 text-sm flex items-center gap-1 ml-auto sm:ml-0">
               View All <ExternalLink className="w-4 h-4" />
             </Link>
           </div>
           <div className="space-y-3 relative z-10">
             {/* Open Incidents Notification */}
             <Link href="/qapi?filter=open" className="block">
-              <div className="p-4 bg-red-500/10 backdrop-blur-sm rounded-lg border border-red-400/30 hover:border-red-400/60 transition-all cursor-pointer group">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <AlertOctagon className="w-5 h-5 text-red-300" />
+              <div className="p-3 sm:p-4 bg-red-500/10 backdrop-blur-sm rounded-lg border border-red-400/30 hover:border-red-400/60 transition-all cursor-pointer group min-h-[44px]">
+                <div className="flex items-start justify-between gap-2">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <AlertOctagon className="w-5 h-5 text-red-300 flex-shrink-0" />
                       <p className="font-bold text-white group-hover:text-red-200 transition-colors">Open Incidents</p>
-                      <span className="px-2 py-0.5 bg-red-500/30 rounded-full text-xs font-bold text-red-200">HIGH PRIORITY</span>
+                      <span className="px-2 py-0.5 bg-red-500/30 rounded-full text-xs font-bold text-red-200 whitespace-nowrap">HIGH PRIORITY</span>
                     </div>
                     <p className="text-sm text-yellow-100 mb-2">2 incidents requiring immediate attention</p>
                     <div className="flex flex-col gap-1">

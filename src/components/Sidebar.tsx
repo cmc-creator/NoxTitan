@@ -35,7 +35,8 @@ import {
   Coffee,
   Calculator,
   HelpCircle,
-  GraduationCap
+  GraduationCap,
+  X
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -126,7 +127,12 @@ const navigationSections = [
   },
 ];
 
-export default function Sidebar() {
+interface SidebarProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
   const pathname = usePathname();
 
   const handleTutorialClick = (e: React.MouseEvent) => {
@@ -137,9 +143,20 @@ export default function Sidebar() {
     window.location.href = '/dashboard';
   };
 
-  return (
-    <div className="flex flex-col w-64 bg-gradient-to-b from-black via-gray-900 to-purple-950 min-h-screen border-r-2 border-purple-600/30 shadow-2xl">
+  const sidebarContent = (
+    <>
       <div className="flex flex-col items-center justify-center py-4 bg-gradient-to-br from-purple-900 via-purple-700 to-black shadow-xl border-b-4 border-purple-500">
+        {/* Mobile Close Button */}
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 md:hidden p-2 text-purple-200 hover:text-white hover:bg-purple-600/30 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+            aria-label="Close menu"
+          >
+            <X className="h-6 w-6" />
+          </button>
+        )}
+        
         <img 
           src="/nyxtitan-name-logo.png" 
           alt="NyxTitan" 
@@ -175,8 +192,11 @@ export default function Sidebar() {
                   return (
                     <button
                       key={item.name}
-                      onClick={handleTutorialClick}
-                      className="w-full flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all border text-pop-light bg-gradient-to-r from-green-800 via-green-600 to-teal-900 text-white hover:from-green-900 hover:via-green-700 hover:to-teal-950 shadow-[0_0_15px_rgba(34,197,94,0.4)] border-green-600/50 hover:scale-105 font-bold"
+                      onClick={(e) => {
+                        handleTutorialClick(e);
+                        onClose?.();
+                      }}
+                      className="w-full flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all border text-pop-light bg-gradient-to-r from-green-800 via-green-600 to-teal-900 text-white hover:from-green-900 hover:via-green-700 hover:to-teal-950 shadow-[0_0_15px_rgba(34,197,94,0.4)] border-green-600/50 hover:scale-105 font-bold min-h-[44px]"
                     >
                       <Icon className="mr-3 h-4 w-4 drop-shadow-[0_0_8px_rgba(34,197,94,0.8)]" />
                       {item.name}
@@ -188,8 +208,9 @@ export default function Sidebar() {
                   <Link
                     key={item.name}
                     href={item.href}
+                    onClick={onClose}
                     className={cn(
-                      'flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all border text-pop-light',
+                      'flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all border text-pop-light min-h-[44px]',
                       isCommandCenter
                         ? isActive
                           ? 'bg-gradient-to-r from-purple-900 via-purple-700 to-black text-white shadow-[0_0_20px_rgba(168,85,247,0.5)] border-purple-500 scale-105 font-bold'
@@ -211,6 +232,34 @@ export default function Sidebar() {
           </div>
         ))}
       </nav>
-    </div>
+    </>
+  );
+
+  return (
+    <>
+      {/* Mobile Overlay */}
+      {isOpen && onClose && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          onClick={onClose}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Desktop Sidebar - Always visible */}
+      <aside className="hidden md:flex flex-col w-64 bg-gradient-to-b from-black via-gray-900 to-purple-950 min-h-screen border-r-2 border-purple-600/30 shadow-2xl">
+        {sidebarContent}
+      </aside>
+
+      {/* Mobile Sidebar - Drawer */}
+      <aside
+        className={cn(
+          "fixed top-0 left-0 z-50 flex flex-col w-64 bg-gradient-to-b from-black via-gray-900 to-purple-950 h-full border-r-2 border-purple-600/30 shadow-2xl transition-transform duration-300 md:hidden",
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        )}
+      >
+        {sidebarContent}
+      </aside>
+    </>
   );
 }
