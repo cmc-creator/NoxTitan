@@ -1,10 +1,10 @@
-# NoxTitan™ - Business Management Platform
+# NyxTitan™ - Business Management Platform
 
 **Copyright © 2026 Connie Michelle Consulting & Business Solutions LLC. All Rights Reserved.**
 
-## 🚀 About NoxTitan™
+## 🚀 About NyxTitan™
 
-NoxTitan is a comprehensive business management platform forged for titans—covering scheduling, HR, payroll, compliance, accounting, and more.
+NyxTitan is a comprehensive business management platform forged for titans—covering scheduling, HR, payroll, compliance, accounting, and more.
 
 ### Developed by:
 **Connie Michelle Consulting & Business Solutions LLC**
@@ -13,9 +13,9 @@ NoxTitan is a comprehensive business management platform forged for titans—cov
 
 ## 🎭 Live Demo
 
-**Experience the interactive demo here:** [https://cmc-creator.github.io/NoxTitan/](https://cmc-creator.github.io/NoxTitan/)
+**Experience the interactive demo here:** [https://cmc-creator.github.io/NyxTitan/](https://cmc-creator.github.io/NyxTitan/)
 
-> **Note:** The GitHub Pages link shows a static demo/presentation. The full NoxTitan application requires a Node.js server and should be deployed to Vercel, Netlify, or similar platforms. See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for instructions.
+> **Note:** The GitHub Pages link shows a static demo/presentation. The full NyxTitan application requires a Node.js server and should be deployed to Vercel, Netlify, or similar platforms. See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for instructions.
 
 ---
 
@@ -23,12 +23,12 @@ NoxTitan is a comprehensive business management platform forged for titans—cov
 
 ### For the Full Application (Recommended)
 
-The complete NoxTitan application with all features requires a Node.js server environment:
+The complete NyxTitan application with all features requires a Node.js server environment:
 
 **Deploy to Vercel (Free & Easy):**
 1. Go to [vercel.com](https://vercel.com)
 2. Sign in with GitHub
-3. Import the NoxTitan repository
+3. Import the NyxTitan repository
 4. Click Deploy - Done! ✅
 
 **See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for:**

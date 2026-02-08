@@ -8,17 +8,17 @@ export default function TermsPage() {
         <div className="space-y-6 text-slate-200">
           <section>
             <h2 className="text-2xl font-bold text-purple-300 mb-3">1. Acceptance of Terms</h2>
-            <p>By accessing and using NoxTitan™ ("the Platform"), you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use the Platform.</p>
+            <p>By accessing and using NyxTitan™ ("the Platform"), you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use the Platform.</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-purple-300 mb-3">2. Service Description</h2>
-            <p>NoxTitan provides an enterprise business management platform including but not limited to: employee scheduling, HR management, payroll processing, compliance tracking, asset management, and related business operations tools.</p>
+            <p>NyxTitan provides an enterprise business management platform including but not limited to: employee scheduling, HR management, payroll processing, compliance tracking, asset management, and related business operations tools.</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-purple-300 mb-3">3. Subscription Plans</h2>
-            <p className="mb-2">NoxTitan offers multiple subscription tiers:</p>
+            <p className="mb-2">NyxTitan offers multiple subscription tiers:</p>
             <ul className="list-disc pl-6 space-y-1">
               <li><strong>Professional ($499/month)</strong>: Up to 50 employees</li>
               <li><strong>Enterprise ($1,499/month)</strong>: Up to 250 employees with advanced features</li>
@@ -42,7 +42,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-2xl font-bold text-purple-300 mb-3">5. Data Ownership</h2>
-            <p>You retain ownership of all data you input into the Platform. By using NoxTitan, you grant us a limited license to process and store your data to provide the service. We do not claim ownership of your business data.</p>
+            <p>You retain ownership of all data you input into the Platform. By using NyxTitan, you grant us a limited license to process and store your data to provide the service. We do not claim ownership of your business data.</p>
           </section>
 
           <section>
@@ -62,7 +62,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-2xl font-bold text-purple-300 mb-3">9. Limitation of Liability</h2>
-            <p>NoxTitan is provided "as is" without warranties of any kind. To the maximum extent permitted by law, Connie Michelle Consulting & Business Solutions LLC shall not be liable for indirect, incidental, or consequential damages arising from use of the Platform.</p>
+            <p>NyxTitan is provided "as is" without warranties of any kind. To the maximum extent permitted by law, Connie Michelle Consulting & Business Solutions LLC shall not be liable for indirect, incidental, or consequential damages arising from use of the Platform.</p>
           </section>
 
           <section>
@@ -85,8 +85,8 @@ export default function TermsPage() {
             <p>For questions about these terms, contact:</p>
             <p className="mt-2">
               <strong>Connie Michelle Consulting & Business Solutions LLC</strong><br />
-              Email: legal@noxtitan.com<br />
-              Subject Line: Terms of Service Inquiry - NoxTitan
+              Email: legal@nyxtitan.com<br />
+              Subject Line: Terms of Service Inquiry - NyxTitan
             </p>
           </section>
         </div>

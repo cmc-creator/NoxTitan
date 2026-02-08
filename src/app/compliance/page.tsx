@@ -1071,7 +1071,7 @@ export default function CompliancePage() {
                   <div className="flex-1">
                     <h3 className="text-xl font-bold mb-2 text-white">Active Compliance Monitoring</h3>
                     <p className="text-slate-300 mb-4">
-                      NoxTitan AI continuously monitors 2,500+ federal and state regulations across 12 industries. 
+                      NyxTitan AI continuously monitors 2,500+ federal and state regulations across 12 industries. 
                       You'll be automatically notified of changes that affect your business.
                     </p>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

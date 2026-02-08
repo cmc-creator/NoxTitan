@@ -1,10 +1,10 @@
-# NoxTitan Development Checkpoint - January 9, 2026
+# NyxTitan Development Checkpoint - January 9, 2026
 
 ## 🎯 Major Changes Pushed to GitHub
 
 **Commit:** 15f591b  
 **Push Date:** January 9, 2026  
-**Repository:** https://github.com/cmc-creator/NoxTitan
+**Repository:** https://github.com/cmc-creator/NyxTitan
 
 ---
 

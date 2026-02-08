@@ -7,7 +7,7 @@ export default function NotFound() {
         <h1 className="text-6xl font-bold text-white mb-4">404</h1>
         <h2 className="text-2xl font-semibold text-gray-200 mb-6">Page Not Found</h2>
         <p className="text-gray-300 mb-8 max-w-md mx-auto">
-          Some features of NoxTitan require a server environment and cannot be accessed in this static deployment.
+          Some features of NyxTitan require a server environment and cannot be accessed in this static deployment.
         </p>
         <div className="space-y-4">
           <Link 
@@ -17,7 +17,7 @@ export default function NotFound() {
             Return Home
           </Link>
           <div className="text-gray-400 text-sm mt-6">
-            <p>For the full NoxTitan experience with all features,</p>
+            <p>For the full NyxTitan experience with all features,</p>
             <p>deploy to a platform that supports Next.js server features (Vercel, Netlify, etc.)</p>
           </div>
         </div>

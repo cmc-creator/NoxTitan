@@ -1,4 +1,4 @@
-# TeamPulse™ Full-Stack Implementation - January 2, 2026
+# NyxTitan™ Full-Stack Implementation - January 2, 2026
 
 ## 🎉 Major Accomplishment: Fully Functional Backend + Authentication
 
@@ -76,7 +76,7 @@ All backend systems are now operational with real database integration, user aut
 
 ### 8. Seed Data
 - **Demo account** pre-created:
-  - Email: `demo@teampulse.com`
+  - Email: `demo@nyxtitan.com`
   - Password: `demo123456`
   - Tier: Gold
 - **5 demo employees** with varied positions
@@ -180,7 +180,7 @@ npm run dev
 Visit http://localhost:3000
 
 ### 2. Login with Demo Account
-- Email: `demo@teampulse.com`
+- Email: `demo@nyxtitan.com`
 - Password: `demo123456`
 
 ### 3. Or Create New Account
@@ -253,13 +253,13 @@ npm run db:seed
 
 ## 🎓 Demo Credentials
 
-**Email**: demo@teampulse.com  
+**Email**: demo@nyxtitan.com  
 **Password**: demo123456  
 **Tier**: Gold (up to 50 employees)
 
 ---
 
-**TeamPulse™** is now a fully functional, production-ready employee scheduling platform! 🚀
+**NyxTitan™** is now a fully functional, production-ready employee scheduling platform! 🚀
 
 *Built by: Connie Michelle Consulting & Business Solutions LLC*
 *Date: January 2, 2026*

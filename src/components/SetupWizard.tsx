@@ -47,9 +47,9 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
   const steps = [
     {
       id: 'welcome',
-      title: 'Welcome to NoxTitan! 🎉',
+      title: 'Welcome to NyxTitan! 🎉',
       icon: <Rocket className="w-12 h-12 text-purple-600" />,
-      description: "Let's get your organization set up in just a few minutes. This wizard will customize NoxTitan to perfectly fit your business needs.",
+      description: "Let's get your organization set up in just a few minutes. This wizard will customize NyxTitan to perfectly fit your business needs.",
     },
     {
       id: 'company',
@@ -79,7 +79,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
       id: 'features',
       title: 'Enable Features',
       icon: <SettingsIcon className="w-12 h-12 text-orange-600" />,
-      description: "Choose which NoxTitan features your organization will use.",
+      description: "Choose which NyxTitan features your organization will use.",
     },
     {
       id: 'compliance',

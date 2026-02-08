@@ -36,7 +36,7 @@ const PLATFORM_GUIDES = {
       {
         step: 4,
         title: 'Generate API Key',
-        description: 'Click "Generate new API key" button. Give it a name like "NoxTitan Integration"',
+        description: 'Click "Generate new API key" button. Give it a name like "NyxTitan Integration"',
         screenshot: '🔑',
         highlight: 'Blue "Generate new API key" button',
       },
@@ -117,7 +117,7 @@ const PLATFORM_GUIDES = {
       {
         step: 4,
         title: 'Create New App',
-        description: 'Click "Create an app" and name it "NoxTitan Integration"',
+        description: 'Click "Create an app" and name it "NyxTitan Integration"',
         screenshot: '➕',
         highlight: 'Create an app button',
       },
@@ -182,7 +182,7 @@ const PLATFORM_GUIDES = {
       {
         step: 6,
         title: 'Configure Key',
-        description: 'Description: "NoxTitan", User: Select your admin user, Permissions: Read/Write',
+        description: 'Description: "NyxTitan", User: Select your admin user, Permissions: Read/Write',
         screenshot: '✏️',
         important: 'Set permissions to "Read/Write" to allow order management',
       },
@@ -252,7 +252,7 @@ const PLATFORM_GUIDES = {
       {
         step: 3,
         title: 'Fill App Details',
-        description: 'App Name: "NoxTitan Integration", and complete the form',
+        description: 'App Name: "NyxTitan Integration", and complete the form',
         screenshot: '✏️',
       },
       {

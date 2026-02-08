@@ -1,4 +1,4 @@
-# TeamPulse HR Management System - Complete Features
+# NyxTitan HR Management System - Complete Features
 
 ## 🎯 Voice-Enabled AI Assistant
 
@@ -242,7 +242,7 @@ All HR features are fully responsive:
 
 ---
 
-## 🎉 What Makes TeamPulse Better
+## 🎉 What Makes NyxTitan Better
 
 ### vs. Paycom:
 ✅ Voice-enabled AI assistant
@@ -269,5 +269,5 @@ All HR features are fully responsive:
 - **Voice AI**: Ask for help anytime
 - **Documentation**: Comprehensive guides
 - **Video Tutorials**: Step-by-step walkthroughs
-- **Email Support**: support@teampulse.com
+- **Email Support**: support@nyxtitan.com
 - **Priority Support**: Platinum tier

@@ -3,12 +3,16 @@ import { prisma } from '@/lib/prisma';
 
 export async function GET(request: NextRequest) {
   try {
-    const activities = await prisma.xPActivity.findMany({
+    const activities = await prisma.xPTransaction.findMany({
       include: {
-        employee: {
-          select: {
-            firstName: true,
-            lastName: true
+        guildMember: {
+          include: {
+            employee: {
+              select: {
+                firstName: true,
+                lastName: true
+              }
+            }
           }
         }
       },

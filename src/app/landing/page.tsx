@@ -48,7 +48,7 @@ export default function LandingPage() {
       {/* NOXTITAN Title and Tagline */}
       <div className="w-full flex flex-col items-center animate-fade-in" style={{ marginTop: '-60px' }}>
         <img 
-          src="/noxtitan-chrome.png" 
+          src="/nyxtitan-chrome.png" 
           alt="NOXTITAN" 
           className="h-20 md:h-28 w-auto mb-3 object-contain"
           style={{
@@ -93,12 +93,12 @@ export default function LandingPage() {
             muted
             playsInline
             controls
-            poster="/noxtitan-logo-new.png"
+            poster="/nyxtitan-logo-new.png"
             className="rounded-2xl shadow-2xl border-4 border-purple-700/40 bg-black w-full max-w-xl h-72 object-cover mb-4 animate-fade-in"
           >
-            <source src="/noxtitan-video.mp4" type="video/mp4" />
-            <source src="/noxtitan-video.webm" type="video/webm" />
-            <source src="/noxtitan-video.ogg" type="video/ogg" />
+            <source src="/nyxtitan-video.mp4" type="video/mp4" />
+            <source src="/nyxtitan-video.webm" type="video/webm" />
+            <source src="/nyxtitan-video.ogg" type="video/ogg" />
             Your browser does not support the video tag.
           </video>
           <h1 className="text-4xl md:text-6xl font-extrabold text-center text-white drop-shadow-lg mt-6 animate-slide-up text-pop-strong">
@@ -117,14 +117,14 @@ export default function LandingPage() {
       {/* Video Section (Demo) - Centered and Modern */}
       <section id="demo-section" className="w-full flex flex-col items-center justify-center py-12">
         <div className="w-full max-w-7xl mx-auto flex flex-col items-center px-4">
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-3 animate-fade-in">See What NoxTitan Can Do For You.</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-3 animate-fade-in">See What NyxTitan Can Do For You.</h2>
           <p className="text-lg md:text-xl text-purple-200 text-center mb-6 animate-fade-in max-w-2xl">
-            Watch our interactive walkthrough below to see how NoxTitan handles scheduling, payroll, compliance, and more—all in one powerful platform.
+            Watch our interactive walkthrough below to see how NyxTitan handles scheduling, payroll, compliance, and more—all in one powerful platform.
           </p>
           <div className="w-full flex justify-center items-center animate-fade-in">
             <iframe
-              src="https://cmc-creator.github.io/NoxTitan/"
-              title="NoxTitan Interactive Walkthrough"
+              src="https://cmc-creator.github.io/NyxTitan/"
+              title="NyxTitan Interactive Walkthrough"
               allowFullScreen
               className="rounded-2xl shadow-2xl border-4 border-purple-700/40 bg-black w-full h-[92vh]"
               style={{ minHeight: '92vh' }}
@@ -140,7 +140,7 @@ export default function LandingPage() {
             Features No One Else Has
           </h2>
           <p className="text-lg md:text-xl text-purple-200 text-center mb-12 animate-fade-in">
-            NoxTitan isn't just another business tool—it's a complete ecosystem built for modern teams
+            NyxTitan isn't just another business tool—it's a complete ecosystem built for modern teams
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -282,7 +282,7 @@ export default function LandingPage() {
                   <th className="px-6 py-4 text-lg font-bold text-white text-left">What You Need</th>
                   <th className="px-6 py-4 text-lg font-bold text-white text-left">Industry Standard (Multiple Tools)</th>
                   <th className="px-6 py-4 text-lg font-bold text-white text-left">Annual Cost</th>
-                  <th className="px-6 py-4 text-lg font-bold text-white text-left">NoxTitan</th>
+                  <th className="px-6 py-4 text-lg font-bold text-white text-left">NyxTitan</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-purple-900">
@@ -424,7 +424,7 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
             <div className="flex flex-col bg-gradient-to-br from-purple-900/80 to-black rounded-2xl shadow-xl p-8 items-center animate-fade-in">
               <div className="text-yellow-400 text-2xl mb-2">★★★★★</div>
-              <p className="text-lg text-purple-100 text-center mb-6">"Migrating to NoxTitan was the single most impactful operational decision we've made in a decade. The speed and clarity we now have is unmatched."</p>
+              <p className="text-lg text-purple-100 text-center mb-6">"Migrating to NyxTitan was the single most impactful operational decision we've made in a decade. The speed and clarity we now have is unmatched."</p>
               <div className="flex items-center gap-4">
                 <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Chen" className="w-14 h-14 rounded-full object-cover border-2 border-purple-400" />
                 <div className="flex flex-col">
@@ -435,7 +435,7 @@ export default function LandingPage() {
             </div>
             <div className="flex flex-col bg-gradient-to-br from-purple-900/80 to-black rounded-2xl shadow-xl p-8 items-center animate-fade-in">
               <div className="text-yellow-400 text-2xl mb-2">★★★★★</div>
-              <p className="text-lg text-purple-100 text-center mb-6">"We eliminated 12 different SaaS subscriptions and gained exponentially more control. NoxTitan isn't just software; it's a competitive advantage."</p>
+              <p className="text-lg text-purple-100 text-center mb-6">"We eliminated 12 different SaaS subscriptions and gained exponentially more control. NyxTitan isn't just software; it's a competitive advantage."</p>
               <div className="flex items-center gap-4">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marcus Thorne" className="w-14 h-14 rounded-full object-cover border-2 border-purple-400" />
                 <div className="flex flex-col">
@@ -454,7 +454,7 @@ export default function LandingPage() {
         <div className="w-full max-w-4xl mx-auto flex flex-col md:flex-row gap-12 items-center justify-center">
           <div className="flex-1 flex flex-col items-start mb-8 md:mb-0">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 animate-fade-in">Ready to Simplify Your Operations?</h2>
-            <p className="text-lg text-purple-200 mb-6 animate-fade-in">Tell us about your business and we'll show you exactly how NoxTitan can help. No pressure, just solutions.</p>
+            <p className="text-lg text-purple-200 mb-6 animate-fade-in">Tell us about your business and we'll show you exactly how NyxTitan can help. No pressure, just solutions.</p>
           </div>
           <div className="flex-1 w-full">
             <form className="bg-black/80 rounded-2xl shadow-xl p-8 flex flex-col gap-6 animate-fade-in">
@@ -491,7 +491,7 @@ export default function LandingPage() {
         <div className="w-full max-w-4xl flex flex-col items-center">
           <h2 className="text-2xl md:text-3xl font-extrabold text-white text-center mb-6">Stop juggling software.<br />Start running your business.</h2>
           <Link href="#contact" className="px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold shadow-lg hover:scale-105 transition-transform text-lg mb-8">Request Executive Demo</Link>
-          <p className="text-purple-300 text-sm text-center mb-2">&copy; 2024 NoxTitan™. A solution provided by Connie Michelle Consulting & Business Solutions LLC. All rights reserved.</p>
+          <p className="text-purple-300 text-sm text-center mb-2">&copy; 2024 NyxTitan™. A solution provided by Connie Michelle Consulting & Business Solutions LLC. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy" className="text-purple-400 hover:underline text-sm">Privacy Policy</Link>
             <span className="text-purple-400">|</span>

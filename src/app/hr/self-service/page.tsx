@@ -13,7 +13,7 @@ export default function EmployeeSelfService() {
     department: 'Nursing - ICU',
     position: 'Registered Nurse',
     manager: 'Dr. Michael Chen',
-    email: 'sarah.johnson@noxtitan.com',
+    email: 'sarah.johnson@nyxtitan.com',
     phone: '(555) 123-4567',
     address: '123 Main St, Apt 4B, Seattle, WA 98101',
     hireDate: '2023-03-15',

@@ -1,4 +1,4 @@
-# Security Notes for NoxTitan
+# Security Notes for NyxTitan
 
 ## Security Vulnerability Resolution
 

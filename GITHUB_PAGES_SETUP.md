@@ -1,4 +1,4 @@
-# GitHub Pages Setup for NoxTitan™ Demo
+# GitHub Pages Setup for NyxTitan™ Demo
 
 ## ✅ Automated Deployment (Current Setup)
 
@@ -8,14 +8,14 @@
 1. Push changes to the `main` branch
 2. GitHub Actions automatically deploys the demo
 3. No build process needed - static HTML files are deployed directly
-4. Demo is live at: **https://cmc-creator.github.io/NoxTitan/**
+4. Demo is live at: **https://cmc-creator.github.io/NyxTitan/**
 
 ### Demo Files Included:
 - `index.html` - Main demo presentation (with music)
 - `demo-interactive.html` - Interactive version
-- `demo-noxtitan-final.html` - Final version
+- `demo-nyxtitan-final.html` - Final version
 - `demo-self-contained.html` - Offline-compatible version
-- `noxtitan-logo.png` - Logo asset
+- `nyxtitan-logo.png` - Logo asset
 - `demo-music.mp3` - Background music
 
 ### Manual Deployment Trigger:
@@ -33,7 +33,7 @@ You can also manually trigger deployment:
 ### Option 1: Upload via GitHub.com (Easiest!)
 
 1. **Go to GitHub.com** and create a new repository:
-   - Name it: `noxtitan-demo`
+   - Name it: `nyxtitan-demo`
    - Make it **Public**
    - ✅ Check "Add a README file"
    - Click "Create repository"
@@ -41,7 +41,7 @@ You can also manually trigger deployment:
 2. **Upload your demo file:**
    - Click "Add file" → "Upload files"
    - Drag `index.html` into the upload area
-   - Also upload `noxtitan-logo.png` and `demo-music.mp3`
+   - Also upload `nyxtitan-logo.png` and `demo-music.mp3`
    - Commit the files
 
 3. **Enable GitHub Pages:**
@@ -53,7 +53,7 @@ You can also manually trigger deployment:
 
 4. **Your live URL will be:**
    ```
-   https://YOUR-USERNAME.github.io/noxtitan-demo/
+   https://YOUR-USERNAME.github.io/nyxtitan-demo/
    ```
 
 ---
@@ -74,11 +74,11 @@ cd C:\Users\ConnieCooper\scheduler
 # Initialize git
 git init
 git add demo-interactive.html
-git commit -m "Add TeamPulse demo"
+git commit -m "Add NyxTitan demo"
 
 # Create GitHub repo (do this on github.com first)
 # Then connect and push:
-git remote add origin https://github.com/YOUR-USERNAME/teampulse-demo.git
+git remote add origin https://github.com/YOUR-USERNAME/nyxtitan-demo.git
 git branch -M main
 git push -u origin main
 ```
@@ -91,7 +91,7 @@ git push -u origin main
 
 Once deployed, share this URL:
 ```
-https://cmc-creator.github.io/NoxTitan/
+https://cmc-creator.github.io/NyxTitan/
 ```
 
 **Perfect for:**
@@ -111,7 +111,7 @@ All demos are accessible from the main URL, or directly:
 
 1. **index.html** - Main executive presentation with music and animation
 2. **demo-interactive.html** - Interactive version with music (requires internet)
-3. **demo-noxtitan-final.html** - Final polished version
+3. **demo-nyxtitan-final.html** - Final polished version
 4. **demo-self-contained.html** - 100% offline version (no music, embedded fonts)
 
 **For email/sharing**: Use `demo-self-contained.html` (works everywhere, even offline!)

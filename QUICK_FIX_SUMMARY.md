@@ -16,7 +16,7 @@ Your demo page link wasn't working because GitHub Pages wasn't configured. I've 
 Click the green "Merge pull request" button for this PR.
 
 ### Step 2: Enable GitHub Pages
-1. Go to: https://github.com/cmc-creator/NoxTitan/settings/pages
+1. Go to: https://github.com/cmc-creator/NyxTitan/settings/pages
 2. Under "Build and deployment":
    - **Source:** Select "GitHub Actions" from dropdown
    - Click Save
@@ -27,7 +27,7 @@ The workflow will run automatically and deploy your demo.
 ### Step 4: Test Your Demo! 🎉
 Your demo will be live at:
 ```
-https://cmc-creator.github.io/NoxTitan/
+https://cmc-creator.github.io/NyxTitan/
 ```
 
 ## That's It!

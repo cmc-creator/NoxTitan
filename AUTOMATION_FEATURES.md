@@ -1,7 +1,7 @@
-# NoxTitan™ Automation, Customization, and Compliance Features
+# NyxTitan™ Automation, Customization, and Compliance Features
 
 ## Legal & Compliance Notice
-All features are designed to comply with HIPAA, labor laws, and privacy regulations. Users are responsible for configuring automations and templates in accordance with their organization’s legal requirements. NoxTitan™ provides tools for audit logging, access control, and data encryption. For full compliance documentation, contact legal@noxtitan.com.
+All features are designed to comply with HIPAA, labor laws, and privacy regulations. Users are responsible for configuring automations and templates in accordance with their organization’s legal requirements. NyxTitan™ provides tools for audit logging, access control, and data encryption. For full compliance documentation, contact legal@nyxtitan.com.
 
 ## Built-in Automations
 - Shift scheduling (auto-assign, conflict resolution)
@@ -65,4 +65,4 @@ All features are designed to comply with HIPAA, labor laws, and privacy regulati
 
 ---
 
-For legal, privacy, and HIPAA compliance support, contact legal@noxtitan.com or privacy@noxtitan.com.
+For legal, privacy, and HIPAA compliance support, contact legal@nyxtitan.com or privacy@nyxtitan.com.

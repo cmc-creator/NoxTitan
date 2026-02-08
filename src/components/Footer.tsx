@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
               <Shield className="w-5 h-5 text-blue-400" />
-              <span className="text-lg font-bold text-white">NoxTitan™</span>
+              <span className="text-lg font-bold text-white">NyxTitan™</span>
             </div>
             <p className="text-xs text-slate-400">
               by <strong className="text-slate-300">Connie Michelle Consulting & Business Solutions LLC</strong>
@@ -26,7 +26,7 @@ export default function Footer() {
               © {currentYear} Connie Michelle Consulting & Business Solutions LLC. All rights reserved.
             </p>
             <p>
-              <span className="text-slate-500">NoxTitan™ is a trademark of Connie Michelle Consulting & Business Solutions LLC</span>
+              <span className="text-slate-500">NyxTitan™ is a trademark of Connie Michelle Consulting & Business Solutions LLC</span>
             </p>
             <div className="flex items-center justify-center md:justify-end gap-3 mt-2">
               <a href="/terms" className="text-blue-400 hover:text-blue-300 transition-colors">

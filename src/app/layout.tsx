@@ -9,8 +9,8 @@ import CommandPalette from "@/components/CommandPalette";
 import QuickActionsButton from "@/components/QuickActionsButton";
 
 export const metadata: Metadata = {
-  title: "NoxTitan – Business Management. Forged for Titans.",
-  description: "NoxTitan is the powerful, next-generation business management platform. Built for leaders, forged for titans. Unmatched scheduling, analytics, compliance, and team collaboration. Compete with the giants. Dominate your industry.",
+  title: "NyxTitan – Business Management. Forged for Titans.",
+  description: "NyxTitan is the powerful, next-generation business management platform. Built for leaders, forged for titans. Unmatched scheduling, analytics, compliance, and team collaboration. Compete with the giants. Dominate your industry.",
 };
 
 export default function RootLayout({

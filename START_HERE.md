@@ -6,7 +6,7 @@ I've resolved the confusion about why the GitHub Pages link shows the demo inste
 
 ### The Core Issue
 
-You pushed your Next.js application code this morning, and it's **all in your GitHub repository** ✅. However, the GitHub Pages link (https://cmc-creator.github.io/NoxTitan/) continues to show the demo because:
+You pushed your Next.js application code this morning, and it's **all in your GitHub repository** ✅. However, the GitHub Pages link (https://cmc-creator.github.io/NyxTitan/) continues to show the demo because:
 
 **GitHub Pages can only host static files** (HTML/CSS/JS). It cannot run:
 - Node.js applications
@@ -14,7 +14,7 @@ You pushed your Next.js application code this morning, and it's **all in your Gi
 - Database connections
 - Server-side rendering
 
-Your NoxTitan application needs all of these things to function fully.
+Your NyxTitan application needs all of these things to function fully.
 
 ### What I Fixed
 
@@ -44,9 +44,9 @@ Your code is ready! To see your full product live:
 1. **Go to:** https://vercel.com
 2. **Sign in** with GitHub
 3. **Click "Add New Project"**
-4. **Select** your `NoxTitan` repository  
+4. **Select** your `NyxTitan` repository  
 5. **Click "Deploy"** (Vercel auto-configures everything)
-6. **Done!** Your app will be live at `noxtitan.vercel.app` (or custom name)
+6. **Done!** Your app will be live at `nyxtitan.vercel.app` (or custom name)
 
 #### Why Vercel?
 - ✅ Made by the Next.js team (zero config)
@@ -60,8 +60,8 @@ Your code is ready! To see your full product live:
 | What | Where | Purpose |
 |------|-------|---------|
 | **Your Code** | GitHub Repository | ✅ Safe and version controlled |
-| **Static Demo** | GitHub Pages<br/>https://cmc-creator.github.io/NoxTitan/ | Showcase/presentation |
-| **Full Product** | Vercel (after you deploy)<br/>https://noxtitan.vercel.app | Working application with all features |
+| **Static Demo** | GitHub Pages<br/>https://cmc-creator.github.io/NyxTitan/ | Showcase/presentation |
+| **Full Product** | Vercel (after you deploy)<br/>https://nyxtitan.vercel.app | Working application with all features |
 
 ### Files to Read
 
@@ -90,11 +90,11 @@ Your code is ready! To see your full product live:
 
 ### What Happens When You Deploy to Vercel
 
-1. Your full NoxTitan application with all features will be live
+1. Your full NyxTitan application with all features will be live
 2. Users can sign up, log in, manage schedules, use HR features, etc.
 3. All API routes, database connections, and dynamic features work
 4. Automatic deployments on every git push
-5. You can add a custom domain (app.noxtitan.com)
+5. You can add a custom domain (app.nyxtitan.com)
 
 ### Questions?
 

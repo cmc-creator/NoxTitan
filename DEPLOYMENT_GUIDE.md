@@ -1,8 +1,8 @@
-# NoxTitan™ Deployment Guide
+# NyxTitan™ Deployment Guide
 
 ## Understanding the Setup
 
-NoxTitan consists of two parts:
+NyxTitan consists of two parts:
 
 1. **Static Demo** (`index.html`) - A presentation/demo showcasing features
 2. **Full Next.js Application** (`src/` directory) - The complete product with all functionality
@@ -10,12 +10,12 @@ NoxTitan consists of two parts:
 ## Current GitHub Pages Setup
 
 **What's deployed:** The static demo HTML files  
-**URL:** https://cmc-creator.github.io/NoxTitan/  
+**URL:** https://cmc-creator.github.io/NyxTitan/  
 **Deployed by:** `.github/workflows/nextjs.yml` workflow on push to `main`
 
 ### ⚠️ Important Limitation
 
-**GitHub Pages only supports static content.** The full NoxTitan application requires:
+**GitHub Pages only supports static content.** The full NyxTitan application requires:
 - Node.js server runtime
 - API routes for backend functionality
 - Database connections
@@ -23,9 +23,9 @@ NoxTitan consists of two parts:
 
 These features **cannot run on GitHub Pages**, which only serves static HTML/CSS/JS files.
 
-## Deploying the Full NoxTitan Application
+## Deploying the Full NyxTitan Application
 
-To deploy the complete NoxTitan application with all features, use one of these platforms:
+To deploy the complete NyxTitan application with all features, use one of these platforms:
 
 ### Option 1: Vercel (Recommended - Free Tier Available)
 
@@ -46,7 +46,7 @@ To deploy the complete NoxTitan application with all features, use one of these 
 
 2. **Import your repository**
    - Click "Add New Project"
-   - Select your `NoxTitan` repository
+   - Select your `NyxTitan` repository
    - Vercel auto-detects it's a Next.js app
 
 3. **Configure environment variables** (if needed)
@@ -88,8 +88,8 @@ To deploy the complete NoxTitan application with all features, use one of these 
 
 ```bash
 # On your server
-git clone https://github.com/cmc-creator/NoxTitan.git
-cd NoxTitan
+git clone https://github.com/cmc-creator/NyxTitan.git
+cd NyxTitan
 npm install
 npm run build
 npm start
@@ -98,19 +98,19 @@ npm start
 **Use PM2 for process management:**
 ```bash
 npm install -g pm2
-pm2 start npm --name "noxtitan" -- start
+pm2 start npm --name "nyxtitan" -- start
 pm2 save
 pm2 startup
 ```
 
 ## Local Development
 
-To run NoxTitan locally:
+To run NyxTitan locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/cmc-creator/NoxTitan.git
-cd NoxTitan
+git clone https://github.com/cmc-creator/NyxTitan.git
+cd NyxTitan
 
 # Install dependencies
 npm install
@@ -163,9 +163,9 @@ EMAIL_FROM="noreply@yourdomain.com"
 3. Keep GitHub Pages for the demo/presentation
 
 **Example setup:**
-- **Demo:** https://cmc-creator.github.io/NoxTitan/ (static demo)
-- **Production:** https://noxtitan.vercel.app (full application)
-- **Custom Domain:** https://app.noxtitan.com (point to Vercel)
+- **Demo:** https://cmc-creator.github.io/NyxTitan/ (static demo)
+- **Production:** https://nyxtitan.vercel.app (full application)
+- **Custom Domain:** https://app.nyxtitan.com (point to Vercel)
 
 ## Troubleshooting
 
@@ -190,7 +190,7 @@ No. Next.js applications with API routes require a server runtime that GitHub Pa
 ## Questions?
 
 For deployment assistance:
-- Email: hello@noxtitan.com
+- Email: hello@nyxtitan.com
 - Check the README.md for development instructions
 - See Next.js deployment docs: https://nextjs.org/docs/deployment
 
@@ -198,7 +198,7 @@ For deployment assistance:
 
 - [ ] Code pushed to GitHub repository
 - [ ] Sign up for Vercel account
-- [ ] Import NoxTitan repository to Vercel
+- [ ] Import NyxTitan repository to Vercel
 - [ ] Configure environment variables (if any)
 - [ ] Deploy!
 - [ ] Share your Vercel URL (not GitHub Pages URL) for the full app

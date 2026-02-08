@@ -31,7 +31,7 @@ npm install -g vercel
 **Step 2: Deploy from GitHub**
 1. Go to [https://vercel.com/new](https://vercel.com/new)
 2. Click "Import Git Repository"
-3. Select your `NoxTitan` repository
+3. Select your `NyxTitan` repository
 4. Framework Preset: **Next.js** (auto-detected)
 5. Build Command: `npm run build`
 6. Output Directory: `.next`
@@ -47,7 +47,7 @@ NEXTAUTH_URL=https://your-app.vercel.app
 **Step 4: Deploy!**
 - Click "Deploy"
 - Wait 2-3 minutes
-- Get your live URL: `https://noxtitan-yourname.vercel.app`
+- Get your live URL: `https://nyxtitan-yourname.vercel.app`
 
 **Step 5: Initialize Database (After First Deploy)**
 ```bash
@@ -62,13 +62,13 @@ npx prisma generate && npx prisma db push --accept-data-loss && npm run build
 
 1. Go to [https://app.netlify.com](https://app.netlify.com)
 2. Click "Add new site" → "Import an existing project"
-3. Connect to GitHub → Select `NoxTitan` repo
+3. Connect to GitHub → Select `NyxTitan` repo
 4. Build settings:
    - Build command: `npm run build`
    - Publish directory: `.next`
 5. Add environment variables (same as Vercel above)
 6. Deploy!
-7. Your URL: `https://noxtitan.netlify.app`
+7. Your URL: `https://nyxtitan.netlify.app`
 
 ---
 
@@ -250,5 +250,5 @@ Even without live data, this demo shows:
 **Next Step:** Deploy to Vercel
 **Time to Live Demo:** 5 minutes
 
-**Live URL (after deployment):** `https://noxtitan-{yourname}.vercel.app`
+**Live URL (after deployment):** `https://nyxtitan-{yourname}.vercel.app`
 

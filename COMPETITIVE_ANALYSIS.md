@@ -1,9 +1,9 @@
-# TeamPulse™ vs. Competitors - Feature Comparison
+# NyxTitan™ vs. Competitors - Feature Comparison
 
-## 🏆 How TeamPulse Beats the Competition
+## 🏆 How NyxTitan Beats the Competition
 
 ### **vs. Paycom**
-| Feature | TeamPulse™ | Paycom |
+| Feature | NyxTitan™ | Paycom |
 |---------|-----------|--------|
 | **Time Clock Hardware Support** | 15+ brands | Limited (Paycom hardware only) |
 | **Shift Differentials** | ✅ Automatic calculation | ✅ Manual entry required |
@@ -18,7 +18,7 @@
 | **Pricing** | $29-99/mo | $200+ per month |
 
 ### **vs. ADP Workforce Now**
-| Feature | TeamPulse™ | ADP |
+| Feature | NyxTitan™ | ADP |
 |---------|-----------|-----|
 | **Setup Time** | < 1 hour | 2-4 weeks |
 | **Data Import** | ✅ 50+ sources, instant | ⚠️ Professional services required |
@@ -31,7 +31,7 @@
 | **Per-Employee Cost** | $0.00 (flat rate) | $8-15 per employee |
 
 ### **vs. Kronos/UKG**
-| Feature | TeamPulse™ | Kronos/UKG |
+| Feature | NyxTitan™ | Kronos/UKG |
 |---------|-----------|------------|
 | **Learning Curve** | 1 day | 1-2 weeks |
 | **Implementation** | Self-service | Requires consultant |
@@ -44,7 +44,7 @@
 
 ---
 
-## 🚀 TeamPulse™ Exclusive Features
+## 🚀 NyxTitan™ Exclusive Features
 
 ### **Advanced Time Clock Integration**
 ✅ **15+ Hardware Brands Supported:**
@@ -227,10 +227,10 @@
 
 ---
 
-## 🎯 Why Choose TeamPulse™?
+## 🎯 Why Choose NyxTitan™?
 
 ### **1. Works With Your Existing Hardware**
-Unlike Paycom and Kronos, you don't need to buy new time clocks. TeamPulse integrates with what you already have.
+Unlike Paycom and Kronos, you don't need to buy new time clocks. NyxTitan integrates with what you already have.
 
 ### **2. Set Up in Minutes, Not Weeks**
 - Import your data from CSV/Excel
@@ -290,25 +290,25 @@ Export anytime. No lock-in. Own your data forever.
 ## 📞 Getting Started
 
 ### **Try It Now**
-1. Visit app.teampulse.com
+1. Visit app.nyxtitan.com
 2. Sign up (takes 60 seconds)
 3. Import your employees
 4. Start scheduling
 
 ### **Demo Account**
-- Email: demo@teampulse.com
+- Email: demo@nyxtitan.com
 - Password: demo123456
 - See real data in action
 
 ### **Have Questions?**
 - Live chat: Available 24/7
-- Email: support@teampulse.com
+- Email: support@nyxtitan.com
 - Phone: 1-800-TEAMPULSE
-- Video tutorials: help.teampulse.com
+- Video tutorials: help.nyxtitan.com
 
 ---
 
-**TeamPulse™** - The workforce management platform that actually works the way you do.
+**NyxTitan™** - The workforce management platform that actually works the way you do.
 
 *Built by Connie Michelle Consulting & Business Solutions LLC*
 *Your success is our mission.*

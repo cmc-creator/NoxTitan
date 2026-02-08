@@ -57,7 +57,7 @@ export default function LoginPage() {
           <div className="flex items-center justify-center mb-4">
               {/* Logo removed as requested */}
             </div>
-            <h1 className="text-5xl font-extrabold text-purple-300 mb-2 tracking-wide" style={{ textShadow: '0 0 12px #a78bfa' }}>NoxTitan</h1>
+            <h1 className="text-5xl font-extrabold text-purple-300 mb-2 tracking-wide" style={{ textShadow: '0 0 12px #a78bfa' }}>NyxTitan</h1>
             <p className="text-purple-400 font-semibold">Sign in to your account</p>
             <p className="text-xs text-purple-500 mt-2 font-bold">Business Management. Forged for Titans.</p>
         </div>
@@ -187,8 +187,8 @@ export default function LoginPage() {
           <div className="mt-6 p-4 bg-slate-700/30 rounded-lg border border-slate-600">
             <p className="text-xs font-semibold text-slate-300 mb-2">Demo Credentials:</p>
             <p className="text-xs text-slate-400">
-              Email: admin@scheduler.com<br />
-              Password: admin123
+              Email: demo@nyxtitan.com<br />
+              Password: demo123456
             </p>
           </div>
         </div>

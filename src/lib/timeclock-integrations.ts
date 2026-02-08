@@ -280,15 +280,15 @@ ${integration.protocols.map(p => `- ${p}`).join('\n')}
 ${integration.capabilities.map(c => `- ${c}`).join('\n')}
 
 ### Setup Steps
-1. Register device in NoxTitan (Settings > Time Clocks > Add Device)
-2. Configure device with NoxTitan API endpoint
+1. Register device in NyxTitan (Settings > Time Clocks > Add Device)
+2. Configure device with NyxTitan API endpoint
 3. ${integration.webhookSupported ? 'Set up webhook URL for real-time sync' : 'Enable polling for periodic sync'}
 4. Test connection with a sample punch
-5. Map employee badge numbers to NoxTitan employee records
+5. Map employee badge numbers to NyxTitan employee records
 
 ${integration.apiDocUrl ? `\n### Developer Documentation\n${integration.apiDocUrl}` : ''}
 
 ### Need Help?
-Contact NoxTitan support for assistance with your ${integration.brand} integration.
+Contact NyxTitan support for assistance with your ${integration.brand} integration.
   `.trim();
 }

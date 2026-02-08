@@ -1,7 +1,7 @@
-# NoxTitan™ Customizable Reports & Analytics
+# NyxTitan™ Customizable Reports & Analytics
 
 ## Legal & HIPAA Compliance Notice
-All reporting and analytics features are designed to support HIPAA, labor law, and privacy compliance. Sensitive data is encrypted, access-controlled, and audit-logged. Users must ensure reports are configured in accordance with their organization’s legal requirements. For compliance support, contact legal@noxtitan.com.
+All reporting and analytics features are designed to support HIPAA, labor law, and privacy compliance. Sensitive data is encrypted, access-controlled, and audit-logged. Users must ensure reports are configured in accordance with their organization’s legal requirements. For compliance support, contact legal@nyxtitan.com.
 
 ## Features
 - Fully customizable report builder (select fields, filters, visualizations)
@@ -28,4 +28,4 @@ All reporting and analytics features are designed to support HIPAA, labor law, a
 
 ---
 
-For legal, privacy, and HIPAA compliance support, contact legal@noxtitan.com or privacy@noxtitan.com.
+For legal, privacy, and HIPAA compliance support, contact legal@nyxtitan.com or privacy@nyxtitan.com.

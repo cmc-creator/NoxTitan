@@ -109,7 +109,7 @@ export default function OnboardingPage() {
           <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-8">
             <h1 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
               <Sparkles className="w-8 h-8 text-yellow-400" />
-              Welcome to NoxTitan!
+              Welcome to NyxTitan!
             </h1>
             <p className="text-slate-300 mb-6">Let's get you set up. First, what's your role?</p>
             

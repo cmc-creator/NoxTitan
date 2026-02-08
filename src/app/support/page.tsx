@@ -131,7 +131,7 @@ export default function SupportPage() {
       views: 2847,
       helpful: 234,
       icon: <Zap className="w-6 h-6" />,
-      content: 'Complete guide to setting up your NoxTitan account...',
+      content: 'Complete guide to setting up your NyxTitan account...',
       tags: ['setup', 'onboarding', 'basics']
     },
     {
@@ -171,7 +171,7 @@ export default function SupportPage() {
       views: 987,
       helpful: 95,
       icon: <FileText className="w-6 h-6" />,
-      content: 'Connect NoxTitan with your payroll system...',
+      content: 'Connect NyxTitan with your payroll system...',
       tags: ['payroll', 'integration', 'setup']
     },
     {
@@ -638,7 +638,7 @@ export default function SupportPage() {
                   </div>
                   <input 
                     type="email" 
-                    placeholder="support@noxtitan.com" 
+                    placeholder="support@nyxtitan.com" 
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
                   />
                 </div>
