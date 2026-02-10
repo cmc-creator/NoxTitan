@@ -1,0 +1,195 @@
+// Core Scheduler Database Models
+// This is a simplified extraction of the essential models for the scheduler system
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User/Organization model
+model User {
+  id            String         @id @default(cuid())
+  email         String         @unique
+  name          String?
+  passwordHash  String
+  
+  // Payroll Settings - Shift Differentials
+  nightDifferential   Float?   @default(1.5)    // 1.5x for night shifts (10pm-6am)
+  weekendDifferential Float?   @default(1.25)   // 1.25x for weekends
+  holidayDifferential Float?   @default(2.0)    // 2.0x for holidays
+  overtimeRate        Float?   @default(1.5)    // 1.5x after 40 hours/week
+  
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  employees     Employee[]
+  shifts        Shift[]
+  schedules     Schedule[]
+  timeOffRequests TimeOffRequest[]
+}
+
+// Employee model
+model Employee {
+  id            String         @id @default(cuid())
+  userId        String
+  firstName     String
+  lastName      String
+  email         String
+  phone         String?
+  position      String?
+  hourlyRate    Float?         // For payroll calculations
+  color         String?        // For calendar display
+  avatar        String?        // Profile picture URL or base64
+  skills        Json?          // Array of skills/certifications
+  
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  shifts        Shift[]
+  swapRequests  ShiftSwap[]
+  timeOffRequests TimeOffRequest[]
+  timeClockEntries TimeClockEntry[]
+  availability  Availability[]
+}
+
+// Shift model - The core scheduling entity
+model Shift {
+  id            String         @id @default(cuid())
+  userId        String
+  employeeId    String
+  scheduleId    String?
+  
+  // Shift details
+  title         String?
+  startTime     DateTime
+  endTime       DateTime
+  position      String?
+  notes         String?
+  color         String?
+  
+  // Publishing & breaks
+  isPublished   Boolean        @default(false)
+  breakMinutes  Int?           @default(0)
+  
+  // Payroll flags
+  isNightShift  Boolean        @default(false)
+  isWeekend     Boolean        @default(false)
+  isHoliday     Boolean        @default(false)
+  overtimeHours Float?         @default(0)
+  totalPay      Float?
+  
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  employee      Employee       @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  schedule      Schedule?      @relation(fields: [scheduleId], references: [id], onDelete: SetNull)
+  timeClockEntries TimeClockEntry[]
+  swapRequests  ShiftSwap[]
+  
+  @@index([userId, startTime])
+  @@index([employeeId, startTime])
+}
+
+// Schedule - For organizing multiple shifts (e.g., weekly templates)
+model Schedule {
+  id            String         @id @default(cuid())
+  userId        String
+  name          String
+  description   String?
+  startDate     DateTime
+  endDate       DateTime
+  isPublished   Boolean        @default(false)
+  isTemplate    Boolean        @default(false)
+  
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  shifts        Shift[]
+  employees     Employee[]
+}
+
+// Shift Swap Request - Employees can request to swap shifts
+model ShiftSwap {
+  id                String         @id @default(cuid())
+  shiftId           String
+  requestingEmployeeId String
+  targetEmployeeId  String?        // Optional: specific employee to swap with
+  message           String?
+  status            RequestStatus  @default(PENDING)
+  
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+  
+  shift             Shift          @relation(fields: [shiftId], references: [id], onDelete: Cascade)
+  requestingEmployee Employee      @relation(fields: [requestingEmployeeId], references: [id], onDelete: Cascade)
+}
+
+// Time Off Request - PTO, Sick Leave, etc.
+model TimeOffRequest {
+  id            String         @id @default(cuid())
+  userId        String
+  employeeId    String
+  
+  startDate     DateTime
+  endDate       DateTime
+  reason        String?
+  status        RequestStatus  @default(PENDING)
+  type          String         @default("PTO") // PTO, SICK, VACATION, etc.
+  hoursRequested Float?
+  
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  employee      Employee       @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+}
+
+// Time Clock Entry - Punch in/out tracking
+model TimeClockEntry {
+  id            String         @id @default(cuid())
+  userId        String
+  employeeId    String
+  shiftId       String?
+  
+  clockIn       DateTime
+  clockOut      DateTime?
+  location      String?
+  ipAddress     String?
+  notes         String?
+  
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  employee      Employee       @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  shift         Shift?         @relation(fields: [shiftId], references: [id], onDelete: SetNull)
+}
+
+// Availability - Employee availability patterns
+model Availability {
+  id            String         @id @default(cuid())
+  employeeId    String
+  dayOfWeek     Int            // 0-6, Sunday=0
+  startTime     String         // "09:00"
+  endTime       String         // "17:00"
+  isAvailable   Boolean        @default(true)
+  
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  employee      Employee       @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+}
+
+// Request status enum
+enum RequestStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
