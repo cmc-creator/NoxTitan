@@ -489,13 +489,13 @@ a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
 }
 
 .feature-col { width: 40%; }
-.competitor-col, .noxtitan-col { width: 30%; text-align: center; }
+.competitor-col, .nyxtitan-col { width: 30%; text-align: center; }
 
-.noxtitan-col {
+.nyxtitan-col {
     background-color: rgba(124, 77, 255, 0.08); /* Stronger purple tint for column */
 }
 
-.noxtitan-cell {
+.nyxtitan-cell {
     background-color: rgba(124, 77, 255, 0.08);
     font-size: 1.5rem;
 }
