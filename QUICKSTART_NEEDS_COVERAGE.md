@@ -50,7 +50,7 @@ Open `NEEDS_COVERAGE_DEMO.html` in a browser to see the exact appearance.
 - **SCHEDULER_EXTRACTION_GUIDE.md** - Full implementation guide
 - **NEEDS_COVERAGE_DEMO.html** - Interactive visual demo
 
-## The Exact Button Code from NoxTitan
+## The Exact Button Code from NyxTitan
 
 ```tsx
 <button
@@ -89,4 +89,4 @@ See the full guide in `SCHEDULER_EXTRACTION_GUIDE.md` for:
 
 ---
 
-**Reference**: `src/components/InteractiveCalendar.tsx` lines 1970-2034 in NoxTitan
+**Reference**: `src/components/InteractiveCalendar.tsx` lines 1970-2034 in NyxTitan

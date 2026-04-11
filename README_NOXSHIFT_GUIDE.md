@@ -1,6 +1,6 @@
 # NoxShift "NEEDS COVERAGE" Implementation Guide
 
-This directory contains complete documentation for replicating NoxTitan's "NEEDS COVERAGE" feature in NoxShift.
+This directory contains complete documentation for replicating NyxTitan's "NEEDS COVERAGE" feature in NoxShift.
 
 ## 📁 Files in This Documentation Package
 
@@ -101,7 +101,7 @@ If it's still not working after implementing:
 3. ✅ Check: Your conditional renders different UI for `isCallout`
 4. ✅ Check: No typos in property name (`isCallout` vs `isCallOut`)
 
-## 📚 What's in NoxTitan's Implementation
+## 📚 What's in NyxTitan's Implementation
 
 ### The Property
 ```typescript
@@ -174,4 +174,4 @@ You'll know it's working when:
 
 **Good luck with NoxShift!** 🚀
 
-If you have questions about the implementation, refer to the detailed guide or examine the source code in NoxTitan's InteractiveCalendar component.
+If you have questions about the implementation, refer to the detailed guide or examine the source code in NyxTitan's InteractiveCalendar component.

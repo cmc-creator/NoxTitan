@@ -92,7 +92,7 @@ It should look like this (CORRECT):
 )}
 ```
 
-## Exact Styling to Match NoxTitan
+## Exact Styling to Match NyxTitan
 
 ### Tailwind Classes
 ```
@@ -215,4 +215,4 @@ For more details, examples, and troubleshooting, see `SCHEDULER_EXTRACTION_GUIDE
 
 ---
 
-**That's it! Three simple steps and your NoxShift scheduler will match NoxTitan's "NEEDS COVERAGE" feature perfectly.** 🎯
+**That's it! Three simple steps and your NoxShift scheduler will match NyxTitan's "NEEDS COVERAGE" feature perfectly.** 🎯

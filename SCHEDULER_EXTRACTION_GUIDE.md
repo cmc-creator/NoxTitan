@@ -1,7 +1,7 @@
 # Scheduler Extraction Guide: "NEEDS COVERAGE" Feature
 
 ## Overview
-This guide explains how the red "NEEDS COVERAGE" feature works in NoxTitan's scheduler and how to replicate it in NoxShift or other programs. The feature displays a prominent red, animated button when a shift needs coverage (e.g., when someone calls out).
+This guide explains how the red "NEEDS COVERAGE" feature works in NyxTitan's scheduler and how to replicate it in NoxShift or other programs. The feature displays a prominent red, animated button when a shift needs coverage (e.g., when someone calls out).
 
 ## The Problem You're Experiencing
 **Issue**: Your implementation keeps showing an employee name instead of "NEEDS COVERAGE"
@@ -366,7 +366,7 @@ If you're not using Tailwind CSS, here are the equivalent styles:
 }
 ```
 
-## Files to Reference in NoxTitan
+## Files to Reference in NyxTitan
 - `src/components/InteractiveCalendar.tsx` - Lines 1970-2034 for the exact rendering logic
 - Line 31: Interface definition with `isCallout` property
 - Lines 2020-2033: The exact JSX for the red button
