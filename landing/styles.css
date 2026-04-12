@@ -6,17 +6,21 @@
 }
 
 :root {
-    --bg-darkest: #0a0a0c; /* Deep Space Black */
-    /* Global Reset and Base Styles */
-    --bg-lighter: #1a1a1e; /* Slightly lighter contrast */
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0b0; /* Soft Silver-Blue */
-    --accent-purple: #7C4DFF; /* Vibrant Purple */
-    --accent-purple-glow: rgba(124, 77, 255, 0.6);
-    --accent-silver: #e0e0e0;
-    --border-color: rgba(255, 255, 255, 0.1);
+    --bg-darkest: #0a0a0a; /* Deep Black */
+    --bg-dark: #1a1612; /* Dark Leather */
+    --bg-lighter: #2d2416; /* Lighter Leather */
+    --text-primary: #F0F8FF; /* Diamond White */
+    --text-secondary: #C0C0C0; /* Premium Silver */
+    --accent-gold: #D4AF37; /* Classic Gold */
+    --accent-gold-bright: #FFD700; /* Warm Gold */
+    --accent-gold-glow: rgba(212, 175, 55, 0.6);
+    --accent-silver: #C0C0C0; /* Premium Silver */
+    --accent-silver-bright: #E8E8E8; /* Bright Silver */
+    --border-color: rgba(212, 175, 55, 0.2);
     --font-stack: 'Inter', system-ui, sans-serif;
     --section-spacing: 100px;
+    --leather-dark: #4A3728;
+    --leather-warm: #8B7355;
 }
 
 html {
@@ -68,22 +72,23 @@ a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
     font-family: var(--font-stack);
 }
 
-/* Primary Purple Gradient Button */
+/* Primary Gold Gradient Button */
 .btn-primary {
-    background: linear-gradient(90deg, #7C4DFF 0%, #6200ea 100%);
-    color: white;
+    background: linear-gradient(90deg, #D4AF37 0%, #FFD700 100%);
+    color: #0a0a0a;
     border: none;
+    font-weight: 600;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px var(--accent-purple-glow);
+    box-shadow: 0 4px 15px var(--accent-gold-glow);
 }
 
 /* Secondary Outline Button (For Login) */
 .btn-secondary {
     background: transparent;
-    border: 1px solid var(--accent-purple);
+    border: 1px solid var(--accent-gold);
     color: var(--text-primary);
 }
 
@@ -106,7 +111,7 @@ a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
 }
 
 .text-link {
-    color: var(--accent-purple);
+    color: var(--accent-gold);
     font-weight: 600;
     margin-left: 20px;
     display: inline-block;
@@ -173,7 +178,7 @@ a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
     font-weight: 500;
 }
 .nav-link:hover {
-    color: var(--accent-purple);
+    color: var(--accent-gold);
 }
 
 .navbar {
@@ -299,12 +304,12 @@ a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
     overflow: hidden;
 }
 
-/* Subtle purple glow around dashboard */
+/* Subtle gold glow around dashboard */
 .dashboard-placeholder::before {
      content: '';
      position: absolute;
      inset: -1px;
-     background: linear-gradient(45deg, transparent, var(--accent-purple-glow), transparent);
+     background: linear-gradient(45deg, transparent, var(--accent-gold-glow), transparent);
      z-index: -1;
      filter: blur(20px);
 }
@@ -321,10 +326,10 @@ a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
 .loading-glow {
     width: 50px;
     height: 4px;
-    background: var(--accent-purple);
+    background: var(--accent-gold);
     margin: 20px auto 0;
     border-radius: 2px;
-    box-shadow: 0 0 15px var(--accent-purple);
+    box-shadow: 0 0 15px var(--accent-gold);
     animation: pulse-loading 1.5s infinite ease-in-out;
 }
 
@@ -398,7 +403,7 @@ a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
     border-radius: 16px;
     overflow: hidden;
     background: #000;
-    border: 2px solid var(--accent-purple);
+    border: 2px solid var(--accent-gold);
     box-shadow: 0 40px 80px rgba(124,77,255,0.18), 0 2px 24px rgba(0,0,0,0.4);
     display: flex;
     align-items: center;
@@ -420,20 +425,20 @@ a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
 .play-button {
     width: 90px;
     height: 90px;
-    background: linear-gradient(135deg, var(--accent-purple), #5e35b1);
+    background: linear-gradient(135deg, var(--accent-gold), #5e35b1);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 25px;
-    box-shadow: 0 0 40px var(--accent-purple-glow);
+    box-shadow: 0 0 40px var(--accent-gold-glow);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .play-button:hover { 
     transform: scale(1.1); 
-    box-shadow: 0 0 60px var(--accent-purple-glow);
+    box-shadow: 0 0 60px var(--accent-gold-glow);
 }
 
 .play-icon {
@@ -492,11 +497,11 @@ a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
 .competitor-col, .nyxtitan-col { width: 30%; text-align: center; }
 
 .nyxtitan-col {
-    background-color: rgba(124, 77, 255, 0.08); /* Stronger purple tint for column */
+    background-color: rgba(212, 175, 55, 0.08); /* Gold tint for column */
 }
 
 .nyxtitan-cell {
-    background-color: rgba(124, 77, 255, 0.08);
+    background-color: rgba(212, 175, 55, 0.08);
     font-size: 1.5rem;
 }
 
@@ -545,7 +550,7 @@ a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
 
 .stat-number {
     font-size: clamp(3.5rem, 5vw, 5rem);
-    background: linear-gradient(to bottom right, var(--accent-purple), #ffffff);
+    background: linear-gradient(to bottom right, var(--accent-gold), #ffffff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 15px;
@@ -632,7 +637,7 @@ author { display: flex; align-items: center; }
 
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
     outline: none;
-    border-color: var(--accent-purple);
+    border-color: var(--accent-gold);
     box-shadow: 0 0 0 3px rgba(124, 77, 255, 0.1);
 }
 select { cursor: pointer; }
@@ -666,7 +671,7 @@ select { cursor: pointer; }
     margin: 0 10px;
     color: var(--text-secondary);
 }
-.legal-links a:hover { color: var(--accent-purple); }
+.legal-links a:hover { color: var(--accent-gold); }
 
 
 /* =========================================
@@ -678,12 +683,12 @@ select { cursor: pointer; }
     right: 30px;
     width: 64px;
     height: 64px;
-    background: linear-gradient(135deg, var(--accent-purple), #6200ea);
+    background: linear-gradient(135deg, var(--accent-gold), #6200ea);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 10px 30px var(--accent-purple-glow);
+    box-shadow: 0 10px 30px var(--accent-gold-glow);
     cursor: pointer;
     z-index: 9999;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
@@ -693,7 +698,7 @@ select { cursor: pointer; }
 
 .ai-chatbot-bubble:hover { 
     transform: scale(1.1) translateY(-5px);
-    box-shadow: 0 15px 40px var(--accent-purple-glow);
+    box-shadow: 0 15px 40px var(--accent-gold-glow);
 }
 
 
@@ -732,9 +737,10 @@ select { cursor: pointer; }
     .nav-btn { padding: 8px 14px; font-size: 0.85rem; }
 
     .nav-btn.btn-primary, .btn-primary.nav-btn {
-        background: linear-gradient(90deg, #7C4DFF 0%, #6200ea 100%);
-        color: white;
+        background: linear-gradient(90deg, #D4AF37 0%, #FFD700 100%);
+        color: #0a0a0a;
         border: none;
+        font-weight: 600;
     }
 
     /* Hero adjustments */
@@ -763,50 +769,3 @@ select { cursor: pointer; }
     .footer-headline { font-size: 2.2rem; }
     .footer-legal { text-align: center; padding: 30px 20px; }
 }
-/* Global Reset and Base Styles */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-:root {
-    --bg-darkest: #0a0a0c; /* Deep Space Black */
-    --bg-dark: #121214;    /* Dark Charcoal */
-    --bg-lighter: #1a1a1e; /* Slightly lighter contrast */
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0b0; /* Soft Silver-Blue */
-    --accent-purple: #7C4DFF; /* Vibrant Purple */
-    --accent-purple-glow: rgba(124, 77, 255, 0.6);
-    --accent-silver: #e0e0e0;
-    --border-color: rgba(255, 255, 255, 0.1);
-    --font-stack: 'Inter', system-ui, sans-serif;
-    --section-spacing: 100px;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: var(--font-stack);
-    background-color: var(--bg-darkest);
-    color: var(--text-primary);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* Typography Utilities */
-h1, h2, h3 {
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.2;
-}
-
-h1 { font-size: clamp(3rem, 5vw, 4.5rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
-h3 { font-size: 1.5rem; }
-p { color: var(--text-secondary); font-size: 1.1rem; }
-a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
-
-/* ...rest of CSS omitted for brevity, but will be included in the actual file... */
