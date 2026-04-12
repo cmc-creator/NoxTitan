@@ -25,6 +25,15 @@ Warm Leather:     #2d2416  rgb(45, 36, 22)
                   #8B7355  rgb(139, 115, 85)
 ```
 
+### Tan Marble Palette (NEW)
+```
+Tan Marble Base:  #DEC8B0  rgb(222, 200, 176)
+Tan Marble Dark:  #B4A08C  rgb(180, 160, 140)
+Tan Marble Light: #D2B48C  rgb(210, 180, 140)
+Tan Marble Glow:  #BC8F6C  rgb(188, 143, 108)
+Wheat Highlight:  #F5DEB3  rgb(245, 222, 179)
+```
+
 ## Theme Characteristics
 
 ### Visual Identity
@@ -130,10 +139,37 @@ background: linear-gradient(135deg, #ffffff 0%, #E8E8E8 30%, #ffffff 50%, #FFD70
 
 ### Cards & Panels
 ```css
+/* Standard Dark Leather Card */
 background: #1a1612; /* Dark Leather */
 border: 1px solid rgba(212, 175, 55, 0.2); /* Gold border */
 box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); /* Gold glow */
+
+/* Luxury Tan Marble Card (High-end variant) */
+.glass-tile-marble {
+  /* Multi-layer marble effect with gold veining */
+  background: 
+    linear-gradient(135deg, rgba(222, 200, 176, 0.15) 0%, rgba(180, 160, 140, 0.12) 100%),
+    linear-gradient(45deg, transparent 30%, rgba(212, 175, 55, 0.03) 40%, transparent 50%),
+    linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(20, 18, 16, 0.75) 100%);
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+/* Tan Marble Card - Lighter variant */
+.glass-tile-tan-marble {
+  /* Subtle cross-hatch marble pattern */
+  background: 
+    linear-gradient(135deg, rgba(210, 180, 140, 0.2) 0%, rgba(188, 143, 108, 0.15) 100%),
+    repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(212, 175, 55, 0.02) 50px),
+    linear-gradient(135deg, rgba(26, 22, 18, 0.9) 0%, rgba(45, 36, 22, 0.85) 100%);
+  border-color: rgba(210, 180, 140, 0.6);
+}
 ```
+
+**When to use marble variants:**
+- `.glass-tile-marble` - For premium dashboard cards, statistics, or key features
+- `.glass-tile-tan-marble` - For content cards, settings panels, or forms
+- Creates a luxurious, high-end appearance with subtle texture
+- Works best for important UI elements that should stand out
 
 ## Accessibility
 
