@@ -78,10 +78,10 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 max-w-6xl w-full border-2 border-purple-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 max-w-6xl w-full border-2 border-amber-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <Settings className="w-8 h-8 text-purple-400" />
+            <Settings className="w-8 h-8 text-amber-400" />
             <h2 className="text-3xl font-bold text-white">Customize Your Dashboard</h2>
           </div>
           <button
@@ -98,7 +98,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
             onClick={() => setActiveTab('layout')}
             className={`px-6 py-3 rounded-lg font-semibold transition-all ${
               activeTab === 'layout'
-                ? 'bg-purple-500 text-white'
+                ? 'bg-amber-500 text-white'
                 : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
             }`}
           >
@@ -108,7 +108,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
             onClick={() => setActiveTab('suggestions')}
             className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'suggestions'
-                ? 'bg-purple-500 text-white'
+                ? 'bg-amber-500 text-white'
                 : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
             }`}
           >
@@ -120,8 +120,8 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
         {/* Layout Tab */}
         {activeTab === 'layout' && (
           <div>
-            <div className="mb-6 p-4 bg-purple-500/10 border border-purple-400/30 rounded-lg">
-              <p className="text-purple-200 text-sm">
+            <div className="mb-6 p-4 bg-amber-500/10 border border-amber-400/30 rounded-lg">
+              <p className="text-amber-200 text-sm">
                 🎨 Drag and drop tiles to rearrange, or toggle visibility. Your layout is saved automatically.
               </p>
             </div>
@@ -130,7 +130,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
             {Array.from(new Set(tiles.map(t => t.category))).map(category => (
               <div key={category} className="mb-6">
                 <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                  <div className="w-3 h-3 bg-purple-400 rounded-full"></div>
+                  <div className="w-3 h-3 bg-amber-400 rounded-full"></div>
                   {category}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -139,7 +139,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                       key={tile.id}
                       className={`p-4 rounded-xl border-2 transition-all ${
                         tile.enabled
-                          ? 'bg-slate-700/50 border-purple-500/30'
+                          ? 'bg-slate-700/50 border-amber-500/30'
                           : 'bg-slate-800/30 border-slate-600'
                       }`}
                     >

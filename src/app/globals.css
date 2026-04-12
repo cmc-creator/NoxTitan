@@ -19,7 +19,7 @@
   text-shadow: 
     0 1px 2px rgba(0, 0, 0, 0.8),
     0 2px 4px rgba(0, 0, 0, 0.5),
-    0 0 20px rgba(168, 85, 247, 0.3);
+    0 0 20px rgba(212, 175, 55, 0.3);
 }
 
 .text-pop-strong {
@@ -27,7 +27,7 @@
     0 1px 3px rgba(0, 0, 0, 0.9),
     0 2px 6px rgba(0, 0, 0, 0.7),
     0 4px 12px rgba(0, 0, 0, 0.5),
-    0 0 30px rgba(168, 85, 247, 0.4);
+    0 0 30px rgba(212, 175, 55, 0.4);
 }
 
 .text-pop-light {
@@ -38,33 +38,47 @@
 
 .text-glow {
   text-shadow: 
-    0 0 10px rgba(168, 85, 247, 0.8),
-    0 0 20px rgba(168, 85, 247, 0.6),
-    0 0 30px rgba(168, 85, 247, 0.4),
+    0 0 10px rgba(212, 175, 55, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.6),
+    0 0 30px rgba(212, 175, 55, 0.4),
     0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.text-glow-gold {
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(255, 215, 0, 0.6),
+    0 2px 4px rgba(0, 0, 0, 0.9);
 }
 
 .text-glow-white {
   text-shadow: 
-    0 0 10px rgba(255, 255, 255, 0.8),
-    0 0 20px rgba(255, 255, 255, 0.6),
+    0 0 10px rgba(240, 248, 255, 0.8),
+    0 0 20px rgba(240, 248, 255, 0.6),
     0 2px 4px rgba(0, 0, 0, 0.9);
 }
 
-/* Custom Color Variables - Black & Purple Titan Theme */
+/* Custom Color Variables - Luxury Gold & Leather Theme */
 :root {
-  --page-bg: #000000;
-  --card-bg: #0a0a0a;
-  --primary-btn: linear-gradient(to right, #7c3aed, #581c87);
-  --secondary-btn: linear-gradient(135deg, #7c3aed, #581c87);
-  --header-text: #ffffff;
-  --body-text: #e9d5ff;
-  --calendar-bg: #0a0a0a;
-  --calendar-numbers: #ffffff;
-  --today-highlight: #a855f7;
-  --border-color: #6b21a8;
-  --purple-glow: rgba(168, 85, 247, 0.3);
-  --black-purple-gradient: linear-gradient(to bottom, #000000, #1e1b4b, #581c87);
+  --page-bg: #0a0a0a;
+  --card-bg: #1a1612; /* Dark Leather */
+  --primary-btn: linear-gradient(to right, #D4AF37, #FFD700);
+  --secondary-btn: linear-gradient(135deg, #C0C0C0, #E8E8E8);
+  --header-text: #F0F8FF; /* Diamond White */
+  --body-text: #E8E8E8;
+  --calendar-bg: #1a1612;
+  --calendar-numbers: #F0F8FF;
+  --today-highlight: #D4AF37; /* Classic Gold */
+  --border-color: #8B7355; /* Warm Leather */
+  --gold-glow: rgba(212, 175, 55, 0.4);
+  --luxury-gradient: linear-gradient(to bottom, #0a0a0a, #2d2416, #4A3728);
+  --accent-gold: #D4AF37;
+  --accent-gold-bright: #FFD700;
+  --accent-silver: #C0C0C0;
+  --accent-silver-bright: #E8E8E8;
+  --leather-dark: #4A3728;
+  --leather-warm: #8B7355;
+  --diamond-white: #F0F8FF;
 }
 
 /* Animations */
@@ -88,14 +102,27 @@
   0%, 100% { 
     opacity: 1;
     box-shadow: 
-      0 -20px 60px rgba(147, 197, 253, 0.4),
-      inset 0 10px 30px rgba(255, 255, 255, 0.5);
+      0 -20px 60px rgba(212, 175, 55, 0.4),
+      inset 0 10px 30px rgba(255, 215, 0, 0.3);
   }
   50% { 
     opacity: 0.95;
     box-shadow: 
-      0 -25px 70px rgba(147, 197, 253, 0.5),
-      inset 0 10px 35px rgba(255, 255, 255, 0.6);
+      0 -25px 70px rgba(212, 175, 55, 0.5),
+      inset 0 10px 35px rgba(255, 215, 0, 0.4);
+  }
+}
+
+@keyframes gold-shimmer {
+  0%, 100% { 
+    box-shadow: 
+      0 0 20px rgba(212, 175, 55, 0.4),
+      0 0 40px rgba(212, 175, 55, 0.2);
+  }
+  50% { 
+    box-shadow: 
+      0 0 30px rgba(255, 215, 0, 0.6),
+      0 0 60px rgba(255, 215, 0, 0.3);
   }
 }
 

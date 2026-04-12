@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEEDS COVERAGE Button Demo - Visual Reference</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+    .animate-pulse {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    body {
+      background: #0f172a;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="p-8">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold text-white mb-2">NEEDS COVERAGE Button - Visual Reference</h1>
+    <p class="text-gray-400 mb-8">This is the exact appearance of the "NEEDS COVERAGE" button from NyxTitan's scheduler</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <!-- NEEDS COVERAGE Button (What you want) -->
+      <div class="space-y-4">
+        <h2 class="text-xl font-semibold text-white">✅ NEEDS COVERAGE (Callout Shift)</h2>
+        <p class="text-sm text-gray-400">When <code class="bg-gray-800 px-2 py-1 rounded">isCallout: true</code></p>
+        
+        <button
+          class="w-full p-3 rounded-lg bg-gradient-to-br from-red-900 to-rose-900 border-2 border-red-500 text-white font-bold shadow-lg hover:from-red-800 hover:to-rose-800 transition-all hover:scale-105 cursor-pointer animate-pulse"
+        >
+          <div class="flex flex-col items-center gap-1">
+            <div class="flex items-center gap-1 text-yellow-300">
+              <!-- AlertTriangle Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+              <span class="text-xs uppercase">NEEDS COVERAGE</span>
+            </div>
+            <div class="flex items-center gap-1 text-lg">
+              <!-- DollarSign Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+              <span>OFFER BONUS?</span>
+            </div>
+            <div class="text-[8px] text-red-200 opacity-75">(Optional)</div>
+          </div>
+        </button>
+        
+        <div class="bg-gray-800 p-4 rounded-lg text-xs text-gray-300">
+          <pre class="overflow-x-auto">const shift = {
+  id: 1,
+  title: "Day Shift",
+  isCallout: true,
+  employeeName: undefined,
+  employeeId: undefined
+};</pre>
+        </div>
+      </div>
+
+      <!-- Normal Employee Shift (What you're currently seeing) -->
+      <div class="space-y-4">
+        <h2 class="text-xl font-semibold text-white">❌ Employee Name Card (Normal Shift)</h2>
+        <p class="text-sm text-gray-400">When <code class="bg-gray-800 px-2 py-1 rounded">isCallout: false</code> or missing</p>
+        
+        <div class="w-full p-3 rounded-lg bg-blue-900 border border-blue-500 text-white shadow-lg">
+          <div class="flex items-center gap-2 mb-1">
+            <!-- User Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span class="font-semibold">Sarah Martinez</span>
+          </div>
+          <div class="text-xs text-blue-200">Day Shift - Nursing</div>
+          <div class="text-[10px] text-blue-300 mt-1">Floor 3 • 7:00 AM - 3:00 PM</div>
+        </div>
+        
+        <div class="bg-gray-800 p-4 rounded-lg text-xs text-gray-300">
+          <pre class="overflow-x-auto">const shift = {
+  id: 1,
+  title: "Day Shift",
+  isCallout: false,
+  employeeName: "Sarah Martinez",
+  employeeId: "1"
+};</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Problem Section -->
+    <div class="bg-yellow-900/20 border-2 border-yellow-600 rounded-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold text-yellow-400 mb-3">⚠️ The Problem You're Experiencing</h2>
+      <p class="text-white mb-3">You're seeing the <strong>Employee Name Card</strong> (right) instead of the <strong>NEEDS COVERAGE button</strong> (left) because:</p>
+      <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+        <li>The <code class="bg-gray-800 px-2 py-1 rounded text-yellow-300">isCallout</code> property is missing or set to <code class="bg-gray-800 px-2 py-1 rounded">false</code></li>
+        <li>OR an <code class="bg-gray-800 px-2 py-1 rounded text-yellow-300">employeeName</code> is still assigned to the shift</li>
+        <li>The rendering logic checks: <code class="bg-gray-800 px-2 py-1 rounded">if (shift.isCallout) { /* show red button */ }</code></li>
+      </ul>
+    </div>
+
+    <!-- The Solution Section -->
+    <div class="bg-green-900/20 border-2 border-green-600 rounded-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold text-green-400 mb-3">✅ The Solution</h2>
+      <p class="text-white mb-3">To show the red "NEEDS COVERAGE" button, your shift object must have:</p>
+      <div class="bg-gray-800 p-4 rounded-lg text-sm">
+        <pre class="text-green-400">// ✅ Correct - Will show NEEDS COVERAGE
+const calloutShift = {
+  id: 1,
+  title: "Day Shift - Nursing",
+  start: new Date('2026-02-10T07:00:00'),
+  end: new Date('2026-02-10T15:00:00'),
+  <span class="text-yellow-300 font-bold">isCallout: true,</span>              // 🔑 KEY: This must be true
+  employeeName: undefined,       // Must be empty
+  employeeId: undefined,
+  location: "Floor 3",
+  color: "#3b82f6"
+};</pre>
+      </div>
+    </div>
+
+    <!-- Bonus Posted State -->
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold text-white mb-4">🎁 Bonus: Marketplace Posted State</h2>
+      <p class="text-gray-400 mb-4">When a bonus has been posted to the marketplace, the button changes to orange:</p>
+      
+      <div class="max-w-md">
+        <div class="w-full p-3 rounded-lg bg-gradient-to-br from-red-900 to-rose-900 border-2 border-orange-500 text-white font-bold shadow-lg animate-pulse">
+          <div class="flex flex-col items-center gap-1">
+            <div class="flex items-center gap-1 text-orange-300">
+              <!-- ShoppingBag Icon with bounce -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-bounce">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <path d="M16 10a4 4 0 0 1-8 0"/>
+              </svg>
+              <span class="text-xs uppercase">BONUS POSTED</span>
+            </div>
+            <div class="flex items-center gap-1 text-lg">
+              <!-- DollarSign Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+              <span>$50 BONUS</span>
+            </div>
+            <div class="text-[8px] text-orange-200">🕐 Awaiting Pickup</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Reference -->
+    <div class="bg-gray-800 rounded-lg p-6">
+      <h2 class="text-2xl font-bold text-white mb-4">📋 Quick Reference</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+        <div class="bg-green-900/30 border border-green-600 rounded p-3">
+          <div class="text-green-400 font-bold mb-2">✅ Show NEEDS COVERAGE</div>
+          <code class="text-xs text-gray-300">
+            isCallout: true<br>
+            employeeName: undefined
+          </code>
+        </div>
+        <div class="bg-red-900/30 border border-red-600 rounded p-3">
+          <div class="text-red-400 font-bold mb-2">❌ Show Employee Name</div>
+          <code class="text-xs text-gray-300">
+            isCallout: false<br>
+            employeeName: "John Doe"
+          </code>
+        </div>
+        <div class="bg-blue-900/30 border border-blue-600 rounded p-3">
+          <div class="text-blue-400 font-bold mb-2">🔄 When Claimed</div>
+          <code class="text-xs text-gray-300">
+            isCallout: false<br>
+            employeeName: "Jane Smith"
+          </code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color Reference -->
+    <div class="mt-8 bg-gray-800 rounded-lg p-6">
+      <h2 class="text-2xl font-bold text-white mb-4">🎨 Color Specifications</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="space-y-2">
+          <div class="w-full h-16 rounded" style="background: linear-gradient(to bottom right, #7f1d1d, #881337)"></div>
+          <div class="text-xs text-gray-400">Background Gradient</div>
+          <code class="text-[10px] text-gray-500">from-red-900 to-rose-900</code>
+        </div>
+        <div class="space-y-2">
+          <div class="w-full h-16 rounded border-4" style="border-color: #ef4444"></div>
+          <div class="text-xs text-gray-400">Border</div>
+          <code class="text-[10px] text-gray-500">border-red-500 (#ef4444)</code>
+        </div>
+        <div class="space-y-2">
+          <div class="w-full h-16 rounded" style="background: #fcd34d"></div>
+          <div class="text-xs text-gray-400">Warning Text</div>
+          <code class="text-[10px] text-gray-500">text-yellow-300 (#fcd34d)</code>
+        </div>
+        <div class="space-y-2">
+          <div class="w-full h-16 rounded" style="background: #ffffff"></div>
+          <div class="text-xs text-gray-400">Main Text</div>
+          <code class="text-[10px] text-gray-500">text-white (#ffffff)</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-12 text-center text-gray-500 text-sm">
+      <p>Reference: InteractiveCalendar.tsx lines 2020-2033</p>
+      <p class="mt-2">For complete documentation, see <strong class="text-white">SCHEDULER_EXTRACTION_GUIDE.md</strong></p>
+    </div>
+  </div>
+
+  <script>
+    // Add interactive hover effects
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        alert('In NoxShift, this would open a dialog to:\n\n1. Assign the shift to an available employee\n2. Post a bonus to the marketplace\n3. Notify eligible staff members\n\nRemember: The key is setting isCallout: true!');
+      });
+    });
+  </script>
+</body>
+</html>
