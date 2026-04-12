@@ -145,12 +145,12 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
 
   const sidebarContent = (
     <>
-      <div className="flex flex-col items-center justify-center py-4 bg-gradient-to-br from-purple-900 via-purple-700 to-black shadow-xl border-b-4 border-purple-500">
+      <div className="flex flex-col items-center justify-center py-4 bg-gradient-to-br from-amber-900 via-yellow-800 to-black shadow-xl border-b-4 border-amber-500">
         {/* Mobile Close Button */}
         {onClose && (
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 md:hidden p-2 text-purple-200 hover:text-white hover:bg-purple-600/30 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="absolute top-4 right-4 md:hidden p-2 text-gray-200 hover:text-white hover:bg-purple-600/30 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
             aria-label="Close menu"
           >
             <X className="h-6 w-6" />
@@ -161,11 +161,11 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
           src="/nyxtitan-name-logo.png" 
           alt="NyxTitan" 
           className="h-10 object-contain"
-          style={{filter: 'brightness(1.2) drop-shadow(0 4px 12px rgba(168,85,247,0.6))'}}
+          style={{filter: 'brightness(1.2) drop-shadow(0 4px 12px rgba(212,175,55,0.6))'}}
         />
-        <span className="text-purple-200 text-[10px] font-bold tracking-widest uppercase mt-2" 
+        <span className="text-gray-200 text-[10px] font-bold tracking-widest uppercase mt-2" 
               style={{ 
-                textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 10px rgba(168,85,247,0.5)',
+                textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 10px rgba(212,175,55,0.5)',
                 filter: 'brightness(1.2)'
               }}>
           Forged for Titans
@@ -176,7 +176,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
         {navigationSections.map((section, sectionIndex) => (
           <div key={sectionIndex}>
             {section.title && (
-              <h3 className="text-xs font-bold text-purple-300 uppercase tracking-wider mb-2 px-2">
+              <h3 className="text-xs font-bold text-amber-300 uppercase tracking-wider mb-2 px-2">
                 {section.title}
               </h3>
             )}
@@ -213,14 +213,14 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                       'flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all border text-pop-light min-h-[44px]',
                       isCommandCenter
                         ? isActive
-                          ? 'bg-gradient-to-r from-purple-900 via-purple-700 to-black text-white shadow-[0_0_20px_rgba(168,85,247,0.5)] border-purple-500 scale-105 font-bold'
-                          : 'bg-gradient-to-r from-purple-800 via-purple-600 to-gray-900 text-white hover:from-purple-900 hover:via-purple-700 hover:to-black shadow-[0_0_15px_rgba(168,85,247,0.4)] border-purple-600/50 hover:scale-105 font-bold'
+                          ? 'bg-gradient-to-r from-amber-900 via-yellow-800 to-black text-white shadow-[0_0_20px_rgba(212,175,55,0.5)] border-amber-500 scale-105 font-bold'
+                          : 'bg-gradient-to-r from-amber-800 via-yellow-700 to-gray-900 text-white hover:from-amber-900 hover:via-yellow-800 hover:to-black shadow-[0_0_15px_rgba(212,175,55,0.4)] border-amber-600/50 hover:scale-105 font-bold'
                         : isActive
                         ? 'bg-blue-600 text-white border-blue-500/50'
                         : 'text-gray-300 hover:bg-purple-800/50 hover:text-white border-transparent'
                     )}
                   >
-                    <Icon className={cn("mr-3 h-4 w-4", isCommandCenter && "drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]")} />
+                    <Icon className={cn("mr-3 h-4 w-4", isCommandCenter && "drop-shadow-[0_0_8px_rgba(212,175,55,0.8)]")} />
                     {item.name}
                     {hasNotificationBadge && (
                       <span className="ml-auto bg-red-500 text-white text-xs rounded-full px-2 py-0.5 font-bold">3</span>
@@ -247,14 +247,14 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
       )}
 
       {/* Desktop Sidebar - Always visible */}
-      <aside className="hidden md:flex flex-col w-64 bg-gradient-to-b from-black via-gray-900 to-purple-950 min-h-screen border-r-2 border-purple-600/30 shadow-2xl">
+      <aside className="hidden md:flex flex-col w-64 bg-gradient-to-b from-black via-gray-900 to-amber-950 min-h-screen border-r-2 border-amber-600/30 shadow-2xl">
         {sidebarContent}
       </aside>
 
       {/* Mobile Sidebar - Drawer */}
       <aside
         className={cn(
-          "fixed top-0 left-0 z-50 flex flex-col w-64 bg-gradient-to-b from-black via-gray-900 to-purple-950 h-full border-r-2 border-purple-600/30 shadow-2xl transition-transform duration-300 md:hidden",
+          "fixed top-0 left-0 z-50 flex flex-col w-64 bg-gradient-to-b from-black via-gray-900 to-amber-950 h-full border-r-2 border-amber-600/30 shadow-2xl transition-transform duration-300 md:hidden",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
