@@ -5,6 +5,7 @@
 import React from "react";
 import Link from 'next/link';
 import './landing-galaxy.css';
+import { Gem, Lock, Crown, Gamepad2, Sparkles, Vault, Shield, Tent, ClipboardList, PenLine, GraduationCap, Trophy, Bot, ShoppingBag, Lightbulb, TrendingUp } from 'lucide-react';
 
 export default function LandingPage() {
   // Generate 80 tiny stars with random positions and animation delays
@@ -34,13 +35,13 @@ export default function LandingPage() {
       {/* Simple Top Bar with VIP Access and Login */}
       <div className="w-full flex justify-between items-center px-8 animate-fade-in">
         <div className="flex items-center">
-          <Link href="/signup?vip=true" className="px-6 py-3 rounded-xl bg-gradient-to-br from-yellow-900/50 to-amber-900/50 border-2 border-yellow-600/40 hover:border-yellow-400 font-bold shadow-lg transition-all text-white">
-            💎 VIP Access
+          <Link href="/signup?vip=true" className="px-6 py-3 rounded-xl bg-gradient-to-br from-yellow-900/50 to-amber-900/50 border-2 border-yellow-600/40 hover:border-yellow-400 font-bold shadow-lg transition-all text-white flex items-center gap-2">
+            <Gem size={16} /> VIP Access
           </Link>
         </div>
         <div className="flex gap-4">
-          <Link href="/login" className="px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-2 border-purple-600/40 hover:border-purple-400 font-bold shadow-lg transition-all text-white">
-            🔐 Login
+          <Link href="/login" className="px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-2 border-purple-600/40 hover:border-purple-400 font-bold shadow-lg transition-all text-white flex items-center gap-2">
+            <Lock size={16} /> Login
           </Link>
         </div>
       </div>
@@ -146,7 +147,7 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {/* Guild Gamification */}
             <div className="bg-gradient-to-br from-purple-900/50 to-black border-2 border-purple-600/40 rounded-xl p-6 hover:border-purple-400 transition-all">
-              <div className="text-4xl mb-3">👑</div>
+              <div className="mb-3"><Crown size={36} className="text-purple-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Guild Gamification System</h3>
               <p className="text-purple-200 text-sm mb-3">XP, levels, achievements, and rewards turn work into an engaging RPG experience. 7-tier progression from Novice to Grandmaster.</p>
               <div className="text-xs text-purple-400">• Level progression • XP rewards • Achievement badges • Reward shop</div>
@@ -154,7 +155,7 @@ export default function LandingPage() {
 
             {/* Team Activities */}
             <div className="bg-gradient-to-br from-pink-900/50 to-black border-2 border-pink-600/40 rounded-xl p-6 hover:border-pink-400 transition-all">
-              <div className="text-4xl mb-3">🎮</div>
+              <div className="mb-3"><Gamepad2 size={36} className="text-pink-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">30+ Team Engagement Activities</h3>
               <p className="text-purple-200 text-sm mb-3">Ice breakers, coffee roulette, trivia nights, manager mixers, and daily challenges keep teams connected and engaged.</p>
               <div className="text-xs text-purple-400">• Ice breakers • Team bonding • Manager engagement • Competitions</div>
@@ -162,7 +163,7 @@ export default function LandingPage() {
 
             {/* Oracle AI */}
             <div className="bg-gradient-to-br from-blue-900/50 to-black border-2 border-blue-600/40 rounded-xl p-6 hover:border-blue-400 transition-all">
-              <div className="text-4xl mb-3">🔮</div>
+              <div className="mb-3"><Sparkles size={36} className="text-blue-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Oracle Predictive AI</h3>
               <p className="text-purple-200 text-sm mb-3">Machine learning forecasts staffing needs, predicts turnover, and optimizes schedules before issues arise.</p>
               <div className="text-xs text-purple-400">• Turnover prediction • Staffing optimization • Trend analysis</div>
@@ -170,7 +171,7 @@ export default function LandingPage() {
 
             {/* Asset Vault */}
             <div className="bg-gradient-to-br from-green-900/50 to-black border-2 border-green-600/40 rounded-xl p-6 hover:border-green-400 transition-all">
-              <div className="text-4xl mb-3">🏦</div>
+              <div className="mb-3"><Vault size={36} className="text-green-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Asset Vault</h3>
               <p className="text-purple-200 text-sm mb-3">Track equipment, vehicles, supplies, and inventory with full lifecycle management, maintenance tracking, and depreciation.</p>
               <div className="text-xs text-purple-400">• Equipment tracking • Maintenance logs • Depreciation calc</div>
@@ -178,7 +179,7 @@ export default function LandingPage() {
 
             {/* Sentinel */}
             <div className="bg-gradient-to-br from-red-900/50 to-black border-2 border-red-600/40 rounded-xl p-6 hover:border-red-400 transition-all">
-              <div className="text-4xl mb-3">🛡️</div>
+              <div className="mb-3"><Shield size={36} className="text-red-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Sentinel Visitor Management</h3>
               <p className="text-purple-200 text-sm mb-3">Complete visitor tracking, badge printing, access control, and security protocols integrated with your facility management.</p>
               <div className="text-xs text-purple-400">• Check-in/out • Badge printing • Security alerts • Access logs</div>
@@ -186,7 +187,7 @@ export default function LandingPage() {
 
             {/* Basecamp Personal Portals */}
             <div className="bg-gradient-to-br from-yellow-900/50 to-black border-2 border-yellow-600/40 rounded-xl p-6 hover:border-yellow-400 transition-all">
-              <div className="text-4xl mb-3">⛺</div>
+              <div className="mb-3"><Tent size={36} className="text-yellow-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Basecamp Personal Portals</h3>
               <p className="text-purple-200 text-sm mb-3">Every employee gets a personalized dashboard with their schedule, goals, recognition, and team connections all in one place.</p>
               <div className="text-xs text-purple-400">• Personal dashboard • Goal tracking • Recognition feed</div>
@@ -194,7 +195,7 @@ export default function LandingPage() {
 
             {/* Compliance Suite */}
             <div className="bg-gradient-to-br from-indigo-900/50 to-black border-2 border-indigo-600/40 rounded-xl p-6 hover:border-indigo-400 transition-all">
-              <div className="text-4xl mb-3">📋</div>
+              <div className="mb-3"><ClipboardList size={36} className="text-indigo-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Compliance Suite</h3>
               <p className="text-purple-200 text-sm mb-3">Automated OSHA, CMS, and Joint Commission compliance tracking with audit trails, certifications, and regulatory reporting.</p>
               <div className="text-xs text-purple-400">• OSHA tracking • CMS compliance • Audit trails • Certifications</div>
@@ -202,7 +203,7 @@ export default function LandingPage() {
 
             {/* Treasury & Signatures */}
             <div className="bg-gradient-to-br from-purple-900/50 to-black border-2 border-purple-600/40 rounded-xl p-6 hover:border-purple-400 transition-all">
-              <div className="text-4xl mb-3">✍️</div>
+              <div className="mb-3"><PenLine size={36} className="text-purple-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Digital Treasury & Signatures</h3>
               <p className="text-purple-200 text-sm mb-3">Secure document signing, approval workflows, and treasury management with full audit trails and compliance.</p>
               <div className="text-xs text-purple-400">• E-signatures • Approval workflows • Document vault</div>
@@ -210,7 +211,7 @@ export default function LandingPage() {
 
             {/* Learning Management */}
             <div className="bg-gradient-to-br from-teal-900/50 to-black border-2 border-teal-600/40 rounded-xl p-6 hover:border-teal-400 transition-all">
-              <div className="text-4xl mb-3">🎓</div>
+              <div className="mb-3"><GraduationCap size={36} className="text-teal-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Learning Management System</h3>
               <p className="text-purple-200 text-sm mb-3">Built-in training courses, certification tracking, skill development paths, and automated compliance training.</p>
               <div className="text-xs text-purple-400">• Training courses • Certifications • Skill tracking • Quizzes</div>
@@ -218,7 +219,7 @@ export default function LandingPage() {
 
             {/* Recognition System */}
             <div className="bg-gradient-to-br from-pink-900/50 to-black border-2 border-pink-600/40 rounded-xl p-6 hover:border-pink-400 transition-all">
-              <div className="text-4xl mb-3">🏆</div>
+              <div className="mb-3"><Trophy size={36} className="text-pink-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Recognition & Rewards</h3>
               <p className="text-purple-200 text-sm mb-3">Public recognition feed, badges, awards, points system, and peer-to-peer appreciation that actually improves retention.</p>
               <div className="text-xs text-purple-400">• Public recognition • Badge system • Points rewards • Analytics</div>
@@ -226,7 +227,7 @@ export default function LandingPage() {
 
             {/* Nox & Titan AI Assistants */}
             <div className="bg-gradient-to-br from-cyan-900/50 to-black border-2 border-cyan-600/40 rounded-xl p-6 hover:border-cyan-400 transition-all">
-              <div className="text-4xl mb-3">🤖</div>
+              <div className="mb-3"><Bot size={36} className="text-cyan-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Nox & Titan AI Assistants</h3>
               <p className="text-purple-200 text-sm mb-3">Dual AI assistants with text and voice capabilities help with scheduling, HR questions, payroll, and more—24/7.</p>
               <div className="text-xs text-purple-400">• Chat assistant • Voice commands • Contextual help • 24/7 availability</div>
@@ -234,7 +235,7 @@ export default function LandingPage() {
 
             {/* Merch Store Integration */}
             <div className="bg-gradient-to-br from-orange-900/50 to-black border-2 border-orange-600/40 rounded-xl p-6 hover:border-orange-400 transition-all">
-              <div className="text-4xl mb-3">🛍️</div>
+              <div className="mb-3"><ShoppingBag size={36} className="text-orange-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Integrated Merch Store</h3>
               <p className="text-purple-200 text-sm mb-3">Employees can redeem points for branded merchandise, creating a tangible rewards program that builds team culture.</p>
               <div className="text-xs text-purple-400">• Point redemption • Branded merch • Fulfillment tracking</div>
@@ -371,14 +372,14 @@ export default function LandingPage() {
             </table>
           </div>
           <div className="mt-8 p-6 bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-xl border-2 border-purple-500/50 max-w-4xl">
-            <p className="text-white text-lg font-semibold mb-2">💡 Not Included in Savings Calculation:</p>
+            <p className="text-white text-lg font-semibold mb-2 flex items-center gap-2"><Lightbulb size={20} className="text-yellow-400 shrink-0" /> Not Included in Savings Calculation:</p>
             <ul className="text-purple-200 space-y-1 ml-6 list-disc">
               <li>Reduced admin time (40% time savings = $78K+/year for 2 FTE managers)</li>
               <li>Eliminated context-switching costs (15 hrs/week recovered per employee)</li>
               <li>Lower turnover from Guild gamification (35% reduction = $480K saved on replacement costs)</li>
               <li>No integration fees or IT overhead for managing 8+ systems</li>
             </ul>
-            <p className="text-green-400 font-bold text-xl mt-4">✨ Real Total Savings: $600K+ in Year 1</p>
+            <p className="text-green-400 font-bold text-xl mt-4 flex items-center gap-2"><Sparkles size={20} className="shrink-0" /> Real Total Savings: $600K+ in Year 1</p>
           </div>
         </div>
       </section>
@@ -411,7 +412,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="mt-10 text-center">
-            <p className="text-2xl font-bold text-white mb-2">💰 Total Year 1 Impact</p>
+            <p className="text-2xl font-bold text-white mb-2 flex items-center justify-center gap-2"><TrendingUp size={24} className="text-green-400" /> Total Year 1 Impact</p>
             <p className="text-5xl font-black bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">$600K+ Saved</p>
           </div>
         </div>

@@ -389,12 +389,13 @@
             align-items: center;
             justify-content: center;
             border: 1px solid var(--gold-border);
-            font-size: 1.5rem;
             margin-bottom: 26px;
-            transition: border-color 0.35s;
+            transition: border-color 0.35s, box-shadow 0.35s;
         }
+        .feat-icon svg { display: block; }
+        .feat:hover .feat-icon { box-shadow: 0 0 18px rgba(201,168,76,0.18); }
 
-        .feat:hover .feat-icon { border-color: var(--gold-border-hi); }
+        .feat:hover .feat-icon { border-color: var(--gold-border-hi); box-shadow: 0 0 18px rgba(201,168,76,0.18); }
 
         .feat-title {
             font-family: 'Cormorant Garamond', serif;
@@ -843,32 +844,32 @@
         </div>
         <div class="features-mosaic reveal">
             <div class="feat">
-                <div class="feat-icon">📅</div>
+                <div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
                 <h3 class="feat-title">Intelligent Scheduling</h3>
                 <p class="feat-desc">AI-optimized shift scheduling with drag-and-drop calendar, conflict detection, and automatic coverage management.</p>
             </div>
             <div class="feat">
-                <div class="feat-icon">⏱</div>
+                <div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
                 <h3 class="feat-title">Time &amp; Attendance</h3>
                 <p class="feat-desc">GPS-verified time tracking, biometric support, photo capture, and real-time overtime monitoring.</p>
             </div>
             <div class="feat">
-                <div class="feat-icon">💼</div>
+                <div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                 <h3 class="feat-title">HR Automation</h3>
                 <p class="feat-desc">Seamless onboarding, document management, performance reviews, and FMLA/ADA compliance — fully automated.</p>
             </div>
             <div class="feat">
-                <div class="feat-icon">💰</div>
+                <div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
                 <h3 class="feat-title">Payroll Engine</h3>
                 <p class="feat-desc">Multi-state payroll calculations, automated tax filing, shift differentials, and direct deposit — zero manual entry.</p>
             </div>
             <div class="feat">
-                <div class="feat-icon">📊</div>
+                <div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
                 <h3 class="feat-title">Executive Analytics</h3>
                 <p class="feat-desc">Real-time dashboards, predictive forecasting, workforce trend analysis, and ROI measurement at a glance.</p>
             </div>
             <div class="feat">
-                <div class="feat-icon">🔔</div>
+                <div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
                 <h3 class="feat-title">Smart Notifications</h3>
                 <p class="feat-desc">Instant alerts for coverage gaps, policy violations, and compliance deadlines across every channel.</p>
             </div>
