@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { signIn } from 'next-auth/react';
 import { Mail, Lock, AlertCircle, LogIn, Eye, EyeOff, Gem } from 'lucide-react';
+import '../landing/landing-galaxy.css';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -47,46 +48,55 @@ export default function LoginPage() {
     }
   };
 
-  const inputClass = "w-full pl-11 pr-4 py-3 bg-black/40 border border-amber-500/30 rounded-lg text-white placeholder-amber-900/60 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all";
+  const inputClass = "w-full pl-11 pr-4 py-3 bg-black/60 border border-purple-600/40 rounded-xl text-white placeholder-purple-400/40 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all";
+
+  // Generate 60 twinkling stars matching the landing page
+  const stars = Array.from({ length: 60 }).map((_, i) => {
+    const top = Math.random() * 100;
+    const left = Math.random() * 100;
+    const delay = (Math.random() * 2.5).toFixed(2);
+    return (
+      <div key={i} className="star" style={{ top: `${top}%`, left: `${left}%`, animationDelay: `${delay}s` }} />
+    );
+  });
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4"
-      style={{ background: 'radial-gradient(ellipse at 50% 0%, #3b0764 0%, #0a0a0f 60%)' }}>
+    <div className="galaxy-bg min-h-screen flex items-center justify-center p-4">
+      {/* Stars */}
+      <div style={{ position: 'absolute', width: '100vw', height: '100vh', top: 0, left: 0, zIndex: 2, pointerEvents: 'none' }}>
+        {stars}
+      </div>
 
-      {/* Ambient glow orbs */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-purple-700/20 blur-[120px] rounded-full pointer-events-none" />
-      <div className="fixed bottom-0 left-1/4 w-[400px] h-[200px] bg-amber-900/10 blur-[100px] rounded-full pointer-events-none" />
-
-      <div className="max-w-md w-full relative z-10">
+      <div className="max-w-md w-full relative" style={{ zIndex: 10 }}>
         {/* Brand header */}
         <div className="text-center mb-8">
-          <Link href="/" className="inline-block mb-4">
-            <span className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-200 to-amber-400"
-              style={{
-                textShadow: '0 0 40px rgba(168,85,247,0.6)',
-                filter: 'brightness(1.4)',
-                WebkitTextStroke: '0.5px rgba(200,200,255,0.3)',
-              }}>
-              NyxTitan
-            </span>
+          <Link href="/">
+            <img
+              src="/nyxtitan-chrome.png"
+              alt="NyxTitan"
+              className="h-16 w-auto mx-auto mb-3 object-contain"
+              style={{ filter: 'drop-shadow(0px 5px 15px rgba(0,0,0,0.9))' }}
+            />
           </Link>
-          <p className="text-amber-300/80 font-semibold tracking-widest text-xs uppercase">
+          <p className="text-base font-bold uppercase tracking-widest text-center" style={{
+            backgroundImage: 'linear-gradient(180deg, #f5f5ff 0%, #d8d8e8 20%, #b0b0d0 40%, #8080a8 47%, #303048 50%, #e0e0f8 52%, #a8a8c8 70%, #606080 100%)',
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            filter: 'drop-shadow(0px -1px 2px rgba(255,255,255,0.5)) drop-shadow(0px 3px 6px rgba(0,0,0,0.7))'
+          }}>
             Business Management. Forged for Titans.
           </p>
         </div>
 
-        {/* Card */}
-        <div className="rounded-2xl p-8 border border-amber-500/20 shadow-[0_0_60px_rgba(168,85,247,0.15)]"
-          style={{ background: 'linear-gradient(135deg, rgba(20,10,40,0.95) 0%, rgba(5,5,15,0.98) 100%)' }}>
-
-          <h2 className="text-xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-slate-300 to-yellow-400">
-            Sign in to your account
-          </h2>
+        {/* Card — matches landing feature card style */}
+        <div className="bg-gradient-to-br from-purple-900/50 to-black border-2 border-purple-600/40 rounded-2xl p-8 shadow-2xl">
+          <h2 className="text-2xl font-extrabold text-center text-white mb-6">Sign in to your account</h2>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Error */}
             {error && (
-              <div className="bg-red-500/10 border border-red-500/50 rounded-lg p-4 flex items-center gap-3">
+              <div className="bg-red-500/10 border border-red-500/50 rounded-xl p-4 flex items-center gap-3">
                 <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
                 <p className="text-red-400 text-sm">{error}</p>
               </div>
@@ -94,11 +104,9 @@ export default function LoginPage() {
 
             {/* Email */}
             <div>
-              <label className="block text-xs font-semibold text-amber-300/70 uppercase tracking-wider mb-2">
-                Email Address
-              </label>
+              <label className="block text-sm font-semibold text-purple-200 mb-2">Email Address</label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-amber-500/50" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-purple-400/60" />
                 <input
                   type="email"
                   required
@@ -112,11 +120,9 @@ export default function LoginPage() {
 
             {/* Password */}
             <div>
-              <label className="block text-xs font-semibold text-amber-300/70 uppercase tracking-wider mb-2">
-                Password
-              </label>
+              <label className="block text-sm font-semibold text-purple-200 mb-2">Password</label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-amber-500/50" />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-purple-400/60" />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   required
@@ -128,7 +134,7 @@ export default function LoginPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-amber-500/50 hover:text-amber-300 transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-purple-400/60 hover:text-purple-200 transition-colors"
                 >
                   {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
@@ -137,51 +143,44 @@ export default function LoginPage() {
 
             {/* VIP Code */}
             <div>
-              <label className="block text-xs font-semibold text-amber-400/80 uppercase tracking-wider mb-2 flex items-center gap-1">
-                <Gem className="w-3.5 h-3.5" /> VIP Code <span className="text-amber-600/60 normal-case tracking-normal">(optional)</span>
+              <label className="block text-sm font-semibold text-yellow-300/80 mb-2 flex items-center gap-1.5">
+                <Gem className="w-4 h-4" /> VIP Code <span className="text-yellow-500/40 font-normal">(optional)</span>
               </label>
               <input
                 type="text"
                 value={vipCode}
                 onChange={(e) => setVipCode(e.target.value)}
-                className="w-full px-4 py-3 bg-black/40 border border-amber-400/40 rounded-lg text-amber-200 placeholder-amber-700/50 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/25 transition-all"
+                className="w-full px-4 py-3 bg-black/60 border border-yellow-600/40 rounded-xl text-yellow-200 placeholder-yellow-600/40 focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all"
                 placeholder="Enter your VIP access code"
               />
             </div>
 
             {/* Remember / Forgot */}
             <div className="flex items-center justify-between pt-1">
-              <label className="flex items-center gap-2 cursor-pointer group">
-                <input
-                  type="checkbox"
-                  className="w-4 h-4 rounded border-amber-500/30 bg-black/40 accent-amber-400"
-                />
-                <span className="text-sm text-amber-200/50 group-hover:text-amber-200/70 transition-colors">Remember me</span>
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" className="w-4 h-4 rounded border-purple-600/40 bg-black/60 accent-purple-500" />
+                <span className="text-sm text-purple-200/60">Remember me</span>
               </label>
-              <Link href="/forgot-password" className="text-sm text-amber-400/70 hover:text-amber-300 transition-colors">
+              <Link href="/forgot-password" className="text-sm text-purple-300 hover:text-purple-100 transition-colors">
                 Forgot password?
               </Link>
             </div>
 
-            {/* Submit */}
+            {/* Submit — matches landing page button style */}
             <button
               type="submit"
               disabled={loading}
-              className="w-full relative px-6 py-3.5 rounded-lg border-2 border-amber-400 bg-gradient-to-b from-amber-800/50 via-purple-900/60 to-black/70 hover:border-amber-300 hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] transition-all font-bold flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed mt-2"
-              style={{ boxShadow: '0 0 20px rgba(168,85,247,0.4), inset 0 1px 0 rgba(255,255,255,0.1)' }}
+              className="w-full px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-black border-2 border-purple-600/40 hover:border-purple-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] font-bold shadow-lg transition-all text-white flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed mt-2"
             >
               {loading ? (
                 <>
-                  <div className="w-5 h-5 border-2 border-amber-400/30 border-t-amber-400 rounded-full animate-spin" />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-b from-amber-100 to-yellow-300">Signing in…</span>
+                  <div className="w-5 h-5 border-2 border-purple-400/30 border-t-purple-400 rounded-full animate-spin" />
+                  Signing in…
                 </>
               ) : (
                 <>
-                  <LogIn className="w-5 h-5 text-amber-300" />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-slate-200 to-yellow-300"
-                    style={{ filter: 'brightness(1.4)' }}>
-                    Sign In
-                  </span>
+                  <LogIn className="w-5 h-5" />
+                  Sign In
                 </>
               )}
             </button>
@@ -189,26 +188,29 @@ export default function LoginPage() {
 
           {/* Divider */}
           <div className="mt-6 flex items-center gap-3">
-            <div className="flex-1 h-px bg-amber-500/10" />
-            <span className="text-xs text-amber-500/30 uppercase tracking-widest">or</span>
-            <div className="flex-1 h-px bg-amber-500/10" />
+            <div className="flex-1 h-px bg-purple-600/20" />
+            <span className="text-xs text-purple-400/40 uppercase tracking-widest">or</span>
+            <div className="flex-1 h-px bg-purple-600/20" />
           </div>
 
           {/* Sign Up */}
           <div className="mt-5 text-center">
-            <p className="text-amber-200/40 text-sm">
+            <p className="text-purple-200/60 text-sm">
               Don&apos;t have an account?{' '}
-              <Link href="/signup" className="text-amber-400 hover:text-amber-300 font-semibold transition-colors">
+              <Link href="/signup" className="text-purple-300 hover:text-purple-100 font-semibold transition-colors">
                 Create one now
               </Link>
             </p>
           </div>
 
-          {/* Demo Credentials */}
-          <div className="mt-6 p-4 rounded-lg border border-amber-500/10 bg-amber-950/10">
-            <p className="text-xs font-semibold text-amber-400/50 uppercase tracking-wider mb-2">Demo Access</p>
-            <p className="text-xs text-amber-200/30 font-mono">
-              demo@nyxtitan.com&nbsp;&nbsp;/&nbsp;&nbsp;demo123456
+          {/* Demo request */}
+          <div className="mt-6 p-4 rounded-xl bg-gradient-to-br from-blue-900/30 to-black border border-blue-600/30">
+            <p className="text-xs font-semibold text-blue-300/70 uppercase tracking-wider mb-1">Want a demo?</p>
+            <p className="text-xs text-purple-200/50">
+              Email us at{' '}
+              <a href="mailto:info@nyxtitan.com" className="text-blue-300 hover:text-blue-100 transition-colors">
+                info@nyxtitan.com
+              </a>
             </p>
           </div>
         </div>
