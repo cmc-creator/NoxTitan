@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Gamepad2, Brain, Heart, Trophy, Smile, Users, Sparkles, Target, MessageCircle, Star } from 'lucide-react';
+import { Gamepad2, Brain, Heart, Trophy, Smile, Users, Sparkles, Target, MessageCircle, Star, BarChart2 } from 'lucide-react';
 
 export default function TeamCulturePage() {
   const [activeTab, setActiveTab] = useState<'games' | 'personality' | 'recognition' | 'wellness'>('games');
@@ -313,8 +313,9 @@ function RecognitionSection() {
   return (
     <div>
       <div className="mb-6 p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
-        <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
-          🏆 Employee Recognition System
+        <h2 className="text-2xl font-bold mb-2 flex items-center gap-2" style={{ color: 'var(--header-text)' }}>
+          <Trophy className="w-7 h-7 text-amber-400" />
+          Employee Recognition System
         </h2>
         <p className="opacity-80">
           Celebrate wins, give kudos, and build a culture of appreciation. Recognition increases retention by 31%!
@@ -468,8 +469,9 @@ function WellnessSection() {
 
         {/* Team Wellness Score */}
         <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
-          <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
-            📊 Team Wellness Score
+          <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{ color: 'var(--header-text)' }}>
+            <BarChart2 className="w-6 h-6 text-amber-400" />
+            Team Wellness Score
           </h3>
           <div className="text-center mb-4">
             <div className="text-6xl font-bold mb-2" style={{ color: 'var(--today-highlight)' }}>

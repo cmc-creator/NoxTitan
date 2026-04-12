@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
-import { Sun, Moon, ChevronDown } from "lucide-react";
+import { Sun, Moon, ChevronDown, Zap, Gamepad2, Crown, Settings } from "lucide-react";
 
 export default function TopNavigation() {
   const { isAuthenticated } = useAuth();
@@ -103,14 +103,15 @@ export default function TopNavigation() {
         </Link>
       </div>
       <div className="hidden md:flex items-center gap-6 text-base font-semibold">
-        <Link href="/dashboard" className="relative px-5 py-2.5 rounded-lg border-2 border-amber-400 bg-gradient-to-b from-amber-800/50 via-purple-900/60 to-black/70 hover:border-amber-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.8)] transition-all group shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+        <Link href="/dashboard" className="relative px-5 py-2.5 rounded-lg border-2 border-amber-400 bg-gradient-to-b from-amber-800/50 via-purple-900/60 to-black/70 hover:border-amber-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.8)] transition-all group shadow-[0_0_15px_rgba(168,85,247,0.4)] flex items-center gap-2">
+          <Zap className="w-4 h-4 text-amber-300" />
           <span className="text-transparent bg-clip-text bg-gradient-to-b from-amber-50 via-slate-200 to-yellow-300 font-bold"
                 style={{
                   textShadow: '0 1px 3px rgba(0,0,0,0.9), 0 0 20px rgba(168,85,247,0.8)',
                   WebkitTextStroke: '0.5px rgba(168,85,247,0.4)',
                   filter: 'brightness(1.5)'
                 }}>
-            ⚡ Command Center
+            Command Center
           </span>
         </Link>
         <Link href="/calendar" className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-gradient-to-b from-amber-900/30 via-black/50 to-yellow-900/30 hover:border-amber-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] transition-all group">
@@ -237,7 +238,7 @@ export default function TopNavigation() {
                   Payroll
                 </span>
               </Link>
-              <Link href="/accounting" className="block px-4 py-3 hover:bg-amber-900/40 border-b border-amber-500/20 transition-colors text-center">
+              <Link href="/accounting" className="block px-4 py-3 hover:bg-amber-900/40 transition-colors text-center">
                 <span className="text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-slate-300 to-yellow-400"
                       style={{
                         textShadow: '0 1px 2px rgba(0,0,0,0.8)',
@@ -245,16 +246,6 @@ export default function TopNavigation() {
                         filter: 'brightness(1.4)'
                       }}>
                   Accounting
-                </span>
-              </Link>
-              <Link href="/ledger" className="block px-4 py-3 hover:bg-amber-900/40 transition-colors text-center">
-                <span className="text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-slate-300 to-yellow-400"
-                      style={{
-                        textShadow: '0 1px 2px rgba(0,0,0,0.8)',
-                        WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
-                        filter: 'brightness(1.4)'
-                      }}>
-                  General Ledger
                 </span>
               </Link>
             </div>
@@ -271,24 +262,26 @@ export default function TopNavigation() {
             Analytics
           </span>
         </Link>
-        <Link href="/activities" className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-gradient-to-b from-amber-900/30 via-black/50 to-yellow-900/30 hover:border-amber-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] transition-all group">
+        <Link href="/activities" className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-gradient-to-b from-amber-900/30 via-black/50 to-yellow-900/30 hover:border-amber-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] transition-all group flex items-center gap-2">
+          <Gamepad2 className="w-4 h-4 text-amber-300" />
           <span className="text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-slate-300 to-yellow-400"
                 style={{
                   textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.6)',
                   WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
                   filter: 'brightness(1.4)'
                 }}>
-            🎮 Activities
+            Activities
           </span>
         </Link>
-        <Link href="/guild/admin" className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-gradient-to-b from-amber-900/30 via-black/50 to-yellow-900/30 hover:border-amber-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] transition-all group">
+        <Link href="/guild/admin" className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-gradient-to-b from-amber-900/30 via-black/50 to-yellow-900/30 hover:border-amber-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] transition-all group flex items-center gap-2">
+          <Crown className="w-4 h-4 text-amber-300" />
           <span className="text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-slate-300 to-yellow-400"
                 style={{
                   textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.6)',
                   WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
                   filter: 'brightness(1.4)'
                 }}>
-            👑 Guild Admin
+            Guild Admin
           </span>
         </Link>
       </div>
@@ -300,14 +293,15 @@ export default function TopNavigation() {
         >
           {theme === 'light' ? <Moon className="w-5 h-5 text-amber-300" /> : <Sun className="w-5 h-5 text-yellow-400" />}
         </button>
-        <Link href="/settings" className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-gradient-to-b from-amber-900/30 via-black/50 to-yellow-900/30 hover:border-amber-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] transition-all group">
+        <Link href="/settings" className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-gradient-to-b from-amber-900/30 via-black/50 to-yellow-900/30 hover:border-amber-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] transition-all group flex items-center gap-2">
+          <Settings className="w-4 h-4 text-amber-300" />
           <span className="text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-slate-300 to-yellow-400"
                 style={{
                   textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.6)',
                   WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
                   filter: 'brightness(1.4)'
                 }}>
-            ⚙️ Settings
+            Settings
           </span>
         </Link>
       </div>
