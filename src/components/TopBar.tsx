@@ -122,7 +122,6 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
               <Settings className="h-5 w-5" />
               <span className="hidden sm:inline text-sm">Settings</span>
             </button>
-            </button>
             
             <button className="flex items-center gap-2 px-4 py-2 text-red-400 hover:bg-red-500/20 rounded-lg transition-colors">
               <LogOut className="h-5 w-5" />
