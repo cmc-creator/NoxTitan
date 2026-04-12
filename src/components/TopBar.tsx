@@ -13,10 +13,10 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const tierColors = {
-    VIP: 'bg-gradient-to-r from-amber-400 to-purple-600',
-    PROFESSIONAL: 'bg-blue-600',
-    ENTERPRISE: 'bg-purple-600',
-    TITAN: 'bg-gradient-to-r from-purple-600 to-pink-600',
+    VIP: 'bg-gradient-to-r from-amber-400 to-yellow-500',
+    PROFESSIONAL: 'bg-gradient-to-r from-blue-600 to-cyan-600',
+    ENTERPRISE: 'bg-gradient-to-r from-amber-600 to-yellow-600',
+    TITAN: 'bg-gradient-to-r from-yellow-600 to-amber-500',
   };
 
   const getUpsellMessage = () => {
@@ -26,7 +26,7 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
           icon: <Crown className="h-4 w-4" />,
           text: 'Upgrade to Enterprise',
           link: '/upgrade',
-          color: 'text-purple-600 hover:text-purple-700'
+          color: 'text-amber-600 hover:text-yellow-600'
         };
       case 'ENTERPRISE':
         return {
@@ -65,7 +65,7 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
           <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-white truncate">
             NyxTitan Business Suite
           </h1>
-          <p className="text-xs sm:text-sm text-purple-200 mt-1 hidden sm:block">
+          <p className="text-xs sm:text-sm text-gray-300 mt-1 hidden sm:block">
             All-in-one platform for scheduling, HR, payroll, compliance & more
           </p>
         </div>
@@ -116,7 +116,7 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
             
             {/* Settings Button */}
             <button 
-              className="flex items-center justify-center gap-2 p-2 sm:px-4 sm:py-2 text-purple-300 hover:text-white hover:bg-purple-600/30 rounded-lg transition-colors border border-purple-500/30 hover:border-purple-400 min-h-[44px] min-w-[44px]"
+              className="flex items-center justify-center gap-2 p-2 sm:px-4 sm:py-2 text-amber-300 hover:text-white hover:bg-amber-600/30 rounded-lg transition-colors border border-amber-500/30 hover:border-amber-400 min-h-[44px] min-w-[44px]"
               title="Settings & Customization"
             >
               <Settings className="h-5 w-5" />
