@@ -456,9 +456,10 @@ export default function LandingPage() {
           <div className="flex-1 flex flex-col items-start mb-8 md:mb-0">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 animate-fade-in">Ready to Simplify Your Operations?</h2>
             <p className="text-lg text-purple-200 mb-6 animate-fade-in">Tell us about your business and we'll show you exactly how NyxTitan can help. No pressure, just solutions.</p>
+            <p className="text-purple-300 text-sm animate-fade-in">Or email us directly at <a href="mailto:info@nyxtitan.com" className="text-purple-400 underline hover:text-white transition-colors">info@nyxtitan.com</a></p>
           </div>
           <div className="flex-1 w-full">
-            <form className="bg-black/80 rounded-2xl shadow-xl p-8 flex flex-col gap-6 animate-fade-in">
+            <form className="bg-black/80 rounded-2xl shadow-xl p-8 flex flex-col gap-6 animate-fade-in" action="mailto:info@nyxtitan.com" method="post" encType="text/plain">
               <div>
                 <label htmlFor="name" className="block text-purple-200 font-semibold mb-2">Full Name</label>
                 <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-lg bg-[#18181b] text-white border border-purple-700 focus:ring-2 focus:ring-purple-500 outline-none" />

@@ -126,6 +126,34 @@
             background: var(--gold) !important;
             color: #07060A !important;
         }
+        .nav-signin {
+            padding: 9px 22px;
+            border: 1px solid rgba(255,255,255,0.18);
+            color: var(--text-dim);
+            border-radius: 2px;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+        .nav-signin:hover { border-color: rgba(255,255,255,0.4); color: var(--text); }
+        .nav-vip {
+            padding: 9px 22px;
+            background: linear-gradient(135deg, #C9A84C 0%, #E8C060 100%);
+            color: #07060A;
+            border-radius: 2px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.25s;
+            box-shadow: 0 0 18px rgba(201,168,76,0.3);
+        }
+        .nav-vip:hover { box-shadow: 0 0 32px rgba(201,168,76,0.55); transform: translateY(-1px); }
+        .nav-actions { display: flex; align-items: center; gap: 12px; }
 
         /* ═══════════════════════ HERO ═══════════════════════ */
         .hero {
@@ -783,6 +811,10 @@
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact" class="nav-cta">Request Demo</a></li>
         </ul>
+        <div class="nav-actions">
+            <a href="/login" class="nav-signin">Sign In</a>
+            <a href="/signup?vip=true" class="nav-vip">VIP Access</a>
+        </div>
     </nav>
 
     <!-- HERO ──────────────────────────────────────────────── -->
@@ -1021,7 +1053,7 @@
             Join forward-thinking organizations that have transformed their operations with NyxTitan.
         </p>
         <div class="hero-actions reveal">
-            <a href="mailto:hello@nyxtitan.com" class="btn-gold">Request a Demo</a>
+            <a href="mailto:info@nyxtitan.com" class="btn-gold">Request a Demo</a>
             <a href="#pricing" class="btn-ghost">View Pricing</a>
         </div>
     </section>
@@ -1034,7 +1066,7 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#suite">Enterprise Suite</a></li>
             <li><a href="#pricing">Pricing</a></li>
-            <li><a href="mailto:hello@nyxtitan.com">Contact</a></li>
+            <li><a href="mailto:info@nyxtitan.com">Contact</a></li>  
             <li><a href="#">Privacy</a></li>
             <li><a href="#">Terms</a></li>
         </ul>
