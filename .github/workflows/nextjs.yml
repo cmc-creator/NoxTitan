@@ -40,13 +40,14 @@ jobs:
         run: |
           mkdir -p _site
           
-          # Copy the demo files (these work as static HTML)
+          # Copy the landing page and assets
           cp index.html _site/
+          [ -d public ] && cp -r public _site/public
           [ -f demo-interactive.html ] && cp demo-interactive.html _site/
           [ -f demo-noxtitan-final.html ] && cp demo-noxtitan-final.html _site/
           [ -f demo-self-contained.html ] && cp demo-self-contained.html _site/
           [ -f demo-music.mp3 ] && cp demo-music.mp3 _site/
-          [ -f noxtitan-logo.png ] && cp noxtitan-logo.png _site/
+          [ -f nyxtitan-logo.png ] && cp nyxtitan-logo.png _site/
           
           # Create a README for GitHub Pages
           cat > _site/README.txt << 'EOF'
