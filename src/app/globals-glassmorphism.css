@@ -51,6 +51,30 @@
     inset 2px 2px 4px rgba(255, 255, 255, 0.1);
 }
 
+.glass-tile-gold {
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.glass-tile-gold:hover {
+  border-color: rgba(212, 175, 55, 0.7);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    0 0 20px rgba(212, 175, 55, 0.4),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.glass-tile-amber {
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.glass-tile-amber:hover {
+  border-color: rgba(245, 158, 11, 0.7);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    0 0 20px rgba(245, 158, 11, 0.4),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+}
+
 .glass-tile-green {
   border-color: rgba(34, 197, 94, 0.4);
 }

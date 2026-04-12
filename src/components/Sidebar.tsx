@@ -150,7 +150,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
         {onClose && (
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 md:hidden p-2 text-gray-200 hover:text-white hover:bg-purple-600/30 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="absolute top-4 right-4 md:hidden p-2 text-gray-200 hover:text-white hover:bg-amber-600/30 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
             aria-label="Close menu"
           >
             <X className="h-6 w-6" />
@@ -217,7 +217,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                           : 'bg-gradient-to-r from-amber-800 via-yellow-700 to-gray-900 text-white hover:from-amber-900 hover:via-yellow-800 hover:to-black shadow-[0_0_15px_rgba(212,175,55,0.4)] border-amber-600/50 hover:scale-105 font-bold'
                         : isActive
                         ? 'bg-blue-600 text-white border-blue-500/50'
-                        : 'text-gray-300 hover:bg-purple-800/50 hover:text-white border-transparent'
+                        : 'text-gray-300 hover:bg-amber-800/50 hover:text-white border-transparent'
                     )}
                   >
                     <Icon className={cn("mr-3 h-4 w-4", isCommandCenter && "drop-shadow-[0_0_8px_rgba(212,175,55,0.8)]")} />
