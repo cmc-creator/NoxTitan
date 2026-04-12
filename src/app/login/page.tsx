@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { signIn } from 'next-auth/react';
 import { Mail, Lock, AlertCircle, LogIn, Eye, EyeOff, Gem } from 'lucide-react';
-import '../landing/landing-galaxy.css';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -48,173 +47,286 @@ export default function LoginPage() {
     }
   };
 
-  const inputClass = "w-full pl-11 pr-4 py-3 bg-black/60 border border-purple-600/40 rounded-xl text-white placeholder-purple-400/40 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all";
+  const gold = '#C9A84C';
+  const goldBright = '#E8C060';
 
-  // Generate 60 twinkling stars matching the landing page
-  const stars = Array.from({ length: 60 }).map((_, i) => {
-    const top = Math.random() * 100;
-    const left = Math.random() * 100;
-    const delay = (Math.random() * 2.5).toFixed(2);
-    return (
-      <div key={i} className="star" style={{ top: `${top}%`, left: `${left}%`, animationDelay: `${delay}s` }} />
-    );
-  });
+  const pageStyle: React.CSSProperties = {
+    minHeight: '100vh',
+    background: '#070604',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '40px 16px',
+    fontFamily: "'Inter', sans-serif",
+    position: 'relative',
+    overflow: 'hidden',
+  };
+
+  const ambientStyle: React.CSSProperties = {
+    position: 'fixed',
+    inset: 0,
+    pointerEvents: 'none',
+    background: `
+      radial-gradient(ellipse 70% 50% at 20% 40%, rgba(201,168,76,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 20%, rgba(201,168,76,0.04) 0%, transparent 60%)
+    `,
+    zIndex: 0,
+  };
+
+  const cardStyle: React.CSSProperties = {
+    background: '#110F0B',
+    border: '1px solid rgba(201,168,76,0.22)',
+    borderRadius: '4px',
+    padding: '48px 44px',
+    width: '100%',
+    maxWidth: '440px',
+    position: 'relative',
+    zIndex: 1,
+    boxShadow: '0 0 60px rgba(201,168,76,0.06), 0 20px 60px rgba(0,0,0,0.8)',
+  };
+
+  const labelStyle: React.CSSProperties = {
+    display: 'block',
+    fontSize: '0.68rem',
+    fontWeight: 500,
+    letterSpacing: '2px',
+    textTransform: 'uppercase',
+    color: '#9E8F75',
+    marginBottom: '10px',
+  };
+
+  const inputStyle: React.CSSProperties = {
+    width: '100%',
+    padding: '13px 14px 13px 42px',
+    background: 'rgba(255,255,255,0.03)',
+    border: '1px solid rgba(201,168,76,0.18)',
+    borderRadius: '2px',
+    color: '#F0EBE0',
+    fontSize: '0.9rem',
+    outline: 'none',
+    transition: 'border-color 0.2s',
+    fontFamily: "'Inter', sans-serif",
+  };
+
+  const ruleStyle: React.CSSProperties = {
+    width: '36px',
+    height: '1px',
+    background: `linear-gradient(90deg, transparent, ${gold}, transparent)`,
+    margin: '24px auto',
+  };
 
   return (
-    <div className="galaxy-bg min-h-screen flex items-center justify-center p-4">
-      {/* Stars */}
-      <div style={{ position: 'absolute', width: '100vw', height: '100vh', top: 0, left: 0, zIndex: 2, pointerEvents: 'none' }}>
-        {stars}
-      </div>
+    <div style={pageStyle}>
+      <div style={ambientStyle} />
 
-      <div className="max-w-md w-full relative" style={{ zIndex: 10 }}>
-        {/* Brand header */}
-        <div className="text-center mb-8">
+      <div style={{ width: '100%', maxWidth: '440px', position: 'relative', zIndex: 1 }}>
+        {/* Brand */}
+        <div style={{ textAlign: 'center', marginBottom: '44px' }}>
           <Link href="/">
             <img
-              src="/nyxtitan-chrome.png"
+              src="/titanlogo.png"
               alt="NyxTitan"
-              className="h-16 w-auto mx-auto mb-3 object-contain"
-              style={{ filter: 'drop-shadow(0px 5px 15px rgba(0,0,0,0.9))' }}
+              style={{
+                height: '56px',
+                width: 'auto',
+                margin: '0 auto 20px',
+                display: 'block',
+                filter: `drop-shadow(0 0 18px rgba(201,168,76,0.4)) drop-shadow(0 0 40px rgba(201,168,76,0.2))`,
+              }}
             />
           </Link>
-          <p className="text-base font-bold uppercase tracking-widest text-center" style={{
-            backgroundImage: 'linear-gradient(180deg, #f5f5ff 0%, #d8d8e8 20%, #b0b0d0 40%, #8080a8 47%, #303048 50%, #e0e0f8 52%, #a8a8c8 70%, #606080 100%)',
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontWeight: 300,
+            fontSize: '1.6rem',
+            letterSpacing: '3px',
+            background: `linear-gradient(135deg, #E8E0D0 0%, #FFFFFF 25%, ${goldBright} 55%, ${gold} 75%, #E8E0D0 100%)`,
             WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            filter: 'drop-shadow(0px -1px 2px rgba(255,255,255,0.5)) drop-shadow(0px 3px 6px rgba(0,0,0,0.7))'
+            backgroundClip: 'text',
+            marginBottom: '8px',
           }}>
+            NyxTitan
+          </div>
+          <div style={{ fontSize: '0.68rem', fontWeight: 500, letterSpacing: '4px', textTransform: 'uppercase', color: gold }}>
             Business Management. Forged for Titans.
-          </p>
+          </div>
         </div>
 
-        {/* Card — matches landing feature card style */}
-        <div className="bg-gradient-to-br from-purple-900/50 to-black border-2 border-purple-600/40 rounded-2xl p-8 shadow-2xl">
-          <h2 className="text-2xl font-extrabold text-center text-white mb-6">Sign in to your account</h2>
+        {/* Card */}
+        <div style={cardStyle}>
+          {/* Thin gold top accent */}
+          <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: '1px', background: `linear-gradient(90deg, transparent, ${gold}, transparent)` }} />
 
-          <form onSubmit={handleSubmit} className="space-y-5">
-            {/* Error */}
+          <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+            <div style={{ fontSize: '0.68rem', letterSpacing: '4px', textTransform: 'uppercase', color: gold, marginBottom: '10px' }}>Welcome Back</div>
+            <h1 style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 400,
+              fontSize: '1.9rem',
+              color: '#F0EBE0',
+              letterSpacing: '1px',
+            }}>Sign in to your account</h1>
+            <div style={ruleStyle} />
+          </div>
+
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
             {error && (
-              <div className="bg-red-500/10 border border-red-500/50 rounded-xl p-4 flex items-center gap-3">
-                <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
-                <p className="text-red-400 text-sm">{error}</p>
+              <div style={{ background: 'rgba(220,38,38,0.08)', border: '1px solid rgba(220,38,38,0.35)', borderRadius: '2px', padding: '12px 16px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <AlertCircle style={{ width: '16px', height: '16px', color: '#f87171', flexShrink: 0 }} />
+                <span style={{ fontSize: '0.84rem', color: '#f87171' }}>{error}</span>
               </div>
             )}
 
             {/* Email */}
             <div>
-              <label className="block text-sm font-semibold text-purple-200 mb-2">Email Address</label>
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-purple-400/60" />
+              <label style={labelStyle}>Email Address</label>
+              <div style={{ position: 'relative' }}>
+                <Mail style={{ position: 'absolute', left: '13px', top: '50%', transform: 'translateY(-50%)', width: '16px', height: '16px', color: '#5A5040' }} />
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className={inputClass}
+                  style={inputStyle}
                   placeholder="you@example.com"
+                  onFocus={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.55)'; }}
+                  onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.18)'; }}
                 />
               </div>
             </div>
 
             {/* Password */}
             <div>
-              <label className="block text-sm font-semibold text-purple-200 mb-2">Password</label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-purple-400/60" />
+              <label style={labelStyle}>Password</label>
+              <div style={{ position: 'relative' }}>
+                <Lock style={{ position: 'absolute', left: '13px', top: '50%', transform: 'translateY(-50%)', width: '16px', height: '16px', color: '#5A5040' }} />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className={`${inputClass} pr-12`}
+                  style={{ ...inputStyle, paddingRight: '44px' }}
                   placeholder="••••••••"
+                  onFocus={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.55)'; }}
+                  onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.18)'; }}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-purple-400/60 hover:text-purple-200 transition-colors"
+                  style={{ position: 'absolute', right: '13px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: '#5A5040', padding: 0 }}
                 >
-                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  {showPassword ? <EyeOff style={{ width: '16px', height: '16px' }} /> : <Eye style={{ width: '16px', height: '16px' }} />}
                 </button>
               </div>
             </div>
 
             {/* VIP Code */}
             <div>
-              <label className="block text-sm font-semibold text-yellow-300/80 mb-2 flex items-center gap-1.5">
-                <Gem className="w-4 h-4" /> VIP Code <span className="text-yellow-500/40 font-normal">(optional)</span>
+              <label style={{ ...labelStyle, color: gold, display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <Gem style={{ width: '12px', height: '12px' }} /> VIP Code
+                <span style={{ color: '#5A5040', fontWeight: 400, letterSpacing: '1px' }}>(optional)</span>
               </label>
               <input
                 type="text"
                 value={vipCode}
                 onChange={(e) => setVipCode(e.target.value)}
-                className="w-full px-4 py-3 bg-black/60 border border-yellow-600/40 rounded-xl text-yellow-200 placeholder-yellow-600/40 focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all"
+                style={{ ...inputStyle, paddingLeft: '14px', borderColor: 'rgba(201,168,76,0.30)' }}
                 placeholder="Enter your VIP access code"
+                onFocus={(e) => { e.target.style.borderColor = gold; }}
+                onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.30)'; }}
               />
             </div>
 
             {/* Remember / Forgot */}
-            <div className="flex items-center justify-between pt-1">
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" className="w-4 h-4 rounded border-purple-600/40 bg-black/60 accent-purple-500" />
-                <span className="text-sm text-purple-200/60">Remember me</span>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
+                <input type="checkbox" style={{ accentColor: gold, width: '14px', height: '14px' }} />
+                <span style={{ fontSize: '0.8rem', color: '#5A5040' }}>Remember me</span>
               </label>
-              <Link href="/forgot-password" className="text-sm text-purple-300 hover:text-purple-100 transition-colors">
+              <Link href="/forgot-password" style={{ fontSize: '0.8rem', color: '#9E8F75', textDecoration: 'none' }}
+                onMouseEnter={(e) => { (e.target as HTMLElement).style.color = goldBright; }}
+                onMouseLeave={(e) => { (e.target as HTMLElement).style.color = '#9E8F75'; }}
+              >
                 Forgot password?
               </Link>
             </div>
 
-            {/* Submit — matches landing page button style */}
+            {/* Submit */}
             <button
               type="submit"
               disabled={loading}
-              className="w-full px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-black border-2 border-purple-600/40 hover:border-purple-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] font-bold shadow-lg transition-all text-white flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed mt-2"
+              style={{
+                width: '100%',
+                padding: '15px',
+                background: loading ? '#5A5040' : `linear-gradient(135deg, ${gold} 0%, ${goldBright} 50%, ${gold} 100%)`,
+                color: '#07060A',
+                border: 'none',
+                borderRadius: '2px',
+                fontSize: '0.75rem',
+                fontWeight: 600,
+                letterSpacing: '2.5px',
+                textTransform: 'uppercase',
+                cursor: loading ? 'not-allowed' : 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '10px',
+                transition: 'all 0.3s',
+                boxShadow: loading ? 'none' : `0 0 28px rgba(201,168,76,0.25), 0 4px 18px rgba(0,0,0,0.5)`,
+                marginTop: '4px',
+                fontFamily: "'Inter', sans-serif",
+              }}
             >
               {loading ? (
                 <>
-                  <div className="w-5 h-5 border-2 border-purple-400/30 border-t-purple-400 rounded-full animate-spin" />
+                  <div style={{ width: '16px', height: '16px', border: '2px solid rgba(7,6,4,0.3)', borderTopColor: '#07060A', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
                   Signing in…
                 </>
               ) : (
                 <>
-                  <LogIn className="w-5 h-5" />
+                  <LogIn style={{ width: '16px', height: '16px' }} />
                   Sign In
                 </>
               )}
             </button>
           </form>
 
-          {/* Divider */}
-          <div className="mt-6 flex items-center gap-3">
-            <div className="flex-1 h-px bg-purple-600/20" />
-            <span className="text-xs text-purple-400/40 uppercase tracking-widest">or</span>
-            <div className="flex-1 h-px bg-purple-600/20" />
+          {/* Separator */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', margin: '28px 0 20px' }}>
+            <div style={{ flex: 1, height: '1px', background: 'rgba(201,168,76,0.12)' }} />
+            <span style={{ fontSize: '0.65rem', color: '#5A5040', letterSpacing: '2px', textTransform: 'uppercase' }}>or</span>
+            <div style={{ flex: 1, height: '1px', background: 'rgba(201,168,76,0.12)' }} />
           </div>
 
           {/* Sign Up */}
-          <div className="mt-5 text-center">
-            <p className="text-purple-200/60 text-sm">
-              Don&apos;t have an account?{' '}
-              <Link href="/signup" className="text-purple-300 hover:text-purple-100 font-semibold transition-colors">
-                Create one now
-              </Link>
-            </p>
+          <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+            <span style={{ fontSize: '0.84rem', color: '#5A5040' }}>Don&apos;t have an account? </span>
+            <Link href="/signup" style={{ fontSize: '0.84rem', color: '#9E8F75', fontWeight: 500, textDecoration: 'none' }}
+              onMouseEnter={(e) => { (e.target as HTMLElement).style.color = goldBright; }}
+              onMouseLeave={(e) => { (e.target as HTMLElement).style.color = '#9E8F75'; }}
+            >
+              Create one now
+            </Link>
           </div>
 
           {/* Demo request */}
-          <div className="mt-6 p-4 rounded-xl bg-gradient-to-br from-blue-900/30 to-black border border-blue-600/30">
-            <p className="text-xs font-semibold text-blue-300/70 uppercase tracking-wider mb-1">Want a demo?</p>
-            <p className="text-xs text-purple-200/50">
-              Email us at{' '}
-              <a href="mailto:info@nyxtitan.com" className="text-blue-300 hover:text-blue-100 transition-colors">
-                info@nyxtitan.com
-              </a>
-            </p>
+          <div style={{ borderTop: '1px solid rgba(201,168,76,0.12)', paddingTop: '20px', textAlign: 'center' }}>
+            <div style={{ fontSize: '0.65rem', letterSpacing: '3px', textTransform: 'uppercase', color: '#5A5040', marginBottom: '6px' }}>Request a Demo</div>
+            <a href="mailto:info@nyxtitan.com" style={{ fontSize: '0.84rem', color: gold, textDecoration: 'none' }}
+              onMouseEnter={(e) => { (e.target as HTMLElement).style.color = goldBright; }}
+              onMouseLeave={(e) => { (e.target as HTMLElement).style.color = gold; }}
+            >
+              info@nyxtitan.com
+            </a>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes spin { to { transform: rotate(360deg); } }
+        input::placeholder { color: #3a3020; }
+      `}</style>
     </div>
   );
 }
