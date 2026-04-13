@@ -259,17 +259,17 @@ export default function ChatBot() {
         <div className="fixed bottom-6 right-6 z-50 group">
           <button
             onClick={() => setIsOpen(true)}
-            className="relative w-28 h-28 rounded-full shadow-2xl hover:shadow-purple-500/50 transition-all hover:scale-110 flex items-center justify-center overflow-hidden"
-            style={{background: 'transparent'}}
+            className="relative w-28 h-28 rounded-full transition-all hover:scale-110 flex items-center justify-center overflow-hidden"
+            style={{background: 'transparent', boxShadow: '0 0 24px rgba(201,168,76,0.35), 0 8px 32px rgba(0,0,0,0.5)'}}
             aria-label="Open Titan chat"
             title="Titan - Quick Help Assistant"
           >
-            <img src="/titan-logo.png.png" alt="Titan" className="w-full h-full object-contain group-hover:scale-110 transition-transform" style={{imageRendering: 'crisp-edges'}} />
-            <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse"></span>
+            <img src="/titanbot.png" alt="Titan" className="w-full h-full object-contain group-hover:scale-110 transition-transform drop-shadow-xl" />
+            <span className="absolute -top-1 -right-1 w-4 h-4 bg-amber-400 rounded-full animate-pulse" style={{boxShadow: '0 0 8px rgba(201,168,76,0.8)'}}></span>
           </button>
           {/* Hover Tooltip */}
-          <div className="absolute bottom-24 right-0 w-64 bg-stone-950 border border-pink-500/50 rounded-lg p-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
-            <div className="text-pink-300 font-bold text-sm mb-1">⚡ Titan - Quick Help</div>
+          <div className="absolute bottom-24 right-0 w-64 bg-stone-950 rounded-lg p-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl" style={{border: '1px solid rgba(201,168,76,0.4)'}}>
+            <div className="text-amber-400 font-bold text-sm mb-1">⚡ Titan AI — Quick Help</div>
             <div className="text-stone-300 text-xs">
               Fast answers for scheduling, employee management, and system navigation. Your go-to for quick questions.
             </div>
@@ -283,8 +283,8 @@ export default function ChatBot() {
           {/* Header */}
           <div className={`bg-gradient-to-r ${customColor} p-4 rounded-t-2xl flex items-center justify-between`}>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center text-2xl overflow-hidden" style={{background: 'transparent'}}>
-                {customAvatar}
+              <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0" style={{background: 'transparent', boxShadow: '0 0 8px rgba(201,168,76,0.4)'}}>
+                <img src="/titanbot.png" alt="Titan" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 className="font-bold text-white text-pop-light">⚡ Titan AI Assistant</h3>
@@ -309,7 +309,8 @@ export default function ChatBot() {
                     <button
                       key={action.id}
                       onClick={() => handleQuickAction(action)}
-                      className="flex flex-col items-center gap-2 p-3 bg-gradient-to-br from-stone-900 to-pink-50 dark:from-slate-700 dark:to-slate-600 rounded-lg hover:shadow-lg transition-all hover:scale-105 border border-purple-200 dark:border-stone-500"
+                      className="flex flex-col items-center gap-2 p-3 bg-stone-900 rounded-lg hover:shadow-lg transition-all hover:scale-105"
+                      style={{border: '1px solid rgba(201,168,76,0.2)'}}
                     >
                       <div className="text-amber-600 dark:text-amber-400">{action.icon}</div>
                       <span className="text-xs font-semibold text-stone-300 dark:text-gray-200">{action.label}</span>
@@ -327,13 +328,13 @@ export default function ChatBot() {
               >
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                   message.sender === 'user' 
-                    ? 'bg-gradient-to-r from-amber-700 to-cyan-500' 
-                    : 'bg-gradient-to-r from-stone-900 to-pink-500 p-1'
-                }`}>
+                    ? 'bg-amber-700' 
+                    : 'overflow-hidden'
+                }`} style={message.sender === 'bot' ? {background: 'transparent'} : {}}>
                   {message.sender === 'user' ? (
                     <User className="h-4 w-4 text-white" />
                   ) : (
-                    <img src="/logo.png" alt="Titan" className="h-full w-full rounded-full object-contain" />
+                    <img src="/titanbot.png" alt="Titan" className="h-full w-full object-contain" />
                   )}
                 </div>
                 <div className={`flex flex-col max-w-[75%] ${message.sender === 'user' ? 'items-end' : 'items-start'}`}>
@@ -353,8 +354,8 @@ export default function ChatBot() {
 
             {isTyping && (
               <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 bg-gradient-to-r from-stone-900 to-pink-500 p-1">
-                  <img src="/logo.png" alt="Titan" className="h-full w-full rounded-full object-contain" />
+                <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <img src="/titanbot.png" alt="Titan" className="h-full w-full object-contain" />
                 </div>
                 <div className="bg-stone-900 dark:bg-stone-900 rounded-2xl p-3">
                   <div className="flex gap-1">
@@ -378,7 +379,7 @@ export default function ChatBot() {
                   <button
                     key={idx}
                     onClick={() => handleQuickQuestion(question)}
-                    className="text-xs px-3 py-1.5 bg-purple-100 dark:bg-stone-950/30 text-amber-700 dark:text-amber-200 rounded-full hover:bg-purple-200 dark:hover:bg-stone-950/50 transition-colors"
+                    className="text-xs px-3 py-1.5 bg-stone-900 text-amber-400 rounded-full hover:bg-stone-800 transition-colors" style={{border: '1px solid rgba(201,168,76,0.2)'}}
                   >
                     {question}
                   </button>
