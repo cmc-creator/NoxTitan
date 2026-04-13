@@ -6,33 +6,24 @@ import AIAssistant from './AIAssistant';
 import ChatBot from './ChatBot';
 import VoiceAIAssistant from './VoiceAIAssistant';
 
+const PUBLIC_PAGES = ['/', '/landing', '/pricing', '/signup', '/login'];
+
 export default function ConditionalBots() {
   const pathname = usePathname();
   const { isAuthenticated } = useAuth();
-  
-  // Public/sales pages where the sales chatbot should always show
-  const salesPages = ['/', '/landing', '/pricing', '/signup', '/login'];
-  const isSalesPage = salesPages.includes(pathname);
-  
-  // Show sales chatbot on public pages regardless of auth status
-  if (isSalesPage) {
-    return <AIAssistant />;
-  }
-  
-  // Dashboard and authenticated pages - show full AI assistants
-  const isDashboardPage = pathname?.startsWith('/dashboard') || pathname?.startsWith('/calendar') || 
-                          pathname?.startsWith('/employees') || pathname?.startsWith('/oracle');
-  
-  if (isDashboardPage || isAuthenticated) {
+
+  // Never show on public/marketing pages
+  if (PUBLIC_PAGES.includes(pathname)) return null;
+
+  // Authenticated app pages only
+  if (isAuthenticated) {
     return (
       <>
-        {/* Nox and Titan - Full AI Assistants for authenticated users */}
         <ChatBot />
         <VoiceAIAssistant context="dashboard" userRole="hr" />
       </>
     );
   }
-  
-  // No bots for unauthenticated users on private pages
+
   return null;
 }

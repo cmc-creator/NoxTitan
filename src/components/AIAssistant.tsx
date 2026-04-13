@@ -168,7 +168,7 @@ export default function AIAssistant() {
       response = "✨ **NyxTitan Features**\n\nWe're an all-in-one platform that replaces 8+ separate tools:\n\n**Core Features:**\n📅 Advanced scheduling (drag & drop)\n⏰ Time & attendance tracking\n💰 Payroll calculations\n👥 HR management & onboarding\n📊 Reports & analytics\n\n**Enterprise Features:**\n🔮 Oracle AI - Predictive analytics\n🛡️ Compliance Suite (OSHA, CMS, Joint Commission)\n🏦 Asset Vault - Equipment tracking\n🔒 Sentinel - Visitor management\n🎮 Guild - Gamification system\n\n**Average Savings:** $75K-$139K/year vs. competitors!\n\nWhich features interest you most?";
       category = 'general';
     } else if (lowerMessage.includes('contact') || lowerMessage.includes('sales') || lowerMessage.includes('talk to someone')) {
-      response = "📞 **Contact Our Team**\n\nI'd be happy to connect you with our sales team!\n\n**Please share:**\n• Your name\n• Company name\n• Email address\n• Phone number\n• What you'd like to discuss\n\nOur team typically responds within 2 hours during business hours.\n\nAlternatively:\n• Email: sales@nyxtitan.com\n• Schedule a demo on our website\n• Continue chatting with me - I can answer most questions!\n\nWhat works best for you?";
+      response = "📞 **Contact Our Team**\n\nI'd be happy to connect you with our sales team!\n\n**Please share:**\n• Your name\n• Company name\n• Email address\n• Phone number\n• What you'd like to discuss\n\nOur team typically responds within 2 hours during business hours.\n\nAlternatively:\n• Email: info@nyxtitan.com\n• Schedule a demo on our website\n• Continue chatting with me - I can answer most questions!\n\nWhat works best for you?";
       category = 'general';
     } else if (lowerMessage.includes('email') && (lowerMessage.includes('@') || lowerMessage.includes('name'))) {
       response = "✅ **Thank you!**\n\nI've captured your information. Our team will reach out to you within 2 business hours!\n\nIn the meantime:\n• Check out our pricing page for detailed plan comparisons\n• Watch our demo video on the landing page\n• Browse our feature documentation\n\n**Quick question:** What's your biggest challenge with employee management right now? This helps us prepare for our conversation! 💼";
@@ -215,7 +215,7 @@ export default function AIAssistant() {
       } else if (suggestion.title === 'Pricing Information') {
         response = `💰 **Pricing Plans**\n\n**Professional** - $499/month\n• 50 employees\n• Core features + payroll\n• 10 integrations\n• Email support\n\n**Enterprise** - $1,499/month\n• 250 employees\n• Oracle AI, Compliance, Asset Vault\n• 60+ integrations\n• Priority support\n\n**Titan** - $2,999/month\n• Unlimited employees\n• White-glove service\n• Custom integrations\n• Dedicated manager\n\n💡 **Savings:** $75K-$139K/year vs. competitors!\n\nWant a custom quote for your business?`;
       } else {
-        response = `📞 **Contact Our Team**\n\nI'd be happy to connect you!\n\n**Please provide:**\n• Name\n• Company\n• Email\n• Phone number\n• What you'd like to discuss\n\nOur sales team responds within 2 hours during business hours.\n\n**Or reach us directly:**\n📧 sales@nyxtitan.com\n📱 Schedule a call on our website\n💬 Continue chatting with me!\n\nWhat works best for you?`;
+        response = `📞 **Contact Our Team**\n\nI'd be happy to connect you!\n\n**Please provide:**\n• Name\n• Company\n• Email\n• Phone number\n• What you'd like to discuss\n\nOur sales team responds within 2 hours during business hours.\n\n**Or reach us directly:**\n📧 info@nyxtitan.com\n📱 Schedule a call on our website\n💬 Continue chatting with me!\n\nWhat works best for you?`;
       }
       
       addAIMessage(response, suggestion.category as Message['category']);
@@ -241,7 +241,7 @@ export default function AIAssistant() {
           }}
         >
           <img 
-            src="/titan-logo.png.png" 
+            src="/titanlogo.png" 
             alt="Titan AI" 
             className="w-20 h-20 object-contain drop-shadow-2xl"
           />
@@ -255,7 +255,7 @@ export default function AIAssistant() {
         </button>
       )}
 
-      {/* Chat Window - Always visible on right side */}
+      {/* Chat Window */}
       {isOpen && (
         <div style={{
           position: 'fixed',
@@ -263,71 +263,83 @@ export default function AIAssistant() {
           right: '24px',
           width: '384px',
           height: '600px',
-          zIndex: 9999
-        }} className="bg-white rounded-2xl shadow-2xl flex flex-col border border-gray-200">
+          zIndex: 9999,
+          background: '#110F0B',
+          border: '1px solid rgba(201,168,76,0.28)',
+          borderRadius: '4px',
+          display: 'flex',
+          flexDirection: 'column',
+          boxShadow: '0 0 60px rgba(201,168,76,0.08), 0 30px 80px rgba(0,0,0,0.9)',
+          fontFamily: "'Inter', sans-serif",
+          overflow: 'hidden',
+        }}>
+          {/* Gold top accent */}
+          <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, #C9A84C, transparent)', flexShrink: 0 }} />
+
           {/* Header */}
-          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-4 rounded-t-2xl flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="relative">
-                <Bot className="w-8 h-8" />
-                <span className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></span>
+          <div style={{ padding: '14px 18px', borderBottom: '1px solid rgba(201,168,76,0.15)', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'rgba(201,168,76,0.03)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <div style={{ position: 'relative' }}>
+                <Bot style={{ width: '24px', height: '24px', color: '#C9A84C' }} />
+                <span style={{ position: 'absolute', bottom: '-2px', right: '-2px', width: '8px', height: '8px', background: '#4ade80', borderRadius: '50%', border: '1px solid #110F0B' }}></span>
               </div>
               <div>
-                <h3 className="font-bold text-lg">NyxTitan AI</h3>
-                <p className="text-xs text-purple-100">Always learning, always helping</p>
+                <div style={{ fontSize: '0.9rem', fontWeight: 600, color: '#F0EBE0', fontFamily: "'Cormorant Garamond', serif", letterSpacing: '0.03em' }}>NyxTitan AI</div>
+                <div style={{ fontSize: '0.68rem', color: '#9E8F75', letterSpacing: '2px', textTransform: 'uppercase' }}>Sales Assistant</div>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="hover:bg-white/20 p-2 rounded-lg transition-all"
+              style={{ background: 'transparent', border: '1px solid rgba(201,168,76,0.15)', borderRadius: '2px', padding: '6px', cursor: 'pointer', color: '#9E8F75', display: 'flex', alignItems: 'center', transition: 'all 0.2s' }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(201,168,76,0.45)'; (e.currentTarget as HTMLButtonElement).style.color = '#C9A84C'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(201,168,76,0.15)'; (e.currentTarget as HTMLButtonElement).style.color = '#9E8F75'; }}
             >
-              <X className="w-5 h-5" />
+              <X style={{ width: '14px', height: '14px' }} />
             </button>
           </div>
 
-          {/* Knowledge Status Bar */}
-          <div className="bg-gradient-to-r from-purple-50 to-indigo-50 px-4 py-2 border-b border-purple-100">
-            <div className="flex items-center gap-2 text-xs">
-              <Sparkles className="w-4 h-4 text-purple-600" />
-              <span className="text-purple-700 font-semibold">Sales Assistant: </span>
-              <span className="text-gray-600">Here to help you find the perfect solution</span>
-            </div>
+          {/* Status Bar */}
+          <div style={{ padding: '7px 18px', borderBottom: '1px solid rgba(201,168,76,0.08)', flexShrink: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Sparkles style={{ width: '12px', height: '12px', color: '#C9A84C' }} />
+            <span style={{ fontSize: '0.7rem', color: '#9E8F75', letterSpacing: '1px' }}>Here to help you find the perfect solution</span>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+          <div style={{ flex: 1, overflowY: 'auto', padding: '16px', display: 'flex', flexDirection: 'column', gap: '12px', background: '#0D0B08' }}>
             {messages.map((msg) => (
-              <div
-                key={msg.id}
-                className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
-                <div
-                  className={`max-w-[80%] rounded-2xl px-4 py-3 ${
-                    msg.type === 'user'
-                      ? 'bg-gradient-to-br from-purple-600 to-indigo-600 text-white'
-                      : 'bg-white border border-gray-200 text-gray-900'
-                  }`}
-                >
+              <div key={msg.id} style={{ display: 'flex', justifyContent: msg.type === 'user' ? 'flex-end' : 'flex-start' }}>
+                <div style={{
+                  maxWidth: '80%',
+                  padding: '10px 14px',
+                  borderRadius: '2px',
+                  background: msg.type === 'user'
+                    ? 'linear-gradient(135deg, rgba(201,168,76,0.25) 0%, rgba(232,192,96,0.15) 100%)'
+                    : 'rgba(255,255,255,0.03)',
+                  border: msg.type === 'user'
+                    ? '1px solid rgba(201,168,76,0.35)'
+                    : '1px solid rgba(201,168,76,0.1)',
+                  color: '#F0EBE0',
+                }}>
                   {msg.type === 'ai' && msg.category === 'joke' && (
-                    <div className="flex items-center gap-2 mb-2 text-amber-600">
-                      <Smile className="w-4 h-4" />
-                      <span className="text-xs font-semibold">Dad Joke Mode</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px', color: '#C9A84C' }}>
+                      <Smile style={{ width: '12px', height: '12px' }} />
+                      <span style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase' }}>Dad Joke Mode</span>
                     </div>
                   )}
                   {msg.type === 'ai' && msg.category === 'compliance' && (
-                    <div className="flex items-center gap-2 mb-2 text-blue-600">
-                      <Shield className="w-4 h-4" />
-                      <span className="text-xs font-semibold">Compliance Info</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px', color: '#9E8F75' }}>
+                      <Shield style={{ width: '12px', height: '12px' }} />
+                      <span style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase' }}>Compliance Info</span>
                     </div>
                   )}
-                  <p className="whitespace-pre-line text-sm leading-relaxed">{msg.content}</p>
+                  <p style={{ whiteSpace: 'pre-line', fontSize: '0.83rem', lineHeight: '1.55', margin: 0 }}>{msg.content}</p>
                   {msg.confidence && msg.confidence > 0.9 && (
-                    <div className="flex items-center gap-1 mt-2 text-xs text-green-600">
-                      <CheckCircle className="w-3 h-3" />
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginTop: '6px', color: '#4ade80', fontSize: '0.7rem' }}>
+                      <CheckCircle style={{ width: '10px', height: '10px' }} />
                       <span>High confidence ({Math.round(msg.confidence * 100)}%)</span>
                     </div>
                   )}
-                  <p className="text-xs opacity-60 mt-1">
+                  <p style={{ fontSize: '0.65rem', opacity: 0.4, marginTop: '4px', marginBottom: 0 }}>
                     {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </p>
                 </div>
@@ -336,12 +348,12 @@ export default function AIAssistant() {
 
             {/* Typing Indicator */}
             {isTyping && (
-              <div className="flex justify-start">
-                <div className="bg-white border border-gray-200 rounded-2xl px-4 py-3">
-                  <div className="flex gap-1">
-                    <div className="w-2 h-2 bg-purple-600 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-purple-600 rounded-full animate-bounce delay-100"></div>
-                    <div className="w-2 h-2 bg-purple-600 rounded-full animate-bounce delay-200"></div>
+              <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+                <div style={{ padding: '10px 14px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(201,168,76,0.1)', borderRadius: '2px' }}>
+                  <div style={{ display: 'flex', gap: '5px' }}>
+                    {[0, 1, 2].map(i => (
+                      <div key={i} style={{ width: '7px', height: '7px', background: '#C9A84C', borderRadius: '50%', animation: 'bounce 1.2s infinite', animationDelay: `${i * 0.15}s` }} />
+                    ))}
                   </div>
                 </div>
               </div>
@@ -349,26 +361,35 @@ export default function AIAssistant() {
 
             {/* Smart Suggestions */}
             {showSuggestions && messages.length > 0 && (
-              <div className="space-y-2 mt-4">
-                <p className="text-xs font-semibold text-gray-600 px-2">💡 Smart Suggestions:</p>
+              <div style={{ marginTop: '8px' }}>
+                <p style={{ fontSize: '0.68rem', color: '#9E8F75', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '8px', marginLeft: '2px' }}>Suggestions</p>
                 {suggestions.map((suggestion) => (
                   <button
                     key={suggestion.id}
                     onClick={() => handleSuggestionClick(suggestion)}
-                    className="w-full text-left p-3 bg-white border border-gray-200 rounded-xl hover:border-purple-400 hover:shadow-md transition-all"
+                    style={{
+                      width: '100%',
+                      textAlign: 'left',
+                      padding: '10px 12px',
+                      background: 'rgba(255,255,255,0.02)',
+                      border: '1px solid rgba(201,168,76,0.12)',
+                      borderRadius: '2px',
+                      cursor: 'pointer',
+                      marginBottom: '6px',
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '10px',
+                      transition: 'all 0.2s',
+                    }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(201,168,76,0.35)'; (e.currentTarget as HTMLButtonElement).style.background = 'rgba(201,168,76,0.05)'; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(201,168,76,0.12)'; (e.currentTarget as HTMLButtonElement).style.background = 'rgba(255,255,255,0.02)'; }}
                   >
-                    <div className="flex items-start gap-3">
-                      <div className={`p-2 rounded-lg ${
-                        suggestion.priority === 'high' ? 'bg-red-100 text-red-600' :
-                        suggestion.priority === 'medium' ? 'bg-amber-100 text-amber-600' :
-                        'bg-blue-100 text-blue-600'
-                      }`}>
-                        {suggestion.icon}
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-sm text-gray-900">{suggestion.title}</h4>
-                        <p className="text-xs text-gray-600 mt-1">{suggestion.description}</p>
-                      </div>
+                    <div style={{ padding: '5px', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.15)', borderRadius: '2px', flexShrink: 0 }}>
+                      {suggestion.icon}
+                    </div>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontSize: '0.82rem', fontWeight: 500, color: '#F0EBE0', marginBottom: '2px' }}>{suggestion.title}</div>
+                      <div style={{ fontSize: '0.72rem', color: '#5A5040' }}>{suggestion.description}</div>
                     </div>
                   </button>
                 ))}
@@ -379,27 +400,48 @@ export default function AIAssistant() {
           </div>
 
           {/* Input */}
-          <div className="p-4 border-t border-gray-200 bg-white rounded-b-2xl">
-            <div className="flex gap-2">
+          <div style={{ padding: '12px 14px', borderTop: '1px solid rgba(201,168,76,0.12)', background: '#110F0B', flexShrink: 0 }}>
+            <div style={{ display: 'flex', gap: '8px' }}>
               <input
                 type="text"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                placeholder="Ask about laws, regulations, or optimization..."
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600 text-sm"
+                placeholder="Ask about features, pricing, or a demo..."
+                style={{
+                  flex: 1,
+                  padding: '9px 14px',
+                  background: '#0D0B08',
+                  border: '1px solid rgba(201,168,76,0.2)',
+                  borderRadius: '2px',
+                  color: '#F0EBE0',
+                  fontSize: '0.83rem',
+                  outline: 'none',
+                  fontFamily: "'Inter', sans-serif",
+                }}
+                onFocus={(e) => { (e.currentTarget as HTMLInputElement).style.borderColor = 'rgba(201,168,76,0.55)'; }}
+                onBlur={(e) => { (e.currentTarget as HTMLInputElement).style.borderColor = 'rgba(201,168,76,0.2)'; }}
               />
               <button
                 onClick={handleSendMessage}
                 disabled={!message.trim()}
-                className="px-4 py-3 bg-gradient-to-br from-purple-600 to-indigo-600 text-white rounded-xl hover:from-purple-700 hover:to-indigo-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                style={{
+                  padding: '9px 14px',
+                  background: message.trim() ? 'linear-gradient(135deg, #C9A84C 0%, #E8C060 100%)' : 'rgba(201,168,76,0.1)',
+                  border: '1px solid rgba(201,168,76,0.35)',
+                  borderRadius: '2px',
+                  cursor: message.trim() ? 'pointer' : 'not-allowed',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'all 0.2s',
+                  flexShrink: 0,
+                }}
               >
-                <Send className="w-5 h-5" />
+                <Send style={{ width: '15px', height: '15px', color: message.trim() ? '#07060A' : '#5A5040' }} />
               </button>
             </div>
-            <p className="text-xs text-gray-500 mt-2 text-center">
-              ✨ Powered by AI • Free for everyone
-            </p>
+            <p style={{ fontSize: '0.65rem', color: '#3a3020', marginTop: '7px', textAlign: 'center', letterSpacing: '1px' }}>Powered by NyxTitan AI</p>
           </div>
         </div>
       )}
