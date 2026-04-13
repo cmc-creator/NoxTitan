@@ -75,7 +75,7 @@ export default function Profile() {
               <div className="w-32 h-32 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center text-white text-5xl font-bold">
                 {profile.firstName.charAt(0)}{profile.lastName.charAt(0)}
               </div>
-              <button className="absolute bottom-0 right-0 p-2 bg-blue-600 hover:bg-blue-500 rounded-full text-white transition-all shadow-lg">
+              <button className="absolute bottom-0 right-0 p-2 bg-amber-600 hover:bg-amber-600 rounded-full text-white transition-all shadow-lg">
                 <Camera className="w-5 h-5" />
               </button>
             </div>
@@ -88,11 +88,11 @@ export default function Profile() {
                   <div className="text-slate-400 text-xs">Pronouns</div>
                   <div className="text-white font-semibold">{profile.pronouns}</div>
                 </div>
-                <div className="px-4 py-2 bg-purple-900/50 border border-purple-500/30 rounded-lg">
+                <div className="px-4 py-2 bg-stone-950/50 border border-amber-500/40/30 rounded-lg">
                   <div className="text-slate-400 text-xs">Tenure</div>
                   <div className="text-white font-semibold">2 years 9 months</div>
                 </div>
-                <div className="px-4 py-2 bg-blue-900/50 border border-blue-500/30 rounded-lg">
+                <div className="px-4 py-2 bg-blue-900/50 border border-amber-500/40/30 rounded-lg">
                   <div className="text-slate-400 text-xs">Birthday</div>
                   <div className="text-white font-semibold">{profile.birthday}</div>
                 </div>
@@ -143,7 +143,7 @@ export default function Profile() {
               <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
                 <div className="text-slate-400 text-sm mb-1">Hire Date</div>
                 <div className="text-white font-semibold flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-purple-400" />
+                  <Calendar className="w-4 h-4 text-amber-400" />
                   {profile.hireDate}
                 </div>
               </div>
@@ -234,7 +234,7 @@ export default function Profile() {
             </div>
             <div className="bg-slate-900/50 rounded-lg p-4 text-center border border-yellow-500/20">
               <div className="text-4xl mb-2">⭐</div>
-              <div className="text-purple-300 font-bold">Star Performer</div>
+              <div className="text-amber-200 font-bold">Star Performer</div>
               <div className="text-slate-400 text-xs mt-1">Q4 2025</div>
             </div>
           </div>
@@ -243,3 +243,5 @@ export default function Profile() {
     </div>
   );
 }
+
+

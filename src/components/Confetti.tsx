@@ -63,3 +63,4 @@ export default function Confetti() {
   );
               <img src="/nyxtitan-logo-new.png" alt="NyxTitan Logo" className="w-36 h-36 object-contain drop-shadow-2xl mb-2" style={{ filter: 'brightness(1.1) contrast(1.1)' }} />
 }
+

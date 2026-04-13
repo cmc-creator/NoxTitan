@@ -180,13 +180,13 @@ export default function IdeaBoard() {
               <Rocket className="w-12 h-12 text-green-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-purple-500/30">
+          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-purple-200 text-sm mb-1">This Month</div>
+                <div className="text-amber-100/70 text-sm mb-1">This Month</div>
                 <div className="text-3xl font-bold text-white">18</div>
               </div>
-              <TrendingUp className="w-12 h-12 text-purple-400 opacity-50" />
+              <TrendingUp className="w-12 h-12 text-amber-400 opacity-50" />
             </div>
           </div>
           <div className="bg-gradient-to-br from-red-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-red-500/30">
@@ -278,7 +278,7 @@ export default function IdeaBoard() {
                         </span>
                       )}
                       {idea.status === 'trending' && (
-                        <span className="px-3 py-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full text-xs font-bold flex items-center gap-1">
+                        <span className="px-3 py-1 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-full text-xs font-bold flex items-center gap-1">
                           <TrendingUp className="w-3 h-3" /> TRENDING
                         </span>
                       )}
@@ -316,3 +316,5 @@ export default function IdeaBoard() {
     </div>
   );
 }
+
+

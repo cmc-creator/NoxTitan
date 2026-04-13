@@ -200,7 +200,7 @@ export default function HRFormsPortalPage() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <div className="bg-stone-950 rounded-xl shadow-lg p-8 mb-8">
           <div className="flex justify-between items-start mb-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
@@ -208,15 +208,15 @@ export default function HRFormsPortalPage() {
                   👥
                 </div>
                 <div>
-                  <h1 className="text-5xl font-bold text-gray-800">HR Forms Portal</h1>
-                  <p className="text-xl text-gray-600">Your magic forms headquarters</p>
+                  <h1 className="text-5xl font-bold text-stone-200">HR Forms Portal</h1>
+                  <p className="text-xl text-stone-500">Your magic forms headquarters</p>
                 </div>
               </div>
             </div>
             <div className="flex gap-3">
               <button
                 onClick={() => setShowUploadModal(true)}
-                className="px-6 py-3 bg-white border-2 border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50 flex items-center gap-2"
+                className="px-6 py-3 bg-stone-950 border-2 border-amber-600/40 text-amber-600 rounded-lg hover:bg-purple-50 flex items-center gap-2"
               >
                 <Upload className="w-5 h-5" />
                 Upload Existing Form
@@ -236,14 +236,14 @@ export default function HRFormsPortalPage() {
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-blue-800 font-medium">Total Forms</span>
-                <FileText className="w-5 h-5 text-blue-600" />
+                <FileText className="w-5 h-5 text-amber-400" />
               </div>
               <div className="text-3xl font-bold text-blue-900">{forms.length}</div>
             </div>
             <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-4">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-purple-800 font-medium">Custom Forms</span>
-                <FilePlus className="w-5 h-5 text-purple-600" />
+                <FilePlus className="w-5 h-5 text-amber-600" />
               </div>
               <div className="text-3xl font-bold text-purple-900">
                 {forms.filter(f => f.type === 'custom').length}
@@ -271,28 +271,28 @@ export default function HRFormsPortalPage() {
         </div>
 
         {/* Search & Filters */}
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+        <div className="bg-stone-950 rounded-xl shadow-lg p-6 mb-6">
           <div className="flex gap-4 items-center mb-4">
             <div className="flex-1 relative">
-              <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-stone-400" />
               <input
                 type="text"
                 placeholder="Search HR forms..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-400"
+                className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500"
               />
             </div>
             <div className="flex gap-2">
               <button
                 onClick={() => setViewMode('grid')}
-                className={`px-4 py-3 rounded-lg ${viewMode === 'grid' ? 'bg-purple-600 text-white' : 'bg-gray-100 text-gray-700'}`}
+                className={`px-4 py-3 rounded-lg ${viewMode === 'grid' ? 'bg-amber-600 text-white' : 'bg-gray-100 text-gray-700'}`}
               >
                 <Grid3x3 className="w-5 h-5" />
               </button>
               <button
                 onClick={() => setViewMode('list')}
-                className={`px-4 py-3 rounded-lg ${viewMode === 'list' ? 'bg-purple-600 text-white' : 'bg-gray-100 text-gray-700'}`}
+                className={`px-4 py-3 rounded-lg ${viewMode === 'list' ? 'bg-amber-600 text-white' : 'bg-gray-100 text-gray-700'}`}
               >
                 <List className="w-5 h-5" />
               </button>
@@ -314,7 +314,7 @@ export default function HRFormsPortalPage() {
                 <Icon className="w-4 h-4" />
                 {label}
                 <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${
-                  selectedCategory === value ? 'bg-white/20' : 'bg-white/50'
+                  selectedCategory === value ? 'bg-stone-950/20' : 'bg-stone-950/50'
                 }`}>
                   {count}
                 </span>
@@ -329,7 +329,7 @@ export default function HRFormsPortalPage() {
             {filteredForms.map(form => (
               <div
                 key={form.id}
-                className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all cursor-pointer group relative"
+                className="bg-stone-950 rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all cursor-pointer group relative"
                 onClick={() => form.isEditable ? router.push(`/forms/${form.id}`) : window.open(form.fileUrl)}
               >
                 {form.isFavorite && (
@@ -342,20 +342,20 @@ export default function HRFormsPortalPage() {
                     form.type === 'custom' ? 'bg-purple-100' :
                     'bg-pink-100'
                   }`}>
-                    {form.type === 'uploaded' ? <FileText className="w-6 h-6 text-blue-600" /> :
-                     form.type === 'custom' ? <FilePlus className="w-6 h-6 text-purple-600" /> :
+                    {form.type === 'uploaded' ? <FileText className="w-6 h-6 text-amber-400" /> :
+                     form.type === 'custom' ? <FilePlus className="w-6 h-6 text-amber-600" /> :
                      <FileCheck className="w-6 h-6 text-pink-600" />}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-800 mb-1 group-hover:text-purple-600">
+                    <h3 className="text-lg font-bold text-stone-200 mb-1 group-hover:text-amber-600">
                       {form.name}
                     </h3>
-                    <p className="text-sm text-gray-600">{form.description}</p>
+                    <p className="text-sm text-stone-500">{form.description}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
+                  <span className="px-3 py-1 bg-blue-100 text-amber-300 rounded-full text-xs font-medium">
                     {form.category}
                   </span>
                   {form.isEditable ? (
@@ -375,23 +375,23 @@ export default function HRFormsPortalPage() {
                     </div>
                   ) : (
                     <div title="Private">
-                      <Lock className="w-4 h-4 text-gray-400" />
+                      <Lock className="w-4 h-4 text-stone-400" />
                     </div>
                   )}
                 </div>
 
                 <div className="border-t pt-4 space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-500">Uses:</span>
-                    <span className="font-medium text-gray-800">{form.usageCount}</span>
+                    <span className="text-stone-500">Uses:</span>
+                    <span className="font-medium text-stone-200">{form.usageCount}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-500">Created by:</span>
-                    <span className="font-medium text-gray-800">{form.createdBy}</span>
+                    <span className="text-stone-500">Created by:</span>
+                    <span className="font-medium text-stone-200">{form.createdBy}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-500">Updated:</span>
-                    <span className="font-medium text-gray-800">
+                    <span className="text-stone-500">Updated:</span>
+                    <span className="font-medium text-stone-200">
                       {form.lastModified.toLocaleDateString()}
                     </span>
                   </div>
@@ -400,7 +400,7 @@ export default function HRFormsPortalPage() {
                 <div className="flex gap-2 mt-4 pt-4 border-t">
                   <button
                     onClick={(e) => { e.stopPropagation(); }}
-                    className="flex-1 px-3 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 flex items-center justify-center gap-2 text-sm"
+                    className="flex-1 px-3 py-2 bg-purple-100 text-amber-700 rounded-lg hover:bg-purple-200 flex items-center justify-center gap-2 text-sm"
                   >
                     <Eye className="w-4 h-4" />
                     View
@@ -408,7 +408,7 @@ export default function HRFormsPortalPage() {
                   {form.isEditable && (
                     <button
                       onClick={(e) => { e.stopPropagation(); router.push(`/forms/${form.id}/edit`); }}
-                      className="flex-1 px-3 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 flex items-center justify-center gap-2 text-sm"
+                      className="flex-1 px-3 py-2 bg-blue-100 text-amber-300 rounded-lg hover:bg-blue-200 flex items-center justify-center gap-2 text-sm"
                     >
                       <Edit className="w-4 h-4" />
                       Edit
@@ -425,9 +425,9 @@ export default function HRFormsPortalPage() {
             ))}
           </div>
         ) : (
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="bg-stone-950 rounded-xl shadow-lg overflow-hidden">
             <table className="w-full">
-              <thead className="bg-gray-50">
+              <thead className="bg-stone-950">
                 <tr>
                   <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Form Name</th>
                   <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Category</th>
@@ -439,18 +439,18 @@ export default function HRFormsPortalPage() {
               </thead>
               <tbody className="divide-y">
                 {filteredForms.map(form => (
-                  <tr key={form.id} className="hover:bg-gray-50">
+                  <tr key={form.id} className="hover:bg-stone-950">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
                         {form.isFavorite && <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />}
                         <div>
-                          <div className="font-medium text-gray-800">{form.name}</div>
-                          <div className="text-sm text-gray-500">{form.description}</div>
+                          <div className="font-medium text-stone-200">{form.name}</div>
+                          <div className="text-sm text-stone-500">{form.description}</div>
                         </div>
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
+                      <span className="px-3 py-1 bg-blue-100 text-amber-300 rounded-full text-xs font-medium">
                         {form.category}
                       </span>
                     </td>
@@ -461,23 +461,23 @@ export default function HRFormsPortalPage() {
                           Editable
                         </span>
                       ) : (
-                        <span className="text-gray-600 text-sm flex items-center gap-1">
+                        <span className="text-stone-500 text-sm flex items-center gap-1">
                           <FileText className="w-4 h-4" />
                           PDF
                         </span>
                       )}
                     </td>
-                    <td className="px-6 py-4 text-gray-800">{form.usageCount}</td>
-                    <td className="px-6 py-4 text-gray-600 text-sm">
+                    <td className="px-6 py-4 text-stone-200">{form.usageCount}</td>
+                    <td className="px-6 py-4 text-stone-500 text-sm">
                       {form.lastModified.toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex gap-2">
-                        <button className="p-2 bg-purple-100 text-purple-700 rounded hover:bg-purple-200">
+                        <button className="p-2 bg-purple-100 text-amber-700 rounded hover:bg-purple-200">
                           <Eye className="w-4 h-4" />
                         </button>
                         {form.isEditable && (
-                          <button className="p-2 bg-blue-100 text-blue-700 rounded hover:bg-blue-200">
+                          <button className="p-2 bg-blue-100 text-amber-300 rounded hover:bg-blue-200">
                             <Edit className="w-4 h-4" />
                           </button>
                         )}
@@ -496,12 +496,12 @@ export default function HRFormsPortalPage() {
         {/* Upload Modal */}
         {showUploadModal && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-            <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full p-8">
+            <div className="bg-stone-950 rounded-xl shadow-2xl max-w-2xl w-full p-8">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-3xl font-bold text-gray-800">Upload Existing Form</h2>
+                <h2 className="text-3xl font-bold text-stone-200">Upload Existing Form</h2>
                 <button
                   onClick={() => setShowUploadModal(false)}
-                  className="text-gray-400 hover:text-gray-600"
+                  className="text-stone-400 hover:text-stone-500"
                 >
                   <span className="text-2xl">×</span>
                 </button>
@@ -515,7 +515,7 @@ export default function HRFormsPortalPage() {
                   <input
                     type="text"
                     placeholder="e.g., FMLA Leave Request Form"
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-400"
+                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500"
                   />
                 </div>
 
@@ -525,7 +525,7 @@ export default function HRFormsPortalPage() {
                   </label>
                   <textarea
                     placeholder="Brief description of this form..."
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-400"
+                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500"
                     rows={3}
                   />
                 </div>
@@ -534,7 +534,7 @@ export default function HRFormsPortalPage() {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Category
                   </label>
-                  <select className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-400">
+                  <select className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500">
                     <option>Leave Management</option>
                     <option>Employment</option>
                     <option>Onboarding</option>
@@ -549,12 +549,12 @@ export default function HRFormsPortalPage() {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Upload File
                   </label>
-                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-purple-400 cursor-pointer">
-                    <Upload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-600 mb-2">
-                      <span className="text-purple-600 font-medium">Click to upload</span> or drag and drop
+                  <div className="border-2 border-dashed border-stone-700 rounded-lg p-8 text-center hover:border-amber-400/40 cursor-pointer">
+                    <Upload className="w-12 h-12 text-stone-400 mx-auto mb-4" />
+                    <p className="text-stone-500 mb-2">
+                      <span className="text-amber-600 font-medium">Click to upload</span> or drag and drop
                     </p>
-                    <p className="text-sm text-gray-500">PDF, Word, Excel up to 10MB</p>
+                    <p className="text-sm text-stone-500">PDF, Word, Excel up to 10MB</p>
                   </div>
                 </div>
 
@@ -588,3 +588,6 @@ export default function HRFormsPortalPage() {
     </div>
   );
 }
+
+
+

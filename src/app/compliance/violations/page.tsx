@@ -91,7 +91,7 @@ export default function ComplianceViolationsPage() {
       case 'CRITICAL': return 'text-red-400 bg-red-500/20 border-red-500';
       case 'HIGH': return 'text-orange-400 bg-orange-500/20 border-orange-500';
       case 'MEDIUM': return 'text-yellow-400 bg-yellow-500/20 border-yellow-500';
-      case 'LOW': return 'text-blue-400 bg-blue-500/20 border-blue-500';
+      case 'LOW': return 'text-blue-400 bg-amber-600/20 border-amber-500/40';
       default: return 'text-slate-400 bg-slate-500/20 border-slate-500';
     }
   }
@@ -107,7 +107,7 @@ export default function ComplianceViolationsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -147,7 +147,7 @@ export default function ComplianceViolationsPage() {
               <select
                 value={severityFilter}
                 onChange={(e) => setSeverityFilter(e.target.value)}
-                className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-blue-500"
+                className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-amber-500/40"
               >
                 <option value="all">All Severities</option>
                 <option value="CRITICAL">Critical</option>
@@ -158,7 +158,7 @@ export default function ComplianceViolationsPage() {
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
-                className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-blue-500"
+                className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-amber-500/40"
               >
                 <option value="all">All Statuses</option>
                 <option value="OPEN">Open</option>
@@ -177,7 +177,7 @@ export default function ComplianceViolationsPage() {
         <div className="space-y-4">
           {loading ? (
             <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-12 text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto mb-4"></div>
               <p className="text-slate-400">Loading violations...</p>
             </div>
           ) : filteredViolations.length === 0 ? (
@@ -190,7 +190,7 @@ export default function ComplianceViolationsPage() {
             filteredViolations.map((violation) => (
               <div
                 key={violation.id}
-                className={`bg-slate-800/50 backdrop-blur border rounded-xl p-6 hover:border-blue-500/50 transition-colors ${
+                className={`bg-slate-800/50 backdrop-blur border rounded-xl p-6 hover:border-amber-500/40/50 transition-colors ${
                   violation.status === 'OPEN' ? 'border-red-500/50' : 'border-slate-700'
                 }`}
               >
@@ -264,7 +264,7 @@ export default function ComplianceViolationsPage() {
                       <div className="flex gap-2">
                         <button
                           onClick={() => setSelectedViolation(violation)}
-                          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors"
+                          className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold rounded-lg transition-colors"
                         >
                           Resolve Violation
                         </button>
@@ -303,7 +303,7 @@ export default function ComplianceViolationsPage() {
                   onChange={(e) => setResolution(e.target.value)}
                   placeholder="Describe how this violation was resolved..."
                   rows={4}
-                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-500"
+                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40"
                 />
               </div>
 
@@ -332,3 +332,5 @@ export default function ComplianceViolationsPage() {
     </div>
   );
 }
+
+

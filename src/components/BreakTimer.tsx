@@ -66,7 +66,7 @@ export default function BreakTimer({ activeBreak, onEndBreak }: BreakTimerProps)
           </span>
         </div>
         {activeBreak.isPaid && (
-          <span className="px-2 py-1 bg-white/20 rounded-full text-xs font-semibold">
+          <span className="px-2 py-1 bg-stone-950/20 rounded-full text-xs font-semibold">
             Paid
           </span>
         )}
@@ -91,9 +91,9 @@ export default function BreakTimer({ activeBreak, onEndBreak }: BreakTimerProps)
 
       {/* Progress Bar */}
       <div className="mb-4">
-        <div className="h-2 bg-white/20 rounded-full overflow-hidden">
+        <div className="h-2 bg-stone-950/20 rounded-full overflow-hidden">
           <div 
-            className="h-full bg-white transition-all duration-1000"
+            className="h-full bg-stone-950 transition-all duration-1000"
             style={{ 
               width: `${Math.min((minutes / expectedDuration) * 100, 100)}%` 
             }}
@@ -103,7 +103,7 @@ export default function BreakTimer({ activeBreak, onEndBreak }: BreakTimerProps)
 
       {/* Warning if overdue */}
       {isOverdue && (
-        <div className="bg-white/20 rounded-lg p-3 mb-4 text-sm">
+        <div className="bg-stone-950/20 rounded-lg p-3 mb-4 text-sm">
           ⚠️ This break has exceeded the expected duration. Please return to work or extend if approved.
         </div>
       )}
@@ -111,7 +111,7 @@ export default function BreakTimer({ activeBreak, onEndBreak }: BreakTimerProps)
       {/* End Break Button */}
       <button
         onClick={onEndBreak}
-        className="w-full py-3 bg-white text-slate-900 font-bold rounded-lg hover:bg-slate-100 transition-colors flex items-center justify-center gap-2"
+        className="w-full py-3 bg-stone-950 text-slate-900 font-bold rounded-lg hover:bg-slate-100 transition-colors flex items-center justify-center gap-2"
       >
         <XCircle className="w-5 h-5" />
         End Break
@@ -127,3 +127,4 @@ export default function BreakTimer({ activeBreak, onEndBreak }: BreakTimerProps)
     </div>
   );
 }
+

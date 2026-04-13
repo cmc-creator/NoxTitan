@@ -176,7 +176,7 @@ export default function SuggestionBoxPage() {
           </div>
           <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Under Review</div>
-            <div className="text-3xl font-bold text-blue-500">{stats.underReview}</div>
+            <div className="text-3xl font-bold text-amber-400">{stats.underReview}</div>
           </div>
           <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Implemented</div>
@@ -343,7 +343,7 @@ export default function SuggestionBoxPage() {
                     <div className="flex flex-col items-center gap-1">
                       <button
                         className={`p-2 rounded-lg transition-all ${
-                          suggestion.hasVoted ? 'bg-blue-500 text-white' : 'hover:scale-110'
+                          suggestion.hasVoted ? 'bg-amber-600 text-white' : 'hover:scale-110'
                         }`}
                         style={{ background: suggestion.hasVoted ? undefined : 'var(--calendar-bg)' }}
                       >
@@ -372,7 +372,7 @@ export default function SuggestionBoxPage() {
                           <div
                             className={`px-3 py-1 rounded-full text-xs font-bold text-white ${
                               suggestion.status === 'implemented' ? 'bg-green-500' :
-                              suggestion.status === 'approved' ? 'bg-blue-500' :
+                              suggestion.status === 'approved' ? 'bg-amber-600' :
                               suggestion.status === 'under-review' ? 'bg-yellow-500' :
                               suggestion.status === 'declined' ? 'bg-red-500' :
                               'bg-gray-500'
@@ -391,9 +391,9 @@ export default function SuggestionBoxPage() {
 
                       {/* Management Response */}
                       {suggestion.response && (
-                        <div className="mb-4 p-4 rounded-lg border-l-4 border-blue-500" style={{ background: 'var(--calendar-bg)' }}>
+                        <div className="mb-4 p-4 rounded-lg border-l-4 border-amber-500/40" style={{ background: 'var(--calendar-bg)' }}>
                           <div className="flex items-center gap-2 mb-2">
-                            <MessageSquare className="h-4 w-4 text-blue-500" />
+                            <MessageSquare className="h-4 w-4 text-amber-400" />
                             <span className="font-semibold text-sm">Management Response</span>
                             <span className="text-xs opacity-60">• {suggestion.responseBy} • {suggestion.responseTime}</span>
                           </div>
@@ -511,7 +511,7 @@ export default function SuggestionBoxPage() {
                       Approve
                     </button>
                     <button
-                      className="px-4 py-2 rounded-lg font-semibold bg-blue-500 text-white hover:scale-105 transition-all flex items-center gap-2"
+                      className="px-4 py-2 rounded-lg font-semibold bg-amber-600 text-white hover:scale-105 transition-all flex items-center gap-2"
                     >
                       <Clock className="h-4 w-4" />
                       Under Review
@@ -538,3 +538,6 @@ export default function SuggestionBoxPage() {
     </div>
   );
 }
+
+
+

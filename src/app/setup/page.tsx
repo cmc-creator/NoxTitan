@@ -40,7 +40,7 @@ export default function SetupPage() {
         <div className="text-center">
           <div className="text-6xl mb-6">🎉</div>
           <h1 className="text-4xl font-bold text-white mb-4">Setup Complete!</h1>
-          <p className="text-xl text-purple-200">Redirecting to your dashboard...</p>
+          <p className="text-xl text-amber-100/70">Redirecting to your dashboard...</p>
         </div>
       </div>
     );
@@ -48,3 +48,5 @@ export default function SetupPage() {
 
   return <SetupWizard onComplete={handleComplete} onSkip={handleSkip} />;
 }
+
+

@@ -100,10 +100,10 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
 
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 max-w-7xl w-full border-2 border-purple-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 max-w-7xl w-full border-2 border-amber-500/40/30 shadow-2xl max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <Palette className="w-8 h-8 text-purple-400" />
+            <Palette className="w-8 h-8 text-amber-400" />
             <div>
               <h2 className="text-3xl font-bold text-white">Theme Studio</h2>
               <p className="text-sm text-slate-400">Customize every aspect of your experience</p>
@@ -125,7 +125,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
               <button
                 onClick={() => setActiveTab('colors')}
                 className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${
-                  activeTab === 'colors' ? 'bg-purple-500 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                  activeTab === 'colors' ? 'bg-amber-500 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                 }`}
               >
                 <Palette className="w-4 h-4" />
@@ -134,7 +134,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
               <button
                 onClick={() => setActiveTab('typography')}
                 className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${
-                  activeTab === 'typography' ? 'bg-purple-500 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                  activeTab === 'typography' ? 'bg-amber-500 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                 }`}
               >
                 <Type className="w-4 h-4" />
@@ -143,7 +143,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
               <button
                 onClick={() => setActiveTab('layout')}
                 className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${
-                  activeTab === 'layout' ? 'bg-purple-500 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                  activeTab === 'layout' ? 'bg-amber-500 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                 }`}
               >
                 <Layout className="w-4 h-4" />
@@ -152,7 +152,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
               <button
                 onClick={() => setActiveTab('effects')}
                 className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${
-                  activeTab === 'effects' ? 'bg-purple-500 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                  activeTab === 'effects' ? 'bg-amber-500 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                 }`}
               >
                 <Sparkles className="w-4 h-4" />
@@ -174,7 +174,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
                         className="group"
                       >
                         <div 
-                          className="h-20 rounded-lg mb-2 border-2 border-slate-600 group-hover:border-purple-400 transition-all"
+                          className="h-20 rounded-lg mb-2 border-2 border-slate-600 group-hover:border-amber-400/40 transition-all"
                           style={{ background: preset.preview }}
                         ></div>
                         <p className="text-sm text-white font-semibold">{preset.name}</p>
@@ -356,11 +356,11 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
                       onClick={() => setTheme({ ...theme, [effect.key]: !theme[effect.key as keyof typeof theme] })}
                       className={`w-14 h-8 rounded-full transition-all ${
                         theme[effect.key as keyof typeof theme]
-                          ? 'bg-purple-500'
+                          ? 'bg-amber-500'
                           : 'bg-slate-600'
                       }`}
                     >
-                      <div className={`w-6 h-6 bg-white rounded-full transition-all ${
+                      <div className={`w-6 h-6 bg-stone-950 rounded-full transition-all ${
                         theme[effect.key as keyof typeof theme] ? 'ml-7' : 'ml-1'
                       }`}></div>
                     </button>
@@ -462,3 +462,5 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
     </div>
   );
 }
+
+

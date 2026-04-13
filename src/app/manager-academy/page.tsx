@@ -43,7 +43,7 @@ export default function ManagerAcademyPage() {
       title: 'Effective Communication',
       icon: <MessageCircle className="w-8 h-8" />,
       duration: '40 min',
-      color: 'from-purple-600 to-indigo-600',
+      color: 'from-amber-700 to-amber-600',
       lessons: [
         'Clear & Transparent Communication',
         'Giving Constructive Feedback',
@@ -88,7 +88,7 @@ export default function ManagerAcademyPage() {
       title: 'NyxTitan Platform Mastery',
       icon: <BookOpen className="w-8 h-8" />,
       duration: '35 min',
-      color: 'from-indigo-600 to-purple-600',
+      color: 'from-amber-700 to-amber-600',
       lessons: [
         'Schedule Creation & Optimization',
         'Approval Workflows',
@@ -119,7 +119,7 @@ export default function ManagerAcademyPage() {
   const progressPercent = (completedRequired / requiredModules.length) * 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
@@ -127,17 +127,17 @@ export default function ManagerAcademyPage() {
           <h1 className="text-5xl font-bold text-white mb-3">
             Manager Academy
           </h1>
-          <p className="text-xl text-purple-200 max-w-3xl mx-auto">
+          <p className="text-xl text-amber-100/70 max-w-3xl mx-auto">
             Become an exceptional leader with servant leadership principles and best practices
           </p>
         </div>
 
         {/* Progress Card */}
-        <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 mb-8 shadow-2xl">
+        <div className="bg-gradient-to-r from-amber-700 to-amber-600 rounded-2xl p-8 mb-8 shadow-2xl">
           <div className="flex items-center justify-between gap-6">
             <div className="text-white">
               <h2 className="text-3xl font-bold mb-2">Your Progress</h2>
-              <p className="text-purple-100 text-lg">
+              <p className="text-amber-50 text-lg">
                 {completedRequired} of {requiredModules.length} required modules completed
               </p>
             </div>
@@ -170,10 +170,10 @@ export default function ManagerAcademyPage() {
           </div>
 
           {progressPercent === 100 && (
-            <div className="mt-6 bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center">
+            <div className="mt-6 bg-stone-950/20 backdrop-blur-sm rounded-xl p-4 text-center">
               <Award className="w-8 h-8 text-yellow-300 mx-auto mb-2" />
               <p className="text-white font-bold text-lg">🎉 Congratulations! You've completed Manager Academy!</p>
-              <p className="text-purple-100 text-sm mt-1">Certificate available in your profile</p>
+              <p className="text-amber-50 text-sm mt-1">Certificate available in your profile</p>
             </div>
           )}
         </div>
@@ -192,8 +192,8 @@ export default function ManagerAcademyPage() {
                     isCompleted
                       ? 'border-green-500'
                       : isActive
-                      ? 'border-purple-500'
-                      : 'border-slate-700 hover:border-purple-400'
+                      ? 'border-amber-500/40'
+                      : 'border-slate-700 hover:border-amber-400/40'
                   }`}
                 >
                   <div className="flex items-start justify-between mb-4">
@@ -205,17 +205,17 @@ export default function ManagerAcademyPage() {
                     ) : module.required ? (
                       <span className="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded">REQUIRED</span>
                     ) : (
-                      <span className="px-2 py-1 bg-blue-500 text-white text-xs font-bold rounded">OPTIONAL</span>
+                      <span className="px-2 py-1 bg-amber-600 text-white text-xs font-bold rounded">OPTIONAL</span>
                     )}
                   </div>
 
                   <h3 className="text-xl font-bold text-white mb-2 text-left">{module.title}</h3>
-                  <p className="text-purple-300 text-sm mb-4 text-left">⏱️ {module.duration}</p>
+                  <p className="text-amber-200 text-sm mb-4 text-left">⏱️ {module.duration}</p>
 
                   {isActive && (
                     <div className="mt-4 pt-4 border-t border-slate-700 text-left space-y-2">
                       {module.lessons.map((lesson, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-sm text-purple-200">
+                        <div key={idx} className="flex items-center gap-2 text-sm text-amber-100/70">
                           <Play className="w-4 h-4 flex-shrink-0" />
                           <span>{lesson}</span>
                         </div>
@@ -251,21 +251,21 @@ export default function ManagerAcademyPage() {
                 <span className="text-2xl">🙏</span>
                 <div>
                   <h4 className="font-bold text-white mb-1">Put People First</h4>
-                  <p className="text-sm text-purple-200">Your team's wellbeing and growth come before results</p>
+                  <p className="text-sm text-amber-100/70">Your team's wellbeing and growth come before results</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-2xl">👂</span>
                 <div>
                   <h4 className="font-bold text-white mb-1">Listen Actively</h4>
-                  <p className="text-sm text-purple-200">Understand before being understood</p>
+                  <p className="text-sm text-amber-100/70">Understand before being understood</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-2xl">💪</span>
                 <div>
                   <h4 className="font-bold text-white mb-1">Empower, Don't Control</h4>
-                  <p className="text-sm text-purple-200">Trust your team and give them autonomy</p>
+                  <p className="text-sm text-amber-100/70">Trust your team and give them autonomy</p>
                 </div>
               </div>
             </div>
@@ -274,21 +274,21 @@ export default function ManagerAcademyPage() {
                 <span className="text-2xl">🌱</span>
                 <div>
                   <h4 className="font-bold text-white mb-1">Grow Your Team</h4>
-                  <p className="text-sm text-purple-200">Invest in development and career growth</p>
+                  <p className="text-sm text-amber-100/70">Invest in development and career growth</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-2xl">🤝</span>
                 <div>
                   <h4 className="font-bold text-white mb-1">Build Community</h4>
-                  <p className="text-sm text-purple-200">Foster belonging and collaboration</p>
+                  <p className="text-sm text-amber-100/70">Foster belonging and collaboration</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-2xl">⚖️</span>
                 <div>
                   <h4 className="font-bold text-white mb-1">Lead with Integrity</h4>
-                  <p className="text-sm text-purple-200">Model the behavior you expect</p>
+                  <p className="text-sm text-amber-100/70">Model the behavior you expect</p>
                 </div>
               </div>
             </div>
@@ -298,3 +298,6 @@ export default function ManagerAcademyPage() {
     </div>
   );
 }
+
+
+

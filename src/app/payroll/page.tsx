@@ -395,7 +395,7 @@ export default function PayrollPage() {
           <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Active Employees</div>
-              <Users className="h-5 w-5 text-blue-500" />
+              <Users className="h-5 w-5 text-amber-400" />
             </div>
             <div className="text-3xl font-bold mb-1" style={{ color: 'var(--header-text)' }}>
               {currentPeriod.employeeCount}
@@ -406,7 +406,7 @@ export default function PayrollPage() {
           <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Avg Hours/Employee</div>
-              <Clock className="h-5 w-5 text-purple-500" />
+              <Clock className="h-5 w-5 text-amber-500" />
             </div>
             <div className="text-3xl font-bold mb-1" style={{ color: 'var(--header-text)' }}>
               {(currentPeriod.totalHours / currentPeriod.employeeCount).toFixed(1)}
@@ -542,7 +542,7 @@ export default function PayrollPage() {
                 <h2 className="text-2xl font-bold" style={{ color: 'var(--header-text)' }}>
                   Current Pay Period
                 </h2>
-                <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm font-semibold">
+                <span className="px-3 py-1 bg-amber-600/20 text-blue-400 rounded-full text-sm font-semibold">
                   {currentPeriod.status.toUpperCase()}
                 </span>
               </div>
@@ -656,7 +656,7 @@ export default function PayrollPage() {
                   </thead>
                   <tbody>
                     {employeePayroll.map((emp) => (
-                      <tr key={emp.id} className="border-b hover:bg-white/5" style={{ borderColor: 'var(--border-color)' }}>
+                      <tr key={emp.id} className="border-b hover:bg-stone-950/5" style={{ borderColor: 'var(--border-color)' }}>
                         <td className="py-3 px-2 font-semibold">{emp.name}</td>
                         <td className="py-3 px-2 opacity-70">{emp.department}</td>
                         <td className="py-3 px-2 text-right">
@@ -717,11 +717,11 @@ export default function PayrollPage() {
                 </thead>
                 <tbody>
                   {employeePayroll.map((emp) => (
-                    <tr key={emp.id} className="border-b hover:bg-white/5" style={{ borderColor: 'var(--border-color)' }}>
+                    <tr key={emp.id} className="border-b hover:bg-stone-950/5" style={{ borderColor: 'var(--border-color)' }}>
                       <td className="py-3 px-2 font-semibold">{emp.name}</td>
                       <td className="py-3 px-2">{emp.department}</td>
                       <td className="py-3 px-2">
-                        <span className="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs font-semibold uppercase">
+                        <span className="px-2 py-1 bg-amber-600/20 text-blue-400 rounded text-xs font-semibold uppercase">
                           {emp.payType}
                         </span>
                       </td>
@@ -732,7 +732,7 @@ export default function PayrollPage() {
                         {emp.payType === 'hourly' ? formatCurrency(emp.payRate * 1.5) : 'N/A'}
                       </td>
                       <td className="py-3 px-2 text-right">
-                        <button className="px-3 py-1 bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 rounded text-sm transition-all">
+                        <button className="px-3 py-1 bg-amber-600/20 hover:bg-amber-600/30 text-blue-400 rounded text-sm transition-all">
                           Edit
                         </button>
                       </td>
@@ -754,7 +754,7 @@ export default function PayrollPage() {
               {payPeriods.map((period) => (
                 <div 
                   key={period.id}
-                  className="p-4 mb-4 rounded-lg hover:bg-white/5 transition-all cursor-pointer border"
+                  className="p-4 mb-4 rounded-lg hover:bg-stone-950/5 transition-all cursor-pointer border"
                   style={{ borderColor: 'var(--border-color)' }}
                 >
                   <div className="flex items-center justify-between mb-3">
@@ -766,9 +766,9 @@ export default function PayrollPage() {
                     </div>
                     <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
                       period.status === 'paid' ? 'bg-green-500/20 text-green-400' :
-                      period.status === 'approved' ? 'bg-blue-500/20 text-blue-400' :
+                      period.status === 'approved' ? 'bg-amber-600/20 text-blue-400' :
                       period.status === 'processing' ? 'bg-yellow-500/20 text-yellow-400' :
-                      'bg-gray-500/20 text-gray-400'
+                      'bg-gray-500/20 text-stone-400'
                     }`}>
                       {period.status.toUpperCase()}
                     </span>
@@ -860,9 +860,9 @@ export default function PayrollPage() {
                         </td>
                         <td className="py-4 px-4">
                           <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                            employee.healthInsurance.plan === 'premium' ? 'bg-purple-500/20 text-purple-400' :
-                            employee.healthInsurance.plan === 'basic' ? 'bg-blue-500/20 text-blue-400' :
-                            'bg-gray-500/20 text-gray-400'
+                            employee.healthInsurance.plan === 'premium' ? 'bg-amber-500/20 text-amber-400' :
+                            employee.healthInsurance.plan === 'basic' ? 'bg-amber-600/20 text-blue-400' :
+                            'bg-gray-500/20 text-stone-400'
                           }`}>
                             {employee.healthInsurance.plan === 'none' ? 'Not Enrolled' : 
                              employee.healthInsurance.plan.charAt(0).toUpperCase() + employee.healthInsurance.plan.slice(1)}
@@ -887,7 +887,7 @@ export default function PayrollPage() {
                               </div>
                             </>
                           ) : (
-                            <span className="text-gray-500">—</span>
+                            <span className="text-stone-500">—</span>
                           )}
                         </td>
                         <td className="text-right py-4 px-4">
@@ -896,7 +896,7 @@ export default function PayrollPage() {
                               {formatCurrency(employee.retirement401k.employerMatch)}
                             </div>
                           ) : (
-                            <span className="text-gray-500">—</span>
+                            <span className="text-stone-500">—</span>
                           )}
                         </td>
                         <td className="text-right py-4 px-4">
@@ -910,7 +910,7 @@ export default function PayrollPage() {
                               </div>
                             </>
                           ) : (
-                            <span className="text-gray-500">Not enrolled</span>
+                            <span className="text-stone-500">Not enrolled</span>
                           )}
                         </td>
                         <td className="text-right py-4 px-4">
@@ -922,7 +922,7 @@ export default function PayrollPage() {
                           </div>
                         </td>
                         <td className="text-right py-4 px-4">
-                          <div className="font-semibold text-purple-400">
+                          <div className="font-semibold text-amber-400">
                             {employee.ptoAccrual.balance}h
                           </div>
                           <div className="text-xs opacity-60">
@@ -953,7 +953,7 @@ export default function PayrollPage() {
                 </div>
                 <div className="p-4 rounded-lg border" style={{ borderColor: 'var(--border-color)' }}>
                   <div className="text-sm opacity-70 mb-2">Total Life Insurance Premium</div>
-                  <div className="text-xl font-bold text-purple-400">
+                  <div className="text-xl font-bold text-amber-400">
                     {formatCurrency(employeeBenefits.reduce((sum, e) => sum + e.lifeInsurance.premium, 0))}
                   </div>
                   <div className="text-xs opacity-60 mt-1">Per pay period</div>
@@ -1022,7 +1022,7 @@ export default function PayrollPage() {
                     <div className="flex gap-2">
                       {integration.status === 'connected' ? (
                         <>
-                          <button className="flex-1 px-4 py-2 bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+                          <button className="flex-1 px-4 py-2 bg-amber-600/20 hover:bg-amber-600/30 text-blue-400 rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
                             <RefreshCw className="h-4 w-4" />
                             Sync Now
                           </button>
@@ -1111,3 +1111,6 @@ export default function PayrollPage() {
     </div>
   );
 }
+
+
+

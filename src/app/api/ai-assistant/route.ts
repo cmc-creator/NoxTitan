@@ -74,3 +74,4 @@ function generateContextualResponse(message: string, context: string, userRole: 
   // Default intelligent response
   return `I understand you're asking about: "${message}"\n\nHere are some related features that might help:\n\n• HR Planner - Schedule tasks and reminders\n• Employee Surveys - Track satisfaction scores\n• Automation Rules - Set up recurring workflows\n• Performance Reviews - Manage review cycles\n• Analytics Dashboard - View HR metrics\n\nCould you provide more details about what you'd like to do? I'm here to make your HR work easier!`;
 }
+

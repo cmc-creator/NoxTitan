@@ -198,9 +198,9 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
           <p className="text-xs text-cyan-400 mt-1">+{successMetrics.current1YearRetention - successMetrics.industryAvg1Year}% vs industry</p>
         </div>
 
-        <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-xl p-4 border-2 border-purple-500/30">
+        <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-xl p-4 border-2 border-amber-500/40/30">
           <div className="flex items-center justify-between mb-2">
-            <Clock className="w-6 h-6 text-purple-400" />
+            <Clock className="w-6 h-6 text-amber-400" />
           </div>
           <p className="text-3xl font-bold text-white">{successMetrics.avgOnboardingTime} <span className="text-lg">weeks</span></p>
           <p className="text-sm text-slate-300">Avg Time to Productivity</p>
@@ -313,7 +313,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
               {/* Buddy Assignment */}
               <div className="bg-slate-900/50 rounded-lg p-3 mb-4">
                 <div className="flex items-center gap-2 mb-1">
-                  <Users className="w-4 h-4 text-purple-400" />
+                  <Users className="w-4 h-4 text-amber-400" />
                   <p className="text-sm font-semibold text-white">Onboarding Buddy</p>
                 </div>
                 {employee.buddy !== 'Not Assigned' ? (
@@ -321,7 +321,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
                 ) : (
                   <div className="flex items-center justify-between">
                     <p className="text-red-400 font-bold">Not Assigned ⚠️</p>
-                    <button className="px-3 py-1 bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 rounded text-xs font-semibold">
+                    <button className="px-3 py-1 bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 rounded text-xs font-semibold">
                       Assign Now
                     </button>
                   </div>
@@ -343,10 +343,10 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
               </div>
 
               {/* Upcoming Milestone */}
-              <div className="bg-purple-500/20 rounded-lg p-3 mb-4 border border-purple-500/30">
+              <div className="bg-amber-500/20 rounded-lg p-3 mb-4 border border-amber-500/40/30">
                 <div className="flex items-center gap-2 mb-1">
-                  <Calendar className="w-4 h-4 text-purple-400" />
-                  <p className="text-sm font-semibold text-purple-300">Upcoming Milestone</p>
+                  <Calendar className="w-4 h-4 text-amber-400" />
+                  <p className="text-sm font-semibold text-amber-200">Upcoming Milestone</p>
                 </div>
                 <p className="text-white font-bold">{employee.upcomingMilestone}</p>
                 <p className="text-xs text-slate-400">In {employee.daysToMilestone} days</p>
@@ -363,7 +363,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
                 <button className="flex-1 px-4 py-2 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 rounded-lg font-semibold transition-all">
                   View Progress
                 </button>
-                <button className="flex-1 px-4 py-2 bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 rounded-lg font-semibold transition-all">
+                <button className="flex-1 px-4 py-2 bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 rounded-lg font-semibold transition-all">
                   Check In
                 </button>
               </div>
@@ -422,12 +422,12 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
                 {/* AI Recommendations */}
                 <div>
                   <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-                    <Sparkles className="w-5 h-5 text-purple-400" />
+                    <Sparkles className="w-5 h-5 text-amber-400" />
                     AI Recommendations
                   </h4>
                   <div className="space-y-2">
                     {employee.recommendations.map((rec, index) => (
-                      <div key={index} className="bg-slate-900/50 rounded-lg p-3 border-l-4 border-purple-500">
+                      <div key={index} className="bg-slate-900/50 rounded-lg p-3 border-l-4 border-amber-500/40">
                         <p className="text-sm text-white">{rec}</p>
                       </div>
                     ))}
@@ -491,9 +491,9 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
 
           {/* Best Practices & Insights */}
           <div className="space-y-6">
-            <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-xl p-6 border-2 border-purple-500/30">
+            <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-xl p-6 border-2 border-amber-500/40/30">
               <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <Award className="w-6 h-6 text-purple-400" />
+                <Award className="w-6 h-6 text-amber-400" />
                 Best Practices
               </h3>
               <div className="space-y-3">
@@ -567,3 +567,5 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
     </div>
   );
 }
+
+

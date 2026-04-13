@@ -82,7 +82,7 @@ export default function Games() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Trivia Challenge */}
-          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-xl p-6 border-2 border-blue-500/30">
+          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-xl p-6 border-2 border-amber-500/40/30">
             <div className="flex items-center gap-3 mb-4">
               <Brain className="w-8 h-8 text-blue-400" />
               <div>
@@ -91,7 +91,7 @@ export default function Games() {
               </div>
             </div>
 
-            <div className="bg-blue-900/30 rounded-lg p-5 mb-4 border border-blue-500/30">
+            <div className="bg-blue-900/30 rounded-lg p-5 mb-4 border border-amber-500/40/30">
               <div className="text-blue-300 text-sm font-semibold mb-2">Question of the Day:</div>
               <div className="text-white text-lg font-medium mb-4">
                 What's the only food that never spoils? 🤔
@@ -137,21 +137,21 @@ export default function Games() {
           </div>
 
           {/* Emoji Puzzle */}
-          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-xl p-6 border-2 border-purple-500/30">
+          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-xl p-6 border-2 border-amber-500/40/30">
             <div className="flex items-center gap-3 mb-4">
-              <Smile className="w-8 h-8 text-purple-400" />
+              <Smile className="w-8 h-8 text-amber-400" />
               <div>
                 <h2 className="text-2xl font-bold text-white">Emoji Puzzle</h2>
                 <p className="text-slate-300 text-sm">Can you solve it?</p>
               </div>
             </div>
 
-            <div className="bg-purple-900/30 rounded-lg p-6 mb-4 border border-purple-500/30 text-center">
+            <div className="bg-stone-950/30 rounded-lg p-6 mb-4 border border-amber-500/40/30 text-center">
               <div className="text-6xl mb-4">🐝 + 🍃</div>
               <div className="text-white text-3xl font-bold mb-4">= ?</div>
               <button
                 onClick={() => setShowEmojiAnswer(!showEmojiAnswer)}
-                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white rounded-lg font-bold transition-all"
+                className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-500 hover:to-pink-500 text-white rounded-lg font-bold transition-all"
               >
                 {showEmojiAnswer ? 'Hide Answer' : 'Show Answer'}
               </button>
@@ -163,8 +163,8 @@ export default function Games() {
               )}
             </div>
 
-            <div className="bg-slate-900/50 rounded-lg p-4 border border-purple-500/20">
-              <div className="text-purple-300 font-semibold text-sm mb-2">More Puzzles Coming:</div>
+            <div className="bg-slate-900/50 rounded-lg p-4 border border-amber-500/40/20">
+              <div className="text-amber-200 font-semibold text-sm mb-2">More Puzzles Coming:</div>
               <div className="text-slate-400 text-sm">
                 🎨 + 🎵 = ?<br />
                 ☀️ + 🌻 = ?<br />
@@ -222,9 +222,9 @@ export default function Games() {
                   <div className="font-bold mb-1">🏠 Work from home forever</div>
                   <div className="text-sm text-blue-100">73% of team chose this</div>
                 </button>
-                <button className="p-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white rounded-lg transition-all text-left">
+                <button className="p-4 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-500 hover:to-pink-500 text-white rounded-lg transition-all text-left">
                   <div className="font-bold mb-1">🏢 Free lunch at office forever</div>
-                  <div className="text-sm text-purple-100">27% of team chose this</div>
+                  <div className="text-sm text-amber-50">27% of team chose this</div>
                 </button>
               </div>
             </div>
@@ -295,11 +295,13 @@ export default function Games() {
         </div>
 
         {/* Fun Footer */}
-        <div className="mt-8 bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-purple-500/30 text-center">
-          <h3 className="text-2xl font-bold text-purple-200 mb-2">🎮 Why so serious?</h3>
-          <p className="text-purple-100 text-lg">Remember: All work and no play makes Jack a dull boy. Now go have some fun! 🎉</p>
+        <div className="mt-8 bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-amber-500/40/30 text-center">
+          <h3 className="text-2xl font-bold text-amber-100/70 mb-2">🎮 Why so serious?</h3>
+          <p className="text-amber-50 text-lg">Remember: All work and no play makes Jack a dull boy. Now go have some fun! 🎉</p>
         </div>
       </div>
     </div>
   );
 }
+
+

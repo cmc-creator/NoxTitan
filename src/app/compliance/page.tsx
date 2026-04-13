@@ -12,7 +12,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
         <button
           onClick={() => setHipaaView('overview')}
           className={`px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap ${
-            hipaaView === 'overview' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-100'
+            hipaaView === 'overview' ? 'bg-amber-600 text-white' : 'bg-stone-950 text-gray-700 hover:bg-gray-100'
           }`}
         >
           Overview
@@ -20,7 +20,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
         <button
           onClick={() => setHipaaView('privacy')}
           className={`px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap ${
-            hipaaView === 'privacy' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-100'
+            hipaaView === 'privacy' ? 'bg-amber-600 text-white' : 'bg-stone-950 text-gray-700 hover:bg-gray-100'
           }`}
         >
           Privacy Rule
@@ -28,7 +28,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
         <button
           onClick={() => setHipaaView('security')}
           className={`px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap ${
-            hipaaView === 'security' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-100'
+            hipaaView === 'security' ? 'bg-amber-600 text-white' : 'bg-stone-950 text-gray-700 hover:bg-gray-100'
           }`}
         >
           Security Rule
@@ -36,7 +36,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
         <button
           onClick={() => setHipaaView('breach')}
           className={`px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap ${
-            hipaaView === 'breach' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-100'
+            hipaaView === 'breach' ? 'bg-amber-600 text-white' : 'bg-stone-950 text-gray-700 hover:bg-gray-100'
           }`}
         >
           Breach Prevention
@@ -44,7 +44,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
         <button
           onClick={() => setHipaaView('audit-log')}
           className={`px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap ${
-            hipaaView === 'audit-log' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-100'
+            hipaaView === 'audit-log' ? 'bg-amber-600 text-white' : 'bg-stone-950 text-gray-700 hover:bg-gray-100'
           }`}
         >
           Audit Logs
@@ -58,31 +58,31 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
           <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl border-2 border-green-200">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900">HIPAA Compliance Status</h2>
-                <p className="text-gray-600">Health Insurance Portability and Accountability Act</p>
+                <h2 className="text-2xl font-bold text-stone-100">HIPAA Compliance Status</h2>
+                <p className="text-stone-500">Health Insurance Portability and Accountability Act</p>
               </div>
               <div className="text-center">
                 <div className="text-5xl font-bold text-green-600">98%</div>
-                <p className="text-sm text-gray-600">Compliant</p>
+                <p className="text-sm text-stone-500">Compliant</p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
-              <div className="bg-white p-4 rounded-lg border border-green-200">
+              <div className="bg-stone-950 p-4 rounded-lg border border-green-200">
                 <CheckCircle className="w-6 h-6 text-green-600 mb-2" />
                 <p className="text-sm font-semibold text-gray-700">Privacy Rule</p>
                 <p className="text-2xl font-bold text-green-600">100%</p>
               </div>
-              <div className="bg-white p-4 rounded-lg border border-green-200">
+              <div className="bg-stone-950 p-4 rounded-lg border border-green-200">
                 <CheckCircle className="w-6 h-6 text-green-600 mb-2" />
                 <p className="text-sm font-semibold text-gray-700">Security Rule</p>
                 <p className="text-2xl font-bold text-green-600">97%</p>
               </div>
-              <div className="bg-white p-4 rounded-lg border border-yellow-200">
+              <div className="bg-stone-950 p-4 rounded-lg border border-yellow-200">
                 <AlertTriangle className="w-6 h-6 text-yellow-600 mb-2" />
                 <p className="text-sm font-semibold text-gray-700">Breach Notification</p>
                 <p className="text-2xl font-bold text-yellow-600">95%</p>
               </div>
-              <div className="bg-white p-4 rounded-lg border border-green-200">
+              <div className="bg-stone-950 p-4 rounded-lg border border-green-200">
                 <CheckCircle className="w-6 h-6 text-green-600 mb-2" />
                 <p className="text-sm font-semibold text-gray-700">Training</p>
                 <p className="text-2xl font-bold text-green-600">100%</p>
@@ -91,13 +91,13 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
           </div>
 
           {/* Critical Safeguards */}
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Active HIPAA Safeguards</h3>
+          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+            <h3 className="text-xl font-bold text-stone-100 mb-4">Active HIPAA Safeguards</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="p-4 border-l-4 border-green-500 bg-green-50 rounded">
                 <div className="flex items-center gap-3 mb-2">
                   <Lock className="w-5 h-5 text-green-600" />
-                  <h4 className="font-semibold text-gray-900">Data Encryption</h4>
+                  <h4 className="font-semibold text-stone-100">Data Encryption</h4>
                 </div>
                 <p className="text-sm text-gray-700">✓ AES-256 encryption at rest</p>
                 <p className="text-sm text-gray-700">✓ TLS 1.3 encryption in transit</p>
@@ -107,7 +107,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
               <div className="p-4 border-l-4 border-green-500 bg-green-50 rounded">
                 <div className="flex items-center gap-3 mb-2">
                   <Key className="w-5 h-5 text-green-600" />
-                  <h4 className="font-semibold text-gray-900">Access Controls</h4>
+                  <h4 className="font-semibold text-stone-100">Access Controls</h4>
                 </div>
                 <p className="text-sm text-gray-700">✓ Role-based access (RBAC)</p>
                 <p className="text-sm text-gray-700">✓ Multi-factor authentication</p>
@@ -117,7 +117,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
               <div className="p-4 border-l-4 border-green-500 bg-green-50 rounded">
                 <div className="flex items-center gap-3 mb-2">
                   <Activity className="w-5 h-5 text-green-600" />
-                  <h4 className="font-semibold text-gray-900">Audit Logging</h4>
+                  <h4 className="font-semibold text-stone-100">Audit Logging</h4>
                 </div>
                 <p className="text-sm text-gray-700">✓ All PHI access logged</p>
                 <p className="text-sm text-gray-700">✓ Tamper-proof audit trails</p>
@@ -127,7 +127,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
               <div className="p-4 border-l-4 border-yellow-500 bg-yellow-50 rounded">
                 <div className="flex items-center gap-3 mb-2">
                   <AlertTriangle className="w-5 h-5 text-yellow-600" />
-                  <h4 className="font-semibold text-gray-900">Breach Detection</h4>
+                  <h4 className="font-semibold text-stone-100">Breach Detection</h4>
                 </div>
                 <p className="text-sm text-gray-700">✓ Real-time monitoring</p>
                 <p className="text-sm text-gray-700">⚠ Update IDS signatures</p>
@@ -137,8 +137,8 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
           </div>
 
           {/* Legal Compliance Matrix */}
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Legal & Regulatory Compliance</h3>
+          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+            <h3 className="text-xl font-bold text-stone-100 mb-4">Legal & Regulatory Compliance</h3>
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead className="bg-gray-100">
@@ -150,69 +150,69 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-gray-200">
-                    <td className="py-3 px-4 font-medium text-gray-900">HIPAA Privacy Rule</td>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-100">HIPAA Privacy Rule</td>
                     <td className="py-3 px-4 text-sm text-gray-700">Protect PHI, patient rights, consent management</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
-                    <td className="py-3 px-4 text-sm text-gray-600">Dec 15, 2025</td>
+                    <td className="py-3 px-4 text-sm text-stone-500">Dec 15, 2025</td>
                   </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="py-3 px-4 font-medium text-gray-900">HIPAA Security Rule</td>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-100">HIPAA Security Rule</td>
                     <td className="py-3 px-4 text-sm text-gray-700">Technical, physical, administrative safeguards</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
-                    <td className="py-3 px-4 text-sm text-gray-600">Dec 20, 2025</td>
+                    <td className="py-3 px-4 text-sm text-stone-500">Dec 20, 2025</td>
                   </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="py-3 px-4 font-medium text-gray-900">HITECH Act</td>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-100">HITECH Act</td>
                     <td className="py-3 px-4 text-sm text-gray-700">Breach notification, BAA requirements</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
-                    <td className="py-3 px-4 text-sm text-gray-600">Jan 5, 2026</td>
+                    <td className="py-3 px-4 text-sm text-stone-500">Jan 5, 2026</td>
                   </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="py-3 px-4 font-medium text-gray-900">FLSA (Labor)</td>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-100">FLSA (Labor)</td>
                     <td className="py-3 px-4 text-sm text-gray-700">Overtime, break requirements, minor restrictions</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
-                    <td className="py-3 px-4 text-sm text-gray-600">Dec 1, 2025</td>
+                    <td className="py-3 px-4 text-sm text-stone-500">Dec 1, 2025</td>
                   </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="py-3 px-4 font-medium text-gray-900">FMLA</td>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-100">FMLA</td>
                     <td className="py-3 px-4 text-sm text-gray-700">Job-protected leave, eligibility tracking</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
-                    <td className="py-3 px-4 text-sm text-gray-600">Nov 28, 2025</td>
+                    <td className="py-3 px-4 text-sm text-stone-500">Nov 28, 2025</td>
                   </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="py-3 px-4 font-medium text-gray-900">ADA</td>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-100">ADA</td>
                     <td className="py-3 px-4 text-sm text-gray-700">Reasonable accommodations, anti-discrimination</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
-                    <td className="py-3 px-4 text-sm text-gray-600">Dec 10, 2025</td>
+                    <td className="py-3 px-4 text-sm text-stone-500">Dec 10, 2025</td>
                   </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="py-3 px-4 font-medium text-gray-900">OSHA</td>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-100">OSHA</td>
                     <td className="py-3 px-4 text-sm text-gray-700">Workplace safety, bloodborne pathogens, ergonomics</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
-                    <td className="py-3 px-4 text-sm text-gray-600">Dec 18, 2025</td>
+                    <td className="py-3 px-4 text-sm text-stone-500">Dec 18, 2025</td>
                   </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="py-3 px-4 font-medium text-gray-900">State Privacy Laws</td>
+                  <tr className="border-b border-stone-800">
+                    <td className="py-3 px-4 font-medium text-stone-100">State Privacy Laws</td>
                     <td className="py-3 px-4 text-sm text-gray-700">CCPA, CDPA, state-specific requirements</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">REVIEW</span>
                     </td>
-                    <td className="py-3 px-4 text-sm text-gray-600">Dec 5, 2025</td>
+                    <td className="py-3 px-4 text-sm text-stone-500">Dec 5, 2025</td>
                   </tr>
                 </tbody>
               </table>
@@ -220,8 +220,8 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
           </div>
 
           {/* Business Associate Agreements */}
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Business Associate Agreements (BAA)</h3>
+          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+            <h3 className="text-xl font-bold text-stone-100 mb-4">Business Associate Agreements (BAA)</h3>
             <div className="space-y-3">
               {[
                 { vendor: 'Cloud Hosting Provider', service: 'AWS/Azure Infrastructure', status: 'Active', expires: '2026-12-31' },
@@ -229,12 +229,12 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                 { vendor: 'Background Check Service', service: 'Employee Screening', status: 'Active', expires: '2026-08-20' },
                 { vendor: 'Benefits Administrator', service: 'COBRA, FSA Management', status: 'Renewal Due', expires: '2026-02-01' },
               ].map((baa, index) => (
-                <div key={index} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:shadow-md transition-all">
+                <div key={index} className="flex items-center justify-between p-4 border border-stone-800 rounded-lg hover:shadow-md transition-all">
                   <div className="flex items-center gap-4">
-                    <FileCheck className="w-6 h-6 text-blue-600" />
+                    <FileCheck className="w-6 h-6 text-amber-400" />
                     <div>
-                      <p className="font-semibold text-gray-900">{baa.vendor}</p>
-                      <p className="text-sm text-gray-600">{baa.service}</p>
+                      <p className="font-semibold text-stone-100">{baa.vendor}</p>
+                      <p className="text-sm text-stone-500">{baa.service}</p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -243,7 +243,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                     }`}>
                       {baa.status}
                     </span>
-                    <p className="text-xs text-gray-500 mt-1">Expires: {baa.expires}</p>
+                    <p className="text-xs text-stone-500 mt-1">Expires: {baa.expires}</p>
                   </div>
                 </div>
               ))}
@@ -254,23 +254,23 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
 
       {/* Privacy Rule */}
       {hipaaView === 'privacy' && (
-        <div className="bg-white p-6 rounded-xl shadow-md">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">HIPAA Privacy Rule Compliance</h3>
+        <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+          <h3 className="text-xl font-bold text-stone-100 mb-4">HIPAA Privacy Rule Compliance</h3>
           <div className="space-y-4">
             <div className="p-4 bg-green-50 border-l-4 border-green-500 rounded">
-              <h4 className="font-semibold text-gray-900 mb-2">✓ Minimum Necessary Standard</h4>
+              <h4 className="font-semibold text-stone-100 mb-2">✓ Minimum Necessary Standard</h4>
               <p className="text-sm text-gray-700">System enforces role-based access. Staff only see PHI required for job duties.</p>
             </div>
             <div className="p-4 bg-green-50 border-l-4 border-green-500 rounded">
-              <h4 className="font-semibold text-gray-900 mb-2">✓ Patient Rights</h4>
+              <h4 className="font-semibold text-stone-100 mb-2">✓ Patient Rights</h4>
               <p className="text-sm text-gray-700">Portal provides: access to records, amendment requests, accounting of disclosures, opt-out forms.</p>
             </div>
             <div className="p-4 bg-green-50 border-l-4 border-green-500 rounded">
-              <h4 className="font-semibold text-gray-900 mb-2">✓ De-identification for Reports</h4>
+              <h4 className="font-semibold text-stone-100 mb-2">✓ De-identification for Reports</h4>
               <p className="text-sm text-gray-700">Analytics and reports automatically remove 18 HIPAA identifiers. Safe Harbor method applied.</p>
             </div>
             <div className="p-4 bg-green-50 border-l-4 border-green-500 rounded">
-              <h4 className="font-semibold text-gray-900 mb-2">✓ Notice of Privacy Practices</h4>
+              <h4 className="font-semibold text-stone-100 mb-2">✓ Notice of Privacy Practices</h4>
               <p className="text-sm text-gray-700">NPP distributed at onboarding. Acknowledgment forms stored electronically. Last updated: Jan 2025.</p>
             </div>
           </div>
@@ -280,33 +280,33 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
       {/* Security Rule */}
       {hipaaView === 'security' && (
         <div className="space-y-6">
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Technical Safeguards</h3>
+          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+            <h3 className="text-xl font-bold text-stone-100 mb-4">Technical Safeguards</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-4 border border-gray-200 rounded-lg">
-                <Database className="w-6 h-6 text-blue-600 mb-2" />
-                <h4 className="font-semibold text-gray-900 mb-2">Encryption</h4>
+              <div className="p-4 border border-stone-800 rounded-lg">
+                <Database className="w-6 h-6 text-amber-400 mb-2" />
+                <h4 className="font-semibold text-stone-100 mb-2">Encryption</h4>
                 <p className="text-sm text-gray-700">• AES-256 for stored data</p>
                 <p className="text-sm text-gray-700">• TLS 1.3 for data in transit</p>
                 <p className="text-sm text-gray-700">• End-to-end message encryption</p>
               </div>
-              <div className="p-4 border border-gray-200 rounded-lg">
-                <Key className="w-6 h-6 text-blue-600 mb-2" />
-                <h4 className="font-semibold text-gray-900 mb-2">Authentication</h4>
+              <div className="p-4 border border-stone-800 rounded-lg">
+                <Key className="w-6 h-6 text-amber-400 mb-2" />
+                <h4 className="font-semibold text-stone-100 mb-2">Authentication</h4>
                 <p className="text-sm text-gray-700">• MFA required for all users</p>
                 <p className="text-sm text-gray-700">• Biometric options available</p>
                 <p className="text-sm text-gray-700">• Password complexity enforced</p>
               </div>
-              <div className="p-4 border border-gray-200 rounded-lg">
-                <Activity className="w-6 h-6 text-blue-600 mb-2" />
-                <h4 className="font-semibold text-gray-900 mb-2">Audit Controls</h4>
+              <div className="p-4 border border-stone-800 rounded-lg">
+                <Activity className="w-6 h-6 text-amber-400 mb-2" />
+                <h4 className="font-semibold text-stone-100 mb-2">Audit Controls</h4>
                 <p className="text-sm text-gray-700">• All access logged with timestamp</p>
                 <p className="text-sm text-gray-700">• Immutable audit trails</p>
                 <p className="text-sm text-gray-700">• Automated anomaly detection</p>
               </div>
-              <div className="p-4 border border-gray-200 rounded-lg">
-                <UserCheck className="w-6 h-6 text-blue-600 mb-2" />
-                <h4 className="font-semibold text-gray-900 mb-2">Integrity Controls</h4>
+              <div className="p-4 border border-stone-800 rounded-lg">
+                <UserCheck className="w-6 h-6 text-amber-400 mb-2" />
+                <h4 className="font-semibold text-stone-100 mb-2">Integrity Controls</h4>
                 <p className="text-sm text-gray-700">• Digital signatures for documents</p>
                 <p className="text-sm text-gray-700">• Version control tracking</p>
                 <p className="text-sm text-gray-700">• Checksum validation</p>
@@ -314,35 +314,35 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Physical & Administrative Safeguards</h3>
+          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+            <h3 className="text-xl font-bold text-stone-100 mb-4">Physical & Administrative Safeguards</h3>
             <div className="space-y-3">
-              <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+              <div className="flex items-start gap-3 p-3 bg-stone-950 rounded-lg">
                 <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
                 <div>
-                  <p className="font-medium text-gray-900">Facility Access Controls</p>
-                  <p className="text-sm text-gray-600">Badge access, visitor logs, secure server room, CCTV monitoring</p>
+                  <p className="font-medium text-stone-100">Facility Access Controls</p>
+                  <p className="text-sm text-stone-500">Badge access, visitor logs, secure server room, CCTV monitoring</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+              <div className="flex items-start gap-3 p-3 bg-stone-950 rounded-lg">
                 <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
                 <div>
-                  <p className="font-medium text-gray-900">Workstation Security</p>
-                  <p className="text-sm text-gray-600">Screen timeouts, privacy filters, clean desk policy, locked cabinets</p>
+                  <p className="font-medium text-stone-100">Workstation Security</p>
+                  <p className="text-sm text-stone-500">Screen timeouts, privacy filters, clean desk policy, locked cabinets</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+              <div className="flex items-start gap-3 p-3 bg-stone-950 rounded-lg">
                 <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
                 <div>
-                  <p className="font-medium text-gray-900">Workforce Training</p>
-                  <p className="text-sm text-gray-600">Annual HIPAA training (100% completion), phishing simulations, incident response drills</p>
+                  <p className="font-medium text-stone-100">Workforce Training</p>
+                  <p className="text-sm text-stone-500">Annual HIPAA training (100% completion), phishing simulations, incident response drills</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+              <div className="flex items-start gap-3 p-3 bg-stone-950 rounded-lg">
                 <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
                 <div>
-                  <p className="font-medium text-gray-900">Contingency Planning</p>
-                  <p className="text-sm text-gray-600">Daily backups, disaster recovery plan, 4-hour RTO, offsite backup storage</p>
+                  <p className="font-medium text-stone-100">Contingency Planning</p>
+                  <p className="text-sm text-stone-500">Daily backups, disaster recovery plan, 4-hour RTO, offsite backup storage</p>
                 </div>
               </div>
             </div>
@@ -357,41 +357,41 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
             <div className="flex items-center gap-3 mb-4">
               <AlertTriangle className="w-8 h-8 text-red-600" />
               <div>
-                <h3 className="text-xl font-bold text-gray-900">Breach Notification Protocol</h3>
-                <p className="text-sm text-gray-600">HITECH Act requires notification within 60 days of discovery</p>
+                <h3 className="text-xl font-bold text-stone-100">Breach Notification Protocol</h3>
+                <p className="text-sm text-stone-500">HITECH Act requires notification within 60 days of discovery</p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white p-4 rounded-lg">
-                <p className="font-semibold text-gray-900 mb-1">Day 1-5</p>
+              <div className="bg-stone-950 p-4 rounded-lg">
+                <p className="font-semibold text-stone-100 mb-1">Day 1-5</p>
                 <p className="text-sm text-gray-700">Contain breach, assess scope, notify Privacy Officer</p>
               </div>
-              <div className="bg-white p-4 rounded-lg">
-                <p className="font-semibold text-gray-900 mb-1">Day 6-30</p>
+              <div className="bg-stone-950 p-4 rounded-lg">
+                <p className="font-semibold text-stone-100 mb-1">Day 6-30</p>
                 <p className="text-sm text-gray-700">Investigate cause, document findings, mitigate risks</p>
               </div>
-              <div className="bg-white p-4 rounded-lg">
-                <p className="font-semibold text-gray-900 mb-1">Day 31-60</p>
+              <div className="bg-stone-950 p-4 rounded-lg">
+                <p className="font-semibold text-stone-100 mb-1">Day 31-60</p>
                 <p className="text-sm text-gray-700">Notify affected individuals, HHS (if 500+ affected), media (if required)</p>
               </div>
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Breach Prevention Measures</h3>
+          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+            <h3 className="text-xl font-bold text-stone-100 mb-4">Breach Prevention Measures</h3>
             <div className="space-y-3">
               <div className="p-4 border-l-4 border-green-500 bg-green-50 rounded">
-                <p className="font-semibold text-gray-900">✓ Zero reported breaches (last 12 months)</p>
+                <p className="font-semibold text-stone-100">✓ Zero reported breaches (last 12 months)</p>
               </div>
-              <div className="p-4 border border-gray-200 rounded-lg">
-                <h4 className="font-semibold text-gray-900 mb-2">Active Monitoring</h4>
+              <div className="p-4 border border-stone-800 rounded-lg">
+                <h4 className="font-semibold text-stone-100 mb-2">Active Monitoring</h4>
                 <p className="text-sm text-gray-700">• Real-time intrusion detection (IDS/IPS)</p>
                 <p className="text-sm text-gray-700">• Security information and event management (SIEM)</p>
                 <p className="text-sm text-gray-700">• Quarterly penetration testing</p>
                 <p className="text-sm text-gray-700">• Vulnerability scanning (weekly)</p>
               </div>
-              <div className="p-4 border border-gray-200 rounded-lg">
-                <h4 className="font-semibold text-gray-900 mb-2">Employee Training</h4>
+              <div className="p-4 border border-stone-800 rounded-lg">
+                <h4 className="font-semibold text-stone-100 mb-2">Employee Training</h4>
                 <p className="text-sm text-gray-700">• Annual security awareness training (100% completion)</p>
                 <p className="text-sm text-gray-700">• Monthly phishing simulations (95% pass rate)</p>
                 <p className="text-sm text-gray-700">• Incident reporting hotline</p>
@@ -403,10 +403,10 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
 
       {/* Audit Log */}
       {hipaaView === 'audit-log' && (
-        <div className="bg-white p-6 rounded-xl shadow-md">
+        <div className="bg-stone-950 p-6 rounded-xl shadow-md">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xl font-bold text-gray-900">PHI Access Audit Log</h3>
-            <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all flex items-center gap-2">
+            <h3 className="text-xl font-bold text-stone-100">PHI Access Audit Log</h3>
+            <button className="px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all flex items-center gap-2">
               <Download className="w-4 h-4" />
               Export Log
             </button>
@@ -430,26 +430,26 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                   { time: '2026-01-06 14:02:41', user: 'Sarah Johnson (RN)', action: 'VIEW', resource: 'Lab Results #9101', ip: '192.168.1.45' },
                   { time: '2026-01-06 13:55:18', user: 'Pharmacy Tech', action: 'VIEW', resource: 'Prescription #3456', ip: '192.168.1.67' },
                 ].map((log, index) => (
-                  <tr key={index} className="border-b border-gray-200 hover:bg-gray-50">
+                  <tr key={index} className="border-b border-stone-800 hover:bg-stone-950">
                     <td className="py-3 px-4 text-sm text-gray-700">{log.time}</td>
-                    <td className="py-3 px-4 text-sm font-medium text-gray-900">{log.user}</td>
+                    <td className="py-3 px-4 text-sm font-medium text-stone-100">{log.user}</td>
                     <td className="py-3 px-4">
                       <span className={`px-2 py-1 rounded text-xs font-semibold ${
-                        log.action === 'VIEW' ? 'bg-blue-100 text-blue-700' :
+                        log.action === 'VIEW' ? 'bg-blue-100 text-amber-300' :
                         log.action === 'UPDATE' ? 'bg-green-100 text-green-700' :
-                        'bg-purple-100 text-purple-700'
+                        'bg-purple-100 text-amber-700'
                       }`}>
                         {log.action}
                       </span>
                     </td>
                     <td className="py-3 px-4 text-sm text-gray-700">{log.resource}</td>
-                    <td className="py-3 px-4 text-sm text-gray-600">{log.ip}</td>
+                    <td className="py-3 px-4 text-sm text-stone-500">{log.ip}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-gray-500 mt-4">
+          <p className="text-xs text-stone-500 mt-4">
             Audit logs retained for 7 years per HIPAA requirements. Logs are tamper-proof and monitored for unauthorized access attempts.
           </p>
         </div>
@@ -767,8 +767,8 @@ export default function CompliancePage() {
       case 'critical': return 'text-red-500 bg-red-500/20 border-red-500';
       case 'high': return 'text-orange-500 bg-orange-500/20 border-orange-500';
       case 'medium': return 'text-yellow-500 bg-yellow-500/20 border-yellow-500';
-      case 'low': return 'text-blue-500 bg-blue-500/20 border-blue-500';
-      default: return 'text-gray-500 bg-gray-500/20 border-gray-500';
+      case 'low': return 'text-amber-400 bg-amber-600/20 border-amber-500/40';
+      default: return 'text-stone-500 bg-gray-500/20 border-gray-500';
     }
   };
 
@@ -776,8 +776,8 @@ export default function CompliancePage() {
     switch (status) {
       case 'action-required': return 'text-red-400 bg-red-500/20';
       case 'monitoring': return 'text-yellow-400 bg-yellow-500/20';
-      case 'informational': return 'text-blue-400 bg-blue-500/20';
-      default: return 'text-gray-400 bg-gray-500/20';
+      case 'informational': return 'text-blue-400 bg-amber-600/20';
+      default: return 'text-stone-400 bg-gray-500/20';
     }
   };
 
@@ -1065,7 +1065,7 @@ export default function CompliancePage() {
               {/* Monitoring Sources Banner */}
               <div className="p-6 rounded-xl shadow-lg" style={{ background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%)', border: '2px solid rgba(59, 130, 246, 0.3)' }}>
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-blue-500/20 rounded-lg">
+                  <div className="p-3 bg-amber-600/20 rounded-lg">
                     <Zap className="w-8 h-8 text-blue-400" />
                   </div>
                   <div className="flex-1">
@@ -1084,7 +1084,7 @@ export default function CompliancePage() {
                         <div className="text-xs text-slate-400">Update Checks</div>
                       </div>
                       <div className="bg-slate-800/50 rounded-lg p-3">
-                        <div className="text-2xl font-bold text-purple-400 mb-1">50 States</div>
+                        <div className="text-2xl font-bold text-amber-400 mb-1">50 States</div>
                         <div className="text-xs text-slate-400">Coverage</div>
                       </div>
                       <div className="bg-slate-800/50 rounded-lg p-3">
@@ -1102,7 +1102,7 @@ export default function CompliancePage() {
                 <button
                   onClick={() => setAlertFilter('all')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                    alertFilter === 'all' ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                    alertFilter === 'all' ? 'bg-amber-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                   }`}
                 >
                   All ({regulatoryAlerts.length})
@@ -1110,7 +1110,7 @@ export default function CompliancePage() {
                 <button
                   onClick={() => setAlertFilter('federal')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                    alertFilter === 'federal' ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                    alertFilter === 'federal' ? 'bg-amber-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                   }`}
                 >
                   Federal ({regulatoryAlerts.filter(a => a.type === 'federal').length})
@@ -1118,7 +1118,7 @@ export default function CompliancePage() {
                 <button
                   onClick={() => setAlertFilter('state')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                    alertFilter === 'state' ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                    alertFilter === 'state' ? 'bg-amber-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                   }`}
                 >
                   State ({regulatoryAlerts.filter(a => a.type === 'state').length})
@@ -1126,7 +1126,7 @@ export default function CompliancePage() {
                 <button
                   onClick={() => setAlertFilter('industry')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                    alertFilter === 'industry' ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                    alertFilter === 'industry' ? 'bg-amber-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                   }`}
                 >
                   Industry-Specific ({regulatoryAlerts.filter(a => a.type === 'industry').length})
@@ -1209,7 +1209,7 @@ export default function CompliancePage() {
                             Source: {alert.source}
                           </div>
                           <div className="flex gap-2">
-                            <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition-all flex items-center gap-2">
+                            <button className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg text-sm font-semibold transition-all flex items-center gap-2">
                               <ExternalLink className="w-4 h-4" />
                               View Full Details
                             </button>
@@ -1241,7 +1241,7 @@ export default function CompliancePage() {
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" defaultChecked />
-                      <div className="w-11 h-6 bg-slate-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                      <div className="w-11 h-6 bg-slate-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                     </label>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-slate-700/30 rounded-lg">
@@ -1251,7 +1251,7 @@ export default function CompliancePage() {
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" />
-                      <div className="w-11 h-6 bg-slate-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                      <div className="w-11 h-6 bg-slate-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                     </label>
                   </div>
                   <div className="flex items-center justify-between p-4 bg-slate-700/30 rounded-lg">
@@ -1261,7 +1261,7 @@ export default function CompliancePage() {
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" defaultChecked />
-                      <div className="w-11 h-6 bg-slate-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                      <div className="w-11 h-6 bg-slate-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                     </label>
                   </div>
                 </div>
@@ -1309,7 +1309,7 @@ function OverviewSection() {
                 <span className="opacity-70">{category.compliant}/{category.total} employees</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex-1 bg-gray-300 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                <div className="flex-1 bg-gray-300 dark:bg-stone-800 rounded-full h-3 overflow-hidden">
                   <div
                     className="h-full rounded-full transition-all"
                     style={{
@@ -1435,7 +1435,7 @@ function EmployeesSection() {
                 <td className="py-4 px-4 text-center opacity-70">{employee.compliant}/{employee.total}</td>
                 <td className="py-4 px-4">
                   <div className="flex items-center gap-3">
-                    <div className="flex-1 bg-gray-300 dark:bg-gray-700 rounded-full h-2 overflow-hidden max-w-[150px]">
+                    <div className="flex-1 bg-gray-300 dark:bg-stone-800 rounded-full h-2 overflow-hidden max-w-[150px]">
                       <div
                         className="h-full rounded-full"
                         style={{
@@ -1450,7 +1450,7 @@ function EmployeesSection() {
                 <td className="py-4 px-4 text-center">
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                     employee.status === 'excellent' ? 'bg-green-500 text-white' :
-                    employee.status === 'good' ? 'bg-blue-500 text-white' :
+                    employee.status === 'good' ? 'bg-amber-600 text-white' :
                     employee.status === 'warning' ? 'bg-yellow-500 text-black' :
                     'bg-red-500 text-white'
                   }`}>
@@ -1577,7 +1577,7 @@ function RequirementsSection() {
                   <div className="text-xs opacity-60">{req.completed}/{req.required}</div>
                 </div>
               </div>
-              <div className="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+              <div className="w-full bg-gray-300 dark:bg-stone-800 rounded-full h-2 overflow-hidden">
                 <div
                   className="h-full rounded-full"
                   style={{
@@ -1789,7 +1789,7 @@ function CMSSection() {
   return (
     <div className="space-y-6">
       {/* CMS Header */}
-      <div className="p-6 rounded-xl shadow-lg border-l-4 border-blue-500" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded-xl shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
         <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
           CMS Core Measures Compliance
         </h2>
@@ -1848,7 +1848,7 @@ function CMSSection() {
                     </span>
                     <span className={`text-sm font-semibold ${
                       measure.trend === 'improving' ? 'text-green-500' :
-                      measure.trend === 'stable' ? 'text-blue-500' :
+                      measure.trend === 'stable' ? 'text-amber-400' :
                       'text-yellow-500'
                     }`}>
                       {measure.trend === 'improving' ? '↑ Improving' :
@@ -1938,7 +1938,7 @@ function JointCommissionSection() {
   return (
     <div className="space-y-6">
       {/* Joint Commission Header */}
-      <div className="p-6 rounded-xl shadow-lg border-l-4 border-purple-500" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded-xl shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
         <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
           Joint Commission Standards Compliance
         </h2>
@@ -2134,7 +2134,7 @@ function SurveyReadinessSection() {
                 </div>
                 <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                   item.status === 'complete' ? 'bg-green-500 text-white' :
-                  item.status === 'in-progress' ? 'bg-blue-500 text-white' :
+                  item.status === 'in-progress' ? 'bg-amber-600 text-white' :
                   'bg-yellow-500 text-white'
                 }`}>
                   {item.status === 'complete' ? '✓ Complete' :
@@ -2153,8 +2153,8 @@ function SurveyReadinessSection() {
           📅 Mock Survey Schedule
         </h3>
         <div className="space-y-3">
-          <div className="p-4 rounded-lg bg-blue-500/10 border border-blue-500">
-            <div className="font-semibold text-blue-500 mb-1">Next Mock Survey: February 15, 2026</div>
+          <div className="p-4 rounded-lg bg-amber-600/10 border border-amber-500/40">
+            <div className="font-semibold text-amber-400 mb-1">Next Mock Survey: February 15, 2026</div>
             <div className="text-sm">Focus areas: Medication Management, Infection Control, Patient Rights</div>
           </div>
           <div className="p-4 rounded-lg" style={{ background: 'var(--calendar-bg)' }}>
@@ -2292,9 +2292,9 @@ function PriceTransparencySection() {
   return (
     <div className="space-y-6">
       {/* Overview Banner */}
-      <div className="p-6 rounded-xl shadow-lg border-l-4 border-blue-500" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded-xl shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
         <div className="flex items-start gap-4">
-          <Shield className="h-8 w-8 text-blue-500 flex-shrink-0 mt-1" />
+          <Shield className="h-8 w-8 text-amber-400 flex-shrink-0 mt-1" />
           <div>
             <h3 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
               CMS Price Transparency Compliance Checker
@@ -2418,30 +2418,30 @@ function PriceTransparencySection() {
 
           {/* Action Items */}
           {!checkResults.compliant && (
-            <div className="mt-6 p-4 rounded-lg bg-blue-500/10 border border-blue-500">
-              <h4 className="font-bold text-blue-500 mb-3 flex items-center gap-2">
+            <div className="mt-6 p-4 rounded-lg bg-amber-600/10 border border-amber-500/40">
+              <h4 className="font-bold text-amber-400 mb-3 flex items-center gap-2">
                 <FileText className="h-5 w-5" />
                 Recommended Actions to Achieve Compliance
               </h4>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-500 flex-shrink-0">1.</span>
+                  <span className="text-amber-400 flex-shrink-0">1.</span>
                   <span>Create and publish a machine-readable file (JSON format recommended) with all standard charges</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-500 flex-shrink-0">2.</span>
+                  <span className="text-amber-400 flex-shrink-0">2.</span>
                   <span>Develop a consumer-friendly price estimator tool with at least 300 shoppable services</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-500 flex-shrink-0">3.</span>
+                  <span className="text-amber-400 flex-shrink-0">3.</span>
                   <span>Include all required charge types: gross, discounted cash, payer-specific negotiated, min/max</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-500 flex-shrink-0">4.</span>
+                  <span className="text-amber-400 flex-shrink-0">4.</span>
                   <span>Add prominent link on homepage to price transparency pages</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-500 flex-shrink-0">5.</span>
+                  <span className="text-amber-400 flex-shrink-0">5.</span>
                   <span>Display clear "Last Updated" date and establish annual update schedule</span>
                 </li>
               </ul>
@@ -2601,3 +2601,6 @@ function OSHASection({ oshaView, setOshaView }: { oshaView: 'general' | 'recordk
     </div>
   );
 }
+
+
+

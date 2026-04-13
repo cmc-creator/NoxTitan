@@ -74,7 +74,7 @@ export default function ManagerBasecamp() {
       {/* Mood Check-In Modal */}
       {showMoodCheckIn && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 max-w-2xl w-full border-2 border-blue-500/30 shadow-2xl">
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 max-w-2xl w-full border-2 border-amber-500/40/30 shadow-2xl">
             <h2 className="text-3xl font-bold text-white mb-2 text-center">How are you feeling today, {userName}?</h2>
             <p className="text-blue-200 text-center mb-6">Your wellbeing matters - even as a leader 💙</p>
             
@@ -85,7 +85,7 @@ export default function ManagerBasecamp() {
                   onClick={() => handleMoodSelection(mood)}
                   className={`p-4 rounded-xl border-2 transition-all hover:scale-105 ${
                     mood.color === 'green' ? 'bg-green-500/10 border-green-500/30 hover:border-green-500/60' :
-                    mood.color === 'blue' ? 'bg-blue-500/10 border-blue-500/30 hover:border-blue-500/60' :
+                    mood.color === 'blue' ? 'bg-amber-600/10 border-amber-500/40/30 hover:border-amber-500/40/60' :
                     mood.color === 'yellow' ? 'bg-yellow-500/10 border-yellow-500/30 hover:border-yellow-500/60' :
                     mood.color === 'orange' ? 'bg-orange-500/10 border-orange-500/30 hover:border-orange-500/60' :
                     'bg-red-500/10 border-red-500/30 hover:border-red-500/60'
@@ -98,7 +98,7 @@ export default function ManagerBasecamp() {
             </div>
 
             {moodAlertSent && (
-              <div className="p-4 bg-blue-500/20 border border-blue-400/30 rounded-lg mb-4">
+              <div className="p-4 bg-amber-600/20 border border-blue-400/30 rounded-lg mb-4">
                 <div className="flex items-start gap-3">
                   <Bell className="w-5 h-5 text-blue-300 mt-0.5" />
                   <div>
@@ -132,7 +132,7 @@ export default function ManagerBasecamp() {
       )}
 
       {/* Top Navigation Bar */}
-      <nav className="bg-slate-900/80 backdrop-blur-xl border-b-2 border-blue-500/30 sticky top-0 z-40">
+      <nav className="bg-slate-900/80 backdrop-blur-xl border-b-2 border-amber-500/40/30 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -211,7 +211,7 @@ export default function ManagerBasecamp() {
             <div className="text-xs text-green-300 mt-1">2 call-offs today</div>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-4 border-2 border-blue-500/30">
+          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
               <Target className="w-8 h-8 text-cyan-400" />
               <span className="text-2xl font-bold text-white">$127K</span>
@@ -220,13 +220,13 @@ export default function ManagerBasecamp() {
             <div className="text-xs text-blue-300 mt-1">Under budget! 💪</div>
           </div>
 
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-purple-500/30">
+          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
               <Star className="w-8 h-8 text-yellow-400" />
               <span className="text-2xl font-bold text-white">4.6</span>
             </div>
-            <div className="text-purple-200 font-semibold">Patient Satisfaction</div>
-            <div className="text-xs text-purple-300 mt-1">+8% vs last month</div>
+            <div className="text-amber-100/70 font-semibold">Patient Satisfaction</div>
+            <div className="text-xs text-amber-200 mt-1">+8% vs last month</div>
           </div>
 
           <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 rounded-xl p-4 border-2 border-orange-500/30">
@@ -244,7 +244,7 @@ export default function ManagerBasecamp() {
           {/* Left Column */}
           <div className="lg:col-span-2 space-y-6">
             {/* Quick access links to Command Center */}
-            <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-blue-500/30">
+            <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-yellow-400" />
                 Quick Actions
@@ -258,7 +258,7 @@ export default function ManagerBasecamp() {
                   <Users className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <div className="text-white font-semibold text-sm">Manage Team</div>
                 </Link>
-                <Link href="/calendar" className="bg-gradient-to-br from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 rounded-lg p-4 text-center transition-all shadow-lg group">
+                <Link href="/calendar" className="bg-gradient-to-br from-amber-700 to-amber-600 hover:from-purple-500 hover:to-pink-500 rounded-lg p-4 text-center transition-all shadow-lg group">
                   <Calendar className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <div className="text-white font-semibold text-sm">Schedule</div>
                 </Link>
@@ -303,10 +303,10 @@ export default function ManagerBasecamp() {
           {/* Right Column */}
           <div className="space-y-6">
             {/* Nox Manager Assistant */}
-            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-purple-500/30 shadow-xl">
+            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-amber-500/40/30 shadow-xl">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
-                  <Bot className="w-6 h-6 text-purple-400" />
+                  <Bot className="w-6 h-6 text-amber-400" />
                   <h2 className="text-xl font-bold text-white">Nox Assistant</h2>
                 </div>
                 <div className="flex gap-2">
@@ -318,18 +318,18 @@ export default function ManagerBasecamp() {
                   </button>
                   <button
                     onClick={() => setShowNoxChat(!showNoxChat)}
-                    className="px-3 py-1 bg-purple-500/20 border border-purple-400/30 rounded-lg text-sm font-semibold text-purple-300 hover:bg-purple-500/30 transition-all"
+                    className="px-3 py-1 bg-amber-500/20 border border-amber-400/40/30 rounded-lg text-sm font-semibold text-amber-200 hover:bg-amber-500/30 transition-all"
                   >
                     {showNoxChat ? 'Close' : 'Chat'}
                   </button>
                 </div>
               </div>
 
-              <div className="mb-3 p-3 bg-purple-500/10 rounded-lg border border-purple-400/30">
-                <p className="text-sm text-purple-100">
+              <div className="mb-3 p-3 bg-amber-500/10 rounded-lg border border-amber-400/40/30">
+                <p className="text-sm text-amber-50">
                   <strong>Your leadership AI partner!</strong> I can help with:
                 </p>
-                <ul className="text-xs text-purple-200 mt-2 space-y-1">
+                <ul className="text-xs text-amber-100/70 mt-2 space-y-1">
                   <li>• Team analytics & insights</li>
                   <li>• Schedule optimization</li>
                   <li>• Budget analysis</li>
@@ -340,7 +340,7 @@ export default function ManagerBasecamp() {
             </div>
 
             {/* Team Status */}
-            <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-blue-500/30">
+            <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Users className="w-5 h-5 text-blue-400" />
                 Team Status
@@ -375,3 +375,5 @@ export default function ManagerBasecamp() {
     </div>
   );
 }
+
+

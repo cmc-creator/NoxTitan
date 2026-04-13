@@ -167,9 +167,9 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
             <p className="text-3xl font-bold text-white">{approvedKudos.length}</p>
             <p className="text-sm text-green-200">Approved Today</p>
           </div>
-          <div className="bg-purple-500/20 rounded-lg p-3 text-center border border-purple-500/30">
+          <div className="bg-amber-500/20 rounded-lg p-3 text-center border border-amber-500/40/30">
             <p className="text-3xl font-bold text-white">1,247</p>
-            <p className="text-sm text-purple-200">Total This Month</p>
+            <p className="text-sm text-amber-100/70">Total This Month</p>
           </div>
           <div className="bg-cyan-500/20 rounded-lg p-3 text-center border border-cyan-500/30">
             <p className="text-3xl font-bold text-white">37,890</p>
@@ -243,7 +243,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
                     </div>
                     <p className="text-sm text-slate-400">{kudos.department} • {kudos.employeeId}</p>
                     <div className="flex items-center gap-2 mt-2">
-                      <span className="px-2 py-1 bg-purple-500/20 rounded text-xs font-semibold text-purple-300">
+                      <span className="px-2 py-1 bg-amber-500/20 rounded text-xs font-semibold text-amber-200">
                         {kudos.feedbackType}
                       </span>
                       <span className="text-xs text-slate-400">{kudos.hoursAgo}h ago</span>
@@ -368,9 +368,9 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
 
       {/* Standalone Recognition Form */}
       {activeTab === 'standalone' && (
-        <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/40 backdrop-blur-xl rounded-xl p-6 border-2 border-purple-500/30">
+        <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/40 backdrop-blur-xl rounded-xl p-6 border-2 border-amber-500/40/30">
           <h3 className="text-2xl font-bold text-white mb-4">Give Recognition</h3>
-          <p className="text-purple-200 mb-6">Managers and admins can give instant recognition, or recommend employees for customer feedback.</p>
+          <p className="text-amber-100/70 mb-6">Managers and admins can give instant recognition, or recommend employees for customer feedback.</p>
           
           <div className="space-y-4">
             <div>
@@ -422,3 +422,5 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
     </div>
   );
 }
+
+

@@ -112,12 +112,12 @@ export default function TreasuryPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
-            <FileSignature className="w-10 h-10 text-purple-400" />
+            <FileSignature className="w-10 h-10 text-amber-400" />
             Treasury - Digital Asset Checkout
           </h1>
           <p className="text-slate-400">Employees digitally sign for assets with automatic payroll tracking</p>
@@ -126,22 +126,22 @@ export default function TreasuryPage() {
         {/* Progress Steps */}
         <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 mb-8">
           <div className="flex items-center justify-between">
-            <div className={`flex items-center gap-3 ${step === 'select-asset' ? 'text-purple-400' : 'text-slate-400'}`}>
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${step === 'select-asset' ? 'border-purple-400 bg-purple-500/20' : 'border-slate-600'}`}>
+            <div className={`flex items-center gap-3 ${step === 'select-asset' ? 'text-amber-400' : 'text-slate-400'}`}>
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${step === 'select-asset' ? 'border-amber-400/40 bg-amber-500/20' : 'border-slate-600'}`}>
                 1
               </div>
               <span className="font-semibold">Select Asset</span>
             </div>
             <div className="flex-1 h-0.5 mx-4 bg-slate-700"></div>
-            <div className={`flex items-center gap-3 ${step === 'select-employee' ? 'text-purple-400' : 'text-slate-400'}`}>
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${step === 'select-employee' ? 'border-purple-400 bg-purple-500/20' : 'border-slate-600'}`}>
+            <div className={`flex items-center gap-3 ${step === 'select-employee' ? 'text-amber-400' : 'text-slate-400'}`}>
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${step === 'select-employee' ? 'border-amber-400/40 bg-amber-500/20' : 'border-slate-600'}`}>
                 2
               </div>
               <span className="font-semibold">Select Employee</span>
             </div>
             <div className="flex-1 h-0.5 mx-4 bg-slate-700"></div>
-            <div className={`flex items-center gap-3 ${step === 'sign' ? 'text-purple-400' : 'text-slate-400'}`}>
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${step === 'sign' ? 'border-purple-400 bg-purple-500/20' : 'border-slate-600'}`}>
+            <div className={`flex items-center gap-3 ${step === 'sign' ? 'text-amber-400' : 'text-slate-400'}`}>
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${step === 'sign' ? 'border-amber-400/40 bg-amber-500/20' : 'border-slate-600'}`}>
                 3
               </div>
               <span className="font-semibold">Digital Signature</span>
@@ -161,7 +161,7 @@ export default function TreasuryPage() {
                     setSelectedAsset(asset);
                     setStep('select-employee');
                   }}
-                  className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 hover:border-purple-500 cursor-pointer transition-all"
+                  className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 hover:border-amber-500/40 cursor-pointer transition-all"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-3xl">{asset.category.icon || '📦'}</span>
@@ -185,7 +185,7 @@ export default function TreasuryPage() {
         {/* Step 2: Select Employee */}
         {step === 'select-employee' && selectedAsset && (
           <div>
-            <div className="bg-slate-800/50 backdrop-blur border border-purple-500 rounded-xl p-4 mb-6">
+            <div className="bg-slate-800/50 backdrop-blur border border-amber-500/40 rounded-xl p-4 mb-6">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="font-bold text-white">Selected Asset: {selectedAsset.name}</h3>
@@ -209,11 +209,11 @@ export default function TreasuryPage() {
                     setSelectedEmployee(emp);
                     setStep('sign');
                   }}
-                  className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 hover:border-purple-500 cursor-pointer transition-all"
+                  className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 hover:border-amber-500/40 cursor-pointer transition-all"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center">
-                      <User className="w-6 h-6 text-purple-400" />
+                    <div className="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center">
+                      <User className="w-6 h-6 text-amber-400" />
                     </div>
                     <div>
                       <h3 className="font-bold text-white">{emp.firstName} {emp.lastName}</h3>
@@ -229,7 +229,7 @@ export default function TreasuryPage() {
         {/* Step 3: Digital Signature */}
         {step === 'sign' && selectedAsset && selectedEmployee && (
           <div>
-            <div className="bg-slate-800/50 backdrop-blur border border-purple-500 rounded-xl p-6 mb-6">
+            <div className="bg-slate-800/50 backdrop-blur border border-amber-500/40 rounded-xl p-6 mb-6">
               <div className="grid grid-cols-2 gap-6">
                 <div>
                   <h4 className="text-sm text-slate-400 mb-1">Asset</h4>
@@ -253,7 +253,7 @@ export default function TreasuryPage() {
                   type="date"
                   value={expectedReturn}
                   onChange={(e) => setExpectedReturn(e.target.value)}
-                  className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-purple-500"
+                  className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                 />
               </div>
 
@@ -265,7 +265,7 @@ export default function TreasuryPage() {
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   rows={3}
-                  className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-purple-500"
+                  className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                   placeholder="Any special instructions or notes..."
                 />
               </div>
@@ -318,7 +318,7 @@ export default function TreasuryPage() {
                     Clear Signature
                   </button>
                 </div>
-                <div className="border-2 border-slate-600 rounded-lg bg-white">
+                <div className="border-2 border-slate-600 rounded-lg bg-stone-950">
                   <SignatureCanvas
                     ref={signatureRef}
                     canvasProps={{
@@ -339,7 +339,7 @@ export default function TreasuryPage() {
                 <button
                   onClick={handleSubmit}
                   disabled={!acknowledged || loading}
-                  className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? 'Processing...' : 'Complete Checkout'}
                 </button>
@@ -351,3 +351,6 @@ export default function TreasuryPage() {
     </div>
   );
 }
+
+
+

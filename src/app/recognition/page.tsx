@@ -274,15 +274,15 @@ export default function RecognitionPage() {
   };
 
   return (
-    <div className="min-h-screen p-8 bg-gray-50">
+    <div className="min-h-screen p-8 bg-stone-950">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2 flex items-center gap-3">
-            <Award className="w-10 h-10 text-purple-600" />
+          <h1 className="text-4xl font-bold text-stone-100 mb-2 flex items-center gap-3">
+            <Award className="w-10 h-10 text-amber-600" />
             Employee Recognition
           </h1>
-          <p className="text-lg text-gray-600">Celebrate achievements, build culture, and motivate your team</p>
+          <p className="text-lg text-stone-500">Celebrate achievements, build culture, and motivate your team</p>
         </div>
 
         {/* Quick Stats */}
@@ -292,8 +292,8 @@ export default function RecognitionPage() {
               <Award className="w-8 h-8 opacity-80" />
               <span className="text-3xl font-bold">247</span>
             </div>
-            <p className="text-purple-100">Recognitions This Month</p>
-            <p className="text-sm text-purple-200 mt-1">↑ 18% from last month</p>
+            <p className="text-amber-50">Recognitions This Month</p>
+            <p className="text-sm text-amber-100/70 mt-1">↑ 18% from last month</p>
           </div>
           <div className="bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl shadow-lg p-6 text-white">
             <div className="flex items-center justify-between mb-2">
@@ -326,7 +326,7 @@ export default function RecognitionPage() {
           <button
             onClick={() => setActiveTab('give')}
             className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-              activeTab === 'give' ? 'bg-purple-600 text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-gray-50'
+              activeTab === 'give' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-gray-700 hover:bg-stone-950'
             }`}
           >
             <Gift className="w-5 h-5" />
@@ -335,7 +335,7 @@ export default function RecognitionPage() {
           <button
             onClick={() => setActiveTab('feed')}
             className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-              activeTab === 'feed' ? 'bg-purple-600 text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-gray-50'
+              activeTab === 'feed' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-gray-700 hover:bg-stone-950'
             }`}
           >
             <Sparkles className="w-5 h-5" />
@@ -344,7 +344,7 @@ export default function RecognitionPage() {
           <button
             onClick={() => setActiveTab('leaderboard')}
             className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-              activeTab === 'leaderboard' ? 'bg-purple-600 text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-gray-50'
+              activeTab === 'leaderboard' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-gray-700 hover:bg-stone-950'
             }`}
           >
             <Trophy className="w-5 h-5" />
@@ -353,7 +353,7 @@ export default function RecognitionPage() {
           <button
             onClick={() => setActiveTab('analytics')}
             className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-              activeTab === 'analytics' ? 'bg-purple-600 text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-gray-50'
+              activeTab === 'analytics' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-gray-700 hover:bg-stone-950'
             }`}
           >
             <BarChart3 className="w-5 h-5" />
@@ -365,14 +365,14 @@ export default function RecognitionPage() {
         {activeTab === 'give' && (
           <div className="space-y-8">
             {/* Hero Section */}
-            <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl shadow-2xl p-8 text-white">
+            <div className="bg-gradient-to-r from-amber-700 to-amber-600 rounded-2xl shadow-2xl p-8 text-white">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-4 bg-white/20 rounded-2xl backdrop-blur-sm">
+                <div className="p-4 bg-stone-950/20 rounded-2xl backdrop-blur-sm">
                   <PartyPopper className="w-12 h-12" />
                 </div>
                 <div>
                   <h2 className="text-3xl font-bold mb-2">Recognize Your Team in Seconds! 🎉</h2>
-                  <p className="text-purple-100 text-lg">
+                  <p className="text-amber-50 text-lg">
                     Choose from ready-made templates or create a custom recognition. Make someone's day!
                   </p>
                 </div>
@@ -380,56 +380,56 @@ export default function RecognitionPage() {
             </div>
 
             {/* Recognition Type Selector */}
-            <div className="bg-white rounded-xl shadow-md p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Who are you recognizing?</h3>
+            <div className="bg-stone-950 rounded-xl shadow-md p-6">
+              <h3 className="text-xl font-bold text-stone-100 mb-4">Who are you recognizing?</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <button
                   onClick={() => setRecipientType('individual')}
                   className={`p-6 rounded-xl border-2 transition-all ${
                     recipientType === 'individual'
-                      ? 'border-purple-600 bg-purple-50 shadow-lg scale-105'
-                      : 'border-gray-200 hover:border-purple-300'
+                      ? 'border-amber-600/40 bg-purple-50 shadow-lg scale-105'
+                      : 'border-stone-800 hover:border-purple-300'
                   }`}
                 >
-                  <Star className="w-8 h-8 text-purple-600 mb-3 mx-auto" />
-                  <p className="font-bold text-gray-900 mb-1">Individual Employee</p>
-                  <p className="text-sm text-gray-600">Recognize one person's achievement</p>
+                  <Star className="w-8 h-8 text-amber-600 mb-3 mx-auto" />
+                  <p className="font-bold text-stone-100 mb-1">Individual Employee</p>
+                  <p className="text-sm text-stone-500">Recognize one person's achievement</p>
                 </button>
                 <button
                   onClick={() => setRecipientType('team')}
                   className={`p-6 rounded-xl border-2 transition-all ${
                     recipientType === 'team'
-                      ? 'border-purple-600 bg-purple-50 shadow-lg scale-105'
-                      : 'border-gray-200 hover:border-purple-300'
+                      ? 'border-amber-600/40 bg-purple-50 shadow-lg scale-105'
+                      : 'border-stone-800 hover:border-purple-300'
                   }`}
                 >
-                  <Users className="w-8 h-8 text-purple-600 mb-3 mx-auto" />
-                  <p className="font-bold text-gray-900 mb-1">Team</p>
-                  <p className="text-sm text-gray-600">Celebrate a specific team's success</p>
+                  <Users className="w-8 h-8 text-amber-600 mb-3 mx-auto" />
+                  <p className="font-bold text-stone-100 mb-1">Team</p>
+                  <p className="text-sm text-stone-500">Celebrate a specific team's success</p>
                 </button>
                 <button
                   onClick={() => setRecipientType('department')}
                   className={`p-6 rounded-xl border-2 transition-all ${
                     recipientType === 'department'
-                      ? 'border-purple-600 bg-purple-50 shadow-lg scale-105'
-                      : 'border-gray-200 hover:border-purple-300'
+                      ? 'border-amber-600/40 bg-purple-50 shadow-lg scale-105'
+                      : 'border-stone-800 hover:border-purple-300'
                   }`}
                 >
-                  <Trophy className="w-8 h-8 text-purple-600 mb-3 mx-auto" />
-                  <p className="font-bold text-gray-900 mb-1">Entire Department</p>
-                  <p className="text-sm text-gray-600">Recognize department-wide excellence</p>
+                  <Trophy className="w-8 h-8 text-amber-600 mb-3 mx-auto" />
+                  <p className="font-bold text-stone-100 mb-1">Entire Department</p>
+                  <p className="text-sm text-stone-500">Recognize department-wide excellence</p>
                 </button>
               </div>
             </div>
 
             {/* Quick Templates */}
-            <div className="bg-white rounded-xl shadow-md p-6">
+            <div className="bg-stone-950 rounded-xl shadow-md p-6">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">⚡ Quick Recognition Templates</h3>
-                  <p className="text-gray-600">Click any template to use it instantly</p>
+                  <h3 className="text-xl font-bold text-stone-100 mb-1">⚡ Quick Recognition Templates</h3>
+                  <p className="text-stone-500">Click any template to use it instantly</p>
                 </div>
-                <button className="px-4 py-2 text-purple-600 hover:bg-purple-50 rounded-lg font-semibold transition-all">
+                <button className="px-4 py-2 text-amber-600 hover:bg-purple-50 rounded-lg font-semibold transition-all">
                   View All →
                 </button>
               </div>
@@ -439,22 +439,22 @@ export default function RecognitionPage() {
                   <button
                     key={template.id}
                     onClick={() => handleQuickRecognition(template)}
-                    className="text-left p-6 rounded-xl border-2 border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all group"
+                    className="text-left p-6 rounded-xl border-2 border-stone-800 hover:border-amber-400/40 hover:shadow-lg transition-all group"
                   >
                     <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${template.color} text-white mb-4`}>
                       {template.icon}
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                    <h4 className="font-bold text-stone-100 mb-2 group-hover:text-amber-600 transition-colors">
                       {template.title}
                     </h4>
-                    <p className="text-sm text-gray-600 mb-3">{template.description}</p>
+                    <p className="text-sm text-stone-500 mb-3">{template.description}</p>
                     <div className="flex items-center gap-2 text-sm">
                       <span className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full font-semibold flex items-center gap-1">
                         <Star className="w-3 h-3" />
                         {template.points} pts
                       </span>
-                      <span className="text-gray-500">•</span>
-                      <span className="text-gray-600 capitalize">{template.category}</span>
+                      <span className="text-stone-500">•</span>
+                      <span className="text-stone-500 capitalize">{template.category}</span>
                     </div>
                   </button>
                 ))}
@@ -462,13 +462,13 @@ export default function RecognitionPage() {
             </div>
 
             {/* Custom Recognition */}
-            <div className="bg-white rounded-xl shadow-md p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <Sparkles className="w-6 h-6 text-purple-600" />
+            <div className="bg-stone-950 rounded-xl shadow-md p-6">
+              <h3 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+                <Sparkles className="w-6 h-6 text-amber-600" />
                 Create Custom Recognition
               </h3>
-              <p className="text-gray-600 mb-6">Want to craft a personalized message? Create your own unique recognition.</p>
-              <button className="w-full py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl font-bold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all shadow-lg flex items-center justify-center gap-2">
+              <p className="text-stone-500 mb-6">Want to craft a personalized message? Create your own unique recognition.</p>
+              <button className="w-full py-4 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-xl font-bold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all shadow-lg flex items-center justify-center gap-2">
                 <Plus className="w-6 h-6" />
                 Create Custom Recognition
               </button>
@@ -479,15 +479,15 @@ export default function RecognitionPage() {
         {/* Recognition Feed Tab */}
         {activeTab === 'feed' && (
           <div className="space-y-6">
-            <div className="bg-white rounded-xl shadow-md p-6">
+            <div className="bg-stone-950 rounded-xl shadow-md p-6">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-gray-900">Recognition Wall</h2>
+                <h2 className="text-2xl font-bold text-stone-100">Recognition Wall</h2>
                 <div className="flex gap-2">
-                  <button className="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-all flex items-center gap-2">
+                  <button className="px-4 py-2 bg-stone-950 border border-stone-700 rounded-lg hover:bg-stone-950 transition-all flex items-center gap-2">
                     <Filter className="w-4 h-4" />
                     Filter
                   </button>
-                  <button className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all flex items-center gap-2">
+                  <button className="px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all flex items-center gap-2">
                     <Share2 className="w-4 h-4" />
                     Share
                   </button>
@@ -496,7 +496,7 @@ export default function RecognitionPage() {
 
               <div className="space-y-4">
                 {recognitions.map((recognition) => (
-                  <div key={recognition.id} className="p-6 border-2 border-gray-200 rounded-xl hover:border-purple-300 transition-all">
+                  <div key={recognition.id} className="p-6 border-2 border-stone-800 rounded-xl hover:border-purple-300 transition-all">
                     <div className="flex items-start gap-4">
                       {/* Badge Icon */}
                       <div className={`flex-shrink-0 p-4 rounded-2xl bg-gradient-to-br from-purple-100 to-indigo-100`}>
@@ -507,11 +507,11 @@ export default function RecognitionPage() {
                       <div className="flex-1">
                         <div className="flex items-start justify-between mb-3">
                           <div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-1">{recognition.title}</h3>
-                            <p className="text-gray-600">
-                              <span className="font-semibold text-purple-600">{recognition.recipient}</span>
+                            <h3 className="text-xl font-bold text-stone-100 mb-1">{recognition.title}</h3>
+                            <p className="text-stone-500">
+                              <span className="font-semibold text-amber-600">{recognition.recipient}</span>
                               {recognition.recipientType !== 'individual' && (
-                                <span className="ml-2 px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">
+                                <span className="ml-2 px-2 py-1 bg-blue-100 text-amber-300 rounded-full text-xs font-semibold">
                                   {recognition.recipientType}
                                 </span>
                               )}
@@ -528,7 +528,7 @@ export default function RecognitionPage() {
                         <p className="text-gray-700 mb-4 text-lg">{recognition.message}</p>
 
                         <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-4 text-sm text-gray-600">
+                          <div className="flex items-center gap-4 text-sm text-stone-500">
                             <span>From: <strong>{recognition.givenBy}</strong></span>
                             <span>•</span>
                             <span>{new Date(recognition.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
@@ -566,7 +566,7 @@ export default function RecognitionPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-md p-8">
+            <div className="bg-stone-950 rounded-xl shadow-md p-8">
               <div className="space-y-4">
                 {leaderboard.map((person, index) => (
                   <div
@@ -575,10 +575,10 @@ export default function RecognitionPage() {
                       index === 0
                         ? 'bg-gradient-to-r from-yellow-50 to-amber-50 border-2 border-amber-300'
                         : index === 1
-                        ? 'bg-gradient-to-r from-gray-50 to-slate-50 border-2 border-gray-300'
+                        ? 'bg-gradient-to-r from-gray-50 to-slate-50 border-2 border-stone-700'
                         : index === 2
                         ? 'bg-gradient-to-r from-orange-50 to-amber-50 border-2 border-orange-300'
-                        : 'bg-gray-50 border-2 border-gray-200'
+                        : 'bg-stone-950 border-2 border-stone-800'
                     }`}
                   >
                     <div className="flex items-center gap-6">
@@ -608,19 +608,19 @@ export default function RecognitionPage() {
 
                       {/* Info */}
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold text-gray-900 mb-1">{person.name}</h3>
-                        <p className="text-gray-600">{person.department}</p>
+                        <h3 className="text-xl font-bold text-stone-100 mb-1">{person.name}</h3>
+                        <p className="text-stone-500">{person.department}</p>
                       </div>
 
                       {/* Stats */}
                       <div className="flex gap-8 text-center">
                         <div>
-                          <p className="text-3xl font-bold text-gray-900">{person.points}</p>
-                          <p className="text-sm text-gray-600">Points</p>
+                          <p className="text-3xl font-bold text-stone-100">{person.points}</p>
+                          <p className="text-sm text-stone-500">Points</p>
                         </div>
                         <div>
-                          <p className="text-3xl font-bold text-gray-900">{person.badges}</p>
-                          <p className="text-sm text-gray-600">Badges</p>
+                          <p className="text-3xl font-bold text-stone-100">{person.badges}</p>
+                          <p className="text-sm text-stone-500">Badges</p>
                         </div>
                       </div>
 
@@ -633,7 +633,7 @@ export default function RecognitionPage() {
                           </div>
                         )}
                         {person.trend === 'same' && (
-                          <div className="px-3 py-2 bg-blue-100 text-blue-700 rounded-lg">
+                          <div className="px-3 py-2 bg-blue-100 text-amber-300 rounded-lg">
                             <span className="text-sm font-semibold">Steady</span>
                           </div>
                         )}
@@ -649,33 +649,33 @@ export default function RecognitionPage() {
         {/* Analytics Tab */}
         {activeTab === 'analytics' && (
           <div className="space-y-6">
-            <div className="bg-white rounded-xl shadow-md p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Recognition Analytics</h2>
+            <div className="bg-stone-950 rounded-xl shadow-md p-6">
+              <h2 className="text-2xl font-bold text-stone-100 mb-6">Recognition Analytics</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
-                  <h3 className="text-sm font-semibold text-blue-600 mb-2">Most Popular Badge</h3>
-                  <p className="text-2xl font-bold text-gray-900 mb-1">Star Performer</p>
-                  <p className="text-sm text-gray-600">Given 42 times this month</p>
+                  <h3 className="text-sm font-semibold text-amber-400 mb-2">Most Popular Badge</h3>
+                  <p className="text-2xl font-bold text-stone-100 mb-1">Star Performer</p>
+                  <p className="text-sm text-stone-500">Given 42 times this month</p>
                 </div>
                 <div className="p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200">
-                  <h3 className="text-sm font-semibold text-purple-600 mb-2">Most Active Manager</h3>
-                  <p className="text-2xl font-bold text-gray-900 mb-1">Dr. Emily Chen</p>
-                  <p className="text-sm text-gray-600">38 recognitions given</p>
+                  <h3 className="text-sm font-semibold text-amber-600 mb-2">Most Active Manager</h3>
+                  <p className="text-2xl font-bold text-stone-100 mb-1">Dr. Emily Chen</p>
+                  <p className="text-sm text-stone-500">38 recognitions given</p>
                 </div>
                 <div className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200">
                   <h3 className="text-sm font-semibold text-green-600 mb-2">Top Department</h3>
-                  <p className="text-2xl font-bold text-gray-900 mb-1">Emergency</p>
-                  <p className="text-sm text-gray-600">94 recognitions received</p>
+                  <p className="text-2xl font-bold text-stone-100 mb-1">Emergency</p>
+                  <p className="text-sm text-stone-500">94 recognitions received</p>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                <button className="flex-1 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-all flex items-center justify-center gap-2">
+                <button className="flex-1 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition-all flex items-center justify-center gap-2">
                   <Download className="w-5 h-5" />
                   Export Report
                 </button>
-                <button className="flex-1 py-3 bg-white border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
+                <button className="flex-1 py-3 bg-stone-950 border-2 border-stone-700 text-gray-700 rounded-lg font-semibold hover:bg-stone-950 transition-all flex items-center justify-center gap-2">
                   <Calendar className="w-5 h-5" />
                   View History
                 </button>
@@ -687,3 +687,6 @@ export default function RecognitionPage() {
     </div>
   );
 }
+
+
+

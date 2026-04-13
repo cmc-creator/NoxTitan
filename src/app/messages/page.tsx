@@ -301,7 +301,7 @@ export default function MessagesPage() {
                       <div className="flex items-center gap-1 mt-1 text-xs opacity-60">
                         <span>{msg.timestamp}</span>
                         {msg.senderId === 'me' && (
-                          msg.read ? <CheckCheck className="h-3 w-3 text-blue-500" /> : <Check className="h-3 w-3" />
+                          msg.read ? <CheckCheck className="h-3 w-3 text-amber-400" /> : <Check className="h-3 w-3" />
                         )}
                       </div>
                     </div>
@@ -412,3 +412,5 @@ export default function MessagesPage() {
     </div>
   );
 }
+
+

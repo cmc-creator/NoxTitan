@@ -28,7 +28,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
   });
 
   const themes = [
-    { id: 'default', name: 'Default', colors: 'from-purple-600 to-pink-600' },
+    { id: 'default', name: 'Default', colors: 'from-amber-700 to-amber-600' },
     { id: 'ocean', name: 'Ocean Blue', colors: 'from-blue-600 to-cyan-600' },
     { id: 'forest', name: 'Forest Green', colors: 'from-green-600 to-emerald-600' },
     { id: 'sunset', name: 'Sunset', colors: 'from-orange-600 to-red-600' },
@@ -59,16 +59,16 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
             <h1 className="text-5xl font-bold text-white mb-2">
               Welcome to Your Basecamp, {employeeName}! 🎉
             </h1>
-            <p className="text-purple-200 text-xl">
+            <p className="text-amber-100/70 text-xl">
               Let's personalize your workspace and meet your AI companion
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-2xl p-10 space-y-8">
+          <div className="bg-stone-950 rounded-2xl shadow-2xl p-10 space-y-8">
             {/* Theme Selection */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <Sparkles className="w-6 h-6 text-purple-600" />
+              <h2 className="text-2xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+                <Sparkles className="w-6 h-6 text-amber-600" />
                 Choose Your Theme
               </h2>
               <div className="grid grid-cols-4 gap-4">
@@ -78,12 +78,12 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                     onClick={() => setSettings({ ...settings, theme: theme.id })}
                     className={`p-4 rounded-xl border-2 transition-all ${
                       settings.theme === theme.id
-                        ? 'border-purple-600 bg-purple-50'
-                        : 'border-gray-300 hover:border-purple-400'
+                        ? 'border-amber-600/40 bg-purple-50'
+                        : 'border-gray-300 hover:border-amber-400/40'
                     }`}
                   >
                     <div className={`h-12 rounded-lg bg-gradient-to-r ${theme.colors} mb-2`} />
-                    <p className="text-sm font-semibold text-gray-900">{theme.name}</p>
+                    <p className="text-sm font-semibold text-stone-100">{theme.name}</p>
                   </button>
                 ))}
               </div>
@@ -91,7 +91,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
 
             {/* Adventure Mode */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Pick Your Adventure</h2>
+              <h2 className="text-2xl font-bold text-stone-100 mb-4">Pick Your Adventure</h2>
               <div className="grid grid-cols-2 gap-4">
                 {adventures.map((adventure) => (
                   <button
@@ -99,19 +99,19 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                     onClick={() => setSettings({ ...settings, adventureMode: adventure.id })}
                     className={`p-4 rounded-xl border-2 transition-all text-left ${
                       settings.adventureMode === adventure.id
-                        ? 'border-purple-600 bg-purple-50'
-                        : 'border-gray-300 hover:border-purple-400'
+                        ? 'border-amber-600/40 bg-purple-50'
+                        : 'border-gray-300 hover:border-amber-400/40'
                     }`}
                   >
                     <div className="flex items-center gap-3 mb-2">
                       <span className="text-4xl">{adventure.icon}</span>
                       <div>
-                        <h3 className="font-bold text-gray-900">{adventure.name}</h3>
-                        <p className="text-sm text-gray-600">{adventure.desc}</p>
+                        <h3 className="font-bold text-stone-100">{adventure.name}</h3>
+                        <p className="text-sm text-stone-500">{adventure.desc}</p>
                       </div>
                     </div>
                     {settings.adventureMode === adventure.id && (
-                      <div className="flex items-center gap-2 text-purple-600 text-sm mt-2">
+                      <div className="flex items-center gap-2 text-amber-600 text-sm mt-2">
                         <Check className="w-4 h-4" />
                         <span className="font-semibold">Selected</span>
                       </div>
@@ -123,15 +123,15 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
 
             {/* Basebot Customization */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <Bot className="w-6 h-6 text-purple-600" />
+              <h2 className="text-2xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+                <Bot className="w-6 h-6 text-amber-600" />
                 Customize Your AI Companion
               </h2>
               
               <div className="space-y-4">
                 {/* Name */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-stone-300 mb-2">
                     Give Your Basebot a Name
                   </label>
                   <input
@@ -139,13 +139,13 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                     value={settings.basebotName}
                     onChange={(e) => setSettings({ ...settings, basebotName: e.target.value })}
                     placeholder="Basebot"
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
                 </div>
 
                 {/* Avatar */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-stone-300 mb-2">
                     Choose an Avatar
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -155,8 +155,8 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                         onClick={() => setSettings({ ...settings, basebotAvatar: avatar })}
                         className={`w-14 h-14 text-2xl rounded-lg transition-all ${
                           settings.basebotAvatar === avatar
-                            ? 'bg-purple-200 border-2 border-purple-600 scale-110'
-                            : 'bg-gray-100 hover:bg-gray-200 border border-gray-300'
+                            ? 'bg-purple-200 border-2 border-amber-600/40 scale-110'
+                            : 'bg-stone-900 hover:bg-stone-800 border border-gray-300'
                         }`}
                       >
                         {avatar}
@@ -167,7 +167,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
 
                 {/* Personality */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-stone-300 mb-2">
                     Select Personality
                   </label>
                   <div className="grid grid-cols-4 gap-4">
@@ -177,12 +177,12 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                         onClick={() => setSettings({ ...settings, basebotPersonality: personality.id })}
                         className={`p-3 rounded-lg border-2 transition-all ${
                           settings.basebotPersonality === personality.id
-                            ? 'border-purple-600 bg-purple-50'
-                            : 'border-gray-300 hover:border-purple-400'
+                            ? 'border-amber-600/40 bg-purple-50'
+                            : 'border-gray-300 hover:border-amber-400/40'
                         }`}
                       >
                         <div className="text-2xl mb-1">{personality.icon}</div>
-                        <p className="text-sm font-semibold text-gray-900">{personality.name}</p>
+                        <p className="text-sm font-semibold text-stone-100">{personality.name}</p>
                       </button>
                     ))}
                   </div>
@@ -193,7 +193,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
             {/* Preview */}
             <div className={`bg-gradient-to-r ${themes.find(t => t.id === settings.theme)?.colors} rounded-xl p-6 text-white`}>
               <h3 className="text-xl font-bold mb-3">Preview Your Basecamp</h3>
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 flex items-center gap-4">
+              <div className="bg-stone-950/20 backdrop-blur-sm rounded-lg p-4 flex items-center gap-4">
                 <div className="text-4xl">{settings.basebotAvatar}</div>
                 <div>
                   <p className="font-bold text-lg">Hi, I'm {settings.basebotName}!</p>
@@ -207,7 +207,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
             {/* Complete Button */}
             <button
               onClick={() => onComplete(settings)}
-              className="w-full py-5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg font-bold text-xl transition-all flex items-center justify-center gap-2"
+              className="w-full py-5 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg font-bold text-xl transition-all flex items-center justify-center gap-2"
             >
               <Check className="w-7 h-7" />
               Complete Setup & Enter Basecamp
@@ -218,3 +218,5 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
     </div>
   );
 }
+
+

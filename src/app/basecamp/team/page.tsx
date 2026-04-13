@@ -150,12 +150,12 @@ export default function TeamDirectory() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-5 border-2 border-blue-500/30">
+          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
             <div className="text-blue-200 text-sm mb-1">Total Team Members</div>
             <div className="text-3xl font-bold text-white">{team.length}</div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-purple-500/30">
-            <div className="text-purple-200 text-sm mb-1">Departments</div>
+          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
+            <div className="text-amber-100/70 text-sm mb-1">Departments</div>
             <div className="text-3xl font-bold text-white">6</div>
           </div>
           <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 rounded-xl p-5 border-2 border-green-500/30">
@@ -283,3 +283,5 @@ export default function TeamDirectory() {
     </div>
   );
 }
+
+

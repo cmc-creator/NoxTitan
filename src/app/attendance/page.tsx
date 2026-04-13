@@ -76,7 +76,7 @@ export default function AttendancePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -90,14 +90,14 @@ export default function AttendancePage() {
             type="date"
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
-            className="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
+            className="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
           />
           <div className="flex gap-2">
             <button
               onClick={() => setFilter('all')}
               className={`px-4 py-2 rounded-lg transition-colors ${
                 filter === 'all'
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-amber-600 text-white'
                   : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
               }`}
             >
@@ -137,7 +137,7 @@ export default function AttendancePage() {
               <p className="text-slate-300 font-semibold">Present Today</p>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/10 border border-blue-500/50 rounded-2xl p-6">
+            <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/10 border border-amber-500/40/50 rounded-2xl p-6">
               <div className="flex items-center justify-between mb-2">
                 <Clock className="w-8 h-8 text-blue-400" />
                 <span className="text-3xl font-bold text-white">{summary.totalActive}</span>
@@ -153,9 +153,9 @@ export default function AttendancePage() {
               <p className="text-slate-300 font-semibold">Late Arrivals</p>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-500/20 to-purple-600/10 border border-purple-500/50 rounded-2xl p-6">
+            <div className="bg-gradient-to-br from-purple-500/20 to-purple-600/10 border border-amber-500/40/50 rounded-2xl p-6">
               <div className="flex items-center justify-between mb-2">
-                <TrendingUp className="w-8 h-8 text-purple-400" />
+                <TrendingUp className="w-8 h-8 text-amber-400" />
                 <span className="text-3xl font-bold text-white">
                   {summary.averageHours.toFixed(1)}h
                 </span>
@@ -201,7 +201,7 @@ export default function AttendancePage() {
                             <img
                               src={entry.photoClockIn}
                               alt="Employee"
-                              className="w-10 h-10 rounded-full object-cover border-2 border-blue-500"
+                              className="w-10 h-10 rounded-full object-cover border-2 border-amber-500/40"
                             />
                           ) : (
                             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold">
@@ -303,3 +303,5 @@ export default function AttendancePage() {
     </div>
   );
 }
+
+

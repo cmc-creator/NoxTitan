@@ -145,7 +145,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
 
   const sidebarContent = (
     <>
-      <div className="flex flex-col items-center justify-center py-4 bg-gradient-to-br from-amber-900 via-yellow-800 to-black shadow-xl border-b-4 border-amber-500">
+      <div style={{ background: 'linear-gradient(180deg, #0D0B08 0%, #150F09 100%)', borderBottom: '1px solid rgba(201,168,76,0.35)' }} className="flex flex-col items-center justify-center py-5 shadow-2xl">
         {/* Mobile Close Button */}
         {onClose && (
           <button
@@ -172,11 +172,11 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
         </span>
       </div>
       
-      <nav className="flex-1 px-4 py-6 space-y-4 overflow-y-auto">
+      <nav className="flex-1 px-3 py-5 space-y-3 overflow-y-auto">
         {navigationSections.map((section, sectionIndex) => (
           <div key={sectionIndex}>
             {section.title && (
-              <h3 className="text-xs font-bold text-amber-300 uppercase tracking-wider mb-2 px-2">
+              <h3 className="text-xs font-semibold uppercase tracking-widest mb-2 px-2" style={{ color: 'rgba(201,168,76,0.5)', letterSpacing: '3px', fontSize: '0.62rem' }}>
                 {section.title}
               </h3>
             )}
@@ -213,11 +213,11 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                       'flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all border text-pop-light min-h-[44px]',
                       isCommandCenter
                         ? isActive
-                          ? 'bg-gradient-to-r from-amber-900 via-yellow-800 to-black text-white shadow-[0_0_20px_rgba(212,175,55,0.5)] border-amber-500 scale-105 font-bold'
-                          : 'bg-gradient-to-r from-amber-800 via-yellow-700 to-gray-900 text-white hover:from-amber-900 hover:via-yellow-800 hover:to-black shadow-[0_0_15px_rgba(212,175,55,0.4)] border-amber-600/50 hover:scale-105 font-bold'
+                          ? 'bg-gradient-to-r from-amber-900/60 to-transparent text-amber-300 shadow-[0_0_15px_rgba(201,168,76,0.2)] border-amber-500/60 font-bold'
+                          : 'text-amber-400 hover:bg-amber-900/30 border-amber-600/30 hover:border-amber-500/50 font-semibold'
                         : isActive
-                        ? 'bg-blue-600 text-white border-blue-500/50'
-                        : 'text-gray-300 hover:bg-amber-800/50 hover:text-white border-transparent'
+                        ? 'lux-nav-active font-semibold'
+                        : 'text-stone-400 hover:bg-amber-900/20 hover:text-amber-200 border-transparent hover:border-amber-800/40'
                     )}
                   >
                     <Icon className={cn("mr-3 h-4 w-4", isCommandCenter && "drop-shadow-[0_0_8px_rgba(212,175,55,0.8)]")} />
@@ -247,19 +247,21 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
       )}
 
       {/* Desktop Sidebar - Always visible */}
-      <aside className="hidden md:flex flex-col w-64 bg-gradient-to-b from-black via-gray-900 to-amber-950 min-h-screen border-r-2 border-amber-600/30 shadow-2xl">
+      <aside className="hidden md:flex flex-col w-64 min-h-screen border-r shadow-2xl" style={{ background: '#07060A', borderColor: 'rgba(201,168,76,0.2)' }}>
         {sidebarContent}
       </aside>
 
       {/* Mobile Sidebar - Drawer */}
       <aside
         className={cn(
-          "fixed top-0 left-0 z-50 flex flex-col w-64 bg-gradient-to-b from-black via-gray-900 to-amber-950 h-full border-r-2 border-amber-600/30 shadow-2xl transition-transform duration-300 md:hidden",
+          "fixed top-0 left-0 z-50 flex flex-col w-64 h-full shadow-2xl transition-transform duration-300 md:hidden",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
+        style={{ background: '#07060A', borderRight: '1px solid rgba(201,168,76,0.2)' }}
       >
         {sidebarContent}
       </aside>
     </>
   );
 }
+

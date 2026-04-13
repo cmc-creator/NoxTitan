@@ -85,10 +85,10 @@ export default function SentinelImportPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
-          <Upload className="w-10 h-10 text-purple-400" />
+          <Upload className="w-10 h-10 text-amber-400" />
           Import Visitor Data
         </h1>
         <p className="text-slate-400 mb-8">Import from Tally, Google Forms, or CSV files</p>
@@ -100,11 +100,11 @@ export default function SentinelImportPage() {
               onClick={() => setImportType('tally')}
               className={`p-6 rounded-xl border-2 transition-all ${
                 importType === 'tally'
-                  ? 'border-purple-500 bg-purple-500/20'
+                  ? 'border-amber-500/40 bg-amber-500/20'
                   : 'border-slate-700 hover:border-slate-600'
               }`}
             >
-              <Link2 className="w-8 h-8 text-purple-400 mx-auto mb-3" />
+              <Link2 className="w-8 h-8 text-amber-400 mx-auto mb-3" />
               <h3 className="text-white font-bold mb-1">Tally Forms</h3>
               <p className="text-sm text-slate-400">Import from Tally.so</p>
             </button>
@@ -113,7 +113,7 @@ export default function SentinelImportPage() {
               onClick={() => setImportType('googleforms')}
               className={`p-6 rounded-xl border-2 transition-all ${
                 importType === 'googleforms'
-                  ? 'border-blue-500 bg-blue-500/20'
+                  ? 'border-amber-500/40 bg-amber-600/20'
                   : 'border-slate-700 hover:border-slate-600'
               }`}
             >
@@ -150,13 +150,13 @@ export default function SentinelImportPage() {
                 value={tallyFormUrl}
                 onChange={(e) => setTallyFormUrl(e.target.value)}
                 placeholder="https://tally.so/r/your-form-id"
-                className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-purple-500"
+                className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
               />
             </div>
             <button
               onClick={handleTallyImport}
               disabled={!tallyFormUrl || importing}
-              className="w-full px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {importing ? 'Importing...' : 'Import from Tally'}
             </button>
@@ -176,13 +176,13 @@ export default function SentinelImportPage() {
                 value={googleFormId}
                 onChange={(e) => setGoogleFormId(e.target.value)}
                 placeholder="1a2b3c4d5e6f7g8h9i0j"
-                className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
               />
             </div>
             <button
               onClick={handleGoogleFormsImport}
               disabled={!googleFormId || importing}
-              className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {importing ? 'Importing...' : 'Import from Google Forms'}
             </button>
@@ -241,3 +241,5 @@ export default function SentinelImportPage() {
     </div>
   );
 }
+
+

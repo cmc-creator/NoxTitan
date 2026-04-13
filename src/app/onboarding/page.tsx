@@ -88,17 +88,17 @@ export default function OnboardingPage() {
   const totalSteps = data.role === 'manager' ? 5 : 4;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-stone-900 to-pink-900 p-8">
       <div className="max-w-3xl mx-auto">
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-2">
             <span className="text-white font-bold">Step {step} of {totalSteps}</span>
-            <span className="text-purple-300">{Math.round((step / totalSteps) * 100)}% Complete</span>
+            <span className="text-amber-200">{Math.round((step / totalSteps) * 100)}% Complete</span>
           </div>
           <div className="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
             <div 
-              className="h-full bg-gradient-to-r from-purple-600 to-pink-600 transition-all duration-300"
+              className="h-full bg-gradient-to-r from-amber-700 to-amber-600 transition-all duration-300"
               style={{ width: `${(step / totalSteps) * 100}%` }}
             />
           </div>
@@ -129,7 +129,7 @@ export default function OnboardingPage() {
               >
                 <Briefcase className="w-12 h-12 mx-auto mb-3" />
                 <div className="font-bold text-lg">Manager</div>
-                <div className="text-sm text-purple-200 mt-2">Team leader</div>
+                <div className="text-sm text-amber-100/70 mt-2">Team leader</div>
               </button>
               
               <button
@@ -224,7 +224,7 @@ export default function OnboardingPage() {
               <button
                 onClick={() => setStep(3)}
                 disabled={!data.firstName || !data.lastName || !data.email}
-                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 Next <ChevronRight className="w-5 h-5" />
               </button>
@@ -351,7 +351,7 @@ export default function OnboardingPage() {
               </button>
               <button
                 onClick={() => setStep(4)}
-                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg transition-all flex items-center gap-2"
+                className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg transition-all flex items-center gap-2"
               >
                 Next <ChevronRight className="w-5 h-5" />
               </button>
@@ -504,3 +504,5 @@ export default function OnboardingPage() {
     </div>
   );
 }
+
+

@@ -40,7 +40,7 @@ export default function Benefits() {
 
         {/* Benefits Summary Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-6 border-2 border-blue-500/30">
+          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <Shield className="w-12 h-12 text-blue-400 mb-3" />
             <div className="text-2xl font-bold text-white mb-1">Full Coverage</div>
             <div className="text-blue-200">Medical, Dental, Vision</div>
@@ -50,10 +50,10 @@ export default function Benefits() {
             <div className="text-2xl font-bold text-white mb-1">401(k) Match</div>
             <div className="text-green-200">Up to 6% company match</div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-6 border-2 border-purple-500/30">
+          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <Heart className="w-12 h-12 text-pink-400 mb-3" />
             <div className="text-2xl font-bold text-white mb-1">Wellness</div>
-            <div className="text-purple-200">Gym membership & EAP</div>
+            <div className="text-amber-100/70">Gym membership & EAP</div>
           </div>
         </div>
 
@@ -127,20 +127,20 @@ export default function Benefits() {
           <div className="lg:col-span-2">
             {selectedPlan === 'medical' && (
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-xl p-6 border-2 border-blue-500/30">
+                <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-xl p-6 border-2 border-amber-500/40/30">
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h2 className="text-2xl font-bold text-white mb-2">Medical Insurance</h2>
                       <p className="text-slate-300">Comprehensive health coverage for you and your family</p>
                     </div>
-                    <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold flex items-center gap-2">
+                    <button className="px-4 py-2 bg-amber-600 hover:bg-amber-600 text-white rounded-lg font-semibold flex items-center gap-2">
                       <Download className="w-4 h-4" />
                       Download Details
                     </button>
                   </div>
 
                   {/* Current Plan */}
-                  <div className="bg-gradient-to-r from-blue-900/40 to-cyan-900/40 rounded-lg p-5 border border-blue-500/30 mb-6">
+                  <div className="bg-gradient-to-r from-blue-900/40 to-cyan-900/40 rounded-lg p-5 border border-amber-500/40/30 mb-6">
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         <div className="text-blue-300 text-sm mb-1">Your Current Plan</div>
@@ -276,22 +276,22 @@ export default function Benefits() {
         </div>
 
         {/* Quick Links */}
-        <div className="mt-8 bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-purple-500/30">
+        <div className="mt-8 bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-amber-500/40/30">
           <h3 className="text-xl font-bold text-white mb-4">Quick Actions</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <button className="bg-slate-900/50 hover:bg-slate-900 p-4 rounded-lg transition-all text-left border border-purple-500/20">
+            <button className="bg-slate-900/50 hover:bg-slate-900 p-4 rounded-lg transition-all text-left border border-amber-500/40/20">
               <div className="text-2xl mb-2">📄</div>
               <div className="text-white font-semibold text-sm">View All Documents</div>
             </button>
-            <button className="bg-slate-900/50 hover:bg-slate-900 p-4 rounded-lg transition-all text-left border border-purple-500/20">
+            <button className="bg-slate-900/50 hover:bg-slate-900 p-4 rounded-lg transition-all text-left border border-amber-500/40/20">
               <div className="text-2xl mb-2">🏥</div>
               <div className="text-white font-semibold text-sm">File a Claim</div>
             </button>
-            <button className="bg-slate-900/50 hover:bg-slate-900 p-4 rounded-lg transition-all text-left border border-purple-500/20">
+            <button className="bg-slate-900/50 hover:bg-slate-900 p-4 rounded-lg transition-all text-left border border-amber-500/40/20">
               <div className="text-2xl mb-2">💬</div>
               <div className="text-white font-semibold text-sm">Contact HR</div>
             </button>
-            <button className="bg-slate-900/50 hover:bg-slate-900 p-4 rounded-lg transition-all text-left border border-purple-500/20">
+            <button className="bg-slate-900/50 hover:bg-slate-900 p-4 rounded-lg transition-all text-left border border-amber-500/40/20">
               <div className="text-2xl mb-2">📞</div>
               <div className="text-white font-semibold text-sm">Benefits Support</div>
             </button>
@@ -301,3 +301,5 @@ export default function Benefits() {
     </div>
   );
 }
+
+

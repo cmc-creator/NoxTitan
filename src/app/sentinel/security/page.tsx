@@ -102,7 +102,7 @@ export default function SecurityPage() {
       case 'CRITICAL': return 'bg-red-600 text-white';
       case 'HIGH': return 'bg-orange-600 text-white';
       case 'MEDIUM': return 'bg-yellow-600 text-white';
-      case 'LOW': return 'bg-blue-600 text-white';
+      case 'LOW': return 'bg-amber-600 text-white';
       case 'INFO': return 'bg-slate-600 text-white';
       default: return 'bg-slate-600 text-white';
     }
@@ -115,7 +115,7 @@ export default function SecurityPage() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
-              <Shield className="w-10 h-10 text-indigo-400" />
+              <Shield className="w-10 h-10 text-amber-400" />
               Security Operations Center
             </h1>
             <p className="text-slate-400">Camera feeds, access control, and security monitoring</p>
@@ -123,7 +123,7 @@ export default function SecurityPage() {
           <div className="flex gap-3">
             <button
               onClick={() => window.location.href = '/sentinel/security/cameras/add'}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
+              className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
             >
               <Camera className="w-5 h-5" />
               Add Camera
@@ -154,7 +154,7 @@ export default function SecurityPage() {
             </p>
           </div>
 
-          <div className="bg-blue-500/10 border border-blue-500/50 rounded-xl p-6">
+          <div className="bg-amber-600/10 border border-amber-500/40/50 rounded-xl p-6">
             <div className="flex items-center justify-between mb-2">
               <Lock className="w-8 h-8 text-blue-400" />
               <div className="text-right">
@@ -173,18 +173,18 @@ export default function SecurityPage() {
             <p className="text-red-300 font-semibold">Active Alerts</p>
           </div>
 
-          <div className="bg-purple-500/10 border border-purple-500/50 rounded-xl p-6">
+          <div className="bg-amber-500/10 border border-amber-500/40/50 rounded-xl p-6">
             <div className="flex items-center justify-between mb-2">
-              <Activity className="w-8 h-8 text-purple-400" />
-              <span className="text-4xl font-bold text-purple-400">{stats.todayEvents}</span>
+              <Activity className="w-8 h-8 text-amber-400" />
+              <span className="text-4xl font-bold text-amber-400">{stats.todayEvents}</span>
             </div>
-            <p className="text-purple-300 font-semibold">Today's Events</p>
+            <p className="text-amber-200 font-semibold">Today's Events</p>
           </div>
 
-          <div className="col-span-2 bg-gradient-to-br from-indigo-500/20 to-purple-600/20 border border-indigo-500/50 rounded-xl p-6">
+          <div className="col-span-2 bg-gradient-to-br from-indigo-500/20 to-purple-600/20 border border-amber-500/40/50 rounded-xl p-6">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
-                <Eye className="w-8 h-8 text-indigo-400" />
+                <Eye className="w-8 h-8 text-amber-400" />
                 <div>
                   <h3 className="text-lg font-bold text-white">System Status</h3>
                   <p className="text-sm text-slate-400">All systems operational</p>
@@ -202,7 +202,7 @@ export default function SecurityPage() {
               onClick={() => setActiveTab('cameras')}
               className={`flex-1 px-6 py-4 font-semibold flex items-center justify-center gap-2 transition-colors ${
                 activeTab === 'cameras'
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-amber-600 text-white'
                   : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
               }`}
             >
@@ -240,7 +240,7 @@ export default function SecurityPage() {
                 {cameras.map((camera) => (
                   <div
                     key={camera.id}
-                    className="bg-slate-800/50 border border-slate-700 rounded-xl p-4 hover:border-blue-500/50 transition-all cursor-pointer"
+                    className="bg-slate-800/50 border border-slate-700 rounded-xl p-4 hover:border-amber-500/40/50 transition-all cursor-pointer"
                     onClick={() => window.location.href = `/sentinel/security/cameras/${camera.id}`}
                   >
                     <div className="flex items-start justify-between mb-3">
@@ -307,7 +307,7 @@ export default function SecurityPage() {
                     </div>
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-slate-400">{door.doorType}</span>
-                      <button className="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded transition-colors">
+                      <button className="px-3 py-1 bg-amber-600 hover:bg-amber-700 text-white text-xs font-semibold rounded transition-colors">
                         View Logs
                       </button>
                     </div>
@@ -342,7 +342,7 @@ export default function SecurityPage() {
                         </div>
                         <p className="text-slate-400 mb-3">{alert.description}</p>
                         <div className="flex gap-2">
-                          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded transition-colors">
+                          <button className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold rounded transition-colors">
                             Acknowledge
                           </button>
                           <button className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded transition-colors">
@@ -364,3 +364,5 @@ export default function SecurityPage() {
     </div>
   );
 }
+
+

@@ -10,13 +10,13 @@ import ThemeStudioCustomizer from '@/components/ThemeStudioCustomizer';
 export default function HRDashboard() {
   const [showThemeStudio, setShowThemeStudio] = useState(false);
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
           <Link 
             href="/dashboard"
-            className="inline-flex items-center gap-2 text-purple-300 hover:text-purple-100 mb-4 transition-colors"
+            className="inline-flex items-center gap-2 text-amber-200 hover:text-amber-50 mb-4 transition-colors"
           >
             ← Back to Command Center
           </Link>
@@ -30,7 +30,7 @@ export default function HRDashboard() {
                   }}>
                 HR Management Center
               </h1>
-              <p className="text-purple-200 text-lg">Employee lifecycle, benefits, compliance, and culture management</p>
+              <p className="text-amber-100/70 text-lg">Employee lifecycle, benefits, compliance, and culture management</p>
             </div>
             <div className="flex gap-3">
               <button 
@@ -74,14 +74,14 @@ export default function HRDashboard() {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-xl p-5 border-2 border-purple-500/30 shadow-xl">
+          <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-xl p-5 border-2 border-amber-500/40/30 shadow-xl">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-slate-300 text-sm mb-1">Total Employees</div>
                 <div className="text-3xl font-bold text-white">247</div>
                 <div className="text-emerald-400 text-xs mt-1">↑ 12 this month</div>
               </div>
-              <Users className="w-12 h-12 text-purple-400 opacity-50" />
+              <Users className="w-12 h-12 text-amber-400 opacity-50" />
             </div>
           </div>
 
@@ -139,7 +139,7 @@ export default function HRDashboard() {
 
           {/* Recruiting/ATS */}
           <Link href="/hr/recruiting" className="group">
-            <div className="bg-gradient-to-br from-blue-900/60 to-cyan-900/60 rounded-2xl p-6 border-2 border-blue-500/40 shadow-xl hover:shadow-2xl hover:border-blue-400 transition-all hover:scale-105">
+            <div className="bg-gradient-to-br from-blue-900/60 to-cyan-900/60 rounded-2xl p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-blue-400 transition-all hover:scale-105">
               <Users className="w-12 h-12 text-blue-300 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Applicant Tracking (ATS)</h3>
               <p className="text-blue-200 text-sm mb-4">Full-cycle recruiting from job posting to offer acceptance with candidate pipeline</p>
@@ -152,11 +152,11 @@ export default function HRDashboard() {
 
           {/* Employee Self-Service */}
           <Link href="/hr/self-service" className="group">
-            <div className="bg-gradient-to-br from-purple-900/60 to-pink-900/60 rounded-2xl p-6 border-2 border-purple-500/40 shadow-xl hover:shadow-2xl hover:border-purple-400 transition-all hover:scale-105">
-              <Users className="w-12 h-12 text-purple-300 mb-4 group-hover:scale-110 transition-transform" />
+            <div className="bg-gradient-to-br from-purple-900/60 to-pink-900/60 rounded-2xl p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-amber-400/40 transition-all hover:scale-105">
+              <Users className="w-12 h-12 text-amber-200 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Employee Self-Service</h3>
-              <p className="text-purple-200 text-sm mb-4">Portal for pay stubs, tax docs, benefits, profile updates & more</p>
-              <div className="flex items-center gap-2 text-purple-300 text-sm">
+              <p className="text-amber-100/70 text-sm mb-4">Portal for pay stubs, tax docs, benefits, profile updates & more</p>
+              <div className="flex items-center gap-2 text-amber-200 text-sm">
                 <span>Access Portal</span>
                 <span>→</span>
               </div>
@@ -165,11 +165,11 @@ export default function HRDashboard() {
 
           {/* HR Analytics */}
           <Link href="/hr/analytics" className="group">
-            <div className="bg-gradient-to-br from-indigo-900/60 to-blue-900/60 rounded-2xl p-6 border-2 border-indigo-500/40 shadow-xl hover:shadow-2xl hover:border-indigo-400 transition-all hover:scale-105">
-              <TrendingUp className="w-12 h-12 text-indigo-300 mb-4 group-hover:scale-110 transition-transform" />
+            <div className="bg-gradient-to-br from-indigo-900/60 to-blue-900/60 rounded-2xl p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-indigo-400 transition-all hover:scale-105">
+              <TrendingUp className="w-12 h-12 text-amber-400 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">HR Analytics & Insights</h3>
               <p className="text-indigo-200 text-sm mb-4">Turnover prediction, diversity metrics, compensation equity & flight risk</p>
-              <div className="flex items-center gap-2 text-indigo-300 text-sm">
+              <div className="flex items-center gap-2 text-amber-400 text-sm">
                 <span>View Dashboard</span>
                 <span>→</span>
               </div>
@@ -269,7 +269,7 @@ export default function HRDashboard() {
 
           {/* Onboarding */}
           <div className="group cursor-pointer">
-            <div className="bg-gradient-to-br from-blue-900/60 to-indigo-900/60 rounded-2xl p-6 border-2 border-blue-500/40 shadow-xl hover:shadow-2xl hover:border-blue-400 transition-all hover:scale-105">
+            <div className="bg-gradient-to-br from-blue-900/60 to-indigo-900/60 rounded-2xl p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-blue-400 transition-all hover:scale-105">
               <CheckCircle className="w-12 h-12 text-blue-300 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Advanced Onboarding</h3>
               <p className="text-blue-200 text-sm mb-4">Pre-boarding portal, equipment ordering, account provisioning & buddy system</p>
@@ -326,3 +326,5 @@ export default function HRDashboard() {
     </div>
   );
 }
+
+

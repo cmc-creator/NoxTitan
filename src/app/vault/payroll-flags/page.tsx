@@ -93,7 +93,7 @@ export default function PayrollFlagsPage() {
   function getStatusColor(status: string) {
     switch (status) {
       case 'PENDING': return 'bg-yellow-500/20 text-yellow-400 border-yellow-500';
-      case 'APPROVED': return 'bg-blue-500/20 text-blue-400 border-blue-500';
+      case 'APPROVED': return 'bg-amber-600/20 text-blue-400 border-amber-500/40';
       case 'APPLIED': return 'bg-green-500/20 text-green-400 border-green-500';
       case 'CANCELLED': return 'bg-slate-500/20 text-slate-400 border-slate-500';
       case 'DISPUTED': return 'bg-red-500/20 text-red-400 border-red-500';
@@ -102,7 +102,7 @@ export default function PayrollFlagsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
@@ -140,7 +140,7 @@ export default function PayrollFlagsPage() {
             <p className="text-yellow-300 font-semibold">Pending</p>
           </div>
 
-          <div className="bg-blue-500/10 border border-blue-500/50 rounded-xl p-6">
+          <div className="bg-amber-600/10 border border-amber-500/40/50 rounded-xl p-6">
             <div className="flex items-center justify-between mb-2">
               <CheckCircle className="w-8 h-8 text-blue-400" />
               <span className="text-3xl font-bold text-blue-400">{stats.approved}</span>
@@ -156,14 +156,14 @@ export default function PayrollFlagsPage() {
             <p className="text-green-300 font-semibold">Applied</p>
           </div>
 
-          <div className="bg-purple-500/10 border border-purple-500/50 rounded-xl p-6">
+          <div className="bg-amber-500/10 border border-amber-500/40/50 rounded-xl p-6">
             <div className="flex items-center justify-between mb-2">
-              <DollarSign className="w-8 h-8 text-purple-400" />
-              <span className="text-3xl font-bold text-purple-400">
+              <DollarSign className="w-8 h-8 text-amber-400" />
+              <span className="text-3xl font-bold text-amber-400">
                 ${(stats.totalAmount / 1000).toFixed(1)}K
               </span>
             </div>
-            <p className="text-purple-300 font-semibold">Total Amount</p>
+            <p className="text-amber-200 font-semibold">Total Amount</p>
           </div>
         </div>
 
@@ -172,7 +172,7 @@ export default function PayrollFlagsPage() {
           <select
             value={filterStatus}
             onChange={(e) => setFilterStatus(e.target.value)}
-            className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-purple-500"
+            className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
           >
             <option value="all">All Status</option>
             <option value="PENDING">Pending</option>
@@ -245,7 +245,7 @@ export default function PayrollFlagsPage() {
                     <div className="flex flex-col gap-2">
                       <button
                         onClick={() => updateStatus(deduction.id, 'APPROVED')}
-                        className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors"
+                        className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold rounded-lg transition-colors"
                       >
                         Approve
                       </button>
@@ -283,3 +283,5 @@ export default function PayrollFlagsPage() {
     </div>
   );
 }
+
+

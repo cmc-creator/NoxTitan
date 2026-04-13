@@ -143,7 +143,7 @@ export default function AutomationPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
@@ -153,7 +153,7 @@ export default function AutomationPage() {
           </div>
           <button
             onClick={() => setShowModal(true)}
-            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition-all"
+            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition-all"
           >
             <Plus className="w-5 h-5" />
             Create Rule
@@ -181,7 +181,7 @@ export default function AutomationPage() {
                   });
                   setShowModal(true);
                 }}
-                className="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-xl p-6 hover:border-purple-500/50 cursor-pointer transition-all hover:scale-105"
+                className="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-xl p-6 hover:border-amber-500/40/50 cursor-pointer transition-all hover:scale-105"
               >
                 <div className="text-4xl mb-3">{template.icon}</div>
                 <h3 className="text-white font-bold mb-2">{template.name}</h3>
@@ -200,7 +200,7 @@ export default function AutomationPage() {
         <div className="space-y-4">
           {loading ? (
             <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-12 text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto mb-4"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto mb-4"></div>
               <p className="text-slate-400">Loading automation rules...</p>
             </div>
           ) : rules.length === 0 ? (
@@ -210,7 +210,7 @@ export default function AutomationPage() {
               <p className="text-slate-400 mb-6">Create your first automation to save time!</p>
               <button
                 onClick={() => setShowModal(true)}
-                className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors"
+                className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors"
               >
                 Create Automation
               </button>
@@ -220,16 +220,16 @@ export default function AutomationPage() {
               <div
                 key={rule.id}
                 className={`bg-slate-800/50 backdrop-blur border rounded-xl p-6 transition-colors ${
-                  rule.isActive ? 'border-purple-500/50' : 'border-slate-700'
+                  rule.isActive ? 'border-amber-500/40/50' : 'border-slate-700'
                 }`}
               >
                 <div className="flex items-start justify-between">
                   <div className="flex items-start gap-4 flex-1">
                     <div className={`p-3 rounded-lg ${
-                      rule.isActive ? 'bg-purple-500/20' : 'bg-slate-700/50'
+                      rule.isActive ? 'bg-amber-500/20' : 'bg-slate-700/50'
                     }`}>
                       <Zap className={`w-6 h-6 ${
-                        rule.isActive ? 'text-purple-400' : 'text-slate-500'
+                        rule.isActive ? 'text-amber-400' : 'text-slate-500'
                       }`} />
                     </div>
                     <div className="flex-1">
@@ -260,7 +260,7 @@ export default function AutomationPage() {
                         <span>Ran {rule.runCount} times</span>
                       </div>
                       {rule.nextRun && (
-                        <div className="mt-2 text-xs text-purple-400">
+                        <div className="mt-2 text-xs text-amber-400">
                           Next run: {new Date(rule.nextRun).toLocaleString()}
                         </div>
                       )}
@@ -271,7 +271,7 @@ export default function AutomationPage() {
                     className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-colors ${
                       rule.isActive
                         ? 'bg-slate-700 hover:bg-slate-600 text-slate-300'
-                        : 'bg-purple-600 hover:bg-purple-700 text-white'
+                        : 'bg-amber-600 hover:bg-amber-700 text-white'
                     }`}
                   >
                     <Power className="w-4 h-4" />
@@ -300,7 +300,7 @@ export default function AutomationPage() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g., 30-Day Onboarding Survey"
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-purple-500"
+                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40"
                   />
                 </div>
 
@@ -313,11 +313,11 @@ export default function AutomationPage() {
                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                     placeholder="Describe what this automation does..."
                     rows={2}
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-purple-500"
+                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40"
                   />
                 </div>
 
-                <div className="p-4 bg-purple-500/10 border border-purple-500/30 rounded-lg">
+                <div className="p-4 bg-amber-500/10 border border-amber-500/40/30 rounded-lg">
                   <h4 className="text-sm font-semibold text-white mb-3">Trigger Configuration</h4>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
@@ -325,7 +325,7 @@ export default function AutomationPage() {
                       <select
                         value={formData.triggerType}
                         onChange={(e) => setFormData({ ...formData, triggerType: e.target.value })}
-                        className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 rounded text-white text-sm focus:outline-none focus:border-purple-500"
+                        className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 rounded text-white text-sm focus:outline-none focus:border-amber-500/40"
                       >
                         <option value="HIRE_DATE">Hire Date</option>
                         <option value="ANNIVERSARY">Work Anniversary</option>
@@ -339,20 +339,20 @@ export default function AutomationPage() {
                         type="number"
                         value={formData.triggerDays}
                         onChange={(e) => setFormData({ ...formData, triggerDays: parseInt(e.target.value) })}
-                        className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 rounded text-white text-sm focus:outline-none focus:border-purple-500"
+                        className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 rounded text-white text-sm focus:outline-none focus:border-amber-500/40"
                       />
                     </div>
                   </div>
                 </div>
 
-                <div className="p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg">
+                <div className="p-4 bg-amber-600/10 border border-amber-500/40/30 rounded-lg">
                   <h4 className="text-sm font-semibold text-white mb-3">Action Configuration</h4>
                   <div>
                     <label className="block text-xs text-slate-400 mb-1">Action Type *</label>
                     <select
                       value={formData.actionType}
                       onChange={(e) => setFormData({ ...formData, actionType: e.target.value })}
-                      className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 rounded text-white text-sm focus:outline-none focus:border-blue-500"
+                      className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 rounded text-white text-sm focus:outline-none focus:border-amber-500/40"
                     >
                       <option value="SEND_SURVEY">Send Survey</option>
                       <option value="CREATE_TASK">Create Task</option>
@@ -376,7 +376,7 @@ export default function AutomationPage() {
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition-all"
+                    className="flex-1 px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition-all"
                   >
                     Create Automation
                   </button>
@@ -389,3 +389,5 @@ export default function AutomationPage() {
     </div>
   );
 }
+
+

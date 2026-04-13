@@ -27,3 +27,4 @@ export default function FormBuilderPage() {
 
   return <FormBuilder onSave={handleSave} />;
 }
+

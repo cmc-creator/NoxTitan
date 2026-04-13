@@ -18,19 +18,19 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 border-2 border-purple-500 rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 border-2 border-amber-500/40 rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-purple-500/30">
+        <div className="flex items-center justify-between p-6 border-b border-amber-500/40/30">
           <div>
             <h2 className="text-2xl font-bold text-white flex items-center gap-3">
-              <SettingsIcon className="w-7 h-7 text-purple-400" />
+              <SettingsIcon className="w-7 h-7 text-amber-400" />
               {componentName} Settings
             </h2>
-            <p className="text-sm text-purple-300 mt-1">Customize your view and preferences</p>
+            <p className="text-sm text-amber-200 mt-1">Customize your view and preferences</p>
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+            className="p-2 hover:bg-stone-950/10 rounded-lg transition-colors"
           >
             <X className="w-6 h-6 text-white" />
           </button>
@@ -39,14 +39,14 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
         {/* Settings Content */}
         <div className="p-6 space-y-6">
           {/* Customization Section */}
-          <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-xl rounded-xl p-5 border-2 border-purple-400/30">
+          <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-xl rounded-xl p-5 border-2 border-amber-400/40/30">
             <div className="flex items-center gap-3 mb-4">
               <Sliders className="w-5 h-5 text-pink-300" />
               <h3 className="font-bold text-white">Customization</h3>
             </div>
             <div className="space-y-4">
               <div>
-                <label className="text-sm text-purple-200 mb-2 block font-medium">Card Density</label>
+                <label className="text-sm text-amber-100/70 mb-2 block font-medium">Card Density</label>
                 <div className="grid grid-cols-3 gap-2">
                   {['compact', 'comfortable', 'spacious'].map((density) => (
                     <button
@@ -55,7 +55,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                       className={`px-3 py-2 rounded-lg font-medium transition-all text-sm ${
                         cardDensity === density
                           ? 'bg-pink-600 text-white border-2 border-pink-400 shadow-lg'
-                          : 'bg-white/10 text-purple-200 hover:bg-white/20 border-2 border-transparent'
+                          : 'bg-stone-950/10 text-amber-100/70 hover:bg-stone-950/20 border-2 border-transparent'
                       }`}
                     >
                       {density.charAt(0).toUpperCase() + density.slice(1)}
@@ -64,7 +64,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                 </div>
               </div>
               <div>
-                <label className="text-sm text-purple-200 mb-2 block font-medium">Font Size</label>
+                <label className="text-sm text-amber-100/70 mb-2 block font-medium">Font Size</label>
                 <div className="grid grid-cols-3 gap-2">
                   {['small', 'medium', 'large'].map((size) => (
                     <button
@@ -73,7 +73,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                       className={`px-3 py-2 rounded-lg font-medium transition-all text-sm ${
                         fontSize === size
                           ? 'bg-pink-600 text-white border-2 border-pink-400 shadow-lg'
-                          : 'bg-white/10 text-purple-200 hover:bg-white/20 border-2 border-transparent'
+                          : 'bg-stone-950/10 text-amber-100/70 hover:bg-stone-950/20 border-2 border-transparent'
                       }`}
                     >
                       {size.charAt(0).toUpperCase() + size.slice(1)}
@@ -82,31 +82,31 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                 </div>
               </div>
               <div className="flex items-center justify-between pt-2">
-                <span className="text-sm text-purple-200 font-medium">Show Card Icons</span>
+                <span className="text-sm text-amber-100/70 font-medium">Show Card Icons</span>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="sr-only peer" defaultChecked />
-                  <div className="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-pink-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-pink-600"></div>
+                  <div className="w-11 h-6 bg-stone-800 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-pink-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-pink-600"></div>
                 </label>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-purple-200 font-medium">Animate Hover Effects</span>
+                <span className="text-sm text-amber-100/70 font-medium">Animate Hover Effects</span>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="sr-only peer" defaultChecked />
-                  <div className="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-pink-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-pink-600"></div>
+                  <div className="w-11 h-6 bg-stone-800 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-pink-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-pink-600"></div>
                 </label>
               </div>
             </div>
           </div>
 
           {/* Theme Settings */}
-          <div className="bg-white/5 backdrop-blur-xl rounded-xl p-5 border border-white/10">
+          <div className="bg-stone-950/5 backdrop-blur-xl rounded-xl p-5 border border-white/10">
             <div className="flex items-center gap-3 mb-4">
-              <Palette className="w-5 h-5 text-purple-300" />
+              <Palette className="w-5 h-5 text-amber-200" />
               <h3 className="font-bold text-white">Appearance</h3>
             </div>
             <div className="space-y-3">
               <div>
-                <label className="text-sm text-purple-200 mb-2 block">Theme Mode</label>
+                <label className="text-sm text-amber-100/70 mb-2 block">Theme Mode</label>
                 <div className="grid grid-cols-3 gap-2">
                   {['dark', 'light', 'auto'].map((mode) => (
                     <button
@@ -114,8 +114,8 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                       onClick={() => setTheme(mode)}
                       className={`px-4 py-2 rounded-lg font-medium transition-all ${
                         theme === mode
-                          ? 'bg-purple-600 text-white border-2 border-purple-400'
-                          : 'bg-white/10 text-purple-200 hover:bg-white/20 border-2 border-transparent'
+                          ? 'bg-amber-600 text-white border-2 border-amber-400/40'
+                          : 'bg-stone-950/10 text-amber-100/70 hover:bg-stone-950/20 border-2 border-transparent'
                       }`}
                     >
                       {mode.charAt(0).toUpperCase() + mode.slice(1)}
@@ -124,7 +124,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                 </div>
               </div>
               <div>
-                <label className="text-sm text-purple-200 mb-2 block">Accent Color</label>
+                <label className="text-sm text-amber-100/70 mb-2 block">Accent Color</label>
                 <div className="flex gap-2">
                   {['purple', 'blue', 'green', 'pink', 'orange'].map((color) => (
                     <button
@@ -138,14 +138,14 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
           </div>
 
           {/* Layout Settings */}
-          <div className="bg-white/5 backdrop-blur-xl rounded-xl p-5 border border-white/10">
+          <div className="bg-stone-950/5 backdrop-blur-xl rounded-xl p-5 border border-white/10">
             <div className="flex items-center gap-3 mb-4">
               <Layout className="w-5 h-5 text-blue-300" />
               <h3 className="font-bold text-white">Layout</h3>
             </div>
             <div className="space-y-3">
               <div>
-                <label className="text-sm text-purple-200 mb-2 block">Display Mode</label>
+                <label className="text-sm text-amber-100/70 mb-2 block">Display Mode</label>
                 <div className="grid grid-cols-2 gap-2">
                   {['grid', 'list'].map((mode) => (
                     <button
@@ -153,8 +153,8 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                       onClick={() => setLayout(mode)}
                       className={`px-4 py-2 rounded-lg font-medium transition-all ${
                         layout === mode
-                          ? 'bg-blue-600 text-white border-2 border-blue-400'
-                          : 'bg-white/10 text-purple-200 hover:bg-white/20 border-2 border-transparent'
+                          ? 'bg-amber-600 text-white border-2 border-blue-400'
+                          : 'bg-stone-950/10 text-amber-100/70 hover:bg-stone-950/20 border-2 border-transparent'
                       }`}
                     >
                       {mode.charAt(0).toUpperCase() + mode.slice(1)}
@@ -163,24 +163,24 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                 </div>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-purple-200">Compact View</span>
+                <span className="text-sm text-amber-100/70">Compact View</span>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="sr-only peer" />
-                  <div className="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-600"></div>
+                  <div className="w-11 h-6 bg-stone-800 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                 </label>
               </div>
             </div>
           </div>
 
           {/* Notifications */}
-          <div className="bg-white/5 backdrop-blur-xl rounded-xl p-5 border border-white/10">
+          <div className="bg-stone-950/5 backdrop-blur-xl rounded-xl p-5 border border-white/10">
             <div className="flex items-center gap-3 mb-4">
               <Bell className="w-5 h-5 text-yellow-300" />
               <h3 className="font-bold text-white">Notifications</h3>
             </div>
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-purple-200">Enable Notifications</span>
+                <span className="text-sm text-amber-100/70">Enable Notifications</span>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input
                     type="checkbox"
@@ -188,32 +188,32 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                     onChange={() => setNotifications(!notifications)}
                     className="sr-only peer"
                   />
-                  <div className="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-600"></div>
+                  <div className="w-11 h-6 bg-stone-800 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                 </label>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-purple-200">Sound Alerts</span>
+                <span className="text-sm text-amber-100/70">Sound Alerts</span>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="sr-only peer" defaultChecked />
-                  <div className="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-600"></div>
+                  <div className="w-11 h-6 bg-stone-800 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                 </label>
               </div>
             </div>
           </div>
 
           {/* Data & Performance */}
-          <div className="bg-white/5 backdrop-blur-xl rounded-xl p-5 border border-white/10">
+          <div className="bg-stone-950/5 backdrop-blur-xl rounded-xl p-5 border border-white/10">
             <div className="flex items-center gap-3 mb-4">
               <Database className="w-5 h-5 text-green-300" />
               <h3 className="font-bold text-white">Data & Performance</h3>
             </div>
             <div className="space-y-3">
               <div>
-                <label className="text-sm text-purple-200 mb-2 block">Auto Refresh</label>
+                <label className="text-sm text-amber-100/70 mb-2 block">Auto Refresh</label>
                 <select
                   value={dataRefresh}
                   onChange={(e) => setDataRefresh(e.target.value)}
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:border-purple-500 focus:outline-none"
+                  className="w-full px-4 py-2 bg-stone-950/10 border border-white/20 rounded-lg text-white focus:border-amber-500/40 focus:outline-none"
                 >
                   <option value="auto">Auto (30s)</option>
                   <option value="60">Every 1 min</option>
@@ -222,26 +222,26 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                 </select>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-purple-200">Cache Data</span>
+                <span className="text-sm text-amber-100/70">Cache Data</span>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="sr-only peer" defaultChecked />
-                  <div className="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-600"></div>
+                  <div className="w-11 h-6 bg-stone-800 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                 </label>
               </div>
             </div>
           </div>
 
           {/* Advanced */}
-          <div className="bg-white/5 backdrop-blur-xl rounded-xl p-5 border border-white/10">
+          <div className="bg-stone-950/5 backdrop-blur-xl rounded-xl p-5 border border-white/10">
             <div className="flex items-center gap-3 mb-4">
               <Zap className="w-5 h-5 text-orange-300" />
               <h3 className="font-bold text-white">Advanced</h3>
             </div>
             <div className="space-y-3">
-              <button className="w-full px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-purple-200 hover:text-white font-medium transition-colors text-left">
+              <button className="w-full px-4 py-2 bg-stone-950/10 hover:bg-stone-950/20 border border-white/20 rounded-lg text-amber-100/70 hover:text-white font-medium transition-colors text-left">
                 Export Settings
               </button>
-              <button className="w-full px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-purple-200 hover:text-white font-medium transition-colors text-left">
+              <button className="w-full px-4 py-2 bg-stone-950/10 hover:bg-stone-950/20 border border-white/20 rounded-lg text-amber-100/70 hover:text-white font-medium transition-colors text-left">
                 Import Settings
               </button>
               <button className="w-full px-4 py-2 bg-red-600/20 hover:bg-red-600/30 border border-red-500/30 rounded-lg text-red-300 hover:text-red-200 font-medium transition-colors text-left">
@@ -252,10 +252,10 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-end gap-3 p-6 border-t border-purple-500/30">
+        <div className="flex items-center justify-end gap-3 p-6 border-t border-amber-500/40/30">
           <button
             onClick={onClose}
-            className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg font-medium transition-colors"
+            className="px-6 py-2 bg-stone-950/10 hover:bg-stone-950/20 text-white rounded-lg font-medium transition-colors"
           >
             Cancel
           </button>
@@ -270,3 +270,5 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
     </div>
   );
 }
+
+

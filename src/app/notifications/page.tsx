@@ -87,22 +87,22 @@ export default function NotificationsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black p-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-stone-900 to-black p-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
-              <Bell className="w-10 h-10 text-purple-400" />
+              <Bell className="w-10 h-10 text-amber-400" />
               <div>
                 <h1 className="text-4xl font-bold text-white">Notifications</h1>
-                <p className="text-purple-200">Stay updated with important events</p>
+                <p className="text-amber-100/70">Stay updated with important events</p>
               </div>
             </div>
             <div className="flex gap-3">
               <button
                 onClick={markAllAsRead}
-                className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-semibold transition-all"
+                className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-semibold transition-all"
               >
                 Mark All Read
               </button>
@@ -117,9 +117,9 @@ export default function NotificationsPage() {
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4">
-            <div className="bg-purple-900/30 backdrop-blur-xl rounded-xl p-4 border border-purple-500/30">
+            <div className="bg-stone-950/30 backdrop-blur-xl rounded-xl p-4 border border-amber-500/40/30">
               <p className="text-3xl font-bold text-white">{notifications.filter(n => n.unread).length}</p>
-              <p className="text-sm text-purple-200">Unread</p>
+              <p className="text-sm text-amber-100/70">Unread</p>
             </div>
             <div className="bg-cyan-900/30 backdrop-blur-xl rounded-xl p-4 border border-cyan-500/30">
               <p className="text-3xl font-bold text-white">{notifications.length}</p>
@@ -157,7 +157,7 @@ export default function NotificationsPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className={`flex-shrink-0 w-12 h-12 rounded-full ${
-                    notification.unread ? 'bg-purple-500/20' : 'bg-slate-800/50'
+                    notification.unread ? 'bg-amber-500/20' : 'bg-slate-800/50'
                   } flex items-center justify-center`}>
                     <Icon className={`w-6 h-6 ${iconColor}`} />
                   </div>
@@ -165,15 +165,15 @@ export default function NotificationsPage() {
                     <div className="flex items-start justify-between mb-1">
                       <h3 className="text-lg font-bold text-white">{notification.title}</h3>
                       {notification.unread && (
-                        <span className="px-2 py-1 bg-purple-500 text-white text-xs rounded-full font-bold">
+                        <span className="px-2 py-1 bg-amber-500 text-white text-xs rounded-full font-bold">
                           New
                         </span>
                       )}
                     </div>
-                    <p className="text-gray-300 mb-2">{notification.message}</p>
+                    <p className="text-stone-300 mb-2">{notification.message}</p>
                     <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-gray-400" />
-                      <span className="text-sm text-gray-400">{notification.time}</span>
+                      <Clock className="w-4 h-4 text-stone-400" />
+                      <span className="text-sm text-stone-400">{notification.time}</span>
                     </div>
                   </div>
                 </div>
@@ -185,12 +185,14 @@ export default function NotificationsPage() {
         {/* Empty State (when no notifications) */}
         {notifications.length === 0 && (
           <div className="bg-slate-800/50 backdrop-blur-xl rounded-xl p-12 text-center border-2 border-slate-700">
-            <Bell className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+            <Bell className="w-16 h-16 text-stone-500 mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-white mb-2">All Caught Up!</h3>
-            <p className="text-gray-400">You have no new notifications</p>
+            <p className="text-stone-400">You have no new notifications</p>
           </div>
         )}
       </div>
     </div>
   );
 }
+
+

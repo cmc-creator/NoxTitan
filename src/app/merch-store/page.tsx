@@ -164,7 +164,7 @@ export default function MerchStorePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-stone-900 to-pink-900 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -175,7 +175,7 @@ export default function MerchStorePage() {
           <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 mb-4">
             Merch Store
           </h1>
-          <p className="text-xl text-purple-200 mb-6">
+          <p className="text-xl text-amber-100/70 mb-6">
             Pay with Payroll Deduction OR Guild XP Rewards
           </p>
         </div>
@@ -213,7 +213,7 @@ export default function MerchStorePage() {
                   onClick={() => setPaymentMethod('PAYROLL_DEDUCTION')}
                   className={`px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all ${
                     paymentMethod === 'PAYROLL_DEDUCTION'
-                      ? 'bg-blue-600 text-white'
+                      ? 'bg-amber-600 text-white'
                       : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                   }`}
                 >
@@ -224,7 +224,7 @@ export default function MerchStorePage() {
                   onClick={() => setPaymentMethod('GUILD_XP')}
                   className={`px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all ${
                     paymentMethod === 'GUILD_XP'
-                      ? 'bg-purple-600 text-white'
+                      ? 'bg-amber-600 text-white'
                       : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                   }`}
                 >
@@ -382,3 +382,5 @@ export default function MerchStorePage() {
     </div>
   );
 }
+
+

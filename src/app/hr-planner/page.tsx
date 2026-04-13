@@ -134,7 +134,7 @@ export default function HRPlannerPage() {
       case 'URGENT': return 'text-red-400 bg-red-500/20 border-red-500';
       case 'HIGH': return 'text-orange-400 bg-orange-500/20 border-orange-500';
       case 'MEDIUM': return 'text-yellow-400 bg-yellow-500/20 border-yellow-500';
-      case 'LOW': return 'text-blue-400 bg-blue-500/20 border-blue-500';
+      case 'LOW': return 'text-blue-400 bg-amber-600/20 border-amber-500/40';
       default: return 'text-slate-400 bg-slate-500/20 border-slate-500';
     }
   }
@@ -152,7 +152,7 @@ export default function HRPlannerPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
@@ -211,7 +211,7 @@ export default function HRPlannerPage() {
             <select
               value={filterType}
               onChange={(e) => setFilterType(e.target.value)}
-              className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-blue-500"
+              className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-amber-500/40"
             >
               <option value="all">All Types</option>
               <option value="CHECK_IN">Check-Ins</option>
@@ -224,7 +224,7 @@ export default function HRPlannerPage() {
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-blue-500"
+              className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-amber-500/40"
             >
               <option value="all">All Statuses</option>
               <option value="PENDING">Pending</option>
@@ -239,7 +239,7 @@ export default function HRPlannerPage() {
         <div className="space-y-4">
           {loading ? (
             <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-12 text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto mb-4"></div>
               <p className="text-slate-400">Loading tasks...</p>
             </div>
           ) : filteredTasks.length === 0 ? (
@@ -249,7 +249,7 @@ export default function HRPlannerPage() {
               <p className="text-slate-400 mb-6">Create your first HR task to get started!</p>
               <button
                 onClick={() => setShowModal(true)}
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
+                className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors"
               >
                 Create Task
               </button>
@@ -258,7 +258,7 @@ export default function HRPlannerPage() {
             filteredTasks.map((task) => (
               <div
                 key={task.id}
-                className={`bg-slate-800/50 backdrop-blur border rounded-xl p-6 hover:border-blue-500/50 transition-colors ${
+                className={`bg-slate-800/50 backdrop-blur border rounded-xl p-6 hover:border-amber-500/40/50 transition-colors ${
                   task.status === 'OVERDUE' ? 'border-red-500/50' : 'border-slate-700'
                 }`}
               >
@@ -327,7 +327,7 @@ export default function HRPlannerPage() {
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                     placeholder="e.g., Schedule 30-day check-in with John"
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-500"
+                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40"
                   />
                 </div>
 
@@ -340,7 +340,7 @@ export default function HRPlannerPage() {
                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                     placeholder="Additional details about this task..."
                     rows={3}
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-500"
+                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40"
                   />
                 </div>
 
@@ -352,7 +352,7 @@ export default function HRPlannerPage() {
                     <select
                       value={formData.type}
                       onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                     >
                       <option value="CHECK_IN">Manager Check-In</option>
                       <option value="SURVEY">Employee Survey</option>
@@ -371,7 +371,7 @@ export default function HRPlannerPage() {
                     <select
                       value={formData.priority}
                       onChange={(e) => setFormData({ ...formData, priority: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                     >
                       <option value="LOW">Low</option>
                       <option value="MEDIUM">Medium</option>
@@ -391,7 +391,7 @@ export default function HRPlannerPage() {
                       required
                       value={formData.dueDate}
                       onChange={(e) => setFormData({ ...formData, dueDate: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                     />
                   </div>
 
@@ -402,7 +402,7 @@ export default function HRPlannerPage() {
                     <select
                       value={formData.relatedEmployeeId}
                       onChange={(e) => setFormData({ ...formData, relatedEmployeeId: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                     >
                       <option value="">None</option>
                       {employees.map((emp) => (
@@ -440,3 +440,5 @@ export default function HRPlannerPage() {
     </div>
   );
 }
+
+

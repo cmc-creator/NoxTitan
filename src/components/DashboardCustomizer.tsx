@@ -202,7 +202,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                         ? 'bg-red-500/10 border-red-400/30'
                         : suggestion.priority === 'medium'
                         ? 'bg-yellow-500/10 border-yellow-400/30'
-                        : 'bg-blue-500/10 border-blue-400/30'
+                        : 'bg-amber-600/10 border-blue-400/30'
                     }`}
                   >
                     <div className="flex items-start justify-between">
@@ -216,7 +216,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                                 ? 'bg-red-500/30 text-red-200'
                                 : suggestion.priority === 'medium'
                                 ? 'bg-yellow-500/30 text-yellow-200'
-                                : 'bg-blue-500/30 text-blue-200'
+                                : 'bg-amber-600/30 text-blue-200'
                             }`}>
                               {suggestion.priority.toUpperCase()} PRIORITY
                             </span>
@@ -278,3 +278,5 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
     </div>
   );
 }
+
+

@@ -236,7 +236,7 @@ export default function TimeClockPage() {
     : '0.00';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
@@ -280,7 +280,7 @@ export default function TimeClockPage() {
 
         {/* Active Session */}
         {activeEntry && (
-          <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/50 rounded-2xl p-6 mb-6">
+          <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-amber-500/40/50 rounded-2xl p-6 mb-6">
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="text-xl font-bold text-white">Currently Clocked In</h3>
@@ -350,7 +350,7 @@ export default function TimeClockPage() {
                     setSelectedEmployee(e.target.value);
                     checkActiveEntry(e.target.value);
                   }}
-                  className="w-full pl-11 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                  className="w-full pl-11 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                 >
                   <option value="">Choose an employee...</option>
                   {employees.map((emp) => (
@@ -412,3 +412,5 @@ export default function TimeClockPage() {
     </div>
   );
 }
+
+

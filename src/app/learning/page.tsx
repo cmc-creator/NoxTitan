@@ -56,7 +56,7 @@ export default function LearningHubPage() {
           </div>
           <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-purple-500">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-amber-500">
                 <TrendingUp className="h-6 w-6 text-white" />
               </div>
               <div>
@@ -605,3 +605,5 @@ function ResourcesSection() {
     </div>
   );
 }
+
+

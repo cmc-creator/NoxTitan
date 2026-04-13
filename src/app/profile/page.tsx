@@ -225,7 +225,7 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-6">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -238,7 +238,7 @@ export default function ProfilePage() {
           {/* Header Section */}
           <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-8 text-center relative">
             <div className="relative inline-block">
-              <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg overflow-hidden">
+              <div className="w-24 h-24 bg-stone-950 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
                 {avatarUrl ? (
                   <img src={avatarUrl} alt="Profile" className="w-full h-full object-cover" />
                 ) : (
@@ -247,7 +247,7 @@ export default function ProfilePage() {
               </div>
               <button
                 onClick={() => avatarInputRef.current?.click()}
-                className="absolute bottom-0 right-0 p-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all transform hover:scale-110 shadow-lg"
+                className="absolute bottom-0 right-0 p-2 bg-amber-600 text-white rounded-full hover:bg-amber-700 transition-all transform hover:scale-110 shadow-lg"
                 title="Change photo"
               >
                 <Camera className="w-4 h-4" />
@@ -269,7 +269,7 @@ export default function ProfilePage() {
             {!isEditing && (
               <button
                 onClick={() => setIsEditing(true)}
-                className="absolute top-4 right-4 bg-white/20 hover:bg-white/30 text-white p-2 rounded-lg transition-all"
+                className="absolute top-4 right-4 bg-stone-950/20 hover:bg-stone-950/30 text-white p-2 rounded-lg transition-all"
               >
                 <Edit2 className="w-5 h-5" />
               </button>
@@ -290,7 +290,7 @@ export default function ProfilePage() {
                       type="text"
                       value={formData.firstName}
                       onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     />
                   </div>
 
@@ -302,7 +302,7 @@ export default function ProfilePage() {
                       type="text"
                       value={formData.lastName}
                       onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     />
                   </div>
 
@@ -314,7 +314,7 @@ export default function ProfilePage() {
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     />
                   </div>
 
@@ -326,7 +326,7 @@ export default function ProfilePage() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                       placeholder="(555) 123-4567"
                     />
                   </div>
@@ -382,7 +382,7 @@ export default function ProfilePage() {
                 {/* Contact Information */}
                 <div>
                   <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                    <Mail className="w-5 h-5 text-purple-400" />
+                    <Mail className="w-5 h-5 text-amber-400" />
                     Contact Information
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -442,9 +442,9 @@ export default function ProfilePage() {
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Health Insurance */}
-                    <div className="bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-xl p-6 border border-blue-500/30">
+                    <div className="bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-xl p-6 border border-amber-500/40/30">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="p-3 bg-blue-500/20 rounded-lg">
+                        <div className="p-3 bg-amber-600/20 rounded-lg">
                           <Heart className="w-6 h-6 text-blue-400" />
                         </div>
                         <div>
@@ -465,7 +465,7 @@ export default function ProfilePage() {
                           <span className="text-slate-300 text-sm">Employer Pays</span>
                           <span className="text-green-400 font-semibold">$520/month</span>
                         </div>
-                        <div className="flex justify-between items-center pt-3 border-t border-blue-500/30">
+                        <div className="flex justify-between items-center pt-3 border-t border-amber-500/40/30">
                           <span className="text-slate-300 text-sm">Deductible</span>
                           <span className="text-white font-semibold">$500 ($150 met)</span>
                         </div>
@@ -477,14 +477,14 @@ export default function ProfilePage() {
                     </div>
 
                     {/* 401(k) Retirement */}
-                    <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-xl p-6 border border-purple-500/30">
+                    <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-xl p-6 border border-amber-500/40/30">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="p-3 bg-purple-500/20 rounded-lg">
-                          <TrendingUp className="w-6 h-6 text-purple-400" />
+                        <div className="p-3 bg-amber-500/20 rounded-lg">
+                          <TrendingUp className="w-6 h-6 text-amber-400" />
                         </div>
                         <div>
                           <h4 className="text-white font-bold text-lg">401(k) Retirement</h4>
-                          <p className="text-purple-300 text-sm">Enrolled with Match</p>
+                          <p className="text-amber-200 text-sm">Enrolled with Match</p>
                         </div>
                       </div>
                       <div className="space-y-3">
@@ -496,7 +496,7 @@ export default function ProfilePage() {
                           <span className="text-slate-300 text-sm">Employer Match</span>
                           <span className="text-green-400 font-semibold">4% ($130/pay)</span>
                         </div>
-                        <div className="flex justify-between items-center pt-3 border-t border-purple-500/30">
+                        <div className="flex justify-between items-center pt-3 border-t border-amber-500/40/30">
                           <span className="text-slate-300 text-sm">Current Balance</span>
                           <span className="text-white font-semibold">$12,450</span>
                         </div>
@@ -628,7 +628,7 @@ export default function ProfilePage() {
                   </div>
 
                   {/* Benefits Summary */}
-                  <div className="mt-6 p-6 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-xl border border-blue-500/20">
+                  <div className="mt-6 p-6 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-xl border border-amber-500/40/20">
                     <h4 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
                       <Gift className="w-5 h-5 text-blue-400" />
                       Total Benefits Value
@@ -651,11 +651,11 @@ export default function ProfilePage() {
                       </div>
                       <div>
                         <label className="text-slate-400 text-sm block mb-2">Tax Savings</label>
-                        <p className="text-purple-400 font-bold text-2xl">$1,923</p>
-                        <p className="text-purple-300 text-sm mt-1">Estimated annually</p>
+                        <p className="text-amber-400 font-bold text-2xl">$1,923</p>
+                        <p className="text-amber-200 text-sm mt-1">Estimated annually</p>
                       </div>
                     </div>
-                    <div className="mt-4 pt-4 border-t border-blue-500/20 flex items-center gap-2 text-sm text-slate-300">
+                    <div className="mt-4 pt-4 border-t border-amber-500/40/20 flex items-center gap-2 text-sm text-slate-300">
                       <AlertCircle className="w-4 h-4 text-blue-400" />
                       <p>
                         Your benefits package is worth <span className="text-white font-semibold">$16,288/year</span> on top of your salary. 
@@ -705,7 +705,7 @@ export default function ProfilePage() {
                   <div className="mb-6">
                     <button
                       onClick={() => documentInputRef.current?.click()}
-                      className="w-full border-2 border-dashed border-slate-600 hover:border-blue-500 bg-slate-700/30 hover:bg-slate-700/50 rounded-lg p-8 transition-all group"
+                      className="w-full border-2 border-dashed border-slate-600 hover:border-amber-500/40 bg-slate-700/30 hover:bg-slate-700/50 rounded-lg p-8 transition-all group"
                     >
                       <div className="flex flex-col items-center gap-3">
                         <Upload className="w-10 h-10 text-slate-400 group-hover:text-blue-400 transition-colors" />
@@ -742,7 +742,7 @@ export default function ProfilePage() {
                                 <p className="text-sm text-slate-400 mt-1">
                                   {formatFileSize(doc.size)} • {doc.uploadDate}
                                 </p>
-                                <span className="inline-block mt-2 px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded">
+                                <span className="inline-block mt-2 px-2 py-1 bg-amber-600/20 text-blue-400 text-xs rounded">
                                   {doc.category}
                                 </span>
                               </div>
@@ -753,7 +753,7 @@ export default function ProfilePage() {
                                   setUploadStatus({ type: 'success', message: `Downloading ${doc.name}...` });
                                   setTimeout(() => setUploadStatus(null), 2000);
                                 }}
-                                className="p-2 bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 rounded-lg transition-all"
+                                className="p-2 bg-amber-600/20 hover:bg-amber-600/30 text-blue-400 rounded-lg transition-all"
                                 title="Download"
                               >
                                 <Download className="w-4 h-4" />
@@ -784,7 +784,7 @@ export default function ProfilePage() {
                 {/* Availability Calendar Section */}
                 <div className="pt-6 border-t border-slate-700">
                   <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                    <CalendarDays className="w-5 h-5 text-purple-400" />
+                    <CalendarDays className="w-5 h-5 text-amber-400" />
                     My Availability
                   </h3>
                   <p className="text-slate-400 text-sm mb-4">
@@ -795,7 +795,7 @@ export default function ProfilePage() {
                   {!showAddUnavailable && (
                     <button
                       onClick={() => setShowAddUnavailable(true)}
-                      className="mb-4 bg-purple-500/20 hover:bg-purple-500/30 text-purple-400 px-4 py-2 rounded-lg transition-all flex items-center gap-2 border border-purple-500/30"
+                      className="mb-4 bg-amber-500/20 hover:bg-amber-500/30 text-amber-400 px-4 py-2 rounded-lg transition-all flex items-center gap-2 border border-amber-500/40/30"
                     >
                       <Plus className="w-4 h-4" />
                       Mark Unavailable
@@ -813,7 +813,7 @@ export default function ProfilePage() {
                             type="date"
                             value={newUnavailable.date}
                             onChange={(e) => setNewUnavailable({ ...newUnavailable, date: e.target.value })}
-                            className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-purple-500"
+                            className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                             min={new Date().toISOString().split('T')[0]}
                           />
                         </div>
@@ -838,7 +838,7 @@ export default function ProfilePage() {
                                 type="time"
                                 value={newUnavailable.startTime}
                                 onChange={(e) => setNewUnavailable({ ...newUnavailable, startTime: e.target.value })}
-                                className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-purple-500"
+                                className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                               />
                             </div>
                             <div>
@@ -847,7 +847,7 @@ export default function ProfilePage() {
                                 type="time"
                                 value={newUnavailable.endTime}
                                 onChange={(e) => setNewUnavailable({ ...newUnavailable, endTime: e.target.value })}
-                                className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-purple-500"
+                                className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                               />
                             </div>
                           </div>
@@ -860,14 +860,14 @@ export default function ProfilePage() {
                             value={newUnavailable.reason}
                             onChange={(e) => setNewUnavailable({ ...newUnavailable, reason: e.target.value })}
                             placeholder="e.g., Vacation, Appointment, Personal"
-                            className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-purple-500"
+                            className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500/40"
                           />
                         </div>
 
                         <div className="flex gap-2">
                           <button
                             onClick={handleAddUnavailable}
-                            className="flex-1 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-all font-semibold"
+                            className="flex-1 bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg transition-all font-semibold"
                           >
                             Save
                           </button>
@@ -948,3 +948,6 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+
+

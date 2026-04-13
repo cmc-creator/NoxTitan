@@ -1,4 +1,4 @@
-﻿import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 
@@ -308,3 +308,4 @@ async function detectOvertimeRisk(userId: string): Promise<any[]> {
   // Simplified - would calculate current hours + upcoming shifts
   return [];
 }
+

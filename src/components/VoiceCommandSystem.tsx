@@ -138,10 +138,10 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
 
       {/* Transcript Display */}
       {transcript && (
-        <div className="mt-3 p-3 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg border border-purple-500/30">
+        <div className="mt-3 p-3 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg border border-amber-500/40/30">
           <div className="flex items-center gap-2 mb-1">
-            <Sparkles className="w-4 h-4 text-purple-400" />
-            <span className="text-xs text-purple-300 font-semibold">YOU SAID:</span>
+            <Sparkles className="w-4 h-4 text-amber-400" />
+            <span className="text-xs text-amber-200 font-semibold">YOU SAID:</span>
           </div>
           <p className="text-white font-medium">&ldquo;{transcript}&rdquo;</p>
         </div>
@@ -149,7 +149,7 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
 
       {/* Voice Settings Modal */}
       {showSettings && (
-        <div className="absolute top-full mt-2 right-0 w-96 bg-slate-800 rounded-xl p-6 border-2 border-purple-500/30 shadow-2xl z-50">
+        <div className="absolute top-full mt-2 right-0 w-96 bg-slate-800 rounded-xl p-6 border-2 border-amber-500/40/30 shadow-2xl z-50">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-bold text-white">Voice Settings</h3>
             <button onClick={() => setShowSettings(false)} className="text-slate-400 hover:text-white">
@@ -252,3 +252,5 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
     </div>
   );
 }
+
+

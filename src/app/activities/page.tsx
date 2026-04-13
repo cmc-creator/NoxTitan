@@ -464,14 +464,14 @@ export default function ActivitiesPage() {
   };
 
   const getFrequencyBadge = (frequency: string) => {
-    if (frequency === 'daily') return { color: 'bg-blue-600', label: 'Daily' };
-    if (frequency === 'weekly') return { color: 'bg-purple-600', label: 'Weekly' };
+    if (frequency === 'daily') return { color: 'bg-amber-600', label: 'Daily' };
+    if (frequency === 'weekly') return { color: 'bg-amber-600', label: 'Weekly' };
     if (frequency === 'monthly') return { color: 'bg-pink-600', label: 'Monthly' };
     return { color: 'bg-slate-600', label: 'Ongoing' };
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-stone-900 to-pink-900 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -490,7 +490,7 @@ export default function ActivitiesPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featuredActivities.map(activity => (
-              <div key={activity.id} className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl p-6 border-2 border-yellow-400">
+              <div key={activity.id} className="bg-gradient-to-br from-amber-700 to-amber-600 rounded-xl p-6 border-2 border-yellow-400">
                 <div className="text-center mb-4">
                   <div className="text-6xl mb-2">{activity.icon}</div>
                   <h3 className="text-xl font-bold text-white mb-1">{activity.name}</h3>
@@ -516,7 +516,7 @@ export default function ActivitiesPage() {
                 </div>
                 <button
                   onClick={() => participateInActivity(activity.id)}
-                  className="w-full px-4 py-3 bg-white text-purple-600 hover:bg-slate-100 font-bold rounded-lg transition-all"
+                  className="w-full px-4 py-3 bg-stone-950 text-amber-600 hover:bg-slate-100 font-bold rounded-lg transition-all"
                 >
                   Participate Now
                 </button>
@@ -537,7 +537,7 @@ export default function ActivitiesPage() {
               onClick={() => setActiveTab(tab.id as any)}
               className={`flex items-center gap-2 px-6 py-3 rounded-lg font-bold transition-all ${
                 activeTab === tab.id
-                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                  ? 'bg-gradient-to-r from-amber-700 to-amber-600 text-white'
                   : 'bg-slate-800/50 text-slate-400 hover:text-white'
               }`}
             >
@@ -558,7 +558,7 @@ export default function ActivitiesPage() {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all whitespace-nowrap ${
                     selectedCategory === category.id
-                      ? 'bg-purple-600 text-white'
+                      ? 'bg-amber-600 text-white'
                       : 'bg-slate-800/50 text-slate-400 hover:text-white'
                   }`}
                 >
@@ -571,7 +571,7 @@ export default function ActivitiesPage() {
             {/* Activities Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredActivities.map(activity => (
-                <div key={activity.id} className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-purple-500/50 transition-all">
+                <div key={activity.id} className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-amber-500/40/50 transition-all">
                   <div className="text-center mb-4">
                     <div className="text-5xl mb-2">{activity.icon}</div>
                     <h3 className="text-lg font-bold text-white mb-1">{activity.name}</h3>
@@ -597,7 +597,7 @@ export default function ActivitiesPage() {
                   </div>
                   <button
                     onClick={() => participateInActivity(activity.id)}
-                    className="w-full px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg transition-all"
+                    className="w-full px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg transition-all"
                   >
                     Join Activity
                   </button>
@@ -655,3 +655,6 @@ export default function ActivitiesPage() {
     </div>
   );
 }
+
+
+

@@ -103,20 +103,20 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-6">
+        <div className="bg-stone-950 rounded-xl shadow-lg p-8 mb-6">
           <div className="flex justify-between items-start mb-6">
             <div className="flex-1 mr-8">
               <input
                 type="text"
                 value={formName}
                 onChange={(e) => setFormName(e.target.value)}
-                className="text-4xl font-bold text-gray-800 mb-2 w-full border-none focus:outline-none focus:ring-2 focus:ring-purple-400 rounded px-2"
+                className="text-4xl font-bold text-stone-200 mb-2 w-full border-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded px-2"
                 placeholder="Form Name"
               />
               <textarea
                 value={formDescription}
                 onChange={(e) => setFormDescription(e.target.value)}
-                className="text-lg text-gray-600 w-full border-none focus:outline-none focus:ring-2 focus:ring-purple-400 rounded px-2"
+                className="text-lg text-stone-500 w-full border-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded px-2"
                 placeholder="Form description..."
                 rows={2}
               />
@@ -124,14 +124,14 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
             <div className="flex gap-3">
               <button
                 onClick={() => setPreviewMode(!previewMode)}
-                className="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 flex items-center gap-2"
+                className="px-6 py-3 bg-stone-900 text-stone-300 rounded-lg hover:bg-stone-800 flex items-center gap-2"
               >
                 <Eye className="w-5 h-5" />
                 {previewMode ? 'Edit' : 'Preview'}
               </button>
               <button
                 onClick={handleSave}
-                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center gap-2"
+                className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center gap-2"
               >
                 <Save className="w-5 h-5" />
                 Save Template
@@ -142,11 +142,11 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
           {/* Category & Settings */}
           <div className="grid grid-cols-2 gap-6 pt-6 border-t">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
+              <label className="block text-sm font-medium text-stone-300 mb-2">Category</label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-400"
+                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500"
               >
                 <option value="HR">HR</option>
                 <option value="COMPLIANCE">Compliance</option>
@@ -160,7 +160,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
               </select>
             </div>
             <div className="space-y-2">
-              <label className="flex items-center gap-2 text-sm text-gray-700">
+              <label className="flex items-center gap-2 text-sm text-stone-300">
                 <input
                   type="checkbox"
                   checked={settings.allowAnonymous}
@@ -169,7 +169,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
                 />
                 Allow anonymous submissions
               </label>
-              <label className="flex items-center gap-2 text-sm text-gray-700">
+              <label className="flex items-center gap-2 text-sm text-stone-300">
                 <input
                   type="checkbox"
                   checked={settings.requireApproval}
@@ -178,7 +178,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
                 />
                 Require manager approval
               </label>
-              <label className="flex items-center gap-2 text-sm text-gray-700">
+              <label className="flex items-center gap-2 text-sm text-stone-300">
                 <input
                   type="checkbox"
                   checked={settings.sendConfirmationEmail}
@@ -194,17 +194,17 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
         <div className="grid grid-cols-4 gap-6">
           {/* Field Types Palette */}
           {!previewMode && (
-            <div className="bg-white rounded-xl shadow-lg p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Add Fields</h3>
+            <div className="bg-stone-950 rounded-xl shadow-lg p-6">
+              <h3 className="text-xl font-bold text-stone-200 mb-4">Add Fields</h3>
               <div className="space-y-2">
                 {fieldTypes.map(({ type, label, icon: Icon }) => (
                   <button
                     key={type}
                     onClick={() => addField(type as FormField['type'])}
-                    className="w-full px-4 py-3 text-left bg-gray-50 hover:bg-purple-50 rounded-lg flex items-center gap-3 transition-colors"
+                    className="w-full px-4 py-3 text-left bg-stone-950 hover:bg-purple-50 rounded-lg flex items-center gap-3 transition-colors"
                   >
-                    <Icon className="w-5 h-5 text-purple-600" />
-                    <span className="text-sm font-medium text-gray-700">{label}</span>
+                    <Icon className="w-5 h-5 text-amber-600" />
+                    <span className="text-sm font-medium text-stone-300">{label}</span>
                   </button>
                 ))}
               </div>
@@ -212,13 +212,13 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
           )}
 
           {/* Form Canvas */}
-          <div className={`${previewMode ? 'col-span-4' : 'col-span-2'} bg-white rounded-xl shadow-lg p-8`}>
-            <h3 className="text-2xl font-bold text-gray-800 mb-6">
+          <div className={`${previewMode ? 'col-span-4' : 'col-span-2'} bg-stone-950 rounded-xl shadow-lg p-8`}>
+            <h3 className="text-2xl font-bold text-stone-200 mb-6">
               {previewMode ? 'Form Preview' : 'Form Builder'}
             </h3>
             
             {fields.length === 0 ? (
-              <div className="text-center py-12 text-gray-400">
+              <div className="text-center py-12 text-stone-400">
                 <Type className="w-16 h-16 mx-auto mb-4" />
                 <p className="text-lg">Add fields from the left panel to start building your form</p>
               </div>
@@ -229,8 +229,8 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
                     key={field.id}
                     className={`border rounded-lg p-4 ${
                       selectedField === field.id && !previewMode
-                        ? 'border-purple-500 bg-purple-50'
-                        : 'border-gray-200 bg-white'
+                        ? 'border-amber-500/40 bg-purple-50'
+                        : 'border-stone-800 bg-stone-950'
                     } ${previewMode ? '' : 'hover:border-purple-300 cursor-pointer'}`}
                     onClick={() => !previewMode && setSelectedField(field.id)}
                   >
@@ -239,7 +239,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
                         <div className="flex flex-col gap-1 pt-1">
                           <button
                             onClick={(e) => { e.stopPropagation(); moveField(field.id, 'up'); }}
-                            className="text-gray-400 hover:text-gray-600"
+                            className="text-stone-400 hover:text-stone-500"
                             disabled={index === 0}
                           >
                             <GripVertical className="w-4 h-4" />
@@ -247,12 +247,12 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
                         </div>
                       )}
                       <div className="flex-1">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-stone-300 mb-2">
                           {field.label}
                           {field.required && <span className="text-red-500 ml-1">*</span>}
                         </label>
                         {field.helpText && (
-                          <p className="text-sm text-gray-500 mb-2">{field.helpText}</p>
+                          <p className="text-sm text-stone-500 mb-2">{field.helpText}</p>
                         )}
                         {renderFieldInput(field)}
                       </div>
@@ -272,7 +272,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
 
             {previewMode && fields.length > 0 && (
               <div className="mt-8">
-                <button className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-lg rounded-lg hover:from-purple-700 hover:to-pink-700">
+                <button className="w-full px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-600 text-white text-lg rounded-lg hover:from-purple-700 hover:to-pink-700">
                   Submit Form
                 </button>
               </div>
@@ -281,46 +281,46 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
 
           {/* Field Properties Panel */}
           {!previewMode && selectedFieldData && (
-            <div className="bg-white rounded-xl shadow-lg p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Field Properties</h3>
+            <div className="bg-stone-950 rounded-xl shadow-lg p-6">
+              <h3 className="text-xl font-bold text-stone-200 mb-4">Field Properties</h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Label</label>
+                  <label className="block text-sm font-medium text-stone-300 mb-2">Label</label>
                   <input
                     type="text"
                     value={selectedFieldData.label}
                     onChange={(e) => updateField(selectedField!, { label: e.target.value })}
-                    className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-purple-400"
+                    className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Placeholder</label>
+                  <label className="block text-sm font-medium text-stone-300 mb-2">Placeholder</label>
                   <input
                     type="text"
                     value={selectedFieldData.placeholder || ''}
                     onChange={(e) => updateField(selectedField!, { placeholder: e.target.value })}
-                    className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-purple-400"
+                    className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Help Text</label>
+                  <label className="block text-sm font-medium text-stone-300 mb-2">Help Text</label>
                   <textarea
                     value={selectedFieldData.helpText || ''}
                     onChange={(e) => updateField(selectedField!, { helpText: e.target.value })}
-                    className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-purple-400"
+                    className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500"
                     rows={2}
                   />
                 </div>
 
                 {['select', 'multiselect', 'checkbox', 'radio'].includes(selectedFieldData.type) && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Options (one per line)</label>
+                    <label className="block text-sm font-medium text-stone-300 mb-2">Options (one per line)</label>
                     <textarea
                       value={selectedFieldData.options?.join('\n') || ''}
                       onChange={(e) => updateField(selectedField!, { options: e.target.value.split('\n').filter(o => o.trim()) })}
-                      className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-purple-400"
+                      className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500"
                       rows={5}
                     />
                   </div>
@@ -333,7 +333,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
                     onChange={(e) => updateField(selectedField!, { required: e.target.checked })}
                     className="rounded"
                   />
-                  <span className="font-medium text-gray-700">Required field</span>
+                  <span className="font-medium text-stone-300">Required field</span>
                 </label>
               </div>
             </div>
@@ -388,13 +388,13 @@ function renderFieldInput(field: FormField) {
       return (
         <div className="flex gap-1">
           {[1, 2, 3, 4, 5].map(star => (
-            <Star key={star} className="w-6 h-6 text-gray-300 hover:text-yellow-400 cursor-pointer" />
+            <Star key={star} className="w-6 h-6 text-stone-300 hover:text-yellow-400 cursor-pointer" />
           ))}
         </div>
       );
     case 'signature':
       return (
-        <div className="w-full h-32 border-2 border-dashed rounded-lg flex items-center justify-center text-gray-400">
+        <div className="w-full h-32 border-2 border-dashed rounded-lg flex items-center justify-center text-stone-400">
           Click to sign
         </div>
       );
@@ -402,3 +402,5 @@ function renderFieldInput(field: FormField) {
       return null;
   }
 }
+
+

@@ -119,7 +119,7 @@ export default function GuildPage() {
   function getLevelIcon(levelName: string) {
     switch (levelName) {
       case 'Grandmaster': return <Crown className="w-6 h-6 text-yellow-400" />;
-      case 'Master': return <Star className="w-6 h-6 text-purple-400" />;
+      case 'Master': return <Star className="w-6 h-6 text-amber-400" />;
       case 'Expert': return <Trophy className="w-6 h-6 text-blue-400" />;
       case 'Journeyman': return <Shield className="w-6 h-6 text-green-400" />;
       case 'Apprentice': return <Target className="w-6 h-6 text-orange-400" />;
@@ -130,8 +130,8 @@ export default function GuildPage() {
   function getRarityColor(rarity: string) {
     switch (rarity) {
       case 'LEGENDARY': return 'from-yellow-600 to-orange-600 border-yellow-500';
-      case 'EPIC': return 'from-purple-600 to-pink-600 border-purple-500';
-      case 'RARE': return 'from-blue-600 to-cyan-600 border-blue-500';
+      case 'EPIC': return 'from-amber-700 to-amber-600 border-amber-500/40';
+      case 'RARE': return 'from-blue-600 to-cyan-600 border-amber-500/40';
       case 'UNCOMMON': return 'from-green-600 to-emerald-600 border-green-500';
       default: return 'from-slate-600 to-slate-700 border-slate-500';
     }
@@ -145,7 +145,7 @@ export default function GuildPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-stone-900 to-pink-900 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Epic Header */}
         <div className="text-center mb-12">
@@ -156,7 +156,7 @@ export default function GuildPage() {
           <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-pink-300 to-purple-300 mb-4">
             The Guild
           </h1>
-          <p className="text-xl text-purple-200 mb-6">Gamified Learning & Culture • Level Up Your Career</p>
+          <p className="text-xl text-amber-100/70 mb-6">Gamified Learning & Culture • Level Up Your Career</p>
         </div>
 
         {/* Navigation Tabs */}
@@ -172,7 +172,7 @@ export default function GuildPage() {
               onClick={() => setActiveTab(tab.id as any)}
               className={`px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition-all ${
                 activeTab === tab.id
-                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white scale-105'
+                  ? 'bg-gradient-to-r from-amber-700 to-amber-600 text-white scale-105'
                   : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50'
               }`}
             >
@@ -186,10 +186,10 @@ export default function GuildPage() {
         {activeTab === 'profile' && profile && (
           <div className="space-y-6">
             {/* Level Card */}
-            <div className="bg-gradient-to-br from-slate-800 to-slate-900 border-2 border-purple-500/50 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 border-2 border-amber-500/40/50 rounded-2xl p-8">
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center gap-4">
-                  <div className="p-4 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl">
+                  <div className="p-4 bg-gradient-to-br from-amber-700 to-amber-600 rounded-xl">
                     {getLevelIcon(profile.levelName)}
                   </div>
                   <div>
@@ -197,7 +197,7 @@ export default function GuildPage() {
                       {profile.employee.firstName} {profile.employee.lastName}
                     </h2>
                     <div className="flex items-center gap-2">
-                      <span className="text-2xl font-bold text-purple-400">{profile.levelName}</span>
+                      <span className="text-2xl font-bold text-amber-400">{profile.levelName}</span>
                       <span className="text-slate-400">• Level {profile.currentLevel}</span>
                     </div>
                   </div>
@@ -244,7 +244,7 @@ export default function GuildPage() {
                 </div>
                 <div className="bg-slate-700/50 rounded-xl p-4 text-center">
                   <div className="flex items-center justify-center gap-2 mb-2">
-                    <Award className="w-5 h-5 text-purple-400" />
+                    <Award className="w-5 h-5 text-amber-400" />
                     <span className="text-2xl font-bold text-white">{profile.badges.length}</span>
                   </div>
                   <div className="text-sm text-slate-400">Badges</div>
@@ -262,7 +262,7 @@ export default function GuildPage() {
                 {recentActivity.slice(0, 10).map(activity => (
                   <div key={activity.id} className="flex items-center justify-between bg-slate-700/30 rounded-lg p-3">
                     <div className="flex items-center gap-3">
-                      <div className="p-2 bg-purple-600/20 rounded-lg text-purple-400">
+                      <div className="p-2 bg-amber-600/20 rounded-lg text-amber-400">
                         {getXPTypeIcon(activity.type)}
                       </div>
                       <div>
@@ -304,8 +304,8 @@ export default function GuildPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {rewards.map(reward => (
-                <div key={reward.id} className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-purple-500/50 transition-all">
-                  <div className="aspect-square bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl mb-4 flex items-center justify-center">
+                <div key={reward.id} className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-amber-500/40/50 transition-all">
+                  <div className="aspect-square bg-gradient-to-br from-amber-700 to-amber-600 rounded-xl mb-4 flex items-center justify-center">
                     <Gift className="w-16 h-16 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">{reward.name}</h3>
@@ -322,7 +322,7 @@ export default function GuildPage() {
                   <button
                     onClick={() => purchaseReward(reward.id)}
                     disabled={!profile || profile.totalXP < reward.xpCost}
-                    className="w-full px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Purchase
                   </button>
@@ -354,8 +354,8 @@ export default function GuildPage() {
                     <h3 className="text-xl font-bold text-white mb-1">{achievement.name}</h3>
                     <span className={`text-xs font-bold px-2 py-1 rounded ${
                       achievement.rarity === 'LEGENDARY' ? 'bg-yellow-600' :
-                      achievement.rarity === 'EPIC' ? 'bg-purple-600' :
-                      achievement.rarity === 'RARE' ? 'bg-blue-600' :
+                      achievement.rarity === 'EPIC' ? 'bg-amber-600' :
+                      achievement.rarity === 'RARE' ? 'bg-amber-600' :
                       achievement.rarity === 'UNCOMMON' ? 'bg-green-600' :
                       'bg-slate-600'
                     } text-white`}>
@@ -410,7 +410,7 @@ export default function GuildPage() {
                       </div>
                       <div className="flex items-center gap-2">
                         {getLevelIcon(entry.levelName)}
-                        <span className="text-purple-400 font-semibold">{entry.levelName}</span>
+                        <span className="text-amber-400 font-semibold">{entry.levelName}</span>
                       </div>
                     </div>
                   </div>
@@ -427,3 +427,5 @@ export default function GuildPage() {
     </div>
   );
 }
+
+

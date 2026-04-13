@@ -206,8 +206,8 @@ export default function AnnouncementsPage() {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'urgent': return 'bg-red-500/20 text-red-400 border-red-500';
-      case 'celebration': return 'bg-purple-500/20 text-purple-400 border-purple-500';
-      case 'policy': return 'bg-blue-500/20 text-blue-400 border-blue-500';
+      case 'celebration': return 'bg-amber-500/20 text-amber-400 border-amber-500/40';
+      case 'policy': return 'bg-amber-600/20 text-blue-400 border-amber-500/40';
       case 'event': return 'bg-green-500/20 text-green-400 border-green-500';
       case 'benefit': return 'bg-orange-500/20 text-orange-400 border-orange-500';
       default: return 'bg-slate-500/20 text-slate-400 border-slate-500';
@@ -303,9 +303,9 @@ export default function AnnouncementsPage() {
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-sm opacity-70 mb-1">Engagement</div>
-                <div className="text-2xl font-bold text-purple-400">92%</div>
+                <div className="text-2xl font-bold text-amber-400">92%</div>
               </div>
-              <Users className="w-8 h-8 text-purple-400" />
+              <Users className="w-8 h-8 text-amber-400" />
             </div>
           </div>
         </div>
@@ -319,7 +319,7 @@ export default function AnnouncementsPage() {
               placeholder="Search announcements..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-600 focus:outline-none focus:border-blue-500 transition-all"
+              className="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-600 focus:outline-none focus:border-amber-500/40 transition-all"
               style={{ background: 'var(--card-bg)', color: 'var(--body-text)' }}
             />
           </div>
@@ -330,7 +330,7 @@ export default function AnnouncementsPage() {
                 onClick={() => setActiveFilter(filter as any)}
                 className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                   activeFilter === filter
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-amber-600 text-white'
                     : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                 }`}
               >
@@ -424,7 +424,7 @@ export default function AnnouncementsPage() {
                             <div className="text-xs text-slate-400">{attachment.type} • {attachment.size}</div>
                           </div>
                         </div>
-                        <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition-all">
+                        <button className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg text-sm font-semibold transition-all">
                           Download
                         </button>
                       </div>
@@ -450,7 +450,7 @@ export default function AnnouncementsPage() {
                   </button>
                 </div>
                 {!announcement.readBy.includes('currentUser') && (
-                  <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all flex items-center gap-2">
+                  <button className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-semibold transition-all flex items-center gap-2">
                     <CheckCircle className="w-4 h-4" />
                     Mark as Read
                   </button>
@@ -471,3 +471,5 @@ export default function AnnouncementsPage() {
     </div>
   );
 }
+
+

@@ -380,7 +380,7 @@ export default function ShiftLogsPage() {
       case 'urgent': return 'bg-red-500';
       case 'high': return 'bg-orange-500';
       case 'medium': return 'bg-yellow-500';
-      case 'low': return 'bg-blue-500';
+      case 'low': return 'bg-amber-600';
       default: return 'bg-gray-500';
     }
   };
@@ -432,11 +432,11 @@ export default function ShiftLogsPage() {
 
         {/* HIPAA Warning for Healthcare Settings */}
         {(selectedBusinessType === 'healthcare' || selectedBusinessType === 'hospital' || selectedBusinessType === 'behavioralHealth') && (
-          <div className="mb-6 p-5 rounded-xl border-2 border-blue-500" style={{ background: 'var(--card-bg)' }}>
+          <div className="mb-6 p-5 rounded-xl border-2 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-start gap-3">
-              <Shield className="h-6 w-6 text-blue-500 flex-shrink-0 mt-1" />
+              <Shield className="h-6 w-6 text-amber-400 flex-shrink-0 mt-1" />
               <div>
-                <h3 className="font-bold text-lg mb-2 text-blue-500">HIPAA Compliance Guidelines</h3>
+                <h3 className="font-bold text-lg mb-2 text-amber-400">HIPAA Compliance Guidelines</h3>
                 <div className="space-y-2 text-sm opacity-90">
                   <p>✓ <strong>Use patient identifiers only:</strong> Room numbers, initials, or last 4 digits of MRN</p>
                   <p>✓ <strong>Never use full names:</strong> Protect patient privacy in all communications</p>
@@ -623,18 +623,18 @@ export default function ShiftLogsPage() {
                                 {log.title}
                               </h3>
                               {log.containsPHI && (
-                                <span className="px-3 py-1 rounded-full text-xs font-bold bg-blue-500 text-white flex items-center gap-1">
+                                <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-600 text-white flex items-center gap-1">
                                   <Shield className="h-3 w-3" />
                                   Contains PHI
                                 </span>
                               )}
                               {log.privacyLevel === 'highly-sensitive' && (
-                                <span className="px-3 py-1 rounded-full text-xs font-bold bg-purple-600 text-white">
+                                <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-600 text-white">
                                   🔒 Highly Sensitive
                                 </span>
                               )}
                               {log.privacyLevel === 'sensitive' && (
-                                <span className="px-3 py-1 rounded-full text-xs font-bold bg-purple-500 text-white">
+                                <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500 text-white">
                                   🔒 Sensitive
                                 </span>
                               )}
@@ -663,7 +663,7 @@ export default function ShiftLogsPage() {
                               {log.patientIdentifier && (
                                 <>
                                   <span>•</span>
-                                  <span className="font-semibold text-blue-500">{log.patientIdentifier}</span>
+                                  <span className="font-semibold text-amber-400">{log.patientIdentifier}</span>
                                 </>
                               )}
                             </div>
@@ -700,7 +700,7 @@ export default function ShiftLogsPage() {
         {/* Handover View */}
         {activeView === 'handover' && (
           <div>
-            <div className="mb-6 p-6 rounded-xl shadow-lg border-l-4 border-blue-500" style={{ background: 'var(--card-bg)' }}>
+            <div className="mb-6 p-6 rounded-xl shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
               <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
                 Shift Handover Summary
               </h2>
@@ -953,3 +953,6 @@ export default function ShiftLogsPage() {
     </div>
   );
 }
+
+
+

@@ -66,15 +66,15 @@ export default function CompensationManagement() {
             <div className="text-3xl font-bold text-white">${(totalBudget.allocated / 1000).toFixed(0)}K</div>
             <div className="text-emerald-400 text-xs mt-1">FY 2026 allocation</div>
           </div>
-          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-6 border-2 border-blue-500/30">
+          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <div className="text-slate-300 text-sm mb-1">Proposed</div>
             <div className="text-3xl font-bold text-white">${(totalBudget.proposed / 1000).toFixed(0)}K</div>
             <div className="text-blue-400 text-xs mt-1">{((totalBudget.proposed/totalBudget.allocated)*100).toFixed(1)}% utilized</div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-6 border-2 border-purple-500/30">
+          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <div className="text-slate-300 text-sm mb-1">Remaining</div>
             <div className="text-3xl font-bold text-white">${(totalBudget.remaining / 1000).toFixed(0)}K</div>
-            <div className="text-purple-400 text-xs mt-1">{((totalBudget.remaining/totalBudget.allocated)*100).toFixed(1)}% available</div>
+            <div className="text-amber-400 text-xs mt-1">{((totalBudget.remaining/totalBudget.allocated)*100).toFixed(1)}% available</div>
           </div>
           <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded-xl p-6 border-2 border-orange-500/30">
             <div className="text-slate-300 text-sm mb-1">Avg Increase</div>
@@ -189,16 +189,16 @@ export default function CompensationManagement() {
 
         {/* Bonuses Tab */}
         {activeTab === 'bonuses' && (
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-purple-500/30">
+          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Performance Bonuses</h2>
-              <button className="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-semibold">
+              <button className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-semibold">
                 Process Payments
               </button>
             </div>
             <div className="space-y-4">
               {bonuses.map(bonus => (
-                <div key={bonus.id} className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg p-5 border border-purple-500/30">
+                <div key={bonus.id} className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg p-5 border border-amber-500/40/30">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <h3 className="text-xl font-bold text-white mb-2">{bonus.name}</h3>
@@ -240,7 +240,7 @@ export default function CompensationManagement() {
               ))}
             </div>
 
-            <div className="mt-8 bg-blue-900/30 rounded-lg p-6 border-2 border-blue-500/30">
+            <div className="mt-8 bg-blue-900/30 rounded-lg p-6 border-2 border-amber-500/40/30">
               <h3 className="text-xl font-bold text-white mb-4">Bonus Pool Summary</h3>
               <div className="grid grid-cols-4 gap-6">
                 <div>
@@ -257,7 +257,7 @@ export default function CompensationManagement() {
                 </div>
                 <div>
                   <div className="text-slate-400 text-sm mb-1">Utilization</div>
-                  <div className="text-3xl font-bold text-purple-400">78%</div>
+                  <div className="text-3xl font-bold text-amber-400">78%</div>
                 </div>
               </div>
             </div>
@@ -266,7 +266,7 @@ export default function CompensationManagement() {
 
         {/* Market Benchmarking Tab */}
         {activeTab === 'market' && (
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-blue-500/30">
+          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <h2 className="text-2xl font-bold text-white mb-6">Market Compensation Data</h2>
             <div className="space-y-4">
               {marketData.map((role, idx) => (
@@ -307,7 +307,7 @@ export default function CompensationManagement() {
                       className="absolute top-0 h-full flex items-center"
                       style={{left: `${((role.internal - role.market25) / (role.market75 - role.market25)) * 100}%`}}
                     >
-                      <div className="w-3 h-3 bg-blue-500 rounded-full border-4 border-white animate-pulse"></div>
+                      <div className="w-3 h-3 bg-amber-600 rounded-full border-4 border-white animate-pulse"></div>
                     </div>
                   </div>
                   
@@ -340,3 +340,5 @@ export default function CompensationManagement() {
     </div>
   );
 }
+
+

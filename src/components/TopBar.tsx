@@ -13,10 +13,10 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const tierColors = {
-    VIP: 'bg-gradient-to-r from-amber-400 to-yellow-500',
-    PROFESSIONAL: 'bg-gradient-to-r from-blue-600 to-cyan-600',
-    ENTERPRISE: 'bg-gradient-to-r from-amber-600 to-yellow-600',
-    TITAN: 'bg-gradient-to-r from-yellow-600 to-amber-500',
+    VIP: 'bg-gradient-to-r from-amber-500 to-yellow-400',
+    PROFESSIONAL: 'bg-gradient-to-r from-amber-700 to-amber-600',
+    ENTERPRISE: 'bg-gradient-to-r from-amber-600 to-yellow-500',
+    TITAN: 'bg-gradient-to-r from-yellow-500 to-amber-400',
   };
 
   const getUpsellMessage = () => {
@@ -26,21 +26,21 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
           icon: <Crown className="h-4 w-4" />,
           text: 'Upgrade to Enterprise',
           link: '/upgrade',
-          color: 'text-amber-600 hover:text-yellow-600'
+          color: 'text-amber-400 hover:text-amber-300 border-amber-600/40 hover:border-amber-400 hover:bg-amber-600/10'
         };
       case 'ENTERPRISE':
         return {
           icon: <Zap className="h-4 w-4" />,
           text: 'Go Titan',
           link: '/upgrade',
-          color: 'text-pink-600 hover:text-pink-700'
+          color: 'text-amber-300 hover:text-amber-200 border-amber-500/40 hover:border-amber-300 hover:bg-amber-500/10'
         };
       case 'TITAN':
         return {
           icon: <TrendingUp className="h-4 w-4" />,
           text: 'Request Custom Features',
           link: '/custom-features',
-          color: 'text-blue-300 border-blue-400 hover:bg-blue-500 hover:text-white hover:border-blue-500'
+          color: 'text-amber-300 border-amber-500/30 hover:bg-amber-500/10 hover:text-amber-200 hover:border-amber-400'
         };
       default:
         return null;
@@ -50,23 +50,24 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
   const upsell = getUpsellMessage();
 
   return (
-    <div className="bg-white/10 backdrop-blur-xl shadow-lg border-b border-white/20">
-      <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
+    <div style={{ background: '#0D0B08', borderBottom: '1px solid rgba(201,168,76,0.2)' }} className="shadow-2xl">
+      <div className="flex items-center justify-between px-4 sm:px-6 py-3">
         {/* Mobile Menu Button */}
         <button
           onClick={onMenuToggle}
-          className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+          className="md:hidden p-2 rounded transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+          style={{ color: '#9E8F75' }}
           aria-label="Toggle menu"
         >
-          <Menu className="h-6 w-6" />
+          <Menu className="h-5 w-5" />
         </button>
 
         <div className="flex-1 md:flex-none">
-          <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-white truncate">
+          <h1 className="font-semibold truncate" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.25rem', color: '#F0EBE0', letterSpacing: '0.05em' }}>
             NyxTitan Business Suite
           </h1>
-          <p className="text-xs sm:text-sm text-gray-300 mt-1 hidden sm:block">
-            All-in-one platform for scheduling, HR, payroll, compliance & more
+          <p className="text-xs mt-0.5 hidden sm:block" style={{ color: '#5A5040', letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.6rem' }}>
+            Scheduling · HR · Payroll · Compliance
           </p>
         </div>
 
@@ -74,8 +75,8 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
           {/* Desktop View */}
           <div className="hidden lg:flex items-center gap-3">
             <div className="flex items-center gap-2">
-              <span className="text-sm text-white font-medium">Subscription:</span>
-              <span className={`${tierColors[userTier]} text-white px-3 py-1 rounded-full text-xs font-bold`}>
+              <span className="text-xs" style={{ color: '#5A5040', letterSpacing: '2px', textTransform: 'uppercase' }}>Plan:</span>
+              <span className={`${tierColors[userTier]} text-black px-3 py-0.5 text-xs font-bold tracking-widest uppercase`} style={{ borderRadius: '2px' }}>
                 {userTier}
               </span>
             </div>
@@ -83,7 +84,8 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
             {upsell && (
               <Link 
                 href={upsell.link}
-                className={`flex items-center gap-1.5 px-3 py-1.5 ${upsell.color} border rounded-lg text-xs font-semibold transition-all`}
+                className={`flex items-center gap-1.5 px-3 py-1.5 ${upsell.color} border text-xs font-semibold tracking-wider uppercase transition-all`}
+                style={{ borderRadius: '2px' }}
               >
                 {upsell.icon}
                 <span>{upsell.text}</span>
@@ -93,38 +95,45 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
 
           {/* Mobile: Tier Badge Only */}
           <div className="lg:hidden">
-            <span className={`${tierColors[userTier]} text-white px-2 sm:px-3 py-1 rounded-full text-xs font-bold`}>
+            <span className={`${tierColors[userTier]} text-black px-2 sm:px-3 py-0.5 text-xs font-bold tracking-widest uppercase`} style={{ borderRadius: '2px' }}>
               {userTier}
             </span>
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-3">
-            {/* Oracle Quick Access - Hidden on small mobile */}
+          <div className="flex items-center gap-1 sm:gap-2">
+            {/* Oracle Quick Access */}
             <Link
               href="/oracle"
-              className="hidden sm:flex items-center justify-center transition-all hover:scale-110"
-              title="Oracle AI - Predictive Analytics"
+              className="hidden sm:flex items-center justify-center transition-all hover:scale-105"
+              title="Oracle AI"
             >
-              <img src="/oracle-logo.png" alt="Oracle AI" className="h-16 sm:h-20 md:h-24 w-16 sm:w-20 md:w-24 object-contain" />
+              <img src="/oracle-logo.png" alt="Oracle AI" className="h-14 sm:h-16 md:h-20 w-14 sm:w-16 md:w-20 object-contain" />
             </Link>
             
             {/* User Button */}
-            <button className="hidden sm:flex items-center gap-2 px-3 sm:px-4 py-2 text-white hover:bg-white/10 rounded-lg transition-colors min-h-[44px]">
-              <User className="h-5 w-5" />
-              <span className="text-sm font-medium hidden md:inline">Admin User</span>
+            <button className="hidden sm:flex items-center gap-2 px-3 py-2 rounded transition-colors min-h-[40px]" style={{ color: '#9E8F75', borderRadius: '2px' }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(201,168,76,0.06)'; (e.currentTarget as HTMLButtonElement).style.color = '#F0EBE0'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'transparent'; (e.currentTarget as HTMLButtonElement).style.color = '#9E8F75'; }}>
+              <User className="h-4 w-4" />
+              <span className="text-xs font-medium hidden md:inline" style={{ letterSpacing: '1px' }}>Admin User</span>
             </button>
             
             {/* Settings Button */}
-            <button 
-              className="flex items-center justify-center gap-2 p-2 sm:px-4 sm:py-2 text-amber-300 hover:text-white hover:bg-amber-600/30 rounded-lg transition-colors border border-amber-500/30 hover:border-amber-400 min-h-[44px] min-w-[44px]"
-              title="Settings & Customization"
+            <Link href="/settings"
+              className="flex items-center justify-center gap-2 px-3 py-2 transition-colors border min-h-[40px]"
+              style={{ color: '#C9A84C', borderColor: 'rgba(201,168,76,0.2)', borderRadius: '2px' }}
+              title="Settings"
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(201,168,76,0.08)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent'; }}
             >
-              <Settings className="h-5 w-5" />
-              <span className="hidden sm:inline text-sm">Settings</span>
-            </button>
+              <Settings className="h-4 w-4" />
+              <span className="hidden sm:inline text-xs" style={{ letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.65rem' }}>Settings</span>
+            </Link>
             
-            <button className="flex items-center gap-2 px-4 py-2 text-red-400 hover:bg-red-500/20 rounded-lg transition-colors">
-              <LogOut className="h-5 w-5" />
+            <button className="flex items-center gap-1.5 px-3 py-2 transition-colors" style={{ color: '#6A5E48', borderRadius: '2px' }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.color = '#fca5a5'; (e.currentTarget as HTMLButtonElement).style.background = 'rgba(239,68,68,0.08)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.color = '#6A5E48'; (e.currentTarget as HTMLButtonElement).style.background = 'transparent'; }}>
+              <LogOut className="h-4 w-4" />
             </button>
           </div>
         </div>
@@ -132,3 +141,4 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
     </div>
   );
 }
+

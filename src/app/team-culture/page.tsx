@@ -509,7 +509,7 @@ function WellnessSection() {
               <div className="font-bold mb-1">💧 Hydration Hero</div>
               <div className="text-sm opacity-70 mb-2">Drink 8 glasses of water</div>
               <div className="w-full bg-gray-300 rounded-full h-2">
-                <div className="bg-blue-500 h-2 rounded-full" style={{ width: '75%' }}></div>
+                <div className="bg-amber-600 h-2 rounded-full" style={{ width: '75%' }}></div>
               </div>
             </div>
             <div className="p-3 rounded-lg" style={{ background: 'var(--calendar-bg)' }}>
@@ -523,7 +523,7 @@ function WellnessSection() {
               <div className="font-bold mb-1">🧘 Mindful Minute</div>
               <div className="text-sm opacity-70 mb-2">5 min meditation</div>
               <div className="w-full bg-gray-300 rounded-full h-2">
-                <div className="bg-purple-500 h-2 rounded-full" style={{ width: '100%' }}></div>
+                <div className="bg-amber-500 h-2 rounded-full" style={{ width: '100%' }}></div>
               </div>
             </div>
           </div>
@@ -568,3 +568,5 @@ function WellnessSection() {
     </div>
   );
 }
+
+

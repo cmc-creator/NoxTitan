@@ -36,3 +36,4 @@ export default function AppLayout({ children, userTier = 'PROFESSIONAL' }: AppLa
     </div>
   );
 }
+

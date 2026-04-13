@@ -21,10 +21,10 @@ export default function CalendarPage() {
   return (
     <div className="p-6 space-y-6 flex flex-col min-h-screen" style={{ minHeight: '200vh' }}>
       <DraggableDecorations />
-      <div className="bg-gradient-to-r from-black via-purple-950 to-black border-4 border-purple-600/50 rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.3)] p-6 print:hidden flex-shrink-0">
-        <div className="flex items-center gap-4 px-6 py-3 rounded-lg border-2 border-purple-500/40 bg-gradient-to-b from-purple-900/30 via-black/50 to-purple-900/30 shadow-[0_0_20px_rgba(168,85,247,0.4)] mb-3">
+      <div className="bg-gradient-to-r from-black via-stone-950 to-black border-4 border-amber-600/40/50 rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.3)] p-6 print:hidden flex-shrink-0">
+        <div className="flex items-center gap-4 px-6 py-3 rounded-lg border-2 border-amber-500/40/40 bg-gradient-to-b from-purple-900/30 via-black/50 to-purple-900/30 shadow-[0_0_20px_rgba(168,85,247,0.4)] mb-3">
           <h1 className="text-4xl font-black mb-0 flex items-center gap-3 tracking-wide uppercase">
-            <Calendar className="w-10 h-10 text-purple-400 drop-shadow-[0_0_10px_rgba(168,85,247,0.7)]" />
+            <Calendar className="w-10 h-10 text-amber-400 drop-shadow-[0_0_10px_rgba(168,85,247,0.7)]" />
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-purple-100 via-slate-300 to-purple-400"
                   style={{
                     textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.6)',
@@ -36,7 +36,7 @@ export default function CalendarPage() {
           </h1>
           <button
             onClick={() => setShowSettings(true)}
-            className="ml-auto px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-slate-700 to-slate-600 text-purple-200 hover:from-slate-600 hover:to-slate-500 transition-all shadow-lg flex items-center gap-2 border-2 border-purple-400/50"
+            className="ml-auto px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-slate-700 to-slate-600 text-amber-100/70 hover:from-slate-600 hover:to-slate-500 transition-all shadow-lg flex items-center gap-2 border-2 border-amber-400/40/50"
             style={{
               textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 10px rgba(168,85,247,0.4)'
             }}
@@ -45,9 +45,9 @@ export default function CalendarPage() {
             Settings
           </button>
         </div>
-        <div className="inline-block px-4 py-2 rounded-lg border-2 border-purple-500/40 bg-gradient-to-b from-purple-900/30 via-black/50 to-purple-900/30">
+        <div className="inline-block px-4 py-2 rounded-lg border-2 border-amber-500/40/40 bg-gradient-to-b from-purple-900/30 via-black/50 to-purple-900/30">
           <p className="flex items-center gap-2 font-semibold mb-0">
-            <Info className="w-4 h-4 text-purple-400" />
+            <Info className="w-4 h-4 text-amber-400" />
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-purple-100 via-slate-300 to-purple-400"
                   style={{
                     textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.6)',
@@ -72,12 +72,12 @@ export default function CalendarPage() {
             <div className="text-5xl">⛅</div>
           </div>
         </div>
-        <div className="bg-gradient-to-br from-purple-900/50 to-violet-900/50 border-2 border-purple-600/40 rounded-xl p-4 shadow-lg">
+        <div className="bg-gradient-to-br from-purple-900/50 to-violet-900/50 border-2 border-amber-600/40/40 rounded-xl p-4 shadow-lg">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-purple-200 text-sm font-semibold mb-1">Scheduled Today</p>
+              <p className="text-amber-100/70 text-sm font-semibold mb-1">Scheduled Today</p>
               <p className="text-3xl font-bold text-white">24</p>
-              <p className="text-xs text-purple-300 mt-1">Employees Clocked In</p>
+              <p className="text-xs text-amber-200 mt-1">Employees Clocked In</p>
             </div>
             <div className="text-5xl">👥</div>
           </div>
@@ -103,21 +103,21 @@ export default function CalendarPage() {
       <div className="flex flex-wrap gap-4 print:hidden flex-shrink-0">
         <Link
           href="/dashboard"
-          className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-purple-900 via-purple-700 to-black text-white rounded-lg hover:from-purple-950 hover:via-purple-800 hover:to-black transition-all font-black shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] border-2 border-purple-500 hover:scale-105 uppercase tracking-wider"
+          className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-purple-900 via-purple-700 to-black text-white rounded-lg hover:from-purple-950 hover:via-purple-800 hover:to-black transition-all font-black shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] border-2 border-amber-500/40 hover:scale-105 uppercase tracking-wider"
         >
           <Home className="w-6 h-6 drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]" />
           ← Command Center
         </Link>
         <button
           onClick={handlePrint}
-          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-700 via-purple-600 to-black text-white rounded-lg hover:from-purple-800 hover:via-purple-700 hover:to-black transition-all font-semibold shadow-lg hover:shadow-xl border border-purple-500"
+          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-700 via-purple-600 to-black text-white rounded-lg hover:from-purple-800 hover:via-purple-700 hover:to-black transition-all font-semibold shadow-lg hover:shadow-xl border border-amber-500/40"
         >
           <Calendar className="w-5 h-5" />
           Print Calendar
         </button>
         <button
           onClick={handleExportPDF}
-          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-800 via-purple-900 to-black text-white rounded-lg hover:from-purple-900 hover:via-black hover:to-purple-900 transition-all font-semibold shadow-lg hover:shadow-xl border border-purple-600"
+          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-800 via-stone-900 to-black text-white rounded-lg hover:from-purple-900 hover:via-black hover:to-purple-900 transition-all font-semibold shadow-lg hover:shadow-xl border border-amber-600/40"
         >
           <Download className="w-5 h-5" />
           Export to PDF
@@ -136,15 +136,15 @@ export default function CalendarPage() {
           <p className="text-3xl font-bold text-white">2,080</p>
           <p className="text-xs text-green-300 mt-1">This Week</p>
         </div>
-        <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border-2 border-blue-600/40 rounded-xl p-4 shadow-lg">
+        <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border-2 border-amber-600/40/40 rounded-xl p-4 shadow-lg">
           <p className="text-blue-200 text-sm font-semibold mb-1">Used Hours</p>
           <p className="text-3xl font-bold text-white">1,847</p>
           <p className="text-xs text-blue-300 mt-1">88.8% Utilized</p>
         </div>
-        <div className="bg-gradient-to-br from-purple-900/50 to-violet-900/50 border-2 border-purple-600/40 rounded-xl p-4 shadow-lg">
-          <p className="text-purple-200 text-sm font-semibold mb-1">FTE Count</p>
+        <div className="bg-gradient-to-br from-purple-900/50 to-violet-900/50 border-2 border-amber-600/40/40 rounded-xl p-4 shadow-lg">
+          <p className="text-amber-100/70 text-sm font-semibold mb-1">FTE Count</p>
           <p className="text-3xl font-bold text-white">52.3</p>
-          <p className="text-xs text-purple-300 mt-1">Full-Time Equivalent</p>
+          <p className="text-xs text-amber-200 mt-1">Full-Time Equivalent</p>
         </div>
         <div className="bg-gradient-to-br from-yellow-900/50 to-amber-900/50 border-2 border-yellow-600/40 rounded-xl p-4 shadow-lg">
           <p className="text-yellow-200 text-sm font-semibold mb-1">EPOB</p>
@@ -160,3 +160,5 @@ export default function CalendarPage() {
     </div>
   );
 }
+
+

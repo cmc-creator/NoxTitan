@@ -212,7 +212,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex items-center gap-3">
                     {notification.type === 'recognition' && <Award className="w-5 h-5 text-yellow-400" />}
-                    {notification.type === 'promotion' && <TrendingUp className="w-5 h-5 text-purple-400" />}
+                    {notification.type === 'promotion' && <TrendingUp className="w-5 h-5 text-amber-400" />}
                     {notification.type === 'mentor' && <Users className="w-5 h-5 text-cyan-400" />}
                     {notification.type === 'training' && <BookOpen className="w-5 h-5 text-blue-400" />}
                     {notification.type === 'onboarding' && <Star className="w-5 h-5 text-green-400" />}
@@ -294,7 +294,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
 
             {/* Top Strength */}
             <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg p-3 mb-4">
-              <p className="text-xs text-purple-300 font-semibold mb-1">TOP STRENGTH</p>
+              <p className="text-xs text-amber-200 font-semibold mb-1">TOP STRENGTH</p>
               <p className="text-sm text-white font-bold">{employee.strengths[0]}</p>
             </div>
 
@@ -304,7 +304,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
                 <Award className="w-4 h-4" />
                 Recognize
               </button>
-              <button className="px-3 py-2 bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 rounded-lg text-sm font-semibold transition-all flex items-center justify-center gap-1">
+              <button className="px-3 py-2 bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 rounded-lg text-sm font-semibold transition-all flex items-center justify-center gap-1">
                 <TrendingUp className="w-4 h-4" />
                 Promote
               </button>
@@ -312,7 +312,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
                 <Users className="w-4 h-4" />
                 Mentor
               </button>
-              <button className="px-3 py-2 bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 rounded-lg text-sm font-semibold transition-all flex items-center justify-center gap-1">
+              <button className="px-3 py-2 bg-amber-600/20 hover:bg-amber-600/30 text-blue-300 rounded-lg text-sm font-semibold transition-all flex items-center justify-center gap-1">
                 <BookOpen className="w-4 h-4" />
                 Train
               </button>
@@ -374,10 +374,10 @@ export default function TalentIdentificationSystem({ managerId, showNotification
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-white mb-3">AI Recommendations</h3>
                 {Object.entries(selectedEmployee.recommendations).map(([key, value]) => (
-                  <div key={key} className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg p-4 border border-purple-500/30">
+                  <div key={key} className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg p-4 border border-amber-500/40/30">
                     <div className="flex items-center gap-2 mb-2">
                       {key === 'recognize' && <Award className="w-5 h-5 text-yellow-400" />}
-                      {key === 'promote' && <TrendingUp className="w-5 h-5 text-purple-400" />}
+                      {key === 'promote' && <TrendingUp className="w-5 h-5 text-amber-400" />}
                       {key === 'mentor' && <Users className="w-5 h-5 text-cyan-400" />}
                       {key === 'train' && <BookOpen className="w-5 h-5 text-blue-400" />}
                       {key === 'onboard' && <Star className="w-5 h-5 text-green-400" />}
@@ -434,7 +434,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
                     <p className="text-sm text-slate-300">Avg Onboarding Time</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-3xl font-bold text-purple-400">{selectedEmployee.onboardingSuccess.satisfaction}</p>
+                    <p className="text-3xl font-bold text-amber-400">{selectedEmployee.onboardingSuccess.satisfaction}</p>
                     <p className="text-sm text-slate-300">Mentee Satisfaction</p>
                   </div>
                 </div>
@@ -470,3 +470,5 @@ export default function TalentIdentificationSystem({ managerId, showNotification
     </div>
   );
 }
+
+

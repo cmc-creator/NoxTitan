@@ -29,7 +29,7 @@ export default function ThemeSelector() {
     { id: 'cobalt', name: 'Cobalt', colors: 'from-blue-700 to-indigo-700', primary: '#1d4ed8', secondary: '#4338ca', collection: 'Professional' },
     
     // Elegant Collection
-    { id: 'royal', name: 'Royal Purple', colors: 'from-purple-600 to-pink-600', primary: '#9333ea', secondary: '#db2777', collection: 'Elegant' },
+    { id: 'royal', name: 'Royal Purple', colors: 'from-amber-700 to-amber-600', primary: '#9333ea', secondary: '#db2777', collection: 'Elegant' },
     { id: 'rose-gold', name: 'Rose Gold', colors: 'from-pink-300 to-amber-400', primary: '#f9a8d4', secondary: '#fbbf24', collection: 'Elegant' },
     { id: 'champagne', name: 'Champagne', colors: 'from-amber-200 to-yellow-300', primary: '#fde68a', secondary: '#fcd34d', collection: 'Elegant' },
     { id: 'amethyst', name: 'Amethyst', colors: 'from-purple-700 to-purple-900', primary: '#7e22ce', secondary: '#581c87', collection: 'Elegant' },
@@ -87,7 +87,7 @@ export default function ThemeSelector() {
         {/* Dark/Light Mode Toggle */}
         <button
           onClick={toggleDarkMode}
-          className="flex items-center gap-2 px-3 py-2 bg-white/10 backdrop-blur-sm text-white rounded-lg hover:bg-white/20 transition-all border border-white/20"
+          className="flex items-center gap-2 px-3 py-2 bg-stone-950/10 backdrop-blur-sm text-white rounded-lg hover:bg-stone-950/20 transition-all border border-white/20"
           title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
         >
           {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -96,7 +96,7 @@ export default function ThemeSelector() {
         {/* Theme Customizer */}
         <button 
           onClick={() => setShowPanel(!showPanel)}
-          className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-lg hover:bg-white/20 transition-all border border-white/20"
+          className="flex items-center gap-2 px-4 py-2 bg-stone-950/10 backdrop-blur-sm text-white rounded-lg hover:bg-stone-950/20 transition-all border border-white/20"
         >
           <Palette className="h-5 w-5" />
           <span className="hidden md:inline">Customize</span>
@@ -110,7 +110,7 @@ export default function ThemeSelector() {
             <div className="flex items-center justify-between p-6 border-b border-slate-700">
               <div>
                 <h2 className="text-2xl font-bold text-white flex items-center gap-3">
-                  <Palette className="h-7 w-7 text-purple-400" />
+                  <Palette className="h-7 w-7 text-amber-400" />
                   Customize Your Experience
                 </h2>
                 <p className="text-slate-400 text-sm mt-1">Choose your perfect color theme, font, and background</p>
@@ -173,14 +173,14 @@ export default function ThemeSelector() {
                         placeholder="Search themes..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
                       />
                     </div>
                   </div>
 
                   {/* Essential Light/Dark Modes */}
                   <div className="mb-8">
-                    <h3 className="text-lg font-bold text-purple-300 mb-4">Essential Modes</h3>
+                    <h3 className="text-lg font-bold text-amber-200 mb-4">Essential Modes</h3>
                     <div className="grid grid-cols-2 gap-4">
                       {filteredThemes.filter(t => t.collection === 'Essential').map((t) => (
                         <button
@@ -188,14 +188,14 @@ export default function ThemeSelector() {
                           onClick={() => setTheme(t.id as any)}
                           className={`relative group p-4 rounded-xl border-2 transition-all hover:scale-105 ${
                             theme === t.id 
-                              ? 'border-purple-500 bg-slate-800 ring-4 ring-purple-500/30' 
+                              ? 'border-amber-500/40 bg-slate-800 ring-4 ring-purple-500/30' 
                               : 'border-slate-700 bg-slate-800/50 hover:border-slate-600'
                           }`}
                         >
                           <div className={`w-full h-24 rounded-lg bg-gradient-to-br ${t.colors} shadow-lg mb-3`}></div>
                           <div className="text-white font-bold text-base">{t.name}</div>
                           {theme === t.id && (
-                            <div className="absolute top-2 right-2 bg-purple-500 text-white rounded-full p-1">
+                            <div className="absolute top-2 right-2 bg-amber-500 text-white rounded-full p-1">
                               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                               </svg>
@@ -212,7 +212,7 @@ export default function ThemeSelector() {
                     if (collectionThemes.length === 0) return null;
                     return (
                       <div key={collection} className="mb-8">
-                        <h3 className="text-lg font-bold text-purple-300 mb-4">{collection} Collection</h3>
+                        <h3 className="text-lg font-bold text-amber-200 mb-4">{collection} Collection</h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                           {collectionThemes.map((t) => (
                             <button
@@ -220,14 +220,14 @@ export default function ThemeSelector() {
                               onClick={() => setTheme(t.id as any)}
                               className={`relative group p-4 rounded-xl border-2 transition-all hover:scale-105 ${
                                 theme === t.id 
-                                  ? 'border-purple-500 bg-slate-800' 
+                                  ? 'border-amber-500/40 bg-slate-800' 
                                   : 'border-slate-700 bg-slate-800/50 hover:border-slate-600'
                               }`}
                             >
                               <div className={`w-full h-20 rounded-lg bg-gradient-to-br ${t.colors} shadow-lg mb-3`}></div>
                               <div className="text-white font-medium text-sm">{t.name}</div>
                               {theme === t.id && (
-                                <div className="absolute top-2 right-2 bg-purple-500 text-white rounded-full p-1">
+                                <div className="absolute top-2 right-2 bg-amber-500 text-white rounded-full p-1">
                                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                   </svg>
@@ -250,7 +250,7 @@ export default function ThemeSelector() {
                       onClick={() => setFont(f.id as any)}
                       className={`relative p-6 rounded-xl border-2 transition-all hover:scale-105 text-left ${
                         font === f.id 
-                          ? 'border-purple-500 bg-slate-800' 
+                          ? 'border-amber-500/40 bg-slate-800' 
                           : 'border-slate-700 bg-slate-800/50 hover:border-slate-600'
                       }`}
                     >
@@ -262,7 +262,7 @@ export default function ThemeSelector() {
                         The quick brown fox jumps over the lazy dog
                       </div>
                       {font === f.id && (
-                        <div className="absolute top-4 right-4 bg-purple-500 text-white rounded-full p-1">
+                        <div className="absolute top-4 right-4 bg-amber-500 text-white rounded-full p-1">
                           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
@@ -275,7 +275,7 @@ export default function ThemeSelector() {
 
               {activeTab === 'backgrounds' && (
                 <div>
-                  <div className="mb-6 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg">
+                  <div className="mb-6 p-4 bg-amber-600/10 border border-amber-500/40/30 rounded-lg">
                     <div className="flex items-start gap-3">
                       <Image className="h-5 w-5 text-blue-400 mt-0.5" />
                       <div>
@@ -293,7 +293,7 @@ export default function ThemeSelector() {
                       onClick={() => setBackgroundImage(null)}
                       className={`relative p-4 rounded-xl border-2 transition-all hover:scale-105 ${
                         !backgroundImage 
-                          ? 'border-purple-500 bg-slate-800' 
+                          ? 'border-amber-500/40 bg-slate-800' 
                           : 'border-slate-700 bg-slate-800/50 hover:border-slate-600'
                       }`}
                     >
@@ -302,7 +302,7 @@ export default function ThemeSelector() {
                       </div>
                       <div className="text-white font-medium text-sm">None</div>
                       {!backgroundImage && (
-                        <div className="absolute top-2 right-2 bg-purple-500 text-white rounded-full p-1">
+                        <div className="absolute top-2 right-2 bg-amber-500 text-white rounded-full p-1">
                           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
@@ -336,7 +336,7 @@ export default function ThemeSelector() {
                         onClick={() => setBackgroundImage(bg.path)}
                         className={`relative p-4 rounded-xl border-2 transition-all hover:scale-105 ${
                           backgroundImage === bg.path 
-                            ? 'border-purple-500 bg-slate-800' 
+                            ? 'border-amber-500/40 bg-slate-800' 
                             : 'border-slate-700 bg-slate-800/50 hover:border-slate-600'
                         }`}
                       >
@@ -346,7 +346,7 @@ export default function ThemeSelector() {
                         />
                         <div className="text-white font-medium text-sm">{bg.name}</div>
                         {backgroundImage === bg.path && (
-                          <div className="absolute top-2 right-2 bg-purple-500 text-white rounded-full p-1">
+                          <div className="absolute top-2 right-2 bg-amber-500 text-white rounded-full p-1">
                             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
@@ -356,11 +356,11 @@ export default function ThemeSelector() {
                     ))}
 
                     {/* Upload New */}
-                    <label className="relative p-4 rounded-xl border-2 border-dashed border-slate-600 bg-slate-800/50 hover:border-purple-500 hover:bg-slate-800 transition-all cursor-pointer group">
+                    <label className="relative p-4 rounded-xl border-2 border-dashed border-slate-600 bg-slate-800/50 hover:border-amber-500/40 hover:bg-slate-800 transition-all cursor-pointer group">
                       <div className="w-full h-32 rounded-lg bg-slate-700/50 mb-3 flex items-center justify-center">
                         <div className="text-center">
-                          <Image className="h-8 w-8 text-slate-400 mx-auto mb-2 group-hover:text-purple-400 transition-colors" />
-                          <span className="text-slate-400 text-xs group-hover:text-purple-300">Upload Custom</span>
+                          <Image className="h-8 w-8 text-slate-400 mx-auto mb-2 group-hover:text-amber-400 transition-colors" />
+                          <span className="text-slate-400 text-xs group-hover:text-amber-200">Upload Custom</span>
                         </div>
                       </div>
                       <div className="text-white font-medium text-sm">Add Your Own</div>
@@ -390,3 +390,5 @@ export default function ThemeSelector() {
     </>
   );
 }
+
+

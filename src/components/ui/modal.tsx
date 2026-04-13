@@ -19,7 +19,7 @@ export const Modal: React.FC<ModalProps> = ({ open, onOpenChange, className, chi
       onClick={handleClose}
     >
       <div
-        className="bg-white rounded-lg shadow-lg p-6"
+        className="bg-stone-950 rounded-lg shadow-lg p-6"
         onClick={e => e.stopPropagation()}
       >
         {children}
@@ -27,3 +27,4 @@ export const Modal: React.FC<ModalProps> = ({ open, onOpenChange, className, chi
     </div>
   );
 };
+

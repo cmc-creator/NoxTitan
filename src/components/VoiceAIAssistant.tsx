@@ -22,7 +22,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [voiceEnabled, setVoiceEnabled] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const [customColor, setCustomColor] = useState('from-purple-600 to-indigo-600');
+  const [customColor, setCustomColor] = useState('from-amber-700 to-amber-600');
   const [customAvatar, setCustomAvatar] = useState('🎤');
   
   const recognitionRef = useRef<any>(null);
@@ -36,7 +36,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
       if (stored) {
         const prefs = JSON.parse(stored);
         if (prefs.nox) {
-          setCustomColor(prefs.nox.color || 'from-purple-600 to-indigo-600');
+          setCustomColor(prefs.nox.color || 'from-amber-700 to-amber-600');
           setCustomAvatar(prefs.nox.avatar || '🎤');
         }
       }
@@ -48,7 +48,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
     const handlePreferenceChange = (event: any) => {
       const prefs = event.detail;
       if (prefs?.nox) {
-        setCustomColor(prefs.nox.color || 'from-purple-600 to-indigo-600');
+        setCustomColor(prefs.nox.color || 'from-amber-700 to-amber-600');
         setCustomAvatar(prefs.nox.avatar || '🎤');
       }
     };
@@ -242,8 +242,8 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
           )}
         </button>
         {/* Hover Tooltip */}
-        <div className="absolute bottom-24 left-0 w-64 bg-slate-900 border border-purple-500/50 rounded-lg p-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
-          <div className="text-purple-300 font-bold text-sm mb-1">🌙 Nox - Strategic AI</div>
+        <div className="absolute bottom-24 left-0 w-64 bg-slate-900 border border-amber-500/40/50 rounded-lg p-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
+          <div className="text-amber-200 font-bold text-sm mb-1">🌙 Nox - Strategic AI</div>
           <div className="text-slate-300 text-xs">
             Voice-powered assistant for complex scheduling, predictions, and strategic planning. Uses Oracle AI for insights.
           </div>
@@ -258,7 +258,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-28 bg-gradient-to-br from-purple-600 to-pink-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-40 border-2 border-white/30"
+          className="fixed bottom-6 right-28 bg-gradient-to-br from-amber-700 to-amber-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-40 border-2 border-white/30"
           title="Nox - Voice AI Assistant"
         >
           <div className="relative">
@@ -277,7 +277,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
           <div className="relative w-10 h-10 rounded-full flex items-center justify-center text-2xl overflow-hidden" style={{background: 'transparent'}}>
             {customAvatar}
             {isSpeaking && (
-              <div className="absolute -inset-1 bg-white rounded-full animate-ping opacity-75"></div>
+              <div className="absolute -inset-1 bg-stone-950 rounded-full animate-ping opacity-75"></div>
             )}
           </div>
           <div>
@@ -288,7 +288,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
         <div className="flex items-center gap-2">
           <button
             onClick={() => setVoiceEnabled(!voiceEnabled)}
-            className="p-2 hover:bg-white/20 rounded-lg transition-colors"
+            className="p-2 hover:bg-stone-950/20 rounded-lg transition-colors"
             title={voiceEnabled ? 'Disable voice' : 'Enable voice'}
           >
             {voiceEnabled ? (
@@ -299,7 +299,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
           </button>
           <button
             onClick={() => setIsOpen(false)}
-            className="p-2 hover:bg-white/20 rounded-lg transition-colors"
+            className="p-2 hover:bg-stone-950/20 rounded-lg transition-colors"
           >
             <X className="w-5 h-5 text-white" />
           </button>
@@ -351,7 +351,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
               onKeyPress={handleKeyPress}
               placeholder="Ask me anything or click the mic..."
               rows={1}
-              className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 resize-none"
+              className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20 resize-none"
             />
           </div>
           <button
@@ -392,3 +392,5 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
     </>
   );
 }
+
+

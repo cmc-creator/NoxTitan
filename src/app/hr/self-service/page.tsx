@@ -42,11 +42,11 @@ export default function EmployeeSelfService() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/hr" className="inline-flex items-center gap-2 text-purple-300 hover:text-purple-100 mb-4 transition-colors">
+          <Link href="/hr" className="inline-flex items-center gap-2 text-amber-200 hover:text-amber-50 mb-4 transition-colors">
             ← Back to HR Center
           </Link>
           <div className="flex items-center justify-between">
@@ -59,14 +59,14 @@ export default function EmployeeSelfService() {
                   }}>
                 Employee Self-Service Portal
               </h1>
-              <p className="text-purple-200">Manage your profile, pay, benefits, and documents</p>
+              <p className="text-amber-100/70">Manage your profile, pay, benefits, and documents</p>
             </div>
             <div className="flex items-center gap-4">
               <div className="text-right">
                 <div className="text-white font-bold">{employee.name}</div>
-                <div className="text-sm text-purple-300">{employee.employeeId}</div>
+                <div className="text-sm text-amber-200">{employee.employeeId}</div>
               </div>
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+              <div className="w-16 h-16 bg-gradient-to-br from-amber-700 to-amber-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
                 SJ
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function EmployeeSelfService() {
 
         {/* Quick Actions */}
         <div className="grid grid-cols-4 gap-4 mb-8">
-          <button className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 hover:from-blue-800/50 hover:to-cyan-800/50 rounded-xl p-4 border-2 border-blue-500/30 transition-all flex items-center gap-3 group">
+          <button className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 hover:from-blue-800/50 hover:to-cyan-800/50 rounded-xl p-4 border-2 border-amber-500/40/30 transition-all flex items-center gap-3 group">
             <Calendar className="w-8 h-8 text-blue-400 group-hover:scale-110 transition-transform" />
             <div className="text-left">
               <div className="text-white font-bold">Request Time Off</div>
@@ -89,7 +89,7 @@ export default function EmployeeSelfService() {
               <div className="text-xs text-slate-400">Latest: Jan 1, 2026</div>
             </div>
           </button>
-          <button className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 hover:from-purple-800/50 hover:to-pink-800/50 rounded-xl p-4 border-2 border-purple-500/30 transition-all flex items-center gap-3 group">
+          <button className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 hover:from-purple-800/50 hover:to-pink-800/50 rounded-xl p-4 border-2 border-amber-500/40/30 transition-all flex items-center gap-3 group">
             <Heart className="w-8 h-8 text-pink-400 group-hover:scale-110 transition-transform" />
             <div className="text-left">
               <div className="text-white font-bold">Update Benefits</div>
@@ -117,7 +117,7 @@ export default function EmployeeSelfService() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all flex items-center justify-center gap-2 ${
-                activeTab === tab.id ? 'bg-purple-600 text-white' : 'text-slate-300 hover:bg-slate-700'
+                activeTab === tab.id ? 'bg-amber-600 text-white' : 'text-slate-300 hover:bg-slate-700'
               }`}
             >
               <tab.icon className="w-5 h-5" />
@@ -129,10 +129,10 @@ export default function EmployeeSelfService() {
         {/* Profile Tab */}
         {activeTab === 'profile' && (
           <div className="space-y-6">
-            <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-purple-500/30">
+            <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold text-white">Personal Information</h2>
-                <button className="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-semibold flex items-center gap-2">
+                <button className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-semibold flex items-center gap-2">
                   <Edit className="w-5 h-5" />
                   Edit Profile
                 </button>
@@ -165,7 +165,7 @@ export default function EmployeeSelfService() {
               </div>
             </div>
 
-            <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-blue-500/30">
+            <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
               <h2 className="text-2xl font-bold text-white mb-6">Contact Information</h2>
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-start gap-3">
@@ -241,7 +241,7 @@ export default function EmployeeSelfService() {
             </div>
 
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-blue-500/30">
+              <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
                 <h3 className="text-xl font-bold text-white mb-4">Direct Deposit</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
@@ -251,14 +251,14 @@ export default function EmployeeSelfService() {
                       <div className="text-sm text-slate-400">****6789 - 100%</div>
                     </div>
                   </div>
-                  <button className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold flex items-center justify-center gap-2">
+                  <button className="w-full px-4 py-2 bg-amber-600 hover:bg-amber-600 text-white rounded-lg font-semibold flex items-center justify-center gap-2">
                     <Edit className="w-5 h-5" />
                     Update Bank Info
                   </button>
                 </div>
               </div>
 
-              <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-purple-500/30">
+              <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
                 <h3 className="text-xl font-bold text-white mb-4">Tax Documents</h3>
                 <div className="space-y-3">
                   {taxDocs.map(doc => (
@@ -267,7 +267,7 @@ export default function EmployeeSelfService() {
                         <div className="text-white font-semibold">{doc.name}</div>
                         <div className="text-xs text-slate-400">{doc.size}</div>
                       </div>
-                      <button className="px-3 py-1 bg-purple-600 hover:bg-purple-500 text-white rounded text-sm">
+                      <button className="px-3 py-1 bg-amber-600 hover:bg-amber-500 text-white rounded text-sm">
                         <Download className="w-4 h-4" />
                       </button>
                     </div>
@@ -315,7 +315,7 @@ export default function EmployeeSelfService() {
                         </div>
                       </div>
                       {benefit.coverage && (
-                        <div className="mt-2 text-sm text-purple-300">
+                        <div className="mt-2 text-sm text-amber-200">
                           Coverage: {benefit.coverage}
                         </div>
                       )}
@@ -372,3 +372,5 @@ export default function EmployeeSelfService() {
     </div>
   );
 }
+
+

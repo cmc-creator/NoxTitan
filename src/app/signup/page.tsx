@@ -93,7 +93,7 @@ function SignupForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 flex items-center justify-center p-4">
       <div className="max-w-2xl w-full">
         {/* Logo and Title */}
         <div className="text-center mb-8">
@@ -129,7 +129,7 @@ function SignupForm() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full pl-11 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                  className="w-full pl-11 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                   placeholder="John Doe"
                 />
               </div>
@@ -148,7 +148,7 @@ function SignupForm() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full pl-11 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                  className="w-full pl-11 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                   placeholder="you@example.com"
                 />
               </div>
@@ -169,7 +169,7 @@ function SignupForm() {
                   name="tier"
                   value={formData.tier}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                 >
                   <option value="PROFESSIONAL">Professional - $499/mo - Up to 50 employees</option>
                   <option value="ENTERPRISE">Enterprise - $1,499/mo - Up to 250 employees + AI features</option>
@@ -197,7 +197,7 @@ function SignupForm() {
                     required
                     value={formData.password}
                     onChange={handleChange}
-                    className="w-full pl-11 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                    className="w-full pl-11 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     placeholder="••••••••"
                   />
                 </div>
@@ -215,7 +215,7 @@ function SignupForm() {
                     required
                     value={formData.confirmPassword}
                     onChange={handleChange}
-                    className="w-full pl-11 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                    className="w-full pl-11 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     placeholder="••••••••"
                   />
                 </div>
@@ -227,7 +227,7 @@ function SignupForm() {
               <input
                 type="checkbox"
                 required
-                className="w-4 h-4 mt-1 rounded border-slate-600 bg-slate-700 text-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                className="w-4 h-4 mt-1 rounded border-slate-600 bg-slate-700 text-amber-400 focus:ring-2 focus:ring-amber-500/20"
               />
               <label className="text-sm text-slate-300">
                 I agree to the{' '}
@@ -282,7 +282,7 @@ function SignupForm() {
 export default function SignupPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 flex items-center justify-center">
         <div className="text-white">Loading...</div>
       </div>
     }>
@@ -290,3 +290,6 @@ export default function SignupPage() {
     </Suspense>
   );
 }
+
+
+

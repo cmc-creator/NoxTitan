@@ -603,7 +603,7 @@ export default function ThemeCustomizer() {
 
       {showCustomizer && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-fade-in">
-          <div className="bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 rounded-3xl shadow-2xl w-full max-w-6xl max-h-[95vh] overflow-hidden border-2 border-purple-500/30 animate-slide-up">
+          <div className="bg-gradient-to-br from-slate-900 via-stone-900/20 to-slate-900 rounded-3xl shadow-2xl w-full max-w-6xl max-h-[95vh] overflow-hidden border-2 border-amber-500/40/30 animate-slide-up">
             <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 p-6 flex items-center justify-between relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
               <div className="relative z-10">
@@ -611,7 +611,7 @@ export default function ThemeCustomizer() {
                   <Sparkles className="w-8 h-8 animate-pulse" />
                   Customize Your Experience
                 </h2>
-                <p className="text-purple-100 text-sm mt-1">
+                <p className="text-amber-50 text-sm mt-1">
                   ✨ Choose colors visually, add gradients, and decorate - make it uniquely yours!
                 </p>
               </div>
@@ -620,7 +620,7 @@ export default function ThemeCustomizer() {
                   setShowCustomizer(false);
                   setActiveColorPicker(null);
                 }}
-                className="relative z-10 text-white hover:bg-white/20 p-2 rounded-lg transition-all hover:rotate-90"
+                className="relative z-10 text-white hover:bg-stone-950/20 p-2 rounded-lg transition-all hover:rotate-90"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -628,7 +628,7 @@ export default function ThemeCustomizer() {
 
             <div className="p-6 overflow-y-auto max-h-[calc(95vh-220px)]">
               {/* Gradient Toggle */}
-              <div className="mb-6 p-4 bg-slate-800/50 rounded-xl border border-purple-500/30">
+              <div className="mb-6 p-4 bg-slate-800/50 rounded-xl border border-amber-500/40/30">
                 <label className="flex items-center gap-3 cursor-pointer">
                   <input
                     type="checkbox"
@@ -644,7 +644,7 @@ export default function ThemeCustomizer() {
               </div>
 
               {/* Decorative Themes */}
-              <div className="mb-6 p-4 bg-slate-800/50 rounded-xl border border-purple-500/30">
+              <div className="mb-6 p-4 bg-slate-800/50 rounded-xl border border-amber-500/40/30">
                 <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
                   <Flower2 className="w-6 h-6" />
                   Decorative Themes
@@ -656,8 +656,8 @@ export default function ThemeCustomizer() {
                       onClick={() => setDecorativeTheme(dt.id)}
                       className={`p-4 rounded-xl border-2 transition-all hover:scale-105 ${
                         decorativeTheme === dt.id
-                          ? 'border-purple-500 bg-purple-500/20 shadow-lg shadow-purple-500/50'
-                          : 'border-slate-600 hover:border-purple-400 bg-slate-700/50'
+                          ? 'border-amber-500/40 bg-amber-500/20 shadow-lg shadow-purple-500/50'
+                          : 'border-slate-600 hover:border-amber-400/40 bg-slate-700/50'
                       }`}
                     >
                       <div className="text-4xl mb-2">{dt.icon}</div>
@@ -668,7 +668,7 @@ export default function ThemeCustomizer() {
               </div>
 
               {/* Font Selection */}
-              <div className="mb-6 p-4 bg-slate-800/50 rounded-xl border border-purple-500/30">
+              <div className="mb-6 p-4 bg-slate-800/50 rounded-xl border border-amber-500/40/30">
                 <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
                   <Type className="w-6 h-6" />
                   Font Family
@@ -680,8 +680,8 @@ export default function ThemeCustomizer() {
                       onClick={() => handleFontChange(font.id)}
                       className={`p-4 rounded-xl border-2 transition-all hover:scale-105 text-left ${
                         selectedFont === font.id
-                          ? 'border-purple-500 bg-purple-500/20 shadow-lg shadow-purple-500/50'
-                          : 'border-slate-600 hover:border-purple-400 bg-slate-700/50'
+                          ? 'border-amber-500/40 bg-amber-500/20 shadow-lg shadow-purple-500/50'
+                          : 'border-slate-600 hover:border-amber-400/40 bg-slate-700/50'
                       }`}
                       style={{ fontFamily: font.id === 'inter' ? 'Inter, sans-serif' : 
                                            font.id === 'roboto' ? 'Roboto, sans-serif' :
@@ -712,7 +712,7 @@ export default function ThemeCustomizer() {
                       <button
                         type="button"
                         onClick={() => setActiveColorPicker(activeColorPicker === key ? null : key as keyof CustomColors)}
-                        className="w-full flex items-center gap-3 px-4 py-4 bg-slate-800/70 border-2 border-slate-700 rounded-xl hover:border-purple-500 transition-all group hover:scale-105"
+                        className="w-full flex items-center gap-3 px-4 py-4 bg-slate-800/70 border-2 border-slate-700 rounded-xl hover:border-amber-500/40 transition-all group hover:scale-105"
                       >
                         <div
                           className="w-16 h-16 rounded-lg border-4 border-white shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-transform animate-pulse-slow"
@@ -729,7 +729,7 @@ export default function ThemeCustomizer() {
                       </button>
                       
                       {activeColorPicker === key && (
-                        <div className="absolute top-full left-0 mt-3 z-50 bg-slate-800 p-6 rounded-xl shadow-2xl border-2 border-purple-500 animate-fade-in">
+                        <div className="absolute top-full left-0 mt-3 z-50 bg-slate-800 p-6 rounded-xl shadow-2xl border-2 border-amber-500/40 animate-fade-in">
                           <div className="mb-3 text-white font-semibold text-sm flex items-center gap-2">
                             <Sparkles className="w-4 h-4" />
                             Pick your color:
@@ -754,7 +754,7 @@ export default function ThemeCustomizer() {
               </div>
 
               {/* Live Preview */}
-              <div className="mt-8 p-6 bg-slate-800/50 rounded-xl border border-purple-500/30 animate-fade-in">
+              <div className="mt-8 p-6 bg-slate-800/50 rounded-xl border border-amber-500/40/30 animate-fade-in">
                 <h4 className="text-white font-bold mb-4 text-lg flex items-center gap-2">
                   <Sparkles className="w-5 h-5" />
                   Live Preview
@@ -817,7 +817,7 @@ export default function ThemeCustomizer() {
               </div>
             </div>
 
-            <div className="bg-slate-800 p-6 flex gap-4 border-t-2 border-purple-500/30">
+            <div className="bg-slate-800 p-6 flex gap-4 border-t-2 border-amber-500/40/30">
               <button
                 type="button"
                 onClick={() => {
@@ -842,3 +842,5 @@ export default function ThemeCustomizer() {
     </>
   );
 }
+
+

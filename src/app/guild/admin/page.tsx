@@ -127,7 +127,7 @@ export default function GuildAdminPage() {
 
   const getLevelIcon = (levelName: string) => {
     if (levelName === 'Grandmaster') return <Crown className="w-5 h-5 text-yellow-400" />;
-    if (levelName === 'Master') return <Star className="w-5 h-5 text-purple-400" />;
+    if (levelName === 'Master') return <Star className="w-5 h-5 text-amber-400" />;
     if (levelName === 'Expert') return <Trophy className="w-5 h-5 text-blue-400" />;
     if (levelName === 'Journeyman') return <Shield className="w-5 h-5 text-green-400" />;
     if (levelName === 'Apprentice') return <Target className="w-5 h-5 text-orange-400" />;
@@ -142,14 +142,14 @@ export default function GuildAdminPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-stone-900 to-pink-900 flex items-center justify-center">
         <div className="text-white text-2xl">Loading Guild Admin...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-stone-900 to-pink-900 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8 flex items-center justify-between">
@@ -162,7 +162,7 @@ export default function GuildAdminPage() {
           </div>
           <Link
             href="/guild/admin/xp-config"
-            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg transition-all"
+            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg transition-all"
           >
             <Settings className="w-5 h-5" />
             Configure XP Values
@@ -202,10 +202,10 @@ export default function GuildAdminPage() {
             </div>
             <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
               <div className="flex items-center gap-2 mb-2">
-                <Award className="w-5 h-5 text-purple-400" />
+                <Award className="w-5 h-5 text-amber-400" />
                 <span className="text-sm text-slate-400">Achievements</span>
               </div>
-              <div className="text-3xl font-bold text-purple-400">{stats.achievementsUnlocked}</div>
+              <div className="text-3xl font-bold text-amber-400">{stats.achievementsUnlocked}</div>
             </div>
             <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
               <div className="flex items-center gap-2 mb-2">
@@ -231,7 +231,7 @@ export default function GuildAdminPage() {
               onClick={() => setActiveTab(tab.id as any)}
               className={`flex items-center gap-2 px-6 py-3 rounded-lg font-bold transition-all ${
                 activeTab === tab.id
-                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                  ? 'bg-gradient-to-r from-amber-700 to-amber-600 text-white'
                   : 'bg-slate-800/50 text-slate-400 hover:text-white'
               }`}
             >
@@ -259,7 +259,7 @@ export default function GuildAdminPage() {
                         <div className="text-white font-bold">{member.employee.firstName} {member.employee.lastName}</div>
                         <div className="flex items-center gap-2 text-sm">
                           {getLevelIcon(member.levelName)}
-                          <span className="text-purple-400">{member.levelName}</span>
+                          <span className="text-amber-400">{member.levelName}</span>
                         </div>
                       </div>
                     </div>
@@ -303,7 +303,7 @@ export default function GuildAdminPage() {
                           <div className="text-xs text-slate-400">{achievement.category}</div>
                         </div>
                       </div>
-                      <div className="text-purple-400 font-bold">{achievement.unlockCount} unlocks</div>
+                      <div className="text-amber-400 font-bold">{achievement.unlockCount} unlocks</div>
                     </div>
                   ))}
                 </div>
@@ -348,7 +348,7 @@ export default function GuildAdminPage() {
                 <div key={member.id} className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
                   <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-700 to-amber-600 flex items-center justify-center">
                         <span className="text-2xl font-bold text-white">
                           {member.employee.firstName[0]}{member.employee.lastName[0]}
                         </span>
@@ -359,7 +359,7 @@ export default function GuildAdminPage() {
                         <div className="flex items-center gap-3 mt-2">
                           <div className="flex items-center gap-1">
                             {getLevelIcon(member.levelName)}
-                            <span className="text-purple-400 font-semibold">{member.levelName}</span>
+                            <span className="text-amber-400 font-semibold">{member.levelName}</span>
                           </div>
                           <span className="text-slate-400">•</span>
                           <div className="flex items-center gap-1">
@@ -398,7 +398,7 @@ export default function GuildAdminPage() {
                     </div>
                     <div className="w-full bg-slate-900/50 rounded-full h-3 overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-purple-600 to-pink-600 transition-all"
+                        className="h-full bg-gradient-to-r from-amber-700 to-amber-600 transition-all"
                         style={{ width: `${(member.currentXP / member.xpToNextLevel) * 100}%` }}
                       />
                     </div>
@@ -423,7 +423,7 @@ export default function GuildAdminPage() {
               {activityLogs.map(log => (
                 <div key={log.id} className="flex items-center justify-between p-4 bg-slate-900/50 rounded-lg">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-700 to-amber-600 flex items-center justify-center">
                       <Zap className="w-5 h-5 text-white" />
                     </div>
                     <div>
@@ -447,7 +447,7 @@ export default function GuildAdminPage() {
           <div>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Manage Achievements</h2>
-              <button className="flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg transition-all">
+              <button className="flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg transition-all">
                 <Plus className="w-5 h-5" />
                 Create Achievement
               </button>
@@ -460,8 +460,8 @@ export default function GuildAdminPage() {
                     <h3 className="text-xl font-bold text-white mb-1">{achievement.name}</h3>
                     <span className={`text-xs font-bold px-2 py-1 rounded ${
                       achievement.rarity === 'LEGENDARY' ? 'bg-yellow-600' :
-                      achievement.rarity === 'EPIC' ? 'bg-purple-600' :
-                      achievement.rarity === 'RARE' ? 'bg-blue-600' :
+                      achievement.rarity === 'EPIC' ? 'bg-amber-600' :
+                      achievement.rarity === 'RARE' ? 'bg-amber-600' :
                       achievement.rarity === 'UNCOMMON' ? 'bg-green-600' :
                       'bg-slate-600'
                     } text-white`}>
@@ -474,7 +474,7 @@ export default function GuildAdminPage() {
                       <Zap className="w-4 h-4" />
                       <span className="font-bold">+{achievement.xpReward} XP</span>
                     </div>
-                    <div className="text-purple-400 font-bold">{achievement.unlockCount} unlocks</div>
+                    <div className="text-amber-400 font-bold">{achievement.unlockCount} unlocks</div>
                   </div>
                   <div className="flex gap-2">
                     <button className="flex-1 px-3 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-all flex items-center justify-center gap-2">
@@ -496,7 +496,7 @@ export default function GuildAdminPage() {
           <div>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Manage Rewards</h2>
-              <button className="flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg transition-all">
+              <button className="flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg transition-all">
                 <Plus className="w-5 h-5" />
                 Add Reward
               </button>
@@ -512,3 +512,5 @@ export default function GuildAdminPage() {
     </div>
   );
 }
+
+

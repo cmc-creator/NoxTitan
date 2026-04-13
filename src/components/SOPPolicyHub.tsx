@@ -94,7 +94,7 @@ export default function SOPPolicyHub() {
   return (
     <Card className="max-w-2xl mx-auto mt-8 p-6 shadow-lg border border-gray-200">
       <h2 className="text-2xl font-bold mb-4">SOP, Policy & Procedures Hub</h2>
-      <p className="mb-2 text-sm text-gray-600">All documents are HIPAA & legally compliant. Versioning, access control, and audit logging are enforced.</p>
+      <p className="mb-2 text-sm text-stone-500">All documents are HIPAA & legally compliant. Versioning, access control, and audit logging are enforced.</p>
       {error && <div className="text-red-500 mb-2">{error}</div>}
       <Input
         placeholder="Search documents..."
@@ -116,7 +116,7 @@ export default function SOPPolicyHub() {
         Assign Document
       </Button>
       {/* Render document list, filter by search/type, show version info */}
-      {loading && <div className="text-gray-400">Loading...</div>}
+      {loading && <div className="text-stone-400">Loading...</div>}
       <ul className="mb-4">
         {filteredDocuments.map((d: any) => (
           <li key={d.id} className="border-b py-2 text-sm">
@@ -150,7 +150,7 @@ export default function SOPPolicyHub() {
           <Button className="w-full" onClick={handleUpload} disabled={loading}>
             {loading ? 'Uploading...' : 'Upload'}
           </Button>
-          <p className="mt-2 text-xs text-gray-500">All uploads are logged and reviewed for HIPAA/legal compliance.</p>
+          <p className="mt-2 text-xs text-stone-500">All uploads are logged and reviewed for HIPAA/legal compliance.</p>
         </Card>
       </Modal>
       <Modal open={showAssignModal} onOpenChange={(open: boolean) => setShowAssignModal(open)}>
@@ -163,9 +163,11 @@ export default function SOPPolicyHub() {
           <Button className="w-full mt-2" onClick={() => setShowAssignModal(false)}>
             Assign
           </Button>
-          <p className="mt-2 text-xs text-gray-500">Assignments are logged and tracked for compliance.</p>
+          <p className="mt-2 text-xs text-stone-500">Assignments are logged and tracked for compliance.</p>
         </Card>
       </Modal>
     </Card>
   );
 }
+
+

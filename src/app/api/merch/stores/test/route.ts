@@ -217,3 +217,4 @@ async function testEtsy(apiKey: string, apiSecret: string) {
     message: 'Etsy API key and secret required',
   };
 }
+

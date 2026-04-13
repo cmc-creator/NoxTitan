@@ -321,19 +321,19 @@ export default function ReportsPage() {
       case 'DENIED': return 'text-red-600 bg-red-100';
       case 'PENDING': return 'text-yellow-600 bg-yellow-100';
       case 'NO_RESPONSE': return 'text-orange-600 bg-orange-100';
-      default: return 'text-gray-600 bg-gray-100';
+      default: return 'text-stone-500 bg-stone-900';
     }
   };
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case 'PTO': return 'text-blue-600 bg-blue-100';
+      case 'PTO': return 'text-amber-400 bg-amber-900/30';
       case 'SICK': return 'text-red-600 bg-red-100';
-      case 'FMLA': return 'text-purple-600 bg-purple-100';
-      case 'BEREAVEMENT': return 'text-gray-600 bg-gray-100';
-      case 'JURY_DUTY': return 'text-indigo-600 bg-indigo-100';
+      case 'FMLA': return 'text-amber-600 bg-purple-100';
+      case 'BEREAVEMENT': return 'text-stone-500 bg-stone-900';
+      case 'JURY_DUTY': return 'text-amber-400 bg-indigo-100';
       case 'UNPAID': return 'text-orange-600 bg-orange-100';
-      default: return 'text-gray-600 bg-gray-100';
+      default: return 'text-stone-500 bg-stone-900';
     }
   };
 
@@ -341,8 +341,8 @@ export default function ReportsPage() {
     <div className="p-8">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Reports & Analytics</h1>
-        <p className="text-gray-600">Comprehensive absenteeism, PTO, sick leave tracking, and approval analytics</p>
+        <h1 className="text-3xl font-bold text-stone-100 mb-2">Reports & Analytics</h1>
+        <p className="text-stone-500">Comprehensive absenteeism, PTO, sick leave tracking, and approval analytics</p>
       </div>
 
       {/* Report Type Selector */}
@@ -351,8 +351,8 @@ export default function ReportsPage() {
           onClick={() => setReportType('absenteeism')}
           className={`px-6 py-3 rounded-lg font-medium transition-all ${
             reportType === 'absenteeism'
-              ? 'bg-blue-600 text-white shadow-lg'
-              : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+              ? 'bg-amber-600 text-white shadow-lg'
+              : 'bg-stone-950 text-stone-300 border border-stone-700 hover:bg-stone-950'
           }`}
         >
           <BarChart3 className="w-5 h-5 inline mr-2" />
@@ -362,8 +362,8 @@ export default function ReportsPage() {
           onClick={() => setReportType('pto')}
           className={`px-6 py-3 rounded-lg font-medium transition-all ${
             reportType === 'pto'
-              ? 'bg-blue-600 text-white shadow-lg'
-              : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+              ? 'bg-amber-600 text-white shadow-lg'
+              : 'bg-stone-950 text-stone-300 border border-stone-700 hover:bg-stone-950'
           }`}
         >
           <Calendar className="w-5 h-5 inline mr-2" />
@@ -373,8 +373,8 @@ export default function ReportsPage() {
           onClick={() => setReportType('sick')}
           className={`px-6 py-3 rounded-lg font-medium transition-all ${
             reportType === 'sick'
-              ? 'bg-blue-600 text-white shadow-lg'
-              : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+              ? 'bg-amber-600 text-white shadow-lg'
+              : 'bg-stone-950 text-stone-300 border border-stone-700 hover:bg-stone-950'
           }`}
         >
           <Heart className="w-5 h-5 inline mr-2" />
@@ -384,8 +384,8 @@ export default function ReportsPage() {
           onClick={() => setReportType('approvals')}
           className={`px-6 py-3 rounded-lg font-medium transition-all ${
             reportType === 'approvals'
-              ? 'bg-blue-600 text-white shadow-lg'
-              : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+              ? 'bg-amber-600 text-white shadow-lg'
+              : 'bg-stone-950 text-stone-300 border border-stone-700 hover:bg-stone-950'
           }`}
         >
           <CheckCircle className="w-5 h-5 inline mr-2" />
@@ -394,41 +394,41 @@ export default function ReportsPage() {
       </div>
 
       {/* Filters Section */}
-      <div className="bg-white rounded-xl shadow-md border border-gray-200 p-6 mb-8">
+      <div className="bg-stone-950 rounded-xl shadow-md border border-stone-800 p-6 mb-8">
         <div className="flex items-center gap-2 mb-4">
-          <Filter className="w-5 h-5 text-blue-600" />
-          <h2 className="text-lg font-bold text-gray-900">Filters</h2>
+          <Filter className="w-5 h-5 text-amber-400" />
+          <h2 className="text-lg font-bold text-stone-100">Filters</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           {/* Date Range */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">From Date</label>
+            <label className="block text-sm font-medium text-stone-300 mb-2">From Date</label>
             <input
               type="date"
               value={dateFrom}
               onChange={(e) => setDateFrom(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">To Date</label>
+            <label className="block text-sm font-medium text-stone-300 mb-2">To Date</label>
             <input
               type="date"
               value={dateTo}
               onChange={(e) => setDateTo(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
             />
           </div>
 
           {/* Department Filter */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Department</label>
+            <label className="block text-sm font-medium text-stone-300 mb-2">Department</label>
             <select
               value={departmentFilter}
               onChange={(e) => setDepartmentFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
             >
               <option value="all">All Departments</option>
               <option value="Nursing">Nursing</option>
@@ -441,11 +441,11 @@ export default function ReportsPage() {
 
           {/* Type Filter */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Type</label>
+            <label className="block text-sm font-medium text-stone-300 mb-2">Type</label>
             <select
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
             >
               <option value="all">All Types</option>
               <option value="PTO">PTO</option>
@@ -459,11 +459,11 @@ export default function ReportsPage() {
 
           {/* Status Filter */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
+            <label className="block text-sm font-medium text-stone-300 mb-2">Status</label>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
             >
               <option value="all">All Statuses</option>
               <option value="PENDING">Pending</option>
@@ -476,15 +476,15 @@ export default function ReportsPage() {
 
         {/* Employee Search */}
         <div className="mt-4">
-          <label className="block text-sm font-medium text-gray-700 mb-2">Search Employee</label>
+          <label className="block text-sm font-medium text-stone-300 mb-2">Search Employee</label>
           <div className="relative">
-            <Search className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+            <Search className="absolute left-3 top-3 w-5 h-5 text-stone-400" />
             <input
               type="text"
               value={employeeSearch}
               onChange={(e) => setEmployeeSearch(e.target.value)}
               placeholder="Search by name or employee ID..."
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
             />
           </div>
         </div>
@@ -507,7 +507,7 @@ export default function ReportsPage() {
           </button>
           <button
             onClick={exportToCSV}
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all flex items-center gap-2"
+            className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-medium transition-all flex items-center gap-2"
           >
             <Download className="w-4 h-4" />
             Export CSV
@@ -517,76 +517,76 @@ export default function ReportsPage() {
 
       {/* Key Metrics Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 bg-blue-100 rounded-lg">
-              <FileText className="w-6 h-6 text-blue-600" />
+            <div className="p-3 bg-amber-900/30 rounded-lg">
+              <FileText className="w-6 h-6 text-amber-400" />
             </div>
-            <TrendingUp className="w-5 h-5 text-blue-600" />
+            <TrendingUp className="w-5 h-5 text-amber-400" />
           </div>
-          <h3 className="text-sm font-medium text-gray-600 mb-1">Total Records</h3>
-          <p className="text-3xl font-bold text-gray-900">{totalRecords}</p>
-          <p className="text-xs text-gray-500 mt-1">{totalHours} total hours</p>
+          <h3 className="text-sm font-medium text-stone-500 mb-1">Total Records</h3>
+          <p className="text-3xl font-bold text-stone-100">{totalRecords}</p>
+          <p className="text-xs text-stone-500 mt-1">{totalHours} total hours</p>
         </div>
 
-        <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-yellow-100 rounded-lg">
               <Clock className="w-6 h-6 text-yellow-600" />
             </div>
             <AlertTriangle className="w-5 h-5 text-yellow-600" />
           </div>
-          <h3 className="text-sm font-medium text-gray-600 mb-1">Pending Approvals</h3>
-          <p className="text-3xl font-bold text-gray-900">{pendingCount}</p>
-          <p className="text-xs text-gray-500 mt-1">Awaiting response</p>
+          <h3 className="text-sm font-medium text-stone-500 mb-1">Pending Approvals</h3>
+          <p className="text-3xl font-bold text-stone-100">{pendingCount}</p>
+          <p className="text-xs text-stone-500 mt-1">Awaiting response</p>
         </div>
 
-        <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-orange-100 rounded-lg">
               <Timer className="w-6 h-6 text-orange-600" />
             </div>
             <AlertTriangle className="w-5 h-5 text-orange-600" />
           </div>
-          <h3 className="text-sm font-medium text-gray-600 mb-1">No Response</h3>
-          <p className="text-3xl font-bold text-gray-900">{noResponseCount}</p>
-          <p className="text-xs text-gray-500 mt-1">Overdue requests</p>
+          <h3 className="text-sm font-medium text-stone-500 mb-1">No Response</h3>
+          <p className="text-3xl font-bold text-stone-100">{noResponseCount}</p>
+          <p className="text-xs text-stone-500 mt-1">Overdue requests</p>
         </div>
 
-        <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-purple-100 rounded-lg">
-              <Activity className="w-6 h-6 text-purple-600" />
+              <Activity className="w-6 h-6 text-amber-600" />
             </div>
-            <TrendingUp className="w-5 h-5 text-purple-600" />
+            <TrendingUp className="w-5 h-5 text-amber-600" />
           </div>
-          <h3 className="text-sm font-medium text-gray-600 mb-1">Avg Response Time</h3>
-          <p className="text-3xl font-bold text-gray-900">{avgResponseTime.toFixed(1)}h</p>
-          <p className="text-xs text-gray-500 mt-1">Hours to approval</p>
+          <h3 className="text-sm font-medium text-stone-500 mb-1">Avg Response Time</h3>
+          <p className="text-3xl font-bold text-stone-100">{avgResponseTime.toFixed(1)}h</p>
+          <p className="text-xs text-stone-500 mt-1">Hours to approval</p>
         </div>
       </div>
 
       {/* Approval Status Breakdown */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-        <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-            <PieChart className="w-5 h-5 text-blue-600" />
+        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+          <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+            <PieChart className="w-5 h-5 text-amber-400" />
             Approval Status Breakdown
           </h2>
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-4 h-4 bg-green-500 rounded"></div>
-                <span className="text-sm font-medium text-gray-700">Approved</span>
+                <span className="text-sm font-medium text-stone-300">Approved</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex-1 w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className="flex-1 w-48 h-2 bg-stone-800 rounded-full overflow-hidden">
                   <div 
                     className="h-full bg-green-500"
                     style={{ width: `${totalRecords > 0 ? (approvedCount / totalRecords) * 100 : 0}%` }}
                   />
                 </div>
-                <span className="text-sm font-bold text-gray-900 w-20 text-right">
+                <span className="text-sm font-bold text-stone-100 w-20 text-right">
                   {approvedCount} ({totalRecords > 0 ? ((approvedCount / totalRecords) * 100).toFixed(0) : 0}%)
                 </span>
               </div>
@@ -595,16 +595,16 @@ export default function ReportsPage() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-4 h-4 bg-yellow-500 rounded"></div>
-                <span className="text-sm font-medium text-gray-700">Pending</span>
+                <span className="text-sm font-medium text-stone-300">Pending</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex-1 w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className="flex-1 w-48 h-2 bg-stone-800 rounded-full overflow-hidden">
                   <div 
                     className="h-full bg-yellow-500"
                     style={{ width: `${totalRecords > 0 ? (pendingCount / totalRecords) * 100 : 0}%` }}
                   />
                 </div>
-                <span className="text-sm font-bold text-gray-900 w-20 text-right">
+                <span className="text-sm font-bold text-stone-100 w-20 text-right">
                   {pendingCount} ({totalRecords > 0 ? ((pendingCount / totalRecords) * 100).toFixed(0) : 0}%)
                 </span>
               </div>
@@ -613,16 +613,16 @@ export default function ReportsPage() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-4 h-4 bg-red-500 rounded"></div>
-                <span className="text-sm font-medium text-gray-700">Denied</span>
+                <span className="text-sm font-medium text-stone-300">Denied</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex-1 w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className="flex-1 w-48 h-2 bg-stone-800 rounded-full overflow-hidden">
                   <div 
                     className="h-full bg-red-500"
                     style={{ width: `${totalRecords > 0 ? (deniedCount / totalRecords) * 100 : 0}%` }}
                   />
                 </div>
-                <span className="text-sm font-bold text-gray-900 w-20 text-right">
+                <span className="text-sm font-bold text-stone-100 w-20 text-right">
                   {deniedCount} ({totalRecords > 0 ? ((deniedCount / totalRecords) * 100).toFixed(0) : 0}%)
                 </span>
               </div>
@@ -631,16 +631,16 @@ export default function ReportsPage() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-4 h-4 bg-orange-500 rounded"></div>
-                <span className="text-sm font-medium text-gray-700">No Response</span>
+                <span className="text-sm font-medium text-stone-300">No Response</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex-1 w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className="flex-1 w-48 h-2 bg-stone-800 rounded-full overflow-hidden">
                   <div 
                     className="h-full bg-orange-500"
                     style={{ width: `${totalRecords > 0 ? (noResponseCount / totalRecords) * 100 : 0}%` }}
                   />
                 </div>
-                <span className="text-sm font-bold text-gray-900 w-20 text-right">
+                <span className="text-sm font-bold text-stone-100 w-20 text-right">
                   {noResponseCount} ({totalRecords > 0 ? ((noResponseCount / totalRecords) * 100).toFixed(0) : 0}%)
                 </span>
               </div>
@@ -648,25 +648,25 @@ export default function ReportsPage() {
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-            <BarChart3 className="w-5 h-5 text-purple-600" />
+        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+          <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+            <BarChart3 className="w-5 h-5 text-amber-600" />
             Time-Off Type Distribution
           </h2>
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-4 h-4 bg-blue-500 rounded"></div>
-                <span className="text-sm font-medium text-gray-700">PTO</span>
+                <div className="w-4 h-4 bg-amber-600 rounded"></div>
+                <span className="text-sm font-medium text-stone-300">PTO</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex-1 w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className="flex-1 w-48 h-2 bg-stone-800 rounded-full overflow-hidden">
                   <div 
-                    className="h-full bg-blue-500"
+                    className="h-full bg-amber-600"
                     style={{ width: `${totalHours > 0 ? (ptoHours / totalHours) * 100 : 0}%` }}
                   />
                 </div>
-                <span className="text-sm font-bold text-gray-900 w-20 text-right">
+                <span className="text-sm font-bold text-stone-100 w-20 text-right">
                   {ptoHours}h ({totalHours > 0 ? ((ptoHours / totalHours) * 100).toFixed(0) : 0}%)
                 </span>
               </div>
@@ -675,16 +675,16 @@ export default function ReportsPage() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-4 h-4 bg-red-500 rounded"></div>
-                <span className="text-sm font-medium text-gray-700">Sick Leave</span>
+                <span className="text-sm font-medium text-stone-300">Sick Leave</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex-1 w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className="flex-1 w-48 h-2 bg-stone-800 rounded-full overflow-hidden">
                   <div 
                     className="h-full bg-red-500"
                     style={{ width: `${totalHours > 0 ? (sickHours / totalHours) * 100 : 0}%` }}
                   />
                 </div>
-                <span className="text-sm font-bold text-gray-900 w-20 text-right">
+                <span className="text-sm font-bold text-stone-100 w-20 text-right">
                   {sickHours}h ({totalHours > 0 ? ((sickHours / totalHours) * 100).toFixed(0) : 0}%)
                 </span>
               </div>
@@ -692,17 +692,17 @@ export default function ReportsPage() {
 
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-4 h-4 bg-purple-500 rounded"></div>
-                <span className="text-sm font-medium text-gray-700">FMLA</span>
+                <div className="w-4 h-4 bg-amber-500 rounded"></div>
+                <span className="text-sm font-medium text-stone-300">FMLA</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex-1 w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className="flex-1 w-48 h-2 bg-stone-800 rounded-full overflow-hidden">
                   <div 
-                    className="h-full bg-purple-500"
+                    className="h-full bg-amber-500"
                     style={{ width: `${totalHours > 0 ? (fmlaHours / totalHours) * 100 : 0}%` }}
                   />
                 </div>
-                <span className="text-sm font-bold text-gray-900 w-20 text-right">
+                <span className="text-sm font-bold text-stone-100 w-20 text-right">
                   {fmlaHours}h ({totalHours > 0 ? ((fmlaHours / totalHours) * 100).toFixed(0) : 0}%)
                 </span>
               </div>
@@ -711,16 +711,16 @@ export default function ReportsPage() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-4 h-4 bg-orange-500 rounded"></div>
-                <span className="text-sm font-medium text-gray-700">Unpaid</span>
+                <span className="text-sm font-medium text-stone-300">Unpaid</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex-1 w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className="flex-1 w-48 h-2 bg-stone-800 rounded-full overflow-hidden">
                   <div 
                     className="h-full bg-orange-500"
                     style={{ width: `${totalHours > 0 ? (unpaidHours / totalHours) * 100 : 0}%` }}
                   />
                 </div>
-                <span className="text-sm font-bold text-gray-900 w-20 text-right">
+                <span className="text-sm font-bold text-stone-100 w-20 text-right">
                   {unpaidHours}h ({totalHours > 0 ? ((unpaidHours / totalHours) * 100).toFixed(0) : 0}%)
                 </span>
               </div>
@@ -731,36 +731,36 @@ export default function ReportsPage() {
 
       {/* Employee Absenteeism Patterns */}
       {reportType === 'absenteeism' && (
-        <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200 mb-8">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-            <Users className="w-5 h-5 text-indigo-600" />
+        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800 mb-8">
+          <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+            <Users className="w-5 h-5 text-amber-400" />
             Employee Absenteeism Patterns
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Employee</th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Department</th>
-                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">PTO Hours</th>
-                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Sick Hours</th>
-                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Total Absences</th>
-                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Absence Rate</th>
-                  <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Avg/Month</th>
-                  <th className="text-center py-3 px-4 text-sm font-semibold text-gray-700">Pattern</th>
+                <tr className="border-b border-stone-800">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-stone-300">Employee</th>
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-stone-300">Department</th>
+                  <th className="text-right py-3 px-4 text-sm font-semibold text-stone-300">PTO Hours</th>
+                  <th className="text-right py-3 px-4 text-sm font-semibold text-stone-300">Sick Hours</th>
+                  <th className="text-right py-3 px-4 text-sm font-semibold text-stone-300">Total Absences</th>
+                  <th className="text-right py-3 px-4 text-sm font-semibold text-stone-300">Absence Rate</th>
+                  <th className="text-right py-3 px-4 text-sm font-semibold text-stone-300">Avg/Month</th>
+                  <th className="text-center py-3 px-4 text-sm font-semibold text-stone-300">Pattern</th>
                 </tr>
               </thead>
               <tbody>
                 {employeeStats.map((emp, index) => (
-                  <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                  <tr key={index} className="border-b border-stone-800 hover:bg-stone-950">
                     <td className="py-4 px-4">
-                      <div className="font-medium text-gray-900">{emp.employeeName}</div>
-                      <div className="text-xs text-gray-500">{emp.employeeId}</div>
+                      <div className="font-medium text-stone-100">{emp.employeeName}</div>
+                      <div className="text-xs text-stone-500">{emp.employeeId}</div>
                     </td>
-                    <td className="py-4 px-4 text-gray-700">{emp.department}</td>
-                    <td className="text-right py-4 px-4 text-gray-700">{emp.totalPTO}h</td>
-                    <td className="text-right py-4 px-4 text-gray-700">{emp.totalSick}h</td>
-                    <td className="text-right py-4 px-4 font-semibold text-gray-900">{emp.totalAbsences}h</td>
+                    <td className="py-4 px-4 text-stone-300">{emp.department}</td>
+                    <td className="text-right py-4 px-4 text-stone-300">{emp.totalPTO}h</td>
+                    <td className="text-right py-4 px-4 text-stone-300">{emp.totalSick}h</td>
+                    <td className="text-right py-4 px-4 font-semibold text-stone-100">{emp.totalAbsences}h</td>
                     <td className="text-right py-4 px-4">
                       <span className={`font-medium ${
                         emp.absenceRate > 5 ? 'text-red-600' :
@@ -770,11 +770,11 @@ export default function ReportsPage() {
                         {emp.absenceRate.toFixed(1)}%
                       </span>
                     </td>
-                    <td className="text-right py-4 px-4 text-gray-700">{emp.averageRequestsPerMonth.toFixed(1)}</td>
+                    <td className="text-right py-4 px-4 text-stone-300">{emp.averageRequestsPerMonth.toFixed(1)}</td>
                     <td className="text-center py-4 px-4">
                       <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                         emp.pattern === 'frequent' ? 'bg-red-100 text-red-700' :
-                        emp.pattern === 'normal' ? 'bg-blue-100 text-blue-700' :
+                        emp.pattern === 'normal' ? 'bg-amber-900/30 text-amber-300' :
                         'bg-green-100 text-green-700'
                       }`}>
                         {emp.pattern?.toUpperCase()}
@@ -789,36 +789,36 @@ export default function ReportsPage() {
       )}
 
       {/* Detailed Records Table */}
-      <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
-        <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-          <FileText className="w-5 h-5 text-gray-600" />
+      <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+        <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+          <FileText className="w-5 h-5 text-stone-500" />
           Detailed Records ({filteredData.length})
         </h2>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-gray-200">
-                <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Employee</th>
-                <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Department</th>
-                <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Date</th>
-                <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Type</th>
-                <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Hours</th>
-                <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Status</th>
-                <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Requested</th>
-                <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Approved By</th>
-                <th className="text-right py-3 px-4 text-sm font-semibold text-gray-700">Response Time</th>
-                <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Notes</th>
+              <tr className="border-b border-stone-800">
+                <th className="text-left py-3 px-4 text-sm font-semibold text-stone-300">Employee</th>
+                <th className="text-left py-3 px-4 text-sm font-semibold text-stone-300">Department</th>
+                <th className="text-left py-3 px-4 text-sm font-semibold text-stone-300">Date</th>
+                <th className="text-left py-3 px-4 text-sm font-semibold text-stone-300">Type</th>
+                <th className="text-right py-3 px-4 text-sm font-semibold text-stone-300">Hours</th>
+                <th className="text-left py-3 px-4 text-sm font-semibold text-stone-300">Status</th>
+                <th className="text-left py-3 px-4 text-sm font-semibold text-stone-300">Requested</th>
+                <th className="text-left py-3 px-4 text-sm font-semibold text-stone-300">Approved By</th>
+                <th className="text-right py-3 px-4 text-sm font-semibold text-stone-300">Response Time</th>
+                <th className="text-left py-3 px-4 text-sm font-semibold text-stone-300">Notes</th>
               </tr>
             </thead>
             <tbody>
               {filteredData.map((record) => (
-                <tr key={record.id} className="border-b border-gray-100 hover:bg-gray-50">
+                <tr key={record.id} className="border-b border-stone-800 hover:bg-stone-950">
                   <td className="py-4 px-4">
-                    <div className="font-medium text-gray-900">{record.employeeName}</div>
-                    <div className="text-xs text-gray-500">{record.employeeId}</div>
+                    <div className="font-medium text-stone-100">{record.employeeName}</div>
+                    <div className="text-xs text-stone-500">{record.employeeId}</div>
                   </td>
-                  <td className="py-4 px-4 text-gray-700">{record.department}</td>
-                  <td className="py-4 px-4 text-gray-700">
+                  <td className="py-4 px-4 text-stone-300">{record.department}</td>
+                  <td className="py-4 px-4 text-stone-300">
                     {new Date(record.date).toLocaleDateString('en-US', { 
                       month: 'short', 
                       day: 'numeric', 
@@ -830,19 +830,19 @@ export default function ReportsPage() {
                       {record.type}
                     </span>
                   </td>
-                  <td className="text-right py-4 px-4 font-semibold text-gray-900">{record.hours}</td>
+                  <td className="text-right py-4 px-4 font-semibold text-stone-100">{record.hours}</td>
                   <td className="py-4 px-4">
                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(record.status)}`}>
                       {record.status.replace('_', ' ')}
                     </span>
                   </td>
-                  <td className="py-4 px-4 text-sm text-gray-700">
+                  <td className="py-4 px-4 text-sm text-stone-300">
                     {new Date(record.requestedDate).toLocaleDateString('en-US', { 
                       month: 'short', 
                       day: 'numeric' 
                     })}
                   </td>
-                  <td className="py-4 px-4 text-sm text-gray-700">{record.approvedBy || '—'}</td>
+                  <td className="py-4 px-4 text-sm text-stone-300">{record.approvedBy || '—'}</td>
                   <td className="text-right py-4 px-4 text-sm">
                     {record.responseTime ? (
                       <span className={`font-medium ${
@@ -853,10 +853,10 @@ export default function ReportsPage() {
                         {record.responseTime}h
                       </span>
                     ) : (
-                      <span className="text-gray-400">—</span>
+                      <span className="text-stone-400">—</span>
                     )}
                   </td>
-                  <td className="py-4 px-4 text-xs text-gray-600 max-w-xs truncate">
+                  <td className="py-4 px-4 text-xs text-stone-500 max-w-xs truncate">
                     {record.notes || record.deniedReason || '—'}
                   </td>
                 </tr>
@@ -866,9 +866,9 @@ export default function ReportsPage() {
 
           {filteredData.length === 0 && (
             <div className="text-center py-12">
-              <AlertTriangle className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-              <p className="text-gray-600 font-medium">No records found</p>
-              <p className="text-sm text-gray-500 mt-1">Try adjusting your filters</p>
+              <AlertTriangle className="w-12 h-12 text-stone-400 mx-auto mb-4" />
+              <p className="text-stone-500 font-medium">No records found</p>
+              <p className="text-sm text-stone-500 mt-1">Try adjusting your filters</p>
             </div>
           )}
         </div>
@@ -880,8 +880,8 @@ export default function ReportsPage() {
           <div className="flex items-start gap-4">
             <AlertTriangle className="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" />
             <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Action Required: Overdue Approvals</h3>
-              <p className="text-sm text-gray-700 mb-3">
+              <h3 className="text-lg font-bold text-stone-100 mb-2">Action Required: Overdue Approvals</h3>
+              <p className="text-sm text-stone-300 mb-3">
                 There are <strong>{noResponseCount}</strong> time-off requests with no response. These requests may be
                 overdue and require immediate attention to avoid compliance issues and employee dissatisfaction.
               </p>
@@ -895,3 +895,6 @@ export default function ReportsPage() {
     </div>
   );
 }
+
+
+

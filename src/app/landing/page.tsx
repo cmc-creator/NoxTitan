@@ -40,7 +40,7 @@ export default function LandingPage() {
           </Link>
         </div>
         <div className="flex gap-4">
-          <Link href="/login" className="px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-2 border-purple-600/40 hover:border-purple-400 font-bold shadow-lg transition-all text-white flex items-center gap-2">
+          <Link href="/login" className="px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 font-bold shadow-lg transition-all text-white flex items-center gap-2">
             <Lock size={16} /> Login
           </Link>
         </div>
@@ -70,8 +70,8 @@ export default function LandingPage() {
         {/* Action Buttons Row - Cleaned up, no duplicates */}
         <div className="flex flex-row flex-wrap justify-center gap-4 mt-6">
           <Link href="/signup" className="px-6 py-3 rounded-xl bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-2 border-green-600/40 hover:border-green-400 font-bold shadow-lg transition-all text-white text-pop-light">Start Free Trial</Link>
-          <Link href="#contact" className="px-6 py-3 rounded-xl bg-gradient-to-br from-blue-900/50 to-indigo-900/50 border-2 border-blue-600/40 hover:border-blue-400 font-bold shadow-lg transition-all text-white text-pop-light">Request Demo</Link>
-          <Link href="/pricing" className="px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-2 border-purple-600/40 hover:border-purple-400 font-bold shadow-lg transition-all text-white text-pop-light">View Pricing</Link>
+          <Link href="#contact" className="px-6 py-3 rounded-xl bg-gradient-to-br from-blue-900/50 to-indigo-900/50 border-2 border-amber-600/40/40 hover:border-blue-400 font-bold shadow-lg transition-all text-white text-pop-light">Request Demo</Link>
+          <Link href="/pricing" className="px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 font-bold shadow-lg transition-all text-white text-pop-light">View Pricing</Link>
         </div>
       </div>
 
@@ -79,8 +79,8 @@ export default function LandingPage() {
         <nav className="w-full flex justify-center items-center py-6 bg-gradient-to-b from-black via-[#1a1a1e] to-black shadow-lg sticky top-0 z-50 animate-fade-in">
           <div className="w-full max-w-6xl flex flex-row items-center justify-between px-4">
             <div className="flex flex-1 justify-center gap-6">
-              <a href="#features" className="px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-violet-900/50 border-2 border-purple-600/40 hover:border-purple-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] font-bold shadow-lg transition-all text-white">Features</a>
-              <a href="#comparison" className="px-6 py-3 rounded-xl bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border-2 border-blue-600/40 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] font-bold shadow-lg transition-all text-white">Comparison</a>
+              <a href="#features" className="px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-violet-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] font-bold shadow-lg transition-all text-white">Features</a>
+              <a href="#comparison" className="px-6 py-3 rounded-xl bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border-2 border-amber-600/40/40 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] font-bold shadow-lg transition-all text-white">Comparison</a>
               <a href="#demo-section" className="px-6 py-3 rounded-xl bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-2 border-green-600/40 hover:border-green-400 hover:shadow-[0_0_20px_rgba(34,197,94,0.6)] font-bold shadow-lg transition-all text-white">Demo</a>
               <a href="#contact" className="px-6 py-3 rounded-xl bg-gradient-to-br from-pink-900/50 to-rose-900/50 border-2 border-pink-600/40 hover:border-pink-400 hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] font-bold shadow-lg transition-all text-white">Contact</a>
             </div>
@@ -105,10 +105,10 @@ export default function LandingPage() {
           <h1 className="text-4xl md:text-6xl font-extrabold text-center text-white drop-shadow-lg mt-6 animate-slide-up text-pop-strong">
             Run Your Entire Business in One Place.
           </h1>
-          <p className="mt-4 text-lg md:text-2xl text-purple-200 text-center max-w-2xl animate-fade-in text-pop">
+          <p className="mt-4 text-lg md:text-2xl text-amber-100/70 text-center max-w-2xl animate-fade-in text-pop">
             Stop juggling 15 different apps.
           </p>
-          <p className="mt-2 text-lg md:text-2xl text-purple-200 text-center max-w-2xl animate-fade-in text-pop">
+          <p className="mt-2 text-lg md:text-2xl text-amber-100/70 text-center max-w-2xl animate-fade-in text-pop">
             Manage your employees, payroll, scheduling, compliance, and operations from a single powerful platform.
           </p>
           {/* Removed duplicate action buttons below tagline */}
@@ -119,7 +119,7 @@ export default function LandingPage() {
       <section id="demo-section" className="w-full flex flex-col items-center justify-center py-12">
         <div className="w-full max-w-7xl mx-auto flex flex-col items-center px-4">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-3 animate-fade-in">See What NyxTitan Can Do For You.</h2>
-          <p className="text-lg md:text-xl text-purple-200 text-center mb-6 animate-fade-in max-w-2xl">
+          <p className="text-lg md:text-xl text-amber-100/70 text-center mb-6 animate-fade-in max-w-2xl">
             Watch our interactive walkthrough below to see how NyxTitan handles scheduling, payroll, compliance, and more—all in one powerful platform.
           </p>
           <div className="w-full flex justify-center items-center animate-fade-in">
@@ -135,110 +135,110 @@ export default function LandingPage() {
       </section>
 
       {/* Unique Features Section - NEW */}
-      <section id="features" className="w-full flex flex-col items-center justify-center py-20 bg-gradient-to-b from-black via-purple-950/30 to-black">
+      <section id="features" className="w-full flex flex-col items-center justify-center py-20 bg-gradient-to-b from-black via-stone-950/30 to-black">
         <div className="w-full max-w-6xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-extrabold text-center text-white mb-4 animate-fade-in">
             Features No One Else Has
           </h2>
-          <p className="text-lg md:text-xl text-purple-200 text-center mb-12 animate-fade-in">
+          <p className="text-lg md:text-xl text-amber-100/70 text-center mb-12 animate-fade-in">
             NyxTitan isn't just another business tool—it's a complete ecosystem built for modern teams
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {/* Guild Gamification */}
-            <div className="bg-gradient-to-br from-purple-900/50 to-black border-2 border-purple-600/40 rounded-xl p-6 hover:border-purple-400 transition-all">
-              <div className="mb-3"><Crown size={36} className="text-purple-400" /></div>
+            <div className="bg-gradient-to-br from-purple-900/50 to-black border-2 border-amber-600/40/40 rounded-xl p-6 hover:border-amber-400/40 transition-all">
+              <div className="mb-3"><Crown size={36} className="text-amber-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Guild Gamification System</h3>
-              <p className="text-purple-200 text-sm mb-3">XP, levels, achievements, and rewards turn work into an engaging RPG experience. 7-tier progression from Novice to Grandmaster.</p>
-              <div className="text-xs text-purple-400">• Level progression • XP rewards • Achievement badges • Reward shop</div>
+              <p className="text-amber-100/70 text-sm mb-3">XP, levels, achievements, and rewards turn work into an engaging RPG experience. 7-tier progression from Novice to Grandmaster.</p>
+              <div className="text-xs text-amber-400">• Level progression • XP rewards • Achievement badges • Reward shop</div>
             </div>
 
             {/* Team Activities */}
             <div className="bg-gradient-to-br from-pink-900/50 to-black border-2 border-pink-600/40 rounded-xl p-6 hover:border-pink-400 transition-all">
               <div className="mb-3"><Gamepad2 size={36} className="text-pink-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">30+ Team Engagement Activities</h3>
-              <p className="text-purple-200 text-sm mb-3">Ice breakers, coffee roulette, trivia nights, manager mixers, and daily challenges keep teams connected and engaged.</p>
-              <div className="text-xs text-purple-400">• Ice breakers • Team bonding • Manager engagement • Competitions</div>
+              <p className="text-amber-100/70 text-sm mb-3">Ice breakers, coffee roulette, trivia nights, manager mixers, and daily challenges keep teams connected and engaged.</p>
+              <div className="text-xs text-amber-400">• Ice breakers • Team bonding • Manager engagement • Competitions</div>
             </div>
 
             {/* Oracle AI */}
-            <div className="bg-gradient-to-br from-blue-900/50 to-black border-2 border-blue-600/40 rounded-xl p-6 hover:border-blue-400 transition-all">
+            <div className="bg-gradient-to-br from-blue-900/50 to-black border-2 border-amber-600/40/40 rounded-xl p-6 hover:border-blue-400 transition-all">
               <div className="mb-3"><Sparkles size={36} className="text-blue-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Oracle Predictive AI</h3>
-              <p className="text-purple-200 text-sm mb-3">Machine learning forecasts staffing needs, predicts turnover, and optimizes schedules before issues arise.</p>
-              <div className="text-xs text-purple-400">• Turnover prediction • Staffing optimization • Trend analysis</div>
+              <p className="text-amber-100/70 text-sm mb-3">Machine learning forecasts staffing needs, predicts turnover, and optimizes schedules before issues arise.</p>
+              <div className="text-xs text-amber-400">• Turnover prediction • Staffing optimization • Trend analysis</div>
             </div>
 
             {/* Asset Vault */}
             <div className="bg-gradient-to-br from-green-900/50 to-black border-2 border-green-600/40 rounded-xl p-6 hover:border-green-400 transition-all">
               <div className="mb-3"><Vault size={36} className="text-green-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Asset Vault</h3>
-              <p className="text-purple-200 text-sm mb-3">Track equipment, vehicles, supplies, and inventory with full lifecycle management, maintenance tracking, and depreciation.</p>
-              <div className="text-xs text-purple-400">• Equipment tracking • Maintenance logs • Depreciation calc</div>
+              <p className="text-amber-100/70 text-sm mb-3">Track equipment, vehicles, supplies, and inventory with full lifecycle management, maintenance tracking, and depreciation.</p>
+              <div className="text-xs text-amber-400">• Equipment tracking • Maintenance logs • Depreciation calc</div>
             </div>
 
             {/* Sentinel */}
             <div className="bg-gradient-to-br from-red-900/50 to-black border-2 border-red-600/40 rounded-xl p-6 hover:border-red-400 transition-all">
               <div className="mb-3"><Shield size={36} className="text-red-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Sentinel Visitor Management</h3>
-              <p className="text-purple-200 text-sm mb-3">Complete visitor tracking, badge printing, access control, and security protocols integrated with your facility management.</p>
-              <div className="text-xs text-purple-400">• Check-in/out • Badge printing • Security alerts • Access logs</div>
+              <p className="text-amber-100/70 text-sm mb-3">Complete visitor tracking, badge printing, access control, and security protocols integrated with your facility management.</p>
+              <div className="text-xs text-amber-400">• Check-in/out • Badge printing • Security alerts • Access logs</div>
             </div>
 
             {/* Basecamp Personal Portals */}
             <div className="bg-gradient-to-br from-yellow-900/50 to-black border-2 border-yellow-600/40 rounded-xl p-6 hover:border-yellow-400 transition-all">
               <div className="mb-3"><Tent size={36} className="text-yellow-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Basecamp Personal Portals</h3>
-              <p className="text-purple-200 text-sm mb-3">Every employee gets a personalized dashboard with their schedule, goals, recognition, and team connections all in one place.</p>
-              <div className="text-xs text-purple-400">• Personal dashboard • Goal tracking • Recognition feed</div>
+              <p className="text-amber-100/70 text-sm mb-3">Every employee gets a personalized dashboard with their schedule, goals, recognition, and team connections all in one place.</p>
+              <div className="text-xs text-amber-400">• Personal dashboard • Goal tracking • Recognition feed</div>
             </div>
 
             {/* Compliance Suite */}
             <div className="bg-gradient-to-br from-indigo-900/50 to-black border-2 border-indigo-600/40 rounded-xl p-6 hover:border-indigo-400 transition-all">
-              <div className="mb-3"><ClipboardList size={36} className="text-indigo-400" /></div>
+              <div className="mb-3"><ClipboardList size={36} className="text-amber-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Compliance Suite</h3>
-              <p className="text-purple-200 text-sm mb-3">Automated OSHA, CMS, and Joint Commission compliance tracking with audit trails, certifications, and regulatory reporting.</p>
-              <div className="text-xs text-purple-400">• OSHA tracking • CMS compliance • Audit trails • Certifications</div>
+              <p className="text-amber-100/70 text-sm mb-3">Automated OSHA, CMS, and Joint Commission compliance tracking with audit trails, certifications, and regulatory reporting.</p>
+              <div className="text-xs text-amber-400">• OSHA tracking • CMS compliance • Audit trails • Certifications</div>
             </div>
 
             {/* Treasury & Signatures */}
-            <div className="bg-gradient-to-br from-purple-900/50 to-black border-2 border-purple-600/40 rounded-xl p-6 hover:border-purple-400 transition-all">
-              <div className="mb-3"><PenLine size={36} className="text-purple-400" /></div>
+            <div className="bg-gradient-to-br from-purple-900/50 to-black border-2 border-amber-600/40/40 rounded-xl p-6 hover:border-amber-400/40 transition-all">
+              <div className="mb-3"><PenLine size={36} className="text-amber-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Digital Treasury & Signatures</h3>
-              <p className="text-purple-200 text-sm mb-3">Secure document signing, approval workflows, and treasury management with full audit trails and compliance.</p>
-              <div className="text-xs text-purple-400">• E-signatures • Approval workflows • Document vault</div>
+              <p className="text-amber-100/70 text-sm mb-3">Secure document signing, approval workflows, and treasury management with full audit trails and compliance.</p>
+              <div className="text-xs text-amber-400">• E-signatures • Approval workflows • Document vault</div>
             </div>
 
             {/* Learning Management */}
             <div className="bg-gradient-to-br from-teal-900/50 to-black border-2 border-teal-600/40 rounded-xl p-6 hover:border-teal-400 transition-all">
               <div className="mb-3"><GraduationCap size={36} className="text-teal-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Learning Management System</h3>
-              <p className="text-purple-200 text-sm mb-3">Built-in training courses, certification tracking, skill development paths, and automated compliance training.</p>
-              <div className="text-xs text-purple-400">• Training courses • Certifications • Skill tracking • Quizzes</div>
+              <p className="text-amber-100/70 text-sm mb-3">Built-in training courses, certification tracking, skill development paths, and automated compliance training.</p>
+              <div className="text-xs text-amber-400">• Training courses • Certifications • Skill tracking • Quizzes</div>
             </div>
 
             {/* Recognition System */}
             <div className="bg-gradient-to-br from-pink-900/50 to-black border-2 border-pink-600/40 rounded-xl p-6 hover:border-pink-400 transition-all">
               <div className="mb-3"><Trophy size={36} className="text-pink-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Recognition & Rewards</h3>
-              <p className="text-purple-200 text-sm mb-3">Public recognition feed, badges, awards, points system, and peer-to-peer appreciation that actually improves retention.</p>
-              <div className="text-xs text-purple-400">• Public recognition • Badge system • Points rewards • Analytics</div>
+              <p className="text-amber-100/70 text-sm mb-3">Public recognition feed, badges, awards, points system, and peer-to-peer appreciation that actually improves retention.</p>
+              <div className="text-xs text-amber-400">• Public recognition • Badge system • Points rewards • Analytics</div>
             </div>
 
             {/* Nox & Titan AI Assistants */}
             <div className="bg-gradient-to-br from-cyan-900/50 to-black border-2 border-cyan-600/40 rounded-xl p-6 hover:border-cyan-400 transition-all">
               <div className="mb-3"><Bot size={36} className="text-cyan-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Nox & Titan AI Assistants</h3>
-              <p className="text-purple-200 text-sm mb-3">Dual AI assistants with text and voice capabilities help with scheduling, HR questions, payroll, and more—24/7.</p>
-              <div className="text-xs text-purple-400">• Chat assistant • Voice commands • Contextual help • 24/7 availability</div>
+              <p className="text-amber-100/70 text-sm mb-3">Dual AI assistants with text and voice capabilities help with scheduling, HR questions, payroll, and more—24/7.</p>
+              <div className="text-xs text-amber-400">• Chat assistant • Voice commands • Contextual help • 24/7 availability</div>
             </div>
 
             {/* Merch Store Integration */}
             <div className="bg-gradient-to-br from-orange-900/50 to-black border-2 border-orange-600/40 rounded-xl p-6 hover:border-orange-400 transition-all">
               <div className="mb-3"><ShoppingBag size={36} className="text-orange-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Integrated Merch Store</h3>
-              <p className="text-purple-200 text-sm mb-3">Employees can redeem points for branded merchandise, creating a tangible rewards program that builds team culture.</p>
-              <div className="text-xs text-purple-400">• Point redemption • Branded merch • Fulfillment tracking</div>
+              <p className="text-amber-100/70 text-sm mb-3">Employees can redeem points for branded merchandise, creating a tangible rewards program that builds team culture.</p>
+              <div className="text-xs text-amber-400">• Point redemption • Branded merch • Fulfillment tracking</div>
             </div>
           </div>
 
@@ -246,14 +246,14 @@ export default function LandingPage() {
             <Link href="/signup" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-green-600 to-emerald-600 font-bold shadow-lg hover:scale-105 transition-transform border-2 border-green-500 text-white text-xl">
               Start Your Free Trial →
             </Link>
-            <p className="text-purple-300 mt-4">No credit card required • 14-day trial • Full access</p>
+            <p className="text-amber-200 mt-4">No credit card required • 14-day trial • Full access</p>
           </div>
         </div>
       </section>
 
       {/* Trust Bar */}
       <section className="w-full flex flex-col items-center py-8">
-        <p className="text-purple-300 text-lg font-semibold mb-4 animate-fade-in">Trusted by industry leaders scaling beyond limits.</p>
+        <p className="text-amber-200 text-lg font-semibold mb-4 animate-fade-in">Trusted by industry leaders scaling beyond limits.</p>
         <div className="flex flex-wrap justify-center gap-8 animate-fade-in">
           <div className="bg-gradient-to-r from-purple-700 to-pink-600 text-white px-6 py-3 rounded-lg font-bold shadow-md">Enterprise Corp</div>
           <div className="bg-gradient-to-r from-purple-700 to-pink-600 text-white px-6 py-3 rounded-lg font-bold shadow-md">Global Tech Inc.</div>
@@ -270,10 +270,10 @@ export default function LandingPage() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-center text-white mb-2 animate-fade-in">
             Stop Bleeding Money on<br />Multiple Subscriptions
           </h2>
-          <p className="text-lg md:text-xl text-purple-200 text-center mb-4 animate-fade-in max-w-3xl">
+          <p className="text-lg md:text-xl text-amber-100/70 text-center mb-4 animate-fade-in max-w-3xl">
             Replace 8+ expensive systems with one platform. Save $50K-$200K+ annually.
           </p>
-          <p className="text-md text-purple-300 text-center mb-8 animate-fade-in max-w-2xl italic">
+          <p className="text-md text-amber-200 text-center mb-8 animate-fade-in max-w-2xl italic">
             (Based on 100 employees - your savings scale with team size)
           </p>
           <div className="w-full overflow-x-auto animate-fade-in">
@@ -287,74 +287,74 @@ export default function LandingPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-purple-900">
-                <tr className="hover:bg-purple-900/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-purple-200">HR & Payroll Processing</td>
-                  <td className="px-6 py-4 text-gray-300">
+                <tr className="hover:bg-stone-950/20 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-amber-100/70">HR & Payroll Processing</td>
+                  <td className="px-6 py-4 text-stone-300">
                     <div className="font-medium">Paycom or ADP Workforce Now</div>
-                    <div className="text-sm text-gray-400">$25-40/employee/month</div>
+                    <div className="text-sm text-stone-400">$25-40/employee/month</div>
                   </td>
                   <td className="px-6 py-4 text-red-400 font-bold text-lg">$30K-$48K</td>
                   <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
                 </tr>
-                <tr className="hover:bg-purple-900/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-purple-200">Time & Attendance Tracking</td>
-                  <td className="px-6 py-4 text-gray-300">
+                <tr className="hover:bg-stone-950/20 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-amber-100/70">Time & Attendance Tracking</td>
+                  <td className="px-6 py-4 text-stone-300">
                     <div className="font-medium">Kronos/UKG or Deputy</div>
-                    <div className="text-sm text-gray-400">$5-8/employee/month</div>
+                    <div className="text-sm text-stone-400">$5-8/employee/month</div>
                   </td>
                   <td className="px-6 py-4 text-red-400 font-bold text-lg">$6K-$9.6K</td>
                   <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
                 </tr>
-                <tr className="hover:bg-purple-900/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-purple-200">Employee Scheduling</td>
-                  <td className="px-6 py-4 text-gray-300">
+                <tr className="hover:bg-stone-950/20 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-amber-100/70">Employee Scheduling</td>
+                  <td className="px-6 py-4 text-stone-300">
                     <div className="font-medium">When I Work or Deputy</div>
-                    <div className="text-sm text-gray-400">$2-4/employee/month</div>
+                    <div className="text-sm text-stone-400">$2-4/employee/month</div>
                   </td>
                   <td className="px-6 py-4 text-red-400 font-bold text-lg">$2.4K-$4.8K</td>
                   <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
                 </tr>
-                <tr className="hover:bg-purple-900/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-purple-200">Performance Management</td>
-                  <td className="px-6 py-4 text-gray-300">
+                <tr className="hover:bg-stone-950/20 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-amber-100/70">Performance Management</td>
+                  <td className="px-6 py-4 text-stone-300">
                     <div className="font-medium">Lattice or 15Five</div>
-                    <div className="text-sm text-gray-400">$8-11/employee/month</div>
+                    <div className="text-sm text-stone-400">$8-11/employee/month</div>
                   </td>
                   <td className="px-6 py-4 text-red-400 font-bold text-lg">$9.6K-$13.2K</td>
                   <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
                 </tr>
-                <tr className="hover:bg-purple-900/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-purple-200">Applicant Tracking System</td>
-                  <td className="px-6 py-4 text-gray-300">
+                <tr className="hover:bg-stone-950/20 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-amber-100/70">Applicant Tracking System</td>
+                  <td className="px-6 py-4 text-stone-300">
                     <div className="font-medium">Greenhouse or Lever</div>
-                    <div className="text-sm text-gray-400">$6K-15K base + per job fees</div>
+                    <div className="text-sm text-stone-400">$6K-15K base + per job fees</div>
                   </td>
                   <td className="px-6 py-4 text-red-400 font-bold text-lg">$12K-$25K</td>
                   <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
                 </tr>
-                <tr className="hover:bg-purple-900/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-purple-200">Learning Management (LMS)</td>
-                  <td className="px-6 py-4 text-gray-300">
+                <tr className="hover:bg-stone-950/20 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-amber-100/70">Learning Management (LMS)</td>
+                  <td className="px-6 py-4 text-stone-300">
                     <div className="font-medium">Cornerstone or Docebo</div>
-                    <div className="text-sm text-gray-400">$5-10/employee/month</div>
+                    <div className="text-sm text-stone-400">$5-10/employee/month</div>
                   </td>
                   <td className="px-6 py-4 text-red-400 font-bold text-lg">$6K-$12K</td>
                   <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
                 </tr>
-                <tr className="hover:bg-purple-900/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-purple-200">Project Management</td>
-                  <td className="px-6 py-4 text-gray-300">
+                <tr className="hover:bg-stone-950/20 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-amber-100/70">Project Management</td>
+                  <td className="px-6 py-4 text-stone-300">
                     <div className="font-medium">Asana or Monday.com</div>
-                    <div className="text-sm text-gray-400">$10-25/user/month</div>
+                    <div className="text-sm text-stone-400">$10-25/user/month</div>
                   </td>
                   <td className="px-6 py-4 text-red-400 font-bold text-lg">$12K-$30K</td>
                   <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
                 </tr>
-                <tr className="hover:bg-purple-900/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-purple-200">Team Communication</td>
-                  <td className="px-6 py-4 text-gray-300">
+                <tr className="hover:bg-stone-950/20 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-amber-100/70">Team Communication</td>
+                  <td className="px-6 py-4 text-stone-300">
                     <div className="font-medium">Slack Business+</div>
-                    <div className="text-sm text-gray-400">$12.50/user/month</div>
+                    <div className="text-sm text-stone-400">$12.50/user/month</div>
                   </td>
                   <td className="px-6 py-4 text-red-400 font-bold text-lg">$15K</td>
                   <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
@@ -371,9 +371,9 @@ export default function LandingPage() {
               </tbody>
             </table>
           </div>
-          <div className="mt-8 p-6 bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-xl border-2 border-purple-500/50 max-w-4xl">
+          <div className="mt-8 p-6 bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-xl border-2 border-amber-500/40/50 max-w-4xl">
             <p className="text-white text-lg font-semibold mb-2 flex items-center gap-2"><Lightbulb size={20} className="text-yellow-400 shrink-0" /> Not Included in Savings Calculation:</p>
-            <ul className="text-purple-200 space-y-1 ml-6 list-disc">
+            <ul className="text-amber-100/70 space-y-1 ml-6 list-disc">
               <li>Reduced admin time (40% time savings = $78K+/year for 2 FTE managers)</li>
               <li>Eliminated context-switching costs (15 hrs/week recovered per employee)</li>
               <li>Lower turnover from Guild gamification (35% reduction = $480K saved on replacement costs)</li>
@@ -385,7 +385,7 @@ export default function LandingPage() {
       </section>
 
       {/* Stats Section - Enhanced Styling */}
-      <section id="roi" className="w-full flex flex-col items-center justify-center py-20 bg-gradient-to-b from-black via-purple-950/20 to-black">
+      <section id="roi" className="w-full flex flex-col items-center justify-center py-20 bg-gradient-to-b from-black via-stone-950/20 to-black">
         <div className="w-full max-w-6xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-extrabold text-center text-white mb-12 animate-fade-in">By The Numbers</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -396,18 +396,18 @@ export default function LandingPage() {
                 <p className="text-sm text-green-200/80">Replace 8+ tools with one platform</p>
               </div>
             </div>
-            <div className="flex flex-col items-center justify-center bg-gradient-to-br from-blue-800/60 to-indigo-900/60 rounded-2xl shadow-xl p-10 border-2 border-blue-500/40 hover:border-blue-400/60 transition-all">
+            <div className="flex flex-col items-center justify-center bg-gradient-to-br from-blue-800/60 to-indigo-900/60 rounded-2xl shadow-xl p-10 border-2 border-amber-500/40/40 hover:border-blue-400/60 transition-all">
               <div className="text-center">
                 <h3 className="text-6xl font-black text-blue-300 mb-3 tracking-tight leading-none">$480K</h3>
                 <p className="text-xl text-blue-100 font-semibold mb-2">Turnover Cost Savings</p>
                 <p className="text-sm text-blue-200/80">35% reduction in employee churn (100 employees)</p>
               </div>
             </div>
-            <div className="flex flex-col items-center justify-center bg-gradient-to-br from-purple-800/60 to-pink-900/60 rounded-2xl shadow-xl p-10 border-2 border-purple-500/40 hover:border-purple-400/60 transition-all">
+            <div className="flex flex-col items-center justify-center bg-gradient-to-br from-purple-800/60 to-pink-900/60 rounded-2xl shadow-xl p-10 border-2 border-amber-500/40/40 hover:border-amber-400/40/60 transition-all">
               <div className="text-center">
-                <h3 className="text-6xl font-black text-purple-300 mb-3 tracking-tight leading-none">3 Weeks</h3>
-                <p className="text-xl text-purple-100 font-semibold mb-2">Platform Pays for Itself</p>
-                <p className="text-sm text-purple-200/80">Fastest ROI in the industry</p>
+                <h3 className="text-6xl font-black text-amber-200 mb-3 tracking-tight leading-none">3 Weeks</h3>
+                <p className="text-xl text-amber-50 font-semibold mb-2">Platform Pays for Itself</p>
+                <p className="text-sm text-amber-100/70/80">Fastest ROI in the industry</p>
               </div>
             </div>
           </div>
@@ -425,23 +425,23 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
             <div className="flex flex-col bg-gradient-to-br from-purple-900/80 to-black rounded-2xl shadow-xl p-8 items-center animate-fade-in">
               <div className="text-yellow-400 text-2xl mb-2">★★★★★</div>
-              <p className="text-lg text-purple-100 text-center mb-6">"Migrating to NyxTitan was the single most impactful operational decision we've made in a decade. The speed and clarity we now have is unmatched."</p>
+              <p className="text-lg text-amber-50 text-center mb-6">"Migrating to NyxTitan was the single most impactful operational decision we've made in a decade. The speed and clarity we now have is unmatched."</p>
               <div className="flex items-center gap-4">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Chen" className="w-14 h-14 rounded-full object-cover border-2 border-purple-400" />
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Chen" className="w-14 h-14 rounded-full object-cover border-2 border-amber-400/40" />
                 <div className="flex flex-col">
                   <span className="font-bold text-white">Sarah Chen</span>
-                  <span className="text-purple-300 text-sm">CTO, Apex Dynamics</span>
+                  <span className="text-amber-200 text-sm">CTO, Apex Dynamics</span>
                 </div>
               </div>
             </div>
             <div className="flex flex-col bg-gradient-to-br from-purple-900/80 to-black rounded-2xl shadow-xl p-8 items-center animate-fade-in">
               <div className="text-yellow-400 text-2xl mb-2">★★★★★</div>
-              <p className="text-lg text-purple-100 text-center mb-6">"We eliminated 12 different SaaS subscriptions and gained exponentially more control. NyxTitan isn't just software; it's a competitive advantage."</p>
+              <p className="text-lg text-amber-50 text-center mb-6">"We eliminated 12 different SaaS subscriptions and gained exponentially more control. NyxTitan isn't just software; it's a competitive advantage."</p>
               <div className="flex items-center gap-4">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marcus Thorne" className="w-14 h-14 rounded-full object-cover border-2 border-purple-400" />
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marcus Thorne" className="w-14 h-14 rounded-full object-cover border-2 border-amber-400/40" />
                 <div className="flex flex-col">
                   <span className="font-bold text-white">Marcus Thorne</span>
-                  <span className="text-purple-300 text-sm">CEO, OmniCorp Global</span>
+                  <span className="text-amber-200 text-sm">CEO, OmniCorp Global</span>
                 </div>
               </div>
             </div>
@@ -455,22 +455,22 @@ export default function LandingPage() {
         <div className="w-full max-w-4xl mx-auto flex flex-col md:flex-row gap-12 items-center justify-center">
           <div className="flex-1 flex flex-col items-start mb-8 md:mb-0">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 animate-fade-in">Ready to Simplify Your Operations?</h2>
-            <p className="text-lg text-purple-200 mb-6 animate-fade-in">Tell us about your business and we'll show you exactly how NyxTitan can help. No pressure, just solutions.</p>
-            <p className="text-purple-300 text-sm animate-fade-in">Or email us directly at <a href="mailto:info@nyxtitan.com" className="text-purple-400 underline hover:text-white transition-colors">info@nyxtitan.com</a></p>
+            <p className="text-lg text-amber-100/70 mb-6 animate-fade-in">Tell us about your business and we'll show you exactly how NyxTitan can help. No pressure, just solutions.</p>
+            <p className="text-amber-200 text-sm animate-fade-in">Or email us directly at <a href="mailto:info@nyxtitan.com" className="text-amber-400 underline hover:text-white transition-colors">info@nyxtitan.com</a></p>
           </div>
           <div className="flex-1 w-full">
             <form className="bg-black/80 rounded-2xl shadow-xl p-8 flex flex-col gap-6 animate-fade-in" action="mailto:info@nyxtitan.com" method="post" encType="text/plain">
               <div>
-                <label htmlFor="name" className="block text-purple-200 font-semibold mb-2">Full Name</label>
-                <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-lg bg-[#18181b] text-white border border-purple-700 focus:ring-2 focus:ring-purple-500 outline-none" />
+                <label htmlFor="name" className="block text-amber-100/70 font-semibold mb-2">Full Name</label>
+                <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-lg bg-[#18181b] text-white border border-purple-700 focus:ring-2 focus:ring-amber-500 outline-none" />
               </div>
               <div>
-                <label htmlFor="email" className="block text-purple-200 font-semibold mb-2">Work Email</label>
-                <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg bg-[#18181b] text-white border border-purple-700 focus:ring-2 focus:ring-purple-500 outline-none" />
+                <label htmlFor="email" className="block text-amber-100/70 font-semibold mb-2">Work Email</label>
+                <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg bg-[#18181b] text-white border border-purple-700 focus:ring-2 focus:ring-amber-500 outline-none" />
               </div>
               <div>
-                <label htmlFor="company-size" className="block text-purple-200 font-semibold mb-2">How Many Employees?</label>
-                <select id="company-size" name="company-size" className="w-full px-4 py-3 rounded-lg bg-[#18181b] text-white border border-purple-700 focus:ring-2 focus:ring-purple-500 outline-none">
+                <label htmlFor="company-size" className="block text-amber-100/70 font-semibold mb-2">How Many Employees?</label>
+                <select id="company-size" name="company-size" className="w-full px-4 py-3 rounded-lg bg-[#18181b] text-white border border-purple-700 focus:ring-2 focus:ring-amber-500 outline-none">
                   <option value="">Select Size</option>
                   <option value="1-50">1-50 Employees</option>
                   <option value="51-200">51-200 Employees</option>
@@ -479,10 +479,10 @@ export default function LandingPage() {
                 </select>
               </div>
               <div>
-                <label htmlFor="pain-points" className="block text-purple-200 font-semibold mb-2">What challenges are you facing? (Optional)</label>
-                <textarea id="pain-points" name="pain-points" rows={4} placeholder="Scheduling conflicts, payroll errors, compliance issues, etc." className="w-full px-4 py-3 rounded-lg bg-[#18181b] text-white border border-purple-700 focus:ring-2 focus:ring-purple-500 outline-none"></textarea>
+                <label htmlFor="pain-points" className="block text-amber-100/70 font-semibold mb-2">What challenges are you facing? (Optional)</label>
+                <textarea id="pain-points" name="pain-points" rows={4} placeholder="Scheduling conflicts, payroll errors, compliance issues, etc." className="w-full px-4 py-3 rounded-lg bg-[#18181b] text-white border border-purple-700 focus:ring-2 focus:ring-amber-500 outline-none"></textarea>
               </div>
-              <button type="submit" className="w-full py-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold shadow-lg hover:scale-105 transition-transform text-lg">Get Started - Request Demo</button>
+              <button type="submit" className="w-full py-4 rounded-xl bg-gradient-to-r from-amber-700 to-amber-600 text-white font-bold shadow-lg hover:scale-105 transition-transform text-lg">Get Started - Request Demo</button>
             </form>
           </div>
         </div>
@@ -492,12 +492,12 @@ export default function LandingPage() {
       <footer className="w-full border-t border-purple-900 py-12 flex flex-col items-center">
         <div className="w-full max-w-4xl flex flex-col items-center">
           <h2 className="text-2xl md:text-3xl font-extrabold text-white text-center mb-6">Stop juggling software.<br />Start running your business.</h2>
-          <Link href="#contact" className="px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold shadow-lg hover:scale-105 transition-transform text-lg mb-8">Request Executive Demo</Link>
-          <p className="text-purple-300 text-sm text-center mb-2">&copy; 2024 NyxTitan™. A solution provided by Connie Michelle Consulting & Business Solutions LLC. All rights reserved.</p>
+          <Link href="#contact" className="px-8 py-4 rounded-xl bg-gradient-to-r from-amber-700 to-amber-600 text-white font-bold shadow-lg hover:scale-105 transition-transform text-lg mb-8">Request Executive Demo</Link>
+          <p className="text-amber-200 text-sm text-center mb-2">&copy; 2024 NyxTitan™. A solution provided by Connie Michelle Consulting & Business Solutions LLC. All rights reserved.</p>
           <div className="flex gap-4">
-            <Link href="/privacy" className="text-purple-400 hover:underline text-sm">Privacy Policy</Link>
-            <span className="text-purple-400">|</span>
-            <Link href="/terms" className="text-purple-400 hover:underline text-sm">Terms of Service</Link>
+            <Link href="/privacy" className="text-amber-400 hover:underline text-sm">Privacy Policy</Link>
+            <span className="text-amber-400">|</span>
+            <Link href="/terms" className="text-amber-400 hover:underline text-sm">Terms of Service</Link>
           </div>
         </div>
       </footer>
@@ -509,3 +509,5 @@ export default function LandingPage() {
     </div>
   );
 }
+
+

@@ -111,7 +111,7 @@ export default function SentinelPage() {
             </button>
             <button
               onClick={() => window.location.href = '/sentinel/import'}
-              className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
+              className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
             >
               <Upload className="w-5 h-5" />
               Import Data
@@ -139,7 +139,7 @@ export default function SentinelPage() {
             </p>
           </div>
 
-          <div className="bg-blue-500/10 border border-blue-500/50 rounded-xl p-6">
+          <div className="bg-amber-600/10 border border-amber-500/40/50 rounded-xl p-6">
             <div className="flex items-center justify-between mb-2">
               <TrendingUp className="w-8 h-8 text-blue-400" />
               <span className="text-4xl font-bold text-blue-400">{stats.todayTotal}</span>
@@ -163,12 +163,12 @@ export default function SentinelPage() {
             <p className="text-red-300 font-semibold">Watchlist Alerts</p>
           </div>
 
-          <div className="bg-purple-500/10 border border-purple-500/50 rounded-xl p-6">
+          <div className="bg-amber-500/10 border border-amber-500/40/50 rounded-xl p-6">
             <div className="flex items-center justify-between mb-2">
-              <Clock className="w-8 h-8 text-purple-400" />
-              <span className="text-4xl font-bold text-purple-400">{stats.avgDuration}</span>
+              <Clock className="w-8 h-8 text-amber-400" />
+              <span className="text-4xl font-bold text-amber-400">{stats.avgDuration}</span>
             </div>
-            <p className="text-purple-300 font-semibold">Avg Duration (min)</p>
+            <p className="text-amber-200 font-semibold">Avg Duration (min)</p>
           </div>
         </div>
 
@@ -183,7 +183,7 @@ export default function SentinelPage() {
 
           {loading ? (
             <div className="p-12 text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto mb-4"></div>
               <p className="text-slate-400">Loading visitors...</p>
             </div>
           ) : activeVisitors.length === 0 ? (
@@ -217,7 +217,7 @@ export default function SentinelPage() {
                     >
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center">
+                          <div className="w-10 h-10 bg-amber-600/20 rounded-full flex items-center justify-center">
                             <Users className="w-5 h-5 text-blue-400" />
                           </div>
                           <div>
@@ -235,7 +235,7 @@ export default function SentinelPage() {
                       <td className="px-6 py-4 text-slate-300">{visit.purpose}</td>
                       <td className="px-6 py-4 text-slate-300">{visit.building || '-'}</td>
                       <td className="px-6 py-4">
-                        <span className="px-2 py-1 bg-blue-500/20 text-blue-400 border border-blue-500/50 rounded text-xs font-mono">
+                        <span className="px-2 py-1 bg-amber-600/20 text-blue-400 border border-amber-500/40/50 rounded text-xs font-mono">
                           {visit.badgeNumber || 'N/A'}
                         </span>
                       </td>
@@ -263,3 +263,5 @@ export default function SentinelPage() {
     </div>
   );
 }
+
+

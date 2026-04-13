@@ -8,3 +8,4 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(({ className, ...
 ))
 Switch.displayName = "Switch"
 export { Switch }
+

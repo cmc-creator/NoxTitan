@@ -12,11 +12,11 @@ export default function Kudos() {
   const badges = [
     { id: 'rockstar', emoji: '🌟', name: 'Rockstar', color: 'from-yellow-600 to-orange-600' },
     { id: 'hero', emoji: '🦸', name: 'Team Hero', color: 'from-blue-600 to-cyan-600' },
-    { id: 'genius', emoji: '🧠', name: 'Big Brain', color: 'from-purple-600 to-pink-600' },
+    { id: 'genius', emoji: '🧠', name: 'Big Brain', color: 'from-amber-700 to-amber-600' },
     { id: 'helper', emoji: '🤝', name: 'Super Helper', color: 'from-green-600 to-emerald-600' },
     { id: 'innovator', emoji: '💡', name: 'Innovator', color: 'from-orange-600 to-red-600' },
     { id: 'positive', emoji: '😊', name: 'Positivity King/Queen', color: 'from-pink-600 to-red-600' },
-    { id: 'mentor', emoji: '🎓', name: 'Amazing Mentor', color: 'from-indigo-600 to-purple-600' },
+    { id: 'mentor', emoji: '🎓', name: 'Amazing Mentor', color: 'from-amber-700 to-amber-600' },
     { id: 'clutch', emoji: '⚡', name: 'Clutch Player', color: 'from-yellow-600 to-yellow-600' }
   ];
 
@@ -135,14 +135,14 @@ export default function Kudos() {
               <Heart className="w-12 h-12 text-pink-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-purple-500/30">
+          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-purple-200 text-sm mb-1">You Gave</div>
+                <div className="text-amber-100/70 text-sm mb-1">You Gave</div>
                 <div className="text-3xl font-bold text-white">18</div>
-                <div className="text-purple-400 text-xs mt-1">Generous spirit! ✨</div>
+                <div className="text-amber-400 text-xs mt-1">Generous spirit! ✨</div>
               </div>
-              <Star className="w-12 h-12 text-purple-400 opacity-50" />
+              <Star className="w-12 h-12 text-amber-400 opacity-50" />
             </div>
           </div>
           <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 rounded-xl p-5 border-2 border-green-500/30">
@@ -310,3 +310,5 @@ export default function Kudos() {
     </div>
   );
 }
+
+

@@ -49,7 +49,7 @@ export default function TopNavigation() {
   };
   
   return (
-    <nav className="w-full flex items-center justify-between px-6 py-3 bg-gradient-to-r from-black via-purple-950 to-black backdrop-blur-xl shadow-2xl sticky top-0 z-50 border-b border-amber-500/30">
+    <nav className="w-full flex items-center justify-between px-6 py-3 bg-gradient-to-r from-black via-stone-950 to-black backdrop-blur-xl shadow-2xl sticky top-0 z-50 border-b border-amber-500/30">
       <div className="flex items-center gap-3">
         {/* Logo and placeholder removed as requested */}
         <Link href="/" className="flex items-center gap-2 text-4xl md:text-5xl font-black text-white tracking-tight text-pop-strong">
@@ -103,7 +103,7 @@ export default function TopNavigation() {
         </Link>
       </div>
       <div className="hidden md:flex items-center gap-6 text-base font-semibold">
-        <Link href="/dashboard" className="relative px-5 py-2.5 rounded-lg border-2 border-amber-400 bg-gradient-to-b from-amber-800/50 via-purple-900/60 to-black/70 hover:border-amber-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.8)] transition-all group shadow-[0_0_15px_rgba(168,85,247,0.4)] flex items-center gap-2">
+        <Link href="/dashboard" className="relative px-5 py-2.5 rounded-lg border-2 border-amber-400 bg-gradient-to-b from-amber-800/50 via-stone-900/60 to-black/70 hover:border-amber-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.8)] transition-all group shadow-[0_0_15px_rgba(168,85,247,0.4)] flex items-center gap-2">
           <Zap className="w-4 h-4 text-amber-300" />
           <span className="text-transparent bg-clip-text bg-gradient-to-b from-amber-50 via-slate-200 to-yellow-300 font-bold"
                 style={{
@@ -309,3 +309,4 @@ export default function TopNavigation() {
     </nav>
   );
 }
+

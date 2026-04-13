@@ -65,7 +65,7 @@ export default function WellnessHub() {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-5 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-4 border-2 border-blue-500/30">
+          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
             <Activity className="w-8 h-8 text-blue-400 mb-2" />
             <div className="text-slate-300 text-sm mb-1">Activity Points</div>
             <div className="text-3xl font-bold text-white">1,250</div>
@@ -77,11 +77,11 @@ export default function WellnessHub() {
             <div className="text-3xl font-bold text-white">82</div>
             <div className="text-pink-400 text-xs mt-1">Excellent</div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/50 to-indigo-900/50 rounded-xl p-4 border-2 border-purple-500/30">
-            <Brain className="w-8 h-8 text-purple-400 mb-2" />
+          <div className="bg-gradient-to-br from-purple-900/50 to-indigo-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+            <Brain className="w-8 h-8 text-amber-400 mb-2" />
             <div className="text-slate-300 text-sm mb-1">Mental Wellness</div>
             <div className="text-3xl font-bold text-white">75</div>
-            <div className="text-purple-400 text-xs mt-1">Good</div>
+            <div className="text-amber-400 text-xs mt-1">Good</div>
           </div>
           <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded-xl p-4 border-2 border-emerald-500/30">
             <Apple className="w-8 h-8 text-emerald-400 mb-2" />
@@ -89,11 +89,11 @@ export default function WellnessHub() {
             <div className="text-3xl font-bold text-white">68</div>
             <div className="text-emerald-400 text-xs mt-1">Improving</div>
           </div>
-          <div className="bg-gradient-to-br from-indigo-900/50 to-blue-900/50 rounded-xl p-4 border-2 border-indigo-500/30">
-            <Moon className="w-8 h-8 text-indigo-400 mb-2" />
+          <div className="bg-gradient-to-br from-indigo-900/50 to-blue-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+            <Moon className="w-8 h-8 text-amber-400 mb-2" />
             <div className="text-slate-300 text-sm mb-1">Sleep Quality</div>
             <div className="text-3xl font-bold text-white">7.2h</div>
-            <div className="text-indigo-400 text-xs mt-1">Avg per night</div>
+            <div className="text-amber-400 text-xs mt-1">Avg per night</div>
           </div>
         </div>
 
@@ -166,7 +166,7 @@ export default function WellnessHub() {
               </div>
 
               {/* Fitness Tracking */}
-              <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-blue-500/30">
+              <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
                 <h3 className="text-xl font-bold text-white mb-4">This Week's Activity</h3>
                 <div className="space-y-4">
                   <div>
@@ -175,7 +175,7 @@ export default function WellnessHub() {
                       <span className="text-white font-bold">42,380 / 70,000</span>
                     </div>
                     <div className="w-full bg-slate-700 rounded-full h-3">
-                      <div className="bg-blue-500 h-3 rounded-full" style={{width: '60%'}}></div>
+                      <div className="bg-amber-600 h-3 rounded-full" style={{width: '60%'}}></div>
                     </div>
                   </div>
                   <div>
@@ -184,7 +184,7 @@ export default function WellnessHub() {
                       <span className="text-white font-bold">180 / 300</span>
                     </div>
                     <div className="w-full bg-slate-700 rounded-full h-3">
-                      <div className="bg-purple-500 h-3 rounded-full" style={{width: '60%'}}></div>
+                      <div className="bg-amber-500 h-3 rounded-full" style={{width: '60%'}}></div>
                     </div>
                   </div>
                   <div>
@@ -233,7 +233,7 @@ export default function WellnessHub() {
                         <div className="w-full bg-slate-700 rounded-full h-4">
                           <div className={`h-4 rounded-full ${
                             challenge.progress >= 80 ? 'bg-emerald-500' :
-                            challenge.progress >= 50 ? 'bg-blue-500' : 'bg-orange-500'
+                            challenge.progress >= 50 ? 'bg-amber-600' : 'bg-orange-500'
                           }`} style={{width: `${challenge.progress}%`}}></div>
                         </div>
                       </div>
@@ -257,16 +257,16 @@ export default function WellnessHub() {
         {/* EAP Resources Tab */}
         {activeTab === 'eap' && (
           <div className="space-y-6">
-            <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-purple-500/30">
+            <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-amber-500/40/30">
               <h2 className="text-2xl font-bold text-white mb-3">Employee Assistance Program (EAP)</h2>
-              <p className="text-purple-200 mb-4">
+              <p className="text-amber-100/70 mb-4">
                 Confidential support for you and your family. All services are free and available 24/7.
               </p>
               <div className="flex items-center gap-4 text-white">
-                <div className="px-4 py-2 bg-purple-600 rounded-lg font-bold">
+                <div className="px-4 py-2 bg-amber-600 rounded-lg font-bold">
                   📞 1-800-EAP-HELP
                 </div>
-                <div className="text-sm text-purple-200">
+                <div className="text-sm text-amber-100/70">
                   Available 24/7 • Completely Confidential
                 </div>
               </div>
@@ -317,7 +317,7 @@ export default function WellnessHub() {
               ))}
             </div>
 
-            <div className="bg-blue-900/30 rounded-lg p-6 border border-blue-500/30">
+            <div className="bg-blue-900/30 rounded-lg p-6 border border-amber-500/40/30">
               <h3 className="text-xl font-bold text-white mb-4">Recent Visits</h3>
               <div className="space-y-3">
                 {[
@@ -340,3 +340,5 @@ export default function WellnessHub() {
     </div>
   );
 }
+
+

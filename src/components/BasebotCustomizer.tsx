@@ -273,17 +273,17 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
                 </div>
 
                 {/* Sample Greeting */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-4">
+                <div className="bg-stone-950/10 backdrop-blur-sm rounded-lg p-4 mb-4">
                   <p className="text-sm text-white/70 mb-1">Sample Greeting:</p>
                   <p className="text-white font-medium">&ldquo;{selectedPersonality?.greeting}&rdquo;</p>
                 </div>
 
                 {/* Sample Message */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div className="bg-stone-950/10 backdrop-blur-sm rounded-lg p-4">
                   <p className="text-sm text-white/70 mb-1">In chat:</p>
                   <div className="flex items-start gap-2">
                     <div className="text-2xl">{config.avatar}</div>
-                    <div className="flex-1 bg-white/20 rounded-lg p-2">
+                    <div className="flex-1 bg-stone-950/20 rounded-lg p-2">
                       <p className="text-xs text-white/80 mb-1 font-semibold">{config.name}</p>
                       <p className="text-sm text-white">You have 3 tasks due today. Need help prioritizing?</p>
                     </div>
@@ -324,3 +324,4 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
     </div>
   );
 }
+

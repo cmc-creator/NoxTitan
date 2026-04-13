@@ -53,12 +53,12 @@ export default function RecruitingATS() {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-4 border-2 border-blue-500/30">
+          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
             <div className="text-slate-300 text-sm mb-1">Open Positions</div>
             <div className="text-3xl font-bold text-white">7</div>
             <div className="text-emerald-400 text-xs mt-1">12 openings total</div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-purple-500/30">
+          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
             <div className="text-slate-300 text-sm mb-1">Active Candidates</div>
             <div className="text-3xl font-bold text-white">85</div>
             <div className="text-blue-400 text-xs mt-1">↑ 23 this week</div>
@@ -85,7 +85,7 @@ export default function RecruitingATS() {
           <button
             onClick={() => setActiveTab('pipeline')}
             className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
-              activeTab === 'pipeline' ? 'bg-blue-600 text-white' : 'text-slate-300 hover:bg-slate-700'
+              activeTab === 'pipeline' ? 'bg-amber-600 text-white' : 'text-slate-300 hover:bg-slate-700'
             }`}
           >
             Candidate Pipeline
@@ -93,7 +93,7 @@ export default function RecruitingATS() {
           <button
             onClick={() => setActiveTab('positions')}
             className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
-              activeTab === 'positions' ? 'bg-blue-600 text-white' : 'text-slate-300 hover:bg-slate-700'
+              activeTab === 'positions' ? 'bg-amber-600 text-white' : 'text-slate-300 hover:bg-slate-700'
             }`}
           >
             Open Positions
@@ -101,7 +101,7 @@ export default function RecruitingATS() {
           <button
             onClick={() => setActiveTab('analytics')}
             className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
-              activeTab === 'analytics' ? 'bg-blue-600 text-white' : 'text-slate-300 hover:bg-slate-700'
+              activeTab === 'analytics' ? 'bg-amber-600 text-white' : 'text-slate-300 hover:bg-slate-700'
             }`}
           >
             Analytics
@@ -110,7 +110,7 @@ export default function RecruitingATS() {
 
         {/* Candidate Pipeline View */}
         {activeTab === 'pipeline' && (
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-blue-500/30">
+          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Candidate Pipeline</h2>
               <div className="flex gap-3">
@@ -119,7 +119,7 @@ export default function RecruitingATS() {
                   <input
                     type="text"
                     placeholder="Search candidates..."
-                    className="pl-10 pr-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 outline-none"
+                    className="pl-10 pr-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-amber-500 outline-none"
                   />
                 </div>
                 <button className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg flex items-center gap-2">
@@ -137,11 +137,11 @@ export default function RecruitingATS() {
                   <div key={stage} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="font-bold text-white">{stage}</h3>
-                      <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">{stageCandidates.length}</span>
+                      <span className="bg-amber-600 text-white text-xs px-2 py-1 rounded-full">{stageCandidates.length}</span>
                     </div>
                     <div className="space-y-3">
                       {stageCandidates.map(candidate => (
-                        <div key={candidate.id} className="bg-slate-800 rounded-lg p-3 border border-slate-600 hover:border-blue-500 cursor-pointer transition-all">
+                        <div key={candidate.id} className="bg-slate-800 rounded-lg p-3 border border-slate-600 hover:border-amber-500/40 cursor-pointer transition-all">
                           <div className="font-semibold text-white text-sm mb-1">{candidate.name}</div>
                           <div className="text-xs text-slate-400 mb-2">{candidate.position}</div>
                           <div className="flex items-center gap-1 mb-2">
@@ -164,11 +164,11 @@ export default function RecruitingATS() {
 
         {/* Open Positions View */}
         {activeTab === 'positions' && (
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-blue-500/30">
+          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <h2 className="text-2xl font-bold text-white mb-6">Open Positions</h2>
             <div className="space-y-4">
               {openPositions.map(position => (
-                <div key={position.id} className="bg-slate-900/50 rounded-lg p-5 border border-slate-700 hover:border-blue-500 transition-all">
+                <div key={position.id} className="bg-slate-900/50 rounded-lg p-5 border border-slate-700 hover:border-amber-500/40 transition-all">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
@@ -176,7 +176,7 @@ export default function RecruitingATS() {
                         <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                           position.priority === 'high' ? 'bg-red-600 text-white' :
                           position.priority === 'medium' ? 'bg-orange-600 text-white' :
-                          'bg-blue-600 text-white'
+                          'bg-amber-600 text-white'
                         }`}>
                           {position.priority.toUpperCase()}
                         </span>
@@ -202,7 +202,7 @@ export default function RecruitingATS() {
                       </div>
                     </div>
                     <div className="flex gap-2">
-                      <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold">
+                      <button className="px-4 py-2 bg-amber-600 hover:bg-amber-600 text-white rounded-lg font-semibold">
                         View Candidates
                       </button>
                       <button className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg">
@@ -220,7 +220,7 @@ export default function RecruitingATS() {
         {activeTab === 'analytics' && (
           <div className="space-y-6">
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-blue-500/30">
+              <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
                 <h3 className="text-xl font-bold text-white mb-4">Source Effectiveness</h3>
                 <div className="space-y-3">
                   {[
@@ -240,12 +240,12 @@ export default function RecruitingATS() {
                 </div>
               </div>
 
-              <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-purple-500/30">
+              <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
                 <h3 className="text-xl font-bold text-white mb-4">Hiring Funnel</h3>
                 <div className="space-y-4">
                   {[
-                    { stage: 'Applied', count: 85, color: 'bg-blue-500', width: '100%' },
-                    { stage: 'Screened', count: 52, color: 'bg-purple-500', width: '61%' },
+                    { stage: 'Applied', count: 85, color: 'bg-amber-600', width: '100%' },
+                    { stage: 'Screened', count: 52, color: 'bg-amber-500', width: '61%' },
                     { stage: 'Interviewed', count: 24, color: 'bg-pink-500', width: '28%' },
                     { stage: 'Offered', count: 8, color: 'bg-orange-500', width: '9%' },
                     { stage: 'Hired', count: 6, color: 'bg-emerald-500', width: '7%' },
@@ -269,3 +269,5 @@ export default function RecruitingATS() {
     </div>
   );
 }
+
+

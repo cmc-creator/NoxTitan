@@ -128,7 +128,7 @@ export default function LearningHub() {
 
         {/* Learning Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-5 border-2 border-blue-500/30">
+          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-blue-200 text-sm mb-1">Courses Enrolled</div>
@@ -146,13 +146,13 @@ export default function LearningHub() {
               <CheckCircle className="w-12 h-12 text-green-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-purple-500/30">
+          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-purple-200 text-sm mb-1">Learning Hours</div>
+                <div className="text-amber-100/70 text-sm mb-1">Learning Hours</div>
                 <div className="text-3xl font-bold text-white">12.5</div>
               </div>
-              <Clock className="w-12 h-12 text-purple-400 opacity-50" />
+              <Clock className="w-12 h-12 text-amber-400 opacity-50" />
             </div>
           </div>
           <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded-xl p-5 border-2 border-yellow-500/30">
@@ -220,7 +220,7 @@ export default function LearningHub() {
                 {myLearning.map(course => (
                   <div key={course.id} className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-xl p-6 border-2 border-emerald-500/30 hover:border-emerald-400/50 transition-all">
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center text-3xl">
+                      <div className="w-16 h-16 bg-gradient-to-br from-amber-700 to-amber-600 rounded-lg flex items-center justify-center text-3xl">
                         {course.image}
                       </div>
                       <div className="flex-1">
@@ -305,7 +305,7 @@ export default function LearningHub() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {availableCourses.map(course => (
                 <div key={course.id} className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-xl p-6 border-2 border-emerald-500/30 hover:border-emerald-400/50 transition-all group">
-                  <div className="w-full h-32 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center text-6xl mb-4">
+                  <div className="w-full h-32 bg-gradient-to-br from-amber-700 to-amber-600 rounded-lg flex items-center justify-center text-6xl mb-4">
                     {course.image}
                   </div>
 
@@ -313,7 +313,7 @@ export default function LearningHub() {
                     <span className="px-3 py-1 bg-emerald-900/50 border border-emerald-500/30 text-emerald-300 rounded-full text-xs font-semibold">
                       {course.category}
                     </span>
-                    <span className="px-3 py-1 bg-blue-900/50 border border-blue-500/30 text-blue-300 rounded-full text-xs font-semibold">
+                    <span className="px-3 py-1 bg-blue-900/50 border border-amber-500/40/30 text-blue-300 rounded-full text-xs font-semibold">
                       {course.level}
                     </span>
                   </div>
@@ -367,11 +367,13 @@ export default function LearningHub() {
         )}
 
         {/* Encouragement Banner */}
-        <div className="mt-8 bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-purple-500/30 text-center">
-          <h3 className="text-2xl font-bold text-purple-200 mb-2">🚀 You're doing amazing!</h3>
-          <p className="text-purple-100 text-lg">Every course completed is a step toward your best self. Keep learning!</p>
+        <div className="mt-8 bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-amber-500/40/30 text-center">
+          <h3 className="text-2xl font-bold text-amber-100/70 mb-2">🚀 You're doing amazing!</h3>
+          <p className="text-amber-50 text-lg">Every course completed is a step toward your best self. Keep learning!</p>
         </div>
       </div>
     </div>
   );
 }
+
+

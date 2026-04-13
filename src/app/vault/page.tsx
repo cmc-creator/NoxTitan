@@ -87,7 +87,7 @@ export default function AssetVaultPage() {
   function getStatusColor(status: string) {
     switch (status) {
       case 'AVAILABLE': return 'bg-green-500/20 text-green-400 border-green-500';
-      case 'ASSIGNED': return 'bg-blue-500/20 text-blue-400 border-blue-500';
+      case 'ASSIGNED': return 'bg-amber-600/20 text-blue-400 border-amber-500/40';
       case 'IN_MAINTENANCE': return 'bg-orange-500/20 text-orange-400 border-orange-500';
       case 'RETIRED': return 'bg-slate-500/20 text-slate-400 border-slate-500';
       case 'LOST': return 'bg-red-500/20 text-red-400 border-red-500';
@@ -108,13 +108,13 @@ export default function AssetVaultPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
-              <Package className="w-10 h-10 text-purple-400" />
+              <Package className="w-10 h-10 text-amber-400" />
               Asset Vault
             </h1>
             <p className="text-slate-400">Inventory & equipment management</p>
@@ -142,7 +142,7 @@ export default function AssetVaultPage() {
             </button>
             <button
               onClick={() => setShowAddModal(true)}
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition-all"
+              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition-all"
             >
               <Plus className="w-5 h-5" />
               Add Asset
@@ -168,7 +168,7 @@ export default function AssetVaultPage() {
             <p className="text-green-300 font-semibold">Available</p>
           </div>
 
-          <div className="bg-blue-500/10 border border-blue-500/50 rounded-xl p-6">
+          <div className="bg-amber-600/10 border border-amber-500/40/50 rounded-xl p-6">
             <div className="flex items-center justify-between mb-2">
               <User className="w-8 h-8 text-blue-400" />
               <span className="text-3xl font-bold text-blue-400">{stats.assigned}</span>
@@ -184,14 +184,14 @@ export default function AssetVaultPage() {
             <p className="text-orange-300 font-semibold">Maintenance</p>
           </div>
 
-          <div className="bg-purple-500/10 border border-purple-500/50 rounded-xl p-6">
+          <div className="bg-amber-500/10 border border-amber-500/40/50 rounded-xl p-6">
             <div className="flex items-center justify-between mb-2">
-              <DollarSign className="w-8 h-8 text-purple-400" />
-              <span className="text-3xl font-bold text-purple-400">
+              <DollarSign className="w-8 h-8 text-amber-400" />
+              <span className="text-3xl font-bold text-amber-400">
                 ${(stats.totalValue / 1000).toFixed(0)}K
               </span>
             </div>
-            <p className="text-purple-300 font-semibold">Total Value</p>
+            <p className="text-amber-200 font-semibold">Total Value</p>
           </div>
         </div>
 
@@ -205,14 +205,14 @@ export default function AssetVaultPage() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search by name, asset tag, or serial number..."
-                className="w-full pl-11 pr-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-purple-500"
+                className="w-full pl-11 pr-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40"
               />
             </div>
             <Filter className="w-5 h-5 text-slate-400" />
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-purple-500"
+              className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-amber-500/40"
             >
               <option value="all">All Status</option>
               <option value="AVAILABLE">Available</option>
@@ -223,7 +223,7 @@ export default function AssetVaultPage() {
             <select
               value={filterCategory}
               onChange={(e) => setFilterCategory(e.target.value)}
-              className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-purple-500"
+              className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-amber-500/40"
             >
               <option value="all">All Categories</option>
               {categories.map(cat => (
@@ -237,7 +237,7 @@ export default function AssetVaultPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {loading ? (
             <div className="col-span-full bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-12 text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto mb-4"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto mb-4"></div>
               <p className="text-slate-400">Loading assets...</p>
             </div>
           ) : filteredAssets.length === 0 ? (
@@ -247,7 +247,7 @@ export default function AssetVaultPage() {
               <p className="text-slate-400 mb-6">Add your first asset to get started!</p>
               <button
                 onClick={() => setShowAddModal(true)}
-                className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors"
+                className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors"
               >
                 Add First Asset
               </button>
@@ -257,7 +257,7 @@ export default function AssetVaultPage() {
               <div
                 key={asset.id}
                 onClick={() => window.location.href = `/vault/assets/${asset.id}`}
-                className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 hover:border-purple-500/50 transition-all cursor-pointer group"
+                className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 hover:border-amber-500/40/50 transition-all cursor-pointer group"
               >
                 {/* Category Badge */}
                 <div className="flex items-center justify-between mb-4">
@@ -271,7 +271,7 @@ export default function AssetVaultPage() {
                 </div>
 
                 {/* Asset Info */}
-                <h3 className="text-lg font-bold text-white mb-1 group-hover:text-purple-400 transition-colors">
+                <h3 className="text-lg font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">
                   {asset.name}
                 </h3>
                 <div className="flex items-center gap-2 mb-3">
@@ -305,7 +305,7 @@ export default function AssetVaultPage() {
 
                 {/* Assignment Status */}
                 {asset.assignedTo && (
-                  <div className="flex items-center gap-2 px-3 py-2 bg-blue-500/10 border border-blue-500/30 rounded-lg mb-3">
+                  <div className="flex items-center gap-2 px-3 py-2 bg-amber-600/10 border border-amber-500/40/30 rounded-lg mb-3">
                     <User className="w-4 h-4 text-blue-400" />
                     <span className="text-sm text-blue-300">
                       {asset.assignedTo.firstName} {asset.assignedTo.lastName}
@@ -337,3 +337,5 @@ export default function AssetVaultPage() {
     </div>
   );
 }
+
+

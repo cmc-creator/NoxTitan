@@ -128,49 +128,49 @@ export default function SurveyIntegrationsPage() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-5xl font-bold text-gray-800 mb-2">Survey Integrations</h1>
-          <p className="text-xl text-gray-600">Connect your survey platforms for real-time data sync</p>
+          <h1 className="text-5xl font-bold text-stone-200 mb-2">Survey Integrations</h1>
+          <p className="text-xl text-stone-500">Connect your survey platforms for real-time data sync</p>
         </div>
 
         {/* Stats Overview */}
         <div className="grid grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-gray-600">Connected</span>
+              <span className="text-stone-500">Connected</span>
               <CheckCircle className="w-5 h-5 text-green-600" />
             </div>
-            <div className="text-4xl font-bold text-gray-800">
+            <div className="text-4xl font-bold text-stone-200">
               {integrations.filter(i => i.isConnected).length}
             </div>
-            <div className="text-sm text-gray-500 mt-1">of {integrations.length} platforms</div>
+            <div className="text-sm text-stone-500 mt-1">of {integrations.length} platforms</div>
           </div>
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-gray-600">Total Responses</span>
-              <BarChart className="w-5 h-5 text-purple-600" />
+              <span className="text-stone-500">Total Responses</span>
+              <BarChart className="w-5 h-5 text-amber-600" />
             </div>
-            <div className="text-4xl font-bold text-gray-800">
+            <div className="text-4xl font-bold text-stone-200">
               {integrations.reduce((sum, i) => sum + i.totalResponses, 0)}
             </div>
-            <div className="text-sm text-gray-500 mt-1">All platforms</div>
+            <div className="text-sm text-stone-500 mt-1">All platforms</div>
           </div>
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-gray-600">Active Surveys</span>
-              <Activity className="w-5 h-5 text-blue-600" />
+              <span className="text-stone-500">Active Surveys</span>
+              <Activity className="w-5 h-5 text-amber-400" />
             </div>
-            <div className="text-4xl font-bold text-gray-800">
+            <div className="text-4xl font-bold text-stone-200">
               {integrations.reduce((sum, i) => sum + i.activeSurveys, 0)}
             </div>
-            <div className="text-sm text-gray-500 mt-1">Collecting data</div>
+            <div className="text-sm text-stone-500 mt-1">Collecting data</div>
           </div>
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-gray-600">Last Sync</span>
+              <span className="text-stone-500">Last Sync</span>
               <Clock className="w-5 h-5 text-pink-600" />
             </div>
-            <div className="text-2xl font-bold text-gray-800">2 min</div>
-            <div className="text-sm text-gray-500 mt-1">ago</div>
+            <div className="text-2xl font-bold text-stone-200">2 min</div>
+            <div className="text-sm text-stone-500 mt-1">ago</div>
           </div>
         </div>
 
@@ -181,7 +181,7 @@ export default function SurveyIntegrationsPage() {
             return (
               <div
                 key={integration.id}
-                className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow"
+                className="bg-stone-950 rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow"
               >
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center gap-4">
@@ -189,8 +189,8 @@ export default function SurveyIntegrationsPage() {
                       {info.icon}
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-800">{info.name}</h3>
-                      <p className="text-gray-600">{info.description}</p>
+                      <h3 className="text-2xl font-bold text-stone-200">{info.name}</h3>
+                      <p className="text-stone-500">{info.description}</p>
                     </div>
                   </div>
                   {integration.isConnected ? (
@@ -199,7 +199,7 @@ export default function SurveyIntegrationsPage() {
                       <span className="text-sm font-medium">Connected</span>
                     </div>
                   ) : (
-                    <div className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-600 rounded-full">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-stone-500 rounded-full">
                       <AlertCircle className="w-4 h-4" />
                       <span className="text-sm font-medium">Not Connected</span>
                     </div>
@@ -207,19 +207,19 @@ export default function SurveyIntegrationsPage() {
                 </div>
 
                 {integration.isConnected && (
-                  <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-gray-50 rounded-lg">
+                  <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-stone-950 rounded-lg">
                     <div>
-                      <div className="text-sm text-gray-600 mb-1">Responses</div>
-                      <div className="text-2xl font-bold text-gray-800">{integration.totalResponses}</div>
+                      <div className="text-sm text-stone-500 mb-1">Responses</div>
+                      <div className="text-2xl font-bold text-stone-200">{integration.totalResponses}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-gray-600 mb-1">Active Surveys</div>
-                      <div className="text-2xl font-bold text-gray-800">{integration.activeSurveys}</div>
+                      <div className="text-sm text-stone-500 mb-1">Active Surveys</div>
+                      <div className="text-2xl font-bold text-stone-200">{integration.activeSurveys}</div>
                     </div>
                     {integration.lastSync && (
                       <div className="col-span-2">
-                        <div className="text-sm text-gray-600 mb-1">Last Synced</div>
-                        <div className="text-sm font-medium text-gray-800">
+                        <div className="text-sm text-stone-500 mb-1">Last Synced</div>
+                        <div className="text-sm font-medium text-stone-200">
                           {integration.lastSync.toLocaleString()}
                         </div>
                       </div>
@@ -232,7 +232,7 @@ export default function SurveyIntegrationsPage() {
                     <>
                       <button
                         onClick={() => handleSync(integration.id)}
-                        className="flex-1 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center justify-center gap-2"
+                        className="flex-1 px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center justify-center gap-2"
                       >
                         <RefreshCw className="w-5 h-5" />
                         Sync Now
@@ -253,7 +253,7 @@ export default function SurveyIntegrationsPage() {
                   ) : (
                     <button
                       onClick={() => handleConnect(integration.platform)}
-                      className="flex-1 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center justify-center gap-2"
+                      className="flex-1 px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center justify-center gap-2"
                     >
                       <Link2 className="w-5 h-5" />
                       Connect {info.name}
@@ -268,26 +268,26 @@ export default function SurveyIntegrationsPage() {
         {/* Setup Modal */}
         {selectedPlatform && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-            <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-stone-950 rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               <div className="p-8">
                 <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-3xl font-bold text-gray-800">
+                  <h2 className="text-3xl font-bold text-stone-200">
                     Connect {platformInfo[selectedPlatform as keyof typeof platformInfo].name}
                   </h2>
                   <button
                     onClick={() => setSelectedPlatform(null)}
-                    className="text-gray-400 hover:text-gray-600"
+                    className="text-stone-400 hover:text-stone-500"
                   >
                     <X className="w-6 h-6" />
                   </button>
                 </div>
 
                 <div className="mb-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Setup Instructions</h3>
+                  <h3 className="text-xl font-semibold text-stone-200 mb-4">Setup Instructions</h3>
                   <ol className="space-y-3">
                     {platformInfo[selectedPlatform as keyof typeof platformInfo].setupInstructions.map((step, index) => (
                       <li key={index} className="flex gap-3">
-                        <span className="flex-shrink-0 w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                        <span className="flex-shrink-0 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
                           {index + 1}
                         </span>
                         <span className="text-gray-700">{step}</span>
@@ -305,11 +305,11 @@ export default function SurveyIntegrationsPage() {
                       <input
                         type={showApiKey === selectedPlatform ? 'text' : 'password'}
                         placeholder="Enter your API key..."
-                        className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-400 pr-12"
+                        className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500 pr-12"
                       />
                       <button
                         onClick={() => setShowApiKey(showApiKey === selectedPlatform ? null : selectedPlatform)}
-                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-stone-400 hover:text-stone-500"
                       >
                         {showApiKey === selectedPlatform ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                       </button>
@@ -326,7 +326,7 @@ export default function SurveyIntegrationsPage() {
                           type="text"
                           value={`https://nox-titan.vercel.app/api/webhooks/${selectedPlatform.toLowerCase()}`}
                           readOnly
-                          className="flex-1 px-4 py-3 border rounded-lg bg-gray-50"
+                          className="flex-1 px-4 py-3 border rounded-lg bg-stone-950"
                         />
                         <button
                           onClick={() => navigator.clipboard.writeText(`https://nox-titan.vercel.app/api/webhooks/${selectedPlatform.toLowerCase()}`)}
@@ -335,7 +335,7 @@ export default function SurveyIntegrationsPage() {
                           Copy
                         </button>
                       </div>
-                      <p className="text-sm text-gray-500 mt-2">
+                      <p className="text-sm text-stone-500 mt-2">
                         Add this webhook URL in your {platformInfo[selectedPlatform as keyof typeof platformInfo].name} settings to enable real-time sync
                       </p>
                     </div>
@@ -345,7 +345,7 @@ export default function SurveyIntegrationsPage() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Sync Frequency
                     </label>
-                    <select className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-400">
+                    <select className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500">
                       <option value="realtime">Real-time (with webhook)</option>
                       <option value="5">Every 5 minutes</option>
                       <option value="15">Every 15 minutes</option>
@@ -371,7 +371,7 @@ export default function SurveyIntegrationsPage() {
                       setSelectedPlatform(null);
                       alert('Integration connected successfully!');
                     }}
-                    className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center justify-center gap-2"
+                    className="flex-1 px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center justify-center gap-2"
                   >
                     <Check className="w-5 h-5" />
                     Connect Integration
@@ -385,3 +385,6 @@ export default function SurveyIntegrationsPage() {
     </div>
   );
 }
+
+
+

@@ -13,3 +13,5 @@ export default function LandingLayout({
   // Just return children without any wrapper - no TopNavigation for landing page
   return <>{children}</>;
 }
+
+

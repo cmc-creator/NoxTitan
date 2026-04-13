@@ -179,7 +179,7 @@ export default function HRPlanner() {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-5 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-4 border-2 border-blue-500/30">
+          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
             <CheckCircle className="w-8 h-8 text-blue-400 mb-2" />
             <div className="text-slate-300 text-sm mb-1">My Tasks Today</div>
             <div className="text-3xl font-bold text-white">{myTasks.length}</div>
@@ -197,11 +197,11 @@ export default function HRPlanner() {
             <div className="text-3xl font-bold text-white">4</div>
             <div className="text-red-400 text-xs mt-1">Needs attention</div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-purple-500/30">
-            <Calendar className="w-8 h-8 text-purple-400 mb-2" />
+          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+            <Calendar className="w-8 h-8 text-amber-400 mb-2" />
             <div className="text-slate-300 text-sm mb-1">Upcoming Deadlines</div>
             <div className="text-3xl font-bold text-white">{upcomingDeadlines.length}</div>
-            <div className="text-purple-400 text-xs mt-1">Next 30 days</div>
+            <div className="text-amber-400 text-xs mt-1">Next 30 days</div>
           </div>
           <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded-xl p-4 border-2 border-emerald-500/30">
             <Clock className="w-8 h-8 text-emerald-400 mb-2" />
@@ -310,12 +310,12 @@ export default function HRPlanner() {
                 New Task
               </button>
               
-              <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold flex items-center gap-2">
+              <button className="px-4 py-2 bg-amber-600 hover:bg-amber-600 text-white rounded-lg font-semibold flex items-center gap-2">
                 <Upload className="w-5 h-5" />
                 Import
               </button>
               
-              <button className="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-semibold flex items-center gap-2">
+              <button className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-semibold flex items-center gap-2">
                 <Download className="w-5 h-5" />
                 Export
               </button>
@@ -429,7 +429,7 @@ export default function HRPlanner() {
                             <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                               task.priority === 'high' ? 'bg-red-600 text-white' :
                               task.priority === 'medium' ? 'bg-orange-600 text-white' :
-                              'bg-blue-600 text-white'
+                              'bg-amber-600 text-white'
                             }`}>
                               {task.priority.toUpperCase()}
                             </span>
@@ -524,7 +524,7 @@ export default function HRPlanner() {
 
             {/* Quick Actions */}
             <div className="grid grid-cols-3 gap-4">
-              <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-5 border-2 border-blue-500/30 hover:border-blue-400 cursor-pointer transition-all group">
+              <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-5 border-2 border-amber-500/40/30 hover:border-blue-400 cursor-pointer transition-all group">
                 <FileText className="w-10 h-10 text-blue-400 mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-bold text-white mb-2">Review Applications</h3>
                 <p className="text-sm text-blue-200">12 new applications awaiting review</p>
@@ -570,7 +570,7 @@ export default function HRPlanner() {
                         <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                           reminder.overdue ? 'bg-red-600 text-white animate-pulse' :
                           reminder.priority === 'high' ? 'bg-orange-600 text-white' :
-                          'bg-blue-600 text-white'
+                          'bg-amber-600 text-white'
                         }`}>
                           {reminder.overdue ? 'OVERDUE' : reminder.priority.toUpperCase()}
                         </span>
@@ -615,11 +615,11 @@ export default function HRPlanner() {
 
         {/* Upcoming Deadlines View */}
         {activeView === 'deadlines' && (
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-purple-500/30">
+          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <h2 className="text-2xl font-bold text-white mb-6">Upcoming Deadlines (Next 30 Days)</h2>
             <div className="space-y-4">
               {upcomingDeadlines.map(deadline => (
-                <div key={deadline.id} className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg p-5 border border-purple-500/30 hover:border-purple-400 transition-all">
+                <div key={deadline.id} className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg p-5 border border-amber-500/40/30 hover:border-amber-400/40 transition-all">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
@@ -627,17 +627,17 @@ export default function HRPlanner() {
                         <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                           deadline.daysUntil <= 7 ? 'bg-red-600 text-white' :
                           deadline.daysUntil <= 14 ? 'bg-orange-600 text-white' :
-                          'bg-blue-600 text-white'
+                          'bg-amber-600 text-white'
                         }`}>
                           {deadline.daysUntil} DAYS LEFT
                         </span>
                       </div>
                       <div className="flex items-center gap-6 text-sm">
                         <span className="text-slate-300">
-                          <strong className="text-purple-300">Due:</strong> {deadline.date}
+                          <strong className="text-amber-200">Due:</strong> {deadline.date}
                         </span>
                         <span className="text-slate-300">
-                          <strong className="text-purple-300">Type:</strong> {deadline.type}
+                          <strong className="text-amber-200">Type:</strong> {deadline.type}
                         </span>
                         <span className="text-slate-300 flex items-center gap-1">
                           <Users className="w-4 h-4" />
@@ -646,7 +646,7 @@ export default function HRPlanner() {
                       </div>
                     </div>
                     <div className="flex gap-2 ml-4">
-                      <button className="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg font-semibold text-sm">
+                      <button className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-semibold text-sm">
                         View Details
                       </button>
                       <button className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg text-sm">
@@ -707,7 +707,7 @@ export default function HRPlanner() {
       {/* Comprehensive Settings Modal */}
       {showSettings && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 border-2 border-violet-500/30 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+          <div className="bg-gradient-to-br from-slate-900 via-stone-900/20 to-slate-900 border-2 border-violet-500/30 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
             <div className="p-6 border-b border-violet-500/30 sticky top-0 bg-slate-900/95 backdrop-blur-sm z-10">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-violet-300 to-purple-400">
@@ -739,7 +739,7 @@ export default function HRPlanner() {
                       onClick={() => setSettings({...settings, autoReminders: !settings.autoReminders})}
                       className={`w-14 h-7 rounded-full transition-all ${settings.autoReminders ? 'bg-violet-600' : 'bg-slate-700'}`}
                     >
-                      <div className={`w-5 h-5 bg-white rounded-full transition-transform ${settings.autoReminders ? 'translate-x-8' : 'translate-x-1'}`} />
+                      <div className={`w-5 h-5 bg-stone-950 rounded-full transition-transform ${settings.autoReminders ? 'translate-x-8' : 'translate-x-1'}`} />
                     </button>
                   </div>
                   
@@ -752,7 +752,7 @@ export default function HRPlanner() {
                       onClick={() => setSettings({...settings, emailNotifications: !settings.emailNotifications})}
                       className={`w-14 h-7 rounded-full transition-all ${settings.emailNotifications ? 'bg-violet-600' : 'bg-slate-700'}`}
                     >
-                      <div className={`w-5 h-5 bg-white rounded-full transition-transform ${settings.emailNotifications ? 'translate-x-8' : 'translate-x-1'}`} />
+                      <div className={`w-5 h-5 bg-stone-950 rounded-full transition-transform ${settings.emailNotifications ? 'translate-x-8' : 'translate-x-1'}`} />
                     </button>
                   </div>
                   
@@ -765,7 +765,7 @@ export default function HRPlanner() {
                       onClick={() => setSettings({...settings, slackIntegration: !settings.slackIntegration})}
                       className={`w-14 h-7 rounded-full transition-all ${settings.slackIntegration ? 'bg-violet-600' : 'bg-slate-700'}`}
                     >
-                      <div className={`w-5 h-5 bg-white rounded-full transition-transform ${settings.slackIntegration ? 'translate-x-8' : 'translate-x-1'}`} />
+                      <div className={`w-5 h-5 bg-stone-950 rounded-full transition-transform ${settings.slackIntegration ? 'translate-x-8' : 'translate-x-1'}`} />
                     </button>
                   </div>
 
@@ -852,7 +852,7 @@ export default function HRPlanner() {
                       onClick={() => setSettings({...settings, showCompletedTasks: !settings.showCompletedTasks})}
                       className={`w-14 h-7 rounded-full transition-all ${settings.showCompletedTasks ? 'bg-violet-600' : 'bg-slate-700'}`}
                     >
-                      <div className={`w-5 h-5 bg-white rounded-full transition-transform ${settings.showCompletedTasks ? 'translate-x-8' : 'translate-x-1'}`} />
+                      <div className={`w-5 h-5 bg-stone-950 rounded-full transition-transform ${settings.showCompletedTasks ? 'translate-x-8' : 'translate-x-1'}`} />
                     </button>
                   </div>
 
@@ -865,7 +865,7 @@ export default function HRPlanner() {
                       onClick={() => setSettings({...settings, compactView: !settings.compactView})}
                       className={`w-14 h-7 rounded-full transition-all ${settings.compactView ? 'bg-violet-600' : 'bg-slate-700'}`}
                     >
-                      <div className={`w-5 h-5 bg-white rounded-full transition-transform ${settings.compactView ? 'translate-x-8' : 'translate-x-1'}`} />
+                      <div className={`w-5 h-5 bg-stone-950 rounded-full transition-transform ${settings.compactView ? 'translate-x-8' : 'translate-x-1'}`} />
                     </button>
                   </div>
 
@@ -878,7 +878,7 @@ export default function HRPlanner() {
                       onClick={() => setSettings({...settings, showWeekNumbers: !settings.showWeekNumbers})}
                       className={`w-14 h-7 rounded-full transition-all ${settings.showWeekNumbers ? 'bg-violet-600' : 'bg-slate-700'}`}
                     >
-                      <div className={`w-5 h-5 bg-white rounded-full transition-transform ${settings.showWeekNumbers ? 'translate-x-8' : 'translate-x-1'}`} />
+                      <div className={`w-5 h-5 bg-stone-950 rounded-full transition-transform ${settings.showWeekNumbers ? 'translate-x-8' : 'translate-x-1'}`} />
                     </button>
                   </div>
                 </div>
@@ -928,7 +928,7 @@ export default function HRPlanner() {
                       onClick={() => setSettings({...settings, autoArchiveCompleted: !settings.autoArchiveCompleted})}
                       className={`w-14 h-7 rounded-full transition-all ${settings.autoArchiveCompleted ? 'bg-violet-600' : 'bg-slate-700'}`}
                     >
-                      <div className={`w-5 h-5 bg-white rounded-full transition-transform ${settings.autoArchiveCompleted ? 'translate-x-8' : 'translate-x-1'}`} />
+                      <div className={`w-5 h-5 bg-stone-950 rounded-full transition-transform ${settings.autoArchiveCompleted ? 'translate-x-8' : 'translate-x-1'}`} />
                     </button>
                   </div>
                 </div>
@@ -960,4 +960,7 @@ export default function HRPlanner() {
     </div>
   );
 }
+
+
+
 

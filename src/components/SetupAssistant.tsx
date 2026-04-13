@@ -305,11 +305,11 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
   const currentStepData = guide.steps[currentStep];
 
   return (
-    <div className="bg-gradient-to-br from-blue-900 to-purple-900 rounded-xl p-6 border-2 border-blue-500">
+    <div className="bg-gradient-to-br from-blue-900 to-purple-900 rounded-xl p-6 border-2 border-amber-500/40">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
-          <div className="p-3 bg-blue-500 rounded-xl">
+          <div className="p-3 bg-amber-600 rounded-xl">
             <Bot className="w-6 h-6 text-white" />
           </div>
           <div>
@@ -339,7 +339,7 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
                 onClick={() => handleStepClick(idx)}
                 className={`w-full text-left p-3 rounded-lg transition-all ${
                   currentStep === idx
-                    ? 'bg-blue-600 text-white scale-105'
+                    ? 'bg-amber-600 text-white scale-105'
                     : currentStep > idx
                     ? 'bg-green-600/30 text-green-200 hover:bg-green-600/50'
                     : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50'
@@ -349,7 +349,7 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
                   <div
                     className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
                       currentStep === idx
-                        ? 'bg-white text-blue-600'
+                        ? 'bg-stone-950 text-amber-400'
                         : currentStep > idx
                         ? 'bg-green-500 text-white'
                         : 'bg-slate-700 text-slate-400'
@@ -411,7 +411,7 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
                 href={currentStepData.action}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors mb-4"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg transition-colors mb-4"
               >
                 <span>Open {guide.name}</span>
                 <ExternalLink className="w-4 h-4" />
@@ -455,7 +455,7 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
                   }
                 }}
                 disabled={currentStep === guide.steps.length - 1}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold disabled:opacity-30 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-semibold disabled:opacity-30 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
               >
                 Next <ChevronRight className="w-4 h-4" />
               </button>
@@ -482,3 +482,5 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
     </div>
   );
 }
+
+

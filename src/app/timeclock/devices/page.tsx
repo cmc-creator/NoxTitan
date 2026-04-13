@@ -138,7 +138,7 @@ export default function TimeClockDevicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
@@ -161,7 +161,7 @@ export default function TimeClockDevicesPage() {
         {/* Devices Grid */}
         {loading ? (
           <div className="text-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto"></div>
             <p className="text-slate-400 mt-4">Loading devices...</p>
           </div>
         ) : devices.length === 0 ? (
@@ -171,7 +171,7 @@ export default function TimeClockDevicesPage() {
             <p className="text-slate-400 mb-6">Add your first time clock to get started</p>
             <button
               onClick={() => setShowModal(true)}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
+              className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors"
             >
               Add Your First Device
             </button>
@@ -181,7 +181,7 @@ export default function TimeClockDevicesPage() {
             {devices.map((device) => (
               <div
                 key={device.id}
-                className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl p-6 hover:border-blue-500/50 transition-colors"
+                className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl p-6 hover:border-amber-500/40/50 transition-colors"
               >
                 {/* Device Header */}
                 <div className="flex items-start justify-between mb-4">
@@ -224,12 +224,12 @@ export default function TimeClockDevicesPage() {
                 {/* Features */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {device.requirePhoto && (
-                    <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">
+                    <span className="px-2 py-1 bg-amber-600/20 text-blue-300 text-xs rounded-full">
                       📸 Photo
                     </span>
                   )}
                   {device.requireBiometric && (
-                    <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">
+                    <span className="px-2 py-1 bg-amber-500/20 text-amber-200 text-xs rounded-full">
                       👆 Biometric
                     </span>
                   )}
@@ -281,7 +281,7 @@ export default function TimeClockDevicesPage() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Front Desk Clock"
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-500"
+                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40"
                   />
                 </div>
 
@@ -294,7 +294,7 @@ export default function TimeClockDevicesPage() {
                     required
                     value={formData.brand}
                     onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                   >
                     <option value="">Select a brand...</option>
                     {supportedBrands.map((brand) => (
@@ -314,7 +314,7 @@ export default function TimeClockDevicesPage() {
                       value={formData.model}
                       onChange={(e) => setFormData({ ...formData, model: e.target.value })}
                       placeholder="Model number"
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40"
                     />
                   </div>
                   <div>
@@ -326,7 +326,7 @@ export default function TimeClockDevicesPage() {
                       value={formData.ipAddress}
                       onChange={(e) => setFormData({ ...formData, ipAddress: e.target.value })}
                       placeholder="192.168.1.100"
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40"
                     />
                   </div>
                 </div>
@@ -341,7 +341,7 @@ export default function TimeClockDevicesPage() {
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                     placeholder="Building A - Main Entrance"
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-500"
+                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40"
                   />
                 </div>
 
@@ -357,7 +357,7 @@ export default function TimeClockDevicesPage() {
                         value={formData.latitude}
                         onChange={(e) => setFormData({ ...formData, latitude: e.target.value })}
                         placeholder="37.7749"
-                        className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 rounded text-white text-sm focus:outline-none focus:border-blue-500"
+                        className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 rounded text-white text-sm focus:outline-none focus:border-amber-500/40"
                       />
                     </div>
                     <div>
@@ -368,7 +368,7 @@ export default function TimeClockDevicesPage() {
                         value={formData.longitude}
                         onChange={(e) => setFormData({ ...formData, longitude: e.target.value })}
                         placeholder="-122.4194"
-                        className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 rounded text-white text-sm focus:outline-none focus:border-blue-500"
+                        className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 rounded text-white text-sm focus:outline-none focus:border-amber-500/40"
                       />
                     </div>
                     <div>
@@ -377,7 +377,7 @@ export default function TimeClockDevicesPage() {
                         type="number"
                         value={formData.geofenceRadius}
                         onChange={(e) => setFormData({ ...formData, geofenceRadius: e.target.value })}
-                        className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 rounded text-white text-sm focus:outline-none focus:border-blue-500"
+                        className="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 rounded text-white text-sm focus:outline-none focus:border-amber-500/40"
                       />
                     </div>
                   </div>
@@ -390,7 +390,7 @@ export default function TimeClockDevicesPage() {
                       type="checkbox"
                       checked={formData.requirePhoto}
                       onChange={(e) => setFormData({ ...formData, requirePhoto: e.target.checked })}
-                      className="w-5 h-5 rounded border-slate-600 bg-slate-700 text-blue-500"
+                      className="w-5 h-5 rounded border-slate-600 bg-slate-700 text-amber-400"
                     />
                     <span className="text-slate-300">Require photo verification</span>
                   </label>
@@ -399,7 +399,7 @@ export default function TimeClockDevicesPage() {
                       type="checkbox"
                       checked={formData.requireBiometric}
                       onChange={(e) => setFormData({ ...formData, requireBiometric: e.target.checked })}
-                      className="w-5 h-5 rounded border-slate-600 bg-slate-700 text-blue-500"
+                      className="w-5 h-5 rounded border-slate-600 bg-slate-700 text-amber-400"
                     />
                     <span className="text-slate-300">Require biometric authentication</span>
                   </label>
@@ -432,3 +432,6 @@ export default function TimeClockDevicesPage() {
     </div>
   );
 }
+
+
+

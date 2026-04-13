@@ -201,13 +201,13 @@ export default function MerchSetupPage() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-block relative mb-6">
-            <div className="absolute inset-0 bg-blue-500 blur-3xl opacity-50 animate-pulse"></div>
+            <div className="absolute inset-0 bg-amber-600 blur-3xl opacity-50 animate-pulse"></div>
             <Store className="w-20 h-20 text-blue-300 relative" />
           </div>
           <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 mb-4">
             Merch Store Setup
           </h1>
-          <p className="text-xl text-purple-200">Connect your store in 3 easy steps</p>
+          <p className="text-xl text-amber-100/70">Connect your store in 3 easy steps</p>
         </div>
 
         {/* Progress Steps */}
@@ -248,7 +248,7 @@ export default function MerchSetupPage() {
                     setFormData({ ...formData, name: `${p.name} Store` });
                     setStep('configure');
                   }}
-                  className="bg-slate-800/50 border-2 border-slate-700 hover:border-blue-500 rounded-xl p-6 text-left transition-all group"
+                  className="bg-slate-800/50 border-2 border-slate-700 hover:border-amber-500/40 rounded-xl p-6 text-left transition-all group"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
@@ -274,17 +274,17 @@ export default function MerchSetupPage() {
             <div className="mb-6">
               <button
                 onClick={() => setShowAssistant(!showAssistant)}
-                className="w-full flex items-center justify-between bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-4 rounded-xl font-bold transition-all"
+                className="w-full flex items-center justify-between bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-4 rounded-xl font-bold transition-all"
               >
                 <div className="flex items-center gap-3">
                   <Bot className="w-6 h-6" />
                   <span>{showAssistant ? 'Hide' : 'Show'} AI Setup Assistant</span>
-                  <span className="px-3 py-1 bg-white/20 rounded-full text-xs">NEW!</span>
+                  <span className="px-3 py-1 bg-stone-950/20 rounded-full text-xs">NEW!</span>
                 </div>
                 <span className="text-2xl">{showAssistant ? '▼' : '▶'}</span>
               </button>
               {!showAssistant && (
-                <p className="text-center text-purple-200 mt-2 text-sm">
+                <p className="text-center text-amber-100/70 mt-2 text-sm">
                   💡 Click here for step-by-step guidance on finding your API key
                 </p>
               )}
@@ -317,7 +317,7 @@ export default function MerchSetupPage() {
               </button>
             </div>
 
-            <div className="bg-blue-900/30 border border-blue-500/50 rounded-lg p-4 mb-6">
+            <div className="bg-blue-900/30 border border-amber-500/40/50 rounded-lg p-4 mb-6">
               <div className="flex items-start gap-3">
                 <AlertCircle className="w-5 h-5 text-blue-400 mt-0.5" />
                 <div className="flex-1">
@@ -343,7 +343,7 @@ export default function MerchSetupPage() {
                   value={formData.name}
                   onChange={e => setFormData({ ...formData, name: e.target.value })}
                   placeholder="e.g., Company Merch Store"
-                  className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-blue-500 focus:outline-none"
+                  className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-amber-500/40 focus:outline-none"
                 />
               </div>
 
@@ -355,7 +355,7 @@ export default function MerchSetupPage() {
                     value={formData.storeUrl}
                     onChange={e => setFormData({ ...formData, storeUrl: e.target.value })}
                     placeholder={platform.urlLabel}
-                    className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-blue-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-amber-500/40 focus:outline-none"
                   />
                 </div>
               )}
@@ -367,7 +367,7 @@ export default function MerchSetupPage() {
                   value={formData.apiKey}
                   onChange={e => setFormData({ ...formData, apiKey: e.target.value })}
                   placeholder="Paste your API key here"
-                  className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-blue-500 focus:outline-none"
+                  className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-amber-500/40 focus:outline-none"
                 />
               </div>
 
@@ -379,7 +379,7 @@ export default function MerchSetupPage() {
                     value={formData.apiSecret}
                     onChange={e => setFormData({ ...formData, apiSecret: e.target.value })}
                     placeholder="Paste your API secret here"
-                    className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-blue-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-amber-500/40 focus:outline-none"
                   />
                 </div>
               )}
@@ -413,7 +413,7 @@ export default function MerchSetupPage() {
               <button
                 onClick={testConnection}
                 disabled={!formData.apiKey || testing}
-                className="flex-1 px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                className="flex-1 px-6 py-4 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
               >
                 <Key className="w-5 h-5" />
                 {testing ? 'Testing Connection...' : 'Test Connection'}
@@ -421,7 +421,7 @@ export default function MerchSetupPage() {
               <button
                 onClick={saveStore}
                 disabled={!testResult?.success || saving}
-                className="flex-1 px-6 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                className="flex-1 px-6 py-4 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
               >
                 <CheckCircle className="w-5 h-5" />
                 {saving ? 'Saving...' : 'Save & Continue'}
@@ -440,7 +440,7 @@ export default function MerchSetupPage() {
                 <div key={store.id} className="bg-slate-800/50 border-2 border-slate-700 rounded-xl p-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="p-3 bg-blue-600 rounded-xl">
+                      <div className="p-3 bg-amber-600 rounded-xl">
                         <Store className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -467,7 +467,7 @@ export default function MerchSetupPage() {
                       <button
                         onClick={() => syncStore(store.id)}
                         disabled={syncing === store.id}
-                        className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors disabled:opacity-50 flex items-center gap-2"
+                        className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg transition-colors disabled:opacity-50 flex items-center gap-2"
                       >
                         <RefreshCw className={`w-4 h-4 ${syncing === store.id ? 'animate-spin' : ''}`} />
                         {syncing === store.id ? 'Syncing...' : 'Sync Products'}
@@ -516,3 +516,6 @@ export default function MerchSetupPage() {
     </div>
   );
 }
+
+
+

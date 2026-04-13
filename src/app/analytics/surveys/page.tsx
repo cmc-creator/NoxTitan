@@ -60,21 +60,21 @@ export default function SurveyAnalyticsPage() {
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-5xl font-bold text-gray-800 mb-2">Survey Analytics</h1>
-            <p className="text-xl text-gray-600">Real-time insights from all your surveys</p>
+            <h1 className="text-5xl font-bold text-stone-200 mb-2">Survey Analytics</h1>
+            <p className="text-xl text-stone-500">Real-time insights from all your surveys</p>
           </div>
           <div className="flex gap-3">
             <select
               value={timeRange}
               onChange={(e) => setTimeRange(e.target.value)}
-              className="px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-400"
+              className="px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500"
             >
               <option value="7">Last 7 days</option>
               <option value="30">Last 30 days</option>
               <option value="90">Last 90 days</option>
               <option value="365">Last year</option>
             </select>
-            <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center gap-2">
+            <button className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center gap-2">
               <Download className="w-5 h-5" />
               Export Report
             </button>
@@ -83,12 +83,12 @@ export default function SurveyAnalyticsPage() {
 
         {/* Overview Stats */}
         <div className="grid grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-gray-600">Total Responses</span>
-              <Users className="w-5 h-5 text-purple-600" />
+              <span className="text-stone-500">Total Responses</span>
+              <Users className="w-5 h-5 text-amber-600" />
             </div>
-            <div className="text-4xl font-bold text-gray-800">
+            <div className="text-4xl font-bold text-stone-200">
               {surveys.reduce((sum, s) => sum + s.responses, 0)}
             </div>
             <div className="flex items-center gap-1 text-sm text-green-600 mt-1">
@@ -97,12 +97,12 @@ export default function SurveyAnalyticsPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-gray-600">Average Score</span>
+              <span className="text-stone-500">Average Score</span>
               <Star className="w-5 h-5 text-yellow-500" />
             </div>
-            <div className="text-4xl font-bold text-gray-800">
+            <div className="text-4xl font-bold text-stone-200">
               {(surveys.reduce((sum, s) => sum + s.avgScore, 0) / surveys.length).toFixed(1)}
             </div>
             <div className="flex items-center gap-1">
@@ -112,40 +112,40 @@ export default function SurveyAnalyticsPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-gray-600">Positive Sentiment</span>
+              <span className="text-stone-500">Positive Sentiment</span>
               <ThumbsUp className="w-5 h-5 text-green-600" />
             </div>
-            <div className="text-4xl font-bold text-gray-800">
+            <div className="text-4xl font-bold text-stone-200">
               {Math.round(surveys.reduce((sum, s) => sum + s.sentiment.positive, 0) / surveys.length)}%
             </div>
-            <div className="text-sm text-gray-500 mt-1">Across all surveys</div>
+            <div className="text-sm text-stone-500 mt-1">Across all surveys</div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-gray-600">Active Surveys</span>
-              <CheckCircle className="w-5 h-5 text-blue-600" />
+              <span className="text-stone-500">Active Surveys</span>
+              <CheckCircle className="w-5 h-5 text-amber-400" />
             </div>
-            <div className="text-4xl font-bold text-gray-800">{surveys.length}</div>
-            <div className="text-sm text-gray-500 mt-1">Currently collecting</div>
+            <div className="text-4xl font-bold text-stone-200">{surveys.length}</div>
+            <div className="text-sm text-stone-500 mt-1">Currently collecting</div>
           </div>
         </div>
 
         {/* Survey Breakdown */}
         <div className="grid grid-cols-2 gap-6 mb-8">
           {surveys.map((survey, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg p-8">
+            <div key={index} className="bg-stone-950 rounded-xl shadow-lg p-8">
               <div className="flex items-start justify-between mb-6">
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">{survey.name}</h3>
-                  <div className="flex items-center gap-4 text-sm text-gray-600">
+                  <h3 className="text-2xl font-bold text-stone-200 mb-2">{survey.name}</h3>
+                  <div className="flex items-center gap-4 text-sm text-stone-500">
                     <span className="flex items-center gap-1">
                       <Users className="w-4 h-4" />
                       {survey.responses} responses
                     </span>
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full">
+                    <span className="px-3 py-1 bg-purple-100 text-amber-700 rounded-full">
                       {survey.type.replace('_', ' ')}
                     </span>
                   </div>
@@ -153,7 +153,7 @@ export default function SurveyAnalyticsPage() {
                 <div className="text-right">
                   <div className="flex items-center gap-2 mb-2">
                     <Star className="w-6 h-6 fill-yellow-400 text-yellow-400" />
-                    <span className="text-3xl font-bold text-gray-800">{survey.avgScore}</span>
+                    <span className="text-3xl font-bold text-stone-200">{survey.avgScore}</span>
                   </div>
                   {survey.trend === 'up' && (
                     <div className="flex items-center gap-1 text-green-600 text-sm">
@@ -166,7 +166,7 @@ export default function SurveyAnalyticsPage() {
 
               {/* Sentiment Breakdown */}
               <div className="mb-6">
-                <div className="flex justify-between text-sm text-gray-600 mb-2">
+                <div className="flex justify-between text-sm text-stone-500 mb-2">
                   <span>Sentiment Analysis</span>
                   <span>{survey.sentiment.positive + survey.sentiment.neutral + survey.sentiment.negative}%</span>
                 </div>
@@ -187,14 +187,14 @@ export default function SurveyAnalyticsPage() {
                 <div className="flex justify-between mt-2 text-sm">
                   <div className="flex items-center gap-1">
                     <ThumbsUp className="w-4 h-4 text-green-600" />
-                    <span className="text-gray-600">{survey.sentiment.positive}% Positive</span>
+                    <span className="text-stone-500">{survey.sentiment.positive}% Positive</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <span className="text-gray-600">{survey.sentiment.neutral}% Neutral</span>
+                    <span className="text-stone-500">{survey.sentiment.neutral}% Neutral</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <ThumbsDown className="w-4 h-4 text-red-600" />
-                    <span className="text-gray-600">{survey.sentiment.negative}% Negative</span>
+                    <span className="text-stone-500">{survey.sentiment.negative}% Negative</span>
                   </div>
                 </div>
               </div>
@@ -238,14 +238,14 @@ export default function SurveyAnalyticsPage() {
         </div>
 
         {/* Action Items */}
-        <div className="bg-white rounded-xl shadow-lg p-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Recommended Actions</h2>
+        <div className="bg-stone-950 rounded-xl shadow-lg p-8">
+          <h2 className="text-2xl font-bold text-stone-200 mb-6">Recommended Actions</h2>
           <div className="space-y-4">
             <div className="flex items-start gap-4 p-4 bg-red-50 border-l-4 border-red-500 rounded">
               <AlertCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
               <div className="flex-1">
-                <h4 className="font-semibold text-gray-800 mb-1">Parking Concerns Trending</h4>
-                <p className="text-gray-600 text-sm mb-2">
+                <h4 className="font-semibold text-stone-200 mb-1">Parking Concerns Trending</h4>
+                <p className="text-stone-500 text-sm mb-2">
                   Patient satisfaction surveys show increasing complaints about parking availability. Consider adding valet service or expanded lot.
                 </p>
                 <button className="text-sm text-red-600 font-medium hover:underline">
@@ -257,8 +257,8 @@ export default function SurveyAnalyticsPage() {
             <div className="flex items-start gap-4 p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded">
               <Clock className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-1" />
               <div className="flex-1">
-                <h4 className="font-semibold text-gray-800 mb-1">Follow-up on Employee Communication</h4>
-                <p className="text-gray-600 text-sm mb-2">
+                <h4 className="font-semibold text-stone-200 mb-1">Follow-up on Employee Communication</h4>
+                <p className="text-stone-500 text-sm mb-2">
                   Employee engagement scores indicate communication could improve. Schedule town hall or implement weekly updates.
                 </p>
                 <button className="text-sm text-yellow-600 font-medium hover:underline">
@@ -270,8 +270,8 @@ export default function SurveyAnalyticsPage() {
             <div className="flex items-start gap-4 p-4 bg-green-50 border-l-4 border-green-500 rounded">
               <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
               <div className="flex-1">
-                <h4 className="font-semibold text-gray-800 mb-1">Safety Culture Exceeding Goals</h4>
-                <p className="text-gray-600 text-sm mb-2">
+                <h4 className="font-semibold text-stone-200 mb-1">Safety Culture Exceeding Goals</h4>
+                <p className="text-stone-500 text-sm mb-2">
                   Culture of Safety scores are 91% positive - well above industry benchmark of 75%. Consider sharing best practices with other departments.
                 </p>
                 <button className="text-sm text-green-600 font-medium hover:underline">
@@ -285,3 +285,6 @@ export default function SurveyAnalyticsPage() {
     </div>
   );
 }
+
+
+

@@ -115,7 +115,7 @@ export default function CommandPalette() {
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-start justify-center pt-[20vh] bg-black/60 backdrop-blur-sm">
-      <div className="w-full max-w-2xl bg-slate-900 rounded-xl shadow-2xl border border-purple-500/30 overflow-hidden">
+      <div className="w-full max-w-2xl bg-slate-900 rounded-xl shadow-2xl border border-amber-500/40/30 overflow-hidden">
         {/* Search Input */}
         <div className="flex items-center gap-3 p-4 border-b border-slate-700">
           <Search className="w-5 h-5 text-slate-400" />
@@ -137,7 +137,7 @@ export default function CommandPalette() {
         <div className="max-h-[60vh] overflow-y-auto p-2">
           {Object.entries(groupedCommands).map(([category, cmds]) => (
             <div key={category} className="mb-4">
-              <div className="px-3 py-1 text-xs font-semibold text-purple-400 uppercase tracking-wider">
+              <div className="px-3 py-1 text-xs font-semibold text-amber-400 uppercase tracking-wider">
                 {category}
               </div>
               {cmds.map((cmd, idx) => {
@@ -154,12 +154,12 @@ export default function CommandPalette() {
                     }}
                     className={`w-full flex items-center gap-3 px-3 py-3 rounded-lg transition-all text-left ${
                       globalIndex === selectedIndex
-                        ? 'bg-purple-600/30 border border-purple-500/50'
+                        ? 'bg-amber-600/30 border border-amber-500/40/50'
                         : 'hover:bg-slate-800/50'
                     }`}
                   >
                     <div className="p-2 bg-slate-800 rounded-lg">
-                      <Icon className="w-4 h-4 text-purple-400" />
+                      <Icon className="w-4 h-4 text-amber-400" />
                     </div>
                     <div className="flex-1">
                       <div className="text-white font-medium">{cmd.name}</div>
@@ -193,3 +193,5 @@ export default function CommandPalette() {
     </div>
   );
 }
+
+

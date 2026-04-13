@@ -522,7 +522,7 @@ export default function IntegrationsPage() {
           <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Available</div>
-              <Link2 className="h-5 w-5 text-blue-500" />
+              <Link2 className="h-5 w-5 text-amber-400" />
             </div>
             <div className="text-3xl font-bold mb-1" style={{ color: 'var(--header-text)' }}>{integrations.length}</div>
             <div className="text-xs opacity-60">Total integrations</div>
@@ -531,7 +531,7 @@ export default function IntegrationsPage() {
           <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Categories</div>
-              <Filter className="h-5 w-5 text-purple-500" />
+              <Filter className="h-5 w-5 text-amber-500" />
             </div>
             <div className="text-3xl font-bold mb-1" style={{ color: 'var(--header-text)' }}>{categories.length - 1}</div>
             <div className="text-xs opacity-60">Integration types</div>
@@ -573,7 +573,7 @@ export default function IntegrationsPage() {
             >
               <span>{category.icon}</span>
               {category.name}
-              <span className="ml-1 px-2 py-0.5 bg-white/20 rounded-full text-xs">
+              <span className="ml-1 px-2 py-0.5 bg-stone-950/20 rounded-full text-xs">
                 {category.count}
               </span>
             </button>
@@ -622,7 +622,7 @@ export default function IntegrationsPage() {
                 <p className="text-xs opacity-70 mb-2 font-semibold">Key Features:</p>
                 <div className="flex flex-wrap gap-1">
                   {integration.features.slice(0, 3).map((feature, idx) => (
-                    <span key={idx} className="text-xs px-2 py-1 bg-white/10 rounded">
+                    <span key={idx} className="text-xs px-2 py-1 bg-stone-950/10 rounded">
                       {feature}
                     </span>
                   ))}
@@ -645,7 +645,7 @@ export default function IntegrationsPage() {
               <div className="flex gap-2">
                 {integration.status === 'connected' ? (
                   <>
-                    <button className="flex-1 px-4 py-2 bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+                    <button className="flex-1 px-4 py-2 bg-amber-600/20 hover:bg-amber-600/30 text-blue-400 rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
                       <RefreshCw className="h-4 w-4" />
                       Sync
                     </button>
@@ -682,3 +682,6 @@ export default function IntegrationsPage() {
     </div>
   );
 }
+
+
+

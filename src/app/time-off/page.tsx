@@ -53,7 +53,7 @@ export default function TimeOffPage() {
       case 'REJECTED':
         return 'bg-red-100 text-red-800';
       default:
-        return 'bg-gray-100 text-gray-800';
+        return 'bg-gray-100 text-stone-200';
     }
   };
 
@@ -73,16 +73,16 @@ export default function TimeOffPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-3xl font-bold text-gray-900">Time Off Requests</h2>
-        <p className="text-gray-500 mt-1">Review and manage employee time-off requests</p>
+        <h2 className="text-3xl font-bold text-stone-100">Time Off Requests</h2>
+        <p className="text-stone-500 mt-1">Review and manage employee time-off requests</p>
       </div>
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="lux-card rounded p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Pending</p>
+              <p className="text-sm font-medium text-stone-500">Pending</p>
               <p className="text-3xl font-bold text-yellow-600 mt-2">2</p>
             </div>
             <div className="bg-yellow-100 p-3 rounded-lg">
@@ -91,10 +91,10 @@ export default function TimeOffPage() {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="lux-card rounded p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Approved</p>
+              <p className="text-sm font-medium text-stone-500">Approved</p>
               <p className="text-3xl font-bold text-green-600 mt-2">1</p>
             </div>
             <div className="bg-green-100 p-3 rounded-lg">
@@ -103,77 +103,77 @@ export default function TimeOffPage() {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="lux-card rounded p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">This Month</p>
-              <p className="text-3xl font-bold text-blue-600 mt-2">3</p>
+              <p className="text-sm font-medium text-stone-500">This Month</p>
+              <p className="text-3xl font-bold text-amber-400 mt-2">3</p>
             </div>
             <div className="bg-blue-100 p-3 rounded-lg">
-              <Clock className="h-6 w-6 text-blue-600" />
+              <Clock className="h-6 w-6 text-amber-400" />
             </div>
           </div>
         </div>
       </div>
 
       {/* Requests List */}
-      <div className="bg-white rounded-lg shadow overflow-hidden">
+      <div className="lux-card rounded overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
+          <table className="min-w-full divide-y divide-stone-800">
+            <thead className="bg-stone-950">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">
                   Employee
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">
                   Start Date
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">
                   End Date
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">
                   Days
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">
                   Reason
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">
                   Status
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-stone-500 uppercase tracking-wider">
                   Actions
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
+            <tbody className="bg-stone-950 divide-y divide-stone-800">
               {requests.map((request) => {
                 const days = Math.ceil(
                   (new Date(request.endDate).getTime() - new Date(request.startDate).getTime()) / (1000 * 60 * 60 * 24)
                 ) + 1;
 
                 return (
-                  <tr key={request.id} className="hover:bg-gray-50">
+                  <tr key={request.id} className="hover:bg-stone-950">
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
-                        <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                        <div className="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold">
                           {request.employeeName.split(' ').map(n => n[0]).join('')}
                         </div>
                         <div className="ml-3">
-                          <div className="text-sm font-medium text-gray-900">{request.employeeName}</div>
-                          <div className="text-xs text-gray-500">Submitted {request.submittedAt}</div>
+                          <div className="text-sm font-medium text-stone-100">{request.employeeName}</div>
+                          <div className="text-xs text-stone-500">Submitted {request.submittedAt}</div>
                         </div>
                       </div>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-stone-500">
                       {new Date(request.startDate).toLocaleDateString()}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-stone-500">
                       {new Date(request.endDate).toLocaleDateString()}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-stone-500">
                       {days} {days === 1 ? 'day' : 'days'}
                     </td>
-                    <td className="px-6 py-4 text-sm text-gray-500">
+                    <td className="px-6 py-4 text-sm text-stone-500">
                       {request.reason}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
@@ -203,7 +203,7 @@ export default function TimeOffPage() {
       </div>
 
       {/* Upgrade Notice for Free Tier */}
-      <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-lg">
+      <div className="bg-amber-900/20 border-l-4 border-blue-400 p-4 rounded-lg">
         <div className="flex">
           <div className="flex-shrink-0">
             <svg className="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
@@ -211,7 +211,7 @@ export default function TimeOffPage() {
             </svg>
           </div>
           <div className="ml-3">
-            <p className="text-sm text-blue-700">
+            <p className="text-sm text-amber-300">
               Time-off request management is a <span className="font-semibold">Gold tier feature</span>.
               <a href="/" className="font-medium underline ml-2">Upgrade now</a> to enable this functionality.
             </p>
@@ -221,3 +221,6 @@ export default function TimeOffPage() {
     </div>
   );
 }
+
+
+

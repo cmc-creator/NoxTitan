@@ -167,19 +167,19 @@ export default function IncentivesPage() {
           <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Your Earnings</div>
-              <Trophy className="h-5 w-5 text-purple-500" />
+              <Trophy className="h-5 w-5 text-amber-500" />
             </div>
             <div className="text-3xl font-bold" style={{ color: 'var(--header-text)' }}>$425</div>
-            <div className="text-xs text-purple-500">This month</div>
+            <div className="text-xs text-amber-500">This month</div>
           </div>
 
           <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Your Rank</div>
-              <TrendingUp className="h-5 w-5 text-blue-500" />
+              <TrendingUp className="h-5 w-5 text-amber-400" />
             </div>
             <div className="text-3xl font-bold" style={{ color: 'var(--header-text)' }}>#1 🏆</div>
-            <div className="text-xs text-blue-500">Top performer!</div>
+            <div className="text-xs text-amber-400">Top performer!</div>
           </div>
         </div>
 
@@ -548,3 +548,6 @@ export default function IncentivesPage() {
     </div>
   );
 }
+
+
+

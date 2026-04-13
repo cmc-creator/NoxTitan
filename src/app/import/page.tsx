@@ -169,7 +169,7 @@ export default function ImportPage() {
                 <div key={step.id} className="flex items-center flex-1">
                   <div className="flex flex-col items-center flex-1">
                     <div className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all ${
-                      isActive ? 'bg-blue-600 border-blue-600 text-white' :
+                      isActive ? 'bg-amber-600 border-amber-600/40 text-white' :
                       isCompleted ? 'bg-green-600 border-green-600 text-white' :
                       'bg-slate-700 border-slate-600 text-slate-400'
                     }`}>
@@ -211,7 +211,7 @@ export default function ImportPage() {
                       <div className="text-xs text-slate-400">Avg Import Time</div>
                     </div>
                     <div className="bg-slate-800/50 rounded-lg p-3">
-                      <div className="text-2xl font-bold text-purple-400">100%</div>
+                      <div className="text-2xl font-bold text-amber-400">100%</div>
                       <div className="text-xs text-slate-400">Data Accuracy</div>
                     </div>
                     <div className="bg-slate-800/50 rounded-lg p-3">
@@ -229,7 +229,7 @@ export default function ImportPage() {
                 onClick={() => setImportMethod('file')}
                 className={`p-6 rounded-xl border-2 transition-all ${
                   importMethod === 'file' 
-                    ? 'border-blue-500 bg-blue-500/10' 
+                    ? 'border-amber-500/40 bg-amber-600/10' 
                     : 'border-slate-600 bg-slate-700/30 hover:border-slate-500'
                 }`}
               >
@@ -241,7 +241,7 @@ export default function ImportPage() {
                 onClick={() => setImportMethod('integration')}
                 className={`p-6 rounded-xl border-2 transition-all ${
                   importMethod === 'integration' 
-                    ? 'border-blue-500 bg-blue-500/10' 
+                    ? 'border-amber-500/40 bg-amber-600/10' 
                     : 'border-slate-600 bg-slate-700/30 hover:border-slate-500'
                 }`}
               >
@@ -263,7 +263,7 @@ export default function ImportPage() {
                       onClick={() => setSelectedTemplate(template.id)}
                       className={`p-6 rounded-xl border-2 text-left transition-all ${
                         selectedTemplate === template.id
-                          ? 'border-blue-500 bg-blue-500/10'
+                          ? 'border-amber-500/40 bg-amber-600/10'
                           : 'border-slate-600 bg-slate-700/30 hover:border-slate-500'
                       }`}
                     >
@@ -312,11 +312,11 @@ export default function ImportPage() {
         {/* Step 2: Upload (Simplified for demo) */}
         {activeStep === 'upload' && (
           <div className="space-y-6">
-            <div className="p-12 border-2 border-dashed border-slate-600 rounded-xl text-center hover:border-blue-500 transition-all cursor-pointer" style={{ background: 'var(--card-bg)' }}>
+            <div className="p-12 border-2 border-dashed border-slate-600 rounded-xl text-center hover:border-amber-500/40 transition-all cursor-pointer" style={{ background: 'var(--card-bg)' }}>
               <Upload className="w-16 h-16 mx-auto mb-4 text-blue-400" />
               <h3 className="text-2xl font-bold text-white mb-2">Drop your file here or click to browse</h3>
               <p className="text-slate-400 mb-4">Supports CSV, Excel (.xlsx, .xls), and JSON files up to 50MB</p>
-              <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all">
+              <button className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-semibold transition-all">
                 Choose File
               </button>
               <div className="mt-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg inline-block">
@@ -341,7 +341,7 @@ export default function ImportPage() {
                   <div className="text-xs text-slate-400">CSV format with sample data</div>
                 </button>
                 <button className="p-4 bg-slate-700/30 rounded-lg hover:bg-slate-700/50 transition-all text-left">
-                  <FileSpreadsheet className="w-8 h-8 text-purple-400 mb-2" />
+                  <FileSpreadsheet className="w-8 h-8 text-amber-400 mb-2" />
                   <div className="font-semibold text-white">Payroll Template</div>
                   <div className="text-xs text-slate-400">CSV format with sample data</div>
                 </button>
@@ -361,7 +361,7 @@ export default function ImportPage() {
         {/* Step 3: Field Mapping */}
         {activeStep === 'map' && (
           <div className="space-y-6">
-            <div className="p-6 rounded-xl bg-blue-500/10 border border-blue-500/30">
+            <div className="p-6 rounded-xl bg-amber-600/10 border border-amber-500/40/30">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
                 <Zap className="w-5 h-5 text-blue-400" />
                 Smart Auto-Mapping Detected
@@ -501,12 +501,12 @@ export default function ImportPage() {
                 <div className="text-4xl font-bold text-green-400">122</div>
                 <div className="text-sm text-slate-300">Records Imported</div>
               </div>
-              <div className="p-6 rounded-xl bg-blue-500/20 border border-blue-500/50">
+              <div className="p-6 rounded-xl bg-amber-600/20 border border-amber-500/40/50">
                 <div className="text-4xl font-bold text-blue-400">2:37</div>
                 <div className="text-sm text-slate-300">Time Taken</div>
               </div>
-              <div className="p-6 rounded-xl bg-purple-500/20 border border-purple-500/50">
-                <div className="text-4xl font-bold text-purple-400">0</div>
+              <div className="p-6 rounded-xl bg-amber-500/20 border border-amber-500/40/50">
+                <div className="text-4xl font-bold text-amber-400">0</div>
                 <div className="text-sm text-slate-300">Errors</div>
               </div>
             </div>
@@ -528,3 +528,5 @@ export default function ImportPage() {
     </div>
   );
 }
+
+

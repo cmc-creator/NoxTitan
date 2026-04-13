@@ -145,10 +145,10 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
             <p className="text-3xl font-bold text-white">{userDonationStats.remainingThisYear}</p>
             <p className="text-sm text-green-200">Can Donate This Year</p>
           </div>
-          <div className="bg-purple-500/20 rounded-lg p-4 text-center border border-purple-500/30">
-            <TrendingUp className="w-6 h-6 text-purple-400 mx-auto mb-1" />
+          <div className="bg-amber-500/20 rounded-lg p-4 text-center border border-amber-500/40/30">
+            <TrendingUp className="w-6 h-6 text-amber-400 mx-auto mb-1" />
             <p className="text-3xl font-bold text-white">{userDonationStats.yearlyGiven}</p>
-            <p className="text-sm text-purple-200">Donated This Year</p>
+            <p className="text-sm text-amber-100/70">Donated This Year</p>
           </div>
           <div className="bg-yellow-500/20 rounded-lg p-4 text-center border border-yellow-500/30">
             <Award className="w-6 h-6 text-yellow-400 mx-auto mb-1" />
@@ -375,16 +375,16 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
       {activeTab === 'limits' && (
         <div className="space-y-6">
           {/* Your Limits */}
-          <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/40 backdrop-blur-xl rounded-xl p-6 border-2 border-purple-500/30">
+          <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/40 backdrop-blur-xl rounded-xl p-6 border-2 border-amber-500/40/30">
             <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <Lock className="w-6 h-6 text-purple-400" />
+              <Lock className="w-6 h-6 text-amber-400" />
               Your Donation Limits ({userRole.charAt(0).toUpperCase() + userRole.slice(1)})
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div className="bg-purple-500/20 rounded-lg p-6 text-center border border-purple-500/30">
+              <div className="bg-amber-500/20 rounded-lg p-6 text-center border border-amber-500/40/30">
                 <p className="text-5xl font-bold text-white mb-2">{currentLimit.yearlyMax}</p>
-                <p className="text-purple-200 font-semibold">Annual Donation Limit</p>
+                <p className="text-amber-100/70 font-semibold">Annual Donation Limit</p>
                 <p className="text-xs text-slate-400 mt-2">Resets January 1st each year</p>
               </div>
               <div className="bg-pink-500/20 rounded-lg p-6 text-center border border-pink-500/30">
@@ -464,3 +464,5 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
     </div>
   );
 }
+
+

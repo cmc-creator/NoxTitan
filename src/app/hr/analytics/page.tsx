@@ -10,7 +10,7 @@ export default function HRAnalytics() {
   const metrics = [
     { label: 'Total Headcount', value: 247, change: '+12', trend: 'up', color: 'from-blue-600 to-cyan-600' },
     { label: 'Turnover Rate', value: '8.2%', change: '-2.1%', trend: 'down', color: 'from-emerald-600 to-teal-600' },
-    { label: 'Avg Time-to-Hire', value: '18d', change: '-4d', trend: 'down', color: 'from-purple-600 to-pink-600' },
+    { label: 'Avg Time-to-Hire', value: '18d', change: '-4d', trend: 'down', color: 'from-amber-700 to-amber-600' },
     { label: 'Cost-per-Hire', value: '$3,200', change: '-$800', trend: 'down', color: 'from-orange-600 to-amber-600' },
   ];
 
@@ -46,7 +46,7 @@ export default function HRAnalytics() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/hr" className="inline-flex items-center gap-2 text-indigo-300 hover:text-indigo-100 mb-4 transition-colors">
+          <Link href="/hr" className="inline-flex items-center gap-2 text-amber-400 hover:text-indigo-100 mb-4 transition-colors">
             ← Back to HR Center
           </Link>
           <div className="flex items-center justify-between">
@@ -68,7 +68,7 @@ export default function HRAnalytics() {
                   onClick={() => setTimeRange(range)}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                     timeRange === range
-                      ? 'bg-indigo-600 text-white'
+                      ? 'bg-amber-600 text-white'
                       : 'bg-slate-700/50 text-slate-300 hover:bg-slate-700'
                   }`}
                 >
@@ -96,9 +96,9 @@ export default function HRAnalytics() {
         </div>
 
         {/* Department Analytics */}
-        <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-indigo-500/30 mb-8">
+        <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <BarChart3 className="w-7 h-7 text-indigo-400" />
+            <BarChart3 className="w-7 h-7 text-amber-400" />
             Department Performance
           </h2>
           <div className="overflow-x-auto">
@@ -127,7 +127,7 @@ export default function HRAnalytics() {
                         {dept.turnover}%
                       </span>
                     </td>
-                    <td className="py-4 px-4 text-center text-purple-400 font-semibold">
+                    <td className="py-4 px-4 text-center text-amber-400 font-semibold">
                       {dept.avgTenure}
                     </td>
                     <td className="py-4 px-4 text-center">
@@ -145,9 +145,9 @@ export default function HRAnalytics() {
 
         <div className="grid grid-cols-2 gap-8 mb-8">
           {/* Diversity Metrics */}
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-purple-500/30">
+          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-              <PieChart className="w-7 h-7 text-purple-400" />
+              <PieChart className="w-7 h-7 text-amber-400" />
               Diversity & Inclusion
             </h2>
             <div className="space-y-6">
@@ -176,8 +176,8 @@ export default function HRAnalytics() {
                 <h3 className="text-lg font-semibold text-white mb-3">Age Distribution</h3>
                 <div className="grid grid-cols-5 gap-2">
                   {[
-                    {range: '18-25', pct: 12, color: 'bg-blue-500'},
-                    {range: '26-35', pct: 34, color: 'bg-purple-500'},
+                    {range: '18-25', pct: 12, color: 'bg-amber-600'},
+                    {range: '26-35', pct: 34, color: 'bg-amber-500'},
                     {range: '36-45', pct: 28, color: 'bg-pink-500'},
                     {range: '46-55', pct: 18, color: 'bg-orange-500'},
                     {range: '56+', pct: 8, color: 'bg-red-500'},
@@ -287,3 +287,5 @@ export default function HRAnalytics() {
     </div>
   );
 }
+
+

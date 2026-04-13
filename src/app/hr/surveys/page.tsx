@@ -129,7 +129,7 @@ export default function EmployeeSurveysPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
@@ -172,12 +172,12 @@ export default function EmployeeSurveysPage() {
             <p className="text-green-300 font-semibold">Completed</p>
           </div>
 
-          <div className="bg-purple-500/10 border border-purple-500/50 rounded-xl p-6">
+          <div className="bg-amber-500/10 border border-amber-500/40/50 rounded-xl p-6">
             <div className="flex items-center justify-between mb-2">
-              <TrendingUp className="w-8 h-8 text-purple-400" />
-              <span className="text-3xl font-bold text-purple-400">{stats.avgScore.toFixed(1)}/10</span>
+              <TrendingUp className="w-8 h-8 text-amber-400" />
+              <span className="text-3xl font-bold text-amber-400">{stats.avgScore.toFixed(1)}/10</span>
             </div>
-            <p className="text-purple-300 font-semibold">Avg. Score</p>
+            <p className="text-amber-200 font-semibold">Avg. Score</p>
           </div>
         </div>
 
@@ -188,7 +188,7 @@ export default function EmployeeSurveysPage() {
             <select
               value={filterType}
               onChange={(e) => setFilterType(e.target.value)}
-              className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-blue-500"
+              className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-amber-500/40"
             >
               <option value="all">All Types</option>
               <option value="ONBOARDING">Onboarding</option>
@@ -199,7 +199,7 @@ export default function EmployeeSurveysPage() {
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-blue-500"
+              className="px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-amber-500/40"
             >
               <option value="all">All Status</option>
               <option value="pending">Pending</option>
@@ -212,7 +212,7 @@ export default function EmployeeSurveysPage() {
         <div className="space-y-4">
           {loading ? (
             <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-12 text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto mb-4"></div>
               <p className="text-slate-400">Loading surveys...</p>
             </div>
           ) : filteredSurveys.length === 0 ? (
@@ -222,7 +222,7 @@ export default function EmployeeSurveysPage() {
               <p className="text-slate-400 mb-6">Schedule your first employee survey!</p>
               <button
                 onClick={() => setShowCreateModal(true)}
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
+                className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors"
               >
                 Schedule Survey
               </button>
@@ -231,7 +231,7 @@ export default function EmployeeSurveysPage() {
             filteredSurveys.map((survey) => (
               <div
                 key={survey.id}
-                className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 hover:border-blue-500/50 transition-colors"
+                className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 hover:border-amber-500/40/50 transition-colors"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
@@ -239,7 +239,7 @@ export default function EmployeeSurveysPage() {
                       <h3 className="text-lg font-bold text-white">
                         {survey.employee.firstName} {survey.employee.lastName}
                       </h3>
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs font-semibold rounded-full">
+                      <span className="px-3 py-1 bg-amber-600/20 text-blue-300 text-xs font-semibold rounded-full">
                         {survey.dayMilestone}-Day {survey.surveyType}
                       </span>
                       {survey.completedAt && survey.score && (
@@ -281,7 +281,7 @@ export default function EmployeeSurveysPage() {
                   {!survey.sentAt && (
                     <button
                       onClick={() => sendSurvey(survey.id)}
-                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors flex items-center gap-2"
+                      className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold rounded-lg transition-colors flex items-center gap-2"
                     >
                       <Send className="w-4 h-4" />
                       Send Now
@@ -308,7 +308,7 @@ export default function EmployeeSurveysPage() {
                     required
                     value={formData.employeeId}
                     onChange={(e) => setFormData({ ...formData, employeeId: e.target.value })}
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                   >
                     <option value="">Select an employee...</option>
                     {employees.map((emp) => (
@@ -327,7 +327,7 @@ export default function EmployeeSurveysPage() {
                     <select
                       value={formData.surveyType}
                       onChange={(e) => setFormData({ ...formData, surveyType: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                     >
                       <option value="ONBOARDING">Onboarding</option>
                       <option value="SATISFACTION">Satisfaction</option>
@@ -343,7 +343,7 @@ export default function EmployeeSurveysPage() {
                     <select
                       value={formData.dayMilestone}
                       onChange={(e) => setFormData({ ...formData, dayMilestone: parseInt(e.target.value) })}
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
+                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                     >
                       <option value="30">30 Days</option>
                       <option value="60">60 Days</option>
@@ -354,7 +354,7 @@ export default function EmployeeSurveysPage() {
                   </div>
                 </div>
 
-                <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+                <div className="bg-amber-600/10 border border-amber-500/40/30 rounded-lg p-4">
                   <p className="text-sm text-blue-300">
                     💡 <strong>Auto-Schedule:</strong> The survey will automatically be scheduled based on the employee's hire date + {formData.dayMilestone} days.
                   </p>
@@ -386,3 +386,5 @@ export default function EmployeeSurveysPage() {
     </div>
   );
 }
+
+

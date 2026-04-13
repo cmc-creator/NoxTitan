@@ -57,7 +57,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
       id: 'calendar',
       title: 'Smart Scheduling Calendar',
       description: 'Create schedules in minutes with our intuitive drag-and-drop calendar. Automatic overtime alerts keep you in control.',
-      icon: <Calendar className="w-12 h-12 text-blue-600" />,
+      icon: <Calendar className="w-12 h-12 text-amber-400" />,
       features: [
         'Drag-and-drop shift creation',
         'Multiple calendar views (day/week/month)',
@@ -87,7 +87,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
       id: 'analytics',
       title: 'Analytics & Insights',
       description: 'Make data-driven decisions with powerful analytics, forecasting, and department comparisons.',
-      icon: <TrendingUp className="w-12 h-12 text-purple-600" />,
+      icon: <TrendingUp className="w-12 h-12 text-amber-600" />,
       features: [
         'Labor cost trending (actual vs. budgeted)',
         'Department performance metrics',
@@ -132,7 +132,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
       id: 'integrations',
       title: 'Powerful Integrations',
       description: 'Connect NyxTitan with 50+ business systems. Sync data seamlessly across your entire tech stack.',
-      icon: <Link2 className="w-12 h-12 text-indigo-600" />,
+      icon: <Link2 className="w-12 h-12 text-amber-400" />,
       features: [
         'Payroll systems (ADP, Gusto, Paychex, Paycom)',
         'Healthcare EMR (Epic, Cerner, iCANotes)',
@@ -202,9 +202,9 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <Confetti />
-      <div className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col border border-purple-700">
+      <div className="bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col border border-purple-700">
         {/* Header */}
-        <div className="p-4 border-b border-gray-200">
+        <div className="p-4 border-b border-stone-800">
           <div className="flex items-center justify-between mb-0">
             <div className="flex flex-col items-center gap-0 w-full mb-0">
               {/* Use Next.js Image for reliability and premium style */}
@@ -221,16 +221,16 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
               className="p-2 hover:bg-purple-100 rounded-lg transition-all border border-purple-200"
               aria-label="Close walkthrough"
             >
-              <X className="w-6 h-6 text-purple-600" />
+              <X className="w-6 h-6 text-amber-600" />
             </button>
           </div>
           {/* Progress bar */}
           <div className="space-y-2">
             <div className="flex items-center justify-between text-sm">
-              <span className="text-gray-600">Step {currentStep + 1} of {steps.length}</span>
-              <span className="text-blue-600 font-semibold">{Math.round(progress)}% Complete</span>
+              <span className="text-stone-500">Step {currentStep + 1} of {steps.length}</span>
+              <span className="text-amber-400 font-semibold">{Math.round(progress)}% Complete</span>
             </div>
-            <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+            <div className="w-full h-2 bg-stone-800 rounded-full overflow-hidden">
               <div 
                 className="h-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-500"
                 style={{ width: `${progress}%` }}
@@ -280,17 +280,17 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
             </p>
             {/* Features List */}
             <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 mb-6">
-              <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 text-lg">
-                <Sparkles className="w-5 h-5 text-blue-600" />
+              <h4 className="font-bold text-stone-100 mb-2 flex items-center gap-2 text-lg">
+                <Sparkles className="w-5 h-5 text-amber-400" />
                 Key Features:
               </h4>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {currentStepData.features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-2 bg-white/70 rounded-lg px-3 py-2 shadow-sm">
-                    <div className="flex-shrink-0 w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
+                  <li key={index} className="flex items-start gap-2 bg-stone-950/70 rounded-lg px-3 py-2 shadow-sm">
+                    <div className="flex-shrink-0 w-5 h-5 bg-amber-600 rounded-full flex items-center justify-center mt-0.5">
                       <Check className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-gray-700 text-sm">{feature}</span>
+                    <span className="text-stone-300 text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -327,15 +327,15 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
           </div>
         </div>
         {/* Footer */}
-        <div className="p-6 border-t border-gray-200 bg-gray-50">
+        <div className="p-6 border-t border-stone-800 bg-stone-950">
           <div className="flex items-center justify-between">
             <button
               onClick={handlePrevious}
               disabled={currentStep === 0}
               className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
                 currentStep === 0
-                  ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                  : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50'
+                  ? 'bg-stone-800 text-stone-400 cursor-not-allowed'
+                  : 'bg-stone-950 border border-gray-300 text-stone-300 hover:bg-stone-950'
               }`}
             >
               <ChevronLeft className="w-5 h-5" />
@@ -343,7 +343,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
             </button>
             <button
               onClick={onSkip}
-              className="px-4 py-2 text-gray-600 hover:text-gray-900 transition-all"
+              className="px-4 py-2 text-stone-500 hover:text-stone-100 transition-all"
             >
               Skip Tour
             </button>
@@ -369,4 +369,6 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
     </div>
   );
 }
+
+
 

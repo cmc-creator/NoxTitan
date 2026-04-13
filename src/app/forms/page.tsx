@@ -115,27 +115,27 @@ export default function FormsPage() {
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-5xl font-bold text-gray-800 mb-2">Forms & Templates</h1>
-            <p className="text-xl text-gray-600">Create, manage, and share custom forms</p>
+            <h1 className="text-5xl font-bold text-stone-200 mb-2">Forms & Templates</h1>
+            <p className="text-xl text-stone-500">Create, manage, and share custom forms</p>
           </div>
           <div className="flex gap-3">
             <button
               onClick={() => router.push('/forms/departments')}
-              className="px-6 py-3 bg-white border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 flex items-center gap-2"
+              className="px-6 py-3 bg-stone-950 border-2 border-amber-600/40 text-amber-400 rounded-lg hover:bg-amber-900/20 flex items-center gap-2"
             >
               <Folder className="w-5 h-5" />
               Department Portals
             </button>
             <button
               onClick={() => router.push('/forms/import')}
-              className="px-6 py-3 bg-white border-2 border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50 flex items-center gap-2"
+              className="px-6 py-3 bg-stone-950 border-2 border-amber-600/40 text-amber-600 rounded-lg hover:bg-purple-50 flex items-center gap-2"
             >
               <Upload className="w-5 h-5" />
               Import Templates
             </button>
             <button
               onClick={() => router.push('/forms/builder')}
-              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center gap-2"
+              className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center gap-2"
             >
               <Plus className="w-5 h-5" />
               Create New Form
@@ -145,57 +145,57 @@ export default function FormsPage() {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-gray-600">Total Forms</span>
-              <FileText className="w-5 h-5 text-purple-600" />
+              <span className="text-stone-500">Total Forms</span>
+              <FileText className="w-5 h-5 text-amber-600" />
             </div>
-            <div className="text-4xl font-bold text-gray-800">{templates.length}</div>
-            <div className="text-sm text-gray-500 mt-1">+3 this month</div>
+            <div className="text-4xl font-bold text-stone-200">{templates.length}</div>
+            <div className="text-sm text-stone-500 mt-1">+3 this month</div>
           </div>
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-gray-600">Submissions</span>
+              <span className="text-stone-500">Submissions</span>
               <CheckCircle className="w-5 h-5 text-green-600" />
             </div>
-            <div className="text-4xl font-bold text-gray-800">
+            <div className="text-4xl font-bold text-stone-200">
               {templates.reduce((sum, t) => sum + t.submissionCount, 0)}
             </div>
-            <div className="text-sm text-gray-500 mt-1">+89 this week</div>
+            <div className="text-sm text-stone-500 mt-1">+89 this week</div>
           </div>
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-gray-600">Active Forms</span>
-              <Clock className="w-5 h-5 text-blue-600" />
+              <span className="text-stone-500">Active Forms</span>
+              <Clock className="w-5 h-5 text-amber-400" />
             </div>
-            <div className="text-4xl font-bold text-gray-800">
+            <div className="text-4xl font-bold text-stone-200">
               {templates.filter(t => t.status === 'active').length}
             </div>
-            <div className="text-sm text-gray-500 mt-1">All working</div>
+            <div className="text-sm text-stone-500 mt-1">All working</div>
           </div>
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-gray-600">Shared</span>
+              <span className="text-stone-500">Shared</span>
               <Share2 className="w-5 h-5 text-pink-600" />
             </div>
-            <div className="text-4xl font-bold text-gray-800">
+            <div className="text-4xl font-bold text-stone-200">
               {templates.filter(t => t.isPublic).length}
             </div>
-            <div className="text-sm text-gray-500 mt-1">Public templates</div>
+            <div className="text-sm text-stone-500 mt-1">Public templates</div>
           </div>
         </div>
 
         {/* Filters & Search */}
-        <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+        <div className="bg-stone-950 rounded-xl shadow-lg p-6 mb-6">
           <div className="flex gap-4 items-center">
             <div className="flex-1 relative">
-              <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-stone-400" />
               <input
                 type="text"
                 placeholder="Search forms..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-400"
+                className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500"
               />
             </div>
             <div className="flex gap-2 overflow-x-auto">
@@ -205,7 +205,7 @@ export default function FormsPage() {
                   onClick={() => setSelectedCategory(value)}
                   className={`px-4 py-2 rounded-lg flex items-center gap-2 whitespace-nowrap ${
                     selectedCategory === value
-                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                      ? 'bg-gradient-to-r from-amber-700 to-amber-600 text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -222,17 +222,17 @@ export default function FormsPage() {
           {filteredTemplates.map(template => (
             <div
               key={template.id}
-              className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all cursor-pointer group"
+              className="bg-stone-950 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all cursor-pointer group"
               onClick={() => router.push(`/forms/${template.id}`)}
             >
               <div className="flex justify-between items-start mb-4">
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-purple-600">
+                  <h3 className="text-xl font-bold text-stone-200 mb-2 group-hover:text-amber-600">
                     {template.name}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-3">{template.description}</p>
+                  <p className="text-stone-500 text-sm mb-3">{template.description}</p>
                   <div className="flex items-center gap-2">
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">
+                    <span className="px-3 py-1 bg-purple-100 text-amber-700 rounded-full text-xs font-medium">
                       {template.category}
                     </span>
                     {template.isPublic && (
@@ -242,21 +242,21 @@ export default function FormsPage() {
                     )}
                   </div>
                 </div>
-                <FileText className="w-8 h-8 text-purple-600" />
+                <FileText className="w-8 h-8 text-amber-600" />
               </div>
 
               <div className="border-t pt-4 space-y-2">
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-500">Submissions:</span>
-                  <span className="font-medium text-gray-800">{template.submissionCount}</span>
+                  <span className="text-stone-500">Submissions:</span>
+                  <span className="font-medium text-stone-200">{template.submissionCount}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-500">Uses:</span>
-                  <span className="font-medium text-gray-800">{template.usageCount}</span>
+                  <span className="text-stone-500">Uses:</span>
+                  <span className="font-medium text-stone-200">{template.usageCount}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-500">Created by:</span>
-                  <span className="font-medium text-gray-800">{template.createdBy}</span>
+                  <span className="text-stone-500">Created by:</span>
+                  <span className="font-medium text-stone-200">{template.createdBy}</span>
                 </div>
               </div>
 
@@ -270,7 +270,7 @@ export default function FormsPage() {
                 </button>
                 <button
                   onClick={(e) => { e.stopPropagation(); /* Handle view */ }}
-                  className="flex-1 px-3 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 flex items-center justify-center gap-2"
+                  className="flex-1 px-3 py-2 bg-purple-100 text-amber-700 rounded-lg hover:bg-purple-200 flex items-center justify-center gap-2"
                 >
                   <Eye className="w-4 h-4" />
                   View
@@ -287,13 +287,13 @@ export default function FormsPage() {
         </div>
 
         {filteredTemplates.length === 0 && (
-          <div className="text-center py-12 bg-white rounded-xl shadow-lg">
-            <FileText className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">No forms found</h3>
-            <p className="text-gray-600 mb-6">Try adjusting your search or create a new form</p>
+          <div className="text-center py-12 bg-stone-950 rounded-xl shadow-lg">
+            <FileText className="w-16 h-16 text-stone-300 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-stone-200 mb-2">No forms found</h3>
+            <p className="text-stone-500 mb-6">Try adjusting your search or create a new form</p>
             <button
               onClick={() => router.push('/forms/builder')}
-              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700"
+              className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700"
             >
               Create New Form
             </button>
@@ -303,3 +303,6 @@ export default function FormsPage() {
     </div>
   );
 }
+
+
+

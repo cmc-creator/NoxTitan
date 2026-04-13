@@ -244,7 +244,7 @@ function OSHARecordkeepingSection() {
   return (
     <div className="space-y-6">
       {/* Recordkeeping Overview */}
-      <div className="p-6 rounded-xl shadow-lg border-l-4 border-blue-500" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded-xl shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
           📋 OSHA Recordkeeping Requirements (29 CFR 1904)
         </h3>
@@ -257,8 +257,8 @@ function OSHARecordkeepingSection() {
             <div className="text-3xl font-bold text-green-500 mb-1">12</div>
             <div className="text-sm">Total Recordable Cases (2025)</div>
           </div>
-          <div className="p-4 rounded-lg bg-blue-500/10 border border-blue-500">
-            <div className="text-3xl font-bold text-blue-500 mb-1">3.2</div>
+          <div className="p-4 rounded-lg bg-amber-600/10 border border-amber-500/40">
+            <div className="text-3xl font-bold text-amber-400 mb-1">3.2</div>
             <div className="text-sm">DART Rate (Days Away, Restricted, or Transfer)</div>
           </div>
           <div className="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500">
@@ -275,7 +275,7 @@ function OSHARecordkeepingSection() {
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-sm font-mono bg-blue-500/20 text-blue-500 px-3 py-1 rounded font-bold">{item.form}</span>
+                  <span className="text-sm font-mono bg-amber-600/20 text-amber-400 px-3 py-1 rounded font-bold">{item.form}</span>
                   <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                     item.status === 'current' ? 'bg-green-500 text-white' : 'bg-yellow-500 text-white'
                   }`}>
@@ -315,7 +315,7 @@ function OSHARecordkeepingSection() {
             </div>
           </li>
           <li className="flex items-start gap-3 p-3 rounded-lg" style={{ background: 'var(--calendar-bg)' }}>
-            <FileText className="h-5 w-5 text-blue-500 flex-shrink-0 mt-1" />
+            <FileText className="h-5 w-5 text-amber-400 flex-shrink-0 mt-1" />
             <div>
               <div className="font-semibold">Electronic submission (if required)</div>
               <div className="text-sm opacity-70">Establishments with 250+ employees must submit Form 300A electronically by March 2, 2026</div>
@@ -342,7 +342,7 @@ function OSHATrainingSection() {
   return (
     <div className="space-y-6">
       {/* Training Overview */}
-      <div className="p-6 rounded-xl shadow-lg border-l-4 border-purple-500" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded-xl shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
           🎓 OSHA Training Requirements
         </h3>
@@ -351,8 +351,8 @@ function OSHATrainingSection() {
           Training must be provided in a language and vocabulary workers understand.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="p-4 rounded-lg bg-purple-500/10 border border-purple-500">
-            <div className="text-3xl font-bold text-purple-500 mb-1">89%</div>
+          <div className="p-4 rounded-lg bg-amber-500/10 border border-amber-500/40">
+            <div className="text-3xl font-bold text-amber-500 mb-1">89%</div>
             <div className="text-sm">Overall Training Compliance</div>
           </div>
           <div className="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500">
@@ -418,3 +418,6 @@ export function RetailSection() {
   // Retail compliance will be imported
   return <div>Retail section - see separate file</div>;
 }
+
+
+

@@ -105,7 +105,7 @@ export default function AutomationBuilder() {
   return (
     <Card className="max-w-xl mx-auto mt-8 p-6 shadow-lg border border-gray-200">
       <h2 className="text-2xl font-bold mb-4">Automation Builder</h2>
-      <p className="mb-2 text-sm text-gray-600">All automations are HIPAA & legally compliant. Actions are logged and access-controlled.</p>
+      <p className="mb-2 text-sm text-stone-500">All automations are HIPAA & legally compliant. Actions are logged and access-controlled.</p>
       {error && <div className="text-red-500 mb-2">{error}</div>}
       <Input
         placeholder="Automation Name"
@@ -142,7 +142,7 @@ export default function AutomationBuilder() {
         {loading ? 'Saving...' : 'Save Automation'}
       </Button>
       <h3 className="text-lg font-bold mb-2">Existing Automations</h3>
-      {loading && <div className="text-gray-400">Loading...</div>}
+      {loading && <div className="text-stone-400">Loading...</div>}
       <ul className="mb-2">
         {automations.map((a: any) => (
           <li key={a.id} className="border-b py-2 text-sm">
@@ -153,3 +153,5 @@ export default function AutomationBuilder() {
     </Card>
   );
 }
+
+

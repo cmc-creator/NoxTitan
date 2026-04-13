@@ -279,7 +279,7 @@ export default function ChatBot() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white dark:bg-slate-800 rounded-2xl shadow-2xl flex flex-col z-50 border border-gray-200 dark:border-slate-700">
+        <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-stone-950 dark:bg-slate-800 rounded-2xl shadow-2xl flex flex-col z-50 border border-stone-800 dark:border-slate-700">
           {/* Header */}
           <div className={`bg-gradient-to-r ${customColor} p-4 rounded-t-2xl flex items-center justify-between`}>
             <div className="flex items-center gap-3">
@@ -288,12 +288,12 @@ export default function ChatBot() {
               </div>
               <div>
                 <h3 className="font-bold text-white text-pop-light">⚡ Titan AI Assistant</h3>
-                <p className="text-xs text-purple-100">Quick help & smart answers</p>
+                <p className="text-xs text-amber-50">Quick help & smart answers</p>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-white hover:bg-white/20 p-2 rounded-lg transition-colors"
+              className="text-white hover:bg-stone-950/20 p-2 rounded-lg transition-colors"
             >
               <X className="h-5 w-5" />
             </button>
@@ -303,7 +303,7 @@ export default function ChatBot() {
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {showQuickActions && messages.length === 1 && (
               <div className="mb-4">
-                <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 text-center">Quick Actions</p>
+                <p className="text-xs text-stone-500 dark:text-stone-400 mb-2 text-center">Quick Actions</p>
                 <div className="grid grid-cols-2 gap-2">
                   {quickActions.map((action) => (
                     <button
@@ -311,9 +311,9 @@ export default function ChatBot() {
                       onClick={() => handleQuickAction(action)}
                       className="flex flex-col items-center gap-2 p-3 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-slate-700 dark:to-slate-600 rounded-lg hover:shadow-lg transition-all hover:scale-105 border border-purple-200 dark:border-slate-500"
                     >
-                      <div className="text-purple-600 dark:text-purple-400">{action.icon}</div>
-                      <span className="text-xs font-semibold text-gray-700 dark:text-gray-200">{action.label}</span>
-                      <span className="text-[10px] text-gray-500 dark:text-gray-400 text-center">{action.description}</span>
+                      <div className="text-amber-600 dark:text-amber-400">{action.icon}</div>
+                      <span className="text-xs font-semibold text-stone-300 dark:text-gray-200">{action.label}</span>
+                      <span className="text-[10px] text-stone-500 dark:text-stone-400 text-center">{action.description}</span>
                     </button>
                   ))}
                 </div>
@@ -340,11 +340,11 @@ export default function ChatBot() {
                   <div className={`rounded-2xl p-3 ${
                     message.sender === 'user'
                       ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white'
-                      : 'bg-gray-100 dark:bg-slate-700 text-gray-900 dark:text-gray-100'
+                      : 'bg-stone-900 dark:bg-slate-700 text-stone-100 dark:text-gray-100'
                   }`}>
                     <p className="text-sm whitespace-pre-line">{message.text}</p>
                   </div>
-                  <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                  <span className="text-xs text-stone-500 dark:text-stone-400 mt-1">
                     {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </span>
                 </div>
@@ -356,7 +356,7 @@ export default function ChatBot() {
                 <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 bg-gradient-to-r from-purple-500 to-pink-500 p-1">
                   <img src="/logo.png" alt="Titan" className="h-full w-full rounded-full object-contain" />
                 </div>
-                <div className="bg-gray-100 dark:bg-slate-700 rounded-2xl p-3">
+                <div className="bg-stone-900 dark:bg-slate-700 rounded-2xl p-3">
                   <div className="flex gap-1">
                     <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
                     <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
@@ -372,13 +372,13 @@ export default function ChatBot() {
           {/* Quick Questions */}
           {messages.length === 1 && (
             <div className="px-4 pb-2">
-              <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">Quick questions:</p>
+              <p className="text-xs text-stone-500 dark:text-stone-400 mb-2">Quick questions:</p>
               <div className="flex flex-wrap gap-2">
                 {quickQuestions.map((question, idx) => (
                   <button
                     key={idx}
                     onClick={() => handleQuickQuestion(question)}
-                    className="text-xs px-3 py-1.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors"
+                    className="text-xs px-3 py-1.5 bg-purple-100 dark:bg-stone-950/30 text-amber-700 dark:text-amber-200 rounded-full hover:bg-purple-200 dark:hover:bg-stone-950/50 transition-colors"
                   >
                     {question}
                   </button>
@@ -388,7 +388,7 @@ export default function ChatBot() {
           )}
 
           {/* Input */}
-          <div className="p-4 border-t border-gray-200 dark:border-slate-700">
+          <div className="p-4 border-t border-stone-800 dark:border-slate-700">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -396,12 +396,12 @@ export default function ChatBot() {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Ask me anything..."
-                className="flex-1 px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder:text-gray-400"
+                className="flex-1 px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 bg-stone-950 dark:bg-slate-700 text-stone-100 dark:text-white placeholder:text-stone-400"
               />
               <button
                 onClick={handleSend}
                 disabled={!inputValue.trim()}
-                className="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-xl hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Send className="h-5 w-5" />
               </button>
@@ -412,3 +412,5 @@ export default function ChatBot() {
     </>
   );
 }
+
+

@@ -347,3 +347,4 @@ function calculateDistance(
 
   return R * c; // Distance in meters
 }
+
