@@ -1,53 +1,82 @@
 'use client';
 
-import { Shield } from 'lucide-react';
-
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
   return (
-    <footer className="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 border-t border-slate-700 mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Company Branding */}
-          <div className="text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-              <Shield className="w-5 h-5 text-blue-400" />
-              <span className="text-lg font-bold text-white">NyxTitan™</span>
+    <footer style={{
+      background: '#0D0B08',
+      borderTop: '1px solid rgba(201,168,76,0.18)',
+      marginTop: 'auto',
+      fontFamily: "'Inter', sans-serif",
+    }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 40px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '24px' }}>
+
+          {/* Branding */}
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+              <img
+                src="/titanlogo.png"
+                alt="NyxTitan"
+                style={{
+                  height: '28px',
+                  width: 'auto',
+                  filter: 'drop-shadow(0 0 8px rgba(201,168,76,0.35))',
+                }}
+              />
+              <span style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 600,
+                fontSize: '1.1rem',
+                letterSpacing: '3px',
+                background: 'linear-gradient(135deg, #C9A84C, #E8C060, #C9A84C)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}>
+                NyxTitan™
+              </span>
             </div>
-            <p className="text-xs text-slate-400">
-              by <strong className="text-slate-300">Connie Michelle Consulting & Business Solutions LLC</strong>
+            <p style={{ fontSize: '0.72rem', color: '#5A5040', letterSpacing: '0.5px' }}>
+              by <strong style={{ color: '#9E8F75' }}>Connie Michelle Consulting &amp; Business Solutions LLC</strong>
             </p>
           </div>
 
-          {/* Copyright & Legal */}
-          <div className="text-center md:text-right text-xs text-slate-400 space-y-1">
-            <p>
-              © {currentYear} Connie Michelle Consulting & Business Solutions LLC. All rights reserved.
+          {/* Links & Copyright */}
+          <div style={{ textAlign: 'right' }}>
+            <p style={{ fontSize: '0.72rem', color: '#5A5040', marginBottom: '6px' }}>
+              © {currentYear} Connie Michelle Consulting &amp; Business Solutions LLC. All rights reserved.
             </p>
-            <p>
-              <span className="text-slate-500">NyxTitan™ is a trademark of Connie Michelle Consulting & Business Solutions LLC</span>
+            <p style={{ fontSize: '0.7rem', color: '#3a3020', marginBottom: '10px' }}>
+              NyxTitan™ is a trademark of Connie Michelle Consulting &amp; Business Solutions LLC
             </p>
-            <div className="flex items-center justify-center md:justify-end gap-3 mt-2">
-              <a href="/terms" className="text-blue-400 hover:text-blue-300 transition-colors">
-                Terms of Service
-              </a>
-              <span className="text-slate-600">•</span>
-              <a href="/privacy" className="text-blue-400 hover:text-blue-300 transition-colors">
-                Privacy Policy
-              </a>
-              <span className="text-slate-600">•</span>
-              <a href="/contact" className="text-blue-400 hover:text-blue-300 transition-colors">
-                Contact
-              </a>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '12px' }}>
+              {[
+                { label: 'Terms of Service', href: '/terms' },
+                { label: 'Privacy Policy', href: '/privacy' },
+                { label: 'Contact', href: '/contact' },
+              ].map(({ label, href }, i, arr) => (
+                <span key={href} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <a
+                    href={href}
+                    style={{ fontSize: '0.72rem', color: '#9E8F75', textDecoration: 'none', letterSpacing: '0.5px', transition: 'color 0.2s' }}
+                    onMouseEnter={(e) => { (e.target as HTMLElement).style.color = '#E8C060'; }}
+                    onMouseLeave={(e) => { (e.target as HTMLElement).style.color = '#9E8F75'; }}
+                  >
+                    {label}
+                  </a>
+                  {i < arr.length - 1 && <span style={{ color: '#3a3020' }}>·</span>}
+                </span>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Legal Notice */}
-        <div className="mt-4 pt-4 border-t border-slate-700/50">
-          <p className="text-xs text-slate-500 text-center">
-            This software and all associated materials are proprietary to Connie Michelle Consulting & Business Solutions LLC. 
+        {/* Legal notice */}
+        <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid rgba(201,168,76,0.08)', textAlign: 'center' }}>
+          <p style={{ fontSize: '0.68rem', color: '#3a3020', lineHeight: 1.7 }}>
+            This software and all associated materials are proprietary to Connie Michelle Consulting &amp; Business Solutions LLC.
             Unauthorized reproduction, distribution, or use is strictly prohibited and may result in civil and criminal penalties.
           </p>
         </div>
