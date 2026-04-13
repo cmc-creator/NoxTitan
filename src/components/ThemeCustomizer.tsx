@@ -29,16 +29,16 @@ export default function ThemeCustomizer() {
   const [selectedFont, setSelectedFont] = useState<FontFamily>('inter');
   const [activeColorPicker, setActiveColorPicker] = useState<keyof CustomColors | null>(null);
   const [customColors, setCustomColors] = useState<CustomColors>({
-    pageBackground: '#000000',
-    cardBackground: '#1a1a1a',
-    primaryButtons: '#8b5cf6',
-    secondaryButtons: '#ec4899',
-    headerText: '#ffffff',
-    bodyText: '#e2e8f0',
-    calendarBackground: '#0a0a0a',
-    calendarNumbers: '#ffffff',
-    todayHighlight: '#8b5cf6',
-    borderColors: '#4a4a4a',
+    pageBackground: '#070604',
+    cardBackground: '#110F0B',
+    primaryButtons: '#C9A84C',
+    secondaryButtons: '#E8C060',
+    headerText: '#F0EBE0',
+    bodyText: '#F0EBE0',
+    calendarBackground: '#0D0B08',
+    calendarNumbers: '#F0EBE0',
+    todayHighlight: '#C9A84C',
+    borderColors: 'rgba(201,168,76,0.22)',
   });
 
   useEffect(() => {
@@ -91,16 +91,16 @@ export default function ThemeCustomizer() {
       todayHighlight: '#8b5cf6',
       borderColors: '#e2e8f0',
     } : {
-      pageBackground: '#000000',
-      cardBackground: '#1a1a1a',
-      primaryButtons: '#8b5cf6',
-      secondaryButtons: '#ec4899',
-      headerText: '#ffffff',
-      bodyText: '#e2e8f0',
-      calendarBackground: '#0a0a0a',
-      calendarNumbers: '#ffffff',
-      todayHighlight: '#8b5cf6',
-      borderColors: '#4a4a4a',
+      pageBackground: '#070604',
+      cardBackground: '#110F0B',
+      primaryButtons: '#C9A84C',
+      secondaryButtons: '#E8C060',
+      headerText: '#F0EBE0',
+      bodyText: '#F0EBE0',
+      calendarBackground: '#0D0B08',
+      calendarNumbers: '#F0EBE0',
+      todayHighlight: '#C9A84C',
+      borderColors: 'rgba(201,168,76,0.22)',
     };
     
     setCustomColors(colors);

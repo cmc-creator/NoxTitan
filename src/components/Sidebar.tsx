@@ -145,7 +145,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
 
   const sidebarContent = (
     <>
-      <div style={{ background: 'linear-gradient(180deg, #111 0%, #000 100%)', borderBottom: '1px solid rgba(201,168,76,0.35)' }} className="flex flex-col items-center justify-center py-5 shadow-2xl">
+      <div style={{ background: 'linear-gradient(180deg, #0D0B08 0%, #110F0B 100%)', borderBottom: '1px solid rgba(201,168,76,0.35)' }} className="flex flex-col items-center justify-center py-5 shadow-2xl">
         {/* Mobile Close Button */}
         {onClose && (
           <button
@@ -247,7 +247,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
       )}
 
       {/* Desktop Sidebar - Always visible */}
-      <aside className="hidden md:flex flex-col w-64 min-h-screen border-r shadow-2xl" style={{ background: '#000', borderColor: 'rgba(201,168,76,0.2)' }}>
+      <aside className="hidden md:flex flex-col w-64 min-h-screen border-r shadow-2xl" style={{ background: '#070604', borderColor: 'rgba(201,168,76,0.2)' }}>
         {sidebarContent}
       </aside>
 
@@ -257,7 +257,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
           "fixed top-0 left-0 z-50 flex flex-col w-64 h-full shadow-2xl transition-transform duration-300 md:hidden",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
-        style={{ background: '#000', borderRight: '1px solid rgba(201,168,76,0.2)' }}
+        style={{ background: '#070604', borderRight: '1px solid rgba(201,168,76,0.2)' }}
       >
         {sidebarContent}
       </aside>

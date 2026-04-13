@@ -97,38 +97,39 @@ function SignupForm() {
 
   const pageStyle: React.CSSProperties = {
     minHeight: '100vh',
-    background: '#000',
+    background: '#070604',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '40px 16px',
+    padding: '100px 16px 60px',
     fontFamily: "'Inter', sans-serif",
     position: 'relative',
     overflow: 'hidden',
   };
 
-  const galaxyBg: React.CSSProperties = {
+  // Subtle gold-only ambient glow — exactly like index.html
+  const ambientStyle: React.CSSProperties = {
     position: 'fixed',
     inset: 0,
     pointerEvents: 'none',
     background: `
-      radial-gradient(ellipse 70% 50% at 15% 25%, rgba(120,0,255,0.07) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 40% at 80% 70%, rgba(201,168,76,0.05) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 60% at 60% 20%, rgba(255,255,255,0.03) 0%, transparent 80%)
+      radial-gradient(ellipse 80% 50% at 15% 40%, rgba(201,168,76,0.04) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 85% 15%, rgba(201,168,76,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 50% 90%, rgba(160,120,40,0.03) 0%, transparent 60%)
     `,
     zIndex: 0,
   };
 
   const cardStyle: React.CSSProperties = {
-    background: 'linear-gradient(135deg, rgba(20,20,20,0.97) 0%, rgba(5,5,5,0.99) 100%)',
-    border: '2px solid rgba(201,168,76,0.35)',
-    borderRadius: '16px',
-    padding: '44px 40px',
+    background: '#110F0B',
+    border: '1px solid rgba(201,168,76,0.22)',
+    borderRadius: '2px',
+    padding: '52px 48px',
     width: '100%',
-    maxWidth: '560px',
+    maxWidth: '540px',
     position: 'relative',
     zIndex: 1,
-    boxShadow: '0 0 60px rgba(201,168,76,0.08), 0 20px 60px rgba(0,0,0,0.9)',
+    boxShadow: '0 0 60px rgba(201,168,76,0.06), 0 20px 60px rgba(0,0,0,0.8)',
   };
 
   const labelStyle: React.CSSProperties = {
@@ -136,18 +137,18 @@ function SignupForm() {
     fontSize: '0.68rem',
     fontWeight: 500,
     letterSpacing: '2px',
-    textTransform: 'uppercase',
+    textTransform: 'uppercase' as const,
     color: '#9E8F75',
     marginBottom: '8px',
   };
 
   const inputStyle: React.CSSProperties = {
     width: '100%',
-    padding: '12px 14px 12px 40px',
+    padding: '13px 14px 13px 42px',
     background: 'rgba(255,255,255,0.03)',
-    border: '1px solid rgba(201,168,76,0.2)',
-    borderRadius: '8px',
-    color: '#ffffff',
+    border: '1px solid rgba(201,168,76,0.18)',
+    borderRadius: '2px',
+    color: '#F0EBE0',
     fontSize: '0.9rem',
     outline: 'none',
     transition: 'border-color 0.2s',
@@ -161,9 +162,9 @@ function SignupForm() {
 
   return (
     <div style={pageStyle}>
-      <div style={galaxyBg} />
+      <div style={ambientStyle} />
 
-      <div style={{ width: '100%', maxWidth: '560px', position: 'relative', zIndex: 1 }}>
+      <div style={{ width: '100%', maxWidth: '540px', position: 'relative', zIndex: 1 }}>
         {/* Brand Header */}
         <div style={{ textAlign: 'center', marginBottom: '36px' }}>
           <Link href="/">
@@ -206,7 +207,7 @@ function SignupForm() {
             <div style={{ fontSize: '0.65rem', letterSpacing: '4px', textTransform: 'uppercase', color: gold, marginBottom: '8px' }}>
               {isVIP ? '💎 VIP Access Detected' : 'Join the Platform'}
             </div>
-            <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: '1.7rem', color: '#ffffff', letterSpacing: '1px' }}>
+            <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: '1.7rem', color: '#F0EBE0', letterSpacing: '1px' }}>
               {isVIP ? 'Titan — All Features Unlocked' : 'Start Your Free Trial'}
             </h1>
             <div style={{ width: '36px', height: '1px', background: `linear-gradient(90deg, transparent, ${gold}, transparent)`, margin: '16px auto 0' }} />
@@ -215,7 +216,7 @@ function SignupForm() {
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {/* Error */}
             {error && (
-              <div style={{ background: 'rgba(220,38,38,0.08)', border: '1px solid rgba(220,38,38,0.35)', borderRadius: '8px', padding: '12px 16px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <div style={{ background: 'rgba(220,38,38,0.08)', border: '1px solid rgba(220,38,38,0.35)', borderRadius: '2px', padding: '12px 16px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <AlertCircle style={{ width: '16px', height: '16px', color: '#f87171', flexShrink: 0 }} />
                 <span style={{ fontSize: '0.84rem', color: '#f87171' }}>{error}</span>
               </div>
@@ -235,7 +236,7 @@ function SignupForm() {
                   style={inputStyle}
                   placeholder="Your full name"
                   onFocus={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.55)'; }}
-                  onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.2)'; }}
+                  onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.18)'; }}
                 />
               </div>
             </div>
@@ -244,7 +245,7 @@ function SignupForm() {
             <div>
               <label style={labelStyle}>Email Address *</label>
               <div style={{ position: 'relative' }}>
-                <Mail style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', width: '15px', height: '15px', color: '#5A5040' }} />
+                <Mail style={{ position: 'absolute', left: '13px', top: '50%', transform: 'translateY(-50%)', width: '15px', height: '15px', color: '#5A5040' }} />
                 <input
                   type="email"
                   name="email"
@@ -254,7 +255,7 @@ function SignupForm() {
                   style={inputStyle}
                   placeholder="you@company.com"
                   onFocus={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.55)'; }}
-                  onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.2)'; }}
+                  onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.18)'; }}
                 />
               </div>
             </div>
@@ -263,7 +264,7 @@ function SignupForm() {
             <div>
               <label style={labelStyle}>Choose Your Plan *</label>
               {isVIP ? (
-                <div style={{ padding: '14px 16px', background: 'linear-gradient(135deg, rgba(234,179,8,0.12) 0%, rgba(180,83,9,0.12) 100%)', border: '2px solid rgba(234,179,8,0.4)', borderRadius: '8px' }}>
+                <div style={{ padding: '14px 16px', background: 'rgba(201,168,76,0.07)', border: '1px solid rgba(201,168,76,0.4)', borderRadius: '2px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <Gem style={{ width: '18px', height: '18px', color: goldBright }} />
                     <span style={{ color: '#fbbf24', fontWeight: 700, fontSize: '1rem' }}>VIP Access — TITAN Plan</span>
@@ -277,7 +278,7 @@ function SignupForm() {
                   onChange={handleChange}
                   style={{ ...inputStyleNoIcon, cursor: 'pointer' }}
                   onFocus={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.55)'; }}
-                  onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.2)'; }}
+                  onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.18)'; }}
                 >
                   <option value="PROFESSIONAL" style={{ background: '#111' }}>Professional — $499/mo — Up to 50 employees</option>
                   <option value="ENTERPRISE" style={{ background: '#111' }}>Enterprise — $1,499/mo — Up to 250 employees + AI</option>
@@ -301,7 +302,7 @@ function SignupForm() {
                     style={inputStyle}
                     placeholder="••••••••"
                     onFocus={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.55)'; }}
-                    onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.2)'; }}
+                    onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.18)'; }}
                   />
                 </div>
               </div>
@@ -318,7 +319,7 @@ function SignupForm() {
                     style={inputStyle}
                     placeholder="••••••••"
                     onFocus={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.55)'; }}
-                    onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.2)'; }}
+                    onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.18)'; }}
                   />
                 </div>
               </div>
@@ -347,9 +348,9 @@ function SignupForm() {
                 width: '100%',
                 padding: '15px',
                 background: loading ? '#3a3020' : `linear-gradient(135deg, ${gold} 0%, ${goldBright} 50%, ${gold} 100%)`,
-                color: '#000',
+                color: '#07060A',
                 border: 'none',
-                borderRadius: '8px',
+                borderRadius: '2px',
                 fontSize: '0.75rem',
                 fontWeight: 700,
                 letterSpacing: '2.5px',
@@ -393,7 +394,7 @@ function SignupForm() {
               background: 'transparent',
               color: gold,
               border: `1px solid rgba(201,168,76,0.3)`,
-              borderRadius: '8px',
+              borderRadius: '2px',
               fontSize: '0.75rem',
               fontWeight: 600,
               letterSpacing: '2px',
@@ -426,6 +427,7 @@ export default function SignupPage() {
     </Suspense>
   );
 }
+
 
 
 

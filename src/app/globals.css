@@ -208,26 +208,26 @@
   animation: float 3s ease-in-out infinite;
 }
 
-/* Theme Variables - Black & Purple Titan Theme */
+/* Theme Variables - NyxTitan Luxury Dark Theme */
 [data-theme="light"] {
-  --background: #000000;
-  --foreground: #e9d5ff;
-  --card-bg: #0a0a0a;
-  --card-border: #6b21a8;
-  --text-primary: #f3e8ff;
-  --text-secondary: #c084fc;
-  --header-from: #7c3aed;
-  --header-via: #6b21a8;
-  --header-to: #000000;
+  --background: #070604;
+  --foreground: #F0EBE0;
+  --card-bg: #110F0B;
+  --card-border: rgba(201,168,76,0.22);
+  --text-primary: #F0EBE0;
+  --text-secondary: #9E8F75;
+  --header-from: #0D0B08;
+  --header-via: #110F0B;
+  --header-to: #070604;
 }
 
 [data-theme="dark"] {
-  --background: #000000;
-  --foreground: #f3e8ff;
-  --card-bg: #0a0a0a;
-  --card-border: #334155;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
+  --background: #070604;
+  --foreground: #F0EBE0;
+  --card-bg: #110F0B;
+  --card-border: rgba(201,168,76,0.22);
+  --text-primary: #F0EBE0;
+  --text-secondary: #9E8F75;
   --header-from: #3b82f6;
   --header-via: #8b5cf6;
   --header-to: #ec4899;
@@ -2893,21 +2893,22 @@ body.theme-professional::before {
 }
 
 /* ============================================================
-   NYXTITAN THEME — Full App Override
-   Brand: #000 bg | #C9A84C/#E8C060 gold | #fff text (matches landing page)
+   NYXTITAN LUXURY THEME — Full App Override
+   Brand: #070604 bg | #C9A84C/#E8C060 gold | #F0EBE0 text
+   Matches index.html luxury leather aesthetic exactly
    ============================================================ */
 
-/* App shell background — pure black matching landing page */
+/* App shell background */
 .lux-app-bg {
-  background: #000 !important;
+  background: #070604 !important;
 }
 
 /* ── Root & body ─────────────────────────────────────────── */
 :root {
-  --lux-bg: #000000;
-  --lux-bg-2: #080808;
-  --lux-bg-3: #0f0f0f;
-  --lux-card: #0a0a0a;
+  --lux-bg: #070604;
+  --lux-bg-2: #0D0B08;
+  --lux-bg-3: #131009;
+  --lux-card: #110F0B;
   --lux-gold: #C9A84C;
   --lux-gold-bright: #E8C060;
   --lux-gold-dim: #9E8F75;
@@ -2925,9 +2926,9 @@ body.theme-professional::before {
 /* ── Luxury utility classes ──────────────────────────────── */
 
 .lux-card {
-  background: linear-gradient(135deg, rgba(20,20,20,0.95) 0%, rgba(0,0,0,0.98) 100%);
-  border: 2px solid rgba(201,168,76,0.35);
-  border-radius: 12px;
+  background: #110F0B;
+  border: 1px solid rgba(201,168,76,0.18);
+  border-radius: 2px;
   box-shadow: var(--lux-shadow);
 }
 

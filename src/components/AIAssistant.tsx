@@ -264,7 +264,7 @@ export default function AIAssistant() {
           width: '384px',
           height: '600px',
           zIndex: 9999,
-          background: '#111',
+          background: '#110F0B',
           border: '1px solid rgba(201,168,76,0.28)',
           borderRadius: '4px',
           display: 'flex',
@@ -281,7 +281,7 @@ export default function AIAssistant() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div style={{ position: 'relative' }}>
                 <Bot style={{ width: '24px', height: '24px', color: '#C9A84C' }} />
-                <span style={{ position: 'absolute', bottom: '-2px', right: '-2px', width: '8px', height: '8px', background: '#4ade80', borderRadius: '50%', border: '1px solid #111' }}></span>
+                <span style={{ position: 'absolute', bottom: '-2px', right: '-2px', width: '8px', height: '8px', background: '#4ade80', borderRadius: '50%', border: '1px solid #110F0B' }}></span>
               </div>
               <div>
                 <div style={{ fontSize: '0.9rem', fontWeight: 600, color: '#F0EBE0', fontFamily: "'Cormorant Garamond', serif", letterSpacing: '0.03em' }}>NyxTitan AI</div>
@@ -305,7 +305,7 @@ export default function AIAssistant() {
           </div>
 
           {/* Messages */}
-          <div style={{ flex: 1, overflowY: 'auto', padding: '16px', display: 'flex', flexDirection: 'column', gap: '12px', background: '#080808' }}>
+          <div style={{ flex: 1, overflowY: 'auto', padding: '16px', display: 'flex', flexDirection: 'column', gap: '12px', background: '#0D0B08' }}>
             {messages.map((msg) => (
               <div key={msg.id} style={{ display: 'flex', justifyContent: msg.type === 'user' ? 'flex-end' : 'flex-start' }}>
                 <div style={{
@@ -400,7 +400,7 @@ export default function AIAssistant() {
           </div>
 
           {/* Input */}
-          <div style={{ padding: '12px 14px', borderTop: '1px solid rgba(201,168,76,0.12)', background: '#111', flexShrink: 0 }}>
+          <div style={{ padding: '12px 14px', borderTop: '1px solid rgba(201,168,76,0.12)', background: '#110F0B', flexShrink: 0 }}>
             <div style={{ display: 'flex', gap: '8px' }}>
               <input
                 type="text"
@@ -411,7 +411,7 @@ export default function AIAssistant() {
                 style={{
                   flex: 1,
                   padding: '9px 14px',
-                  background: '#080808',
+                  background: '#0D0B08',
                   border: '1px solid rgba(201,168,76,0.2)',
                   borderRadius: '2px',
                   color: '#F0EBE0',
