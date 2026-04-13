@@ -28,12 +28,12 @@ export default function RootLayout({
           rel="stylesheet" 
         />
       </head>
-      <body className="antialiased" style={{ background: '#070604', color: '#F0EBE0' }}>
+      <body className="antialiased" style={{ background: '#000000', color: '#ffffff' }}>
         <AuthProvider>
           <ThemeProvider>
             <div className="flex flex-col min-h-screen">
               <ConditionalTopNav />
-              <main className="flex-1" style={{ background: '#070604' }}>
+              <main className="flex-1" style={{ background: '#000000' }}>
                 {children}
               </main>
               <Footer />

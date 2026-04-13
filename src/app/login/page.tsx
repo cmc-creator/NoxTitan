@@ -52,7 +52,7 @@ export default function LoginPage() {
 
   const pageStyle: React.CSSProperties = {
     minHeight: '100vh',
-    background: '#070604',
+    background: '#000',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -67,16 +67,17 @@ export default function LoginPage() {
     inset: 0,
     pointerEvents: 'none',
     background: `
-      radial-gradient(ellipse 70% 50% at 20% 40%, rgba(201,168,76,0.05) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 80% 20%, rgba(201,168,76,0.04) 0%, transparent 60%)
+      radial-gradient(ellipse 70% 50% at 15% 25%, rgba(120,0,255,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 70%, rgba(201,168,76,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 60% 20%, rgba(255,255,255,0.03) 0%, transparent 80%)
     `,
     zIndex: 0,
   };
 
   const cardStyle: React.CSSProperties = {
-    background: '#110F0B',
-    border: '1px solid rgba(201,168,76,0.22)',
-    borderRadius: '4px',
+    background: 'linear-gradient(135deg, rgba(20,20,20,0.97) 0%, rgba(5,5,5,0.99) 100%)',
+    border: '2px solid rgba(201,168,76,0.35)',
+    borderRadius: '16px',
     padding: '48px 44px',
     width: '100%',
     maxWidth: '440px',

@@ -50,7 +50,7 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
   const upsell = getUpsellMessage();
 
   return (
-    <div style={{ background: '#0D0B08', borderBottom: '1px solid rgba(201,168,76,0.2)' }} className="shadow-2xl">
+    <div style={{ background: '#000', borderBottom: '1px solid rgba(201,168,76,0.2)' }} className="shadow-2xl">
       <div className="flex items-center justify-between px-4 sm:px-6 py-3">
         {/* Mobile Menu Button */}
         <button

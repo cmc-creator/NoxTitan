@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { signIn } from 'next-auth/react';
-import { Calendar, Mail, Lock, User, Phone, AlertCircle, UserPlus } from 'lucide-react';
+import { Mail, Lock, User, AlertCircle, UserPlus, Gem } from 'lucide-react';
 
 function SignupForm() {
   const router = useRouter();
@@ -92,187 +92,323 @@ function SignupForm() {
     }
   };
 
+  const gold = '#C9A84C';
+  const goldBright = '#E8C060';
+
+  const pageStyle: React.CSSProperties = {
+    minHeight: '100vh',
+    background: '#000',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '40px 16px',
+    fontFamily: "'Inter', sans-serif",
+    position: 'relative',
+    overflow: 'hidden',
+  };
+
+  const galaxyBg: React.CSSProperties = {
+    position: 'fixed',
+    inset: 0,
+    pointerEvents: 'none',
+    background: `
+      radial-gradient(ellipse 70% 50% at 15% 25%, rgba(120,0,255,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 70%, rgba(201,168,76,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 60% 20%, rgba(255,255,255,0.03) 0%, transparent 80%)
+    `,
+    zIndex: 0,
+  };
+
+  const cardStyle: React.CSSProperties = {
+    background: 'linear-gradient(135deg, rgba(20,20,20,0.97) 0%, rgba(5,5,5,0.99) 100%)',
+    border: '2px solid rgba(201,168,76,0.35)',
+    borderRadius: '16px',
+    padding: '44px 40px',
+    width: '100%',
+    maxWidth: '560px',
+    position: 'relative',
+    zIndex: 1,
+    boxShadow: '0 0 60px rgba(201,168,76,0.08), 0 20px 60px rgba(0,0,0,0.9)',
+  };
+
+  const labelStyle: React.CSSProperties = {
+    display: 'block',
+    fontSize: '0.68rem',
+    fontWeight: 500,
+    letterSpacing: '2px',
+    textTransform: 'uppercase',
+    color: '#9E8F75',
+    marginBottom: '8px',
+  };
+
+  const inputStyle: React.CSSProperties = {
+    width: '100%',
+    padding: '12px 14px 12px 40px',
+    background: 'rgba(255,255,255,0.03)',
+    border: '1px solid rgba(201,168,76,0.2)',
+    borderRadius: '8px',
+    color: '#ffffff',
+    fontSize: '0.9rem',
+    outline: 'none',
+    transition: 'border-color 0.2s',
+    fontFamily: "'Inter', sans-serif",
+  };
+
+  const inputStyleNoIcon: React.CSSProperties = {
+    ...inputStyle,
+    paddingLeft: '14px',
+  };
+
   return (
-    <div className="min-h-screen lux-app-bg flex items-center justify-center p-4">
-      <div className="max-w-2xl w-full">
-        {/* Logo and Title */}
-        <div className="text-center mb-8">
-          <div className="flex items-center justify-center mb-4">
-            <Calendar className="w-16 h-16 text-amber-400" />
+    <div style={pageStyle}>
+      <div style={galaxyBg} />
+
+      <div style={{ width: '100%', maxWidth: '560px', position: 'relative', zIndex: 1 }}>
+        {/* Brand Header */}
+        <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+          <Link href="/">
+            <img
+              src="/titanlogo.png"
+              alt="NyxTitan"
+              style={{
+                height: '52px',
+                width: 'auto',
+                margin: '0 auto 16px',
+                display: 'block',
+                filter: `drop-shadow(0 0 18px rgba(201,168,76,0.4))`,
+              }}
+            />
+          </Link>
+          <div style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontWeight: 300,
+            fontSize: '1.5rem',
+            letterSpacing: '3px',
+            background: `linear-gradient(135deg, #E8E0D0 0%, #ffffff 25%, ${goldBright} 55%, ${gold} 75%, #E8E0D0 100%)`,
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            marginBottom: '6px',
+          }}>
+            NyxTitan
           </div>
-          <h1 className="text-4xl font-bold text-white mb-2">NyxTitan™</h1>
-          <p className="text-stone-400">Create your account</p>
-          <p className="text-xs text-stone-500 mt-2">by Connie Michelle Consulting & Business Solutions LLC</p>
+          <div style={{ fontSize: '0.65rem', fontWeight: 500, letterSpacing: '3px', textTransform: 'uppercase', color: gold }}>
+            Create Your Account
+          </div>
         </div>
 
-        {/* Signup Form */}
-        <div className="lux-card rounded-2xl shadow-2xl p-8 border border-stone-700">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Error Message */}
+        {/* Card */}
+        <div style={cardStyle}>
+          {/* Gold top accent line */}
+          <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: '1px', background: `linear-gradient(90deg, transparent, ${gold}, transparent)` }} />
+
+          <div style={{ textAlign: 'center', marginBottom: '28px' }}>
+            <div style={{ fontSize: '0.65rem', letterSpacing: '4px', textTransform: 'uppercase', color: gold, marginBottom: '8px' }}>
+              {isVIP ? '💎 VIP Access Detected' : 'Join the Platform'}
+            </div>
+            <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: '1.7rem', color: '#ffffff', letterSpacing: '1px' }}>
+              {isVIP ? 'Titan — All Features Unlocked' : 'Start Your Free Trial'}
+            </h1>
+            <div style={{ width: '36px', height: '1px', background: `linear-gradient(90deg, transparent, ${gold}, transparent)`, margin: '16px auto 0' }} />
+          </div>
+
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            {/* Error */}
             {error && (
-              <div className="bg-red-500/10 border border-red-500 rounded-lg p-4 flex items-center gap-3">
-                <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
-                <p className="text-red-400 text-sm">{error}</p>
+              <div style={{ background: 'rgba(220,38,38,0.08)', border: '1px solid rgba(220,38,38,0.35)', borderRadius: '8px', padding: '12px 16px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <AlertCircle style={{ width: '16px', height: '16px', color: '#f87171', flexShrink: 0 }} />
+                <span style={{ fontSize: '0.84rem', color: '#f87171' }}>{error}</span>
               </div>
             )}
 
-            {/* Name Field */}
+            {/* Full Name */}
             <div>
-              <label className="block text-sm font-semibold text-stone-300 mb-2">
-                Full Name *
-              </label>
-              <div className="relative">
-                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
+              <label style={labelStyle}>Full Name *</label>
+              <div style={{ position: 'relative' }}>
+                <User style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', width: '15px', height: '15px', color: '#5A5040' }} />
                 <input
                   type="text"
                   name="name"
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full pl-11 pr-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
-                  placeholder="John Doe"
+                  style={inputStyle}
+                  placeholder="Your full name"
+                  onFocus={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.55)'; }}
+                  onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.2)'; }}
                 />
               </div>
             </div>
 
-            {/* Email Field */}
+            {/* Email */}
             <div>
-              <label className="block text-sm font-semibold text-stone-300 mb-2">
-                Email Address *
-              </label>
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
+              <label style={labelStyle}>Email Address *</label>
+              <div style={{ position: 'relative' }}>
+                <Mail style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', width: '15px', height: '15px', color: '#5A5040' }} />
                 <input
                   type="email"
                   name="email"
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full pl-11 pr-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
-                  placeholder="you@example.com"
+                  style={inputStyle}
+                  placeholder="you@company.com"
+                  onFocus={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.55)'; }}
+                  onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.2)'; }}
                 />
               </div>
             </div>
 
-            {/* Subscription Tier */}
+            {/* Plan */}
             <div>
-              <label className="block text-sm font-semibold text-stone-300 mb-2">
-                Choose Your Plan *
-              </label>
+              <label style={labelStyle}>Choose Your Plan *</label>
               {isVIP ? (
-                <div className="w-full px-4 py-3 bg-gradient-to-br from-yellow-900/50 to-amber-900/50 border-2 border-yellow-600/40 rounded-lg">
-                  <p className="text-yellow-200 font-bold text-lg">💎 VIP Access - TITAN Plan</p>
-                  <p className="text-yellow-300 text-sm mt-1">Complimentary access • All features unlocked</p>
+                <div style={{ padding: '14px 16px', background: 'linear-gradient(135deg, rgba(234,179,8,0.12) 0%, rgba(180,83,9,0.12) 100%)', border: '2px solid rgba(234,179,8,0.4)', borderRadius: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Gem style={{ width: '18px', height: '18px', color: goldBright }} />
+                    <span style={{ color: '#fbbf24', fontWeight: 700, fontSize: '1rem' }}>VIP Access — TITAN Plan</span>
+                  </div>
+                  <p style={{ color: '#fde68a', fontSize: '0.82rem', marginTop: '4px' }}>Complimentary access · All features unlocked</p>
                 </div>
               ) : (
                 <select
                   name="tier"
                   value={formData.tier}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                  style={{ ...inputStyleNoIcon, cursor: 'pointer' }}
+                  onFocus={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.55)'; }}
+                  onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.2)'; }}
                 >
-                  <option value="PROFESSIONAL">Professional - $499/mo - Up to 50 employees</option>
-                  <option value="ENTERPRISE">Enterprise - $1,499/mo - Up to 250 employees + AI features</option>
-                  <option value="TITAN">Titan - $2,999/mo - Unlimited employees, white-glove service</option>
+                  <option value="PROFESSIONAL" style={{ background: '#111' }}>Professional — $499/mo — Up to 50 employees</option>
+                  <option value="ENTERPRISE" style={{ background: '#111' }}>Enterprise — $1,499/mo — Up to 250 employees + AI</option>
+                  <option value="TITAN" style={{ background: '#111' }}>Titan — $2,999/mo — Unlimited employees, white-glove</option>
                 </select>
-              )}
-              {!isVIP && (
-                <p className="text-xs text-stone-400 mt-2">
-                  Have a VIP code? Contact us for complimentary access!
-                </p>
               )}
             </div>
 
-            {/* Password Fields */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Passwords */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
               <div>
-                <label className="block text-sm font-semibold text-stone-300 mb-2">
-                  Password *
-                </label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
+                <label style={labelStyle}>Password *</label>
+                <div style={{ position: 'relative' }}>
+                  <Lock style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', width: '15px', height: '15px', color: '#5A5040' }} />
                   <input
                     type="password"
                     name="password"
                     required
                     value={formData.password}
                     onChange={handleChange}
-                    className="w-full pl-11 pr-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                    style={inputStyle}
                     placeholder="••••••••"
+                    onFocus={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.55)'; }}
+                    onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.2)'; }}
                   />
                 </div>
               </div>
-
               <div>
-                <label className="block text-sm font-semibold text-stone-300 mb-2">
-                  Confirm Password *
-                </label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
+                <label style={labelStyle}>Confirm *</label>
+                <div style={{ position: 'relative' }}>
+                  <Lock style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', width: '15px', height: '15px', color: '#5A5040' }} />
                   <input
                     type="password"
                     name="confirmPassword"
                     required
                     value={formData.confirmPassword}
                     onChange={handleChange}
-                    className="w-full pl-11 pr-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                    style={inputStyle}
                     placeholder="••••••••"
+                    onFocus={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.55)'; }}
+                    onBlur={(e) => { e.target.style.borderColor = 'rgba(201,168,76,0.2)'; }}
                   />
                 </div>
               </div>
             </div>
 
-            {/* Terms Agreement */}
-            <div className="flex items-start gap-3">
+            {/* Terms */}
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
               <input
                 type="checkbox"
                 required
-                className="w-4 h-4 mt-1 rounded border-stone-700 bg-stone-900 text-amber-400 focus:ring-2 focus:ring-amber-500/20"
+                style={{ accentColor: gold, width: '14px', height: '14px', marginTop: '2px', flexShrink: 0 }}
               />
-              <label className="text-sm text-stone-300">
+              <span style={{ fontSize: '0.82rem', color: '#9E8F75' }}>
                 I agree to the{' '}
-                <Link href="/terms" className="text-amber-400 hover:text-amber-400">
-                  Terms of Service
-                </Link>{' '}
-                and{' '}
-                <Link href="/privacy" className="text-amber-400 hover:text-amber-400">
-                  Privacy Policy
-                </Link>
-              </label>
+                <Link href="/terms" style={{ color: gold, textDecoration: 'none' }}>Terms of Service</Link>
+                {' '}and{' '}
+                <Link href="/privacy" style={{ color: gold, textDecoration: 'none' }}>Privacy Policy</Link>
+              </span>
             </div>
 
-            {/* Submit Button */}
+            {/* Submit */}
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-amber-700 to-amber-500 hover:from-amber-800 hover:to-amber-600 text-white px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              style={{
+                width: '100%',
+                padding: '15px',
+                background: loading ? '#3a3020' : `linear-gradient(135deg, ${gold} 0%, ${goldBright} 50%, ${gold} 100%)`,
+                color: '#000',
+                border: 'none',
+                borderRadius: '8px',
+                fontSize: '0.75rem',
+                fontWeight: 700,
+                letterSpacing: '2.5px',
+                textTransform: 'uppercase',
+                cursor: loading ? 'not-allowed' : 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '10px',
+                transition: 'all 0.3s',
+                boxShadow: loading ? 'none' : `0 0 28px rgba(201,168,76,0.3), 0 4px 18px rgba(0,0,0,0.5)`,
+                marginTop: '4px',
+              }}
             >
               {loading ? (
                 <>
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  Creating Account...
+                  <div style={{ width: '16px', height: '16px', border: '2px solid rgba(201,168,76,0.3)', borderTopColor: gold, borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
+                  Creating Account…
                 </>
               ) : (
                 <>
-                  <UserPlus className="w-5 h-5" />
+                  <UserPlus style={{ width: '16px', height: '16px' }} />
                   Create Account
                 </>
               )}
             </button>
           </form>
 
-          {/* Login Link */}
-          <div className="mt-6 text-center">
-            <p className="text-stone-400">
-              Already have an account?{' '}
-              <Link
-                href="/login"
-                className="text-amber-400 hover:text-amber-400 font-semibold transition-colors"
-              >
-                Sign in
-              </Link>
-            </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', margin: '24px 0 20px' }}>
+            <div style={{ flex: 1, height: '1px', background: 'rgba(201,168,76,0.12)' }} />
+            <span style={{ fontSize: '0.65rem', color: '#5A5040', letterSpacing: '2px', textTransform: 'uppercase' }}>already a member?</span>
+            <div style={{ flex: 1, height: '1px', background: 'rgba(201,168,76,0.12)' }} />
           </div>
+
+          <Link
+            href="/login"
+            style={{
+              display: 'block',
+              width: '100%',
+              padding: '13px',
+              background: 'transparent',
+              color: gold,
+              border: `1px solid rgba(201,168,76,0.3)`,
+              borderRadius: '8px',
+              fontSize: '0.75rem',
+              fontWeight: 600,
+              letterSpacing: '2px',
+              textTransform: 'uppercase',
+              textAlign: 'center',
+              textDecoration: 'none',
+              transition: 'all 0.2s',
+            }}
+          >
+            Sign In Instead
+          </Link>
+
+          <p style={{ textAlign: 'center', fontSize: '0.7rem', color: '#3a3020', marginTop: '20px', letterSpacing: '0.5px' }}>
+            by Connie Michelle Consulting & Business Solutions LLC
+          </p>
         </div>
       </div>
     </div>
@@ -282,8 +418,8 @@ function SignupForm() {
 export default function SignupPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen lux-app-bg flex items-center justify-center">
-        <div className="text-white">Loading...</div>
+      <div style={{ minHeight: '100vh', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ color: '#C9A84C' }}>Loading…</div>
       </div>
     }>
       <SignupForm />

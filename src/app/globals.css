@@ -2893,21 +2893,21 @@ body.theme-professional::before {
 }
 
 /* ============================================================
-   NYXTITAN LUXURY GOLD THEME — Full App Override
-   Brand: #070604 bg | #C9A84C/#E8C060 gold | #F0EBE0 text
+   NYXTITAN THEME — Full App Override
+   Brand: #000 bg | #C9A84C/#E8C060 gold | #fff text (matches landing page)
    ============================================================ */
 
-/* App shell background */
+/* App shell background — pure black matching landing page */
 .lux-app-bg {
-  background: #07060A !important;
+  background: #000 !important;
 }
 
 /* ── Root & body ─────────────────────────────────────────── */
 :root {
-  --lux-bg: #07060A;
-  --lux-bg-2: #0D0B08;
-  --lux-bg-3: #110F0B;
-  --lux-card: #150F09;
+  --lux-bg: #000000;
+  --lux-bg-2: #080808;
+  --lux-bg-3: #0f0f0f;
+  --lux-card: #0a0a0a;
   --lux-gold: #C9A84C;
   --lux-gold-bright: #E8C060;
   --lux-gold-dim: #9E8F75;
@@ -2925,9 +2925,9 @@ body.theme-professional::before {
 /* ── Luxury utility classes ──────────────────────────────── */
 
 .lux-card {
-  background: var(--lux-card);
-  border: 1px solid var(--lux-border);
-  border-radius: 3px;
+  background: linear-gradient(135deg, rgba(20,20,20,0.95) 0%, rgba(0,0,0,0.98) 100%);
+  border: 2px solid rgba(201,168,76,0.35);
+  border-radius: 12px;
   box-shadow: var(--lux-shadow);
 }
 
