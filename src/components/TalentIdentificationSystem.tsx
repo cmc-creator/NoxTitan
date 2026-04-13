@@ -207,23 +207,23 @@ export default function TalentIdentificationSystem({ managerId, showNotification
             {notifications.map((notification) => (
               <div
                 key={notification.id}
-                className="bg-slate-800/50 rounded-lg p-4 border border-slate-700"
+                className="bg-stone-900/50 rounded-lg p-4 border border-stone-700"
               >
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex items-center gap-3">
                     {notification.type === 'recognition' && <Award className="w-5 h-5 text-yellow-400" />}
                     {notification.type === 'promotion' && <TrendingUp className="w-5 h-5 text-amber-400" />}
                     {notification.type === 'mentor' && <Users className="w-5 h-5 text-cyan-400" />}
-                    {notification.type === 'training' && <BookOpen className="w-5 h-5 text-blue-400" />}
+                    {notification.type === 'training' && <BookOpen className="w-5 h-5 text-amber-400" />}
                     {notification.type === 'onboarding' && <Star className="w-5 h-5 text-green-400" />}
                     <div>
                       <p className="text-white font-bold">{notification.employee}</p>
-                      <p className="text-sm text-slate-300">{notification.message}</p>
+                      <p className="text-sm text-stone-300">{notification.message}</p>
                     </div>
                   </div>
                   <button
                     onClick={() => dismissNotification(notification.id)}
-                    className="text-slate-400 hover:text-white"
+                    className="text-stone-400 hover:text-white"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -240,7 +240,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
                     <button className="px-4 py-1 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 rounded-lg text-sm font-semibold transition-all">
                       {notification.action}
                     </button>
-                    <span className="text-xs text-slate-400 self-center">
+                    <span className="text-xs text-stone-400 self-center">
                       {notification.daysAgo === 0 ? 'Today' : `${notification.daysAgo}d ago`}
                     </span>
                   </div>
@@ -256,44 +256,44 @@ export default function TalentIdentificationSystem({ managerId, showNotification
         {topTalent.map((employee) => (
           <div
             key={employee.id}
-            className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-xl p-6 border-2 border-cyan-500/30 hover:border-cyan-400/50 transition-all cursor-pointer"
+            className="lux-card/80 backdrop-blur-xl rounded-xl p-6 border-2 border-cyan-500/30 hover:border-cyan-400/50 transition-all cursor-pointer"
             onClick={() => setSelectedEmployee(employee)}
           >
             {/* Header */}
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+              <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-amber-800 rounded-full flex items-center justify-center text-white font-bold text-xl">
                 {employee.avatar}
               </div>
               <div className="flex-1">
                 <h4 className="text-lg font-bold text-white">{employee.name}</h4>
                 <p className="text-sm text-cyan-400">{employee.role}</p>
-                <p className="text-xs text-slate-400">{employee.tenure}</p>
+                <p className="text-xs text-stone-400">{employee.tenure}</p>
               </div>
               <Star className="w-6 h-6 text-yellow-400 fill-yellow-400" />
             </div>
 
             {/* Performance Metrics */}
             <div className="grid grid-cols-2 gap-3 mb-4">
-              <div className="bg-slate-900/50 rounded-lg p-3">
-                <p className="text-xs text-slate-400">Performance</p>
+              <div className="bg-stone-950/50 rounded-lg p-3">
+                <p className="text-xs text-stone-400">Performance</p>
                 <p className="text-2xl font-bold text-white">{employee.metrics.performance}%</p>
               </div>
-              <div className="bg-slate-900/50 rounded-lg p-3">
-                <p className="text-xs text-slate-400">Satisfaction</p>
+              <div className="bg-stone-950/50 rounded-lg p-3">
+                <p className="text-xs text-stone-400">Satisfaction</p>
                 <p className="text-2xl font-bold text-white">{employee.metrics.patientSatisfaction}</p>
               </div>
-              <div className="bg-slate-900/50 rounded-lg p-3">
-                <p className="text-xs text-slate-400">Team Rating</p>
+              <div className="bg-stone-950/50 rounded-lg p-3">
+                <p className="text-xs text-stone-400">Team Rating</p>
                 <p className="text-2xl font-bold text-white">{employee.metrics.teamRating}</p>
               </div>
-              <div className="bg-slate-900/50 rounded-lg p-3">
-                <p className="text-xs text-slate-400">Attendance</p>
+              <div className="bg-stone-950/50 rounded-lg p-3">
+                <p className="text-xs text-stone-400">Attendance</p>
                 <p className="text-2xl font-bold text-white">{employee.metrics.attendanceRate}%</p>
               </div>
             </div>
 
             {/* Top Strength */}
-            <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg p-3 mb-4">
+            <div className="bg-gradient-to-r from-stone-900/20 to-pink-500/20 rounded-lg p-3 mb-4">
               <p className="text-xs text-amber-200 font-semibold mb-1">TOP STRENGTH</p>
               <p className="text-sm text-white font-bold">{employee.strengths[0]}</p>
             </div>
@@ -312,14 +312,14 @@ export default function TalentIdentificationSystem({ managerId, showNotification
                 <Users className="w-4 h-4" />
                 Mentor
               </button>
-              <button className="px-3 py-2 bg-amber-600/20 hover:bg-amber-600/30 text-blue-300 rounded-lg text-sm font-semibold transition-all flex items-center justify-center gap-1">
+              <button className="px-3 py-2 bg-amber-600/20 hover:bg-amber-600/30 text-amber-400 rounded-lg text-sm font-semibold transition-all flex items-center justify-center gap-1">
                 <BookOpen className="w-4 h-4" />
                 Train
               </button>
             </div>
 
             {/* View Details */}
-            <button className="w-full mt-3 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+            <button className="w-full mt-3 px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
               View Full Profile
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -330,23 +330,23 @@ export default function TalentIdentificationSystem({ managerId, showNotification
       {/* Detailed View Modal */}
       {selectedEmployee && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 max-w-4xl w-full border-2 border-cyan-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
+          <div className="lux-card rounded-2xl p-8 max-w-4xl w-full border-2 border-cyan-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-4">
-                <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-2xl">
+                <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-amber-800 rounded-full flex items-center justify-center text-white font-bold text-2xl">
                   {selectedEmployee.avatar}
                 </div>
                 <div>
                   <h2 className="text-3xl font-bold text-white">{selectedEmployee.name}</h2>
                   <p className="text-lg text-cyan-400">{selectedEmployee.role}</p>
-                  <p className="text-sm text-slate-400">{selectedEmployee.tenure}</p>
+                  <p className="text-sm text-stone-400">{selectedEmployee.tenure}</p>
                 </div>
               </div>
               <button
                 onClick={() => setSelectedEmployee(null)}
-                className="p-2 hover:bg-slate-700 rounded-lg transition-all"
+                className="p-2 hover:bg-stone-900 rounded-lg transition-all"
               >
-                <X className="w-6 h-6 text-slate-400" />
+                <X className="w-6 h-6 text-stone-400" />
               </button>
             </div>
 
@@ -355,14 +355,14 @@ export default function TalentIdentificationSystem({ managerId, showNotification
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-white mb-3">Performance Metrics</h3>
                 {Object.entries(selectedEmployee.metrics).map(([key, value]) => (
-                  <div key={key} className="bg-slate-900/50 rounded-lg p-4">
+                  <div key={key} className="bg-stone-950/50 rounded-lg p-4">
                     <div className="flex justify-between items-center mb-2">
-                      <p className="text-sm text-slate-300 capitalize">{key.replace(/([A-Z])/g, ' $1')}</p>
+                      <p className="text-sm text-stone-300 capitalize">{key.replace(/([A-Z])/g, ' $1')}</p>
                       <p className="text-xl font-bold text-white">{String(value)}{typeof value === 'number' && value <= 5 ? '' : '%'}</p>
                     </div>
-                    <div className="w-full bg-slate-700 rounded-full h-2">
+                    <div className="w-full bg-stone-900 rounded-full h-2">
                       <div 
-                        className="bg-gradient-to-r from-cyan-500 to-blue-600 h-2 rounded-full"
+                        className="bg-gradient-to-r from-cyan-500 to-amber-800 h-2 rounded-full"
                         style={{ width: `${typeof value === 'number' && value <= 5 ? (value / 5) * 100 : value}%` }}
                       ></div>
                     </div>
@@ -374,16 +374,16 @@ export default function TalentIdentificationSystem({ managerId, showNotification
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-white mb-3">AI Recommendations</h3>
                 {Object.entries(selectedEmployee.recommendations).map(([key, value]) => (
-                  <div key={key} className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg p-4 border border-amber-500/40/30">
+                  <div key={key} className="bg-gradient-to-r from-stone-900/10 to-pink-500/10 rounded-lg p-4 border border-amber-500/40/30">
                     <div className="flex items-center gap-2 mb-2">
                       {key === 'recognize' && <Award className="w-5 h-5 text-yellow-400" />}
                       {key === 'promote' && <TrendingUp className="w-5 h-5 text-amber-400" />}
                       {key === 'mentor' && <Users className="w-5 h-5 text-cyan-400" />}
-                      {key === 'train' && <BookOpen className="w-5 h-5 text-blue-400" />}
+                      {key === 'train' && <BookOpen className="w-5 h-5 text-amber-400" />}
                       {key === 'onboard' && <Star className="w-5 h-5 text-green-400" />}
                       <p className="text-sm font-bold text-white uppercase">{key}</p>
                     </div>
-                    <p className="text-sm text-slate-300">{value as string}</p>
+                    <p className="text-sm text-stone-300">{value as string}</p>
                   </div>
                 ))}
               </div>
@@ -393,7 +393,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
                 <h3 className="text-xl font-bold text-white mb-3">Core Strengths</h3>
                 <div className="space-y-2">
                   {selectedEmployee.strengths.map((strength: string, index: number) => (
-                    <div key={index} className="flex items-center gap-2 bg-slate-900/50 rounded-lg p-3">
+                    <div key={index} className="flex items-center gap-2 bg-stone-950/50 rounded-lg p-3">
                       <CheckCircle className="w-5 h-5 text-green-400" />
                       <p className="text-white">{strength}</p>
                     </div>
@@ -406,7 +406,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
                 <h3 className="text-xl font-bold text-white mb-3">Recent Achievements</h3>
                 <div className="space-y-2">
                   {selectedEmployee.recentAchievements.map((achievement: string, index: number) => (
-                    <div key={index} className="flex items-center gap-2 bg-slate-900/50 rounded-lg p-3">
+                    <div key={index} className="flex items-center gap-2 bg-stone-950/50 rounded-lg p-3">
                       <Star className="w-5 h-5 text-yellow-400" />
                       <p className="text-white text-sm">{achievement}</p>
                     </div>
@@ -423,19 +423,19 @@ export default function TalentIdentificationSystem({ managerId, showNotification
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="text-center">
                     <p className="text-3xl font-bold text-white">{selectedEmployee.onboardingSuccess.mentoredEmployees}</p>
-                    <p className="text-sm text-slate-300">Employees Mentored</p>
+                    <p className="text-sm text-stone-300">Employees Mentored</p>
                   </div>
                   <div className="text-center">
                     <p className="text-3xl font-bold text-green-400">{selectedEmployee.onboardingSuccess.retentionRate}%</p>
-                    <p className="text-sm text-slate-300">Retention Rate</p>
+                    <p className="text-sm text-stone-300">Retention Rate</p>
                   </div>
                   <div className="text-center">
                     <p className="text-3xl font-bold text-cyan-400">{selectedEmployee.onboardingSuccess.avgOnboardingTime}</p>
-                    <p className="text-sm text-slate-300">Avg Onboarding Time</p>
+                    <p className="text-sm text-stone-300">Avg Onboarding Time</p>
                   </div>
                   <div className="text-center">
                     <p className="text-3xl font-bold text-amber-400">{selectedEmployee.onboardingSuccess.satisfaction}</p>
-                    <p className="text-sm text-slate-300">Mentee Satisfaction</p>
+                    <p className="text-sm text-stone-300">Mentee Satisfaction</p>
                   </div>
                 </div>
               </div>
@@ -447,15 +447,15 @@ export default function TalentIdentificationSystem({ managerId, showNotification
                 <Award className="w-5 h-5" />
                 Send Commendation
               </button>
-              <button className="px-4 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-lg font-bold text-white transition-all flex items-center justify-center gap-2">
+              <button className="px-4 py-3 bg-gradient-to-r from-stone-900 to-pink-500 hover:from-stone-900 hover:to-pink-600 rounded-lg font-bold text-white transition-all flex items-center justify-center gap-2">
                 <TrendingUp className="w-5 h-5" />
                 Consider Promotion
               </button>
-              <button className="px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 rounded-lg font-bold text-white transition-all flex items-center justify-center gap-2">
+              <button className="px-4 py-3 bg-gradient-to-r from-cyan-500 to-amber-800 hover:from-cyan-600 hover:to-amber-800 rounded-lg font-bold text-white transition-all flex items-center justify-center gap-2">
                 <Users className="w-5 h-5" />
                 Assign Mentee
               </button>
-              <button className="px-4 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 rounded-lg font-bold text-white transition-all flex items-center justify-center gap-2">
+              <button className="px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-800 hover:from-amber-700 hover:to-amber-800 rounded-lg font-bold text-white transition-all flex items-center justify-center gap-2">
                 <BookOpen className="w-5 h-5" />
                 Assign Training
               </button>

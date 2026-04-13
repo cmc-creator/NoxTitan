@@ -100,7 +100,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
   const selectedFieldData = fields.find(f => f.id === selectedField);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-900 to-pink-50 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="bg-stone-950 rounded-xl shadow-lg p-8 mb-6">
@@ -131,7 +131,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
               </button>
               <button
                 onClick={handleSave}
-                className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center gap-2"
+                className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-stone-900 hover:to-pink-700 flex items-center gap-2"
               >
                 <Save className="w-5 h-5" />
                 Save Template
@@ -272,7 +272,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
 
             {previewMode && fields.length > 0 && (
               <div className="mt-8">
-                <button className="w-full px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-600 text-white text-lg rounded-lg hover:from-purple-700 hover:to-pink-700">
+                <button className="w-full px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-600 text-white text-lg rounded-lg hover:from-stone-900 hover:to-pink-700">
                   Submit Form
                 </button>
               </div>

@@ -31,7 +31,7 @@ export default function AIAssistantPage() {
       icon: <Shield className="w-8 h-8" />,
       title: 'Real-Time Compliance Monitoring',
       description: 'Stay ahead of regulations',
-      color: 'from-blue-500 to-cyan-600',
+      color: 'from-amber-700 to-cyan-600',
       details: 'Our AI continuously monitors federal and state labor laws, industry regulations, and compliance requirements. Get instant alerts when laws change that affect your business.',
       capabilities: [
         'Monitors 50 state labor laws in real-time',
@@ -46,7 +46,7 @@ export default function AIAssistantPage() {
       icon: <Brain className="w-8 h-8" />,
       title: 'Continuous Learning',
       description: 'Gets smarter every day',
-      color: 'from-purple-500 to-pink-600',
+      color: 'from-stone-900 to-pink-600',
       details: 'The AI learns from every interaction, court decision, and regulatory update. It adapts to your industry and business needs.',
       capabilities: [
         'Daily updates from legal databases',
@@ -91,7 +91,7 @@ export default function AIAssistantPage() {
       icon: <Bot className="w-8 h-8" />,
       title: '24/7 AI Chat Assistant',
       description: 'Friendly help anytime',
-      color: 'from-indigo-500 to-purple-600',
+      color: 'from-amber-700 to-amber-500',
       details: 'Chat with your AI assistant anytime to get answers about labor laws, scheduling questions, and best practices. Complete with occasional dad jokes!',
       capabilities: [
         'Answers questions in plain English',
@@ -172,7 +172,7 @@ export default function AIAssistantPage() {
         </div>
 
         {/* Premium Banner */}
-        <div className="bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 rounded-2xl shadow-2xl p-8 text-white mb-8 relative overflow-hidden">
+        <div className="bg-gradient-to-r from-stone-900 via-stone-900 to-amber-900 rounded-2xl shadow-2xl p-8 text-white mb-8 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-stone-950/10 rounded-full -mr-32 -mt-32"></div>
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-stone-950/10 rounded-full -ml-24 -mb-24"></div>
           
@@ -292,7 +292,7 @@ export default function AIAssistantPage() {
         </div>
 
         {/* How It Works */}
-        <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-8 border border-indigo-100">
+        <div className="bg-gradient-to-br from-amber-700 to-amber-500 rounded-xl p-8 border border-indigo-100">
           <h2 className="text-2xl font-bold text-stone-100 mb-6 flex items-center gap-2">
             <Lightbulb className="w-6 h-6 text-amber-600" />
             How the AI Works

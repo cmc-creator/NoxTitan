@@ -110,7 +110,7 @@ export default function FormsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-900 to-pink-50 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
@@ -135,7 +135,7 @@ export default function FormsPage() {
             </button>
             <button
               onClick={() => router.push('/forms/builder')}
-              className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center gap-2"
+              className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-stone-900 hover:to-pink-700 flex items-center gap-2"
             >
               <Plus className="w-5 h-5" />
               Create New Form
@@ -293,7 +293,7 @@ export default function FormsPage() {
             <p className="text-stone-500 mb-6">Try adjusting your search or create a new form</p>
             <button
               onClick={() => router.push('/forms/builder')}
-              className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700"
+              className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-stone-900 hover:to-pink-700"
             >
               Create New Form
             </button>

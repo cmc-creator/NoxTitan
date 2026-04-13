@@ -1,11 +1,11 @@
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
-      <div className="max-w-4xl mx-auto bg-slate-800/80 rounded-2xl shadow-2xl p-12 border border-slate-700">
+    <div className="min-h-screen lux-app-bg p-8">
+      <div className="max-w-4xl mx-auto bg-stone-900/80 rounded-2xl shadow-2xl p-12 border border-stone-700">
         <h1 className="text-4xl font-extrabold text-amber-200 mb-6">Privacy Policy</h1>
-        <p className="text-slate-300 mb-4">Effective Date: January 1, 2026</p>
+        <p className="text-stone-300 mb-4">Effective Date: January 1, 2026</p>
         
-        <div className="space-y-6 text-slate-200">
+        <div className="space-y-6 text-stone-200">
           <section>
             <h2 className="text-2xl font-bold text-amber-200 mb-3">1. Information We Collect</h2>
             <p className="mb-2">NyxTitan™ collects the following information to provide and improve our services:</p>
@@ -82,7 +82,7 @@ export default function PrivacyPage() {
           </section>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-slate-700">
+        <div className="mt-12 pt-6 border-t border-stone-700">
           <a href="/" className="text-amber-400 hover:text-amber-200 font-semibold">← Back to Home</a>
         </div>
       </div>

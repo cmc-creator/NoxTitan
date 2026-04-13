@@ -15,12 +15,12 @@ interface ChatbotPreferences {
 }
 
 const colorOptions = [
-  { name: 'Pink/Purple', value: 'from-pink-600 to-purple-600', text: 'Pink & Purple' },
-  { name: 'Blue/Cyan', value: 'from-blue-600 to-cyan-600', text: 'Blue & Cyan' },
+  { name: 'Pink/Purple', value: 'from-pink-600 to-amber-900', text: 'Pink & Purple' },
+  { name: 'Blue/Cyan', value: 'from-amber-700 to-cyan-600', text: 'Blue & Cyan' },
   { name: 'Green/Emerald', value: 'from-green-600 to-emerald-600', text: 'Green & Emerald' },
   { name: 'Orange/Red', value: 'from-orange-600 to-red-600', text: 'Orange & Red' },
   { name: 'Purple/Indigo', value: 'from-amber-700 to-amber-600', text: 'Purple & Indigo' },
-  { name: 'Teal/Blue', value: 'from-teal-600 to-blue-600', text: 'Teal & Blue' },
+  { name: 'Teal/Blue', value: 'from-teal-600 to-amber-800', text: 'Teal & Blue' },
   { name: 'Rose/Pink', value: 'from-rose-600 to-pink-600', text: 'Rose & Pink' },
   { name: 'Amber/Yellow', value: 'from-amber-600 to-yellow-600', text: 'Amber & Yellow' },
 ];
@@ -33,7 +33,7 @@ const avatarOptions = [
 export default function ChatbotCustomizer() {
   const [preferences, setPreferences] = useState<ChatbotPreferences>({
     titan: {
-      color: 'from-pink-600 to-purple-600',
+      color: 'from-pink-600 to-amber-900',
       avatar: '💬'
     },
     nox: {
@@ -64,7 +64,7 @@ export default function ChatbotCustomizer() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg shadow p-6 border-2 border-purple-200">
+    <div className="bg-gradient-to-r from-stone-900 to-pink-50 rounded-lg shadow p-6 border-2 border-purple-200">
       <div className="flex items-center gap-3 mb-4">
         <Palette className="w-6 h-6 text-amber-600" />
         <h3 className="text-xl font-bold text-stone-100">🤖 Chatbot Customization</h3>
@@ -201,7 +201,7 @@ export default function ChatbotCustomizer() {
       <div className="mt-6 flex items-center justify-center gap-3">
         <button
           onClick={handleSave}
-          className="px-8 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg font-bold transition-all shadow-lg flex items-center gap-2"
+          className="px-8 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-700 text-white rounded-lg font-bold transition-all shadow-lg flex items-center gap-2"
         >
           {saved ? (
             <>

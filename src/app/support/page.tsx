@@ -229,7 +229,7 @@ export default function SupportPage() {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl shadow-lg p-6 text-white">
+          <div className="bg-gradient-to-br from-amber-700 to-cyan-600 rounded-xl shadow-lg p-6 text-white">
             <div className="flex items-center justify-between mb-2">
               <Ticket className="w-8 h-8 opacity-80" />
               <span className="text-3xl font-bold">12</span>
@@ -245,7 +245,7 @@ export default function SupportPage() {
             <p className="text-green-100">AI Resolution Rate</p>
             <p className="text-sm text-green-200 mt-1">↑ 12% from last month</p>
           </div>
-          <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl shadow-lg p-6 text-white">
+          <div className="bg-gradient-to-br from-amber-700 to-amber-500 rounded-xl shadow-lg p-6 text-white">
             <div className="flex items-center justify-between mb-2">
               <Clock className="w-8 h-8 opacity-80" />
               <span className="text-3xl font-bold">2.3h</span>
@@ -525,7 +525,7 @@ export default function SupportPage() {
               <h2 className="text-2xl font-bold text-stone-100 mb-6">Support Analytics</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl border border-blue-200">
+                <div className="p-6 bg-gradient-to-br from-amber-700 to-cyan-50 rounded-xl border border-blue-200">
                   <h3 className="text-sm font-semibold text-amber-400 mb-2">Most Common Issues</h3>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">

@@ -988,7 +988,7 @@ export default function QAPIPage() {
                   </div>
                   <div className="w-full h-3 bg-stone-800 rounded-full overflow-hidden">
                     <div 
-                      className="h-full bg-gradient-to-r from-blue-500 to-green-500"
+                      className="h-full bg-gradient-to-r from-amber-700 to-green-500"
                       style={{ width: `${progress}%` }}
                     />
                   </div>
@@ -1168,7 +1168,7 @@ export default function QAPIPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-xl border-2 border-purple-200">
+          <div className="bg-gradient-to-r from-amber-700 to-amber-500 p-6 rounded-xl border-2 border-purple-200">
             <Award className="w-8 h-8 text-amber-600 mb-3" />
             <h3 className="text-xl font-bold text-stone-100 mb-2">Audit Readiness Dashboard</h3>
             <p className="text-stone-300 mb-4">
@@ -1185,7 +1185,7 @@ export default function QAPIPage() {
       {activeTab === 'reports' && (
         <div className="space-y-6">
           {/* Data Integration Status */}
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border-2 border-blue-200">
+          <div className="bg-gradient-to-r from-amber-700 to-amber-900 p-6 rounded-xl border-2 border-blue-200">
             <div className="flex items-start gap-4 mb-4">
               <div className="p-3 bg-amber-600 rounded-lg">
                 <RefreshCw className="w-6 h-6 text-white" />
@@ -1332,7 +1332,7 @@ export default function QAPIPage() {
                     <p className="text-xs text-green-700 mt-1">+2.5% vs. last month</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+                  <div className="bg-gradient-to-br from-amber-700 to-amber-500 p-4 rounded-lg border border-blue-200">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm font-medium text-amber-300">Patient Satisfaction</span>
                       <TrendingUp className="w-4 h-4 text-amber-400" />
@@ -1341,7 +1341,7 @@ export default function QAPIPage() {
                     <p className="text-xs text-amber-300 mt-1">+5% vs. target</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg border border-purple-200">
+                  <div className="bg-gradient-to-br from-stone-900 to-amber-900 p-4 rounded-lg border border-purple-200">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm font-medium text-purple-800">Staff Compliance</span>
                       <TrendingUp className="w-4 h-4 text-amber-600" />
@@ -1385,7 +1385,7 @@ export default function QAPIPage() {
                             </div>
                             <div className="w-full h-6 bg-stone-950 rounded-full overflow-hidden border border-stone-800">
                               <div 
-                                className="h-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-end pr-2"
+                                className="h-full bg-gradient-to-r from-amber-700 to-amber-500 flex items-center justify-end pr-2"
                                 style={{ width: `${(value / maxValue) * 100}%` }}
                               >
                                 {value > 8 && <span className="text-xs font-bold text-white">{value}</span>}
@@ -1580,7 +1580,7 @@ export default function QAPIPage() {
           </div>
 
           {/* Custom Chart Builder */}
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border-2 border-purple-200">
+          <div className="bg-gradient-to-r from-stone-900 to-pink-50 p-6 rounded-xl border-2 border-purple-200">
             <div className="flex items-start gap-4">
               <Zap className="w-8 h-8 text-amber-600" />
               <div className="flex-1">
@@ -1601,7 +1601,7 @@ export default function QAPIPage() {
       {activeTab === 'import' && (
         <div className="space-y-6">
           {/* Import Type Selection */}
-          <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-xl border-2 border-purple-200">
+          <div className="bg-gradient-to-r from-amber-700 to-amber-500 p-6 rounded-xl border-2 border-purple-200">
             <h2 className="text-2xl font-bold text-stone-100 mb-2">Import External Data</h2>
             <p className="text-stone-300 mb-4">
               Easily import data from SurveyMonkey, spreadsheets, or other external sources into your QAPI system.
@@ -1845,7 +1845,7 @@ export default function QAPIPage() {
               </div>
 
               {/* API Documentation */}
-              <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border-2 border-indigo-200">
+              <div className="bg-gradient-to-r from-amber-700 to-amber-500 p-6 rounded-xl border-2 border-indigo-200">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-amber-600 rounded-lg">
                     <Link className="w-6 h-6 text-white" />

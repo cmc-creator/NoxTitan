@@ -223,10 +223,10 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
     switch(levelName) {
       case "Grandmaster": return "text-amber-200 bg-amber-950";
       case "Master": return "text-yellow-300 bg-yellow-900/50";
-      case "Expert": return "text-blue-300 bg-blue-900/50";
+      case "Expert": return "text-amber-400 bg-blue-900/50";
       case "Journeyman": return "text-green-300 bg-green-900/50";
       case "Apprentice": return "text-stone-300 bg-stone-800/50";
-      default: return "text-slate-300 bg-slate-700/50";
+      default: return "text-stone-300 bg-stone-900/50";
     }
   };
 
@@ -635,7 +635,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setShowAIScheduler(true)}
-            className="px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-amber-600 to-blue-600 text-white hover:from-amber-500 hover:to-blue-500 transition-all shadow-lg flex items-center gap-2 border-2 border-amber-400 text-pop-light"
+            className="px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-amber-600 to-amber-800 text-white hover:from-amber-500 hover:to-amber-800 transition-all shadow-lg flex items-center gap-2 border-2 border-amber-400 text-pop-light"
           >
             <Sparkles className="w-5 h-5" />
             AI Auto-Schedule
@@ -656,7 +656,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           </button>
           <button
             onClick={() => setShowIntegrationDashboard(!showIntegrationDashboard)}
-            className="px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-amber-600 to-indigo-600 text-white hover:from-amber-500 hover:to-indigo-500 transition-all shadow-lg flex items-center gap-2 border-2 border-amber-400 text-pop-light"
+            className="px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-amber-600 to-amber-800 text-white hover:from-amber-500 hover:to-amber-800 transition-all shadow-lg flex items-center gap-2 border-2 border-amber-400 text-pop-light"
           >
             <Zap className="w-5 h-5" />
             System Integration
@@ -669,7 +669,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           </button>
           <button
             onClick={() => setShowSwapRequests(true)}
-            className="px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-500 hover:to-cyan-500 transition-all shadow-lg flex items-center gap-2 text-pop-light relative"
+            className="px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-amber-700 to-cyan-600 text-white hover:from-amber-700 hover:to-cyan-500 transition-all shadow-lg flex items-center gap-2 text-pop-light relative"
           >
             <User className="w-5 h-5" />
             Swap Requests
@@ -751,7 +751,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
               }
             }}
             disabled={undoStack.length === 0}
-            className="px-3 py-2 rounded-lg font-semibold bg-slate-700 text-white hover:bg-slate-600 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-3 py-2 rounded-lg font-semibold bg-stone-900 text-white hover:bg-stone-600 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             title="Undo"
           >
             ↶
@@ -766,21 +766,21 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
               }
             }}
             disabled={redoStack.length === 0}
-            className="px-3 py-2 rounded-lg font-semibold bg-slate-700 text-white hover:bg-slate-600 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-3 py-2 rounded-lg font-semibold bg-stone-900 text-white hover:bg-stone-600 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             title="Redo"
           >
             ↷
           </button>
 
-          <div className="ml-auto flex items-center gap-3 bg-slate-800/50 px-4 py-2 rounded-lg border border-amber-500/30">
+          <div className="ml-auto flex items-center gap-3 bg-stone-900/50 px-4 py-2 rounded-lg border border-amber-500/30">
             <DollarSign className="w-5 h-5 text-emerald-400" />
             <div className="text-left">
-              <div className="text-xs text-slate-400">Weekly Cost</div>
+              <div className="text-xs text-stone-400">Weekly Cost</div>
               <div className="text-sm font-bold text-white">${laborCost.current.toFixed(0)}</div>
             </div>
-            <div className="w-px h-8 bg-slate-600"></div>
+            <div className="w-px h-8 bg-stone-600"></div>
             <div className="text-left">
-              <div className="text-xs text-slate-400">vs Budget</div>
+              <div className="text-xs text-stone-400">vs Budget</div>
               <div className={`text-sm font-bold ${laborCost.savings >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
                 {laborCost.savings >= 0 ? '+' : ''}{laborCost.savings.toFixed(0)}
               </div>
@@ -817,16 +817,16 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* HR Integration Alerts */}
       {showHRAlerts && hrAlerts.length > 0 && (
-        <div className="mb-4 bg-gradient-to-r from-blue-950 via-indigo-950 to-blue-950 border border-amber-500/40/30 rounded-lg p-4">
+        <div className="mb-4 bg-gradient-to-r from-amber-700 via-stone-900 to-amber-800 border border-amber-500/40/30 rounded-lg p-4">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-blue-400" />
+              <Shield className="w-5 h-5 text-amber-400" />
               <h3 className="text-sm font-bold text-blue-200">HR Integration • Active Alerts</h3>
               <div className="w-2 h-2 bg-amber-600 rounded-full animate-pulse" />
             </div>
             <button
               onClick={() => setShowHRAlerts(false)}
-              className="text-blue-400 hover:text-blue-300 transition-colors"
+              className="text-amber-400 hover:text-amber-400 transition-colors"
             >
               <XCircle className="w-4 h-4" />
             </button>
@@ -861,8 +861,8 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                           {alert.type.replace('-', ' ')}
                         </span>
                       </div>
-                      <div className="text-xs text-slate-300 mb-2">{alert.message}</div>
-                      <button className="text-xs font-semibold text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1">
+                      <div className="text-xs text-stone-300 mb-2">{alert.message}</div>
+                      <button className="text-xs font-semibold text-amber-400 hover:text-amber-400 transition-colors flex items-center gap-1">
                         <CheckCircle className="w-3 h-3" />
                         {alert.action}
                       </button>
@@ -888,7 +888,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* System Integration Dashboard */}
       {showIntegrationDashboard && (
-        <div className="mb-4 bg-gradient-to-r from-amber-950 via-indigo-950 to-amber-950 border border-amber-500/30 rounded-lg p-4">
+        <div className="mb-4 bg-gradient-to-r from-amber-950 via-stone-900 to-amber-950 border border-amber-500/30 rounded-lg p-4">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <Zap className="w-5 h-5 text-amber-400" />
@@ -909,7 +909,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                 <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
                 <div className="text-xs font-bold text-emerald-300">Scheduler → Payroll</div>
               </div>
-              <div className="text-[10px] text-slate-300 mb-2">Shift hours, differentials, bonuses flowing to payroll in real-time</div>
+              <div className="text-[10px] text-stone-300 mb-2">Shift hours, differentials, bonuses flowing to payroll in real-time</div>
               <div className="flex gap-2">
                 <div className="flex-1 bg-emerald-900/30 rounded px-2 py-1">
                   <div className="text-[9px] text-emerald-400 font-semibold">This Week</div>
@@ -926,9 +926,9 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             <div className="bg-blue-950/40 border border-amber-500/40/30 rounded-lg p-3">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 bg-amber-600 rounded-full animate-pulse" />
-                <div className="text-xs font-bold text-blue-300">Timeclock → Scheduler</div>
+                <div className="text-xs font-bold text-amber-400">Timeclock → Scheduler</div>
               </div>
-              <div className="text-[10px] text-slate-300 mb-2">Live attendance tracking with late/no-show alerts</div>
+              <div className="text-[10px] text-stone-300 mb-2">Live attendance tracking with late/no-show alerts</div>
               <div className="flex gap-2">
                 <div className="flex-1 bg-blue-900/30 rounded px-2 py-1">
                   <div className="text-[9px] text-green-400 font-semibold">✓ On Time</div>
@@ -951,7 +951,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                 <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
                 <div className="text-xs font-bold text-amber-400">HR → Scheduler</div>
               </div>
-              <div className="text-[10px] text-slate-300 mb-2">Certifications, time-off, availability blocking shifts</div>
+              <div className="text-[10px] text-stone-300 mb-2">Certifications, time-off, availability blocking shifts</div>
               <div className="flex gap-2">
                 <div className="flex-1 bg-indigo-900/30 rounded px-2 py-1">
                   <div className="text-[9px] text-amber-400 font-semibold">Alerts</div>
@@ -970,7 +970,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                 <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
                 <div className="text-xs font-bold text-amber-200">Guild → Payroll</div>
               </div>
-              <div className="text-[10px] text-slate-300 mb-2">Performance bonuses and achievement rewards</div>
+              <div className="text-[10px] text-stone-300 mb-2">Performance bonuses and achievement rewards</div>
               <div className="flex gap-2">
                 <div className="flex-1 bg-amber-900/30 rounded px-2 py-1">
                   <div className="text-[9px] text-amber-400 font-semibold">Bonuses</div>
@@ -984,19 +984,19 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             </div>
             
             {/* Oracle → All Systems */}
-            <div className="bg-gradient-to-br from-amber-900/40 to-blue-900/40 border border-amber-500/40 rounded-lg p-3">
+            <div className="bg-gradient-to-br from-amber-900/40 to-amber-800/40 border border-amber-500/40 rounded-lg p-3">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
                 <div className="text-xs font-bold text-amber-200">Oracle → All Systems</div>
               </div>
-              <div className="text-[10px] text-slate-300 mb-2">AI predictions influencing every decision</div>
+              <div className="text-[10px] text-stone-300 mb-2">AI predictions influencing every decision</div>
               <div className="flex gap-2">
                 <div className="flex-1 bg-amber-900/30 rounded px-2 py-1">
                   <div className="text-[9px] text-amber-400 font-semibold">Confidence</div>
                   <div className="text-xs text-white font-bold">92%</div>
                 </div>
                 <div className="flex-1 bg-amber-900/30 rounded px-2 py-1">
-                  <div className="text-[9px] text-blue-400 font-semibold">Insights</div>
+                  <div className="text-[9px] text-amber-400 font-semibold">Insights</div>
                   <div className="text-xs text-white font-bold">{oracleInsights.length}</div>
                 </div>
               </div>
@@ -1008,7 +1008,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                 <div className="w-2 h-2 bg-rose-500 rounded-full animate-pulse" />
                 <div className="text-xs font-bold text-rose-300">Marketplace → Scheduler</div>
               </div>
-              <div className="text-[10px] text-slate-300 mb-2">Open shifts filled via gamified bonus system</div>
+              <div className="text-[10px] text-stone-300 mb-2">Open shifts filled via gamified bonus system</div>
               <div className="flex gap-2">
                 <div className="flex-1 bg-rose-900/30 rounded px-2 py-1">
                   <div className="text-[9px] text-rose-400 font-semibold">Open</div>
@@ -1033,7 +1033,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* Oracle AI Insight Panel */}
       {showOraclePanel && (
-        <div className="mb-4 bg-gradient-to-br from-amber-900/40 via-blue-900/40 to-amber-900/40 border-2 border-amber-500/50 rounded-xl p-4 shadow-2xl">
+        <div className="mb-4 bg-gradient-to-br from-amber-900/40 via-stone-900/40 to-amber-900/40 border-2 border-amber-500/50 rounded-xl p-4 shadow-2xl">
           <div className="flex items-start justify-between mb-3">
             <div className="flex items-center gap-3">
               <div className="relative">
@@ -1100,7 +1100,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           className={`px-4 py-2 rounded-lg font-semibold transition-all border-2 ${
             viewMode === 'grid' 
               ? 'bg-gradient-to-r from-amber-900 via-amber-700 to-black text-white shadow-[0_0_15px_rgba(168,85,247,0.4)] border-amber-500' 
-              : 'bg-slate-800 text-slate-300 hover:bg-slate-700 border-slate-600'
+              : 'bg-stone-900 text-stone-300 hover:bg-stone-900 border-stone-700'
           }`}
         >
           📋 Staff Grid View
@@ -1110,7 +1110,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           className={`px-4 py-2 rounded-lg font-semibold transition-all border-2 ${
             viewMode === 'calendar' 
               ? 'bg-gradient-to-r from-amber-900 via-amber-700 to-black text-white shadow-[0_0_15px_rgba(168,85,247,0.4)] border-amber-500' 
-              : 'bg-slate-800 text-slate-300 hover:bg-slate-700 border-slate-600'
+              : 'bg-stone-900 text-stone-300 hover:bg-stone-900 border-stone-700'
           }`}
         >
           📅 Calendar View
@@ -1140,7 +1140,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             {/* Settings Content */}
             <div className="p-6 space-y-6">
               {/* Star Employee Animations Section */}
-              <div className="bg-slate-800/50 rounded-xl p-5 border border-amber-500/30">
+              <div className="bg-stone-900/50 rounded-xl p-5 border border-amber-500/30">
                 <h3 className="text-lg font-bold text-amber-100/70 mb-4 flex items-center gap-2">
                   ⭐ Star Employee Animations
                 </h3>
@@ -1149,12 +1149,12 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   <div className="flex items-center justify-between">
                     <div>
                       <label className="text-sm font-semibold text-amber-50">Enable Light Tracer</label>
-                      <p className="text-xs text-slate-400 mt-1">Highlight top 3 performers with animated border</p>
+                      <p className="text-xs text-stone-400 mt-1">Highlight top 3 performers with animated border</p>
                     </div>
                     <button
                       onClick={() => setShowStarAnimation(!showStarAnimation)}
                       className={`relative w-14 h-7 rounded-full transition-colors ${
-                        showStarAnimation ? 'bg-amber-600' : 'bg-slate-600'
+                        showStarAnimation ? 'bg-amber-600' : 'bg-stone-600'
                       }`}
                     >
                       <span className={`absolute top-0.5 left-0.5 w-6 h-6 bg-stone-950 rounded-full transition-transform ${
@@ -1167,7 +1167,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   <div className="flex items-center justify-between">
                     <div>
                       <label className="text-sm font-semibold text-amber-50">Tracer Color</label>
-                      <p className="text-xs text-slate-400 mt-1">Customize the animation glow color</p>
+                      <p className="text-xs text-stone-400 mt-1">Customize the animation glow color</p>
                     </div>
                     <div className="flex items-center gap-3">
                       <input
@@ -1176,15 +1176,15 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                         onChange={(e) => setTracerColor(e.target.value)}
                         className="w-16 h-10 rounded-lg cursor-pointer border-2 border-amber-400 shadow-lg"
                       />
-                      <span className="text-xs font-mono text-slate-300 bg-slate-700 px-2 py-1 rounded">{tracerColor}</span>
+                      <span className="text-xs font-mono text-stone-300 bg-stone-900 px-2 py-1 rounded">{tracerColor}</span>
                     </div>
                   </div>
 
                   {/* Preview */}
-                  <div className="mt-4 p-3 bg-slate-900 rounded-lg border border-slate-600">
-                    <p className="text-xs text-slate-400 mb-2">Preview:</p>
+                  <div className="mt-4 p-3 bg-stone-950 rounded-lg border border-stone-700">
+                    <p className="text-xs text-stone-400 mb-2">Preview:</p>
                     <div 
-                      className={`p-3 rounded-lg bg-slate-800 text-white text-sm font-semibold relative ${showStarAnimation ? 'star-employee-card' : ''}`}
+                      className={`p-3 rounded-lg bg-stone-900 text-white text-sm font-semibold relative ${showStarAnimation ? 'star-employee-card' : ''}`}
                       style={{
                         ...(showStarAnimation ? {
                           '--tracer-color-light': hexToRgba(tracerColor, 0.8),
@@ -1201,7 +1201,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
               </div>
 
               {/* Display Settings Section */}
-              <div className="bg-slate-800/50 rounded-xl p-5 border border-amber-500/30">
+              <div className="bg-stone-900/50 rounded-xl p-5 border border-amber-500/30">
                 <h3 className="text-lg font-bold text-amber-100/70 mb-4 flex items-center gap-2">
                   🎨 Display Settings
                 </h3>
@@ -1209,7 +1209,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   <div className="flex items-center justify-between">
                     <div>
                       <label className="text-sm font-semibold text-amber-50">Show Avatars</label>
-                      <p className="text-xs text-slate-400 mt-1">Display employee profile pictures</p>
+                      <p className="text-xs text-stone-400 mt-1">Display employee profile pictures</p>
                     </div>
                     <button className="relative w-14 h-7 rounded-full bg-amber-600">
                       <span className="absolute top-0.5 left-0.5 w-6 h-6 bg-stone-950 rounded-full translate-x-7" />
@@ -1218,16 +1218,16 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   <div className="flex items-center justify-between">
                     <div>
                       <label className="text-sm font-semibold text-amber-50">Compact View</label>
-                      <p className="text-xs text-slate-400 mt-1">Reduce spacing between shifts</p>
+                      <p className="text-xs text-stone-400 mt-1">Reduce spacing between shifts</p>
                     </div>
-                    <button className="relative w-14 h-7 rounded-full bg-slate-600">
+                    <button className="relative w-14 h-7 rounded-full bg-stone-600">
                       <span className="absolute top-0.5 left-0.5 w-6 h-6 bg-stone-950 rounded-full" />
                     </button>
                   </div>
                   <div className="flex items-center justify-between">
                     <div>
                       <label className="text-sm font-semibold text-amber-50">Show Guild Ranks</label>
-                      <p className="text-xs text-slate-400 mt-1">Display level badges and rankings</p>
+                      <p className="text-xs text-stone-400 mt-1">Display level badges and rankings</p>
                     </div>
                     <button className="relative w-14 h-7 rounded-full bg-amber-600">
                       <span className="absolute top-0.5 left-0.5 w-6 h-6 bg-stone-950 rounded-full translate-x-7" />
@@ -1237,7 +1237,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
               </div>
 
               {/* Notification Settings Section */}
-              <div className="bg-slate-800/50 rounded-xl p-5 border border-amber-500/30">
+              <div className="bg-stone-900/50 rounded-xl p-5 border border-amber-500/30">
                 <h3 className="text-lg font-bold text-amber-100/70 mb-4 flex items-center gap-2">
                   🔔 Notifications
                 </h3>
@@ -1245,7 +1245,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   <div className="flex items-center justify-between">
                     <div>
                       <label className="text-sm font-semibold text-amber-50">Shift Conflicts</label>
-                      <p className="text-xs text-slate-400 mt-1">Alert when schedules overlap</p>
+                      <p className="text-xs text-stone-400 mt-1">Alert when schedules overlap</p>
                     </div>
                     <button className="relative w-14 h-7 rounded-full bg-amber-600">
                       <span className="absolute top-0.5 left-0.5 w-6 h-6 bg-stone-950 rounded-full translate-x-7" />
@@ -1254,7 +1254,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   <div className="flex items-center justify-between">
                     <div>
                       <label className="text-sm font-semibold text-amber-50">Overtime Warnings</label>
-                      <p className="text-xs text-slate-400 mt-1">Notify when approaching hour limits</p>
+                      <p className="text-xs text-stone-400 mt-1">Notify when approaching hour limits</p>
                     </div>
                     <button className="relative w-14 h-7 rounded-full bg-amber-600">
                       <span className="absolute top-0.5 left-0.5 w-6 h-6 bg-stone-950 rounded-full translate-x-7" />
@@ -1268,7 +1268,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             <div className="sticky bottom-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-6 border-t-2 border-amber-500/30 flex justify-end gap-3">
               <button
                 onClick={() => setShowSettings(false)}
-                className="px-6 py-2 rounded-lg font-semibold bg-slate-700 text-white hover:bg-slate-600 transition-colors"
+                className="px-6 py-2 rounded-lg font-semibold bg-stone-900 text-white hover:bg-stone-600 transition-colors"
               >
                 Close
               </button>
@@ -1308,9 +1308,9 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   }`} />
                   <div className="flex-1">
                     <div className="text-sm font-semibold text-white">{conflict.type.toUpperCase().replace('-', ' ')}</div>
-                    <div className="text-xs text-slate-300 mt-1">{conflict.message}</div>
+                    <div className="text-xs text-stone-300 mt-1">{conflict.message}</div>
                   </div>
-                  <button className="px-2 py-1 bg-slate-700 hover:bg-slate-600 rounded text-xs text-white">
+                  <button className="px-2 py-1 bg-stone-900 hover:bg-stone-600 rounded text-xs text-white">
                     Fix
                   </button>
                 </div>
@@ -1339,7 +1339,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       )}
 
       {/* Weather Widget */}
-      <div className="mb-4 bg-gradient-to-r from-sky-900/40 to-blue-900/40 border-2 border-sky-500/50 rounded-xl p-4">
+      <div className="mb-4 bg-gradient-to-r from-sky-900/40 to-amber-800/40 border-2 border-sky-500/50 rounded-xl p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="text-4xl">{weatherData.icon}</div>
@@ -1353,7 +1353,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       </div>
 
       {/* Coverage Heatmap */}
-      <div className="mb-4 bg-gradient-to-r from-slate-900 to-slate-800 border-2 border-slate-600 rounded-xl p-4">
+      <div className="mb-4 bg-gradient-to-r from-slate-900 to-slate-800 border-2 border-stone-700 rounded-xl p-4">
         <h3 className="font-bold text-white mb-3 flex items-center gap-2">
           <TrendingUp className="w-5 h-5 text-amber-400" />
           Weekly Coverage Status
@@ -1366,9 +1366,9 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
               data.percentage < 105 ? 'bg-green-900/40 border border-green-500/50' :
               'bg-blue-900/40 border border-amber-500/40/50'
             }`}>
-              <div className="text-xs text-slate-300">{day}</div>
+              <div className="text-xs text-stone-300">{day}</div>
               <div className="text-lg font-bold text-white">{data.percentage}%</div>
-              <div className="text-[10px] text-slate-400">{data.staffed}/{data.required}</div>
+              <div className="text-[10px] text-stone-400">{data.staffed}/{data.required}</div>
             </div>
           ))}
         </div>
@@ -1397,7 +1397,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {showAIScheduler && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowAIScheduler(false)}>
           <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded-2xl shadow-2xl border-2 border-amber-500/50 max-w-3xl w-full" onClick={(e) => e.stopPropagation()}>
-            <div className="bg-gradient-to-r from-amber-900 via-blue-900 to-amber-900 p-6 border-b-2 border-amber-500">
+            <div className="bg-gradient-to-r from-amber-900 via-stone-900 to-amber-900 p-6 border-b-2 border-amber-500">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <Sparkles className="w-7 h-7 text-yellow-300 animate-pulse" />
@@ -1415,7 +1415,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             </div>
             <div className="p-6 space-y-4">
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-slate-800/50 rounded-lg p-4 border border-amber-500/30">
+                <div className="bg-stone-900/50 rounded-lg p-4 border border-amber-500/30">
                   <div className="flex items-center gap-2 mb-2">
                     <Zap className="w-5 h-5 text-yellow-400" />
                     <h3 className="font-bold text-amber-100/70">Optimization Goals</h3>
@@ -1439,7 +1439,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                     </label>
                   </div>
                 </div>
-                <div className="bg-slate-800/50 rounded-lg p-4 border border-amber-500/30">
+                <div className="bg-stone-900/50 rounded-lg p-4 border border-amber-500/30">
                   <div className="flex items-center gap-2 mb-2">
                     <TrendingUp className="w-5 h-5 text-emerald-400" />
                     <h3 className="font-bold text-amber-100/70">AI Insights</h3>
@@ -1460,28 +1460,28 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-amber-900/30 to-blue-900/30 rounded-lg p-4 border border-amber-500/30">
+              <div className="bg-gradient-to-r from-amber-900/30 to-amber-800/30 rounded-lg p-4 border border-amber-500/30">
                 <h3 className="font-bold text-amber-100/70 mb-3">Predicted Outcomes</h3>
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
                     <div className="text-2xl font-bold text-emerald-400">-23%</div>
-                    <div className="text-xs text-slate-400">Labor Cost Reduction</div>
+                    <div className="text-xs text-stone-400">Labor Cost Reduction</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-blue-400">94%</div>
-                    <div className="text-xs text-slate-400">Coverage Rate</div>
+                    <div className="text-2xl font-bold text-amber-400">94%</div>
+                    <div className="text-xs text-stone-400">Coverage Rate</div>
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-amber-400">$3,450</div>
-                    <div className="text-xs text-slate-400">Projected Savings</div>
+                    <div className="text-xs text-stone-400">Projected Savings</div>
                   </div>
                 </div>
               </div>
               <div className="flex gap-3 justify-end">
-                <button onClick={() => setShowAIScheduler(false)} className="px-6 py-2 rounded-lg font-semibold bg-slate-700 text-white hover:bg-slate-600 transition">
+                <button onClick={() => setShowAIScheduler(false)} className="px-6 py-2 rounded-lg font-semibold bg-stone-900 text-white hover:bg-stone-600 transition">
                   Cancel
                 </button>
-                <button className="px-6 py-2 rounded-lg font-semibold bg-gradient-to-r from-amber-600 to-blue-600 text-white hover:from-amber-500 hover:to-blue-500 transition shadow-lg flex items-center gap-2">
+                <button className="px-6 py-2 rounded-lg font-semibold bg-gradient-to-r from-amber-600 to-amber-800 text-white hover:from-amber-500 hover:to-amber-800 transition shadow-lg flex items-center gap-2">
                   <Sparkles className="w-5 h-5" />
                   Generate Schedule
                 </button>
@@ -1522,14 +1522,14 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   </div>
                   <div className="space-y-2">
                     {marketplacePostedShifts.map((posting, index) => (
-                      <div key={index} className="bg-slate-800/60 rounded-lg p-3 border border-green-500/30">
+                      <div key={index} className="bg-stone-900/60 rounded-lg p-3 border border-green-500/30">
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
                             <div className="font-bold text-white">{posting.shift.title}</div>
-                            <div className="text-sm text-slate-300 mt-1">
+                            <div className="text-sm text-stone-300 mt-1">
                               📍 {posting.shift.location} • 👤 {posting.shift.employeeName}
                             </div>
-                            <div className="text-xs text-slate-400 mt-1">
+                            <div className="text-xs text-stone-400 mt-1">
                               Posted {Math.floor((new Date().getTime() - posting.timestamp.getTime()) / 60000)} min ago
                             </div>
                           </div>
@@ -1554,28 +1554,28 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   <span className="text-xs text-yellow-300">Resets Monday 12:00 AM</span>
                 </div>
                 <div className="grid grid-cols-3 gap-3">
-                  <div className="bg-slate-800/50 rounded-lg p-3 border-2 border-yellow-500">
+                  <div className="bg-stone-900/50 rounded-lg p-3 border-2 border-yellow-500">
                     <div className="text-center">
                       <div className="text-2xl mb-1">🥇</div>
                       <div className="font-bold text-white text-sm">Jennifer T.</div>
                       <div className="text-yellow-400 font-bold">$450</div>
-                      <div className="text-xs text-slate-400">7 shifts claimed</div>
+                      <div className="text-xs text-stone-400">7 shifts claimed</div>
                     </div>
                   </div>
-                  <div className="bg-slate-800/50 rounded-lg p-3 border border-slate-600">
+                  <div className="bg-stone-900/50 rounded-lg p-3 border border-stone-700">
                     <div className="text-center">
                       <div className="text-2xl mb-1">🥈</div>
                       <div className="font-bold text-white text-sm">Marcus C.</div>
-                      <div className="text-slate-300 font-bold">$320</div>
-                      <div className="text-xs text-slate-400">5 shifts claimed</div>
+                      <div className="text-stone-300 font-bold">$320</div>
+                      <div className="text-xs text-stone-400">5 shifts claimed</div>
                     </div>
                   </div>
-                  <div className="bg-slate-800/50 rounded-lg p-3 border border-slate-600">
+                  <div className="bg-stone-900/50 rounded-lg p-3 border border-stone-700">
                     <div className="text-center">
                       <div className="text-2xl mb-1">🥉</div>
                       <div className="font-bold text-white text-sm">David K.</div>
-                      <div className="text-slate-300 font-bold">$280</div>
-                      <div className="text-xs text-slate-400">4 shifts claimed</div>
+                      <div className="text-stone-300 font-bold">$280</div>
+                      <div className="text-xs text-stone-400">4 shifts claimed</div>
                     </div>
                   </div>
                 </div>
@@ -1585,10 +1585,10 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                 <button className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2 rounded-lg transition">
                   Available Shifts (12)
                 </button>
-                <button className="bg-slate-700 hover:bg-slate-600 text-white font-semibold py-2 rounded-lg transition">
+                <button className="bg-stone-900 hover:bg-stone-600 text-white font-semibold py-2 rounded-lg transition">
                   Trade Requests (5)
                 </button>
-                <button className="bg-slate-700 hover:bg-slate-600 text-white font-semibold py-2 rounded-lg transition">
+                <button className="bg-stone-900 hover:bg-stone-600 text-white font-semibold py-2 rounded-lg transition">
                   My Posts (2)
                 </button>
               </div>
@@ -1607,7 +1607,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                     'PREMIUM': 'bg-amber-600 animate-pulse'
                   };
                   return (
-                    <div key={i} className="bg-slate-800/50 rounded-lg p-4 border-2 border-emerald-500/30 hover:border-emerald-500 transition hover:scale-[1.02]">
+                    <div key={i} className="bg-stone-900/50 rounded-lg p-4 border-2 border-emerald-500/30 hover:border-emerald-500 transition hover:scale-[1.02]">
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-2">
@@ -1616,7 +1616,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                             </span>
                             <span className="font-bold text-white text-lg">{item.shift}</span>
                           </div>
-                          <div className="flex items-center gap-4 text-sm text-slate-300 mb-2">
+                          <div className="flex items-center gap-4 text-sm text-stone-300 mb-2">
                             <span>📅 {item.date}</span>
                             <span>🕐 {item.time}</span>
                             <span>⏱️ {item.hours} hours</span>
@@ -1631,19 +1631,19 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                               <Sparkles className="w-4 h-4 text-amber-400" />
                               <span className="text-amber-200 font-bold">+{item.xp} XP</span>
                             </div>
-                            <div className="flex items-center gap-1 text-slate-400 text-xs">
+                            <div className="flex items-center gap-1 text-stone-400 text-xs">
                               <User className="w-3 h-3" />
                               <span>{item.claims} interested</span>
                             </div>
                           </div>
-                          <div className="text-xs text-slate-400">Posted by {item.posted} • {item.timeAgo}</div>
+                          <div className="text-xs text-stone-400">Posted by {item.posted} • {item.timeAgo}</div>
                         </div>
                         <div className="flex flex-col gap-2 ml-4">
                           <button className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold rounded-lg transition shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center gap-2">
                             <Zap className="w-5 h-5" />
                             Claim Now
                           </button>
-                          <button className="px-6 py-2 bg-slate-700 hover:bg-slate-600 text-slate-300 text-sm font-semibold rounded-lg transition">
+                          <button className="px-6 py-2 bg-stone-900 hover:bg-stone-600 text-stone-300 text-sm font-semibold rounded-lg transition">
                             Details
                           </button>
                         </div>
@@ -1685,9 +1685,9 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             </div>
             <div className="p-6 space-y-4">
               {/* Shift Details */}
-              <div className="bg-slate-800/50 rounded-lg p-4 border border-green-500/30">
+              <div className="bg-stone-900/50 rounded-lg p-4 border border-green-500/30">
                 <h3 className="font-bold text-white mb-2">{selectedShiftForBonus.title}</h3>
-                <div className="space-y-1 text-sm text-slate-300">
+                <div className="space-y-1 text-sm text-stone-300">
                   <div>👤 {selectedShiftForBonus.employeeName}</div>
                   <div>📍 {selectedShiftForBonus.location}</div>
                   <div>📅 {selectedShiftForBonus.start.toLocaleDateString()} • {selectedShiftForBonus.start.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})} - {selectedShiftForBonus.end.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
@@ -1707,21 +1707,21 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   ].map((preset) => (
                     <button
                       key={preset.amount}
-                      className="bg-slate-700 hover:bg-slate-600 border-2 border-green-500/30 hover:border-green-500 rounded-lg p-3 transition group"
+                      className="bg-stone-900 hover:bg-stone-600 border-2 border-green-500/30 hover:border-green-500 rounded-lg p-3 transition group"
                     >
                       <div className="text-2xl font-bold text-green-400">${preset.amount}</div>
-                      <div className="text-xs text-slate-400">{preset.label}</div>
+                      <div className="text-xs text-stone-400">{preset.label}</div>
                     </button>
                   ))}
                 </div>
                 <div className="mt-3">
-                  <label className="text-xs text-slate-400">Custom Amount</label>
+                  <label className="text-xs text-stone-400">Custom Amount</label>
                   <div className="flex items-center gap-2">
                     <span className="text-green-400 text-xl font-bold">$</span>
                     <input 
                       type="number" 
                       placeholder="Enter amount"
-                      className="flex-1 bg-slate-700 border border-green-500/30 rounded-lg px-3 py-2 text-white focus:ring-2 focus:ring-green-500 outline-none"
+                      className="flex-1 bg-stone-900 border border-green-500/30 rounded-lg px-3 py-2 text-white focus:ring-2 focus:ring-green-500 outline-none"
                     />
                   </div>
                 </div>
@@ -1743,7 +1743,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                 <label className="block text-sm font-bold text-green-200 mb-1">Notes (Optional)</label>
                 <textarea 
                   placeholder="Add details about why this shift is available..."
-                  className="w-full bg-slate-700 border border-green-500/30 rounded-lg px-3 py-2 text-white text-sm focus:ring-2 focus:ring-green-500 outline-none h-20"
+                  className="w-full bg-stone-900 border border-green-500/30 rounded-lg px-3 py-2 text-white text-sm focus:ring-2 focus:ring-green-500 outline-none h-20"
                 />
               </div>
 
@@ -1751,7 +1751,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
               <div className="flex gap-3 pt-2">
                 <button
                   onClick={() => setShowBonusOffer(false)}
-                  className="flex-1 px-4 py-2 rounded-lg font-semibold bg-slate-700 text-white hover:bg-slate-600 transition"
+                  className="flex-1 px-4 py-2 rounded-lg font-semibold bg-stone-900 text-white hover:bg-stone-600 transition"
                 >
                   Cancel
                 </button>
@@ -1819,17 +1819,17 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   { name: 'Summer Staffing', shifts: 52, used: 8 },
                   { name: 'Weekend Only', shifts: 24, used: 15 },
                 ].map((template, idx) => (
-                  <div key={idx} className="bg-slate-800/50 rounded-lg p-4 border border-orange-500/30 hover:border-orange-500 transition cursor-pointer">
+                  <div key={idx} className="bg-stone-900/50 rounded-lg p-4 border border-orange-500/30 hover:border-orange-500 transition cursor-pointer">
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="font-bold text-white">{template.name}</h3>
                       <span className="text-xs bg-orange-600 text-white px-2 py-1 rounded">SAVED</span>
                     </div>
-                    <div className="text-sm text-slate-300">{template.shifts} shifts • Used {template.used} times</div>
+                    <div className="text-sm text-stone-300">{template.shifts} shifts • Used {template.used} times</div>
                     <div className="flex gap-2 mt-3">
                       <button className="flex-1 bg-orange-600 hover:bg-orange-500 text-white text-sm font-semibold py-2 rounded transition">
                         Apply
                       </button>
-                      <button className="px-3 bg-slate-700 hover:bg-slate-600 text-white text-sm font-semibold rounded transition">
+                      <button className="px-3 bg-stone-900 hover:bg-stone-600 text-white text-sm font-semibold rounded transition">
                         Edit
                       </button>
                     </div>
@@ -1847,7 +1847,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           <div>
             <label className="block text-sm font-semibold text-amber-100/70 mb-1">Department</label>
             <select
-              className="border border-amber-500/50 rounded px-3 py-2 bg-slate-800 text-white focus:ring-2 focus:ring-amber-500 outline-none"
+              className="border border-amber-500/50 rounded px-3 py-2 bg-stone-900 text-white focus:ring-2 focus:ring-amber-500 outline-none"
               value={selectedDepartment}
               onChange={e => { setSelectedDepartment(e.target.value); setCurrentPage(1); }}
             >
@@ -1859,7 +1859,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           <div>
             <label className="block text-sm font-semibold text-amber-100/70 mb-1">Shift</label>
             <select
-              className="border border-amber-500/50 rounded px-3 py-2 bg-slate-800 text-white focus:ring-2 focus:ring-amber-500 outline-none"
+              className="border border-amber-500/50 rounded px-3 py-2 bg-stone-900 text-white focus:ring-2 focus:ring-amber-500 outline-none"
               value={selectedShift}
               onChange={e => { setSelectedShift(e.target.value); setCurrentPage(1); }}
             >
@@ -1872,7 +1872,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             <label className="block text-sm font-semibold text-amber-100/70 mb-1">Search Employee</label>
             <input
               type="text"
-              className="border border-amber-500/50 rounded px-3 py-2 bg-slate-800 text-white placeholder-slate-400 focus:ring-2 focus:ring-amber-500 outline-none"
+              className="border border-amber-500/50 rounded px-3 py-2 bg-stone-900 text-white placeholder-stone-600 focus:ring-2 focus:ring-amber-500 outline-none"
               placeholder="Type a name..."
               value={employeeSearch}
               onChange={e => { setEmployeeSearch(e.target.value); setCurrentPage(1); }}
@@ -1881,7 +1881,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           <div>
             <label className="block text-sm font-semibold text-amber-100/70 mb-1">Show Per Page</label>
             <select
-              className="border border-amber-500/50 rounded px-3 py-2 bg-slate-800 text-white focus:ring-2 focus:ring-amber-500 outline-none"
+              className="border border-amber-500/50 rounded px-3 py-2 bg-stone-900 text-white focus:ring-2 focus:ring-amber-500 outline-none"
               value={employeesPerPage}
               onChange={e => { setEmployeesPerPage(Number(e.target.value)); setCurrentPage(1); }}
             >
@@ -1901,12 +1901,12 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           </button>
           <span className="text-amber-100/70 text-sm">{employeesPerPage === -1 ? 'Viewing All' : `Page ${currentPage} of ${totalPages}`}</span>
           <button
-            className="px-2 py-1 rounded bg-slate-700 text-white font-semibold hover:bg-slate-600 disabled:opacity-50 transition"
+            className="px-2 py-1 rounded bg-stone-900 text-white font-semibold hover:bg-stone-600 disabled:opacity-50 transition"
             onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1 || employeesPerPage === -1}
           >Prev</button>
           <button
-            className="px-2 py-1 rounded bg-slate-700 text-white font-semibold hover:bg-slate-600 disabled:opacity-50 transition"
+            className="px-2 py-1 rounded bg-stone-900 text-white font-semibold hover:bg-stone-600 disabled:opacity-50 transition"
             onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
             disabled={currentPage === totalPages || employeesPerPage === -1}
           >Next</button>
@@ -1919,7 +1919,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       
       {/* Staff Grid View - Shows ALL employees clearly */}
       {viewMode === 'grid' && (
-        <div className="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
+        <div className="bg-stone-950 rounded-2xl shadow-xl overflow-hidden border border-stone-700">
           {/* Week Header */}
           <div className="grid grid-cols-8 bg-gradient-to-r from-amber-900 via-amber-700 to-black text-white font-bold border-b-2 border-amber-500">
             <div className="p-3 border-r border-white/20">Time</div>
@@ -1934,8 +1934,8 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             { label: 'Evening Shift (2pm-12am)', start: 14, end: 24 },
             { label: 'Night Shift (10pm-8am)', start: 22, end: 32 }
           ].map((timeBlock, blockIdx) => (
-            <div key={blockIdx} className="grid grid-cols-8 border-b border-slate-700 hover:bg-slate-800">
-              <div className="p-3 bg-slate-800 border-r border-slate-700 font-semibold text-slate-100">
+            <div key={blockIdx} className="grid grid-cols-8 border-b border-stone-700 hover:bg-stone-900">
+              <div className="p-3 bg-stone-900 border-r border-stone-700 font-semibold text-stone-100">
                 {timeBlock.label}
               </div>
               {[0, 1, 2, 3, 4, 5, 6].map(dayOffset => {
@@ -1950,7 +1950,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                 return (
                   <div 
                     key={dayOffset} 
-                    className="p-2 border-r border-slate-700 last:border-r-0 min-h-[120px] bg-slate-900 transition-colors"
+                    className="p-2 border-r border-stone-700 last:border-r-0 min-h-[120px] bg-stone-950 transition-colors"
                     onDragOver={handleDragOver}
                     onDrop={(e) => handleDrop(e, dayOffset, timeBlock)}
                   >
@@ -2051,7 +2051,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                               <div 
                                 draggable
                                 onDragStart={(e) => handleDragStart(e, shift)}
-                                className={`flex items-center gap-2 p-2 rounded-lg bg-slate-800 text-slate-100 text-xs font-semibold shadow-sm border-l-4 cursor-move hover:bg-slate-700 hover:scale-105 transition-all active:opacity-50 relative ${isStar && showStarAnimation ? 'star-employee-card' : ''}`}
+                                className={`flex items-center gap-2 p-2 rounded-lg bg-stone-900 text-stone-100 text-xs font-semibold shadow-sm border-l-4 cursor-move hover:bg-stone-900 hover:scale-105 transition-all active:opacity-50 relative ${isStar && showStarAnimation ? 'star-employee-card' : ''}`}
                                 style={{ 
                                   borderLeftColor: shift.color,
                                   ...(isStar && showStarAnimation ? {
@@ -2066,13 +2066,13 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                                 {shift.employeeId && timeclockData[shift.employeeId] && (
                                   <div className="absolute -top-1 -right-1 z-10">
                                     {timeclockData[shift.employeeId].status === 'on-time' && (
-                                      <div className="w-3 h-3 bg-green-500 rounded-full border-2 border-slate-800" title="Clocked in on time" />
+                                      <div className="w-3 h-3 bg-green-500 rounded-full border-2 border-stone-800" title="Clocked in on time" />
                                     )}
                                     {timeclockData[shift.employeeId].status === 'late' && (
-                                      <div className="w-3 h-3 bg-yellow-500 rounded-full border-2 border-slate-800 animate-pulse" title="Clocked in late" />
+                                      <div className="w-3 h-3 bg-yellow-500 rounded-full border-2 border-stone-800 animate-pulse" title="Clocked in late" />
                                     )}
                                     {timeclockData[shift.employeeId].status === 'no-show' && (
-                                      <div className="w-3 h-3 bg-red-500 rounded-full border-2 border-slate-800 animate-pulse" title="No show - not clocked in" />
+                                      <div className="w-3 h-3 bg-red-500 rounded-full border-2 border-stone-800 animate-pulse" title="No show - not clocked in" />
                                     )}
                                   </div>
                                 )}
@@ -2080,7 +2080,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                                   <img 
                                     src={employee.avatar} 
                                     alt={employee.name}
-                                    className="w-6 h-6 rounded-full border-2 border-slate-600"
+                                    className="w-6 h-6 rounded-full border-2 border-stone-700"
                                   />
                                 )}
                                 <div className="flex-1 overflow-hidden">
@@ -2127,7 +2127,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                         })}
                       </div>
                     ) : (
-                      <div className="text-slate-500 text-xs italic text-center mt-4">No staff</div>
+                      <div className="text-stone-500 text-xs italic text-center mt-4">No staff</div>
                     )}
                   </div>
                 );
@@ -2212,10 +2212,10 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {showSwapRequests && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowSwapRequests(false)}>
           <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded-2xl shadow-2xl border-2 border-amber-500/40/50 max-w-3xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <div className="sticky top-0 bg-gradient-to-r from-blue-900 via-cyan-900 to-blue-900 p-6 border-b-2 border-amber-500/40">
+            <div className="sticky top-0 bg-gradient-to-r from-amber-700 via-cyan-900 to-amber-800 p-6 border-b-2 border-amber-500/40">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <User className="w-7 h-7 text-blue-300" />
+                  <User className="w-7 h-7 text-amber-400" />
                   <div>
                     <h2 className="text-2xl font-bold text-white">Shift Swap Requests</h2>
                     <p className="text-blue-200 text-sm">Review and approve employee swap requests</p>
@@ -2230,19 +2230,19 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             </div>
             <div className="p-6 space-y-4">
               {shiftSwapRequests.filter(r => r.status === 'pending').map((request) => (
-                <div key={request.id} className="bg-slate-800/50 rounded-lg p-4 border border-amber-500/40/30">
+                <div key={request.id} className="bg-stone-900/50 rounded-lg p-4 border border-amber-500/40/30">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <span className="font-bold text-white">{request.fromEmployee}</span>
-                        <span className="text-slate-400">→</span>
-                        <span className="font-bold text-blue-400">{request.toEmployee}</span>
+                        <span className="text-stone-400">→</span>
+                        <span className="font-bold text-amber-400">{request.toEmployee}</span>
                       </div>
-                      <div className="text-sm text-slate-300 mb-1">{request.shift.title}</div>
-                      <div className="text-xs text-slate-400">
+                      <div className="text-sm text-stone-300 mb-1">{request.shift.title}</div>
+                      <div className="text-xs text-stone-400">
                         {request.shift.start.toLocaleDateString()} • {request.shift.location}
                       </div>
-                      <div className="text-xs text-slate-500 mt-2">
+                      <div className="text-xs text-stone-500 mt-2">
                         Requested {Math.floor((Date.now() - request.timestamp.getTime()) / 60000)} min ago
                       </div>
                     </div>
@@ -2272,7 +2272,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                 </div>
               ))}
               {shiftSwapRequests.filter(r => r.status === 'pending').length === 0 && (
-                <div className="text-center text-slate-400 py-8">No pending swap requests</div>
+                <div className="text-center text-stone-400 py-8">No pending swap requests</div>
               )}
             </div>
           </div>
@@ -2301,15 +2301,15 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             </div>
             <div className="p-6 space-y-4">
               {timeOffRequests.filter(r => r.status === 'pending').map((request) => (
-                <div key={request.id} className="bg-slate-800/50 rounded-lg p-4 border border-yellow-500/30">
+                <div key={request.id} className="bg-stone-900/50 rounded-lg p-4 border border-yellow-500/30">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="font-bold text-white mb-2">{request.employeeName}</div>
-                      <div className="text-sm text-slate-300 mb-1">
+                      <div className="text-sm text-stone-300 mb-1">
                         {request.startDate.toLocaleDateString()} - {request.endDate.toLocaleDateString()}
                       </div>
                       <div className="text-sm text-yellow-300 italic">{request.reason}</div>
-                      <div className="text-xs text-slate-400 mt-2">
+                      <div className="text-xs text-stone-400 mt-2">
                         {Math.ceil((request.endDate.getTime() - request.startDate.getTime()) / (1000 * 60 * 60 * 24))} days requested
                       </div>
                     </div>
@@ -2339,7 +2339,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                 </div>
               ))}
               {timeOffRequests.filter(r => r.status === 'pending').length === 0 && (
-                <div className="text-center text-slate-400 py-8">No pending time-off requests</div>
+                <div className="text-center text-stone-400 py-8">No pending time-off requests</div>
               )}
             </div>
           </div>
@@ -2393,15 +2393,15 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                                 <div className="text-sm text-pink-200">{mockEmployees.find(e => e.id === request.recipientId)?.department}</div>
                               </div>
                             </div>
-                            <div className="text-sm text-slate-300 italic mb-3 pl-12">"{request.reason}"</div>
+                            <div className="text-sm text-stone-300 italic mb-3 pl-12">"{request.reason}"</div>
                             
                             {/* Progress Bar */}
                             <div className="mb-3">
                               <div className="flex items-center justify-between mb-1 text-sm">
                                 <span className="text-pink-300 font-semibold">{request.hoursReceived} hrs donated</span>
-                                <span className="text-slate-400">{request.hoursNeeded} hrs needed</span>
+                                <span className="text-stone-400">{request.hoursNeeded} hrs needed</span>
                               </div>
-                              <div className="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                              <div className="w-full bg-stone-900 rounded-full h-3 overflow-hidden">
                                 <div 
                                   className="h-full bg-gradient-to-r from-pink-500 to-amber-500 transition-all duration-500 relative"
                                   style={{ width: `${Math.min(percentFunded, 100)}%` }}
@@ -2412,18 +2412,18 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                               <div className="text-xs text-pink-300 mt-1 font-bold">{percentFunded.toFixed(0)}% funded</div>
                             </div>
                             
-                            <div className="text-xs text-slate-400">
+                            <div className="text-xs text-stone-400">
                               Posted {Math.floor((Date.now() - request.timestamp.getTime()) / 86400000)} days ago
                             </div>
                           </div>
                         </div>
                         
                         {/* Donation Form */}
-                        <div className="bg-slate-800/50 rounded-lg p-4 border border-pink-500/20 mt-3">
+                        <div className="bg-stone-900/50 rounded-lg p-4 border border-pink-500/20 mt-3">
                           <div className="grid grid-cols-3 gap-3">
                             <div>
                               <label className="block text-xs font-semibold text-pink-200 mb-1">Your Balance</label>
-                              <div className="bg-slate-700 rounded px-3 py-2 text-sm text-white">
+                              <div className="bg-stone-900 rounded px-3 py-2 text-sm text-white">
                                 <div>PTO: {employeePTOBalances['1']?.pto || 0} hrs</div>
                                 <div>Sick: {employeePTOBalances['1']?.sick || 0} hrs</div>
                               </div>
@@ -2436,12 +2436,12 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                                 min="4"
                                 max="40"
                                 step="4"
-                                className="w-full bg-slate-700 border border-pink-500/30 rounded px-3 py-2 text-white text-sm focus:ring-2 focus:ring-pink-500 outline-none"
+                                className="w-full bg-stone-900 border border-pink-500/30 rounded px-3 py-2 text-white text-sm focus:ring-2 focus:ring-pink-500 outline-none"
                               />
                             </div>
                             <div>
                               <label className="block text-xs font-semibold text-pink-200 mb-1">Type</label>
-                              <select className="w-full bg-slate-700 border border-pink-500/30 rounded px-3 py-2 text-white text-sm focus:ring-2 focus:ring-pink-500 outline-none">
+                              <select className="w-full bg-stone-900 border border-pink-500/30 rounded px-3 py-2 text-white text-sm focus:ring-2 focus:ring-pink-500 outline-none">
                                 <option>PTO</option>
                                 <option>Sick</option>
                               </select>
@@ -2496,7 +2496,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                     );
                   })}
                   {ptoDonationRequests.filter(r => r.status === 'active').length === 0 && (
-                    <div className="text-center text-slate-400 py-8 border-2 border-dashed border-slate-600 rounded-lg">
+                    <div className="text-center text-stone-400 py-8 border-2 border-dashed border-stone-700 rounded-lg">
                       No active donation requests
                     </div>
                   )}
@@ -2511,7 +2511,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {ptoDonationHistory.slice(0, 6).map((donation) => (
-                    <div key={donation.id} className="bg-slate-800/50 rounded-lg p-3 border border-amber-500/20">
+                    <div key={donation.id} className="bg-stone-900/50 rounded-lg p-3 border border-amber-500/20">
                       <div className="flex items-center gap-2 mb-2">
                         <img 
                           src={mockEmployees.find(e => e.id === donation.donorId)?.avatar} 
@@ -2520,16 +2520,16 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                         />
                         <div className="flex-1">
                           <div className="text-sm font-semibold text-white">{donation.donorName}</div>
-                          <div className="text-xs text-slate-400">
+                          <div className="text-xs text-stone-400">
                             donated to {donation.recipientName}
                           </div>
                         </div>
                         <div className="text-right">
                           <div className="text-lg font-bold text-amber-400">{donation.hours} hrs</div>
-                          <div className="text-[10px] text-slate-400">{donation.type}</div>
+                          <div className="text-[10px] text-stone-400">{donation.type}</div>
                         </div>
                       </div>
-                      <div className="text-xs text-slate-500">
+                      <div className="text-xs text-stone-500">
                         {Math.floor((Date.now() - donation.timestamp.getTime()) / 3600000)} hours ago
                       </div>
                     </div>
@@ -2538,31 +2538,31 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
               </div>
               
               {/* Create New Request (Manager Only) */}
-              <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-lg p-5 border-2 border-slate-600">
+              <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-lg p-5 border-2 border-stone-700">
                 <h3 className="text-lg font-bold text-white mb-4">Create Donation Request (Manager)</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-slate-300 mb-1">Employee</label>
-                    <select className="w-full bg-slate-700 border border-slate-500 rounded px-3 py-2 text-white focus:ring-2 focus:ring-pink-500 outline-none">
+                    <label className="block text-sm font-semibold text-stone-300 mb-1">Employee</label>
+                    <select className="w-full bg-stone-900 border border-stone-500 rounded px-3 py-2 text-white focus:ring-2 focus:ring-pink-500 outline-none">
                       {mockEmployees.map(emp => (
                         <option key={emp.id} value={emp.id}>{emp.name}</option>
                       ))}
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-slate-300 mb-1">Hours Needed</label>
+                    <label className="block text-sm font-semibold text-stone-300 mb-1">Hours Needed</label>
                     <input 
                       type="number" 
                       placeholder="40"
-                      className="w-full bg-slate-700 border border-slate-500 rounded px-3 py-2 text-white focus:ring-2 focus:ring-pink-500 outline-none"
+                      className="w-full bg-stone-900 border border-stone-500 rounded px-3 py-2 text-white focus:ring-2 focus:ring-pink-500 outline-none"
                     />
                   </div>
                 </div>
                 <div className="mt-3">
-                  <label className="block text-sm font-semibold text-slate-300 mb-1">Reason</label>
+                  <label className="block text-sm font-semibold text-stone-300 mb-1">Reason</label>
                   <textarea 
                     placeholder="Brief description of the situation..."
-                    className="w-full bg-slate-700 border border-slate-500 rounded px-3 py-2 text-white focus:ring-2 focus:ring-pink-500 outline-none h-20"
+                    className="w-full bg-stone-900 border border-stone-500 rounded px-3 py-2 text-white focus:ring-2 focus:ring-pink-500 outline-none h-20"
                   />
                 </div>
                 <button className="mt-4 w-full px-4 py-2 bg-pink-600 hover:bg-pink-500 text-white rounded-lg font-bold transition-all">
@@ -2577,7 +2577,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {/* Context Menu */}
       {contextMenu.show && contextMenu.shift && (
         <div 
-          className="fixed bg-slate-900 border-2 border-amber-500 rounded-lg shadow-2xl py-2 z-[100]"
+          className="fixed bg-stone-950 border-2 border-amber-500 rounded-lg shadow-2xl py-2 z-[100]"
           style={{ left: contextMenu.x, top: contextMenu.y }}
           onMouseLeave={() => setContextMenu({...contextMenu, show: false})}
         >
@@ -2593,7 +2593,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           <button className="w-full px-4 py-2 text-left text-white hover:bg-amber-600 flex items-center gap-2">
             <Coffee className="w-4 h-4" /> Add Break
           </button>
-          <div className="border-t border-slate-700 my-1"></div>
+          <div className="border-t border-stone-700 my-1"></div>
           <button className="w-full px-4 py-2 text-left text-red-400 hover:bg-red-600 hover:text-white flex items-center gap-2">
             <XCircle className="w-4 h-4" /> Delete Shift
           </button>

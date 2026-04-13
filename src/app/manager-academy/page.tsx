@@ -28,7 +28,7 @@ export default function ManagerAcademyPage() {
       title: 'Developing Your Team',
       icon: <Users className="w-8 h-8" />,
       duration: '50 min',
-      color: 'from-blue-600 to-cyan-600',
+      color: 'from-amber-700 to-cyan-600',
       lessons: [
         'Identifying Strengths & Growth Areas',
         'Setting SMART Goals Together',
@@ -119,7 +119,7 @@ export default function ManagerAcademyPage() {
   const progressPercent = (completedRequired / requiredModules.length) * 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
+    <div className="min-h-screen lux-app-bg p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
@@ -188,12 +188,12 @@ export default function ManagerAcademyPage() {
               <div key={module.id} className="relative">
                 <button
                   onClick={() => handleModuleClick(module.id)}
-                  className={`w-full bg-slate-800 border-2 rounded-xl p-6 transition-all hover:scale-105 ${
+                  className={`w-full bg-stone-900 border-2 rounded-xl p-6 transition-all hover:scale-105 ${
                     isCompleted
                       ? 'border-green-500'
                       : isActive
                       ? 'border-amber-500/40'
-                      : 'border-slate-700 hover:border-amber-400/40'
+                      : 'border-stone-700 hover:border-amber-400/40'
                   }`}
                 >
                   <div className="flex items-start justify-between mb-4">
@@ -213,7 +213,7 @@ export default function ManagerAcademyPage() {
                   <p className="text-amber-200 text-sm mb-4 text-left">⏱️ {module.duration}</p>
 
                   {isActive && (
-                    <div className="mt-4 pt-4 border-t border-slate-700 text-left space-y-2">
+                    <div className="mt-4 pt-4 border-t border-stone-700 text-left space-y-2">
                       {module.lessons.map((lesson, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-sm text-amber-100/70">
                           <Play className="w-4 h-4 flex-shrink-0" />
@@ -240,7 +240,7 @@ export default function ManagerAcademyPage() {
         </div>
 
         {/* Leadership Tips */}
-        <div className="mt-12 bg-slate-800 border-2 border-slate-700 rounded-xl p-8">
+        <div className="mt-12 bg-stone-900 border-2 border-stone-700 rounded-xl p-8">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <Heart className="w-8 h-8 text-pink-500" />
             Servant Leadership Core Principles

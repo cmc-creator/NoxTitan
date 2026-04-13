@@ -29,7 +29,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
 
   const themes = [
     { id: 'default', name: 'Default', colors: 'from-amber-700 to-amber-600' },
-    { id: 'ocean', name: 'Ocean Blue', colors: 'from-blue-600 to-cyan-600' },
+    { id: 'ocean', name: 'Ocean Blue', colors: 'from-amber-700 to-cyan-600' },
     { id: 'forest', name: 'Forest Green', colors: 'from-green-600 to-emerald-600' },
     { id: 'sunset', name: 'Sunset', colors: 'from-orange-600 to-red-600' },
   ];
@@ -37,7 +37,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
   const adventures = [
     { id: 'tomb-raider', name: 'Tomb Raider', icon: '🗿', desc: 'Collect Ancient Gems', color: 'from-amber-700 to-orange-900' },
     { id: 'treasure-hunt', name: 'Treasure Hunt', icon: '🏴‍☠️', desc: 'Find Gold Doubloons', color: 'from-yellow-600 to-amber-800' },
-    { id: 'space-explorer', name: 'Space Explorer', icon: '🚀', desc: 'Gather Star Crystals', color: 'from-indigo-600 to-purple-900' },
+    { id: 'space-explorer', name: 'Space Explorer', icon: '🚀', desc: 'Gather Star Crystals', color: 'from-amber-700 to-amber-500' },
     { id: 'detective', name: 'Detective', icon: '🔍', desc: 'Solve with Clues', color: 'from-slate-700 to-gray-900' },
   ];
 
@@ -50,7 +50,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
   ];
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 z-50 overflow-y-auto">
+    <div className="fixed inset-0 bg-gradient-to-br from-stone-900 via-stone-900 to-amber-800 z-50 overflow-y-auto">
       <div className="min-h-screen p-8">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
@@ -207,7 +207,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
             {/* Complete Button */}
             <button
               onClick={() => onComplete(settings)}
-              className="w-full py-5 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg font-bold text-xl transition-all flex items-center justify-center gap-2"
+              className="w-full py-5 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-700 text-white rounded-lg font-bold text-xl transition-all flex items-center justify-center gap-2"
             >
               <Check className="w-7 h-7" />
               Complete Setup & Enter Basecamp

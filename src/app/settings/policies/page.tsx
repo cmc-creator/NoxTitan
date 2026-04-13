@@ -1125,7 +1125,7 @@ export default function PoliciesPage() {
 
       {/* Policy Impact Preview */}
       {showPreview && (
-        <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-xl shadow-md border-2 border-purple-200">
+        <div className="bg-gradient-to-r from-amber-700 to-amber-500 p-6 rounded-xl shadow-md border-2 border-purple-200">
           <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
             <Eye className="w-5 h-5 text-amber-600" />
             Policy Impact Preview

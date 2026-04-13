@@ -225,24 +225,24 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-6">
+    <div className="min-h-screen lux-app-bg p-6">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-2">My Profile</h1>
-          <p className="text-slate-400">Manage your account information</p>
+          <p className="text-stone-400">Manage your account information</p>
         </div>
 
         {/* Profile Card */}
-        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-2xl border border-slate-700 overflow-hidden">
+        <div className="lux-card rounded-2xl shadow-2xl border border-stone-700 overflow-hidden">
           {/* Header Section */}
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-8 text-center relative">
+          <div className="bg-gradient-to-r from-amber-700 to-amber-500 p-8 text-center relative">
             <div className="relative inline-block">
               <div className="w-24 h-24 bg-stone-950 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
                 {avatarUrl ? (
                   <img src={avatarUrl} alt="Profile" className="w-full h-full object-cover" />
                 ) : (
-                  <User className="w-12 h-12 text-slate-800" />
+                  <User className="w-12 h-12 text-stone-800" />
                 )}
               </div>
               <button
@@ -283,50 +283,50 @@ export default function ProfilePage() {
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-slate-300 mb-2">
+                    <label className="block text-sm font-semibold text-stone-300 mb-2">
                       First Name
                     </label>
                     <input
                       type="text"
                       value={formData.firstName}
                       onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                      className="w-full px-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-slate-300 mb-2">
+                    <label className="block text-sm font-semibold text-stone-300 mb-2">
                       Last Name
                     </label>
                     <input
                       type="text"
                       value={formData.lastName}
                       onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                      className="w-full px-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-slate-300 mb-2">
+                    <label className="block text-sm font-semibold text-stone-300 mb-2">
                       Email
                     </label>
                     <input
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                      className="w-full px-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-slate-300 mb-2">
+                    <label className="block text-sm font-semibold text-stone-300 mb-2">
                       Phone
                     </label>
                     <input
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                      className="w-full px-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                       placeholder="(555) 123-4567"
                     />
                   </div>
@@ -336,7 +336,7 @@ export default function ProfilePage() {
                 <div className="flex gap-3 pt-4">
                   <button
                     onClick={handleSave}
-                    className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
+                    className="flex-1 bg-gradient-to-r from-amber-700 to-amber-500 hover:from-amber-800 hover:to-amber-600 text-white px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
                   >
                     <Save className="w-5 h-5" />
                     Save Changes
@@ -351,7 +351,7 @@ export default function ProfilePage() {
                         phone: '',
                       });
                     }}
-                    className="flex-1 bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
+                    className="flex-1 bg-stone-900 hover:bg-stone-600 text-white px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
                   >
                     <X className="w-5 h-5" />
                     Cancel
@@ -364,16 +364,16 @@ export default function ProfilePage() {
                 {/* Personal Information */}
                 <div>
                   <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                    <User className="w-5 h-5 text-blue-400" />
+                    <User className="w-5 h-5 text-amber-400" />
                     Personal Information
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-slate-700/30 rounded-lg p-4 border border-slate-600">
-                      <label className="text-sm text-slate-400 block mb-1">First Name</label>
+                    <div className="bg-stone-900/30 rounded-lg p-4 border border-stone-700">
+                      <label className="text-sm text-stone-400 block mb-1">First Name</label>
                       <p className="text-white font-semibold">{user.firstName}</p>
                     </div>
-                    <div className="bg-slate-700/30 rounded-lg p-4 border border-slate-600">
-                      <label className="text-sm text-slate-400 block mb-1">Last Name</label>
+                    <div className="bg-stone-900/30 rounded-lg p-4 border border-stone-700">
+                      <label className="text-sm text-stone-400 block mb-1">Last Name</label>
                       <p className="text-white font-semibold">{user.lastName}</p>
                     </div>
                   </div>
@@ -386,15 +386,15 @@ export default function ProfilePage() {
                     Contact Information
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-slate-700/30 rounded-lg p-4 border border-slate-600">
-                      <label className="text-sm text-slate-400 block mb-1 flex items-center gap-2">
+                    <div className="bg-stone-900/30 rounded-lg p-4 border border-stone-700">
+                      <label className="text-sm text-stone-400 block mb-1 flex items-center gap-2">
                         <Mail className="w-4 h-4" />
                         Email
                       </label>
                       <p className="text-white font-semibold">{user.email}</p>
                     </div>
-                    <div className="bg-slate-700/30 rounded-lg p-4 border border-slate-600">
-                      <label className="text-sm text-slate-400 block mb-1 flex items-center gap-2">
+                    <div className="bg-stone-900/30 rounded-lg p-4 border border-stone-700">
+                      <label className="text-sm text-stone-400 block mb-1 flex items-center gap-2">
                         <Phone className="w-4 h-4" />
                         Phone
                       </label>
@@ -410,19 +410,19 @@ export default function ProfilePage() {
                     Employment Information
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="bg-slate-700/30 rounded-lg p-4 border border-slate-600">
-                      <label className="text-sm text-slate-400 block mb-1 flex items-center gap-2">
+                    <div className="bg-stone-900/30 rounded-lg p-4 border border-stone-700">
+                      <label className="text-sm text-stone-400 block mb-1 flex items-center gap-2">
                         <Shield className="w-4 h-4" />
                         Role
                       </label>
                       <p className="text-white font-semibold capitalize">{user.role}</p>
                     </div>
-                    <div className="bg-slate-700/30 rounded-lg p-4 border border-slate-600">
-                      <label className="text-sm text-slate-400 block mb-1">Employee ID</label>
+                    <div className="bg-stone-900/30 rounded-lg p-4 border border-stone-700">
+                      <label className="text-sm text-stone-400 block mb-1">Employee ID</label>
                       <p className="text-white font-semibold">{user.employeeId || 'Not linked'}</p>
                     </div>
-                    <div className="bg-slate-700/30 rounded-lg p-4 border border-slate-600">
-                      <label className="text-sm text-slate-400 block mb-1 flex items-center gap-2">
+                    <div className="bg-stone-900/30 rounded-lg p-4 border border-stone-700">
+                      <label className="text-sm text-stone-400 block mb-1 flex items-center gap-2">
                         <Calendar className="w-4 h-4" />
                         Status
                       </label>
@@ -442,42 +442,42 @@ export default function ProfilePage() {
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Health Insurance */}
-                    <div className="bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-xl p-6 border border-amber-500/40/30">
+                    <div className="bg-gradient-to-br from-amber-700/20 to-cyan-600/20 rounded-xl p-6 border border-amber-500/40/30">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-3 bg-amber-600/20 rounded-lg">
-                          <Heart className="w-6 h-6 text-blue-400" />
+                          <Heart className="w-6 h-6 text-amber-400" />
                         </div>
                         <div>
                           <h4 className="text-white font-bold text-lg">Health Insurance</h4>
-                          <p className="text-blue-300 text-sm">Premium Plan</p>
+                          <p className="text-amber-400 text-sm">Premium Plan</p>
                         </div>
                       </div>
                       <div className="space-y-3">
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-300 text-sm">Coverage</span>
+                          <span className="text-stone-300 text-sm">Coverage</span>
                           <span className="text-white font-semibold">Medical, Dental, Vision</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-300 text-sm">Your Contribution</span>
+                          <span className="text-stone-300 text-sm">Your Contribution</span>
                           <span className="text-white font-semibold">$180/month</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-300 text-sm">Employer Pays</span>
+                          <span className="text-stone-300 text-sm">Employer Pays</span>
                           <span className="text-green-400 font-semibold">$520/month</span>
                         </div>
                         <div className="flex justify-between items-center pt-3 border-t border-amber-500/40/30">
-                          <span className="text-slate-300 text-sm">Deductible</span>
+                          <span className="text-stone-300 text-sm">Deductible</span>
                           <span className="text-white font-semibold">$500 ($150 met)</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-300 text-sm">Out-of-Pocket Max</span>
+                          <span className="text-stone-300 text-sm">Out-of-Pocket Max</span>
                           <span className="text-white font-semibold">$2,000</span>
                         </div>
                       </div>
                     </div>
 
                     {/* 401(k) Retirement */}
-                    <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-xl p-6 border border-amber-500/40/30">
+                    <div className="bg-gradient-to-br from-stone-900/20 to-pink-600/20 rounded-xl p-6 border border-amber-500/40/30">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-3 bg-amber-500/20 rounded-lg">
                           <TrendingUp className="w-6 h-6 text-amber-400" />
@@ -489,23 +489,23 @@ export default function ProfilePage() {
                       </div>
                       <div className="space-y-3">
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-300 text-sm">Your Contribution</span>
+                          <span className="text-stone-300 text-sm">Your Contribution</span>
                           <span className="text-white font-semibold">6% ($195/pay)</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-300 text-sm">Employer Match</span>
+                          <span className="text-stone-300 text-sm">Employer Match</span>
                           <span className="text-green-400 font-semibold">4% ($130/pay)</span>
                         </div>
                         <div className="flex justify-between items-center pt-3 border-t border-amber-500/40/30">
-                          <span className="text-slate-300 text-sm">Current Balance</span>
+                          <span className="text-stone-300 text-sm">Current Balance</span>
                           <span className="text-white font-semibold">$12,450</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-300 text-sm">YTD Contributions</span>
+                          <span className="text-stone-300 text-sm">YTD Contributions</span>
                           <span className="text-white font-semibold">$5,070</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-300 text-sm">Est. Annual Growth</span>
+                          <span className="text-stone-300 text-sm">Est. Annual Growth</span>
                           <span className="text-green-400 font-semibold">+8.2%</span>
                         </div>
                       </div>
@@ -524,19 +524,19 @@ export default function ProfilePage() {
                       </div>
                       <div className="space-y-3">
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-300 text-sm">Annual Election</span>
+                          <span className="text-stone-300 text-sm">Annual Election</span>
                           <span className="text-white font-semibold">$2,500</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-300 text-sm">Per Paycheck</span>
+                          <span className="text-stone-300 text-sm">Per Paycheck</span>
                           <span className="text-white font-semibold">$96.15</span>
                         </div>
                         <div className="flex justify-between items-center pt-3 border-t border-green-500/30">
-                          <span className="text-slate-300 text-sm">Available Balance</span>
+                          <span className="text-stone-300 text-sm">Available Balance</span>
                           <span className="text-green-400 font-bold text-lg">$1,850</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-300 text-sm">Used This Year</span>
+                          <span className="text-stone-300 text-sm">Used This Year</span>
                           <span className="text-white font-semibold">$650</span>
                         </div>
                       </div>
@@ -558,30 +558,30 @@ export default function ProfilePage() {
                       </div>
                       <div className="space-y-3">
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-300 text-sm">Basic Coverage</span>
+                          <span className="text-stone-300 text-sm">Basic Coverage</span>
                           <span className="text-white font-semibold">$50,000</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-300 text-sm">Basic Premium</span>
+                          <span className="text-stone-300 text-sm">Basic Premium</span>
                           <span className="text-green-400 font-semibold">Employer Paid</span>
                         </div>
                         <div className="flex justify-between items-center pt-3 border-t border-amber-500/30">
-                          <span className="text-slate-300 text-sm">Supplemental Coverage</span>
+                          <span className="text-stone-300 text-sm">Supplemental Coverage</span>
                           <span className="text-white font-semibold">$100,000</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-300 text-sm">Supplemental Premium</span>
+                          <span className="text-stone-300 text-sm">Supplemental Premium</span>
                           <span className="text-white font-semibold">$24/month</span>
                         </div>
                         <div className="flex justify-between items-center pt-3 border-t border-amber-500/30">
-                          <span className="text-slate-300 text-sm font-semibold">Total Coverage</span>
+                          <span className="text-stone-300 text-sm font-semibold">Total Coverage</span>
                           <span className="text-amber-400 font-bold text-lg">$150,000</span>
                         </div>
                       </div>
                     </div>
 
                     {/* PTO/Vacation */}
-                    <div className="bg-gradient-to-br from-cyan-600/20 to-blue-600/20 rounded-xl p-6 border border-cyan-500/30 md:col-span-2">
+                    <div className="bg-gradient-to-br from-cyan-600/20 to-amber-800/20 rounded-xl p-6 border border-cyan-500/30 md:col-span-2">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-3 bg-cyan-500/20 rounded-lg">
                           <Gift className="w-6 h-6 text-cyan-400" />
@@ -593,31 +593,31 @@ export default function ProfilePage() {
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                         <div>
-                          <label className="text-slate-400 text-sm block mb-2">Available Hours</label>
+                          <label className="text-stone-400 text-sm block mb-2">Available Hours</label>
                           <p className="text-white font-bold text-2xl">87.5</p>
                           <p className="text-cyan-400 text-sm mt-1">≈ 10.9 days</p>
                         </div>
                         <div>
-                          <label className="text-slate-400 text-sm block mb-2">Used This Year</label>
+                          <label className="text-stone-400 text-sm block mb-2">Used This Year</label>
                           <p className="text-white font-bold text-2xl">32.0</p>
-                          <p className="text-slate-400 text-sm mt-1">≈ 4 days</p>
+                          <p className="text-stone-400 text-sm mt-1">≈ 4 days</p>
                         </div>
                         <div>
-                          <label className="text-slate-400 text-sm block mb-2">Accrual Rate</label>
+                          <label className="text-stone-400 text-sm block mb-2">Accrual Rate</label>
                           <p className="text-white font-bold text-2xl">6.67</p>
                           <p className="text-green-400 text-sm mt-1">hours/pay period</p>
                         </div>
                         <div>
-                          <label className="text-slate-400 text-sm block mb-2">Max Balance</label>
+                          <label className="text-stone-400 text-sm block mb-2">Max Balance</label>
                           <p className="text-white font-bold text-2xl">240</p>
-                          <p className="text-slate-400 text-sm mt-1">hours (30 days)</p>
+                          <p className="text-stone-400 text-sm mt-1">hours (30 days)</p>
                         </div>
                       </div>
                       <div className="mt-4 p-4 bg-cyan-500/10 rounded-lg border border-cyan-500/20">
                         <div className="flex items-center justify-between">
                           <div>
                             <p className="text-white font-semibold mb-1">Next Accrual</p>
-                            <p className="text-slate-400 text-sm">6.67 hours on January 15, 2026</p>
+                            <p className="text-stone-400 text-sm">6.67 hours on January 15, 2026</p>
                           </div>
                           <button className="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-2 rounded-lg font-semibold transition-all">
                             Request Time Off
@@ -628,60 +628,60 @@ export default function ProfilePage() {
                   </div>
 
                   {/* Benefits Summary */}
-                  <div className="mt-6 p-6 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-xl border border-amber-500/40/20">
+                  <div className="mt-6 p-6 bg-gradient-to-r from-amber-700/10 to-amber-900/10 rounded-xl border border-amber-500/40/20">
                     <h4 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
-                      <Gift className="w-5 h-5 text-blue-400" />
+                      <Gift className="w-5 h-5 text-amber-400" />
                       Total Benefits Value
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                       <div>
-                        <label className="text-slate-400 text-sm block mb-2">Your Annual Cost</label>
+                        <label className="text-stone-400 text-sm block mb-2">Your Annual Cost</label>
                         <p className="text-white font-bold text-2xl">$6,408</p>
-                        <p className="text-slate-400 text-sm mt-1">All deductions</p>
+                        <p className="text-stone-400 text-sm mt-1">All deductions</p>
                       </div>
                       <div>
-                        <label className="text-slate-400 text-sm block mb-2">Employer Contribution</label>
+                        <label className="text-stone-400 text-sm block mb-2">Employer Contribution</label>
                         <p className="text-green-400 font-bold text-2xl">$9,880</p>
                         <p className="text-green-300 text-sm mt-1">Company pays</p>
                       </div>
                       <div>
-                        <label className="text-slate-400 text-sm block mb-2">Total Package Value</label>
-                        <p className="text-blue-400 font-bold text-2xl">$16,288</p>
-                        <p className="text-slate-400 text-sm mt-1">Per year</p>
+                        <label className="text-stone-400 text-sm block mb-2">Total Package Value</label>
+                        <p className="text-amber-400 font-bold text-2xl">$16,288</p>
+                        <p className="text-stone-400 text-sm mt-1">Per year</p>
                       </div>
                       <div>
-                        <label className="text-slate-400 text-sm block mb-2">Tax Savings</label>
+                        <label className="text-stone-400 text-sm block mb-2">Tax Savings</label>
                         <p className="text-amber-400 font-bold text-2xl">$1,923</p>
                         <p className="text-amber-200 text-sm mt-1">Estimated annually</p>
                       </div>
                     </div>
-                    <div className="mt-4 pt-4 border-t border-amber-500/40/20 flex items-center gap-2 text-sm text-slate-300">
-                      <AlertCircle className="w-4 h-4 text-blue-400" />
+                    <div className="mt-4 pt-4 border-t border-amber-500/40/20 flex items-center gap-2 text-sm text-stone-300">
+                      <AlertCircle className="w-4 h-4 text-amber-400" />
                       <p>
                         Your benefits package is worth <span className="text-white font-semibold">$16,288/year</span> on top of your salary. 
-                        Next open enrollment: <span className="text-blue-400 font-semibold">November 1, 2026</span>
+                        Next open enrollment: <span className="text-amber-400 font-semibold">November 1, 2026</span>
                       </p>
                     </div>
                   </div>
                 </div>
 
                 {/* Account Settings */}
-                <div className="pt-6 border-t border-slate-700">
+                <div className="pt-6 border-t border-stone-700">
                   <h3 className="text-lg font-bold text-white mb-4">Quick Actions</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <button className="bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold transition-all text-left">
+                    <button className="bg-stone-900 hover:bg-stone-600 text-white px-6 py-3 rounded-lg font-semibold transition-all text-left">
                       Change Password
                     </button>
-                    <button className="bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold transition-all text-left">
+                    <button className="bg-stone-900 hover:bg-stone-600 text-white px-6 py-3 rounded-lg font-semibold transition-all text-left">
                       Notification Preferences
                     </button>
                   </div>
                 </div>
 
                 {/* My Documents Section */}
-                <div className="pt-6 border-t border-slate-700">
+                <div className="pt-6 border-t border-stone-700">
                   <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                    <FileText className="w-5 h-5 text-blue-400" />
+                    <FileText className="w-5 h-5 text-amber-400" />
                     My Documents
                   </h3>
                   
@@ -705,13 +705,13 @@ export default function ProfilePage() {
                   <div className="mb-6">
                     <button
                       onClick={() => documentInputRef.current?.click()}
-                      className="w-full border-2 border-dashed border-slate-600 hover:border-amber-500/40 bg-slate-700/30 hover:bg-slate-700/50 rounded-lg p-8 transition-all group"
+                      className="w-full border-2 border-dashed border-stone-700 hover:border-amber-500/40 bg-stone-900/30 hover:bg-stone-900/50 rounded-lg p-8 transition-all group"
                     >
                       <div className="flex flex-col items-center gap-3">
-                        <Upload className="w-10 h-10 text-slate-400 group-hover:text-blue-400 transition-colors" />
+                        <Upload className="w-10 h-10 text-stone-400 group-hover:text-amber-400 transition-colors" />
                         <div className="text-center">
                           <p className="text-white font-semibold mb-1">Upload Document</p>
-                          <p className="text-sm text-slate-400">
+                          <p className="text-sm text-stone-400">
                             PDF, Word, or Image files (Max 10MB)
                           </p>
                         </div>
@@ -732,17 +732,17 @@ export default function ProfilePage() {
                       {documents.map((doc) => (
                         <div
                           key={doc.id}
-                          className="bg-slate-700/30 border border-slate-600 rounded-lg p-4 hover:bg-slate-700/50 transition-all"
+                          className="bg-stone-900/30 border border-stone-700 rounded-lg p-4 hover:bg-stone-900/50 transition-all"
                         >
                           <div className="flex items-start justify-between gap-3">
                             <div className="flex items-start gap-3 flex-1 min-w-0">
                               <div className="text-2xl mt-1">{getFileIcon(doc.type)}</div>
                               <div className="flex-1 min-w-0">
                                 <h4 className="text-white font-semibold truncate">{doc.name}</h4>
-                                <p className="text-sm text-slate-400 mt-1">
+                                <p className="text-sm text-stone-400 mt-1">
                                   {formatFileSize(doc.size)} • {doc.uploadDate}
                                 </p>
-                                <span className="inline-block mt-2 px-2 py-1 bg-amber-600/20 text-blue-400 text-xs rounded">
+                                <span className="inline-block mt-2 px-2 py-1 bg-amber-600/20 text-amber-400 text-xs rounded">
                                   {doc.category}
                                 </span>
                               </div>
@@ -753,7 +753,7 @@ export default function ProfilePage() {
                                   setUploadStatus({ type: 'success', message: `Downloading ${doc.name}...` });
                                   setTimeout(() => setUploadStatus(null), 2000);
                                 }}
-                                className="p-2 bg-amber-600/20 hover:bg-amber-600/30 text-blue-400 rounded-lg transition-all"
+                                className="p-2 bg-amber-600/20 hover:bg-amber-600/30 text-amber-400 rounded-lg transition-all"
                                 title="Download"
                               >
                                 <Download className="w-4 h-4" />
@@ -771,10 +771,10 @@ export default function ProfilePage() {
                       ))}
                     </div>
                   ) : (
-                    <div className="text-center py-8 border border-dashed border-slate-600 rounded-lg">
-                      <FileText className="w-12 h-12 text-slate-500 mx-auto mb-3" />
-                      <p className="text-slate-400">No documents uploaded yet.</p>
-                      <p className="text-sm text-slate-500 mt-1">
+                    <div className="text-center py-8 border border-dashed border-stone-700 rounded-lg">
+                      <FileText className="w-12 h-12 text-stone-500 mx-auto mb-3" />
+                      <p className="text-stone-400">No documents uploaded yet.</p>
+                      <p className="text-sm text-stone-500 mt-1">
                         Add your certifications, resume, or other important files.
                       </p>
                     </div>
@@ -782,12 +782,12 @@ export default function ProfilePage() {
                 </div>
 
                 {/* Availability Calendar Section */}
-                <div className="pt-6 border-t border-slate-700">
+                <div className="pt-6 border-t border-stone-700">
                   <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                     <CalendarDays className="w-5 h-5 text-amber-400" />
                     My Availability
                   </h3>
-                  <p className="text-slate-400 text-sm mb-4">
+                  <p className="text-stone-400 text-sm mb-4">
                     Mark dates or times when you're unavailable. Managers will be alerted if they try to schedule you during these times.
                   </p>
 
@@ -804,16 +804,16 @@ export default function ProfilePage() {
 
                   {/* Add Unavailable Form */}
                   {showAddUnavailable && (
-                    <div className="mb-6 bg-slate-700/30 border border-slate-600 rounded-lg p-4">
+                    <div className="mb-6 bg-stone-900/30 border border-stone-700 rounded-lg p-4">
                       <h4 className="text-white font-semibold mb-4">Mark Unavailable Time</h4>
                       <div className="space-y-4">
                         <div>
-                          <label className="block text-sm text-slate-400 mb-2">Date</label>
+                          <label className="block text-sm text-stone-400 mb-2">Date</label>
                           <input
                             type="date"
                             value={newUnavailable.date}
                             onChange={(e) => setNewUnavailable({ ...newUnavailable, date: e.target.value })}
-                            className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
+                            className="w-full px-4 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                             min={new Date().toISOString().split('T')[0]}
                           />
                         </div>
@@ -833,34 +833,34 @@ export default function ProfilePage() {
                         {!newUnavailable.isAllDay && (
                           <div className="grid grid-cols-2 gap-4">
                             <div>
-                              <label className="block text-sm text-slate-400 mb-2">Start Time</label>
+                              <label className="block text-sm text-stone-400 mb-2">Start Time</label>
                               <input
                                 type="time"
                                 value={newUnavailable.startTime}
                                 onChange={(e) => setNewUnavailable({ ...newUnavailable, startTime: e.target.value })}
-                                className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
+                                className="w-full px-4 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                               />
                             </div>
                             <div>
-                              <label className="block text-sm text-slate-400 mb-2">End Time</label>
+                              <label className="block text-sm text-stone-400 mb-2">End Time</label>
                               <input
                                 type="time"
                                 value={newUnavailable.endTime}
                                 onChange={(e) => setNewUnavailable({ ...newUnavailable, endTime: e.target.value })}
-                                className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
+                                className="w-full px-4 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                               />
                             </div>
                           </div>
                         )}
 
                         <div>
-                          <label className="block text-sm text-slate-400 mb-2">Reason (Optional)</label>
+                          <label className="block text-sm text-stone-400 mb-2">Reason (Optional)</label>
                           <input
                             type="text"
                             value={newUnavailable.reason}
                             onChange={(e) => setNewUnavailable({ ...newUnavailable, reason: e.target.value })}
                             placeholder="e.g., Vacation, Appointment, Personal"
-                            className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500/40"
+                            className="w-full px-4 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white placeholder-stone-500 focus:outline-none focus:border-amber-500/40"
                           />
                         </div>
 
@@ -876,7 +876,7 @@ export default function ProfilePage() {
                               setShowAddUnavailable(false);
                               setNewUnavailable({ date: '', startTime: '', endTime: '', reason: '', isAllDay: true });
                             }}
-                            className="flex-1 bg-slate-600 hover:bg-slate-500 text-white px-4 py-2 rounded-lg transition-all font-semibold"
+                            className="flex-1 bg-stone-600 hover:bg-stone-500 text-white px-4 py-2 rounded-lg transition-all font-semibold"
                           >
                             Cancel
                           </button>
@@ -893,7 +893,7 @@ export default function ProfilePage() {
                         .map((unavailable) => (
                           <div
                             key={unavailable.id}
-                            className="bg-slate-700/30 border border-slate-600 rounded-lg p-4 hover:bg-slate-700/50 transition-all"
+                            className="bg-stone-900/30 border border-stone-700 rounded-lg p-4 hover:bg-stone-900/50 transition-all"
                           >
                             <div className="flex items-start justify-between gap-3">
                               <div className="flex items-start gap-3 flex-1">
@@ -904,7 +904,7 @@ export default function ProfilePage() {
                                       {formatDateDisplay(unavailable.date)}
                                     </p>
                                     {!unavailable.isAllDay && (
-                                      <span className="text-sm text-slate-400">
+                                      <span className="text-sm text-stone-400">
                                         {unavailable.startTime} - {unavailable.endTime}
                                       </span>
                                     )}
@@ -915,7 +915,7 @@ export default function ProfilePage() {
                                     )}
                                   </div>
                                   {unavailable.reason && (
-                                    <p className="text-sm text-slate-400 mt-1">{unavailable.reason}</p>
+                                    <p className="text-sm text-stone-400 mt-1">{unavailable.reason}</p>
                                   )}
                                 </div>
                               </div>
@@ -931,10 +931,10 @@ export default function ProfilePage() {
                         ))}
                     </div>
                   ) : (
-                    <div className="text-center py-8 border border-dashed border-slate-600 rounded-lg">
-                      <CalendarDays className="w-12 h-12 text-slate-500 mx-auto mb-3" />
-                      <p className="text-slate-400">No unavailable times marked.</p>
-                      <p className="text-sm text-slate-500 mt-1">
+                    <div className="text-center py-8 border border-dashed border-stone-700 rounded-lg">
+                      <CalendarDays className="w-12 h-12 text-stone-500 mx-auto mb-3" />
+                      <p className="text-stone-400">No unavailable times marked.</p>
+                      <p className="text-sm text-stone-500 mt-1">
                         You're available for all shifts. Mark specific dates when you can't work.
                       </p>
                     </div>

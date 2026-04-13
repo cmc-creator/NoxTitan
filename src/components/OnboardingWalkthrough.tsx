@@ -202,7 +202,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <Confetti />
-      <div className="bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col border border-purple-700">
+      <div className="lux-app-bg rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col border border-purple-700">
         {/* Header */}
         <div className="p-4 border-b border-stone-800">
           <div className="flex items-center justify-between mb-0">
@@ -232,7 +232,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
             </div>
             <div className="w-full h-2 bg-stone-800 rounded-full overflow-hidden">
               <div 
-                className="h-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-500"
+                className="h-full bg-gradient-to-r from-amber-700 to-amber-500 transition-all duration-500"
                 style={{ width: `${progress}%` }}
               ></div>
             </div>
@@ -245,10 +245,10 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
                 onClick={() => handleStepClick(index)}
                 className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold transition-all shadow-lg border-2 mt-1 cursor-pointer ${
                   index === currentStep
-                    ? 'bg-gradient-to-br from-pink-400 via-purple-500 to-blue-400 text-white scale-110 border-pink-300 ring-4 ring-purple-300'
+                    ? 'bg-gradient-to-br from-pink-400 via-stone-900 to-amber-800 text-white scale-110 border-pink-300 ring-4 ring-purple-300'
                     : completedSteps.has(index) || index <= currentStep
-                    ? 'bg-gradient-to-br from-green-400 to-blue-400 text-white border-green-300 hover:scale-105 hover:ring-2 hover:ring-purple-400'
-                    : 'bg-gradient-to-br from-slate-700 to-slate-900 text-gray-200 border-slate-500 hover:bg-slate-800 opacity-60 cursor-not-allowed'
+                    ? 'bg-gradient-to-br from-green-400 to-amber-800 text-white border-green-300 hover:scale-105 hover:ring-2 hover:ring-purple-400'
+                    : 'bg-gradient-to-br from-slate-700 to-slate-900 text-gray-200 border-stone-500 hover:bg-stone-900 opacity-60 cursor-not-allowed'
                 }`}
                 style={{ boxShadow: index === currentStep ? '0 0 16px #a78bfa' : undefined }}
                 disabled={index > currentStep + 1 && !completedSteps.has(index)}
@@ -279,7 +279,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
               {currentStepData.description}
             </p>
             {/* Features List */}
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 mb-6">
+            <div className="bg-gradient-to-br from-amber-700 to-amber-900 rounded-xl p-6 mb-6">
               <h4 className="font-bold text-stone-100 mb-2 flex items-center gap-2 text-lg">
                 <Sparkles className="w-5 h-5 text-amber-400" />
                 Key Features:
@@ -349,7 +349,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
             </button>
             <button
               onClick={handleNext}
-              className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all flex items-center gap-2"
+              className="px-6 py-3 bg-gradient-to-r from-amber-800 to-amber-600 text-white rounded-lg font-semibold hover:from-amber-800 hover:to-amber-600 transition-all flex items-center gap-2"
             >
               {currentStep === steps.length - 1 ? (
                 <span>

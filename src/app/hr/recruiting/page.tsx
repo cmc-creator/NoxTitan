@@ -25,16 +25,16 @@ export default function RecruitingATS() {
   const stages = ['New', 'Screening', 'Interview', 'Offer', 'Hired', 'Rejected'];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-stone-900 to-slate-900 p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/hr" className="inline-flex items-center gap-2 text-blue-300 hover:text-blue-100 mb-4 transition-colors">
+          <Link href="/hr" className="inline-flex items-center gap-2 text-amber-400 hover:text-blue-100 mb-4 transition-colors">
             ← Back to HR Center
           </Link>
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-cyan-200 to-blue-200 mb-2"
+              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-700 via-cyan-200 to-amber-800 mb-2"
                   style={{
                     textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(59,130,246,0.6)',
                     WebkitTextStroke: '1px rgba(59,130,246,0.3)',
@@ -44,7 +44,7 @@ export default function RecruitingATS() {
               </h1>
               <p className="text-blue-200">Full-cycle recruiting from job posting to offer acceptance</p>
             </div>
-            <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white rounded-lg font-bold transition-all shadow-lg flex items-center gap-2">
+            <button className="px-6 py-3 bg-gradient-to-r from-amber-700 to-cyan-600 hover:from-amber-700 hover:to-cyan-500 text-white rounded-lg font-bold transition-all shadow-lg flex items-center gap-2">
               <Plus className="w-5 h-5" />
               Post New Job
             </button>
@@ -53,39 +53,39 @@ export default function RecruitingATS() {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
-            <div className="text-slate-300 text-sm mb-1">Open Positions</div>
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+            <div className="text-stone-300 text-sm mb-1">Open Positions</div>
             <div className="text-3xl font-bold text-white">7</div>
             <div className="text-emerald-400 text-xs mt-1">12 openings total</div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
-            <div className="text-slate-300 text-sm mb-1">Active Candidates</div>
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+            <div className="text-stone-300 text-sm mb-1">Active Candidates</div>
             <div className="text-3xl font-bold text-white">85</div>
-            <div className="text-blue-400 text-xs mt-1">↑ 23 this week</div>
+            <div className="text-amber-400 text-xs mt-1">↑ 23 this week</div>
           </div>
           <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded-xl p-4 border-2 border-emerald-500/30">
-            <div className="text-slate-300 text-sm mb-1">Interviews Scheduled</div>
+            <div className="text-stone-300 text-sm mb-1">Interviews Scheduled</div>
             <div className="text-3xl font-bold text-white">12</div>
             <div className="text-orange-400 text-xs mt-1">3 today</div>
           </div>
           <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded-xl p-4 border-2 border-orange-500/30">
-            <div className="text-slate-300 text-sm mb-1">Avg Time-to-Hire</div>
+            <div className="text-stone-300 text-sm mb-1">Avg Time-to-Hire</div>
             <div className="text-3xl font-bold text-white">18d</div>
             <div className="text-emerald-400 text-xs mt-1">↓ 4 days vs Q4</div>
           </div>
           <div className="bg-gradient-to-br from-rose-900/50 to-red-900/50 rounded-xl p-4 border-2 border-rose-500/30">
-            <div className="text-slate-300 text-sm mb-1">Cost-per-Hire</div>
+            <div className="text-stone-300 text-sm mb-1">Cost-per-Hire</div>
             <div className="text-3xl font-bold text-white">$3.2K</div>
             <div className="text-emerald-400 text-xs mt-1">↓ $800 vs Q4</div>
           </div>
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-2 mb-6 bg-slate-800/50 p-2 rounded-lg">
+        <div className="flex gap-2 mb-6 bg-stone-900/50 p-2 rounded-lg">
           <button
             onClick={() => setActiveTab('pipeline')}
             className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
-              activeTab === 'pipeline' ? 'bg-amber-600 text-white' : 'text-slate-300 hover:bg-slate-700'
+              activeTab === 'pipeline' ? 'bg-amber-600 text-white' : 'text-stone-300 hover:bg-stone-900'
             }`}
           >
             Candidate Pipeline
@@ -93,7 +93,7 @@ export default function RecruitingATS() {
           <button
             onClick={() => setActiveTab('positions')}
             className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
-              activeTab === 'positions' ? 'bg-amber-600 text-white' : 'text-slate-300 hover:bg-slate-700'
+              activeTab === 'positions' ? 'bg-amber-600 text-white' : 'text-stone-300 hover:bg-stone-900'
             }`}
           >
             Open Positions
@@ -101,7 +101,7 @@ export default function RecruitingATS() {
           <button
             onClick={() => setActiveTab('analytics')}
             className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
-              activeTab === 'analytics' ? 'bg-amber-600 text-white' : 'text-slate-300 hover:bg-slate-700'
+              activeTab === 'analytics' ? 'bg-amber-600 text-white' : 'text-stone-300 hover:bg-stone-900'
             }`}
           >
             Analytics
@@ -110,19 +110,19 @@ export default function RecruitingATS() {
 
         {/* Candidate Pipeline View */}
         {activeTab === 'pipeline' && (
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Candidate Pipeline</h2>
               <div className="flex gap-3">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-stone-400" />
                   <input
                     type="text"
                     placeholder="Search candidates..."
-                    className="pl-10 pr-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-amber-500 outline-none"
+                    className="pl-10 pr-4 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:ring-2 focus:ring-amber-500 outline-none"
                   />
                 </div>
-                <button className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg flex items-center gap-2">
+                <button className="px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg flex items-center gap-2">
                   <Filter className="w-5 h-5" />
                   Filter
                 </button>
@@ -134,21 +134,21 @@ export default function RecruitingATS() {
               {stages.map(stage => {
                 const stageCandidates = candidates.filter(c => c.stage === stage);
                 return (
-                  <div key={stage} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
+                  <div key={stage} className="bg-stone-950/50 rounded-lg p-4 border border-stone-700">
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="font-bold text-white">{stage}</h3>
                       <span className="bg-amber-600 text-white text-xs px-2 py-1 rounded-full">{stageCandidates.length}</span>
                     </div>
                     <div className="space-y-3">
                       {stageCandidates.map(candidate => (
-                        <div key={candidate.id} className="bg-slate-800 rounded-lg p-3 border border-slate-600 hover:border-amber-500/40 cursor-pointer transition-all">
+                        <div key={candidate.id} className="bg-stone-900 rounded-lg p-3 border border-stone-700 hover:border-amber-500/40 cursor-pointer transition-all">
                           <div className="font-semibold text-white text-sm mb-1">{candidate.name}</div>
-                          <div className="text-xs text-slate-400 mb-2">{candidate.position}</div>
+                          <div className="text-xs text-stone-400 mb-2">{candidate.position}</div>
                           <div className="flex items-center gap-1 mb-2">
                             <span className="text-yellow-400">★</span>
                             <span className="text-xs text-white">{candidate.rating}</span>
                           </div>
-                          <div className="flex items-center gap-2 text-xs text-slate-400">
+                          <div className="flex items-center gap-2 text-xs text-stone-400">
                             <Clock className="w-3 h-3" />
                             <span>{candidate.daysInStage}d in stage</span>
                           </div>
@@ -164,11 +164,11 @@ export default function RecruitingATS() {
 
         {/* Open Positions View */}
         {activeTab === 'positions' && (
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <h2 className="text-2xl font-bold text-white mb-6">Open Positions</h2>
             <div className="space-y-4">
               {openPositions.map(position => (
-                <div key={position.id} className="bg-slate-900/50 rounded-lg p-5 border border-slate-700 hover:border-amber-500/40 transition-all">
+                <div key={position.id} className="bg-stone-950/50 rounded-lg p-5 border border-stone-700 hover:border-amber-500/40 transition-all">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
@@ -181,23 +181,23 @@ export default function RecruitingATS() {
                           {position.priority.toUpperCase()}
                         </span>
                       </div>
-                      <div className="text-slate-300 mb-3">{position.department}</div>
+                      <div className="text-stone-300 mb-3">{position.department}</div>
                       <div className="grid grid-cols-4 gap-4">
                         <div>
-                          <div className="text-xs text-slate-400">Openings</div>
+                          <div className="text-xs text-stone-400">Openings</div>
                           <div className="text-lg font-bold text-white">{position.openings}</div>
                         </div>
                         <div>
-                          <div className="text-xs text-slate-400">Applicants</div>
+                          <div className="text-xs text-stone-400">Applicants</div>
                           <div className="text-lg font-bold text-emerald-400">{position.applicants}</div>
                         </div>
                         <div>
-                          <div className="text-xs text-slate-400">Days Open</div>
+                          <div className="text-xs text-stone-400">Days Open</div>
                           <div className="text-lg font-bold text-orange-400">{position.daysOpen}</div>
                         </div>
                         <div>
-                          <div className="text-xs text-slate-400">Posted</div>
-                          <div className="text-sm text-slate-300">{position.datePosted}</div>
+                          <div className="text-xs text-stone-400">Posted</div>
+                          <div className="text-sm text-stone-300">{position.datePosted}</div>
                         </div>
                       </div>
                     </div>
@@ -205,7 +205,7 @@ export default function RecruitingATS() {
                       <button className="px-4 py-2 bg-amber-600 hover:bg-amber-600 text-white rounded-lg font-semibold">
                         View Candidates
                       </button>
-                      <button className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg">
+                      <button className="px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg">
                         Edit
                       </button>
                     </div>
@@ -220,7 +220,7 @@ export default function RecruitingATS() {
         {activeTab === 'analytics' && (
           <div className="space-y-6">
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+              <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
                 <h3 className="text-xl font-bold text-white mb-4">Source Effectiveness</h3>
                 <div className="space-y-3">
                   {[
@@ -232,7 +232,7 @@ export default function RecruitingATS() {
                     <div key={item.source} className="flex items-center justify-between">
                       <div className="flex-1">
                         <div className="text-white font-semibold">{item.source}</div>
-                        <div className="text-sm text-slate-400">{item.candidates} candidates • {item.hires} hires</div>
+                        <div className="text-sm text-stone-400">{item.candidates} candidates • {item.hires} hires</div>
                       </div>
                       <div className="text-2xl font-bold text-emerald-400">{item.percentage}%</div>
                     </div>
@@ -240,7 +240,7 @@ export default function RecruitingATS() {
                 </div>
               </div>
 
-              <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+              <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
                 <h3 className="text-xl font-bold text-white mb-4">Hiring Funnel</h3>
                 <div className="space-y-4">
                   {[
@@ -253,9 +253,9 @@ export default function RecruitingATS() {
                     <div key={item.stage}>
                       <div className="flex items-center justify-between mb-1">
                         <span className="text-white font-semibold">{item.stage}</span>
-                        <span className="text-slate-400">{item.count}</span>
+                        <span className="text-stone-400">{item.count}</span>
                       </div>
-                      <div className="w-full bg-slate-700 rounded-full h-3">
+                      <div className="w-full bg-stone-900 rounded-full h-3">
                         <div className={`${item.color} h-3 rounded-full transition-all`} style={{width: item.width}}></div>
                       </div>
                     </div>

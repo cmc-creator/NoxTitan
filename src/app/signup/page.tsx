@@ -93,20 +93,20 @@ function SignupForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 flex items-center justify-center p-4">
+    <div className="min-h-screen lux-app-bg flex items-center justify-center p-4">
       <div className="max-w-2xl w-full">
         {/* Logo and Title */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
-            <Calendar className="w-16 h-16 text-blue-400" />
+            <Calendar className="w-16 h-16 text-amber-400" />
           </div>
           <h1 className="text-4xl font-bold text-white mb-2">NyxTitan™</h1>
-          <p className="text-slate-400">Create your account</p>
-          <p className="text-xs text-slate-500 mt-2">by Connie Michelle Consulting & Business Solutions LLC</p>
+          <p className="text-stone-400">Create your account</p>
+          <p className="text-xs text-stone-500 mt-2">by Connie Michelle Consulting & Business Solutions LLC</p>
         </div>
 
         {/* Signup Form */}
-        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-2xl p-8 border border-slate-700">
+        <div className="lux-card rounded-2xl shadow-2xl p-8 border border-stone-700">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Error Message */}
             {error && (
@@ -118,18 +118,18 @@ function SignupForm() {
 
             {/* Name Field */}
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-2">
+              <label className="block text-sm font-semibold text-stone-300 mb-2">
                 Full Name *
               </label>
               <div className="relative">
-                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
                 <input
                   type="text"
                   name="name"
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full pl-11 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                  className="w-full pl-11 pr-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                   placeholder="John Doe"
                 />
               </div>
@@ -137,18 +137,18 @@ function SignupForm() {
 
             {/* Email Field */}
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-2">
+              <label className="block text-sm font-semibold text-stone-300 mb-2">
                 Email Address *
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
                 <input
                   type="email"
                   name="email"
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full pl-11 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                  className="w-full pl-11 pr-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                   placeholder="you@example.com"
                 />
               </div>
@@ -156,7 +156,7 @@ function SignupForm() {
 
             {/* Subscription Tier */}
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-2">
+              <label className="block text-sm font-semibold text-stone-300 mb-2">
                 Choose Your Plan *
               </label>
               {isVIP ? (
@@ -169,7 +169,7 @@ function SignupForm() {
                   name="tier"
                   value={formData.tier}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                  className="w-full px-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                 >
                   <option value="PROFESSIONAL">Professional - $499/mo - Up to 50 employees</option>
                   <option value="ENTERPRISE">Enterprise - $1,499/mo - Up to 250 employees + AI features</option>
@@ -177,7 +177,7 @@ function SignupForm() {
                 </select>
               )}
               {!isVIP && (
-                <p className="text-xs text-slate-400 mt-2">
+                <p className="text-xs text-stone-400 mt-2">
                   Have a VIP code? Contact us for complimentary access!
                 </p>
               )}
@@ -186,36 +186,36 @@ function SignupForm() {
             {/* Password Fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-semibold text-slate-300 mb-2">
+                <label className="block text-sm font-semibold text-stone-300 mb-2">
                   Password *
                 </label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
                   <input
                     type="password"
                     name="password"
                     required
                     value={formData.password}
                     onChange={handleChange}
-                    className="w-full pl-11 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                    className="w-full pl-11 pr-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     placeholder="••••••••"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-300 mb-2">
+                <label className="block text-sm font-semibold text-stone-300 mb-2">
                   Confirm Password *
                 </label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
                   <input
                     type="password"
                     name="confirmPassword"
                     required
                     value={formData.confirmPassword}
                     onChange={handleChange}
-                    className="w-full pl-11 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                    className="w-full pl-11 pr-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     placeholder="••••••••"
                   />
                 </div>
@@ -227,15 +227,15 @@ function SignupForm() {
               <input
                 type="checkbox"
                 required
-                className="w-4 h-4 mt-1 rounded border-slate-600 bg-slate-700 text-amber-400 focus:ring-2 focus:ring-amber-500/20"
+                className="w-4 h-4 mt-1 rounded border-stone-700 bg-stone-900 text-amber-400 focus:ring-2 focus:ring-amber-500/20"
               />
-              <label className="text-sm text-slate-300">
+              <label className="text-sm text-stone-300">
                 I agree to the{' '}
-                <Link href="/terms" className="text-blue-400 hover:text-blue-300">
+                <Link href="/terms" className="text-amber-400 hover:text-amber-400">
                   Terms of Service
                 </Link>{' '}
                 and{' '}
-                <Link href="/privacy" className="text-blue-400 hover:text-blue-300">
+                <Link href="/privacy" className="text-amber-400 hover:text-amber-400">
                   Privacy Policy
                 </Link>
               </label>
@@ -245,7 +245,7 @@ function SignupForm() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-amber-700 to-amber-500 hover:from-amber-800 hover:to-amber-600 text-white px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>
@@ -263,11 +263,11 @@ function SignupForm() {
 
           {/* Login Link */}
           <div className="mt-6 text-center">
-            <p className="text-slate-400">
+            <p className="text-stone-400">
               Already have an account?{' '}
               <Link
                 href="/login"
-                className="text-blue-400 hover:text-blue-300 font-semibold transition-colors"
+                className="text-amber-400 hover:text-amber-400 font-semibold transition-colors"
               >
                 Sign in
               </Link>
@@ -282,7 +282,7 @@ function SignupForm() {
 export default function SignupPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 flex items-center justify-center">
+      <div className="min-h-screen lux-app-bg flex items-center justify-center">
         <div className="text-white">Loading...</div>
       </div>
     }>

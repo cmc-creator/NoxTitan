@@ -85,28 +85,28 @@ export default function SentinelImportPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
+    <div className="min-h-screen lux-app-bg p-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
           <Upload className="w-10 h-10 text-amber-400" />
           Import Visitor Data
         </h1>
-        <p className="text-slate-400 mb-8">Import from Tally, Google Forms, or CSV files</p>
+        <p className="text-stone-400 mb-8">Import from Tally, Google Forms, or CSV files</p>
 
         {/* Import Type Selection */}
-        <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 mb-6">
+        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6 mb-6">
           <div className="grid grid-cols-3 gap-4">
             <button
               onClick={() => setImportType('tally')}
               className={`p-6 rounded-xl border-2 transition-all ${
                 importType === 'tally'
                   ? 'border-amber-500/40 bg-amber-500/20'
-                  : 'border-slate-700 hover:border-slate-600'
+                  : 'border-stone-700 hover:border-stone-700'
               }`}
             >
               <Link2 className="w-8 h-8 text-amber-400 mx-auto mb-3" />
               <h3 className="text-white font-bold mb-1">Tally Forms</h3>
-              <p className="text-sm text-slate-400">Import from Tally.so</p>
+              <p className="text-sm text-stone-400">Import from Tally.so</p>
             </button>
 
             <button
@@ -114,12 +114,12 @@ export default function SentinelImportPage() {
               className={`p-6 rounded-xl border-2 transition-all ${
                 importType === 'googleforms'
                   ? 'border-amber-500/40 bg-amber-600/20'
-                  : 'border-slate-700 hover:border-slate-600'
+                  : 'border-stone-700 hover:border-stone-700'
               }`}
             >
-              <FileText className="w-8 h-8 text-blue-400 mx-auto mb-3" />
+              <FileText className="w-8 h-8 text-amber-400 mx-auto mb-3" />
               <h3 className="text-white font-bold mb-1">Google Forms</h3>
-              <p className="text-sm text-slate-400">Import from Forms</p>
+              <p className="text-sm text-stone-400">Import from Forms</p>
             </button>
 
             <button
@@ -127,22 +127,22 @@ export default function SentinelImportPage() {
               className={`p-6 rounded-xl border-2 transition-all ${
                 importType === 'csv'
                   ? 'border-green-500 bg-green-500/20'
-                  : 'border-slate-700 hover:border-slate-600'
+                  : 'border-stone-700 hover:border-stone-700'
               }`}
             >
               <Upload className="w-8 h-8 text-green-400 mx-auto mb-3" />
               <h3 className="text-white font-bold mb-1">CSV Upload</h3>
-              <p className="text-sm text-slate-400">Upload CSV file</p>
+              <p className="text-sm text-stone-400">Upload CSV file</p>
             </button>
           </div>
         </div>
 
         {/* Tally Import */}
         {importType === 'tally' && (
-          <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6">
+          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6">
             <h2 className="text-xl font-bold text-white mb-4">Import from Tally</h2>
             <div className="mb-4">
-              <label className="block text-sm font-semibold text-slate-300 mb-2">
+              <label className="block text-sm font-semibold text-stone-300 mb-2">
                 Tally Form URL or Webhook URL
               </label>
               <input
@@ -150,7 +150,7 @@ export default function SentinelImportPage() {
                 value={tallyFormUrl}
                 onChange={(e) => setTallyFormUrl(e.target.value)}
                 placeholder="https://tally.so/r/your-form-id"
-                className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
+                className="w-full px-4 py-3 bg-stone-900 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
               />
             </div>
             <button
@@ -165,10 +165,10 @@ export default function SentinelImportPage() {
 
         {/* Google Forms Import */}
         {importType === 'googleforms' && (
-          <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6">
+          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6">
             <h2 className="text-xl font-bold text-white mb-4">Import from Google Forms</h2>
             <div className="mb-4">
-              <label className="block text-sm font-semibold text-slate-300 mb-2">
+              <label className="block text-sm font-semibold text-stone-300 mb-2">
                 Google Form ID or Spreadsheet ID
               </label>
               <input
@@ -176,7 +176,7 @@ export default function SentinelImportPage() {
                 value={googleFormId}
                 onChange={(e) => setGoogleFormId(e.target.value)}
                 placeholder="1a2b3c4d5e6f7g8h9i0j"
-                className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
+                className="w-full px-4 py-3 bg-stone-900 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
               />
             </div>
             <button
@@ -191,17 +191,17 @@ export default function SentinelImportPage() {
 
         {/* CSV Upload */}
         {importType === 'csv' && (
-          <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6">
+          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6">
             <h2 className="text-xl font-bold text-white mb-4">Upload CSV File</h2>
             <div className="mb-4">
-              <label className="block text-sm font-semibold text-slate-300 mb-2">
+              <label className="block text-sm font-semibold text-stone-300 mb-2">
                 CSV File (firstName, lastName, email, phone, company, purpose, checkInTime)
               </label>
               <input
                 type="file"
                 accept=".csv"
                 onChange={(e) => setCsvFile(e.target.files?.[0] || null)}
-                className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-green-500"
+                className="w-full px-4 py-3 bg-stone-900 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-green-500"
               />
             </div>
             <button
@@ -224,15 +224,15 @@ export default function SentinelImportPage() {
             <div className="grid grid-cols-3 gap-4">
               <div>
                 <div className="text-3xl font-bold text-green-400">{result.imported}</div>
-                <div className="text-sm text-slate-400">Records Imported</div>
+                <div className="text-sm text-stone-400">Records Imported</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-yellow-400">{result.skipped || 0}</div>
-                <div className="text-sm text-slate-400">Duplicates Skipped</div>
+                <div className="text-sm text-stone-400">Duplicates Skipped</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-red-400">{result.errors || 0}</div>
-                <div className="text-sm text-slate-400">Errors</div>
+                <div className="text-sm text-stone-400">Errors</div>
               </div>
             </div>
           </div>

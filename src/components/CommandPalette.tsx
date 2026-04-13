@@ -115,10 +115,10 @@ export default function CommandPalette() {
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-start justify-center pt-[20vh] bg-black/60 backdrop-blur-sm">
-      <div className="w-full max-w-2xl bg-slate-900 rounded-xl shadow-2xl border border-amber-500/40/30 overflow-hidden">
+      <div className="w-full max-w-2xl bg-stone-950 rounded-xl shadow-2xl border border-amber-500/40/30 overflow-hidden">
         {/* Search Input */}
-        <div className="flex items-center gap-3 p-4 border-b border-slate-700">
-          <Search className="w-5 h-5 text-slate-400" />
+        <div className="flex items-center gap-3 p-4 border-b border-stone-700">
+          <Search className="w-5 h-5 text-stone-400" />
           <input
             ref={inputRef}
             type="text"
@@ -128,9 +128,9 @@ export default function CommandPalette() {
               setSelectedIndex(0);
             }}
             placeholder="Search commands... (Cmd+K to toggle)"
-            className="flex-1 bg-transparent text-white placeholder-slate-400 outline-none text-lg"
+            className="flex-1 bg-transparent text-white placeholder-stone-600 outline-none text-lg"
           />
-          <kbd className="px-2 py-1 bg-slate-800 rounded text-xs text-slate-400 border border-slate-700">ESC</kbd>
+          <kbd className="px-2 py-1 bg-stone-900 rounded text-xs text-stone-400 border border-stone-700">ESC</kbd>
         </div>
 
         {/* Results */}
@@ -155,15 +155,15 @@ export default function CommandPalette() {
                     className={`w-full flex items-center gap-3 px-3 py-3 rounded-lg transition-all text-left ${
                       globalIndex === selectedIndex
                         ? 'bg-amber-600/30 border border-amber-500/40/50'
-                        : 'hover:bg-slate-800/50'
+                        : 'hover:bg-stone-900/50'
                     }`}
                   >
-                    <div className="p-2 bg-slate-800 rounded-lg">
+                    <div className="p-2 bg-stone-900 rounded-lg">
                       <Icon className="w-4 h-4 text-amber-400" />
                     </div>
                     <div className="flex-1">
                       <div className="text-white font-medium">{cmd.name}</div>
-                      <div className="text-sm text-slate-400">{cmd.description}</div>
+                      <div className="text-sm text-stone-400">{cmd.description}</div>
                     </div>
                   </button>
                 );
@@ -172,7 +172,7 @@ export default function CommandPalette() {
           ))}
           
           {filteredCommands.length === 0 && (
-            <div className="text-center py-12 text-slate-400">
+            <div className="text-center py-12 text-stone-400">
               <Search className="w-12 h-12 mx-auto mb-3 opacity-50" />
               <p>No commands found</p>
               <p className="text-sm mt-1">Try searching for something else</p>
@@ -181,13 +181,13 @@ export default function CommandPalette() {
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between px-4 py-3 bg-slate-800/50 border-t border-slate-700 text-xs text-slate-400">
+        <div className="flex items-center justify-between px-4 py-3 bg-stone-900/50 border-t border-stone-700 text-xs text-stone-400">
           <div className="flex gap-4">
-            <span><kbd className="px-1 bg-slate-700 rounded">↑↓</kbd> Navigate</span>
-            <span><kbd className="px-1 bg-slate-700 rounded">Enter</kbd> Select</span>
-            <span><kbd className="px-1 bg-slate-700 rounded">ESC</kbd> Close</span>
+            <span><kbd className="px-1 bg-stone-900 rounded">↑↓</kbd> Navigate</span>
+            <span><kbd className="px-1 bg-stone-900 rounded">Enter</kbd> Select</span>
+            <span><kbd className="px-1 bg-stone-900 rounded">ESC</kbd> Close</span>
           </div>
-          <span>Press <kbd className="px-1 bg-slate-700 rounded">Cmd+K</kbd> anytime</span>
+          <span>Press <kbd className="px-1 bg-stone-900 rounded">Cmd+K</kbd> anytime</span>
         </div>
       </div>
     </div>

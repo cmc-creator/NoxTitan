@@ -451,7 +451,7 @@ export default function Analytics() {
 
           <div className="space-y-4">
             {forecast.map((month, index) => (
-              <div key={index} className="p-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg border border-indigo-100">
+              <div key={index} className="p-4 bg-gradient-to-r from-amber-700 to-amber-500 rounded-lg border border-indigo-100">
                 <div className="flex items-center justify-between mb-3">
                   <div>
                     <span className="font-semibold text-stone-100">{month.month}</span>

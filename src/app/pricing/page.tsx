@@ -11,7 +11,7 @@ export default function PricingPage() {
     <div className="min-h-screen w-full flex flex-col items-center bg-gradient-to-b from-black via-[#1a1a1e] to-black py-20 px-4">
       {/* Back to Landing Page Link */}
       <div className="w-full max-w-7xl mb-8">
-        <Link href="/landing" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-br from-purple-900/50 to-blue-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 transition-all text-white font-semibold">
+        <Link href="/landing" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-br from-stone-900/50 to-amber-800/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 transition-all text-white font-semibold">
           <ArrowLeft className="w-4 h-4" />
           Back to Home
         </Link>
@@ -28,7 +28,7 @@ export default function PricingPage() {
           onClick={() => setPricingView('packages')}
           className={`px-6 py-3 rounded-xl font-bold transition-all ${
             pricingView === 'packages' 
-              ? 'bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border-2 border-amber-600/40/40 shadow-[0_0_20px_rgba(59,130,246,0.6)] text-white' 
+              ? 'bg-gradient-to-br from-amber-700/50 to-cyan-900/50 border-2 border-amber-600/40/40 shadow-[0_0_20px_rgba(59,130,246,0.6)] text-white' 
               : 'text-stone-400 hover:text-white border-2 border-transparent'
           }`}
         >
@@ -38,7 +38,7 @@ export default function PricingPage() {
           onClick={() => setPricingView('modules')}
           className={`px-6 py-3 rounded-xl font-bold transition-all ${
             pricingView === 'modules' 
-              ? 'bg-gradient-to-br from-purple-900/50 to-violet-900/50 border-2 border-amber-600/40/40 shadow-[0_0_20px_rgba(168,85,247,0.6)] text-white' 
+              ? 'bg-gradient-to-br from-stone-900/50 to-violet-900/50 border-2 border-amber-600/40/40 shadow-[0_0_20px_rgba(168,85,247,0.6)] text-white' 
               : 'text-stone-400 hover:text-white border-2 border-transparent'
           }`}
         >
@@ -115,9 +115,9 @@ export default function PricingPage() {
               </div>
 
               {/* Plus */}
-              <div className="flex flex-col bg-gradient-to-br from-blue-600/20 to-blue-800/20 border-2 border-amber-500/40/50 rounded-2xl shadow-xl p-6 hover:scale-105 transition-transform">
+              <div className="flex flex-col bg-gradient-to-br from-amber-700/20 to-amber-800/20 border-2 border-amber-500/40/50 rounded-2xl shadow-xl p-6 hover:scale-105 transition-transform">
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-blue-400 mb-2">Plus</h3>
+                  <h3 className="text-2xl font-bold text-amber-400 mb-2">Plus</h3>
                   <div className="flex items-baseline justify-center gap-2">
                     <span className="text-4xl font-extrabold text-white">$349</span>
                     <span className="text-stone-400">/month</span>
@@ -126,19 +126,19 @@ export default function PricingPage() {
                 </div>
                 
                 <div className="flex-1">
-                  <p className="text-blue-300 text-sm mb-3">Everything in Growth, plus:</p>
+                  <p className="text-amber-400 text-sm mb-3">Everything in Growth, plus:</p>
                   <ul className="space-y-2 text-sm text-stone-300 mb-6">
-                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 mt-0.5" /> Up to 50 employees</li>
-                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 mt-0.5" /> Performance management</li>
-                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 mt-0.5" /> Compliance tracking</li>
-                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 mt-0.5" /> Advanced analytics</li>
-                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 mt-0.5" /> Training management</li>
-                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 mt-0.5" /> 15 integrations</li>
-                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 mt-0.5" /> Phone & email support</li>
+                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 mt-0.5" /> Up to 50 employees</li>
+                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 mt-0.5" /> Performance management</li>
+                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 mt-0.5" /> Compliance tracking</li>
+                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 mt-0.5" /> Advanced analytics</li>
+                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 mt-0.5" /> Training management</li>
+                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 mt-0.5" /> 15 integrations</li>
+                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 mt-0.5" /> Phone & email support</li>
                   </ul>
                 </div>
                 
-                <button className="w-full px-6 py-3 rounded-xl bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border-2 border-amber-600/40/40 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] text-white font-bold transition-all">Start Free Trial</button>
+                <button className="w-full px-6 py-3 rounded-xl bg-gradient-to-br from-amber-700/50 to-cyan-900/50 border-2 border-amber-600/40/40 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] text-white font-bold transition-all">Start Free Trial</button>
               </div>
             </div>
           </div>
@@ -153,9 +153,9 @@ export default function PricingPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Professional Tier */}
-              <div className="flex flex-col bg-gradient-to-br from-blue-600/20 to-blue-900/20 border-2 border-amber-500/40/50 rounded-2xl shadow-2xl p-8 hover:scale-105 transition-transform">
+              <div className="flex flex-col bg-gradient-to-br from-amber-700/20 to-amber-800/20 border-2 border-amber-500/40/50 rounded-2xl shadow-2xl p-8 hover:scale-105 transition-transform">
                 <div className="text-center mb-6">
-                  <h2 className="text-3xl font-bold text-blue-400 mb-2">Professional</h2>
+                  <h2 className="text-3xl font-bold text-amber-400 mb-2">Professional</h2>
                   <div className="flex items-baseline justify-center gap-2">
                     <span className="text-5xl font-extrabold text-white">$499</span>
                     <span className="text-stone-400">/month</span>
@@ -164,7 +164,7 @@ export default function PricingPage() {
                 </div>
                 
                 <div className="flex-1">
-                  <p className="text-blue-300 font-semibold mb-4">Perfect for growing businesses</p>
+                  <p className="text-amber-400 font-semibold mb-4">Perfect for growing businesses</p>
                   <ul className="space-y-3 text-stone-300 mb-8">
                     <li className="flex items-start gap-2">✓ <span>Up to 50 employees</span></li>
                     <li className="flex items-start gap-2">✓ <span>Advanced scheduling & calendar</span></li>
@@ -177,11 +177,11 @@ export default function PricingPage() {
                   </ul>
                 </div>
                 
-                <button className="w-full px-6 py-4 rounded-xl bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border-2 border-amber-600/40/40 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] text-white font-bold transition-all">Start Professional</button>
+                <button className="w-full px-6 py-4 rounded-xl bg-gradient-to-br from-amber-700/50 to-cyan-900/50 border-2 border-amber-600/40/40 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] text-white font-bold transition-all">Start Professional</button>
               </div>
 
               {/* Enterprise Tier - Featured */}
-              <div className="flex flex-col bg-gradient-to-br from-purple-600/20 to-pink-600/20 border-2 border-amber-500/40 rounded-2xl shadow-2xl p-8 relative hover:scale-105 transition-transform">
+              <div className="flex flex-col bg-gradient-to-br from-stone-900/20 to-pink-600/20 border-2 border-amber-500/40 rounded-2xl shadow-2xl p-8 relative hover:scale-105 transition-transform">
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <span className="bg-gradient-to-r from-amber-700 to-amber-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">MOST POPULAR</span>
                 </div>
@@ -211,7 +211,7 @@ export default function PricingPage() {
                   </ul>
                 </div>
                 
-                <button className="w-full px-6 py-4 rounded-xl bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] text-white font-bold transition-all">Start Enterprise</button>
+                <button className="w-full px-6 py-4 rounded-xl bg-gradient-to-br from-stone-900/50 to-pink-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] text-white font-bold transition-all">Start Enterprise</button>
               </div>
 
               {/* Titan Tier */}
@@ -261,23 +261,23 @@ export default function PricingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {/* Core Modules */}
-            <div className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 border-2 border-amber-500/40/50 rounded-xl p-6 hover:shadow-2xl transition-all">
+            <div className="bg-gradient-to-br from-amber-700/20 to-amber-800/20 border-2 border-amber-500/40/50 rounded-xl p-6 hover:shadow-2xl transition-all">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-3 bg-amber-600 rounded-lg">
                   <Briefcase className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">Scheduling & Calendar</h3>
-                  <p className="text-2xl font-bold text-blue-400">$79<span className="text-sm text-stone-400">/mo</span></p>
+                  <p className="text-2xl font-bold text-amber-400">$79<span className="text-sm text-stone-400">/mo</span></p>
                 </div>
               </div>
               <ul className="space-y-2 text-sm text-stone-300 mb-4">
-                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 mt-0.5" /> Drag & drop scheduling</li>
-                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 mt-0.5" /> Shift templates</li>
-                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 mt-0.5" /> Team availability</li>
-                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 mt-0.5" /> Calendar sync</li>
+                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 mt-0.5" /> Drag & drop scheduling</li>
+                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 mt-0.5" /> Shift templates</li>
+                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 mt-0.5" /> Team availability</li>
+                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 mt-0.5" /> Calendar sync</li>
               </ul>
-              <button className="w-full py-2 px-6 rounded-xl bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border-2 border-amber-600/40/40 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] text-white font-bold transition-all">Add Module</button>
+              <button className="w-full py-2 px-6 rounded-xl bg-gradient-to-br from-amber-700/50 to-cyan-900/50 border-2 border-amber-600/40/40 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] text-white font-bold transition-all">Add Module</button>
             </div>
 
             <div className="bg-gradient-to-br from-green-600/20 to-green-800/20 border-2 border-green-500/50 rounded-xl p-6 hover:shadow-2xl transition-all">
@@ -299,7 +299,7 @@ export default function PricingPage() {
               <button className="w-full py-2 px-6 rounded-xl bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-2 border-green-600/40 hover:border-green-400 hover:shadow-[0_0_20px_rgba(34,197,94,0.6)] text-white font-bold transition-all">Add Module</button>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-600/20 to-purple-800/20 border-2 border-amber-500/40/50 rounded-xl p-6 hover:shadow-2xl transition-all">
+            <div className="bg-gradient-to-br from-stone-900/20 to-amber-900/20 border-2 border-amber-500/40/50 rounded-xl p-6 hover:shadow-2xl transition-all">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-3 bg-amber-600 rounded-lg">
                   <Users className="w-6 h-6 text-white" />
@@ -315,7 +315,7 @@ export default function PricingPage() {
                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 mt-0.5" /> Document management</li>
                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 mt-0.5" /> Performance reviews</li>
               </ul>
-              <button className="w-full py-2 px-6 rounded-xl bg-gradient-to-br from-purple-900/50 to-violet-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] text-white font-bold transition-all">Add Module</button>
+              <button className="w-full py-2 px-6 rounded-xl bg-gradient-to-br from-stone-900/50 to-violet-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] text-white font-bold transition-all">Add Module</button>
             </div>
 
             <div className="bg-gradient-to-br from-yellow-600/20 to-yellow-800/20 border-2 border-yellow-500/50 rounded-xl p-6 hover:shadow-2xl transition-all">
@@ -356,7 +356,7 @@ export default function PricingPage() {
               <button className="w-full py-2 px-6 rounded-xl bg-gradient-to-br from-red-900/50 to-rose-900/50 border-2 border-red-600/40 hover:border-red-400 hover:shadow-[0_0_20px_rgba(239,68,68,0.6)] text-white font-bold transition-all">Add Module</button>
             </div>
 
-            <div className="bg-gradient-to-br from-indigo-600/20 to-indigo-800/20 border-2 border-amber-500/40/50 rounded-xl p-6 hover:shadow-2xl transition-all">
+            <div className="bg-gradient-to-br from-amber-700/20 to-amber-800/20 border-2 border-amber-500/40/50 rounded-xl p-6 hover:shadow-2xl transition-all">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-3 bg-amber-600 rounded-lg">
                   <BarChart3 className="w-6 h-6 text-white" />
@@ -372,7 +372,7 @@ export default function PricingPage() {
                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 mt-0.5" /> Export to Excel/PDF</li>
                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 mt-0.5" /> KPI tracking</li>
               </ul>
-              <button className="w-full py-2 px-6 rounded-xl bg-gradient-to-br from-indigo-900/50 to-blue-900/50 border-2 border-indigo-600/40 hover:border-indigo-400 hover:shadow-[0_0_20px_rgba(99,102,241,0.6)] text-white font-bold transition-all">Add Module</button>
+              <button className="w-full py-2 px-6 rounded-xl bg-gradient-to-br from-amber-700/50 to-amber-800/50 border-2 border-indigo-600/40 hover:border-indigo-400 hover:shadow-[0_0_20px_rgba(99,102,241,0.6)] text-white font-bold transition-all">Add Module</button>
             </div>
 
             {/* Advanced Modules */}
@@ -435,11 +435,11 @@ export default function PricingPage() {
           </div>
 
           {/* Popular Bundles */}
-          <div className="bg-gradient-to-r from-purple-900/40 to-blue-900/40 border-2 border-amber-500/40/50 rounded-2xl p-8">
+          <div className="bg-gradient-to-r from-stone-900/40 to-amber-800/40 border-2 border-amber-500/40/50 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-white mb-6 text-center">Popular Module Bundles</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-stone-900/50 rounded-xl p-6 border border-stone-800">
-                <h4 className="text-xl font-bold text-blue-400 mb-2">Basic Ops Bundle</h4>
+                <h4 className="text-xl font-bold text-amber-400 mb-2">Basic Ops Bundle</h4>
                 <p className="text-3xl font-bold text-white mb-1">$199<span className="text-sm text-stone-400">/mo</span></p>
                 <p className="text-sm text-green-400 mb-4">Save $48/mo (20%)</p>
                 <ul className="space-y-2 text-sm text-stone-300 mb-4">
@@ -447,7 +447,7 @@ export default function PricingPage() {
                   <li>• Time & Attendance</li>
                   <li>• HR Management</li>
                 </ul>
-                <button className="w-full py-2 px-6 rounded-xl bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border-2 border-amber-600/40/40 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] text-white font-bold transition-all">Select Bundle</button>
+                <button className="w-full py-2 px-6 rounded-xl bg-gradient-to-br from-amber-700/50 to-cyan-900/50 border-2 border-amber-600/40/40 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] text-white font-bold transition-all">Select Bundle</button>
               </div>
 
               <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40">
@@ -462,7 +462,7 @@ export default function PricingPage() {
                   <li>• Payroll & Benefits</li>
                   <li>• Reports & Analytics</li>
                 </ul>
-                <button className="w-full py-2 px-6 rounded-xl bg-gradient-to-br from-purple-900/50 to-violet-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] text-white font-bold transition-all">Select Bundle</button>
+                <button className="w-full py-2 px-6 rounded-xl bg-gradient-to-br from-stone-900/50 to-violet-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] text-white font-bold transition-all">Select Bundle</button>
               </div>
 
               <div className="bg-stone-900/50 rounded-xl p-6 border border-stone-800">
@@ -516,7 +516,7 @@ export default function PricingPage() {
       </div>
 
       {/* Savings Calculator */}
-      <div className="mt-16 w-full max-w-4xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700 rounded-2xl p-8">
+      <div className="mt-16 w-full max-w-4xl lux-card/50 border border-stone-700 rounded-2xl p-8">
         <h3 className="text-2xl font-bold text-white text-center mb-6">💰 Compare & Save</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           <div>

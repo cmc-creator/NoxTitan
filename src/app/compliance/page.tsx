@@ -55,7 +55,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
       {hipaaView === 'overview' && (
         <div className="space-y-6">
           {/* Compliance Score */}
-          <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl border-2 border-green-200">
+          <div className="bg-gradient-to-r from-green-50 to-amber-800 p-6 rounded-xl border-2 border-green-200">
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h2 className="text-2xl font-bold text-stone-100">HIPAA Compliance Status</h2>
@@ -776,7 +776,7 @@ export default function CompliancePage() {
     switch (status) {
       case 'action-required': return 'text-red-400 bg-red-500/20';
       case 'monitoring': return 'text-yellow-400 bg-yellow-500/20';
-      case 'informational': return 'text-blue-400 bg-amber-600/20';
+      case 'informational': return 'text-amber-400 bg-amber-600/20';
       default: return 'text-stone-400 bg-gray-500/20';
     }
   };
@@ -1066,30 +1066,30 @@ export default function CompliancePage() {
               <div className="p-6 rounded-xl shadow-lg" style={{ background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%)', border: '2px solid rgba(59, 130, 246, 0.3)' }}>
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-amber-600/20 rounded-lg">
-                    <Zap className="w-8 h-8 text-blue-400" />
+                    <Zap className="w-8 h-8 text-amber-400" />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold mb-2 text-white">Active Compliance Monitoring</h3>
-                    <p className="text-slate-300 mb-4">
+                    <p className="text-stone-300 mb-4">
                       NyxTitan AI continuously monitors 2,500+ federal and state regulations across 12 industries. 
                       You'll be automatically notified of changes that affect your business.
                     </p>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      <div className="bg-slate-800/50 rounded-lg p-3">
-                        <div className="text-2xl font-bold text-blue-400 mb-1">150+</div>
-                        <div className="text-xs text-slate-400">Sources Monitored</div>
+                      <div className="bg-stone-900/50 rounded-lg p-3">
+                        <div className="text-2xl font-bold text-amber-400 mb-1">150+</div>
+                        <div className="text-xs text-stone-400">Sources Monitored</div>
                       </div>
-                      <div className="bg-slate-800/50 rounded-lg p-3">
+                      <div className="bg-stone-900/50 rounded-lg p-3">
                         <div className="text-2xl font-bold text-green-400 mb-1">Daily</div>
-                        <div className="text-xs text-slate-400">Update Checks</div>
+                        <div className="text-xs text-stone-400">Update Checks</div>
                       </div>
-                      <div className="bg-slate-800/50 rounded-lg p-3">
+                      <div className="bg-stone-900/50 rounded-lg p-3">
                         <div className="text-2xl font-bold text-amber-400 mb-1">50 States</div>
-                        <div className="text-xs text-slate-400">Coverage</div>
+                        <div className="text-xs text-stone-400">Coverage</div>
                       </div>
-                      <div className="bg-slate-800/50 rounded-lg p-3">
+                      <div className="bg-stone-900/50 rounded-lg p-3">
                         <div className="text-2xl font-bold text-orange-400 mb-1">12</div>
-                        <div className="text-xs text-slate-400">Industries</div>
+                        <div className="text-xs text-stone-400">Industries</div>
                       </div>
                     </div>
                   </div>
@@ -1102,7 +1102,7 @@ export default function CompliancePage() {
                 <button
                   onClick={() => setAlertFilter('all')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                    alertFilter === 'all' ? 'bg-amber-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                    alertFilter === 'all' ? 'bg-amber-600 text-white' : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
                   }`}
                 >
                   All ({regulatoryAlerts.length})
@@ -1110,7 +1110,7 @@ export default function CompliancePage() {
                 <button
                   onClick={() => setAlertFilter('federal')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                    alertFilter === 'federal' ? 'bg-amber-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                    alertFilter === 'federal' ? 'bg-amber-600 text-white' : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
                   }`}
                 >
                   Federal ({regulatoryAlerts.filter(a => a.type === 'federal').length})
@@ -1118,7 +1118,7 @@ export default function CompliancePage() {
                 <button
                   onClick={() => setAlertFilter('state')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                    alertFilter === 'state' ? 'bg-amber-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                    alertFilter === 'state' ? 'bg-amber-600 text-white' : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
                   }`}
                 >
                   State ({regulatoryAlerts.filter(a => a.type === 'state').length})
@@ -1126,7 +1126,7 @@ export default function CompliancePage() {
                 <button
                   onClick={() => setAlertFilter('industry')}
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                    alertFilter === 'industry' ? 'bg-amber-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                    alertFilter === 'industry' ? 'bg-amber-600 text-white' : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
                   }`}
                 >
                   Industry-Specific ({regulatoryAlerts.filter(a => a.type === 'industry').length})
@@ -1155,13 +1155,13 @@ export default function CompliancePage() {
                             {getStatusIcon(alert.status)}
                             {alert.status.replace('-', ' ')}
                           </span>
-                          <span className="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs font-semibold flex items-center gap-1">
+                          <span className="px-3 py-1 bg-stone-900 text-stone-300 rounded-full text-xs font-semibold flex items-center gap-1">
                             <MapPin className="w-3 h-3" />
                             {alert.state}
                           </span>
                         </div>
                         <h3 className="text-xl font-bold mb-2 text-white">{alert.title}</h3>
-                        <div className="flex items-center gap-4 text-sm text-slate-400">
+                        <div className="flex items-center gap-4 text-sm text-stone-400">
                           <span className="flex items-center gap-1">
                             <Calendar className="w-4 h-4" />
                             Published: {alert.datePublished}
@@ -1178,7 +1178,7 @@ export default function CompliancePage() {
                         </div>
                       </div>
                       <div className="text-right">
-                        <div className="text-sm text-slate-400 mb-1">Affected Employees</div>
+                        <div className="text-sm text-stone-400 mb-1">Affected Employees</div>
                         <div className="text-3xl font-bold text-white">{alert.affectedEmployees}</div>
                       </div>
                     </div>
@@ -1186,26 +1186,26 @@ export default function CompliancePage() {
                     {/* Content */}
                     <div className="space-y-3">
                       <div>
-                        <div className="text-sm font-semibold text-slate-400 mb-1">Description</div>
-                        <p className="text-slate-300">{alert.description}</p>
+                        <div className="text-sm font-semibold text-stone-400 mb-1">Description</div>
+                        <p className="text-stone-300">{alert.description}</p>
                       </div>
                       <div>
-                        <div className="text-sm font-semibold text-slate-400 mb-1">Industry</div>
-                        <p className="text-slate-300">{alert.industry}</p>
+                        <div className="text-sm font-semibold text-stone-400 mb-1">Industry</div>
+                        <p className="text-stone-300">{alert.industry}</p>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <div className="text-sm font-semibold text-slate-400 mb-1">Impact</div>
-                          <p className="text-slate-300">{alert.impact}</p>
+                          <div className="text-sm font-semibold text-stone-400 mb-1">Impact</div>
+                          <p className="text-stone-300">{alert.impact}</p>
                         </div>
                         <div>
-                          <div className="text-sm font-semibold text-slate-400 mb-1">Recommended Action</div>
-                          <p className="text-slate-300">{alert.action}</p>
+                          <div className="text-sm font-semibold text-stone-400 mb-1">Recommended Action</div>
+                          <p className="text-stone-300">{alert.action}</p>
                         </div>
                       </div>
-                      <div className="pt-3 border-t border-slate-700">
+                      <div className="pt-3 border-t border-stone-700">
                         <div className="flex items-center justify-between">
-                          <div className="text-xs text-slate-500">
+                          <div className="text-xs text-stone-500">
                             Source: {alert.source}
                           </div>
                           <div className="flex gap-2">
@@ -1230,38 +1230,38 @@ export default function CompliancePage() {
               {/* Monitoring Settings */}
               <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
                 <h3 className="text-xl font-bold mb-4 text-white flex items-center gap-2">
-                  <Bell className="w-5 h-5 text-blue-400" />
+                  <Bell className="w-5 h-5 text-amber-400" />
                   Alert Settings
                 </h3>
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between p-4 bg-slate-700/30 rounded-lg">
+                  <div className="flex items-center justify-between p-4 bg-stone-900/30 rounded-lg">
                     <div>
                       <div className="font-semibold text-white mb-1">Email Notifications</div>
-                      <div className="text-sm text-slate-400">Receive alerts via email when new regulations are detected</div>
+                      <div className="text-sm text-stone-400">Receive alerts via email when new regulations are detected</div>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" defaultChecked />
-                      <div className="w-11 h-6 bg-slate-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
+                      <div className="w-11 h-6 bg-stone-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                     </label>
                   </div>
-                  <div className="flex items-center justify-between p-4 bg-slate-700/30 rounded-lg">
+                  <div className="flex items-center justify-between p-4 bg-stone-900/30 rounded-lg">
                     <div>
                       <div className="font-semibold text-white mb-1">Critical Alerts Only</div>
-                      <div className="text-sm text-slate-400">Only notify for critical and high-severity changes</div>
+                      <div className="text-sm text-stone-400">Only notify for critical and high-severity changes</div>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" />
-                      <div className="w-11 h-6 bg-slate-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
+                      <div className="w-11 h-6 bg-stone-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                     </label>
                   </div>
-                  <div className="flex items-center justify-between p-4 bg-slate-700/30 rounded-lg">
+                  <div className="flex items-center justify-between p-4 bg-stone-900/30 rounded-lg">
                     <div>
                       <div className="font-semibold text-white mb-1">Weekly Digest</div>
-                      <div className="text-sm text-slate-400">Receive a weekly summary of all regulatory changes</div>
+                      <div className="text-sm text-stone-400">Receive a weekly summary of all regulatory changes</div>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" defaultChecked />
-                      <div className="w-11 h-6 bg-slate-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
+                      <div className="w-11 h-6 bg-stone-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                     </label>
                   </div>
                 </div>

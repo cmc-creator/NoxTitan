@@ -102,7 +102,7 @@ export default function XPConfigPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-stone-900 to-pink-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-amber-700 via-stone-900 to-pink-900 p-8">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -110,7 +110,7 @@ export default function XPConfigPage() {
             <Settings className="w-10 h-10 text-amber-400" />
             XP Configuration
           </h1>
-          <p className="text-slate-300">Configure XP point values for all activities, achievements, and actions</p>
+          <p className="text-stone-300">Configure XP point values for all activities, achievements, and actions</p>
         </div>
 
         {/* Save Success Message */}
@@ -122,53 +122,53 @@ export default function XPConfigPage() {
         )}
 
         {/* Activities Section */}
-        <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 mb-6">
+        <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 mb-6">
           <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
             <Zap className="w-6 h-6 text-yellow-400" />
             Team Activities
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-2">Easy Activities</label>
+              <label className="block text-sm font-semibold text-stone-300 mb-2">Easy Activities</label>
               <input
                 type="number"
                 value={settings.activityEasy}
                 onChange={(e) => updateSetting('activityEasy', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-2">Medium Activities</label>
+              <label className="block text-sm font-semibold text-stone-300 mb-2">Medium Activities</label>
               <input
                 type="number"
                 value={settings.activityMedium}
                 onChange={(e) => updateSetting('activityMedium', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-2">Hard Activities</label>
+              <label className="block text-sm font-semibold text-stone-300 mb-2">Hard Activities</label>
               <input
                 type="number"
                 value={settings.activityHard}
                 onChange={(e) => updateSetting('activityHard', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
           </div>
         </div>
 
         {/* Achievements Section */}
-        <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 mb-6">
+        <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 mb-6">
           <h2 className="text-2xl font-bold text-white mb-4">Achievements by Rarity</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-slate-400 mb-2">Common</label>
+              <label className="block text-sm font-semibold text-stone-400 mb-2">Common</label>
               <input
                 type="number"
                 value={settings.achievementCommon}
                 onChange={(e) => updateSetting('achievementCommon', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
             <div>
@@ -177,16 +177,16 @@ export default function XPConfigPage() {
                 type="number"
                 value={settings.achievementUncommon}
                 onChange={(e) => updateSetting('achievementUncommon', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-blue-400 mb-2">Rare</label>
+              <label className="block text-sm font-semibold text-amber-400 mb-2">Rare</label>
               <input
                 type="number"
                 value={settings.achievementRare}
                 onChange={(e) => updateSetting('achievementRare', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
             <div>
@@ -195,7 +195,7 @@ export default function XPConfigPage() {
                 type="number"
                 value={settings.achievementEpic}
                 onChange={(e) => updateSetting('achievementEpic', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
             <div>
@@ -204,109 +204,109 @@ export default function XPConfigPage() {
                 type="number"
                 value={settings.achievementLegendary}
                 onChange={(e) => updateSetting('achievementLegendary', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
           </div>
         </div>
 
         {/* Daily Actions Section */}
-        <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 mb-6">
+        <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 mb-6">
           <h2 className="text-2xl font-bold text-white mb-4">Daily Actions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-2">Clock In</label>
+              <label className="block text-sm font-semibold text-stone-300 mb-2">Clock In</label>
               <input
                 type="number"
                 value={settings.clockIn}
                 onChange={(e) => updateSetting('clockIn', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-2">On-Time Clock In</label>
+              <label className="block text-sm font-semibold text-stone-300 mb-2">On-Time Clock In</label>
               <input
                 type="number"
                 value={settings.onTimeClockIn}
                 onChange={(e) => updateSetting('onTimeClockIn', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-2">Perfect Week</label>
+              <label className="block text-sm font-semibold text-stone-300 mb-2">Perfect Week</label>
               <input
                 type="number"
                 value={settings.perfectWeek}
                 onChange={(e) => updateSetting('perfectWeek', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-2">Training Completion</label>
+              <label className="block text-sm font-semibold text-stone-300 mb-2">Training Completion</label>
               <input
                 type="number"
                 value={settings.trainingCompletion}
                 onChange={(e) => updateSetting('trainingCompletion', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-2">Shift Completion</label>
+              <label className="block text-sm font-semibold text-stone-300 mb-2">Shift Completion</label>
               <input
                 type="number"
                 value={settings.shiftCompletion}
                 onChange={(e) => updateSetting('shiftCompletion', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
           </div>
         </div>
 
         {/* Recognition Section */}
-        <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 mb-6">
+        <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 mb-6">
           <h2 className="text-2xl font-bold text-white mb-4">Recognition</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-2">Receiving Recognition</label>
+              <label className="block text-sm font-semibold text-stone-300 mb-2">Receiving Recognition</label>
               <input
                 type="number"
                 value={settings.recognitionReceived}
                 onChange={(e) => updateSetting('recognitionReceived', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-2">Giving Recognition</label>
+              <label className="block text-sm font-semibold text-stone-300 mb-2">Giving Recognition</label>
               <input
                 type="number"
                 value={settings.recognitionGiven}
                 onChange={(e) => updateSetting('recognitionGiven', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
           </div>
         </div>
 
         {/* Guild Bonuses Section */}
-        <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 mb-6">
+        <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 mb-6">
           <h2 className="text-2xl font-bold text-white mb-4">Guild Bonuses</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-2">Level Up Bonus</label>
+              <label className="block text-sm font-semibold text-stone-300 mb-2">Level Up Bonus</label>
               <input
                 type="number"
                 value={settings.levelUpBonus}
                 onChange={(e) => updateSetting('levelUpBonus', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-300 mb-2">Daily Streak Bonus</label>
+              <label className="block text-sm font-semibold text-stone-300 mb-2">Daily Streak Bonus</label>
               <input
                 type="number"
                 value={settings.streakDailyBonus}
                 onChange={(e) => updateSetting('streakDailyBonus', parseInt(e.target.value))}
-                className="w-full px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-white"
+                className="w-full px-4 py-2 bg-stone-950/50 border border-stone-700 rounded-lg text-white"
               />
             </div>
           </div>
@@ -323,7 +323,7 @@ export default function XPConfigPage() {
           </button>
           <button
             onClick={resetToDefaults}
-            className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-lg transition-all"
+            className="px-6 py-3 bg-stone-900 hover:bg-stone-600 text-white font-bold rounded-lg transition-all"
           >
             Reset to Defaults
           </button>

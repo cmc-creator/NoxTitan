@@ -55,7 +55,7 @@ export default function TopNavigation() {
         <Link href="/" className="flex items-center gap-2 text-4xl md:text-5xl font-black text-white tracking-tight text-pop-strong">
           <span className="relative inline-block transform hover:scale-105 transition-transform duration-300">
             {/* Base metallic text with lighter purple-tinted chrome */}
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 via-purple-200 to-yellow-400"
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 via-stone-900 to-yellow-400"
                   style={{
                     textShadow: `
                       0 1px 0 rgba(255,255,255,0.9),
@@ -73,7 +73,7 @@ export default function TopNavigation() {
               NyxTitan
             </span>
             {/* Top highlight shine */}
-            <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-100 to-transparent opacity-90"
+            <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-b from-white via-stone-900 to-transparent opacity-90"
                   style={{ WebkitTextStroke: '0px' }}>
               NyxTitan
             </span>

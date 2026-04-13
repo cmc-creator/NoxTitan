@@ -61,7 +61,7 @@ export default function BigCalendar({
   };
 
   return (
-    <div className="h-[calc(100vh-12rem)] bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-2xl p-6 border border-slate-700">
+    <div className="h-[calc(100vh-12rem)] lux-card rounded-2xl shadow-2xl p-6 border border-stone-700">
       <Calendar
         localizer={localizer}
         events={events}

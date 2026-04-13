@@ -58,39 +58,39 @@ export default function PerformanceReviews() {
 
         {/* Stats */}
         <div className="grid grid-cols-5 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
-            <div className="text-slate-300 text-sm mb-1">Total Reviews</div>
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+            <div className="text-stone-300 text-sm mb-1">Total Reviews</div>
             <div className="text-3xl font-bold text-white">87</div>
-            <div className="text-blue-400 text-xs mt-1">Q1 2026 cycle</div>
+            <div className="text-amber-400 text-xs mt-1">Q1 2026 cycle</div>
           </div>
           <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded-xl p-4 border-2 border-emerald-500/30">
-            <div className="text-slate-300 text-sm mb-1">Completed</div>
+            <div className="text-stone-300 text-sm mb-1">Completed</div>
             <div className="text-3xl font-bold text-white">52</div>
             <div className="text-emerald-400 text-xs mt-1">60% complete</div>
           </div>
           <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded-xl p-4 border-2 border-orange-500/30">
-            <div className="text-slate-300 text-sm mb-1">In Progress</div>
+            <div className="text-stone-300 text-sm mb-1">In Progress</div>
             <div className="text-3xl font-bold text-white">23</div>
             <div className="text-orange-400 text-xs mt-1">26% in progress</div>
           </div>
           <div className="bg-gradient-to-br from-red-900/50 to-rose-900/50 rounded-xl p-4 border-2 border-red-500/30">
-            <div className="text-slate-300 text-sm mb-1">Overdue</div>
+            <div className="text-stone-300 text-sm mb-1">Overdue</div>
             <div className="text-3xl font-bold text-white">12</div>
             <div className="text-red-400 text-xs mt-1 animate-pulse">Action needed</div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
-            <div className="text-slate-300 text-sm mb-1">Avg Rating</div>
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+            <div className="text-stone-300 text-sm mb-1">Avg Rating</div>
             <div className="text-3xl font-bold text-white">4.6</div>
             <div className="text-amber-400 text-xs mt-1">★★★★★</div>
           </div>
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-2 mb-6 bg-slate-800/50 p-2 rounded-lg">
+        <div className="flex gap-2 mb-6 bg-stone-900/50 p-2 rounded-lg">
           <button
             onClick={() => setActiveTab('reviews')}
             className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
-              activeTab === 'reviews' ? 'bg-orange-600 text-white' : 'text-slate-300 hover:bg-slate-700'
+              activeTab === 'reviews' ? 'bg-orange-600 text-white' : 'text-stone-300 hover:bg-stone-900'
             }`}
           >
             Reviews
@@ -98,7 +98,7 @@ export default function PerformanceReviews() {
           <button
             onClick={() => setActiveTab('goals')}
             className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
-              activeTab === 'goals' ? 'bg-orange-600 text-white' : 'text-slate-300 hover:bg-slate-700'
+              activeTab === 'goals' ? 'bg-orange-600 text-white' : 'text-stone-300 hover:bg-stone-900'
             }`}
           >
             Goals & OKRs
@@ -106,7 +106,7 @@ export default function PerformanceReviews() {
           <button
             onClick={() => setActiveTab('360')}
             className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
-              activeTab === '360' ? 'bg-orange-600 text-white' : 'text-slate-300 hover:bg-slate-700'
+              activeTab === '360' ? 'bg-orange-600 text-white' : 'text-stone-300 hover:bg-stone-900'
             }`}
           >
             360 Feedback
@@ -115,11 +115,11 @@ export default function PerformanceReviews() {
 
         {/* Reviews Tab */}
         {activeTab === 'reviews' && (
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-orange-500/30">
+          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-orange-500/30">
             <h2 className="text-2xl font-bold text-white mb-6">Performance Reviews</h2>
             <div className="space-y-4">
               {reviews.map(review => (
-                <div key={review.id} className="bg-slate-900/50 rounded-lg p-5 border border-slate-700 hover:border-orange-500 transition-all">
+                <div key={review.id} className="bg-stone-950/50 rounded-lg p-5 border border-stone-700 hover:border-orange-500 transition-all">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
@@ -128,7 +128,7 @@ export default function PerformanceReviews() {
                           review.status === 'completed' ? 'bg-emerald-600 text-white' :
                           review.status === 'in-progress' ? 'bg-orange-600 text-white' :
                           review.status === 'overdue' ? 'bg-red-600 text-white animate-pulse' :
-                          'bg-slate-600 text-white'
+                          'bg-stone-600 text-white'
                         }`}>
                           {review.status.toUpperCase().replace('-', ' ')}
                         </span>
@@ -139,14 +139,14 @@ export default function PerformanceReviews() {
                           </div>
                         )}
                       </div>
-                      <div className="text-slate-300 mb-3">{review.position}</div>
+                      <div className="text-stone-300 mb-3">{review.position}</div>
                       <div className="grid grid-cols-3 gap-4 mb-3">
                         <div>
-                          <div className="text-xs text-slate-400">Reviewer</div>
+                          <div className="text-xs text-stone-400">Reviewer</div>
                           <div className="text-white font-semibold">{review.reviewer}</div>
                         </div>
                         <div>
-                          <div className="text-xs text-slate-400">Due Date</div>
+                          <div className="text-xs text-stone-400">Due Date</div>
                           <div className={`font-semibold ${
                             review.status === 'overdue' ? 'text-red-400' : 'text-white'
                           }`}>
@@ -154,9 +154,9 @@ export default function PerformanceReviews() {
                           </div>
                         </div>
                         <div>
-                          <div className="text-xs text-slate-400">Progress</div>
+                          <div className="text-xs text-stone-400">Progress</div>
                           <div className="flex items-center gap-2">
-                            <div className="flex-1 bg-slate-700 rounded-full h-2">
+                            <div className="flex-1 bg-stone-900 rounded-full h-2">
                               <div className={`h-2 rounded-full ${
                                 review.completion === 100 ? 'bg-emerald-500' : 'bg-orange-500'
                               }`} style={{width: `${review.completion}%`}}></div>
@@ -180,7 +180,7 @@ export default function PerformanceReviews() {
 
         {/* Goals Tab */}
         {activeTab === 'goals' && (
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Goals & Objectives</h2>
               <button className="px-4 py-2 bg-amber-600 hover:bg-amber-600 text-white rounded-lg font-semibold flex items-center gap-2">
@@ -190,7 +190,7 @@ export default function PerformanceReviews() {
             </div>
             <div className="space-y-4">
               {goals.map(goal => (
-                <div key={goal.id} className="bg-slate-900/50 rounded-lg p-5 border border-slate-700 hover:border-amber-500/40 transition-all">
+                <div key={goal.id} className="bg-stone-950/50 rounded-lg p-5 border border-stone-700 hover:border-amber-500/40 transition-all">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
@@ -203,7 +203,7 @@ export default function PerformanceReviews() {
                           {goal.status.toUpperCase().replace('-', ' ')}
                         </span>
                       </div>
-                      <div className="flex items-center gap-4 text-sm text-slate-400">
+                      <div className="flex items-center gap-4 text-sm text-stone-400">
                         <span className="flex items-center gap-1">
                           <Target className="w-4 h-4" />
                           {goal.type}
@@ -216,10 +216,10 @@ export default function PerformanceReviews() {
                     </div>
                     <div className="text-right ml-4">
                       <div className="text-3xl font-bold text-white mb-1">{goal.progress}%</div>
-                      <div className="text-xs text-slate-400">Complete</div>
+                      <div className="text-xs text-stone-400">Complete</div>
                     </div>
                   </div>
-                  <div className="w-full bg-slate-700 rounded-full h-3">
+                  <div className="w-full bg-stone-900 rounded-full h-3">
                     <div className={`h-3 rounded-full ${
                       goal.progress >= 90 ? 'bg-emerald-500' :
                       goal.progress >= 50 ? 'bg-amber-600' :
@@ -234,46 +234,46 @@ export default function PerformanceReviews() {
 
         {/* 360 Feedback Tab */}
         {activeTab === '360' && (
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">360-Degree Feedback</h2>
               <div className="flex items-center gap-4">
                 <div className="text-right">
-                  <div className="text-sm text-slate-400">Overall Rating</div>
+                  <div className="text-sm text-stone-400">Overall Rating</div>
                   <div className="text-3xl font-bold text-white">4.7</div>
                 </div>
                 <div className="flex gap-1">
                   {[1,2,3,4,5].map(star => (
-                    <Star key={star} className={`w-6 h-6 ${star <= 4.7 ? 'text-yellow-400 fill-yellow-400' : 'text-slate-600'}`} />
+                    <Star key={star} className={`w-6 h-6 ${star <= 4.7 ? 'text-yellow-400 fill-yellow-400' : 'text-stone-600'}`} />
                   ))}
                 </div>
               </div>
             </div>
             <div className="space-y-4">
               {feedback360.map((feedback, idx) => (
-                <div key={idx} className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg p-5 border border-amber-500/40/30">
+                <div key={idx} className="bg-gradient-to-r from-stone-900/30 to-pink-900/30 rounded-lg p-5 border border-amber-500/40/30">
                   <div className="flex items-start justify-between mb-3">
                     <div>
                       <h3 className="text-white font-bold mb-1">{feedback.from}</h3>
-                      <div className="text-sm text-slate-400">{feedback.date}</div>
+                      <div className="text-sm text-stone-400">{feedback.date}</div>
                     </div>
                     <div className="flex items-center gap-1">
                       {[1,2,3,4,5].map(star => (
-                        <Star key={star} className={`w-5 h-5 ${star <= feedback.rating ? 'text-yellow-400 fill-yellow-400' : 'text-slate-600'}`} />
+                        <Star key={star} className={`w-5 h-5 ${star <= feedback.rating ? 'text-yellow-400 fill-yellow-400' : 'text-stone-600'}`} />
                       ))}
                       <span className="text-white font-bold ml-2">{feedback.rating}</span>
                     </div>
                   </div>
-                  <div className="text-slate-200 italic">"{feedback.comment}"</div>
+                  <div className="text-stone-200 italic">"{feedback.comment}"</div>
                 </div>
               ))}
             </div>
             <div className="mt-6 bg-blue-900/30 rounded-lg p-4 border border-amber-500/40/30">
               <div className="flex items-center gap-3">
-                <MessageSquare className="w-6 h-6 text-blue-400" />
+                <MessageSquare className="w-6 h-6 text-amber-400" />
                 <div>
                   <div className="text-white font-semibold">Want to provide feedback?</div>
-                  <div className="text-sm text-slate-300">Send continuous feedback to colleagues anytime</div>
+                  <div className="text-sm text-stone-300">Send continuous feedback to colleagues anytime</div>
                 </div>
                 <button className="ml-auto px-4 py-2 bg-amber-600 hover:bg-amber-600 text-white rounded-lg font-semibold">
                   Give Feedback

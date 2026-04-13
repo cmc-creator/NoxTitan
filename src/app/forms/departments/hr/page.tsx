@@ -197,14 +197,14 @@ export default function HRFormsPortalPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-amber-700 via-stone-900 to-pink-50 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="bg-stone-950 rounded-xl shadow-lg p-8 mb-8">
           <div className="flex justify-between items-start mb-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center text-3xl">
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-800 to-amber-600 rounded-xl flex items-center justify-center text-3xl">
                   👥
                 </div>
                 <div>
@@ -223,7 +223,7 @@ export default function HRFormsPortalPage() {
               </button>
               <button
                 onClick={() => router.push('/forms/builder?department=hr')}
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 flex items-center gap-2"
+                className="px-6 py-3 bg-gradient-to-r from-amber-800 to-amber-600 text-white rounded-lg hover:from-amber-800 hover:to-amber-600 flex items-center gap-2"
               >
                 <Plus className="w-5 h-5" />
                 Create New Form
@@ -233,14 +233,14 @@ export default function HRFormsPortalPage() {
 
           {/* Quick Stats */}
           <div className="grid grid-cols-4 gap-6">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4">
+            <div className="bg-gradient-to-br from-amber-700 to-amber-500 rounded-lg p-4">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-blue-800 font-medium">Total Forms</span>
                 <FileText className="w-5 h-5 text-amber-400" />
               </div>
               <div className="text-3xl font-bold text-blue-900">{forms.length}</div>
             </div>
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-4">
+            <div className="bg-gradient-to-br from-stone-900 to-amber-900 rounded-lg p-4">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-purple-800 font-medium">Custom Forms</span>
                 <FilePlus className="w-5 h-5 text-amber-600" />
@@ -307,7 +307,7 @@ export default function HRFormsPortalPage() {
                 onClick={() => setSelectedCategory(value)}
                 className={`px-4 py-2 rounded-lg flex items-center gap-2 whitespace-nowrap transition-all ${
                   selectedCategory === value
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg scale-105'
+                    ? 'bg-gradient-to-r from-amber-800 to-amber-600 text-white shadow-lg scale-105'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
@@ -576,7 +576,7 @@ export default function HRFormsPortalPage() {
                     setShowUploadModal(false);
                     alert('Form uploaded successfully!');
                   }}
-                  className="flex-1 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700"
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-amber-800 to-amber-600 text-white rounded-lg hover:from-amber-800 hover:to-amber-600"
                 >
                   Upload Form
                 </button>

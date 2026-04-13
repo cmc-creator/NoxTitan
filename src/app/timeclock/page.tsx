@@ -236,16 +236,16 @@ export default function TimeClockPage() {
     : '0.00';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
+    <div className="min-h-screen lux-app-bg p-8">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-white mb-2">Time Clock</h1>
-          <p className="text-slate-400">Clock in and out of your shifts</p>
+          <p className="text-stone-400">Clock in and out of your shifts</p>
         </div>
 
         {/* Digital Clock Display */}
-        <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl p-8 mb-6 text-center">
+        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-2xl p-8 mb-6 text-center">
           <div className="text-6xl font-bold text-white mb-2">
             {currentTime.toLocaleTimeString('en-US', { 
               hour: '2-digit', 
@@ -253,7 +253,7 @@ export default function TimeClockPage() {
               second: '2-digit' 
             })}
           </div>
-          <div className="text-xl text-slate-400">
+          <div className="text-xl text-stone-400">
             {currentTime.toLocaleDateString('en-US', { 
               weekday: 'long', 
               month: 'long', 
@@ -280,15 +280,15 @@ export default function TimeClockPage() {
 
         {/* Active Session */}
         {activeEntry && (
-          <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-amber-500/40/50 rounded-2xl p-6 mb-6">
+          <div className="bg-gradient-to-r from-amber-700/20 to-amber-900/20 border border-amber-500/40/50 rounded-2xl p-6 mb-6">
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="text-xl font-bold text-white">Currently Clocked In</h3>
-                <p className="text-slate-300">{activeEntry.employee.firstName} {activeEntry.employee.lastName}</p>
+                <p className="text-stone-300">{activeEntry.employee.firstName} {activeEntry.employee.lastName}</p>
               </div>
               <div className="text-right">
                 <div className="text-3xl font-bold text-white">{hoursWorked} hrs</div>
-                <div className="text-sm text-slate-400">
+                <div className="text-sm text-stone-400">
                   Since {new Date(activeEntry.clockIn).toLocaleTimeString()}
                 </div>
               </div>
@@ -307,7 +307,7 @@ export default function TimeClockPage() {
               <button
                 onClick={() => handleStartBreak('MEAL')}
                 disabled={loading || activeEntry.status === 'ON_BREAK'}
-                className="flex items-center justify-center gap-2 px-4 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors disabled:opacity-50"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-stone-900 hover:bg-stone-600 text-white rounded-lg transition-colors disabled:opacity-50"
               >
                 <Coffee className="w-5 h-5" />
                 <span>Meal Break</span>
@@ -315,7 +315,7 @@ export default function TimeClockPage() {
               <button
                 onClick={() => handleStartBreak('REST')}
                 disabled={loading || activeEntry.status === 'ON_BREAK'}
-                className="flex items-center justify-center gap-2 px-4 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors disabled:opacity-50"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-stone-900 hover:bg-stone-600 text-white rounded-lg transition-colors disabled:opacity-50"
               >
                 <Coffee className="w-5 h-5" />
                 <span>Rest Break</span>
@@ -334,23 +334,23 @@ export default function TimeClockPage() {
 
         {/* Clock In Form */}
         {!activeEntry && (
-          <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl p-8">
+          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-white mb-6">Clock In</h3>
 
             {/* Employee Selection */}
             <div className="mb-6">
-              <label className="block text-sm font-semibold text-slate-300 mb-2">
+              <label className="block text-sm font-semibold text-stone-300 mb-2">
                 Select Employee
               </label>
               <div className="relative">
-                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
                 <select
                   value={selectedEmployee}
                   onChange={(e) => {
                     setSelectedEmployee(e.target.value);
                     checkActiveEntry(e.target.value);
                   }}
-                  className="w-full pl-11 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                  className="w-full pl-11 pr-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                 >
                   <option value="">Choose an employee...</option>
                   {employees.map((emp) => (
@@ -363,7 +363,7 @@ export default function TimeClockPage() {
             </div>
 
             {/* Location Status */}
-            <div className="mb-6 p-4 bg-slate-700/30 rounded-lg">
+            <div className="mb-6 p-4 bg-stone-900/30 rounded-lg">
               <div className="flex items-center gap-3">
                 <MapPin className={`w-5 h-5 ${location ? 'text-green-400' : 'text-orange-400'}`} />
                 <div>
@@ -371,7 +371,7 @@ export default function TimeClockPage() {
                     {location ? 'Location Verified' : 'Getting Location...'}
                   </p>
                   {location && (
-                    <p className="text-xs text-slate-400">
+                    <p className="text-xs text-stone-400">
                       {location.lat.toFixed(4)}, {location.lng.toFixed(4)}
 
         {/* Break Timer Widget */}
@@ -386,7 +386,7 @@ export default function TimeClockPage() {
             <button
               onClick={handleClockIn}
               disabled={loading || !selectedEmployee}
-              className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-4 bg-gradient-to-r from-amber-800 to-amber-600 hover:from-amber-800 hover:to-amber-600 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Clocking In...' : 'Clock In'}
             </button>
@@ -397,13 +397,13 @@ export default function TimeClockPage() {
         <div className="mt-6 flex gap-3">
           <button
             onClick={() => router.push('/attendance')}
-            className="flex-1 px-4 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors"
+            className="flex-1 px-4 py-3 bg-stone-900 hover:bg-stone-900 text-white rounded-lg transition-colors"
           >
             View Attendance
           </button>
           <button
             onClick={() => router.push('/timeclock/devices')}
-            className="flex-1 px-4 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors"
+            className="flex-1 px-4 py-3 bg-stone-900 hover:bg-stone-900 text-white rounded-lg transition-colors"
           >
             Manage Devices
           </button>

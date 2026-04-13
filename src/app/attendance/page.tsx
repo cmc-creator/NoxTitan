@@ -76,12 +76,12 @@ export default function AttendancePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
+    <div className="min-h-screen lux-app-bg p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-2">Live Attendance</h1>
-          <p className="text-slate-400">Real-time clock-in/out monitoring</p>
+          <p className="text-stone-400">Real-time clock-in/out monitoring</p>
         </div>
 
         {/* Date Picker & Filters */}
@@ -90,7 +90,7 @@ export default function AttendancePage() {
             type="date"
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
-            className="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
+            className="px-4 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
           />
           <div className="flex gap-2">
             <button
@@ -98,7 +98,7 @@ export default function AttendancePage() {
               className={`px-4 py-2 rounded-lg transition-colors ${
                 filter === 'all'
                   ? 'bg-amber-600 text-white'
-                  : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                  : 'bg-stone-900 text-stone-400 hover:bg-stone-900'
               }`}
             >
               All
@@ -108,7 +108,7 @@ export default function AttendancePage() {
               className={`px-4 py-2 rounded-lg transition-colors ${
                 filter === 'clocked-in'
                   ? 'bg-green-600 text-white'
-                  : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                  : 'bg-stone-900 text-stone-400 hover:bg-stone-900'
               }`}
             >
               Active Now
@@ -117,8 +117,8 @@ export default function AttendancePage() {
               onClick={() => setFilter('clocked-out')}
               className={`px-4 py-2 rounded-lg transition-colors ${
                 filter === 'clocked-out'
-                  ? 'bg-slate-600 text-white'
-                  : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                  ? 'bg-stone-600 text-white'
+                  : 'bg-stone-900 text-stone-400 hover:bg-stone-900'
               }`}
             >
               Completed
@@ -134,15 +134,15 @@ export default function AttendancePage() {
                 <Users className="w-8 h-8 text-green-400" />
                 <span className="text-3xl font-bold text-white">{summary.totalPresent}</span>
               </div>
-              <p className="text-slate-300 font-semibold">Present Today</p>
+              <p className="text-stone-300 font-semibold">Present Today</p>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/10 border border-amber-500/40/50 rounded-2xl p-6">
+            <div className="bg-gradient-to-br from-amber-700/20 to-amber-800/10 border border-amber-500/40/50 rounded-2xl p-6">
               <div className="flex items-center justify-between mb-2">
-                <Clock className="w-8 h-8 text-blue-400" />
+                <Clock className="w-8 h-8 text-amber-400" />
                 <span className="text-3xl font-bold text-white">{summary.totalActive}</span>
               </div>
-              <p className="text-slate-300 font-semibold">Active Now</p>
+              <p className="text-stone-300 font-semibold">Active Now</p>
             </div>
 
             <div className="bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/50 rounded-2xl p-6">
@@ -150,51 +150,51 @@ export default function AttendancePage() {
                 <AlertCircle className="w-8 h-8 text-orange-400" />
                 <span className="text-3xl font-bold text-white">{summary.totalLate}</span>
               </div>
-              <p className="text-slate-300 font-semibold">Late Arrivals</p>
+              <p className="text-stone-300 font-semibold">Late Arrivals</p>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-500/20 to-purple-600/10 border border-amber-500/40/50 rounded-2xl p-6">
+            <div className="bg-gradient-to-br from-stone-900/20 to-amber-900/10 border border-amber-500/40/50 rounded-2xl p-6">
               <div className="flex items-center justify-between mb-2">
                 <TrendingUp className="w-8 h-8 text-amber-400" />
                 <span className="text-3xl font-bold text-white">
                   {summary.averageHours.toFixed(1)}h
                 </span>
               </div>
-              <p className="text-slate-300 font-semibold">Avg. Hours</p>
+              <p className="text-stone-300 font-semibold">Avg. Hours</p>
             </div>
           </div>
         )}
 
         {/* Attendance List */}
-        <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl overflow-hidden">
+        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-2xl overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-slate-800">
+              <thead className="bg-stone-900">
                 <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300">Employee</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300">Clock In</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300">Clock Out</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300">Hours</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300">Status</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300">Location</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Employee</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Clock In</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Clock Out</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Hours</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Status</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Location</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-700">
                 {loading ? (
                   <tr>
-                    <td colSpan={6} className="px-6 py-12 text-center text-slate-400">
+                    <td colSpan={6} className="px-6 py-12 text-center text-stone-400">
                       Loading attendance data...
                     </td>
                   </tr>
                 ) : filteredEntries.length === 0 ? (
                   <tr>
-                    <td colSpan={6} className="px-6 py-12 text-center text-slate-400">
+                    <td colSpan={6} className="px-6 py-12 text-center text-stone-400">
                       No attendance records for this date
                     </td>
                   </tr>
                 ) : (
                   filteredEntries.map((entry) => (
-                    <tr key={entry.id} className="hover:bg-slate-700/50 transition-colors">
+                    <tr key={entry.id} className="hover:bg-stone-900/50 transition-colors">
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
                           {entry.photoClockIn ? (
@@ -204,7 +204,7 @@ export default function AttendancePage() {
                               className="w-10 h-10 rounded-full object-cover border-2 border-amber-500/40"
                             />
                           ) : (
-                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold">
+                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-700 to-amber-500 flex items-center justify-center text-white font-bold">
                               {entry.employee.firstName[0]}{entry.employee.lastName[0]}
                             </div>
                           )}
@@ -212,7 +212,7 @@ export default function AttendancePage() {
                             <p className="text-white font-semibold">
                               {entry.employee.firstName} {entry.employee.lastName}
                             </p>
-                            <p className="text-xs text-slate-400">{entry.employee.position}</p>
+                            <p className="text-xs text-stone-400">{entry.employee.position}</p>
                           </div>
                         </div>
                       </td>
@@ -243,7 +243,7 @@ export default function AttendancePage() {
                             )}
                           </div>
                         ) : (
-                          <span className="text-slate-500">-</span>
+                          <span className="text-stone-500">-</span>
                         )}
                       </td>
                       <td className="px-6 py-4">
@@ -265,7 +265,7 @@ export default function AttendancePage() {
                           </span>
                         )}
                         {entry.status === 'CLOCKED_OUT' && (
-                          <span className="inline-flex items-center gap-1 px-3 py-1 bg-slate-600/50 text-slate-400 text-xs font-semibold rounded-full">
+                          <span className="inline-flex items-center gap-1 px-3 py-1 bg-stone-600/50 text-stone-400 text-xs font-semibold rounded-full">
                             <CheckCircle className="w-3 h-3" />
                             Complete
                           </span>
@@ -288,7 +288,7 @@ export default function AttendancePage() {
                             </span>
                           )}
                           {entry.photoClockIn && (
-                            <Camera className="w-4 h-4 text-blue-400" />
+                            <Camera className="w-4 h-4 text-amber-400" />
                           )}
                         </div>
                       </td>

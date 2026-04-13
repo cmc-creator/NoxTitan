@@ -122,7 +122,7 @@ export default function CustomerSupportPage() {
         </div>
 
         {/* Quick Help Banner */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl shadow-lg p-8 text-white mb-8">
+        <div className="bg-gradient-to-r from-amber-700 to-amber-800 rounded-2xl shadow-lg p-8 text-white mb-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center gap-4">
               <div className="p-4 bg-stone-950/20 rounded-xl backdrop-blur-sm">
@@ -251,7 +251,7 @@ export default function CustomerSupportPage() {
             </div>
 
             {/* Video Tutorials */}
-            <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl border border-purple-200 p-6">
+            <div className="bg-gradient-to-br from-amber-700 to-amber-500 rounded-xl border border-purple-200 p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Video className="w-6 h-6 text-amber-600" />
                 <h3 className="text-xl font-bold text-stone-100">Video Tutorials</h3>
@@ -390,7 +390,7 @@ export default function CustomerSupportPage() {
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg flex items-center justify-center gap-2"
+                  className="w-full py-4 bg-gradient-to-r from-amber-700 to-amber-800 text-white rounded-xl font-bold text-lg hover:from-amber-700 hover:to-amber-800 transition-all shadow-lg flex items-center justify-center gap-2"
                 >
                   <Send className="w-5 h-5" />
                   Submit Ticket

@@ -8,7 +8,7 @@ export default function HRAnalytics() {
   const [timeRange, setTimeRange] = useState('quarter');
 
   const metrics = [
-    { label: 'Total Headcount', value: 247, change: '+12', trend: 'up', color: 'from-blue-600 to-cyan-600' },
+    { label: 'Total Headcount', value: 247, change: '+12', trend: 'up', color: 'from-amber-700 to-cyan-600' },
     { label: 'Turnover Rate', value: '8.2%', change: '-2.1%', trend: 'down', color: 'from-emerald-600 to-teal-600' },
     { label: 'Avg Time-to-Hire', value: '18d', change: '-4d', trend: 'down', color: 'from-amber-700 to-amber-600' },
     { label: 'Cost-per-Hire', value: '$3,200', change: '-$800', trend: 'down', color: 'from-orange-600 to-amber-600' },
@@ -42,7 +42,7 @@ export default function HRAnalytics() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-stone-900 to-slate-900 p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -51,7 +51,7 @@ export default function HRAnalytics() {
           </Link>
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 via-blue-200 to-indigo-200 mb-2"
+              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-700 via-stone-900 to-amber-800 mb-2"
                   style={{
                     textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(99,102,241,0.6)',
                     WebkitTextStroke: '1px rgba(99,102,241,0.3)',
@@ -69,7 +69,7 @@ export default function HRAnalytics() {
                   className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                     timeRange === range
                       ? 'bg-amber-600 text-white'
-                      : 'bg-slate-700/50 text-slate-300 hover:bg-slate-700'
+                      : 'bg-stone-900/50 text-stone-300 hover:bg-stone-900'
                   }`}
                 >
                   {range.charAt(0).toUpperCase() + range.slice(1)}
@@ -96,7 +96,7 @@ export default function HRAnalytics() {
         </div>
 
         {/* Department Analytics */}
-        <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30 mb-8">
+        <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
             <BarChart3 className="w-7 h-7 text-amber-400" />
             Department Performance
@@ -104,20 +104,20 @@ export default function HRAnalytics() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-slate-700">
-                  <th className="text-left py-3 px-4 text-slate-300 font-semibold">Department</th>
-                  <th className="text-center py-3 px-4 text-slate-300 font-semibold">Headcount</th>
-                  <th className="text-center py-3 px-4 text-slate-300 font-semibold">Turnover Rate</th>
-                  <th className="text-center py-3 px-4 text-slate-300 font-semibold">Avg Tenure</th>
-                  <th className="text-center py-3 px-4 text-slate-300 font-semibold">Satisfaction</th>
+                <tr className="border-b border-stone-700">
+                  <th className="text-left py-3 px-4 text-stone-300 font-semibold">Department</th>
+                  <th className="text-center py-3 px-4 text-stone-300 font-semibold">Headcount</th>
+                  <th className="text-center py-3 px-4 text-stone-300 font-semibold">Turnover Rate</th>
+                  <th className="text-center py-3 px-4 text-stone-300 font-semibold">Avg Tenure</th>
+                  <th className="text-center py-3 px-4 text-stone-300 font-semibold">Satisfaction</th>
                 </tr>
               </thead>
               <tbody>
                 {departmentData.map((dept, idx) => (
-                  <tr key={idx} className="border-b border-slate-700/50 hover:bg-slate-700/30 transition-colors">
+                  <tr key={idx} className="border-b border-stone-700/50 hover:bg-stone-900/30 transition-colors">
                     <td className="py-4 px-4 text-white font-semibold">{dept.name}</td>
                     <td className="py-4 px-4 text-center">
-                      <span className="text-blue-400 font-bold text-lg">{dept.headcount}</span>
+                      <span className="text-amber-400 font-bold text-lg">{dept.headcount}</span>
                     </td>
                     <td className="py-4 px-4 text-center">
                       <span className={`font-bold ${
@@ -145,7 +145,7 @@ export default function HRAnalytics() {
 
         <div className="grid grid-cols-2 gap-8 mb-8">
           {/* Diversity Metrics */}
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
               <PieChart className="w-7 h-7 text-amber-400" />
               Diversity & Inclusion
@@ -155,17 +155,17 @@ export default function HRAnalytics() {
                 <h3 className="text-lg font-semibold text-white mb-3">Gender Distribution</h3>
                 <div className="space-y-2">
                   <div className="flex items-center gap-3">
-                    <div className="w-24 text-slate-300">Female</div>
-                    <div className="flex-1 bg-slate-700 rounded-full h-6">
-                      <div className="bg-gradient-to-r from-pink-500 to-purple-500 h-6 rounded-full flex items-center justify-end pr-2" style={{width: '68%'}}>
+                    <div className="w-24 text-stone-300">Female</div>
+                    <div className="flex-1 bg-stone-900 rounded-full h-6">
+                      <div className="bg-gradient-to-r from-pink-500 to-amber-900 h-6 rounded-full flex items-center justify-end pr-2" style={{width: '68%'}}>
                         <span className="text-xs font-bold text-white">68%</span>
                       </div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-24 text-slate-300">Male</div>
-                    <div className="flex-1 bg-slate-700 rounded-full h-6">
-                      <div className="bg-gradient-to-r from-blue-500 to-cyan-500 h-6 rounded-full flex items-center justify-end pr-2" style={{width: '32%'}}>
+                    <div className="w-24 text-stone-300">Male</div>
+                    <div className="flex-1 bg-stone-900 rounded-full h-6">
+                      <div className="bg-gradient-to-r from-amber-700 to-cyan-500 h-6 rounded-full flex items-center justify-end pr-2" style={{width: '32%'}}>
                         <span className="text-xs font-bold text-white">32%</span>
                       </div>
                     </div>
@@ -186,7 +186,7 @@ export default function HRAnalytics() {
                       <div className={`${age.color} rounded-t-lg h-24 flex items-end justify-center pb-2`} style={{height: `${age.pct * 3}px`, minHeight: '40px'}}>
                         <span className="text-white font-bold text-sm">{age.pct}%</span>
                       </div>
-                      <div className="text-xs text-slate-300 mt-1">{age.range}</div>
+                      <div className="text-xs text-stone-300 mt-1">{age.range}</div>
                     </div>
                   ))}
                 </div>
@@ -195,14 +195,14 @@ export default function HRAnalytics() {
           </div>
 
           {/* Compensation Equity */}
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-emerald-500/30">
+          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-emerald-500/30">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
               <DollarSign className="w-7 h-7 text-emerald-400" />
               Compensation Equity Analysis
             </h2>
             <div className="space-y-4">
               {compensationEquity.map((role, idx) => (
-                <div key={idx} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
+                <div key={idx} className="bg-stone-950/50 rounded-lg p-4 border border-stone-700">
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="text-white font-semibold">{role.role}</h3>
                     <span className={`px-3 py-1 rounded-full text-xs font-bold ${
@@ -213,15 +213,15 @@ export default function HRAnalytics() {
                   </div>
                   <div className="grid grid-cols-3 gap-4 text-sm">
                     <div>
-                      <div className="text-slate-400">Male Avg</div>
-                      <div className="text-blue-400 font-bold">${role.avgMale.toLocaleString()}</div>
+                      <div className="text-stone-400">Male Avg</div>
+                      <div className="text-amber-400 font-bold">${role.avgMale.toLocaleString()}</div>
                     </div>
                     <div>
-                      <div className="text-slate-400">Female Avg</div>
+                      <div className="text-stone-400">Female Avg</div>
                       <div className="text-pink-400 font-bold">${role.avgFemale.toLocaleString()}</div>
                     </div>
                     <div>
-                      <div className="text-slate-400">Status</div>
+                      <div className="text-stone-400">Status</div>
                       <div className={role.status === 'good' ? 'text-emerald-400' : 'text-yellow-400'}>
                         {role.status === 'good' ? '✓ Equitable' : '⚠ Review'}
                       </div>
@@ -234,7 +234,7 @@ export default function HRAnalytics() {
         </div>
 
         {/* Flight Risk Prediction */}
-        <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-red-500/30">
+        <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-red-500/30">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
             <AlertTriangle className="w-7 h-7 text-red-400 animate-pulse" />
             Predictive Flight Risk Analysis
@@ -246,7 +246,7 @@ export default function HRAnalytics() {
                 <div className="flex items-start justify-between mb-3">
                   <div>
                     <h3 className="text-xl font-bold text-white mb-1">{employee.name}</h3>
-                    <div className="text-slate-300">{employee.department}</div>
+                    <div className="text-stone-300">{employee.department}</div>
                   </div>
                   <div className="text-right">
                     <div className="text-3xl font-black text-red-400">{employee.riskScore}%</div>
@@ -254,7 +254,7 @@ export default function HRAnalytics() {
                   </div>
                 </div>
                 <div className="mb-3">
-                  <div className="w-full bg-slate-700 rounded-full h-3">
+                  <div className="w-full bg-stone-900 rounded-full h-3">
                     <div className={`h-3 rounded-full ${
                       employee.riskScore >= 80 ? 'bg-red-500' :
                       employee.riskScore >= 70 ? 'bg-orange-500' : 'bg-yellow-500'
@@ -262,7 +262,7 @@ export default function HRAnalytics() {
                   </div>
                 </div>
                 <div>
-                  <div className="text-sm text-slate-400 mb-2">Risk Factors:</div>
+                  <div className="text-sm text-stone-400 mb-2">Risk Factors:</div>
                   <div className="flex flex-wrap gap-2">
                     {employee.factors.map((factor, fidx) => (
                       <span key={fidx} className="px-3 py-1 bg-red-600/30 text-red-200 rounded-full text-xs">
@@ -275,7 +275,7 @@ export default function HRAnalytics() {
                   <button className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold text-sm">
                     Schedule Retention Meeting
                   </button>
-                  <button className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg text-sm">
+                  <button className="px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg text-sm">
                     View Full Analysis
                   </button>
                 </div>

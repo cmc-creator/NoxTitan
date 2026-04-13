@@ -42,7 +42,7 @@ export default function EmployeeSelfService() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-6">
+    <div className="min-h-screen lux-app-bg p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -51,7 +51,7 @@ export default function EmployeeSelfService() {
           </Link>
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-pink-200 to-purple-200 mb-2"
+              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-stone-900 via-pink-200 to-amber-900 mb-2"
                   style={{
                     textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(168,85,247,0.6)',
                     WebkitTextStroke: '1px rgba(168,85,247,0.3)',
@@ -75,38 +75,38 @@ export default function EmployeeSelfService() {
 
         {/* Quick Actions */}
         <div className="grid grid-cols-4 gap-4 mb-8">
-          <button className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 hover:from-blue-800/50 hover:to-cyan-800/50 rounded-xl p-4 border-2 border-amber-500/40/30 transition-all flex items-center gap-3 group">
-            <Calendar className="w-8 h-8 text-blue-400 group-hover:scale-110 transition-transform" />
+          <button className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 hover:from-amber-700/50 hover:to-cyan-800/50 rounded-xl p-4 border-2 border-amber-500/40/30 transition-all flex items-center gap-3 group">
+            <Calendar className="w-8 h-8 text-amber-400 group-hover:scale-110 transition-transform" />
             <div className="text-left">
               <div className="text-white font-bold">Request Time Off</div>
-              <div className="text-xs text-slate-400">120 hrs PTO available</div>
+              <div className="text-xs text-stone-400">120 hrs PTO available</div>
             </div>
           </button>
           <button className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 hover:from-emerald-800/50 hover:to-teal-800/50 rounded-xl p-4 border-2 border-emerald-500/30 transition-all flex items-center gap-3 group">
             <Download className="w-8 h-8 text-emerald-400 group-hover:scale-110 transition-transform" />
             <div className="text-left">
               <div className="text-white font-bold">Get Pay Stub</div>
-              <div className="text-xs text-slate-400">Latest: Jan 1, 2026</div>
+              <div className="text-xs text-stone-400">Latest: Jan 1, 2026</div>
             </div>
           </button>
-          <button className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 hover:from-purple-800/50 hover:to-pink-800/50 rounded-xl p-4 border-2 border-amber-500/40/30 transition-all flex items-center gap-3 group">
+          <button className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 hover:from-stone-900/50 hover:to-pink-800/50 rounded-xl p-4 border-2 border-amber-500/40/30 transition-all flex items-center gap-3 group">
             <Heart className="w-8 h-8 text-pink-400 group-hover:scale-110 transition-transform" />
             <div className="text-left">
               <div className="text-white font-bold">Update Benefits</div>
-              <div className="text-xs text-slate-400">Open enrollment</div>
+              <div className="text-xs text-stone-400">Open enrollment</div>
             </div>
           </button>
           <button className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 hover:from-orange-800/50 hover:to-amber-800/50 rounded-xl p-4 border-2 border-orange-500/30 transition-all flex items-center gap-3 group">
             <Edit className="w-8 h-8 text-orange-400 group-hover:scale-110 transition-transform" />
             <div className="text-left">
               <div className="text-white font-bold">Update Profile</div>
-              <div className="text-xs text-slate-400">Keep info current</div>
+              <div className="text-xs text-stone-400">Keep info current</div>
             </div>
           </button>
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-2 mb-6 bg-slate-800/50 p-2 rounded-lg">
+        <div className="flex gap-2 mb-6 bg-stone-900/50 p-2 rounded-lg">
           {[
             { id: 'profile', label: 'My Profile', icon: User },
             { id: 'pay', label: 'Pay & Taxes', icon: DollarSign },
@@ -117,7 +117,7 @@ export default function EmployeeSelfService() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all flex items-center justify-center gap-2 ${
-                activeTab === tab.id ? 'bg-amber-600 text-white' : 'text-slate-300 hover:bg-slate-700'
+                activeTab === tab.id ? 'bg-amber-600 text-white' : 'text-stone-300 hover:bg-stone-900'
               }`}
             >
               <tab.icon className="w-5 h-5" />
@@ -129,7 +129,7 @@ export default function EmployeeSelfService() {
         {/* Profile Tab */}
         {activeTab === 'profile' && (
           <div className="space-y-6">
-            <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold text-white">Personal Information</h2>
                 <button className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-semibold flex items-center gap-2">
@@ -139,60 +139,60 @@ export default function EmployeeSelfService() {
               </div>
               <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <label className="text-sm text-slate-400 mb-1 block">Full Name</label>
+                  <label className="text-sm text-stone-400 mb-1 block">Full Name</label>
                   <div className="text-lg text-white font-semibold">{employee.name}</div>
                 </div>
                 <div>
-                  <label className="text-sm text-slate-400 mb-1 block">Employee ID</label>
+                  <label className="text-sm text-stone-400 mb-1 block">Employee ID</label>
                   <div className="text-lg text-white font-semibold">{employee.employeeId}</div>
                 </div>
                 <div>
-                  <label className="text-sm text-slate-400 mb-1 block">Department</label>
+                  <label className="text-sm text-stone-400 mb-1 block">Department</label>
                   <div className="text-lg text-white font-semibold">{employee.department}</div>
                 </div>
                 <div>
-                  <label className="text-sm text-slate-400 mb-1 block">Position</label>
+                  <label className="text-sm text-stone-400 mb-1 block">Position</label>
                   <div className="text-lg text-white font-semibold">{employee.position}</div>
                 </div>
                 <div>
-                  <label className="text-sm text-slate-400 mb-1 block">Manager</label>
+                  <label className="text-sm text-stone-400 mb-1 block">Manager</label>
                   <div className="text-lg text-white font-semibold">{employee.manager}</div>
                 </div>
                 <div>
-                  <label className="text-sm text-slate-400 mb-1 block">Hire Date</label>
+                  <label className="text-sm text-stone-400 mb-1 block">Hire Date</label>
                   <div className="text-lg text-white font-semibold">{employee.hireDate}</div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
               <h2 className="text-2xl font-bold text-white mb-6">Contact Information</h2>
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-start gap-3">
-                  <Mail className="w-6 h-6 text-blue-400 mt-1" />
+                  <Mail className="w-6 h-6 text-amber-400 mt-1" />
                   <div>
-                    <label className="text-sm text-slate-400 mb-1 block">Email</label>
+                    <label className="text-sm text-stone-400 mb-1 block">Email</label>
                     <div className="text-lg text-white">{employee.email}</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Phone className="w-6 h-6 text-emerald-400 mt-1" />
                   <div>
-                    <label className="text-sm text-slate-400 mb-1 block">Phone</label>
+                    <label className="text-sm text-stone-400 mb-1 block">Phone</label>
                     <div className="text-lg text-white">{employee.phone}</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 col-span-2">
                   <MapPin className="w-6 h-6 text-orange-400 mt-1" />
                   <div>
-                    <label className="text-sm text-slate-400 mb-1 block">Address</label>
+                    <label className="text-sm text-stone-400 mb-1 block">Address</label>
                     <div className="text-lg text-white">{employee.address}</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 col-span-2">
                   <Users className="w-6 h-6 text-pink-400 mt-1" />
                   <div>
-                    <label className="text-sm text-slate-400 mb-1 block">Emergency Contact</label>
+                    <label className="text-sm text-stone-400 mb-1 block">Emergency Contact</label>
                     <div className="text-lg text-white">{employee.emergencyContact}</div>
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export default function EmployeeSelfService() {
         {/* Pay & Taxes Tab */}
         {activeTab === 'pay' && (
           <div className="space-y-6">
-            <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-emerald-500/30">
+            <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-emerald-500/30">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold text-white">Pay Stubs</h2>
                 <button className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold flex items-center gap-2">
@@ -214,19 +214,19 @@ export default function EmployeeSelfService() {
               </div>
               <div className="space-y-3">
                 {payStubs.map(stub => (
-                  <div key={stub.id} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700 hover:border-emerald-500 transition-all">
+                  <div key={stub.id} className="bg-stone-950/50 rounded-lg p-4 border border-stone-700 hover:border-emerald-500 transition-all">
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="text-white font-semibold mb-1">Pay Period: {stub.period}</div>
-                        <div className="text-sm text-slate-400">Paid on {stub.date}</div>
+                        <div className="text-sm text-stone-400">Paid on {stub.date}</div>
                       </div>
                       <div className="flex items-center gap-6">
                         <div>
-                          <div className="text-xs text-slate-400">Gross Pay</div>
+                          <div className="text-xs text-stone-400">Gross Pay</div>
                           <div className="text-xl font-bold text-white">${stub.gross.toLocaleString()}</div>
                         </div>
                         <div>
-                          <div className="text-xs text-slate-400">Net Pay</div>
+                          <div className="text-xs text-stone-400">Net Pay</div>
                           <div className="text-2xl font-bold text-emerald-400">${stub.net.toLocaleString()}</div>
                         </div>
                         <button className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg flex items-center gap-2">
@@ -241,14 +241,14 @@ export default function EmployeeSelfService() {
             </div>
 
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+              <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
                 <h3 className="text-xl font-bold text-white mb-4">Direct Deposit</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <CreditCard className="w-6 h-6 text-blue-400" />
+                    <CreditCard className="w-6 h-6 text-amber-400" />
                     <div>
                       <div className="text-white font-semibold">Primary Account</div>
-                      <div className="text-sm text-slate-400">****6789 - 100%</div>
+                      <div className="text-sm text-stone-400">****6789 - 100%</div>
                     </div>
                   </div>
                   <button className="w-full px-4 py-2 bg-amber-600 hover:bg-amber-600 text-white rounded-lg font-semibold flex items-center justify-center gap-2">
@@ -258,14 +258,14 @@ export default function EmployeeSelfService() {
                 </div>
               </div>
 
-              <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+              <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
                 <h3 className="text-xl font-bold text-white mb-4">Tax Documents</h3>
                 <div className="space-y-3">
                   {taxDocs.map(doc => (
                     <div key={doc.id} className="flex items-center justify-between">
                       <div>
                         <div className="text-white font-semibold">{doc.name}</div>
-                        <div className="text-xs text-slate-400">{doc.size}</div>
+                        <div className="text-xs text-stone-400">{doc.size}</div>
                       </div>
                       <button className="px-3 py-1 bg-amber-600 hover:bg-amber-500 text-white rounded text-sm">
                         <Download className="w-4 h-4" />
@@ -280,7 +280,7 @@ export default function EmployeeSelfService() {
 
         {/* Benefits Tab */}
         {activeTab === 'benefits' && (
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-pink-500/30">
+          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-pink-500/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">My Benefits</h2>
               <button className="px-4 py-2 bg-pink-600 hover:bg-pink-500 text-white rounded-lg font-semibold">
@@ -289,7 +289,7 @@ export default function EmployeeSelfService() {
             </div>
             <div className="space-y-4">
               {benefits.map((benefit, idx) => (
-                <div key={idx} className="bg-slate-900/50 rounded-lg p-5 border border-slate-700 hover:border-pink-500 transition-all">
+                <div key={idx} className="bg-stone-950/50 rounded-lg p-5 border border-stone-700 hover:border-pink-500 transition-all">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
@@ -300,15 +300,15 @@ export default function EmployeeSelfService() {
                       </div>
                       <div className="grid grid-cols-3 gap-4 text-sm">
                         <div>
-                          <div className="text-slate-400">Provider</div>
+                          <div className="text-stone-400">Provider</div>
                           <div className="text-white font-semibold">{benefit.provider}</div>
                         </div>
                         <div>
-                          <div className="text-slate-400">Plan</div>
+                          <div className="text-stone-400">Plan</div>
                           <div className="text-white font-semibold">{benefit.plan}</div>
                         </div>
                         <div>
-                          <div className="text-slate-400">{benefit.premium ? 'Premium/pay period' : 'Your Contribution'}</div>
+                          <div className="text-stone-400">{benefit.premium ? 'Premium/pay period' : 'Your Contribution'}</div>
                           <div className="text-white font-semibold">
                             {benefit.premium ? `$${benefit.premium}` : benefit.contribution}
                           </div>
@@ -334,33 +334,33 @@ export default function EmployeeSelfService() {
 
         {/* Documents Tab */}
         {activeTab === 'documents' && (
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-orange-500/30">
+          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-orange-500/30">
             <h2 className="text-2xl font-bold text-white mb-6">My Documents</h2>
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-slate-900/50 rounded-lg p-5 border border-slate-700">
+              <div className="bg-stone-950/50 rounded-lg p-5 border border-stone-700">
                 <h3 className="text-lg font-bold text-white mb-4">Onboarding Documents</h3>
                 <div className="space-y-2">
                   {['Employee Handbook', 'I-9 Form', 'W-4 Form', 'Direct Deposit Form', 'Background Check'].map(doc => (
-                    <div key={doc} className="flex items-center justify-between p-2 hover:bg-slate-800 rounded">
+                    <div key={doc} className="flex items-center justify-between p-2 hover:bg-stone-900 rounded">
                       <div className="flex items-center gap-2">
-                        <FileText className="w-5 h-5 text-blue-400" />
+                        <FileText className="w-5 h-5 text-amber-400" />
                         <span className="text-white">{doc}</span>
                       </div>
-                      <Download className="w-5 h-5 text-slate-400 hover:text-white cursor-pointer" />
+                      <Download className="w-5 h-5 text-stone-400 hover:text-white cursor-pointer" />
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="bg-slate-900/50 rounded-lg p-5 border border-slate-700">
+              <div className="bg-stone-950/50 rounded-lg p-5 border border-stone-700">
                 <h3 className="text-lg font-bold text-white mb-4">Certifications & Training</h3>
                 <div className="space-y-2">
                   {['BLS Certification', 'ACLS Certification', 'HIPAA Training', 'Fire Safety Training', 'Annual Competency'].map(doc => (
-                    <div key={doc} className="flex items-center justify-between p-2 hover:bg-slate-800 rounded">
+                    <div key={doc} className="flex items-center justify-between p-2 hover:bg-stone-900 rounded">
                       <div className="flex items-center gap-2">
                         <Shield className="w-5 h-5 text-emerald-400" />
                         <span className="text-white">{doc}</span>
                       </div>
-                      <Download className="w-5 h-5 text-slate-400 hover:text-white cursor-pointer" />
+                      <Download className="w-5 h-5 text-stone-400 hover:text-white cursor-pointer" />
                     </div>
                   ))}
                 </div>

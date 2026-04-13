@@ -120,7 +120,7 @@ export default function TeamDirectory() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900">
       {/* Top Navigation */}
-      <nav className="bg-slate-900/80 backdrop-blur-xl border-b-2 border-emerald-500/30 sticky top-0 z-50">
+      <nav className="bg-stone-950/80 backdrop-blur-xl border-b-2 border-emerald-500/30 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <Link href="/basecamp" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <Mountain className="w-8 h-8 text-emerald-400" />
@@ -137,7 +137,7 @@ export default function TeamDirectory() {
           <Link href="/basecamp" className="inline-flex items-center gap-2 text-emerald-300 hover:text-emerald-100 mb-4 transition-colors">
             ← Back to Basecamp
           </Link>
-          <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-purple-200 to-pink-200 mb-2"
+          <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-stone-900 to-pink-200 mb-2"
               style={{
                 textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(236,72,153,0.6)',
                 WebkitTextStroke: '1px rgba(236,72,153,0.3)',
@@ -150,11 +150,11 @@ export default function TeamDirectory() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
             <div className="text-blue-200 text-sm mb-1">Total Team Members</div>
             <div className="text-3xl font-bold text-white">{team.length}</div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
             <div className="text-amber-100/70 text-sm mb-1">Departments</div>
             <div className="text-3xl font-bold text-white">6</div>
           </div>
@@ -169,7 +169,7 @@ export default function TeamDirectory() {
         </div>
 
         {/* Search & Filter */}
-        <div className="bg-slate-800/50 rounded-xl p-4 border-2 border-emerald-500/30 mb-6">
+        <div className="bg-stone-900/50 rounded-xl p-4 border-2 border-emerald-500/30 mb-6">
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex-1 min-w-[300px]">
               <div className="relative">
@@ -179,7 +179,7 @@ export default function TeamDirectory() {
                   placeholder="Search by name, position, or department..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-slate-900 border-2 border-emerald-500/30 rounded-lg pl-10 pr-4 py-2 text-white focus:border-emerald-400 focus:outline-none"
+                  className="w-full bg-stone-950 border-2 border-emerald-500/30 rounded-lg pl-10 pr-4 py-2 text-white focus:border-emerald-400 focus:outline-none"
                 />
               </div>
             </div>
@@ -188,7 +188,7 @@ export default function TeamDirectory() {
               <select
                 value={selectedDepartment}
                 onChange={(e) => setSelectedDepartment(e.target.value)}
-                className="bg-slate-900 border-2 border-emerald-500/30 rounded-lg px-4 py-2 text-white focus:border-emerald-400 focus:outline-none"
+                className="bg-stone-950 border-2 border-emerald-500/30 rounded-lg px-4 py-2 text-white focus:border-emerald-400 focus:outline-none"
               >
                 {departments.map(dept => (
                   <option key={dept} value={dept}>
@@ -203,10 +203,10 @@ export default function TeamDirectory() {
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredTeam.map(member => (
-            <div key={member.id} className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-xl p-6 border-2 border-emerald-500/30 hover:border-emerald-400/50 transition-all group">
+            <div key={member.id} className="lux-card/80 rounded-xl p-6 border-2 border-emerald-500/30 hover:border-emerald-400/50 transition-all group">
               {/* Avatar & Basic Info */}
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                <div className="w-16 h-16 bg-gradient-to-br from-stone-900 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
                   {member.avatar}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -214,7 +214,7 @@ export default function TeamDirectory() {
                     {member.name}
                   </h3>
                   <p className="text-emerald-300 font-semibold text-sm mb-1">{member.position}</p>
-                  <p className="text-slate-400 text-xs">{member.department}</p>
+                  <p className="text-stone-400 text-xs">{member.department}</p>
                 </div>
               </div>
 
@@ -225,10 +225,10 @@ export default function TeamDirectory() {
 
               {/* Skills */}
               <div className="mb-4">
-                <div className="text-slate-400 text-xs mb-2">Skills:</div>
+                <div className="text-stone-400 text-xs mb-2">Skills:</div>
                 <div className="flex flex-wrap gap-2">
                   {member.skills.map(skill => (
-                    <span key={skill} className="px-2 py-1 bg-slate-700 text-slate-300 rounded text-xs">
+                    <span key={skill} className="px-2 py-1 bg-stone-900 text-stone-300 rounded text-xs">
                       {skill}
                     </span>
                   ))}
@@ -237,15 +237,15 @@ export default function TeamDirectory() {
 
               {/* Contact Info */}
               <div className="space-y-2 mb-4 text-sm">
-                <div className="flex items-center gap-2 text-slate-300">
-                  <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                <div className="flex items-center gap-2 text-stone-300">
+                  <Mail className="w-4 h-4 text-amber-400 flex-shrink-0" />
                   <span className="truncate">{member.email}</span>
                 </div>
-                <div className="flex items-center gap-2 text-slate-300">
+                <div className="flex items-center gap-2 text-stone-300">
                   <Phone className="w-4 h-4 text-green-400 flex-shrink-0" />
                   <span>{member.phone}</span>
                 </div>
-                <div className="flex items-center gap-2 text-slate-300">
+                <div className="flex items-center gap-2 text-stone-300">
                   <MapPin className="w-4 h-4 text-red-400 flex-shrink-0" />
                   <span className="truncate">{member.location}</span>
                 </div>
@@ -253,11 +253,11 @@ export default function TeamDirectory() {
 
               {/* Action Buttons */}
               <div className="flex gap-2">
-                <button className="flex-1 px-3 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                <button className="flex-1 px-3 py-2 bg-gradient-to-r from-amber-700 to-cyan-600 hover:from-amber-700 hover:to-cyan-500 text-white rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-2">
                   <MessageSquare className="w-4 h-4" />
                   Message
                 </button>
-                <button className="flex-1 px-3 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                <button className="flex-1 px-3 py-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-2">
                   <Calendar className="w-4 h-4" />
                   Meet
                 </button>
@@ -267,15 +267,15 @@ export default function TeamDirectory() {
         </div>
 
         {filteredTeam.length === 0 && (
-          <div className="bg-slate-800/50 rounded-xl p-12 border-2 border-emerald-500/30 text-center">
-            <Users className="w-16 h-16 text-slate-600 mx-auto mb-4" />
+          <div className="bg-stone-900/50 rounded-xl p-12 border-2 border-emerald-500/30 text-center">
+            <Users className="w-16 h-16 text-stone-600 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-white mb-2">No team members found</h3>
-            <p className="text-slate-400">Try adjusting your search or filters</p>
+            <p className="text-stone-400">Try adjusting your search or filters</p>
           </div>
         )}
 
         {/* Encouragement Footer */}
-        <div className="mt-8 bg-gradient-to-r from-pink-900/30 to-purple-900/30 rounded-xl p-6 border-2 border-pink-500/30 text-center">
+        <div className="mt-8 bg-gradient-to-r from-pink-900/30 to-amber-900/30 rounded-xl p-6 border-2 border-pink-500/30 text-center">
           <h3 className="text-2xl font-bold text-pink-200 mb-2">💜 You're part of something special!</h3>
           <p className="text-pink-100 text-lg">Every person here makes our team amazing. Don't be shy - say hi!</p>
         </div>

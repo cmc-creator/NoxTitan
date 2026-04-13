@@ -49,7 +49,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
       icon: '🚀',
       currency: 'Star Crystals',
       description: 'Journey through galaxies collecting cosmic artifacts',
-      colors: 'from-indigo-600 to-purple-900'
+      colors: 'from-amber-700 to-amber-500'
     },
     'detective': {
       name: 'Detective',
@@ -63,7 +63,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
       icon: '⚔️',
       currency: 'Magic Runes',
       description: 'Embark on epic quests and slay dragons',
-      colors: 'from-purple-700 to-pink-900'
+      colors: 'from-stone-900 to-pink-900'
     }
   };
 
@@ -188,9 +188,9 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
   ];
 
   const difficultyColors = {
-    'Common': 'bg-slate-500/20 text-slate-300 border-slate-500/30',
+    'Common': 'bg-stone-500/20 text-stone-300 border-stone-500/30',
     'Uncommon': 'bg-green-500/20 text-green-300 border-green-500/30',
-    'Rare': 'bg-amber-600/20 text-blue-300 border-amber-500/40/30',
+    'Rare': 'bg-amber-600/20 text-amber-400 border-amber-500/40/30',
     'Epic': 'bg-amber-500/20 text-amber-200 border-amber-500/40/30',
     'Legendary': 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30'
   };
@@ -218,7 +218,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
             className="bg-stone-950/10 backdrop-blur-sm text-white rounded-lg px-4 py-2 border border-white/20 font-semibold"
           >
             {Object.entries(themes).map(([key, theme]) => (
-              <option key={key} value={key} className="bg-slate-800">
+              <option key={key} value={key} className="bg-stone-900">
                 {theme.icon} {theme.name}
               </option>
             ))}
@@ -278,8 +278,8 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
           onClick={() => setActiveTab('quests')}
           className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
             activeTab === 'quests'
-              ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
-              : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              ? 'bg-gradient-to-r from-stone-900 to-pink-500 text-white'
+              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
           }`}
         >
           <Map className="w-5 h-5" />
@@ -289,8 +289,8 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
           onClick={() => setActiveTab('stats')}
           className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
             activeTab === 'stats'
-              ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
-              : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              ? 'bg-gradient-to-r from-stone-900 to-pink-500 text-white'
+              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
           }`}
         >
           <Target className="w-5 h-5" />
@@ -300,8 +300,8 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
           onClick={() => setActiveTab('leaderboard')}
           className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
             activeTab === 'leaderboard'
-              ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
-              : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              ? 'bg-gradient-to-r from-stone-900 to-pink-500 text-white'
+              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
           }`}
         >
           <Trophy className="w-5 h-5" />
@@ -311,8 +311,8 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
           onClick={() => setActiveTab('treasure')}
           className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
             activeTab === 'treasure'
-              ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
-              : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              ? 'bg-gradient-to-r from-stone-900 to-pink-500 text-white'
+              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
           }`}
         >
           <Gem className="w-5 h-5" />
@@ -350,7 +350,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
           )}
 
           {/* Manager Challenge */}
-          <div className={`bg-gradient-to-r ${managerChallenge.status === 'winning' ? 'from-purple-900/40 to-pink-900/40 border-amber-500/40/30' : 'from-red-900/40 to-orange-900/40 border-red-500/30'} backdrop-blur-xl rounded-xl p-6 border-2`}>
+          <div className={`bg-gradient-to-r ${managerChallenge.status === 'winning' ? 'from-stone-900/40 to-pink-900/40 border-amber-500/40/30' : 'from-red-900/40 to-orange-900/40 border-red-500/30'} backdrop-blur-xl rounded-xl p-6 border-2`}>
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
                 <Users className="w-6 h-6 text-amber-400" />
@@ -382,7 +382,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
           {/* Quest List */}
           <div className="grid grid-cols-1 gap-4">
             {activeQuests.map(quest => (
-              <div key={quest.id} className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-xl p-6 border-2 border-cyan-500/30 hover:border-cyan-400/50 transition-all">
+              <div key={quest.id} className="lux-card/80 backdrop-blur-xl rounded-xl p-6 border-2 border-cyan-500/30 hover:border-cyan-400/50 transition-all">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-start gap-4 flex-1">
                     <div className="text-5xl">{quest.icon}</div>
@@ -393,11 +393,11 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
                           {quest.difficulty}
                         </span>
                       </div>
-                      <p className="text-slate-300 mb-2">{quest.description}</p>
+                      <p className="text-stone-300 mb-2">{quest.description}</p>
                       <p className="text-sm text-amber-200 italic mb-3">🗺️ {quest.theme}</p>
                       <div className="flex items-center gap-4 text-sm">
                         <span className="text-cyan-400 font-semibold">⏱️ {quest.timeLimit}</span>
-                        <span className="text-slate-400">•</span>
+                        <span className="text-stone-400">•</span>
                         <span className="text-yellow-400 font-semibold">+{quest.xpReward} XP</span>
                         <span className="text-cyan-400 font-semibold">+{quest.gemReward} 💎</span>
                       </div>
@@ -411,9 +411,9 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
                     <span className="text-sm text-white font-semibold">Progress</span>
                     <span className="text-sm text-white font-bold">{quest.progress} / {quest.goal}</span>
                   </div>
-                  <div className="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                  <div className="w-full bg-stone-900 rounded-full h-3 overflow-hidden">
                     <div 
-                      className="bg-gradient-to-r from-cyan-500 to-blue-500 h-3 rounded-full transition-all duration-500"
+                      className="bg-gradient-to-r from-cyan-500 to-amber-800 h-3 rounded-full transition-all duration-500"
                       style={{ width: `${(quest.progress / quest.goal) * 100}%` }}
                     ></div>
                   </div>
@@ -433,7 +433,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
               className={`rounded-xl p-6 border-2 transition-all ${
                 achievement.unlocked
                   ? 'bg-gradient-to-br from-yellow-900/40 to-orange-900/40 border-yellow-500/30'
-                  : 'bg-slate-800/50 border-slate-700 opacity-60'
+                  : 'bg-stone-900/50 border-stone-700 opacity-60'
               }`}
             >
               <div className="text-center mb-4">
@@ -441,13 +441,13 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
                 {achievement.unlocked ? (
                   <Unlock className="w-8 h-8 text-green-400 mx-auto" />
                 ) : (
-                  <Lock className="w-8 h-8 text-slate-500 mx-auto" />
+                  <Lock className="w-8 h-8 text-stone-500 mx-auto" />
                 )}
               </div>
               <h4 className="text-lg font-bold text-white text-center mb-1">{achievement.name}</h4>
-              <p className="text-sm text-slate-300 text-center mb-3">{achievement.description}</p>
+              <p className="text-sm text-stone-300 text-center mb-3">{achievement.description}</p>
               {!achievement.unlocked && achievement.progress && (
-                <div className="bg-slate-900/50 rounded-lg p-2 text-center">
+                <div className="bg-stone-950/50 rounded-lg p-2 text-center">
                   <p className="text-xs text-cyan-400 font-semibold">{achievement.progress}</p>
                 </div>
               )}
@@ -464,8 +464,8 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
               key={player.rank}
               className={`rounded-xl p-4 border-2 transition-all ${
                 player.isCurrentUser
-                  ? 'bg-gradient-to-r from-purple-900/60 to-pink-900/60 border-amber-500/40/50 ring-4 ring-purple-500/30'
-                  : 'bg-slate-800/50 border-slate-700 hover:border-cyan-500/30'
+                  ? 'bg-gradient-to-r from-stone-900/60 to-pink-900/60 border-amber-500/40/50 ring-4 ring-purple-500/30'
+                  : 'bg-stone-900/50 border-stone-700 hover:border-cyan-500/30'
               }`}
             >
               <div className="flex items-center justify-between">
@@ -473,26 +473,26 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
                   <div className="text-3xl font-bold text-white w-12 text-center">
                     {player.badge || `#${player.rank}`}
                   </div>
-                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-amber-800 rounded-full flex items-center justify-center text-white font-bold">
                     {player.avatar}
                   </div>
                   <div>
                     <p className="text-lg font-bold text-white">{player.name}</p>
-                    <p className="text-sm text-slate-400">Level {player.level}</p>
+                    <p className="text-sm text-stone-400">Level {player.level}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-6">
                   <div className="text-right">
                     <p className="text-2xl font-bold text-white">{player.xp.toLocaleString()}</p>
-                    <p className="text-xs text-slate-400">Total XP</p>
+                    <p className="text-xs text-stone-400">Total XP</p>
                   </div>
                   <div className="text-right">
                     <p className="text-xl font-bold text-cyan-400">{player.gems}</p>
-                    <p className="text-xs text-slate-400">💎 Gems</p>
+                    <p className="text-xs text-stone-400">💎 Gems</p>
                   </div>
                   <div className="text-right">
                     <p className="text-xl font-bold text-orange-400">{player.streak} 🔥</p>
-                    <p className="text-xs text-slate-400">Streak</p>
+                    <p className="text-xs text-stone-400">Streak</p>
                   </div>
                 </div>
               </div>
@@ -523,8 +523,8 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
                 key={index}
                 className={`rounded-xl p-6 border-2 transition-all ${
                   item.available && playerStats.gems >= item.cost
-                    ? 'bg-gradient-to-br from-purple-900/40 to-pink-900/40 border-amber-500/40/30 hover:border-amber-400/40/50'
-                    : 'bg-slate-800/50 border-slate-700 opacity-60'
+                    ? 'bg-gradient-to-br from-stone-900/40 to-pink-900/40 border-amber-500/40/30 hover:border-amber-400/40/50'
+                    : 'bg-stone-900/50 border-stone-700 opacity-60'
                 }`}
               >
                 <div className="text-center mb-4">
@@ -532,16 +532,16 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
                   {item.available ? (
                     <Unlock className="w-6 h-6 text-green-400 mx-auto" />
                   ) : (
-                    <Lock className="w-6 h-6 text-slate-500 mx-auto" />
+                    <Lock className="w-6 h-6 text-stone-500 mx-auto" />
                   )}
                 </div>
                 <h4 className="text-lg font-bold text-white text-center mb-1">{item.name}</h4>
-                <p className="text-sm text-slate-400 text-center mb-3">{item.category}</p>
-                <div className="bg-slate-900/50 rounded-lg p-3 text-center mb-3">
+                <p className="text-sm text-stone-400 text-center mb-3">{item.category}</p>
+                <div className="bg-stone-950/50 rounded-lg p-3 text-center mb-3">
                   <p className="text-2xl font-bold text-cyan-400">{item.cost} 💎</p>
                 </div>
                 {item.available && playerStats.gems >= item.cost && (
-                  <button className="w-full px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-lg font-bold text-white transition-all">
+                  <button className="w-full px-4 py-2 bg-gradient-to-r from-stone-900 to-pink-500 hover:from-stone-900 hover:to-pink-600 rounded-lg font-bold text-white transition-all">
                     Claim Reward
                   </button>
                 )}

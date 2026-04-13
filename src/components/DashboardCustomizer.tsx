@@ -78,7 +78,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 max-w-6xl w-full border-2 border-amber-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div className="lux-card rounded-2xl p-6 max-w-6xl w-full border-2 border-amber-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <Settings className="w-8 h-8 text-amber-400" />
@@ -86,9 +86,9 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-slate-700 rounded-lg transition-all"
+            className="p-2 hover:bg-stone-900 rounded-lg transition-all"
           >
-            <X className="w-6 h-6 text-slate-400" />
+            <X className="w-6 h-6 text-stone-400" />
           </button>
         </div>
 
@@ -99,7 +99,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
             className={`px-6 py-3 rounded-lg font-semibold transition-all ${
               activeTab === 'layout'
                 ? 'bg-amber-500 text-white'
-                : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
             }`}
           >
             Layout & Tiles
@@ -109,7 +109,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
             className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'suggestions'
                 ? 'bg-amber-500 text-white'
-                : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
             }`}
           >
             <Sparkles className="w-5 h-5" />
@@ -139,8 +139,8 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                       key={tile.id}
                       className={`p-4 rounded-xl border-2 transition-all ${
                         tile.enabled
-                          ? 'bg-slate-700/50 border-amber-500/30'
-                          : 'bg-slate-800/30 border-slate-600'
+                          ? 'bg-stone-900/50 border-amber-500/30'
+                          : 'bg-stone-900/30 border-stone-700'
                       }`}
                     >
                       <div className="flex items-center justify-between mb-2">
@@ -153,17 +153,17 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                           className={`p-2 rounded-lg transition-all ${
                             tile.enabled
                               ? 'bg-green-500/20 hover:bg-green-500/30'
-                              : 'bg-slate-600 hover:bg-slate-500'
+                              : 'bg-stone-600 hover:bg-stone-500'
                           }`}
                         >
                           {tile.enabled ? (
                             <Eye className="w-4 h-4 text-green-300" />
                           ) : (
-                            <EyeOff className="w-4 h-4 text-slate-400" />
+                            <EyeOff className="w-4 h-4 text-stone-400" />
                           )}
                         </button>
                       </div>
-                      <p className="text-xs text-slate-400">
+                      <p className="text-xs text-stone-400">
                         {tile.enabled ? 'Visible' : 'Hidden'}
                       </p>
                     </div>
@@ -221,10 +221,10 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                               {suggestion.priority.toUpperCase()} PRIORITY
                             </span>
                           </div>
-                          <p className="text-slate-300 mb-3">{suggestion.reason}</p>
+                          <p className="text-stone-300 mb-3">{suggestion.reason}</p>
                           <button
                             onClick={() => enableSuggestion(tile.id)}
-                            className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-lg font-semibold text-white transition-all flex items-center gap-2"
+                            className="px-4 py-2 bg-gradient-to-r from-stone-900 to-pink-500 hover:from-stone-900 hover:to-pink-600 rounded-lg font-semibold text-white transition-all flex items-center gap-2"
                           >
                             <Plus className="w-4 h-4" />
                             Add to Dashboard
@@ -243,7 +243,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                 <div className="p-8 text-center">
                   <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
                   <p className="text-xl font-bold text-white mb-2">You're all set!</p>
-                  <p className="text-slate-300">No new suggestions at this time. We'll notify you when we have more recommendations.</p>
+                  <p className="text-stone-300">No new suggestions at this time. We'll notify you when we have more recommendations.</p>
                 </div>
               )}
             </div>
@@ -269,7 +269,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
         <div className="mt-6">
           <button
             onClick={onClose}
-            className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-lg font-bold text-white transition-all"
+            className="w-full px-6 py-3 bg-gradient-to-r from-stone-900 to-pink-500 hover:from-stone-900 hover:to-pink-600 rounded-lg font-bold text-white transition-all"
           >
             Save Customizations
           </button>

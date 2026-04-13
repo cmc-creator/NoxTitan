@@ -19,36 +19,36 @@ export default function ThemeSelector() {
     // Classic Collection
     { id: 'midnight', name: 'Midnight', colors: 'from-slate-900 to-slate-950', primary: '#0f172a', secondary: '#1e293b', collection: 'Classic' },
     { id: 'charcoal', name: 'Charcoal', colors: 'from-gray-800 to-gray-900', primary: '#1f2937', secondary: '#111827', collection: 'Classic' },
-    { id: 'navy', name: 'Navy', colors: 'from-blue-900 to-blue-950', primary: '#1e3a8a', secondary: '#172554', collection: 'Classic' },
+    { id: 'navy', name: 'Navy', colors: 'from-amber-700 to-amber-500', primary: '#1e3a8a', secondary: '#172554', collection: 'Classic' },
     { id: 'graphite', name: 'Graphite', colors: 'from-gray-700 to-slate-800', primary: '#374151', secondary: '#1e293b', collection: 'Classic' },
     
     // Professional Collection
     { id: 'slate', name: 'Slate Gray', colors: 'from-slate-600 to-gray-700', primary: '#475569', secondary: '#374151', collection: 'Professional' },
-    { id: 'steel', name: 'Steel Blue', colors: 'from-slate-500 to-blue-600', primary: '#64748b', secondary: '#2563eb', collection: 'Professional' },
+    { id: 'steel', name: 'Steel Blue', colors: 'from-slate-500 to-amber-800', primary: '#64748b', secondary: '#2563eb', collection: 'Professional' },
     { id: 'pewter', name: 'Pewter', colors: 'from-gray-600 to-slate-700', primary: '#4b5563', secondary: '#334155', collection: 'Professional' },
-    { id: 'cobalt', name: 'Cobalt', colors: 'from-blue-700 to-indigo-700', primary: '#1d4ed8', secondary: '#4338ca', collection: 'Professional' },
+    { id: 'cobalt', name: 'Cobalt', colors: 'from-amber-700 to-amber-800', primary: '#1d4ed8', secondary: '#4338ca', collection: 'Professional' },
     
     // Elegant Collection
     { id: 'royal', name: 'Royal Purple', colors: 'from-amber-700 to-amber-600', primary: '#9333ea', secondary: '#db2777', collection: 'Elegant' },
     { id: 'rose-gold', name: 'Rose Gold', colors: 'from-pink-300 to-amber-400', primary: '#f9a8d4', secondary: '#fbbf24', collection: 'Elegant' },
     { id: 'champagne', name: 'Champagne', colors: 'from-amber-200 to-yellow-300', primary: '#fde68a', secondary: '#fcd34d', collection: 'Elegant' },
-    { id: 'amethyst', name: 'Amethyst', colors: 'from-purple-700 to-purple-900', primary: '#7e22ce', secondary: '#581c87', collection: 'Elegant' },
+    { id: 'amethyst', name: 'Amethyst', colors: 'from-stone-900 to-amber-900', primary: '#7e22ce', secondary: '#581c87', collection: 'Elegant' },
     
     // Vibrant Collection
-    { id: 'ocean', name: 'Ocean Blue', colors: 'from-blue-600 to-cyan-600', primary: '#2563eb', secondary: '#0891b2', collection: 'Vibrant' },
-    { id: 'azure', name: 'Azure Sky', colors: 'from-sky-400 to-blue-500', primary: '#38bdf8', secondary: '#3b82f6', collection: 'Vibrant' },
-    { id: 'neon', name: 'Neon Nights', colors: 'from-cyan-500 to-purple-600', primary: '#06b6d4', secondary: '#9333ea', collection: 'Vibrant' },
-    { id: 'electric', name: 'Electric', colors: 'from-blue-500 to-fuchsia-600', primary: '#3b82f6', secondary: '#c026d3', collection: 'Vibrant' },
-    { id: 'cosmic', name: 'Cosmic', colors: 'from-violet-600 to-purple-800', primary: '#7c3aed', secondary: '#6b21a8', collection: 'Vibrant' },
-    { id: 'aurora', name: 'Aurora', colors: 'from-green-400 to-blue-500', primary: '#4ade80', secondary: '#3b82f6', collection: 'Vibrant' },
+    { id: 'ocean', name: 'Ocean Blue', colors: 'from-amber-700 to-cyan-600', primary: '#2563eb', secondary: '#0891b2', collection: 'Vibrant' },
+    { id: 'azure', name: 'Azure Sky', colors: 'from-sky-400 to-amber-800', primary: '#38bdf8', secondary: '#3b82f6', collection: 'Vibrant' },
+    { id: 'neon', name: 'Neon Nights', colors: 'from-cyan-500 to-amber-900', primary: '#06b6d4', secondary: '#9333ea', collection: 'Vibrant' },
+    { id: 'electric', name: 'Electric', colors: 'from-amber-700 to-fuchsia-600', primary: '#3b82f6', secondary: '#c026d3', collection: 'Vibrant' },
+    { id: 'cosmic', name: 'Cosmic', colors: 'from-violet-600 to-amber-900', primary: '#7c3aed', secondary: '#6b21a8', collection: 'Vibrant' },
+    { id: 'aurora', name: 'Aurora', colors: 'from-green-400 to-amber-800', primary: '#4ade80', secondary: '#3b82f6', collection: 'Vibrant' },
     
     // Nature Collection
     { id: 'forest', name: 'Forest Green', colors: 'from-green-700 to-emerald-800', primary: '#15803d', secondary: '#065f46', collection: 'Nature' },
     { id: 'mint', name: 'Mint Fresh', colors: 'from-green-400 to-emerald-500', primary: '#4ade80', secondary: '#10b981', collection: 'Nature' },
     { id: 'sage', name: 'Sage', colors: 'from-green-600 to-teal-600', primary: '#16a34a', secondary: '#0d9488', collection: 'Nature' },
     { id: 'emerald', name: 'Emerald', colors: 'from-emerald-500 to-green-600', primary: '#10b981', secondary: '#16a34a', collection: 'Nature' },
-    { id: 'lavender', name: 'Lavender', colors: 'from-purple-300 to-pink-300', primary: '#c084fc', secondary: '#f9a8d4', collection: 'Nature' },
-    { id: 'orchid', name: 'Orchid', colors: 'from-fuchsia-500 to-purple-600', primary: '#d946ef', secondary: '#9333ea', collection: 'Nature' },
+    { id: 'lavender', name: 'Lavender', colors: 'from-stone-900 to-pink-300', primary: '#c084fc', secondary: '#f9a8d4', collection: 'Nature' },
+    { id: 'orchid', name: 'Orchid', colors: 'from-fuchsia-500 to-amber-900', primary: '#d946ef', secondary: '#9333ea', collection: 'Nature' },
     
     // Warm Collection
     { id: 'sunset', name: 'Sunset Orange', colors: 'from-orange-500 to-red-600', primary: '#f97316', secondary: '#dc2626', collection: 'Warm' },
@@ -105,32 +105,32 @@ export default function ThemeSelector() {
 
       {showPanel && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-slate-900 rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden border border-slate-700">
+          <div className="bg-stone-950 rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden border border-stone-700">
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-slate-700">
+            <div className="flex items-center justify-between p-6 border-b border-stone-700">
               <div>
                 <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                   <Palette className="h-7 w-7 text-amber-400" />
                   Customize Your Experience
                 </h2>
-                <p className="text-slate-400 text-sm mt-1">Choose your perfect color theme, font, and background</p>
+                <p className="text-stone-400 text-sm mt-1">Choose your perfect color theme, font, and background</p>
               </div>
               <button
                 onClick={() => setShowPanel(false)}
-                className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
+                className="p-2 hover:bg-stone-900 rounded-lg transition-colors"
               >
-                <X className="h-6 w-6 text-slate-400" />
+                <X className="h-6 w-6 text-stone-400" />
               </button>
             </div>
 
             {/* Tabs */}
-            <div className="flex gap-2 px-6 pt-4 border-b border-slate-800">
+            <div className="flex gap-2 px-6 pt-4 border-b border-stone-800">
               <button
                 onClick={() => setActiveTab('colors')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-t-lg transition-colors ${
                   activeTab === 'colors' 
-                    ? 'bg-slate-800 text-white' 
-                    : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                    ? 'bg-stone-900 text-white' 
+                    : 'text-stone-400 hover:text-white hover:bg-stone-900/50'
                 }`}
               >
                 <Palette className="h-4 w-4" />
@@ -140,8 +140,8 @@ export default function ThemeSelector() {
                 onClick={() => setActiveTab('fonts')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-t-lg transition-colors ${
                   activeTab === 'fonts' 
-                    ? 'bg-slate-800 text-white' 
-                    : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                    ? 'bg-stone-900 text-white' 
+                    : 'text-stone-400 hover:text-white hover:bg-stone-900/50'
                 }`}
               >
                 <Type className="h-4 w-4" />
@@ -151,8 +151,8 @@ export default function ThemeSelector() {
                 onClick={() => setActiveTab('backgrounds')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-t-lg transition-colors ${
                   activeTab === 'backgrounds' 
-                    ? 'bg-slate-800 text-white' 
-                    : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                    ? 'bg-stone-900 text-white' 
+                    : 'text-stone-400 hover:text-white hover:bg-stone-900/50'
                 }`}
               >
                 <Image className="h-4 w-4" />
@@ -167,13 +167,13 @@ export default function ThemeSelector() {
                   {/* Search */}
                   <div className="mb-6">
                     <div className="relative">
-                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
+                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-stone-400" />
                       <input
                         type="text"
                         placeholder="Search themes..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        className="w-full pl-10 pr-4 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:ring-2 focus:ring-amber-500"
                       />
                     </div>
                   </div>
@@ -188,8 +188,8 @@ export default function ThemeSelector() {
                           onClick={() => setTheme(t.id as any)}
                           className={`relative group p-4 rounded-xl border-2 transition-all hover:scale-105 ${
                             theme === t.id 
-                              ? 'border-amber-500/40 bg-slate-800 ring-4 ring-purple-500/30' 
-                              : 'border-slate-700 bg-slate-800/50 hover:border-slate-600'
+                              ? 'border-amber-500/40 bg-stone-900 ring-4 ring-purple-500/30' 
+                              : 'border-stone-700 bg-stone-900/50 hover:border-stone-700'
                           }`}
                         >
                           <div className={`w-full h-24 rounded-lg bg-gradient-to-br ${t.colors} shadow-lg mb-3`}></div>
@@ -220,8 +220,8 @@ export default function ThemeSelector() {
                               onClick={() => setTheme(t.id as any)}
                               className={`relative group p-4 rounded-xl border-2 transition-all hover:scale-105 ${
                                 theme === t.id 
-                                  ? 'border-amber-500/40 bg-slate-800' 
-                                  : 'border-slate-700 bg-slate-800/50 hover:border-slate-600'
+                                  ? 'border-amber-500/40 bg-stone-900' 
+                                  : 'border-stone-700 bg-stone-900/50 hover:border-stone-700'
                               }`}
                             >
                               <div className={`w-full h-20 rounded-lg bg-gradient-to-br ${t.colors} shadow-lg mb-3`}></div>
@@ -250,15 +250,15 @@ export default function ThemeSelector() {
                       onClick={() => setFont(f.id as any)}
                       className={`relative p-6 rounded-xl border-2 transition-all hover:scale-105 text-left ${
                         font === f.id 
-                          ? 'border-amber-500/40 bg-slate-800' 
-                          : 'border-slate-700 bg-slate-800/50 hover:border-slate-600'
+                          ? 'border-amber-500/40 bg-stone-900' 
+                          : 'border-stone-700 bg-stone-900/50 hover:border-stone-700'
                       }`}
                     >
                       <div className={`text-2xl font-bold text-white mb-2 ${f.className}`}>
                         {f.name}
                       </div>
-                      <div className="text-slate-400 text-sm mb-3">{f.style}</div>
-                      <div className={`text-slate-300 text-sm ${f.className}`}>
+                      <div className="text-stone-400 text-sm mb-3">{f.style}</div>
+                      <div className={`text-stone-300 text-sm ${f.className}`}>
                         The quick brown fox jumps over the lazy dog
                       </div>
                       {font === f.id && (
@@ -277,9 +277,9 @@ export default function ThemeSelector() {
                 <div>
                   <div className="mb-6 p-4 bg-amber-600/10 border border-amber-500/40/30 rounded-lg">
                     <div className="flex items-start gap-3">
-                      <Image className="h-5 w-5 text-blue-400 mt-0.5" />
+                      <Image className="h-5 w-5 text-amber-400 mt-0.5" />
                       <div>
-                        <div className="text-blue-300 font-medium mb-1">Background Images</div>
+                        <div className="text-amber-400 font-medium mb-1">Background Images</div>
                         <div className="text-blue-200/70 text-sm">
                           Choose from preset backgrounds or upload your own custom images.
                         </div>
@@ -293,12 +293,12 @@ export default function ThemeSelector() {
                       onClick={() => setBackgroundImage(null)}
                       className={`relative p-4 rounded-xl border-2 transition-all hover:scale-105 ${
                         !backgroundImage 
-                          ? 'border-amber-500/40 bg-slate-800' 
-                          : 'border-slate-700 bg-slate-800/50 hover:border-slate-600'
+                          ? 'border-amber-500/40 bg-stone-900' 
+                          : 'border-stone-700 bg-stone-900/50 hover:border-stone-700'
                       }`}
                     >
                       <div className="w-full h-32 rounded-lg bg-gradient-to-br from-slate-700 to-slate-800 shadow-lg mb-3 flex items-center justify-center">
-                        <span className="text-slate-400 text-sm">No Background</span>
+                        <span className="text-stone-400 text-sm">No Background</span>
                       </div>
                       <div className="text-white font-medium text-sm">None</div>
                       {!backgroundImage && (
@@ -336,8 +336,8 @@ export default function ThemeSelector() {
                         onClick={() => setBackgroundImage(bg.path)}
                         className={`relative p-4 rounded-xl border-2 transition-all hover:scale-105 ${
                           backgroundImage === bg.path 
-                            ? 'border-amber-500/40 bg-slate-800' 
-                            : 'border-slate-700 bg-slate-800/50 hover:border-slate-600'
+                            ? 'border-amber-500/40 bg-stone-900' 
+                            : 'border-stone-700 bg-stone-900/50 hover:border-stone-700'
                         }`}
                       >
                         <div 
@@ -356,11 +356,11 @@ export default function ThemeSelector() {
                     ))}
 
                     {/* Upload New */}
-                    <label className="relative p-4 rounded-xl border-2 border-dashed border-slate-600 bg-slate-800/50 hover:border-amber-500/40 hover:bg-slate-800 transition-all cursor-pointer group">
-                      <div className="w-full h-32 rounded-lg bg-slate-700/50 mb-3 flex items-center justify-center">
+                    <label className="relative p-4 rounded-xl border-2 border-dashed border-stone-700 bg-stone-900/50 hover:border-amber-500/40 hover:bg-stone-900 transition-all cursor-pointer group">
+                      <div className="w-full h-32 rounded-lg bg-stone-900/50 mb-3 flex items-center justify-center">
                         <div className="text-center">
-                          <Image className="h-8 w-8 text-slate-400 mx-auto mb-2 group-hover:text-amber-400 transition-colors" />
-                          <span className="text-slate-400 text-xs group-hover:text-amber-200">Upload Custom</span>
+                          <Image className="h-8 w-8 text-stone-400 mx-auto mb-2 group-hover:text-amber-400 transition-colors" />
+                          <span className="text-stone-400 text-xs group-hover:text-amber-200">Upload Custom</span>
                         </div>
                       </div>
                       <div className="text-white font-medium text-sm">Add Your Own</div>

@@ -45,7 +45,7 @@ export const industryTemplates: Record<string, IndustryTemplate> = {
     name: 'Healthcare',
     icon: '⚕️',
     description: 'Hospitals, clinics, nursing homes, medical facilities',
-    color: 'from-blue-600 to-cyan-600',
+    color: 'from-amber-700 to-cyan-600',
     compliance: {
       breakRules: {
         mealBreakAfterHours: 6,
@@ -497,7 +497,7 @@ export const industryTemplates: Record<string, IndustryTemplate> = {
     name: 'Education',
     icon: '🎓',
     description: 'Schools, universities, training centers',
-    color: 'from-indigo-600 to-blue-600',
+    color: 'from-amber-700 to-amber-800',
     compliance: {
       breakRules: {
         mealBreakAfterHours: 6,

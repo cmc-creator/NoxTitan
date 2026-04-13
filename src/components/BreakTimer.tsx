@@ -54,7 +54,7 @@ export default function BreakTimer({ activeBreak, onEndBreak }: BreakTimerProps)
     <div className={`fixed bottom-6 right-6 ${
       isOverdue 
         ? 'bg-gradient-to-br from-red-600 to-orange-600' 
-        : 'bg-gradient-to-br from-blue-600 to-purple-600'
+        : 'bg-gradient-to-br from-amber-800 to-amber-600'
     } text-white rounded-2xl shadow-2xl p-6 min-w-[320px] z-50 animate-in slide-in-from-bottom-8`}>
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
@@ -111,7 +111,7 @@ export default function BreakTimer({ activeBreak, onEndBreak }: BreakTimerProps)
       {/* End Break Button */}
       <button
         onClick={onEndBreak}
-        className="w-full py-3 bg-stone-950 text-slate-900 font-bold rounded-lg hover:bg-slate-100 transition-colors flex items-center justify-center gap-2"
+        className="w-full py-3 bg-stone-950 text-stone-900 font-bold rounded-lg hover:bg-stone-100 transition-colors flex items-center justify-center gap-2"
       >
         <XCircle className="w-5 h-5" />
         End Break

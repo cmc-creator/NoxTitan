@@ -1105,7 +1105,7 @@ export default function UnifiedDashboard() {
                 </div>
               </div>
 
-              <Link href="/settings/integrations" className="block p-3 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-lg border border-cyan-400/30 hover:border-cyan-400/60 transition-all text-center">
+              <Link href="/settings/integrations" className="block p-3 bg-gradient-to-r from-cyan-500/10 to-amber-800/10 rounded-lg border border-cyan-400/30 hover:border-cyan-400/60 transition-all text-center">
                 <p className="text-sm font-semibold text-amber-300">Manage Integrations →</p>
               </Link>
             </div>

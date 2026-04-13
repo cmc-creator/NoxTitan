@@ -112,7 +112,7 @@ export default function TreasuryPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 p-8">
+    <div className="min-h-screen lux-app-bg p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -120,28 +120,28 @@ export default function TreasuryPage() {
             <FileSignature className="w-10 h-10 text-amber-400" />
             Treasury - Digital Asset Checkout
           </h1>
-          <p className="text-slate-400">Employees digitally sign for assets with automatic payroll tracking</p>
+          <p className="text-stone-400">Employees digitally sign for assets with automatic payroll tracking</p>
         </div>
 
         {/* Progress Steps */}
-        <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 mb-8">
+        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6 mb-8">
           <div className="flex items-center justify-between">
-            <div className={`flex items-center gap-3 ${step === 'select-asset' ? 'text-amber-400' : 'text-slate-400'}`}>
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${step === 'select-asset' ? 'border-amber-400/40 bg-amber-500/20' : 'border-slate-600'}`}>
+            <div className={`flex items-center gap-3 ${step === 'select-asset' ? 'text-amber-400' : 'text-stone-400'}`}>
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${step === 'select-asset' ? 'border-amber-400/40 bg-amber-500/20' : 'border-stone-700'}`}>
                 1
               </div>
               <span className="font-semibold">Select Asset</span>
             </div>
-            <div className="flex-1 h-0.5 mx-4 bg-slate-700"></div>
-            <div className={`flex items-center gap-3 ${step === 'select-employee' ? 'text-amber-400' : 'text-slate-400'}`}>
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${step === 'select-employee' ? 'border-amber-400/40 bg-amber-500/20' : 'border-slate-600'}`}>
+            <div className="flex-1 h-0.5 mx-4 bg-stone-900"></div>
+            <div className={`flex items-center gap-3 ${step === 'select-employee' ? 'text-amber-400' : 'text-stone-400'}`}>
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${step === 'select-employee' ? 'border-amber-400/40 bg-amber-500/20' : 'border-stone-700'}`}>
                 2
               </div>
               <span className="font-semibold">Select Employee</span>
             </div>
-            <div className="flex-1 h-0.5 mx-4 bg-slate-700"></div>
-            <div className={`flex items-center gap-3 ${step === 'sign' ? 'text-amber-400' : 'text-slate-400'}`}>
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${step === 'sign' ? 'border-amber-400/40 bg-amber-500/20' : 'border-slate-600'}`}>
+            <div className="flex-1 h-0.5 mx-4 bg-stone-900"></div>
+            <div className={`flex items-center gap-3 ${step === 'sign' ? 'text-amber-400' : 'text-stone-400'}`}>
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${step === 'sign' ? 'border-amber-400/40 bg-amber-500/20' : 'border-stone-700'}`}>
                 3
               </div>
               <span className="font-semibold">Digital Signature</span>
@@ -161,13 +161,13 @@ export default function TreasuryPage() {
                     setSelectedAsset(asset);
                     setStep('select-employee');
                   }}
-                  className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 hover:border-amber-500/40 cursor-pointer transition-all"
+                  className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6 hover:border-amber-500/40 cursor-pointer transition-all"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-3xl">{asset.category.icon || '📦'}</span>
                     <div>
                       <h3 className="font-bold text-white">{asset.name}</h3>
-                      <p className="text-sm text-slate-400">{asset.assetTag}</p>
+                      <p className="text-sm text-stone-400">{asset.assetTag}</p>
                     </div>
                   </div>
                   {asset.currentValue && (
@@ -185,15 +185,15 @@ export default function TreasuryPage() {
         {/* Step 2: Select Employee */}
         {step === 'select-employee' && selectedAsset && (
           <div>
-            <div className="bg-slate-800/50 backdrop-blur border border-amber-500/40 rounded-xl p-4 mb-6">
+            <div className="bg-stone-900/50 backdrop-blur border border-amber-500/40 rounded-xl p-4 mb-6">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="font-bold text-white">Selected Asset: {selectedAsset.name}</h3>
-                  <p className="text-sm text-slate-400">{selectedAsset.assetTag} - ${selectedAsset.currentValue?.toLocaleString()}</p>
+                  <p className="text-sm text-stone-400">{selectedAsset.assetTag} - ${selectedAsset.currentValue?.toLocaleString()}</p>
                 </div>
                 <button
                   onClick={() => setStep('select-asset')}
-                  className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors"
+                  className="px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg transition-colors"
                 >
                   Change Asset
                 </button>
@@ -209,7 +209,7 @@ export default function TreasuryPage() {
                     setSelectedEmployee(emp);
                     setStep('sign');
                   }}
-                  className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 hover:border-amber-500/40 cursor-pointer transition-all"
+                  className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6 hover:border-amber-500/40 cursor-pointer transition-all"
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center">
@@ -217,7 +217,7 @@ export default function TreasuryPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-white">{emp.firstName} {emp.lastName}</h3>
-                      <p className="text-sm text-slate-400">{emp.employeeId} - {emp.email}</p>
+                      <p className="text-sm text-stone-400">{emp.employeeId} - {emp.email}</p>
                     </div>
                   </div>
                 </div>
@@ -229,43 +229,43 @@ export default function TreasuryPage() {
         {/* Step 3: Digital Signature */}
         {step === 'sign' && selectedAsset && selectedEmployee && (
           <div>
-            <div className="bg-slate-800/50 backdrop-blur border border-amber-500/40 rounded-xl p-6 mb-6">
+            <div className="bg-stone-900/50 backdrop-blur border border-amber-500/40 rounded-xl p-6 mb-6">
               <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <h4 className="text-sm text-slate-400 mb-1">Asset</h4>
+                  <h4 className="text-sm text-stone-400 mb-1">Asset</h4>
                   <h3 className="font-bold text-white text-lg">{selectedAsset.name}</h3>
-                  <p className="text-slate-400">{selectedAsset.assetTag}</p>
+                  <p className="text-stone-400">{selectedAsset.assetTag}</p>
                 </div>
                 <div>
-                  <h4 className="text-sm text-slate-400 mb-1">Employee</h4>
+                  <h4 className="text-sm text-stone-400 mb-1">Employee</h4>
                   <h3 className="font-bold text-white text-lg">{selectedEmployee.firstName} {selectedEmployee.lastName}</h3>
-                  <p className="text-slate-400">{selectedEmployee.employeeId}</p>
+                  <p className="text-stone-400">{selectedEmployee.employeeId}</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl p-6 mb-6">
+            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6 mb-6">
               <div className="mb-4">
-                <label className="block text-sm font-semibold text-slate-300 mb-2">
+                <label className="block text-sm font-semibold text-stone-300 mb-2">
                   Expected Return Date
                 </label>
                 <input
                   type="date"
                   value={expectedReturn}
                   onChange={(e) => setExpectedReturn(e.target.value)}
-                  className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
+                  className="w-full px-4 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                 />
               </div>
 
               <div className="mb-4">
-                <label className="block text-sm font-semibold text-slate-300 mb-2">
+                <label className="block text-sm font-semibold text-stone-300 mb-2">
                   Notes
                 </label>
                 <textarea
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   rows={3}
-                  className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
+                  className="w-full px-4 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                   placeholder="Any special instructions or notes..."
                 />
               </div>
@@ -308,17 +308,17 @@ export default function TreasuryPage() {
               {/* Signature Pad */}
               <div className="mb-4">
                 <div className="flex items-center justify-between mb-2">
-                  <label className="block text-sm font-semibold text-slate-300">
+                  <label className="block text-sm font-semibold text-stone-300">
                     Digital Signature
                   </label>
                   <button
                     onClick={clearSignature}
-                    className="text-sm text-slate-400 hover:text-white transition-colors"
+                    className="text-sm text-stone-400 hover:text-white transition-colors"
                   >
                     Clear Signature
                   </button>
                 </div>
-                <div className="border-2 border-slate-600 rounded-lg bg-stone-950">
+                <div className="border-2 border-stone-700 rounded-lg bg-stone-950">
                   <SignatureCanvas
                     ref={signatureRef}
                     canvasProps={{
@@ -326,20 +326,20 @@ export default function TreasuryPage() {
                     }}
                   />
                 </div>
-                <p className="text-xs text-slate-500 mt-2">Sign above with your mouse or touchscreen</p>
+                <p className="text-xs text-stone-500 mt-2">Sign above with your mouse or touchscreen</p>
               </div>
 
               <div className="flex gap-4">
                 <button
                   onClick={() => setStep('select-employee')}
-                  className="flex-1 px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-colors"
+                  className="flex-1 px-6 py-3 bg-stone-900 hover:bg-stone-600 text-white font-semibold rounded-lg transition-colors"
                 >
                   Back
                 </button>
                 <button
                   onClick={handleSubmit}
                   disabled={!acknowledged || loading}
-                  className="flex-1 px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-700 text-white font-semibold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? 'Processing...' : 'Complete Checkout'}
                 </button>

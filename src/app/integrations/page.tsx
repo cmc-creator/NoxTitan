@@ -645,7 +645,7 @@ export default function IntegrationsPage() {
               <div className="flex gap-2">
                 {integration.status === 'connected' ? (
                   <>
-                    <button className="flex-1 px-4 py-2 bg-amber-600/20 hover:bg-amber-600/30 text-blue-400 rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+                    <button className="flex-1 px-4 py-2 bg-amber-600/20 hover:bg-amber-600/30 text-amber-400 rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
                       <RefreshCw className="h-4 w-4" />
                       Sync
                     </button>

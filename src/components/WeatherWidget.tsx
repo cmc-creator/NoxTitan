@@ -29,7 +29,7 @@ export default function WeatherWidget() {
       <div>
         <div className="text-2xl font-bold text-blue-600">{weather?.temp}°F</div>
         <div className="text-blue-500 font-semibold">{weather?.description}</div>
-        <div className="text-xs text-blue-400">{weather?.city}</div>
+        <div className="text-xs text-amber-400">{weather?.city}</div>
       </div>
       <div className="ml-4 text-sm text-blue-700 italic">
         <span role="img" aria-label="weather joke">🌦️</span> {joke}

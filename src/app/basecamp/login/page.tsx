@@ -32,7 +32,7 @@ export default function BasecampLogin() {
             Your Basecamp
           </h1>
           <p className="text-emerald-200 text-lg font-semibold">Your hub for everything work (and fun!) 🏕️</p>
-          <p className="text-slate-300 text-sm mt-2">Where great adventures begin...</p>
+          <p className="text-stone-300 text-sm mt-2">Where great adventures begin...</p>
         </div>
 
         {/* Login Card */}
@@ -50,7 +50,7 @@ export default function BasecampLogin() {
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-slate-900/80 border-2 border-emerald-500/30 rounded-lg pl-12 pr-4 py-3 text-white focus:border-emerald-400 focus:outline-none transition-all"
+                  className="w-full bg-stone-950/80 border-2 border-emerald-500/30 rounded-lg pl-12 pr-4 py-3 text-white focus:border-emerald-400 focus:outline-none transition-all"
                   placeholder="you@company.com"
                   required
                 />
@@ -69,7 +69,7 @@ export default function BasecampLogin() {
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full bg-slate-900/80 border-2 border-emerald-500/30 rounded-lg pl-12 pr-12 py-3 text-white focus:border-emerald-400 focus:outline-none transition-all"
+                  className="w-full bg-stone-950/80 border-2 border-emerald-500/30 rounded-lg pl-12 pr-12 py-3 text-white focus:border-emerald-400 focus:outline-none transition-all"
                   placeholder="••••••••"
                   required
                 />
@@ -85,7 +85,7 @@ export default function BasecampLogin() {
 
             {/* Remember Me & Forgot Password */}
             <div className="flex items-center justify-between text-sm">
-              <label className="flex items-center gap-2 text-slate-300 cursor-pointer">
+              <label className="flex items-center gap-2 text-stone-300 cursor-pointer">
                 <input type="checkbox" className="w-4 h-4 rounded border-emerald-500 text-emerald-600" />
                 Remember me
               </label>
@@ -107,10 +107,10 @@ export default function BasecampLogin() {
           {/* Divider */}
           <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-slate-600"></div>
+              <div className="w-full border-t border-stone-700"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-4 bg-slate-800 text-slate-400">or</span>
+              <span className="px-4 bg-stone-900 text-stone-400">or</span>
             </div>
           </div>
 
@@ -125,7 +125,7 @@ export default function BasecampLogin() {
               </svg>
               Continue with Google
             </button>
-            <button className="w-full bg-slate-700 hover:bg-slate-600 text-white font-semibold py-3 rounded-lg transition-all flex items-center justify-center gap-2">
+            <button className="w-full bg-stone-900 hover:bg-stone-600 text-white font-semibold py-3 rounded-lg transition-all flex items-center justify-center gap-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"/>
               </svg>
@@ -136,7 +136,7 @@ export default function BasecampLogin() {
 
         {/* Help Link */}
         <div className="text-center mt-6">
-          <p className="text-slate-300 text-sm">
+          <p className="text-stone-300 text-sm">
             Need help? Contact{' '}
             <a href="mailto:support@company.com" className="text-emerald-400 hover:text-emerald-300 transition-colors">
               IT Support

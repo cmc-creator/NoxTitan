@@ -89,7 +89,7 @@ export default function RecognitionPage() {
       description: 'Brings creative solutions and new ideas',
       message: 'Your creative thinking and innovative solutions are moving us forward. Keep those great ideas coming!',
       points: 100,
-      color: 'from-blue-400 to-indigo-500',
+      color: 'from-amber-700 to-amber-800',
       category: 'innovation'
     },
     {
@@ -109,7 +109,7 @@ export default function RecognitionPage() {
       description: 'Outstanding mentorship and guidance',
       message: 'Thank you for taking the time to mentor and develop others. Your guidance is helping build the next generation of leaders!',
       points: 90,
-      color: 'from-purple-400 to-violet-500',
+      color: 'from-stone-900 to-violet-500',
       category: 'leadership'
     },
     {
@@ -139,7 +139,7 @@ export default function RecognitionPage() {
       description: 'Exceptional customer service',
       message: 'You went above and beyond for our customers. Your dedication to excellent service is truly appreciated!',
       points: 95,
-      color: 'from-cyan-400 to-blue-500',
+      color: 'from-cyan-400 to-amber-800',
       category: 'service'
     },
     {
@@ -169,7 +169,7 @@ export default function RecognitionPage() {
       description: 'General appreciation for good work',
       message: 'Just wanted to say great job on your recent work. Your efforts are noticed and appreciated!',
       points: 50,
-      color: 'from-blue-400 to-cyan-500',
+      color: 'from-amber-700 to-cyan-500',
       category: 'appreciation'
     },
     {
@@ -179,7 +179,7 @@ export default function RecognitionPage() {
       description: 'Went beyond what was asked',
       message: 'Thank you for going the extra mile! Your willingness to do more than what\'s asked sets a great example.',
       points: 70,
-      color: 'from-pink-400 to-purple-500',
+      color: 'from-pink-400 to-amber-900',
       category: 'initiative'
     },
   ];
@@ -287,7 +287,7 @@ export default function RecognitionPage() {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl shadow-lg p-6 text-white">
+          <div className="bg-gradient-to-br from-amber-700 to-amber-500 rounded-xl shadow-lg p-6 text-white">
             <div className="flex items-center justify-between mb-2">
               <Award className="w-8 h-8 opacity-80" />
               <span className="text-3xl font-bold">247</span>
@@ -468,7 +468,7 @@ export default function RecognitionPage() {
                 Create Custom Recognition
               </h3>
               <p className="text-stone-500 mb-6">Want to craft a personalized message? Create your own unique recognition.</p>
-              <button className="w-full py-4 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-xl font-bold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all shadow-lg flex items-center justify-center gap-2">
+              <button className="w-full py-4 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-xl font-bold text-lg hover:from-stone-900 hover:to-amber-800 transition-all shadow-lg flex items-center justify-center gap-2">
                 <Plus className="w-6 h-6" />
                 Create Custom Recognition
               </button>
@@ -499,7 +499,7 @@ export default function RecognitionPage() {
                   <div key={recognition.id} className="p-6 border-2 border-stone-800 rounded-xl hover:border-purple-300 transition-all">
                     <div className="flex items-start gap-4">
                       {/* Badge Icon */}
-                      <div className={`flex-shrink-0 p-4 rounded-2xl bg-gradient-to-br from-purple-100 to-indigo-100`}>
+                      <div className={`flex-shrink-0 p-4 rounded-2xl bg-gradient-to-br from-amber-700 to-amber-500`}>
                         {getBadgeIcon(recognition.category)}
                       </div>
 
@@ -653,12 +653,12 @@ export default function RecognitionPage() {
               <h2 className="text-2xl font-bold text-stone-100 mb-6">Recognition Analytics</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
+                <div className="p-6 bg-gradient-to-br from-amber-700 to-amber-800 rounded-xl border border-blue-200">
                   <h3 className="text-sm font-semibold text-amber-400 mb-2">Most Popular Badge</h3>
                   <p className="text-2xl font-bold text-stone-100 mb-1">Star Performer</p>
                   <p className="text-sm text-stone-500">Given 42 times this month</p>
                 </div>
-                <div className="p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200">
+                <div className="p-6 bg-gradient-to-br from-stone-900 to-pink-50 rounded-xl border border-purple-200">
                   <h3 className="text-sm font-semibold text-amber-600 mb-2">Most Active Manager</h3>
                   <p className="text-2xl font-bold text-stone-100 mb-1">Dr. Emily Chen</p>
                   <p className="text-sm text-stone-500">38 recognitions given</p>

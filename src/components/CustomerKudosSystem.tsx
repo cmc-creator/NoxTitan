@@ -185,7 +185,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
             activeTab === 'pending'
               ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white'
-              : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
           }`}
         >
           <Clock className="w-5 h-5" />
@@ -196,7 +196,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
             activeTab === 'approved'
               ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white'
-              : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
           }`}
         >
           <CheckCircle className="w-5 h-5" />
@@ -207,7 +207,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
             activeTab === 'standalone'
               ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white'
-              : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
           }`}
         >
           <Sparkles className="w-5 h-5" />
@@ -221,7 +221,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           {pendingKudos.map(kudos => (
             <div
               key={kudos.id}
-              className={`bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-xl p-6 border-2 ${
+              className={`lux-card/80 backdrop-blur-xl rounded-xl p-6 border-2 ${
                 kudos.priority === 'high' 
                   ? 'border-yellow-500/50' 
                   : 'border-cyan-500/30'
@@ -241,12 +241,12 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
                         </span>
                       )}
                     </div>
-                    <p className="text-sm text-slate-400">{kudos.department} • {kudos.employeeId}</p>
+                    <p className="text-sm text-stone-400">{kudos.department} • {kudos.employeeId}</p>
                     <div className="flex items-center gap-2 mt-2">
                       <span className="px-2 py-1 bg-amber-500/20 rounded text-xs font-semibold text-amber-200">
                         {kudos.feedbackType}
                       </span>
-                      <span className="text-xs text-slate-400">{kudos.hoursAgo}h ago</span>
+                      <span className="text-xs text-stone-400">{kudos.hoursAgo}h ago</span>
                     </div>
                   </div>
                 </div>
@@ -264,7 +264,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
               </div>
 
               {/* Customer Feedback */}
-              <div className="bg-slate-900/50 rounded-lg p-4 mb-4">
+              <div className="bg-stone-950/50 rounded-lg p-4 mb-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Heart className="w-5 h-5 text-pink-400" />
                   <p className="text-sm font-semibold text-pink-300">From: {kudos.customerName} ({kudos.recommendedBy})</p>
@@ -277,7 +277,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
                   {kudos.specificActions.map((action, index) => (
                     <div key={index} className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-green-400" />
-                      <p className="text-sm text-slate-300">{action}</p>
+                      <p className="text-sm text-stone-300">{action}</p>
                     </div>
                   ))}
                 </div>
@@ -297,7 +297,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
                   />
                   <span className="text-white font-bold">{kudos.xpAwarded} XP</span>
                 </div>
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-xs text-stone-400 mt-1">
                   Suggested range: {xpRanges[kudos.feedbackType as keyof typeof xpRanges]?.min}-
                   {xpRanges[kudos.feedbackType as keyof typeof xpRanges]?.max} XP
                 </p>
@@ -321,7 +321,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
               </div>
 
               {/* Anti-Cheating Notice */}
-              <div className="mt-3 flex items-start gap-2 text-xs text-slate-400">
+              <div className="mt-3 flex items-start gap-2 text-xs text-stone-400">
                 <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
                 <p>All customer kudos require manager approval to prevent gaming the system. IP and timestamp logged.</p>
               </div>
@@ -329,10 +329,10 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           ))}
 
           {pendingKudos.length === 0 && (
-            <div className="bg-slate-800/50 rounded-xl p-12 text-center border-2 border-slate-700">
+            <div className="bg-stone-900/50 rounded-xl p-12 text-center border-2 border-stone-700">
               <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-white mb-2">All Caught Up!</h3>
-              <p className="text-slate-300">No pending customer recognition to review.</p>
+              <p className="text-stone-300">No pending customer recognition to review.</p>
             </div>
           )}
         </div>
@@ -351,16 +351,16 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
                   <CheckCircle className="w-8 h-8 text-green-400" />
                   <div>
                     <p className="text-lg font-bold text-white">{kudos.employeeName}</p>
-                    <p className="text-sm text-slate-400">{kudos.department}</p>
+                    <p className="text-sm text-stone-400">{kudos.department}</p>
                   </div>
                 </div>
                 <div className="text-right">
                   <p className="text-2xl font-bold text-green-400">+{kudos.xpAwarded} XP</p>
-                  <p className="text-xs text-slate-400">Approved by {kudos.approvedBy}</p>
-                  <p className="text-xs text-slate-500">{kudos.approvedDate}</p>
+                  <p className="text-xs text-stone-400">Approved by {kudos.approvedBy}</p>
+                  <p className="text-xs text-stone-500">{kudos.approvedDate}</p>
                 </div>
               </div>
-              <p className="text-sm text-slate-300 mt-2 italic">&ldquo;{kudos.comment}&rdquo;</p>
+              <p className="text-sm text-stone-300 mt-2 italic">&ldquo;{kudos.comment}&rdquo;</p>
             </div>
           ))}
         </div>
@@ -368,14 +368,14 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
 
       {/* Standalone Recognition Form */}
       {activeTab === 'standalone' && (
-        <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/40 backdrop-blur-xl rounded-xl p-6 border-2 border-amber-500/40/30">
+        <div className="bg-gradient-to-br from-stone-900/40 to-pink-900/40 backdrop-blur-xl rounded-xl p-6 border-2 border-amber-500/40/30">
           <h3 className="text-2xl font-bold text-white mb-4">Give Recognition</h3>
           <p className="text-amber-100/70 mb-6">Managers and admins can give instant recognition, or recommend employees for customer feedback.</p>
           
           <div className="space-y-4">
             <div>
               <label className="text-white font-semibold mb-2 block">Employee</label>
-              <select className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600">
+              <select className="w-full bg-stone-900 text-white rounded-lg px-4 py-3 border border-stone-700">
                 <option>Select employee...</option>
                 <option>Jessica Williams - Emergency</option>
                 <option>Michael Chen - Respiratory</option>
@@ -385,7 +385,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
 
             <div>
               <label className="text-white font-semibold mb-2 block">Recognition Type</label>
-              <select className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600">
+              <select className="w-full bg-stone-900 text-white rounded-lg px-4 py-3 border border-stone-700">
                 <option>Manager Recommendation</option>
                 <option>Peer Recognition</option>
                 <option>Customer Feedback (Enter on their behalf)</option>
@@ -395,7 +395,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
             <div>
               <label className="text-white font-semibold mb-2 block">What did they do?</label>
               <textarea
-                className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600"
+                className="w-full bg-stone-900 text-white rounded-lg px-4 py-3 border border-stone-700"
                 rows={4}
                 placeholder="Describe the specific actions that deserve recognition..."
               ></textarea>
@@ -408,12 +408,12 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
                 min="10"
                 max="100"
                 defaultValue="50"
-                className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600"
+                className="w-full bg-stone-900 text-white rounded-lg px-4 py-3 border border-stone-700"
               />
-              <p className="text-xs text-slate-400 mt-1">Range: 10-100 XP based on recognition type</p>
+              <p className="text-xs text-stone-400 mt-1">Range: 10-100 XP based on recognition type</p>
             </div>
 
-            <button className="w-full px-6 py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-lg font-bold text-white text-lg transition-all">
+            <button className="w-full px-6 py-4 bg-gradient-to-r from-stone-900 to-pink-500 hover:from-stone-900 hover:to-pink-600 rounded-lg font-bold text-white text-lg transition-all">
               Submit Recognition
             </button>
           </div>

@@ -137,7 +137,7 @@ export default function HRPlanner() {
           </Link>
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-200 via-purple-200 to-violet-200 mb-2"
+              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-200 via-stone-900 to-violet-200 mb-2"
                   style={{
                     textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(139,92,246,0.6)',
                     WebkitTextStroke: '1px rgba(139,92,246,0.3)',
@@ -150,7 +150,7 @@ export default function HRPlanner() {
             <div className="flex items-center gap-4">
               {/* Notifications */}
               <div className="relative">
-                <button className="px-4 py-2 bg-slate-800/50 border-2 border-violet-500/30 hover:border-violet-400 text-white rounded-lg font-semibold flex items-center gap-2 transition-all">
+                <button className="px-4 py-2 bg-stone-900/50 border-2 border-violet-500/30 hover:border-violet-400 text-white rounded-lg font-semibold flex items-center gap-2 transition-all">
                   <Bell className="w-5 h-5" />
                   <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-xs font-bold animate-pulse">
                     3
@@ -161,14 +161,14 @@ export default function HRPlanner() {
               {/* Settings Button */}
               <button
                 onClick={() => setShowSettings(true)}
-                className="px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white rounded-lg font-bold transition-all shadow-lg flex items-center gap-2"
+                className="px-6 py-3 bg-gradient-to-r from-violet-600 to-amber-900 hover:from-violet-500 hover:to-amber-900 text-white rounded-lg font-bold transition-all shadow-lg flex items-center gap-2"
               >
                 <Settings className="w-5 h-5" />
                 Settings
               </button>
               
               {/* Date Display */}
-              <div className="text-right bg-slate-800/50 border-2 border-violet-500/30 rounded-lg px-4 py-2">
+              <div className="text-right bg-stone-900/50 border-2 border-violet-500/30 rounded-lg px-4 py-2">
                 <div className="text-sm text-violet-300 mb-1">Today's Date</div>
                 <div className="text-xl font-bold text-white">Jan 5, 2026</div>
                 <div className="text-xs text-violet-300">Sunday</div>
@@ -179,51 +179,51 @@ export default function HRPlanner() {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-5 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
-            <CheckCircle className="w-8 h-8 text-blue-400 mb-2" />
-            <div className="text-slate-300 text-sm mb-1">My Tasks Today</div>
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+            <CheckCircle className="w-8 h-8 text-amber-400 mb-2" />
+            <div className="text-stone-300 text-sm mb-1">My Tasks Today</div>
             <div className="text-3xl font-bold text-white">{myTasks.length}</div>
-            <div className="text-blue-400 text-xs mt-1">{completedTasks.length} completed</div>
+            <div className="text-amber-400 text-xs mt-1">{completedTasks.length} completed</div>
           </div>
           <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded-xl p-4 border-2 border-orange-500/30">
             <Bell className="w-8 h-8 text-orange-400 mb-2" />
-            <div className="text-slate-300 text-sm mb-1">Manager Reminders</div>
+            <div className="text-stone-300 text-sm mb-1">Manager Reminders</div>
             <div className="text-3xl font-bold text-white">{managerReminders.length}</div>
             <div className="text-orange-400 text-xs mt-1">1 overdue</div>
           </div>
           <div className="bg-gradient-to-br from-red-900/50 to-rose-900/50 rounded-xl p-4 border-2 border-red-500/30">
             <AlertTriangle className="w-8 h-8 text-red-400 mb-2 animate-pulse" />
-            <div className="text-slate-300 text-sm mb-1">High Priority</div>
+            <div className="text-stone-300 text-sm mb-1">High Priority</div>
             <div className="text-3xl font-bold text-white">4</div>
             <div className="text-red-400 text-xs mt-1">Needs attention</div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
             <Calendar className="w-8 h-8 text-amber-400 mb-2" />
-            <div className="text-slate-300 text-sm mb-1">Upcoming Deadlines</div>
+            <div className="text-stone-300 text-sm mb-1">Upcoming Deadlines</div>
             <div className="text-3xl font-bold text-white">{upcomingDeadlines.length}</div>
             <div className="text-amber-400 text-xs mt-1">Next 30 days</div>
           </div>
           <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded-xl p-4 border-2 border-emerald-500/30">
             <Clock className="w-8 h-8 text-emerald-400 mb-2" />
-            <div className="text-slate-300 text-sm mb-1">Recurring Tasks</div>
+            <div className="text-stone-300 text-sm mb-1">Recurring Tasks</div>
             <div className="text-3xl font-bold text-white">{recurringTasks.length}</div>
             <div className="text-emerald-400 text-xs mt-1">Automated reminders</div>
           </div>
         </div>
 
         {/* Advanced Toolbar */}
-        <div className="bg-slate-800/50 rounded-xl p-4 border-2 border-violet-500/30 mb-6">
+        <div className="bg-stone-900/50 rounded-xl p-4 border-2 border-violet-500/30 mb-6">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3 flex-1">
               {/* Search */}
               <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-stone-400" />
                 <input
                   type="text"
                   placeholder="Search tasks, managers, or deadlines..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-violet-500 outline-none"
+                  className="w-full pl-10 pr-4 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:ring-2 focus:ring-violet-500 outline-none"
                 />
               </div>
 
@@ -234,7 +234,7 @@ export default function HRPlanner() {
                   className={`px-4 py-2 border-2 rounded-lg font-semibold flex items-center gap-2 transition-all ${
                     filterPriority !== 'all' || filterCategory !== 'all'
                       ? 'bg-violet-600 border-violet-500 text-white'
-                      : 'bg-slate-700 border-slate-600 text-slate-300 hover:bg-slate-600'
+                      : 'bg-stone-900 border-stone-700 text-stone-300 hover:bg-stone-600'
                   }`}
                 >
                   <Filter className="w-5 h-5" />
@@ -247,13 +247,13 @@ export default function HRPlanner() {
                 </button>
                 
                 {showFilterMenu && (
-                  <div className="absolute top-full mt-2 left-0 bg-slate-800 border-2 border-violet-500/30 rounded-lg p-4 shadow-2xl z-50 w-72">
+                  <div className="absolute top-full mt-2 left-0 bg-stone-900 border-2 border-violet-500/30 rounded-lg p-4 shadow-2xl z-50 w-72">
                     <div className="mb-4">
-                      <label className="text-sm text-slate-400 mb-2 block">Priority</label>
+                      <label className="text-sm text-stone-400 mb-2 block">Priority</label>
                       <select
                         value={filterPriority}
                         onChange={(e) => setFilterPriority(e.target.value)}
-                        className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-violet-500 outline-none"
+                        className="w-full px-3 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white focus:ring-2 focus:ring-violet-500 outline-none"
                       >
                         <option value="all">All Priorities</option>
                         <option value="high">High Priority</option>
@@ -262,11 +262,11 @@ export default function HRPlanner() {
                       </select>
                     </div>
                     <div>
-                      <label className="text-sm text-slate-400 mb-2 block">Category</label>
+                      <label className="text-sm text-stone-400 mb-2 block">Category</label>
                       <select
                         value={filterCategory}
                         onChange={(e) => setFilterCategory(e.target.value)}
-                        className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-violet-500 outline-none"
+                        className="w-full px-3 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white focus:ring-2 focus:ring-violet-500 outline-none"
                       >
                         <option value="all">All Categories</option>
                         <option value="Recruiting">Recruiting</option>
@@ -284,7 +284,7 @@ export default function HRPlanner() {
                           setFilterPriority('all');
                           setFilterCategory('all');
                         }}
-                        className="flex-1 px-3 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg text-sm"
+                        className="flex-1 px-3 py-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg text-sm"
                       >
                         Clear
                       </button>
@@ -329,7 +329,7 @@ export default function HRPlanner() {
         </div>
 
         {/* Task Templates Quick Access */}
-        <div className="bg-gradient-to-r from-violet-900/30 to-purple-900/30 rounded-xl p-4 border-2 border-violet-500/30 mb-6">
+        <div className="bg-gradient-to-r from-violet-900/30 to-amber-900/30 rounded-xl p-4 border-2 border-violet-500/30 mb-6">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
               <Zap className="w-5 h-5 text-yellow-400" />
@@ -341,17 +341,17 @@ export default function HRPlanner() {
             {taskTemplates.map(template => (
               <button
                 key={template.id}
-                className="bg-slate-800/50 hover:bg-slate-700/50 border border-slate-600 hover:border-violet-500 rounded-lg p-3 text-left transition-all group"
+                className="bg-stone-900/50 hover:bg-stone-900/50 border border-stone-700 hover:border-violet-500 rounded-lg p-3 text-left transition-all group"
               >
                 <div className="text-white font-semibold mb-1 group-hover:text-violet-300">{template.name}</div>
-                <div className="text-xs text-slate-400">{template.tasks} tasks • {template.category}</div>
+                <div className="text-xs text-stone-400">{template.tasks} tasks • {template.category}</div>
               </button>
             ))}
           </div>
         </div>
 
         {/* View Tabs */}
-        <div className="flex gap-2 mb-6 bg-slate-800/50 p-2 rounded-lg">
+        <div className="flex gap-2 mb-6 bg-stone-900/50 p-2 rounded-lg">
           {[
             { id: 'today', label: 'Today\'s Tasks' },
             { id: 'reminders', label: 'Manager Reminders' },
@@ -362,7 +362,7 @@ export default function HRPlanner() {
               key={tab.id}
               onClick={() => setActiveView(tab.id)}
               className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
-                activeView === tab.id ? 'bg-violet-600 text-white' : 'text-slate-300 hover:bg-slate-700'
+                activeView === tab.id ? 'bg-violet-600 text-white' : 'text-stone-300 hover:bg-stone-900'
               }`}
             >
               {tab.label}
@@ -373,7 +373,7 @@ export default function HRPlanner() {
         {/* Today's Tasks View */}
         {activeView === 'today' && (
           <div className="space-y-6">
-            <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-violet-500/30">
+            <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-violet-500/30">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold text-white">My Tasks for Today</h2>
                 <button className="px-4 py-2 bg-violet-600 hover:bg-violet-500 text-white rounded-lg font-semibold flex items-center gap-2">
@@ -397,7 +397,7 @@ export default function HRPlanner() {
                           ? 'bg-gradient-to-r from-red-900/30 to-orange-900/30 border-red-500/30'
                           : task.priority === 'medium'
                           ? 'bg-gradient-to-r from-orange-900/30 to-yellow-900/30 border-orange-500/30'
-                          : 'bg-slate-900/50 border-slate-700'
+                          : 'bg-stone-950/50 border-stone-700'
                       }`}
                     >
                       {isPinned && (
@@ -412,7 +412,7 @@ export default function HRPlanner() {
                           className={`mt-1 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
                             isCompleted
                               ? 'bg-emerald-600 border-emerald-600'
-                              : 'border-slate-500 hover:border-violet-400'
+                              : 'border-stone-500 hover:border-violet-400'
                           }`}
                         >
                           {isCompleted && <Check className="w-4 h-4 text-white" />}
@@ -420,7 +420,7 @@ export default function HRPlanner() {
                         
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-2">
-                            <h3 className={`text-lg font-semibold ${isCompleted ? 'text-slate-400 line-through' : 'text-white'}`}>
+                            <h3 className={`text-lg font-semibold ${isCompleted ? 'text-stone-400 line-through' : 'text-white'}`}>
                               {task.title}
                             </h3>
                           </div>
@@ -437,14 +437,14 @@ export default function HRPlanner() {
                               {task.category}
                             </span>
                             {task.tags.map(tag => (
-                              <span key={tag} className="px-2 py-1 bg-slate-700 text-slate-300 rounded-full text-xs flex items-center gap-1">
+                              <span key={tag} className="px-2 py-1 bg-stone-900 text-stone-300 rounded-full text-xs flex items-center gap-1">
                                 <Tag className="w-3 h-3" />
                                 {tag}
                               </span>
                             ))}
                           </div>
                           
-                          <div className="flex items-center gap-4 text-sm text-slate-400 mb-3">
+                          <div className="flex items-center gap-4 text-sm text-stone-400 mb-3">
                             <span className="flex items-center gap-1">
                               <Clock className="w-4 h-4" />
                               {task.time}
@@ -462,10 +462,10 @@ export default function HRPlanner() {
                           </div>
                           
                           {task.notes && showNotes === task.id && (
-                            <div className="bg-slate-800/50 rounded-lg p-3 mb-3 border border-slate-600">
+                            <div className="bg-stone-900/50 rounded-lg p-3 mb-3 border border-stone-700">
                               <div className="flex items-start gap-2">
-                                <MessageSquare className="w-4 h-4 text-blue-400 mt-0.5" />
-                                <div className="text-sm text-slate-300">{task.notes}</div>
+                                <MessageSquare className="w-4 h-4 text-amber-400 mt-0.5" />
+                                <div className="text-sm text-stone-300">{task.notes}</div>
                               </div>
                             </div>
                           )}
@@ -477,37 +477,37 @@ export default function HRPlanner() {
                               Start
                             </button>
                             <div className="relative group">
-                              <button className="p-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg">
+                              <button className="p-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg">
                                 <MoreVertical className="w-4 h-4" />
                               </button>
-                              <div className="hidden group-hover:block absolute right-0 mt-1 bg-slate-800 border-2 border-violet-500/30 rounded-lg shadow-2xl z-50 w-48">
+                              <div className="hidden group-hover:block absolute right-0 mt-1 bg-stone-900 border-2 border-violet-500/30 rounded-lg shadow-2xl z-50 w-48">
                                 <button
                                   onClick={() => togglePin(task.id)}
-                                  className="w-full px-4 py-2 text-left text-white hover:bg-slate-700 flex items-center gap-2"
+                                  className="w-full px-4 py-2 text-left text-white hover:bg-stone-900 flex items-center gap-2"
                                 >
                                   <Pin className="w-4 h-4" />
                                   {isPinned ? 'Unpin' : 'Pin to Top'}
                                 </button>
                                 <button
                                   onClick={() => setShowNotes(showNotes === task.id ? null : task.id)}
-                                  className="w-full px-4 py-2 text-left text-white hover:bg-slate-700 flex items-center gap-2"
+                                  className="w-full px-4 py-2 text-left text-white hover:bg-stone-900 flex items-center gap-2"
                                 >
                                   <MessageSquare className="w-4 h-4" />
                                   {showNotes === task.id ? 'Hide Notes' : 'Show Notes'}
                                 </button>
-                                <button className="w-full px-4 py-2 text-left text-white hover:bg-slate-700 flex items-center gap-2">
+                                <button className="w-full px-4 py-2 text-left text-white hover:bg-stone-900 flex items-center gap-2">
                                   <Edit className="w-4 h-4" />
                                   Edit Task
                                 </button>
-                                <button className="w-full px-4 py-2 text-left text-white hover:bg-slate-700 flex items-center gap-2">
+                                <button className="w-full px-4 py-2 text-left text-white hover:bg-stone-900 flex items-center gap-2">
                                   <Copy className="w-4 h-4" />
                                   Duplicate
                                 </button>
-                                <button className="w-full px-4 py-2 text-left text-white hover:bg-slate-700 flex items-center gap-2">
+                                <button className="w-full px-4 py-2 text-left text-white hover:bg-stone-900 flex items-center gap-2">
                                   <Archive className="w-4 h-4" />
                                   Archive
                                 </button>
-                                <button className="w-full px-4 py-2 text-left text-red-400 hover:bg-slate-700 flex items-center gap-2">
+                                <button className="w-full px-4 py-2 text-left text-red-400 hover:bg-stone-900 flex items-center gap-2">
                                   <Trash2 className="w-4 h-4" />
                                   Delete
                                 </button>
@@ -524,8 +524,8 @@ export default function HRPlanner() {
 
             {/* Quick Actions */}
             <div className="grid grid-cols-3 gap-4">
-              <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-5 border-2 border-amber-500/40/30 hover:border-blue-400 cursor-pointer transition-all group">
-                <FileText className="w-10 h-10 text-blue-400 mb-3 group-hover:scale-110 transition-transform" />
+              <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-5 border-2 border-amber-500/40/30 hover:border-blue-400 cursor-pointer transition-all group">
+                <FileText className="w-10 h-10 text-amber-400 mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-bold text-white mb-2">Review Applications</h3>
                 <p className="text-sm text-blue-200">12 new applications awaiting review</p>
               </div>
@@ -545,7 +545,7 @@ export default function HRPlanner() {
 
         {/* Manager Reminders View */}
         {activeView === 'reminders' && (
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-orange-500/30">
+          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-orange-500/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Manager Action Reminders</h2>
               <button className="px-4 py-2 bg-orange-600 hover:bg-orange-500 text-white rounded-lg font-semibold flex items-center gap-2">
@@ -560,7 +560,7 @@ export default function HRPlanner() {
                   className={`rounded-lg p-5 border-2 ${
                     reminder.overdue
                       ? 'bg-gradient-to-r from-red-900/40 to-orange-900/40 border-red-500/50 animate-pulse'
-                      : 'bg-slate-900/50 border-slate-700 hover:border-orange-500'
+                      : 'bg-stone-950/50 border-stone-700 hover:border-orange-500'
                   } transition-all`}
                 >
                   <div className="flex items-start justify-between">
@@ -574,13 +574,13 @@ export default function HRPlanner() {
                         }`}>
                           {reminder.overdue ? 'OVERDUE' : reminder.priority.toUpperCase()}
                         </span>
-                        <span className="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs font-semibold">
+                        <span className="px-3 py-1 bg-stone-900 text-stone-300 rounded-full text-xs font-semibold">
                           {reminder.department}
                         </span>
                       </div>
-                      <div className="text-lg text-slate-200 mb-3">{reminder.action}</div>
+                      <div className="text-lg text-stone-200 mb-3">{reminder.action}</div>
                       <div className="flex items-center gap-4 text-sm">
-                        <span className={`flex items-center gap-1 ${reminder.overdue ? 'text-red-400 font-bold' : 'text-slate-400'}`}>
+                        <span className={`flex items-center gap-1 ${reminder.overdue ? 'text-red-400 font-bold' : 'text-stone-400'}`}>
                           <Calendar className="w-4 h-4" />
                           Due: {reminder.dueDate}
                         </span>
@@ -602,7 +602,7 @@ export default function HRPlanner() {
                         <Bell className="w-4 h-4" />
                         Send Reminder
                       </button>
-                      <button className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg text-sm">
+                      <button className="px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg text-sm">
                         View Details
                       </button>
                     </div>
@@ -615,11 +615,11 @@ export default function HRPlanner() {
 
         {/* Upcoming Deadlines View */}
         {activeView === 'deadlines' && (
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
             <h2 className="text-2xl font-bold text-white mb-6">Upcoming Deadlines (Next 30 Days)</h2>
             <div className="space-y-4">
               {upcomingDeadlines.map(deadline => (
-                <div key={deadline.id} className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg p-5 border border-amber-500/40/30 hover:border-amber-400/40 transition-all">
+                <div key={deadline.id} className="bg-gradient-to-r from-stone-900/30 to-pink-900/30 rounded-lg p-5 border border-amber-500/40/30 hover:border-amber-400/40 transition-all">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
@@ -633,13 +633,13 @@ export default function HRPlanner() {
                         </span>
                       </div>
                       <div className="flex items-center gap-6 text-sm">
-                        <span className="text-slate-300">
+                        <span className="text-stone-300">
                           <strong className="text-amber-200">Due:</strong> {deadline.date}
                         </span>
-                        <span className="text-slate-300">
+                        <span className="text-stone-300">
                           <strong className="text-amber-200">Type:</strong> {deadline.type}
                         </span>
-                        <span className="text-slate-300 flex items-center gap-1">
+                        <span className="text-stone-300 flex items-center gap-1">
                           <Users className="w-4 h-4" />
                           {deadline.affected} employees affected
                         </span>
@@ -649,7 +649,7 @@ export default function HRPlanner() {
                       <button className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-semibold text-sm">
                         View Details
                       </button>
-                      <button className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg text-sm">
+                      <button className="px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg text-sm">
                         Set Reminder
                       </button>
                     </div>
@@ -662,7 +662,7 @@ export default function HRPlanner() {
 
         {/* Recurring Tasks View */}
         {activeView === 'recurring' && (
-          <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-emerald-500/30">
+          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-emerald-500/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Recurring Tasks & Automation</h2>
               <button className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold flex items-center gap-2">
@@ -680,11 +680,11 @@ export default function HRPlanner() {
                         <span className="px-3 py-1 bg-emerald-600 text-white rounded-full text-xs font-bold">
                           {task.frequency}
                         </span>
-                        <span className="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-xs font-semibold">
+                        <span className="px-3 py-1 bg-stone-900 text-stone-300 rounded-full text-xs font-semibold">
                           {task.category}
                         </span>
                       </div>
-                      <div className="text-sm text-slate-300">
+                      <div className="text-sm text-stone-300">
                         <span className="text-emerald-300 font-semibold">Next Due:</span> {task.nextDue}
                       </div>
                     </div>
@@ -692,7 +692,7 @@ export default function HRPlanner() {
                       <button className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold text-sm">
                         Edit Schedule
                       </button>
-                      <button className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg text-sm">
+                      <button className="px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg text-sm">
                         Pause
                       </button>
                     </div>
@@ -708,14 +708,14 @@ export default function HRPlanner() {
       {showSettings && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
           <div className="bg-gradient-to-br from-slate-900 via-stone-900/20 to-slate-900 border-2 border-violet-500/30 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
-            <div className="p-6 border-b border-violet-500/30 sticky top-0 bg-slate-900/95 backdrop-blur-sm z-10">
+            <div className="p-6 border-b border-violet-500/30 sticky top-0 bg-stone-950/95 backdrop-blur-sm z-10">
               <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-violet-300 to-purple-400">
+                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-900 via-violet-300 to-amber-900">
                   Planner Settings
                 </h2>
                 <button
                   onClick={() => setShowSettings(false)}
-                  className="p-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-all"
+                  className="p-2 bg-stone-900 hover:bg-stone-900 text-white rounded-lg transition-all"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -724,7 +724,7 @@ export default function HRPlanner() {
 
             <div className="p-6 space-y-6">
               {/* Notifications Section */}
-              <div className="bg-slate-900/50 rounded-xl p-5 border border-violet-500/20">
+              <div className="bg-stone-950/50 rounded-xl p-5 border border-violet-500/20">
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                   <Bell className="w-5 h-5 text-violet-400" />
                   Notifications & Alerts
@@ -733,11 +733,11 @@ export default function HRPlanner() {
                   <div className="flex items-center justify-between">
                     <div>
                       <label className="text-white font-semibold">Auto Reminders</label>
-                      <p className="text-sm text-slate-400">Automatically send reminders for upcoming tasks</p>
+                      <p className="text-sm text-stone-400">Automatically send reminders for upcoming tasks</p>
                     </div>
                     <button
                       onClick={() => setSettings({...settings, autoReminders: !settings.autoReminders})}
-                      className={`w-14 h-7 rounded-full transition-all ${settings.autoReminders ? 'bg-violet-600' : 'bg-slate-700'}`}
+                      className={`w-14 h-7 rounded-full transition-all ${settings.autoReminders ? 'bg-violet-600' : 'bg-stone-900'}`}
                     >
                       <div className={`w-5 h-5 bg-stone-950 rounded-full transition-transform ${settings.autoReminders ? 'translate-x-8' : 'translate-x-1'}`} />
                     </button>
@@ -746,11 +746,11 @@ export default function HRPlanner() {
                   <div className="flex items-center justify-between">
                     <div>
                       <label className="text-white font-semibold">Email Notifications</label>
-                      <p className="text-sm text-slate-400">Receive email alerts for important updates</p>
+                      <p className="text-sm text-stone-400">Receive email alerts for important updates</p>
                     </div>
                     <button
                       onClick={() => setSettings({...settings, emailNotifications: !settings.emailNotifications})}
-                      className={`w-14 h-7 rounded-full transition-all ${settings.emailNotifications ? 'bg-violet-600' : 'bg-slate-700'}`}
+                      className={`w-14 h-7 rounded-full transition-all ${settings.emailNotifications ? 'bg-violet-600' : 'bg-stone-900'}`}
                     >
                       <div className={`w-5 h-5 bg-stone-950 rounded-full transition-transform ${settings.emailNotifications ? 'translate-x-8' : 'translate-x-1'}`} />
                     </button>
@@ -759,11 +759,11 @@ export default function HRPlanner() {
                   <div className="flex items-center justify-between">
                     <div>
                       <label className="text-white font-semibold">Slack Integration</label>
-                      <p className="text-sm text-slate-400">Send notifications to Slack channels</p>
+                      <p className="text-sm text-stone-400">Send notifications to Slack channels</p>
                     </div>
                     <button
                       onClick={() => setSettings({...settings, slackIntegration: !settings.slackIntegration})}
-                      className={`w-14 h-7 rounded-full transition-all ${settings.slackIntegration ? 'bg-violet-600' : 'bg-slate-700'}`}
+                      className={`w-14 h-7 rounded-full transition-all ${settings.slackIntegration ? 'bg-violet-600' : 'bg-stone-900'}`}
                     >
                       <div className={`w-5 h-5 bg-stone-950 rounded-full transition-transform ${settings.slackIntegration ? 'translate-x-8' : 'translate-x-1'}`} />
                     </button>
@@ -775,7 +775,7 @@ export default function HRPlanner() {
                       type="number"
                       value={settings.reminderLeadTime}
                       onChange={(e) => setSettings({...settings, reminderLeadTime: parseInt(e.target.value)})}
-                      className="w-full bg-slate-800 border border-violet-500/30 rounded-lg px-4 py-2 text-white"
+                      className="w-full bg-stone-900 border border-violet-500/30 rounded-lg px-4 py-2 text-white"
                     />
                   </div>
 
@@ -784,7 +784,7 @@ export default function HRPlanner() {
                     <select
                       value={settings.managerReminderFrequency}
                       onChange={(e) => setSettings({...settings, managerReminderFrequency: e.target.value})}
-                      className="w-full bg-slate-800 border border-violet-500/30 rounded-lg px-4 py-2 text-white"
+                      className="w-full bg-stone-900 border border-violet-500/30 rounded-lg px-4 py-2 text-white"
                     >
                       <option value="hourly">Hourly</option>
                       <option value="daily">Daily</option>
@@ -795,9 +795,9 @@ export default function HRPlanner() {
               </div>
 
               {/* View Preferences */}
-              <div className="bg-slate-900/50 rounded-xl p-5 border border-violet-500/20">
+              <div className="bg-stone-950/50 rounded-xl p-5 border border-violet-500/20">
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <Eye className="w-5 h-5 text-blue-400" />
+                  <Eye className="w-5 h-5 text-amber-400" />
                   View Preferences
                 </h3>
                 <div className="space-y-4">
@@ -806,7 +806,7 @@ export default function HRPlanner() {
                     <select
                       value={settings.defaultView}
                       onChange={(e) => setSettings({...settings, defaultView: e.target.value})}
-                      className="w-full bg-slate-800 border border-violet-500/30 rounded-lg px-4 py-2 text-white"
+                      className="w-full bg-stone-900 border border-violet-500/30 rounded-lg px-4 py-2 text-white"
                     >
                       <option value="today">Today's Tasks</option>
                       <option value="reminders">Manager Reminders</option>
@@ -820,7 +820,7 @@ export default function HRPlanner() {
                     <select
                       value={settings.taskSortOrder}
                       onChange={(e) => setSettings({...settings, taskSortOrder: e.target.value})}
-                      className="w-full bg-slate-800 border border-violet-500/30 rounded-lg px-4 py-2 text-white"
+                      className="w-full bg-stone-900 border border-violet-500/30 rounded-lg px-4 py-2 text-white"
                     >
                       <option value="priority">Priority</option>
                       <option value="time">Time</option>
@@ -834,7 +834,7 @@ export default function HRPlanner() {
                     <select
                       value={settings.theme}
                       onChange={(e) => setSettings({...settings, theme: e.target.value})}
-                      className="w-full bg-slate-800 border border-violet-500/30 rounded-lg px-4 py-2 text-white"
+                      className="w-full bg-stone-900 border border-violet-500/30 rounded-lg px-4 py-2 text-white"
                     >
                       <option value="dark">Dark (Default)</option>
                       <option value="light">Light</option>
@@ -846,11 +846,11 @@ export default function HRPlanner() {
                   <div className="flex items-center justify-between">
                     <div>
                       <label className="text-white font-semibold">Show Completed Tasks</label>
-                      <p className="text-sm text-slate-400">Display completed tasks in the list</p>
+                      <p className="text-sm text-stone-400">Display completed tasks in the list</p>
                     </div>
                     <button
                       onClick={() => setSettings({...settings, showCompletedTasks: !settings.showCompletedTasks})}
-                      className={`w-14 h-7 rounded-full transition-all ${settings.showCompletedTasks ? 'bg-violet-600' : 'bg-slate-700'}`}
+                      className={`w-14 h-7 rounded-full transition-all ${settings.showCompletedTasks ? 'bg-violet-600' : 'bg-stone-900'}`}
                     >
                       <div className={`w-5 h-5 bg-stone-950 rounded-full transition-transform ${settings.showCompletedTasks ? 'translate-x-8' : 'translate-x-1'}`} />
                     </button>
@@ -859,11 +859,11 @@ export default function HRPlanner() {
                   <div className="flex items-center justify-between">
                     <div>
                       <label className="text-white font-semibold">Compact View</label>
-                      <p className="text-sm text-slate-400">Reduce spacing for more tasks on screen</p>
+                      <p className="text-sm text-stone-400">Reduce spacing for more tasks on screen</p>
                     </div>
                     <button
                       onClick={() => setSettings({...settings, compactView: !settings.compactView})}
-                      className={`w-14 h-7 rounded-full transition-all ${settings.compactView ? 'bg-violet-600' : 'bg-slate-700'}`}
+                      className={`w-14 h-7 rounded-full transition-all ${settings.compactView ? 'bg-violet-600' : 'bg-stone-900'}`}
                     >
                       <div className={`w-5 h-5 bg-stone-950 rounded-full transition-transform ${settings.compactView ? 'translate-x-8' : 'translate-x-1'}`} />
                     </button>
@@ -872,11 +872,11 @@ export default function HRPlanner() {
                   <div className="flex items-center justify-between">
                     <div>
                       <label className="text-white font-semibold">Show Week Numbers</label>
-                      <p className="text-sm text-slate-400">Display ISO week numbers in calendar views</p>
+                      <p className="text-sm text-stone-400">Display ISO week numbers in calendar views</p>
                     </div>
                     <button
                       onClick={() => setSettings({...settings, showWeekNumbers: !settings.showWeekNumbers})}
-                      className={`w-14 h-7 rounded-full transition-all ${settings.showWeekNumbers ? 'bg-violet-600' : 'bg-slate-700'}`}
+                      className={`w-14 h-7 rounded-full transition-all ${settings.showWeekNumbers ? 'bg-violet-600' : 'bg-stone-900'}`}
                     >
                       <div className={`w-5 h-5 bg-stone-950 rounded-full transition-transform ${settings.showWeekNumbers ? 'translate-x-8' : 'translate-x-1'}`} />
                     </button>
@@ -885,7 +885,7 @@ export default function HRPlanner() {
               </div>
 
               {/* Work Hours */}
-              <div className="bg-slate-900/50 rounded-xl p-5 border border-violet-500/20">
+              <div className="bg-stone-950/50 rounded-xl p-5 border border-violet-500/20">
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                   <Clock className="w-5 h-5 text-emerald-400" />
                   Work Hours
@@ -897,7 +897,7 @@ export default function HRPlanner() {
                       type="time"
                       value={settings.workStartTime}
                       onChange={(e) => setSettings({...settings, workStartTime: e.target.value})}
-                      className="w-full bg-slate-800 border border-violet-500/30 rounded-lg px-4 py-2 text-white"
+                      className="w-full bg-stone-900 border border-violet-500/30 rounded-lg px-4 py-2 text-white"
                     />
                   </div>
                   <div>
@@ -906,14 +906,14 @@ export default function HRPlanner() {
                       type="time"
                       value={settings.workEndTime}
                       onChange={(e) => setSettings({...settings, workEndTime: e.target.value})}
-                      className="w-full bg-slate-800 border border-violet-500/30 rounded-lg px-4 py-2 text-white"
+                      className="w-full bg-stone-900 border border-violet-500/30 rounded-lg px-4 py-2 text-white"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Automation */}
-              <div className="bg-slate-900/50 rounded-xl p-5 border border-violet-500/20">
+              <div className="bg-stone-950/50 rounded-xl p-5 border border-violet-500/20">
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                   <Zap className="w-5 h-5 text-yellow-400" />
                   Automation
@@ -922,11 +922,11 @@ export default function HRPlanner() {
                   <div className="flex items-center justify-between">
                     <div>
                       <label className="text-white font-semibold">Auto-Archive Completed Tasks</label>
-                      <p className="text-sm text-slate-400">Automatically archive tasks after 7 days</p>
+                      <p className="text-sm text-stone-400">Automatically archive tasks after 7 days</p>
                     </div>
                     <button
                       onClick={() => setSettings({...settings, autoArchiveCompleted: !settings.autoArchiveCompleted})}
-                      className={`w-14 h-7 rounded-full transition-all ${settings.autoArchiveCompleted ? 'bg-violet-600' : 'bg-slate-700'}`}
+                      className={`w-14 h-7 rounded-full transition-all ${settings.autoArchiveCompleted ? 'bg-violet-600' : 'bg-stone-900'}`}
                     >
                       <div className={`w-5 h-5 bg-stone-950 rounded-full transition-transform ${settings.autoArchiveCompleted ? 'translate-x-8' : 'translate-x-1'}`} />
                     </button>
@@ -938,7 +938,7 @@ export default function HRPlanner() {
               <div className="flex gap-3 justify-end pt-4">
                 <button
                   onClick={() => setShowSettings(false)}
-                  className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold transition-all"
+                  className="px-6 py-3 bg-stone-900 hover:bg-stone-600 text-white rounded-lg font-semibold transition-all"
                 >
                   Cancel
                 </button>
@@ -948,7 +948,7 @@ export default function HRPlanner() {
                     // Here you would save settings to database/localStorage
                     alert('Settings saved successfully!');
                   }}
-                  className="px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white rounded-lg font-semibold transition-all shadow-lg shadow-violet-500/30"
+                  className="px-6 py-3 bg-gradient-to-r from-violet-600 to-amber-900 hover:from-violet-500 hover:to-amber-900 text-white rounded-lg font-semibold transition-all shadow-lg shadow-violet-500/30"
                 >
                   Save Changes
                 </button>

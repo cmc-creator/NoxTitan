@@ -97,8 +97,8 @@ export default function OraclePage() {
       case 'CRITICAL': return 'from-red-600 to-pink-600 border-red-500';
       case 'HIGH': return 'from-orange-600 to-red-600 border-orange-500';
       case 'MEDIUM': return 'from-yellow-600 to-orange-600 border-yellow-500';
-      case 'LOW': return 'from-blue-600 to-purple-600 border-amber-500/40';
-      default: return 'from-slate-600 to-slate-700 border-slate-500';
+      case 'LOW': return 'from-amber-800 to-amber-600 border-amber-500/40';
+      default: return 'from-slate-600 to-slate-700 border-stone-500';
     }
   }
 
@@ -115,7 +115,7 @@ export default function OraclePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-black p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-900 via-stone-900 to-black p-8">
       <div className="max-w-7xl mx-auto">
         {/* Mystical Header */}
         <div className="text-center mb-12">
@@ -123,14 +123,14 @@ export default function OraclePage() {
             <div className="absolute inset-0 bg-amber-500 blur-3xl opacity-50 animate-pulse"></div>
             <Sparkles className="w-20 h-20 text-amber-200 relative animate-pulse" />
           </div>
-          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-300 to-purple-300 mb-4">
+          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-900 via-pink-300 to-amber-900 mb-4">
             The Oracle
           </h1>
           <p className="text-xl text-amber-100/70 mb-6">Predictive AI Analytics • See The Future Before It Happens</p>
           <button
             onClick={runAnalysis}
             disabled={analyzing}
-            className="px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-xl transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-3 mx-auto"
+            className="px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-700 text-white font-bold rounded-xl transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-3 mx-auto"
           >
             <Brain className="w-6 h-6" />
             {analyzing ? 'Consulting the Oracle...' : 'Run New Analysis'}
@@ -218,10 +218,10 @@ export default function OraclePage() {
             ))}
 
             {prophecies.length === 0 && !loading && (
-              <div className="col-span-2 text-center py-12 bg-slate-800/50 rounded-2xl border border-slate-700">
+              <div className="col-span-2 text-center py-12 bg-stone-900/50 rounded-2xl border border-stone-700">
                 <Sparkles className="w-16 h-16 text-amber-400 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-white mb-2">The Oracle Awaits</h3>
-                <p className="text-slate-400 mb-6">Run an analysis to reveal prophecies</p>
+                <p className="text-stone-400 mb-6">Run an analysis to reveal prophecies</p>
               </div>
             )}
           </div>
@@ -237,7 +237,7 @@ export default function OraclePage() {
             {topRisks.map((risk) => (
               <div
                 key={risk.id}
-                className="bg-gradient-to-br from-slate-800 to-slate-900 border-2 border-orange-500/50 rounded-xl p-6 hover:border-orange-500 transition-all"
+                className="lux-card border-2 border-orange-500/50 rounded-xl p-6 hover:border-orange-500 transition-all"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
@@ -250,7 +250,7 @@ export default function OraclePage() {
                   </div>
                   <div className="text-right">
                     <div className="text-3xl font-bold text-orange-400">{Math.round(risk.score)}%</div>
-                    <div className="text-xs text-slate-400">Risk Score</div>
+                    <div className="text-xs text-stone-400">Risk Score</div>
                   </div>
                 </div>
 
@@ -266,10 +266,10 @@ export default function OraclePage() {
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-bold text-slate-400 mb-2">Contributing Factors:</h4>
+                  <h4 className="text-xs font-bold text-stone-400 mb-2">Contributing Factors:</h4>
                   <ul className="space-y-1">
                     {risk.factors.slice(0, 3).map((factor, idx) => (
-                      <li key={idx} className="text-xs text-slate-300">• {factor}</li>
+                      <li key={idx} className="text-xs text-stone-300">• {factor}</li>
                     ))}
                   </ul>
                 </div>
@@ -281,14 +281,14 @@ export default function OraclePage() {
         {/* Predictive Insights */}
         <div>
           <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-            <Award className="w-8 h-8 text-blue-400" />
+            <Award className="w-8 h-8 text-amber-400" />
             Predictive Insights
           </h2>
           <div className="space-y-4">
             {insights.map((insight) => (
               <div
                 key={insight.id}
-                className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-amber-500/40/50 transition-all"
+                className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 hover:border-amber-500/40/50 transition-all"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
@@ -302,18 +302,18 @@ export default function OraclePage() {
                       }`}>
                         {insight.impact}
                       </span>
-                      <span className="text-sm text-slate-400">{insight.timeframe}</span>
+                      <span className="text-sm text-stone-400">{insight.timeframe}</span>
                     </div>
-                    <p className="text-slate-300 mb-3">{insight.description}</p>
+                    <p className="text-stone-300 mb-3">{insight.description}</p>
                     <div className="flex items-center gap-4 text-sm">
                       <div className="flex items-center gap-2">
                         <div className="text-amber-400 font-bold">{Math.round(insight.likelihood)}%</div>
-                        <span className="text-slate-400">Likelihood</span>
+                        <span className="text-stone-400">Likelihood</span>
                       </div>
                       {insight.affectedCount && (
                         <div className="flex items-center gap-2">
-                          <Users className="w-4 h-4 text-slate-400" />
-                          <span className="text-slate-300">{insight.affectedCount} affected</span>
+                          <Users className="w-4 h-4 text-stone-400" />
+                          <span className="text-stone-300">{insight.affectedCount} affected</span>
                         </div>
                       )}
                     </div>

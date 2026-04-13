@@ -100,20 +100,20 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
 
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 max-w-7xl w-full border-2 border-amber-500/40/30 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div className="lux-card rounded-2xl p-6 max-w-7xl w-full border-2 border-amber-500/40/30 shadow-2xl max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <Palette className="w-8 h-8 text-amber-400" />
             <div>
               <h2 className="text-3xl font-bold text-white">Theme Studio</h2>
-              <p className="text-sm text-slate-400">Customize every aspect of your experience</p>
+              <p className="text-sm text-stone-400">Customize every aspect of your experience</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-slate-700 rounded-lg transition-all"
+            className="p-2 hover:bg-stone-900 rounded-lg transition-all"
           >
-            <X className="w-6 h-6 text-slate-400" />
+            <X className="w-6 h-6 text-stone-400" />
           </button>
         </div>
 
@@ -125,7 +125,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
               <button
                 onClick={() => setActiveTab('colors')}
                 className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${
-                  activeTab === 'colors' ? 'bg-amber-500 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                  activeTab === 'colors' ? 'bg-amber-500 text-white' : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
                 }`}
               >
                 <Palette className="w-4 h-4" />
@@ -134,7 +134,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
               <button
                 onClick={() => setActiveTab('typography')}
                 className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${
-                  activeTab === 'typography' ? 'bg-amber-500 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                  activeTab === 'typography' ? 'bg-amber-500 text-white' : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
                 }`}
               >
                 <Type className="w-4 h-4" />
@@ -143,7 +143,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
               <button
                 onClick={() => setActiveTab('layout')}
                 className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${
-                  activeTab === 'layout' ? 'bg-amber-500 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                  activeTab === 'layout' ? 'bg-amber-500 text-white' : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
                 }`}
               >
                 <Layout className="w-4 h-4" />
@@ -152,7 +152,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
               <button
                 onClick={() => setActiveTab('effects')}
                 className={`px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${
-                  activeTab === 'effects' ? 'bg-amber-500 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                  activeTab === 'effects' ? 'bg-amber-500 text-white' : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
                 }`}
               >
                 <Sparkles className="w-4 h-4" />
@@ -174,7 +174,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
                         className="group"
                       >
                         <div 
-                          className="h-20 rounded-lg mb-2 border-2 border-slate-600 group-hover:border-amber-400/40 transition-all"
+                          className="h-20 rounded-lg mb-2 border-2 border-stone-700 group-hover:border-amber-400/40 transition-all"
                           style={{ background: preset.preview }}
                         ></div>
                         <p className="text-sm text-white font-semibold">{preset.name}</p>
@@ -198,7 +198,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
                       { label: 'Warning', key: 'warningColor' },
                       { label: 'Error', key: 'errorColor' },
                     ].map((color) => (
-                      <div key={color.key} className="flex items-center justify-between p-3 bg-slate-800 rounded-lg">
+                      <div key={color.key} className="flex items-center justify-between p-3 bg-stone-900 rounded-lg">
                         <label className="text-white font-medium">{color.label}</label>
                         <input
                           type="color"
@@ -217,12 +217,12 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
             {activeTab === 'typography' && (
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="p-4 bg-slate-800 rounded-lg">
+                  <div className="p-4 bg-stone-900 rounded-lg">
                     <label className="text-white font-semibold mb-3 block">Body Font</label>
                     <select
                       value={theme.fontFamily}
                       onChange={(e) => setTheme({ ...theme, fontFamily: e.target.value })}
-                      className="w-full bg-slate-700 text-white rounded-lg px-3 py-2"
+                      className="w-full bg-stone-900 text-white rounded-lg px-3 py-2"
                     >
                       {fontOptions.map(font => (
                         <option key={font} value={font}>{font}</option>
@@ -230,12 +230,12 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
                     </select>
                   </div>
 
-                  <div className="p-4 bg-slate-800 rounded-lg">
+                  <div className="p-4 bg-stone-900 rounded-lg">
                     <label className="text-white font-semibold mb-3 block">Heading Font</label>
                     <select
                       value={theme.headingFont}
                       onChange={(e) => setTheme({ ...theme, headingFont: e.target.value })}
-                      className="w-full bg-slate-700 text-white rounded-lg px-3 py-2"
+                      className="w-full bg-stone-900 text-white rounded-lg px-3 py-2"
                     >
                       {fontOptions.map(font => (
                         <option key={font} value={font}>{font}</option>
@@ -243,12 +243,12 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
                     </select>
                   </div>
 
-                  <div className="p-4 bg-slate-800 rounded-lg">
+                  <div className="p-4 bg-stone-900 rounded-lg">
                     <label className="text-white font-semibold mb-3 block">Font Size</label>
                     <select
                       value={theme.fontSize}
                       onChange={(e) => setTheme({ ...theme, fontSize: e.target.value })}
-                      className="w-full bg-slate-700 text-white rounded-lg px-3 py-2"
+                      className="w-full bg-stone-900 text-white rounded-lg px-3 py-2"
                     >
                       <option value="small">Small</option>
                       <option value="medium">Medium</option>
@@ -257,12 +257,12 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
                     </select>
                   </div>
 
-                  <div className="p-4 bg-slate-800 rounded-lg">
+                  <div className="p-4 bg-stone-900 rounded-lg">
                     <label className="text-white font-semibold mb-3 block">Font Weight</label>
                     <select
                       value={theme.fontWeight}
                       onChange={(e) => setTheme({ ...theme, fontWeight: e.target.value })}
-                      className="w-full bg-slate-700 text-white rounded-lg px-3 py-2"
+                      className="w-full bg-stone-900 text-white rounded-lg px-3 py-2"
                     >
                       <option value="light">Light</option>
                       <option value="normal">Normal</option>
@@ -278,12 +278,12 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
             {activeTab === 'layout' && (
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="p-4 bg-slate-800 rounded-lg">
+                  <div className="p-4 bg-stone-900 rounded-lg">
                     <label className="text-white font-semibold mb-3 block">Card Style</label>
                     <select
                       value={theme.cardStyle}
                       onChange={(e) => setTheme({ ...theme, cardStyle: e.target.value })}
-                      className="w-full bg-slate-700 text-white rounded-lg px-3 py-2"
+                      className="w-full bg-stone-900 text-white rounded-lg px-3 py-2"
                     >
                       <option value="glassmorphism">Glassmorphism (Frosted Glass)</option>
                       <option value="solid">Solid</option>
@@ -293,12 +293,12 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
                     </select>
                   </div>
 
-                  <div className="p-4 bg-slate-800 rounded-lg">
+                  <div className="p-4 bg-stone-900 rounded-lg">
                     <label className="text-white font-semibold mb-3 block">Border Radius</label>
                     <select
                       value={theme.cardRadius}
                       onChange={(e) => setTheme({ ...theme, cardRadius: e.target.value })}
-                      className="w-full bg-slate-700 text-white rounded-lg px-3 py-2"
+                      className="w-full bg-stone-900 text-white rounded-lg px-3 py-2"
                     >
                       <option value="rounded-none">Square (No Radius)</option>
                       <option value="rounded-lg">Small</option>
@@ -308,12 +308,12 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
                     </select>
                   </div>
 
-                  <div className="p-4 bg-slate-800 rounded-lg">
+                  <div className="p-4 bg-stone-900 rounded-lg">
                     <label className="text-white font-semibold mb-3 block">Spacing</label>
                     <select
                       value={theme.spacing}
                       onChange={(e) => setTheme({ ...theme, spacing: e.target.value })}
-                      className="w-full bg-slate-700 text-white rounded-lg px-3 py-2"
+                      className="w-full bg-stone-900 text-white rounded-lg px-3 py-2"
                     >
                       <option value="compact">Compact</option>
                       <option value="comfortable">Comfortable</option>
@@ -321,12 +321,12 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
                     </select>
                   </div>
 
-                  <div className="p-4 bg-slate-800 rounded-lg">
+                  <div className="p-4 bg-stone-900 rounded-lg">
                     <label className="text-white font-semibold mb-3 block">Border Width</label>
                     <select
                       value={theme.borderWidth}
                       onChange={(e) => setTheme({ ...theme, borderWidth: e.target.value })}
-                      className="w-full bg-slate-700 text-white rounded-lg px-3 py-2"
+                      className="w-full bg-stone-900 text-white rounded-lg px-3 py-2"
                     >
                       <option value="0">None</option>
                       <option value="1">Thin</option>
@@ -347,17 +347,17 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
                   { key: 'glowEffects', label: 'Glow Effects', desc: 'Glowing borders on hover and focus' },
                   { key: 'gradients', label: 'Gradient Backgrounds', desc: 'Colorful gradient backgrounds on cards' },
                 ].map((effect) => (
-                  <div key={effect.key} className="flex items-center justify-between p-4 bg-slate-800 rounded-lg">
+                  <div key={effect.key} className="flex items-center justify-between p-4 bg-stone-900 rounded-lg">
                     <div>
                       <p className="text-white font-semibold">{effect.label}</p>
-                      <p className="text-sm text-slate-400">{effect.desc}</p>
+                      <p className="text-sm text-stone-400">{effect.desc}</p>
                     </div>
                     <button
                       onClick={() => setTheme({ ...theme, [effect.key]: !theme[effect.key as keyof typeof theme] })}
                       className={`w-14 h-8 rounded-full transition-all ${
                         theme[effect.key as keyof typeof theme]
                           ? 'bg-amber-500'
-                          : 'bg-slate-600'
+                          : 'bg-stone-600'
                       }`}
                     >
                       <div className={`w-6 h-6 bg-stone-950 rounded-full transition-all ${
@@ -445,14 +445,14 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
               localStorage.setItem('userTheme', JSON.stringify(theme));
               onClose();
             }}
-            className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-lg font-bold text-white transition-all flex items-center justify-center gap-2"
+            className="flex-1 px-6 py-3 bg-gradient-to-r from-stone-900 to-pink-500 hover:from-stone-900 hover:to-pink-600 rounded-lg font-bold text-white transition-all flex items-center justify-center gap-2"
           >
             <Save className="w-5 h-5" />
             Save Theme
           </button>
           <button
             onClick={() => window.location.reload()}
-            className="px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-semibold text-white transition-all flex items-center gap-2"
+            className="px-6 py-3 bg-stone-900 hover:bg-stone-600 rounded-lg font-semibold text-white transition-all flex items-center gap-2"
           >
             <RotateCcw className="w-4 h-4" />
             Reset to Default

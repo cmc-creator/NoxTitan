@@ -207,10 +207,10 @@ export default function AnnouncementsPage() {
     switch (category) {
       case 'urgent': return 'bg-red-500/20 text-red-400 border-red-500';
       case 'celebration': return 'bg-amber-500/20 text-amber-400 border-amber-500/40';
-      case 'policy': return 'bg-amber-600/20 text-blue-400 border-amber-500/40';
+      case 'policy': return 'bg-amber-600/20 text-amber-400 border-amber-500/40';
       case 'event': return 'bg-green-500/20 text-green-400 border-green-500';
       case 'benefit': return 'bg-orange-500/20 text-orange-400 border-orange-500';
-      default: return 'bg-slate-500/20 text-slate-400 border-slate-500';
+      default: return 'bg-stone-500/20 text-stone-400 border-stone-500';
     }
   };
 
@@ -246,7 +246,7 @@ export default function AnnouncementsPage() {
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl">
+              <div className="p-3 bg-gradient-to-br from-amber-800 to-amber-600 rounded-xl">
                 <Megaphone className="h-8 w-8 text-white" />
               </div>
               <div>
@@ -261,7 +261,7 @@ export default function AnnouncementsPage() {
             {user?.role === 'admin' || user?.role === 'manager' ? (
               <button
                 onClick={() => setShowNewAnnouncement(true)}
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all flex items-center gap-2 shadow-lg hover:shadow-xl"
+                className="px-6 py-3 bg-gradient-to-r from-amber-800 to-amber-600 hover:from-amber-800 hover:to-amber-600 text-white rounded-xl font-semibold transition-all flex items-center gap-2 shadow-lg hover:shadow-xl"
               >
                 <Plus className="w-5 h-5" />
                 New Announcement
@@ -285,9 +285,9 @@ export default function AnnouncementsPage() {
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-sm opacity-70 mb-1">Pinned</div>
-                <div className="text-2xl font-bold text-blue-400">{announcements.filter(a => a.isPinned).length}</div>
+                <div className="text-2xl font-bold text-amber-400">{announcements.filter(a => a.isPinned).length}</div>
               </div>
-              <Pin className="w-8 h-8 text-blue-400" />
+              <Pin className="w-8 h-8 text-amber-400" />
             </div>
           </div>
           <div className="p-4 rounded-xl" style={{ background: 'var(--card-bg)' }}>
@@ -319,7 +319,7 @@ export default function AnnouncementsPage() {
               placeholder="Search announcements..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-600 focus:outline-none focus:border-amber-500/40 transition-all"
+              className="w-full pl-12 pr-4 py-3 rounded-xl border border-stone-700 focus:outline-none focus:border-amber-500/40 transition-all"
               style={{ background: 'var(--card-bg)', color: 'var(--body-text)' }}
             />
           </div>
@@ -331,7 +331,7 @@ export default function AnnouncementsPage() {
                 className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                   activeFilter === filter
                     ? 'bg-amber-600 text-white'
-                    : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                    : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
                 }`}
               >
                 {filter.charAt(0).toUpperCase() + filter.slice(1)}
@@ -382,7 +382,7 @@ export default function AnnouncementsPage() {
                     )}
                   </div>
                   <h3 className="text-2xl font-bold mb-2 text-white">{announcement.title}</h3>
-                  <div className="flex items-center gap-4 text-sm text-slate-400">
+                  <div className="flex items-center gap-4 text-sm text-stone-400">
                     <span className="flex items-center gap-1">
                       <Users className="w-4 h-4" />
                       {announcement.author} • {announcement.authorRole}
@@ -402,12 +402,12 @@ export default function AnnouncementsPage() {
               </div>
 
               {/* Content */}
-              <p className="text-slate-300 mb-4 leading-relaxed">{announcement.content}</p>
+              <p className="text-stone-300 mb-4 leading-relaxed">{announcement.content}</p>
 
               {/* Attachments */}
               {announcement.attachments && announcement.attachments.length > 0 && (
-                <div className="mb-4 p-4 bg-slate-700/30 rounded-lg">
-                  <div className="text-sm font-semibold text-slate-400 mb-2 flex items-center gap-2">
+                <div className="mb-4 p-4 bg-stone-900/30 rounded-lg">
+                  <div className="text-sm font-semibold text-stone-400 mb-2 flex items-center gap-2">
                     <FileText className="w-4 h-4" />
                     Attachments
                   </div>
@@ -415,13 +415,13 @@ export default function AnnouncementsPage() {
                     {announcement.attachments.map((attachment, index) => (
                       <div
                         key={index}
-                        className="flex items-center justify-between p-3 bg-slate-700/50 rounded-lg hover:bg-slate-700 transition-all cursor-pointer"
+                        className="flex items-center justify-between p-3 bg-stone-900/50 rounded-lg hover:bg-stone-900 transition-all cursor-pointer"
                       >
                         <div className="flex items-center gap-3">
-                          <FileText className="w-5 h-5 text-blue-400" />
+                          <FileText className="w-5 h-5 text-amber-400" />
                           <div>
                             <div className="text-white font-semibold">{attachment.name}</div>
-                            <div className="text-xs text-slate-400">{attachment.type} • {attachment.size}</div>
+                            <div className="text-xs text-stone-400">{attachment.type} • {attachment.size}</div>
                           </div>
                         </div>
                         <button className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg text-sm font-semibold transition-all">
@@ -434,17 +434,17 @@ export default function AnnouncementsPage() {
               )}
 
               {/* Actions */}
-              <div className="flex items-center justify-between pt-4 border-t border-slate-700">
+              <div className="flex items-center justify-between pt-4 border-t border-stone-700">
                 <div className="flex items-center gap-4">
-                  <button className="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-lg transition-all">
+                  <button className="flex items-center gap-2 px-4 py-2 bg-stone-900 hover:bg-stone-600 text-stone-300 rounded-lg transition-all">
                     <ThumbsUp className="w-4 h-4" />
                     <span className="font-semibold">{announcement.likes}</span>
                   </button>
-                  <button className="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-lg transition-all">
+                  <button className="flex items-center gap-2 px-4 py-2 bg-stone-900 hover:bg-stone-600 text-stone-300 rounded-lg transition-all">
                     <MessageSquare className="w-4 h-4" />
                     <span className="font-semibold">{announcement.comments}</span>
                   </button>
-                  <button className="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-lg transition-all">
+                  <button className="flex items-center gap-2 px-4 py-2 bg-stone-900 hover:bg-stone-600 text-stone-300 rounded-lg transition-all">
                     <Share2 className="w-4 h-4" />
                     Share
                   </button>

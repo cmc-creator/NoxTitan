@@ -137,7 +137,7 @@ export default function ImportPage() {
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-3 bg-gradient-to-br from-green-600 to-blue-600 rounded-xl">
+            <div className="p-3 bg-gradient-to-br from-green-600 to-amber-800 rounded-xl">
               <Upload className="h-8 w-8 text-white" />
             </div>
             <div>
@@ -171,16 +171,16 @@ export default function ImportPage() {
                     <div className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all ${
                       isActive ? 'bg-amber-600 border-amber-600/40 text-white' :
                       isCompleted ? 'bg-green-600 border-green-600 text-white' :
-                      'bg-slate-700 border-slate-600 text-slate-400'
+                      'bg-stone-900 border-stone-700 text-stone-400'
                     }`}>
                       {isCompleted ? <Check className="w-6 h-6" /> : <Icon className="w-6 h-6" />}
                     </div>
-                    <span className={`mt-2 text-sm font-semibold ${isActive ? 'text-blue-400' : isCompleted ? 'text-green-400' : 'text-slate-500'}`}>
+                    <span className={`mt-2 text-sm font-semibold ${isActive ? 'text-amber-400' : isCompleted ? 'text-green-400' : 'text-stone-500'}`}>
                       {step.label}
                     </span>
                   </div>
                   {index < 4 && (
-                    <div className={`flex-1 h-0.5 ${isCompleted ? 'bg-green-600' : 'bg-slate-700'}`} />
+                    <div className={`flex-1 h-0.5 ${isCompleted ? 'bg-green-600' : 'bg-stone-900'}`} />
                   )}
                 </div>
               );
@@ -192,31 +192,31 @@ export default function ImportPage() {
         {activeStep === 'select' && (
           <div className="space-y-6">
             {/* Quick Start Banner */}
-            <div className="p-6 rounded-xl bg-gradient-to-r from-green-600/20 to-blue-600/20 border-2 border-green-500/30">
+            <div className="p-6 rounded-xl bg-gradient-to-r from-green-600/20 to-amber-800/20 border-2 border-green-500/30">
               <div className="flex items-start gap-4">
                 <Zap className="w-8 h-8 text-green-400 mt-1" />
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">Seamless Migration from Any System</h3>
-                  <p className="text-slate-300 mb-4">
+                  <p className="text-stone-300 mb-4">
                     NyxTitan makes it easy to abandon your old software and import everything in minutes. 
                     We support direct integrations with 50+ platforms and can import any CSV or Excel file.
                   </p>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="bg-slate-800/50 rounded-lg p-3">
+                    <div className="bg-stone-900/50 rounded-lg p-3">
                       <div className="text-2xl font-bold text-green-400">50+</div>
-                      <div className="text-xs text-slate-400">Integrations</div>
+                      <div className="text-xs text-stone-400">Integrations</div>
                     </div>
-                    <div className="bg-slate-800/50 rounded-lg p-3">
-                      <div className="text-2xl font-bold text-blue-400">5 min</div>
-                      <div className="text-xs text-slate-400">Avg Import Time</div>
+                    <div className="bg-stone-900/50 rounded-lg p-3">
+                      <div className="text-2xl font-bold text-amber-400">5 min</div>
+                      <div className="text-xs text-stone-400">Avg Import Time</div>
                     </div>
-                    <div className="bg-slate-800/50 rounded-lg p-3">
+                    <div className="bg-stone-900/50 rounded-lg p-3">
                       <div className="text-2xl font-bold text-amber-400">100%</div>
-                      <div className="text-xs text-slate-400">Data Accuracy</div>
+                      <div className="text-xs text-stone-400">Data Accuracy</div>
                     </div>
-                    <div className="bg-slate-800/50 rounded-lg p-3">
+                    <div className="bg-stone-900/50 rounded-lg p-3">
                       <div className="text-2xl font-bold text-orange-400">Free</div>
-                      <div className="text-xs text-slate-400">Migration Help</div>
+                      <div className="text-xs text-stone-400">Migration Help</div>
                     </div>
                   </div>
                 </div>
@@ -230,24 +230,24 @@ export default function ImportPage() {
                 className={`p-6 rounded-xl border-2 transition-all ${
                   importMethod === 'file' 
                     ? 'border-amber-500/40 bg-amber-600/10' 
-                    : 'border-slate-600 bg-slate-700/30 hover:border-slate-500'
+                    : 'border-stone-700 bg-stone-900/30 hover:border-stone-500'
                 }`}
               >
-                <FileSpreadsheet className="w-12 h-12 text-blue-400 mb-3" />
+                <FileSpreadsheet className="w-12 h-12 text-amber-400 mb-3" />
                 <h3 className="text-xl font-bold text-white mb-2">Upload File</h3>
-                <p className="text-sm text-slate-400">Import from CSV, Excel, or other file formats</p>
+                <p className="text-sm text-stone-400">Import from CSV, Excel, or other file formats</p>
               </button>
               <button
                 onClick={() => setImportMethod('integration')}
                 className={`p-6 rounded-xl border-2 transition-all ${
                   importMethod === 'integration' 
                     ? 'border-amber-500/40 bg-amber-600/10' 
-                    : 'border-slate-600 bg-slate-700/30 hover:border-slate-500'
+                    : 'border-stone-700 bg-stone-900/30 hover:border-stone-500'
                 }`}
               >
                 <RefreshCw className="w-12 h-12 text-green-400 mb-3" />
                 <h3 className="text-xl font-bold text-white mb-2">Direct Integration</h3>
-                <p className="text-sm text-slate-400">Connect directly to your existing software</p>
+                <p className="text-sm text-stone-400">Connect directly to your existing software</p>
               </button>
             </div>
 
@@ -264,13 +264,13 @@ export default function ImportPage() {
                       className={`p-6 rounded-xl border-2 text-left transition-all ${
                         selectedTemplate === template.id
                           ? 'border-amber-500/40 bg-amber-600/10'
-                          : 'border-slate-600 bg-slate-700/30 hover:border-slate-500'
+                          : 'border-stone-700 bg-stone-900/30 hover:border-stone-500'
                       }`}
                     >
-                      <Icon className="w-10 h-10 text-blue-400 mb-3" />
+                      <Icon className="w-10 h-10 text-amber-400 mb-3" />
                       <h4 className="text-lg font-bold text-white mb-2">{template.name}</h4>
-                      <p className="text-sm text-slate-400 mb-3">{template.description}</p>
-                      <div className="text-xs text-slate-500">
+                      <p className="text-sm text-stone-400 mb-3">{template.description}</p>
+                      <div className="text-xs text-stone-500">
                         <span className="font-semibold">Compatible with:</span> {template.compatibleWith.slice(0, 2).join(', ')}
                         {template.compatibleWith.length > 2 && ` +${template.compatibleWith.length - 2} more`}
                       </div>
@@ -286,7 +286,7 @@ export default function ImportPage() {
                 <h3 className="text-lg font-bold mb-4 text-white">Compatible Systems for {selectedTemplateData.name}</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
                   {selectedTemplateData.compatibleWith.map((system) => (
-                    <div key={system} className="p-3 bg-slate-700/30 rounded-lg text-center hover:bg-slate-700/50 transition-all cursor-pointer">
+                    <div key={system} className="p-3 bg-stone-900/30 rounded-lg text-center hover:bg-stone-900/50 transition-all cursor-pointer">
                       <div className="text-2xl mb-1">
                         {integrations.find(i => i.name === system)?.logo || '📄'}
                       </div>
@@ -300,7 +300,7 @@ export default function ImportPage() {
             {selectedTemplate && (
               <button
                 onClick={() => setActiveStep('upload')}
-                className="w-full py-4 bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2"
+                className="w-full py-4 bg-gradient-to-r from-amber-700 to-green-600 hover:from-amber-700 hover:to-green-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2"
               >
                 Continue to Upload
                 <ArrowRight className="w-5 h-5" />
@@ -312,10 +312,10 @@ export default function ImportPage() {
         {/* Step 2: Upload (Simplified for demo) */}
         {activeStep === 'upload' && (
           <div className="space-y-6">
-            <div className="p-12 border-2 border-dashed border-slate-600 rounded-xl text-center hover:border-amber-500/40 transition-all cursor-pointer" style={{ background: 'var(--card-bg)' }}>
-              <Upload className="w-16 h-16 mx-auto mb-4 text-blue-400" />
+            <div className="p-12 border-2 border-dashed border-stone-700 rounded-xl text-center hover:border-amber-500/40 transition-all cursor-pointer" style={{ background: 'var(--card-bg)' }}>
+              <Upload className="w-16 h-16 mx-auto mb-4 text-amber-400" />
               <h3 className="text-2xl font-bold text-white mb-2">Drop your file here or click to browse</h3>
-              <p className="text-slate-400 mb-4">Supports CSV, Excel (.xlsx, .xls), and JSON files up to 50MB</p>
+              <p className="text-stone-400 mb-4">Supports CSV, Excel (.xlsx, .xls), and JSON files up to 50MB</p>
               <button className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-semibold transition-all">
                 Choose File
               </button>
@@ -326,31 +326,31 @@ export default function ImportPage() {
 
             <div className="p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
               <h3 className="text-lg font-bold mb-4 text-white flex items-center gap-2">
-                <Download className="w-5 h-5 text-blue-400" />
+                <Download className="w-5 h-5 text-amber-400" />
                 Download Template Files
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <button className="p-4 bg-slate-700/30 rounded-lg hover:bg-slate-700/50 transition-all text-left">
+                <button className="p-4 bg-stone-900/30 rounded-lg hover:bg-stone-900/50 transition-all text-left">
                   <FileSpreadsheet className="w-8 h-8 text-green-400 mb-2" />
                   <div className="font-semibold text-white">Employee Template</div>
-                  <div className="text-xs text-slate-400">CSV format with sample data</div>
+                  <div className="text-xs text-stone-400">CSV format with sample data</div>
                 </button>
-                <button className="p-4 bg-slate-700/30 rounded-lg hover:bg-slate-700/50 transition-all text-left">
-                  <FileSpreadsheet className="w-8 h-8 text-blue-400 mb-2" />
+                <button className="p-4 bg-stone-900/30 rounded-lg hover:bg-stone-900/50 transition-all text-left">
+                  <FileSpreadsheet className="w-8 h-8 text-amber-400 mb-2" />
                   <div className="font-semibold text-white">Schedule Template</div>
-                  <div className="text-xs text-slate-400">CSV format with sample data</div>
+                  <div className="text-xs text-stone-400">CSV format with sample data</div>
                 </button>
-                <button className="p-4 bg-slate-700/30 rounded-lg hover:bg-slate-700/50 transition-all text-left">
+                <button className="p-4 bg-stone-900/30 rounded-lg hover:bg-stone-900/50 transition-all text-left">
                   <FileSpreadsheet className="w-8 h-8 text-amber-400 mb-2" />
                   <div className="font-semibold text-white">Payroll Template</div>
-                  <div className="text-xs text-slate-400">CSV format with sample data</div>
+                  <div className="text-xs text-stone-400">CSV format with sample data</div>
                 </button>
               </div>
             </div>
 
             <button
               onClick={() => setActiveStep('map')}
-              className="w-full py-4 bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2"
+              className="w-full py-4 bg-gradient-to-r from-amber-700 to-green-600 hover:from-amber-700 hover:to-green-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2"
             >
               Continue to Field Mapping
               <ArrowRight className="w-5 h-5" />
@@ -363,10 +363,10 @@ export default function ImportPage() {
           <div className="space-y-6">
             <div className="p-6 rounded-xl bg-amber-600/10 border border-amber-500/40/30">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <Zap className="w-5 h-5 text-blue-400" />
+                <Zap className="w-5 h-5 text-amber-400" />
                 Smart Auto-Mapping Detected
               </h3>
-              <p className="text-slate-300">
+              <p className="text-stone-300">
                 We automatically matched 9 of 10 fields from your file. Review and adjust if needed.
               </p>
             </div>
@@ -380,16 +380,16 @@ export default function ImportPage() {
                   }`}>
                     <div className="flex items-center gap-4 flex-1">
                       <div className="flex-1">
-                        <div className="text-sm text-slate-400">Their Field</div>
+                        <div className="text-sm text-stone-400">Their Field</div>
                         <div className="font-semibold text-white">{map.theirField}</div>
                       </div>
-                      <ArrowRight className="w-5 h-5 text-slate-500" />
+                      <ArrowRight className="w-5 h-5 text-stone-500" />
                       <div className="flex-1">
-                        <div className="text-sm text-slate-400">NyxTitan Field</div>
+                        <div className="text-sm text-stone-400">NyxTitan Field</div>
                         {map.ourField ? (
                           <div className="font-semibold text-white">{map.ourField}</div>
                         ) : (
-                          <select className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded text-white">
+                          <select className="w-full px-3 py-2 bg-stone-900 border border-stone-700 rounded text-white">
                             <option>Select field...</option>
                             <option>employeeId</option>
                             <option>managerId</option>
@@ -410,7 +410,7 @@ export default function ImportPage() {
 
             <button
               onClick={() => setActiveStep('preview')}
-              className="w-full py-4 bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2"
+              className="w-full py-4 bg-gradient-to-r from-amber-700 to-green-600 hover:from-amber-700 hover:to-green-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2"
             >
               Preview Import
               <ArrowRight className="w-5 h-5" />
@@ -424,15 +424,15 @@ export default function ImportPage() {
             <div className="grid grid-cols-3 gap-4">
               <div className="p-4 rounded-xl bg-green-500/20 border border-green-500/50">
                 <div className="text-3xl font-bold text-green-400">122</div>
-                <div className="text-sm text-slate-300">Valid Records</div>
+                <div className="text-sm text-stone-300">Valid Records</div>
               </div>
               <div className="p-4 rounded-xl bg-yellow-500/20 border border-yellow-500/50">
                 <div className="text-3xl font-bold text-yellow-400">3</div>
-                <div className="text-sm text-slate-300">Warnings</div>
+                <div className="text-sm text-stone-300">Warnings</div>
               </div>
               <div className="p-4 rounded-xl bg-red-500/20 border border-red-500/50">
                 <div className="text-3xl font-bold text-red-400">2</div>
-                <div className="text-sm text-slate-300">Errors</div>
+                <div className="text-sm text-stone-300">Errors</div>
               </div>
             </div>
 
@@ -441,19 +441,19 @@ export default function ImportPage() {
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="border-b border-slate-700">
-                      <th className="text-left py-3 px-4 text-slate-400 font-semibold">Status</th>
-                      <th className="text-left py-3 px-4 text-slate-400 font-semibold">First Name</th>
-                      <th className="text-left py-3 px-4 text-slate-400 font-semibold">Last Name</th>
-                      <th className="text-left py-3 px-4 text-slate-400 font-semibold">Email</th>
-                      <th className="text-left py-3 px-4 text-slate-400 font-semibold">Department</th>
-                      <th className="text-left py-3 px-4 text-slate-400 font-semibold">Role</th>
-                      <th className="text-left py-3 px-4 text-slate-400 font-semibold">Pay Rate</th>
+                    <tr className="border-b border-stone-700">
+                      <th className="text-left py-3 px-4 text-stone-400 font-semibold">Status</th>
+                      <th className="text-left py-3 px-4 text-stone-400 font-semibold">First Name</th>
+                      <th className="text-left py-3 px-4 text-stone-400 font-semibold">Last Name</th>
+                      <th className="text-left py-3 px-4 text-stone-400 font-semibold">Email</th>
+                      <th className="text-left py-3 px-4 text-stone-400 font-semibold">Department</th>
+                      <th className="text-left py-3 px-4 text-stone-400 font-semibold">Role</th>
+                      <th className="text-left py-3 px-4 text-stone-400 font-semibold">Pay Rate</th>
                     </tr>
                   </thead>
                   <tbody>
                     {previewData.map((row, index) => (
-                      <tr key={index} className="border-b border-slate-700/50">
+                      <tr key={index} className="border-b border-stone-700/50">
                         <td className="py-3 px-4">
                           {row.status === 'valid' && <CheckCircle className="w-5 h-5 text-green-400" />}
                           {row.status === 'warning' && <AlertCircle className="w-5 h-5 text-yellow-400" />}
@@ -473,12 +473,12 @@ export default function ImportPage() {
             </div>
 
             <div className="flex gap-4">
-              <button className="flex-1 py-4 bg-slate-700 hover:bg-slate-600 text-white rounded-xl font-bold text-lg transition-all">
+              <button className="flex-1 py-4 bg-stone-900 hover:bg-stone-600 text-white rounded-xl font-bold text-lg transition-all">
                 Fix Errors First
               </button>
               <button
                 onClick={() => setActiveStep('complete')}
-                className="flex-1 py-4 bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2"
+                className="flex-1 py-4 bg-gradient-to-r from-green-600 to-amber-800 hover:from-green-700 hover:to-amber-800 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2"
               >
                 Import Data Now
                 <CheckCircle className="w-5 h-5" />
@@ -494,31 +494,31 @@ export default function ImportPage() {
               <CheckCircle className="w-16 h-16 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-white mb-4">Import Complete!</h2>
-            <p className="text-xl text-slate-300 mb-8">Successfully imported 122 employee records</p>
+            <p className="text-xl text-stone-300 mb-8">Successfully imported 122 employee records</p>
             
             <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-8">
               <div className="p-6 rounded-xl bg-green-500/20 border border-green-500/50">
                 <div className="text-4xl font-bold text-green-400">122</div>
-                <div className="text-sm text-slate-300">Records Imported</div>
+                <div className="text-sm text-stone-300">Records Imported</div>
               </div>
               <div className="p-6 rounded-xl bg-amber-600/20 border border-amber-500/40/50">
-                <div className="text-4xl font-bold text-blue-400">2:37</div>
-                <div className="text-sm text-slate-300">Time Taken</div>
+                <div className="text-4xl font-bold text-amber-400">2:37</div>
+                <div className="text-sm text-stone-300">Time Taken</div>
               </div>
               <div className="p-6 rounded-xl bg-amber-500/20 border border-amber-500/40/50">
                 <div className="text-4xl font-bold text-amber-400">0</div>
-                <div className="text-sm text-slate-300">Errors</div>
+                <div className="text-sm text-stone-300">Errors</div>
               </div>
             </div>
 
             <div className="flex gap-4 justify-center">
               <button
                 onClick={() => setActiveStep('select')}
-                className="px-8 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-xl font-semibold transition-all"
+                className="px-8 py-3 bg-stone-900 hover:bg-stone-600 text-white rounded-xl font-semibold transition-all"
               >
                 Import More Data
               </button>
-              <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white rounded-xl font-semibold transition-all">
+              <button className="px-8 py-3 bg-gradient-to-r from-amber-700 to-green-600 hover:from-amber-700 hover:to-green-700 text-white rounded-xl font-semibold transition-all">
                 View Imported Data
               </button>
             </div>

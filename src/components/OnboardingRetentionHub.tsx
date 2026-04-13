@@ -184,27 +184,27 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
             <TrendingUp className="w-5 h-5 text-green-300" />
           </div>
           <p className="text-3xl font-bold text-white">{successMetrics.current90DayRetention}%</p>
-          <p className="text-sm text-slate-300">90-Day Retention</p>
+          <p className="text-sm text-stone-300">90-Day Retention</p>
           <p className="text-xs text-green-400 mt-1">+{successMetrics.current90DayRetention - successMetrics.industryAvg90Day}% vs industry</p>
         </div>
 
-        <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-xl rounded-xl p-4 border-2 border-cyan-500/30">
+        <div className="bg-gradient-to-br from-cyan-500/20 to-amber-800/20 backdrop-blur-xl rounded-xl p-4 border-2 border-cyan-500/30">
           <div className="flex items-center justify-between mb-2">
             <Heart className="w-6 h-6 text-cyan-400" />
             <TrendingUp className="w-5 h-5 text-cyan-300" />
           </div>
           <p className="text-3xl font-bold text-white">{successMetrics.current1YearRetention}%</p>
-          <p className="text-sm text-slate-300">1-Year Retention</p>
+          <p className="text-sm text-stone-300">1-Year Retention</p>
           <p className="text-xs text-cyan-400 mt-1">+{successMetrics.current1YearRetention - successMetrics.industryAvg1Year}% vs industry</p>
         </div>
 
-        <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-xl p-4 border-2 border-amber-500/40/30">
+        <div className="bg-gradient-to-br from-stone-900/20 to-pink-500/20 backdrop-blur-xl rounded-xl p-4 border-2 border-amber-500/40/30">
           <div className="flex items-center justify-between mb-2">
             <Clock className="w-6 h-6 text-amber-400" />
           </div>
           <p className="text-3xl font-bold text-white">{successMetrics.avgOnboardingTime} <span className="text-lg">weeks</span></p>
-          <p className="text-sm text-slate-300">Avg Time to Productivity</p>
-          <p className="text-xs text-slate-400 mt-1">Target: {successMetrics.targetOnboardingTime} weeks</p>
+          <p className="text-sm text-stone-300">Avg Time to Productivity</p>
+          <p className="text-xs text-stone-400 mt-1">Target: {successMetrics.targetOnboardingTime} weeks</p>
         </div>
 
         <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-xl rounded-xl p-4 border-2 border-yellow-500/30">
@@ -212,8 +212,8 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
             <Users className="w-6 h-6 text-yellow-400" />
           </div>
           <p className="text-3xl font-bold text-white">{successMetrics.currentlyOnboarding}</p>
-          <p className="text-sm text-slate-300">Currently Onboarding</p>
-          <p className="text-xs text-slate-400 mt-1">{successMetrics.employeesSinceLaunch} total since launch</p>
+          <p className="text-sm text-stone-300">Currently Onboarding</p>
+          <p className="text-xs text-stone-400 mt-1">{successMetrics.employeesSinceLaunch} total since launch</p>
         </div>
       </div>
 
@@ -223,8 +223,8 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
           onClick={() => setActiveTab('onboarding')}
           className={`px-6 py-3 rounded-lg font-bold transition-all ${
             activeTab === 'onboarding'
-              ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white'
-              : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              ? 'bg-gradient-to-r from-cyan-500 to-amber-800 text-white'
+              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
           }`}
         >
           <div className="flex items-center gap-2">
@@ -236,8 +236,8 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
           onClick={() => setActiveTab('retention')}
           className={`px-6 py-3 rounded-lg font-bold transition-all ${
             activeTab === 'retention'
-              ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white'
-              : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              ? 'bg-gradient-to-r from-cyan-500 to-amber-800 text-white'
+              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
           }`}
         >
           <div className="flex items-center gap-2">
@@ -249,8 +249,8 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
           onClick={() => setActiveTab('analytics')}
           className={`px-6 py-3 rounded-lg font-bold transition-all ${
             activeTab === 'analytics'
-              ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white'
-              : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+              ? 'bg-gradient-to-r from-cyan-500 to-amber-800 text-white'
+              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
           }`}
         >
           <div className="flex items-center gap-2">
@@ -271,7 +271,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
                   ? 'from-green-500/20 to-emerald-500/20 border-green-500/30'
                   : employee.status === 'needs-attention'
                   ? 'from-red-500/20 to-orange-500/20 border-red-500/30'
-                  : 'from-cyan-500/20 to-blue-500/20 border-cyan-500/30'
+                  : 'from-cyan-500/20 to-amber-800/20 border-cyan-500/30'
               }`}
             >
               {/* Header */}
@@ -279,11 +279,11 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
                 <div>
                   <h3 className="text-xl font-bold text-white">{employee.name}</h3>
                   <p className="text-cyan-400">{employee.role}</p>
-                  <p className="text-sm text-slate-400">Started: {employee.startDate}</p>
+                  <p className="text-sm text-stone-400">Started: {employee.startDate}</p>
                 </div>
                 <div className="text-right">
                   <p className="text-2xl font-bold text-white">{employee.daysIn}</p>
-                  <p className="text-sm text-slate-300">Days In</p>
+                  <p className="text-sm text-stone-300">Days In</p>
                 </div>
               </div>
 
@@ -293,25 +293,25 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
                   <span className="text-sm text-white font-semibold">Onboarding Progress</span>
                   <span className="text-sm text-white font-bold">{employee.progress}%</span>
                 </div>
-                <div className="w-full bg-slate-700 rounded-full h-3">
+                <div className="w-full bg-stone-900 rounded-full h-3">
                   <div
                     className={`h-3 rounded-full ${
                       employee.status === 'excellent'
                         ? 'bg-gradient-to-r from-green-500 to-emerald-500'
                         : employee.status === 'needs-attention'
                         ? 'bg-gradient-to-r from-red-500 to-orange-500'
-                        : 'bg-gradient-to-r from-cyan-500 to-blue-500'
+                        : 'bg-gradient-to-r from-cyan-500 to-amber-800'
                     }`}
                     style={{ width: `${employee.progress}%` }}
                   ></div>
                 </div>
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-xs text-stone-400 mt-1">
                   {employee.completedTasks} of {employee.totalTasks} tasks completed
                 </p>
               </div>
 
               {/* Buddy Assignment */}
-              <div className="bg-slate-900/50 rounded-lg p-3 mb-4">
+              <div className="bg-stone-950/50 rounded-lg p-3 mb-4">
                 <div className="flex items-center gap-2 mb-1">
                   <Users className="w-4 h-4 text-amber-400" />
                   <p className="text-sm font-semibold text-white">Onboarding Buddy</p>
@@ -330,12 +330,12 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
 
               {/* Status Indicators */}
               <div className="grid grid-cols-2 gap-3 mb-4">
-                <div className="bg-slate-900/50 rounded-lg p-3">
-                  <p className="text-xs text-slate-400">Satisfaction</p>
+                <div className="bg-stone-950/50 rounded-lg p-3">
+                  <p className="text-xs text-stone-400">Satisfaction</p>
                   <p className="text-xl font-bold text-white">{employee.satisfactionScore}/5.0</p>
                 </div>
-                <div className="bg-slate-900/50 rounded-lg p-3">
-                  <p className="text-xs text-slate-400">Concern Flags</p>
+                <div className="bg-stone-950/50 rounded-lg p-3">
+                  <p className="text-xs text-stone-400">Concern Flags</p>
                   <p className={`text-xl font-bold ${employee.concernFlags > 0 ? 'text-red-400' : 'text-green-400'}`}>
                     {employee.concernFlags}
                   </p>
@@ -349,12 +349,12 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
                   <p className="text-sm font-semibold text-amber-200">Upcoming Milestone</p>
                 </div>
                 <p className="text-white font-bold">{employee.upcomingMilestone}</p>
-                <p className="text-xs text-slate-400">In {employee.daysToMilestone} days</p>
+                <p className="text-xs text-stone-400">In {employee.daysToMilestone} days</p>
               </div>
 
               {/* Recent Activity */}
-              <div className="bg-slate-900/50 rounded-lg p-3 mb-4">
-                <p className="text-xs text-slate-400 mb-1">Recent Activity</p>
+              <div className="bg-stone-950/50 rounded-lg p-3 mb-4">
+                <p className="text-xs text-stone-400 mb-1">Recent Activity</p>
                 <p className="text-sm text-white">{employee.recentActivity}</p>
               </div>
 
@@ -388,7 +388,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
                 <div>
                   <h3 className="text-2xl font-bold text-white">{employee.name}</h3>
                   <p className="text-lg text-cyan-400">{employee.role}</p>
-                  <p className="text-sm text-slate-400">Tenure: {employee.tenure}</p>
+                  <p className="text-sm text-stone-400">Tenure: {employee.tenure}</p>
                 </div>
                 <div className="text-right">
                   <span className={`px-4 py-2 rounded-lg font-bold text-sm ${
@@ -399,7 +399,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
                     {employee.riskLevel.toUpperCase()} RISK
                   </span>
                   <p className="text-2xl font-bold text-white mt-2">{employee.riskScore}%</p>
-                  <p className="text-xs text-slate-400">Risk Score</p>
+                  <p className="text-xs text-stone-400">Risk Score</p>
                 </div>
               </div>
 
@@ -412,7 +412,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
                   </h4>
                   <div className="space-y-2">
                     {employee.concerns.map((concern, index) => (
-                      <div key={index} className="bg-slate-900/50 rounded-lg p-3 border-l-4 border-red-500">
+                      <div key={index} className="bg-stone-950/50 rounded-lg p-3 border-l-4 border-red-500">
                         <p className="text-sm text-white">{concern}</p>
                       </div>
                     ))}
@@ -427,7 +427,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
                   </h4>
                   <div className="space-y-2">
                     {employee.recommendations.map((rec, index) => (
-                      <div key={index} className="bg-slate-900/50 rounded-lg p-3 border-l-4 border-amber-500/40">
+                      <div key={index} className="bg-stone-950/50 rounded-lg p-3 border-l-4 border-amber-500/40">
                         <p className="text-sm text-white">{rec}</p>
                       </div>
                     ))}
@@ -437,10 +437,10 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
 
               {/* Action Buttons */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6">
-                <button className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 rounded-lg font-bold text-white transition-all">
+                <button className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-amber-800 hover:from-cyan-600 hover:to-amber-800 rounded-lg font-bold text-white transition-all">
                   Schedule 1:1
                 </button>
-                <button className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-lg font-bold text-white transition-all">
+                <button className="px-4 py-2 bg-gradient-to-r from-stone-900 to-pink-500 hover:from-stone-900 hover:to-pink-600 rounded-lg font-bold text-white transition-all">
                   Review Workload
                 </button>
                 <button className="px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 rounded-lg font-bold text-white transition-all">
@@ -457,7 +457,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
             <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-xl rounded-xl p-12 border-2 border-green-500/30 text-center">
               <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-white mb-2">No High-Risk Employees!</h3>
-              <p className="text-slate-300">Your team retention is looking excellent. Keep up the great work!</p>
+              <p className="text-stone-300">Your team retention is looking excellent. Keep up the great work!</p>
             </div>
           )}
         </div>
@@ -467,20 +467,20 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
       {activeTab === 'analytics' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Onboarding Checklist */}
-          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-xl p-6 border-2 border-cyan-500/30">
+          <div className="lux-card/80 backdrop-blur-xl rounded-xl p-6 border-2 border-cyan-500/30">
             <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
               <FileText className="w-6 h-6 text-cyan-400" />
               Onboarding Checklist Template
             </h3>
             <div className="space-y-4">
               {onboardingChecklist.map((phase, index) => (
-                <div key={index} className="bg-slate-900/50 rounded-lg p-4">
+                <div key={index} className="bg-stone-950/50 rounded-lg p-4">
                   <h4 className="text-lg font-bold text-white mb-3">{phase.category}</h4>
                   <div className="space-y-2">
                     {phase.tasks.map((task, taskIndex) => (
                       <div key={taskIndex} className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                        <p className="text-sm text-slate-300">{task}</p>
+                        <p className="text-sm text-stone-300">{task}</p>
                       </div>
                     ))}
                   </div>
@@ -491,38 +491,38 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
 
           {/* Best Practices & Insights */}
           <div className="space-y-6">
-            <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="bg-gradient-to-br from-stone-900/20 to-pink-500/20 backdrop-blur-xl rounded-xl p-6 border-2 border-amber-500/40/30">
               <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <Award className="w-6 h-6 text-amber-400" />
                 Best Practices
               </h3>
               <div className="space-y-3">
-                <div className="bg-slate-900/50 rounded-lg p-4">
+                <div className="bg-stone-950/50 rounded-lg p-4">
                   <h4 className="font-bold text-white mb-2">Buddy System Impact</h4>
-                  <p className="text-sm text-slate-300 mb-2">Employees with assigned buddies show {successMetrics.buddyProgramSuccess}% higher retention at 1 year.</p>
-                  <div className="w-full bg-slate-700 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style={{ width: `${successMetrics.buddyProgramSuccess}%` }}></div>
+                  <p className="text-sm text-stone-300 mb-2">Employees with assigned buddies show {successMetrics.buddyProgramSuccess}% higher retention at 1 year.</p>
+                  <div className="w-full bg-stone-900 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-stone-900 to-pink-500 h-2 rounded-full" style={{ width: `${successMetrics.buddyProgramSuccess}%` }}></div>
                   </div>
                 </div>
 
-                <div className="bg-slate-900/50 rounded-lg p-4">
+                <div className="bg-stone-950/50 rounded-lg p-4">
                   <h4 className="font-bold text-white mb-2">Early Check-In Frequency</h4>
-                  <p className="text-sm text-slate-300">Weekly check-ins during first 30 days reduce turnover by 34%.</p>
+                  <p className="text-sm text-stone-300">Weekly check-ins during first 30 days reduce turnover by 34%.</p>
                 </div>
 
-                <div className="bg-slate-900/50 rounded-lg p-4">
+                <div className="bg-stone-950/50 rounded-lg p-4">
                   <h4 className="font-bold text-white mb-2">Career Path Discussion</h4>
-                  <p className="text-sm text-slate-300">Employees with documented career plans are 2.5x more likely to stay beyond 2 years.</p>
+                  <p className="text-sm text-stone-300">Employees with documented career plans are 2.5x more likely to stay beyond 2 years.</p>
                 </div>
 
-                <div className="bg-slate-900/50 rounded-lg p-4">
+                <div className="bg-stone-950/50 rounded-lg p-4">
                   <h4 className="font-bold text-white mb-2">Recognition Timing</h4>
-                  <p className="text-sm text-slate-300">Recognition within first 90 days improves engagement scores by 42%.</p>
+                  <p className="text-sm text-stone-300">Recognition within first 90 days improves engagement scores by 42%.</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-xl rounded-xl p-6 border-2 border-cyan-500/30">
+            <div className="bg-gradient-to-br from-cyan-500/20 to-amber-800/20 backdrop-blur-xl rounded-xl p-6 border-2 border-cyan-500/30">
               <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <TrendingUp className="w-6 h-6 text-cyan-400" />
                 Your Performance vs Industry
@@ -534,13 +534,13 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
                     <span className="text-white font-bold">{successMetrics.current90DayRetention}%</span>
                   </div>
                   <div className="space-y-1">
-                    <div className="w-full bg-slate-700 rounded-full h-3">
+                    <div className="w-full bg-stone-900 rounded-full h-3">
                       <div className="bg-gradient-to-r from-green-500 to-emerald-500 h-3 rounded-full" style={{ width: `${successMetrics.current90DayRetention}%` }}></div>
                     </div>
-                    <div className="w-full bg-slate-700 rounded-full h-2">
+                    <div className="w-full bg-stone-900 rounded-full h-2">
                       <div className="bg-gradient-to-r from-slate-400 to-slate-500 h-2 rounded-full" style={{ width: `${successMetrics.industryAvg90Day}%` }}></div>
                     </div>
-                    <p className="text-xs text-slate-400">Industry avg: {successMetrics.industryAvg90Day}%</p>
+                    <p className="text-xs text-stone-400">Industry avg: {successMetrics.industryAvg90Day}%</p>
                   </div>
                 </div>
 
@@ -550,13 +550,13 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
                     <span className="text-white font-bold">{successMetrics.current1YearRetention}%</span>
                   </div>
                   <div className="space-y-1">
-                    <div className="w-full bg-slate-700 rounded-full h-3">
-                      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-3 rounded-full" style={{ width: `${successMetrics.current1YearRetention}%` }}></div>
+                    <div className="w-full bg-stone-900 rounded-full h-3">
+                      <div className="bg-gradient-to-r from-cyan-500 to-amber-800 h-3 rounded-full" style={{ width: `${successMetrics.current1YearRetention}%` }}></div>
                     </div>
-                    <div className="w-full bg-slate-700 rounded-full h-2">
+                    <div className="w-full bg-stone-900 rounded-full h-2">
                       <div className="bg-gradient-to-r from-slate-400 to-slate-500 h-2 rounded-full" style={{ width: `${successMetrics.industryAvg1Year}%` }}></div>
                     </div>
-                    <p className="text-xs text-slate-400">Industry avg: {successMetrics.industryAvg1Year}%</p>
+                    <p className="text-xs text-stone-400">Industry avg: {successMetrics.industryAvg1Year}%</p>
                   </div>
                 </div>
               </div>

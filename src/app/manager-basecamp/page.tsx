@@ -70,11 +70,11 @@ export default function ManagerBasecamp() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-stone-900 to-slate-900">
       {/* Mood Check-In Modal */}
       {showMoodCheckIn && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 max-w-2xl w-full border-2 border-amber-500/40/30 shadow-2xl">
+          <div className="lux-card rounded-2xl p-8 max-w-2xl w-full border-2 border-amber-500/40/30 shadow-2xl">
             <h2 className="text-3xl font-bold text-white mb-2 text-center">How are you feeling today, {userName}?</h2>
             <p className="text-blue-200 text-center mb-6">Your wellbeing matters - even as a leader 💙</p>
             
@@ -100,10 +100,10 @@ export default function ManagerBasecamp() {
             {moodAlertSent && (
               <div className="p-4 bg-amber-600/20 border border-blue-400/30 rounded-lg mb-4">
                 <div className="flex items-start gap-3">
-                  <Bell className="w-5 h-5 text-blue-300 mt-0.5" />
+                  <Bell className="w-5 h-5 text-amber-400 mt-0.5" />
                   <div>
                     <p className="text-blue-200 font-semibold">Your executive team has been notified</p>
-                    <p className="text-blue-300 text-sm mt-1">Leadership support will reach out. Remember - taking care of yourself helps you take care of your team. 💙</p>
+                    <p className="text-amber-400 text-sm mt-1">Leadership support will reach out. Remember - taking care of yourself helps you take care of your team. 💙</p>
                   </div>
                 </div>
               </div>
@@ -111,7 +111,7 @@ export default function ManagerBasecamp() {
 
             <button
               onClick={() => setShowMoodCheckIn(false)}
-              className="w-full py-2 text-slate-400 hover:text-white text-sm transition-colors"
+              className="w-full py-2 text-stone-400 hover:text-white text-sm transition-colors"
             >
               Skip for now
             </button>
@@ -132,13 +132,13 @@ export default function ManagerBasecamp() {
       )}
 
       {/* Top Navigation Bar */}
-      <nav className="bg-slate-900/80 backdrop-blur-xl border-b-2 border-amber-500/40/30 sticky top-0 z-40">
+      <nav className="bg-stone-950/80 backdrop-blur-xl border-b-2 border-amber-500/40/30 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center gap-3">
-              <Mountain className="w-8 h-8 text-blue-400" />
-              <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-cyan-200">
+              <Mountain className="w-8 h-8 text-amber-400" />
+              <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-cyan-200">
                 Manager Basecamp
               </span>
             </div>
@@ -149,9 +149,9 @@ export default function ManagerBasecamp() {
               <div className="relative">
                 <button
                   onClick={() => setShowNotifications(!showNotifications)}
-                  className="relative p-2 bg-slate-800 hover:bg-slate-700 rounded-lg transition-all"
+                  className="relative p-2 bg-stone-900 hover:bg-stone-900 rounded-lg transition-all"
                 >
-                  <Bell className="w-6 h-6 text-blue-400" />
+                  <Bell className="w-6 h-6 text-amber-400" />
                   <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                     5
                   </span>
@@ -159,21 +159,21 @@ export default function ManagerBasecamp() {
               </div>
 
               {/* User Menu */}
-              <div className="flex items-center gap-3 bg-slate-800 rounded-lg px-4 py-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
+              <div className="flex items-center gap-3 bg-stone-900 rounded-lg px-4 py-2">
+                <div className="w-10 h-10 bg-gradient-to-br from-amber-700 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
                   {userName.charAt(0)}
                 </div>
                 <div>
                   <div className="text-white font-semibold">{userName}</div>
-                  <div className="text-blue-400 text-xs">Manager • RN Supervisor</div>
+                  <div className="text-amber-400 text-xs">Manager • RN Supervisor</div>
                 </div>
               </div>
 
               <button
                 onClick={() => setShowDashboardCustomizer(true)}
-                className="p-2 bg-slate-800 hover:bg-slate-700 rounded-lg transition-all"
+                className="p-2 bg-stone-900 hover:bg-stone-900 rounded-lg transition-all"
               >
-                <Settings className="w-6 h-6 text-blue-400" />
+                <Settings className="w-6 h-6 text-amber-400" />
               </button>
             </div>
           </div>
@@ -182,7 +182,7 @@ export default function ManagerBasecamp() {
 
       <div className="max-w-7xl mx-auto p-6">
         {/* Welcome Banner */}
-        <div className="bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-600 rounded-2xl p-8 mb-6 border-2 border-blue-400/50 shadow-2xl relative overflow-hidden">
+        <div className="bg-gradient-to-r from-amber-700 via-cyan-600 to-amber-800 rounded-2xl p-8 mb-6 border-2 border-blue-400/50 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-10">
             <Mountain className="w-64 h-64 text-white" />
           </div>
@@ -211,16 +211,16 @@ export default function ManagerBasecamp() {
             <div className="text-xs text-green-300 mt-1">2 call-offs today</div>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
               <Target className="w-8 h-8 text-cyan-400" />
               <span className="text-2xl font-bold text-white">$127K</span>
             </div>
             <div className="text-blue-200 font-semibold">Labor Cost (Week)</div>
-            <div className="text-xs text-blue-300 mt-1">Under budget! 💪</div>
+            <div className="text-xs text-amber-400 mt-1">Under budget! 💪</div>
           </div>
 
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
               <Star className="w-8 h-8 text-yellow-400" />
               <span className="text-2xl font-bold text-white">4.6</span>
@@ -244,13 +244,13 @@ export default function ManagerBasecamp() {
           {/* Left Column */}
           <div className="lg:col-span-2 space-y-6">
             {/* Quick access links to Command Center */}
-            <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-yellow-400" />
                 Quick Actions
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                <Link href="/dashboard" className="bg-gradient-to-br from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 rounded-lg p-4 text-center transition-all shadow-lg group">
+                <Link href="/dashboard" className="bg-gradient-to-br from-amber-700 to-cyan-600 hover:from-amber-700 hover:to-cyan-500 rounded-lg p-4 text-center transition-all shadow-lg group">
                   <BarChart3 className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <div className="text-white font-semibold text-sm">Command Center</div>
                 </Link>
@@ -258,7 +258,7 @@ export default function ManagerBasecamp() {
                   <Users className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <div className="text-white font-semibold text-sm">Manage Team</div>
                 </Link>
-                <Link href="/calendar" className="bg-gradient-to-br from-amber-700 to-amber-600 hover:from-purple-500 hover:to-pink-500 rounded-lg p-4 text-center transition-all shadow-lg group">
+                <Link href="/calendar" className="bg-gradient-to-br from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-500 rounded-lg p-4 text-center transition-all shadow-lg group">
                   <Calendar className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <div className="text-white font-semibold text-sm">Schedule</div>
                 </Link>
@@ -270,16 +270,16 @@ export default function ManagerBasecamp() {
             </div>
 
             {/* Your Reports (You have a boss too!) */}
-            <div className="bg-gradient-to-br from-cyan-900/30 to-blue-900/30 rounded-xl p-6 border-2 border-cyan-500/30">
+            <div className="bg-gradient-to-br from-cyan-900/30 to-amber-800/30 rounded-xl p-6 border-2 border-cyan-500/30">
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <TrendingUp className="w-6 h-6 text-cyan-400" />
                 Report to Leadership
               </h2>
               <div className="space-y-3">
-                <div className="bg-slate-900/50 rounded-lg p-4 border border-cyan-500/20">
+                <div className="bg-stone-950/50 rounded-lg p-4 border border-cyan-500/20">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-amber-800 rounded-full flex items-center justify-center text-white font-bold">
                         JD
                       </div>
                       <div>
@@ -291,7 +291,7 @@ export default function ManagerBasecamp() {
                       Message
                     </Link>
                   </div>
-                  <div className="text-sm text-slate-300">
+                  <div className="text-sm text-stone-300">
                     <p className="mb-1"><strong>Next 1:1:</strong> Friday 2:00 PM</p>
                     <p><strong>Pending:</strong> Weekly report due tomorrow</p>
                   </div>
@@ -303,7 +303,7 @@ export default function ManagerBasecamp() {
           {/* Right Column */}
           <div className="space-y-6">
             {/* Nox Manager Assistant */}
-            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-amber-500/40/30 shadow-xl">
+            <div className="bg-gradient-to-br from-stone-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-amber-500/40/30 shadow-xl">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <Bot className="w-6 h-6 text-amber-400" />
@@ -340,32 +340,32 @@ export default function ManagerBasecamp() {
             </div>
 
             {/* Team Status */}
-            <div className="bg-slate-800/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Users className="w-5 h-5 text-blue-400" />
+                <Users className="w-5 h-5 text-amber-400" />
                 Team Status
               </h2>
               <div className="space-y-2">
-                <Link href="/employees" className="flex items-center justify-between p-3 bg-slate-900/50 hover:bg-slate-900 rounded-lg transition-all group">
+                <Link href="/employees" className="flex items-center justify-between p-3 bg-stone-950/50 hover:bg-stone-950 rounded-lg transition-all group">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-400" />
                     <span className="text-white font-semibold">42 Active Staff</span>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-slate-500 group-hover:text-blue-400 transition-colors" />
+                  <ChevronRight className="w-5 h-5 text-stone-500 group-hover:text-amber-400 transition-colors" />
                 </Link>
-                <Link href="/time-off" className="flex items-center justify-between p-3 bg-slate-900/50 hover:bg-slate-900 rounded-lg transition-all group">
+                <Link href="/time-off" className="flex items-center justify-between p-3 bg-stone-950/50 hover:bg-stone-950 rounded-lg transition-all group">
                   <div className="flex items-center gap-3">
                     <Clock className="w-5 h-5 text-yellow-400" />
                     <span className="text-white font-semibold">8 Time-Off Requests</span>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-slate-500 group-hover:text-blue-400 transition-colors" />
+                  <ChevronRight className="w-5 h-5 text-stone-500 group-hover:text-amber-400 transition-colors" />
                 </Link>
-                <Link href="/qapi" className="flex items-center justify-between p-3 bg-slate-900/50 hover:bg-slate-900 rounded-lg transition-all group">
+                <Link href="/qapi" className="flex items-center justify-between p-3 bg-stone-950/50 hover:bg-stone-950 rounded-lg transition-all group">
                   <div className="flex items-center gap-3">
                     <AlertCircle className="w-5 h-5 text-red-400" />
                     <span className="text-white font-semibold">3 Open Incidents</span>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-slate-500 group-hover:text-blue-400 transition-colors" />
+                  <ChevronRight className="w-5 h-5 text-stone-500 group-hover:text-amber-400 transition-colors" />
                 </Link>
               </div>
             </div>

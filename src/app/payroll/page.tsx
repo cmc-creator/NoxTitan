@@ -542,7 +542,7 @@ export default function PayrollPage() {
                 <h2 className="text-2xl font-bold" style={{ color: 'var(--header-text)' }}>
                   Current Pay Period
                 </h2>
-                <span className="px-3 py-1 bg-amber-600/20 text-blue-400 rounded-full text-sm font-semibold">
+                <span className="px-3 py-1 bg-amber-600/20 text-amber-400 rounded-full text-sm font-semibold">
                   {currentPeriod.status.toUpperCase()}
                 </span>
               </div>
@@ -608,7 +608,7 @@ export default function PayrollPage() {
               {/* Department Breakdown */}
               <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
                 <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-                  <Users className="h-5 w-5 text-blue-400" />
+                  <Users className="h-5 w-5 text-amber-400" />
                   Department Breakdown
                 </h3>
                 <div className="space-y-3">
@@ -721,7 +721,7 @@ export default function PayrollPage() {
                       <td className="py-3 px-2 font-semibold">{emp.name}</td>
                       <td className="py-3 px-2">{emp.department}</td>
                       <td className="py-3 px-2">
-                        <span className="px-2 py-1 bg-amber-600/20 text-blue-400 rounded text-xs font-semibold uppercase">
+                        <span className="px-2 py-1 bg-amber-600/20 text-amber-400 rounded text-xs font-semibold uppercase">
                           {emp.payType}
                         </span>
                       </td>
@@ -732,7 +732,7 @@ export default function PayrollPage() {
                         {emp.payType === 'hourly' ? formatCurrency(emp.payRate * 1.5) : 'N/A'}
                       </td>
                       <td className="py-3 px-2 text-right">
-                        <button className="px-3 py-1 bg-amber-600/20 hover:bg-amber-600/30 text-blue-400 rounded text-sm transition-all">
+                        <button className="px-3 py-1 bg-amber-600/20 hover:bg-amber-600/30 text-amber-400 rounded text-sm transition-all">
                           Edit
                         </button>
                       </td>
@@ -766,7 +766,7 @@ export default function PayrollPage() {
                     </div>
                     <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
                       period.status === 'paid' ? 'bg-green-500/20 text-green-400' :
-                      period.status === 'approved' ? 'bg-amber-600/20 text-blue-400' :
+                      period.status === 'approved' ? 'bg-amber-600/20 text-amber-400' :
                       period.status === 'processing' ? 'bg-yellow-500/20 text-yellow-400' :
                       'bg-gray-500/20 text-stone-400'
                     }`}>
@@ -861,7 +861,7 @@ export default function PayrollPage() {
                         <td className="py-4 px-4">
                           <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
                             employee.healthInsurance.plan === 'premium' ? 'bg-amber-500/20 text-amber-400' :
-                            employee.healthInsurance.plan === 'basic' ? 'bg-amber-600/20 text-blue-400' :
+                            employee.healthInsurance.plan === 'basic' ? 'bg-amber-600/20 text-amber-400' :
                             'bg-gray-500/20 text-stone-400'
                           }`}>
                             {employee.healthInsurance.plan === 'none' ? 'Not Enrolled' : 
@@ -892,7 +892,7 @@ export default function PayrollPage() {
                         </td>
                         <td className="text-right py-4 px-4">
                           {employee.retirement401k.enrolled ? (
-                            <div className="font-semibold text-blue-400">
+                            <div className="font-semibold text-amber-400">
                               {formatCurrency(employee.retirement401k.employerMatch)}
                             </div>
                           ) : (
@@ -939,7 +939,7 @@ export default function PayrollPage() {
               <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="p-4 rounded-lg border" style={{ borderColor: 'var(--border-color)' }}>
                   <div className="text-sm opacity-70 mb-2">Total Employer Health Costs</div>
-                  <div className="text-xl font-bold text-blue-400">
+                  <div className="text-xl font-bold text-amber-400">
                     {formatCurrency(employeeBenefits.reduce((sum, e) => sum + e.healthInsurance.employerContribution, 0))}
                   </div>
                   <div className="text-xs opacity-60 mt-1">Per pay period</div>
@@ -962,7 +962,7 @@ export default function PayrollPage() {
 
               <div className="mt-6 p-4 rounded-lg" style={{ background: 'rgba(59, 130, 246, 0.1)' }}>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-amber-400 mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="font-semibold mb-1" style={{ color: 'var(--header-text)' }}>
                       Benefits Deductions Applied Automatically
@@ -1022,7 +1022,7 @@ export default function PayrollPage() {
                     <div className="flex gap-2">
                       {integration.status === 'connected' ? (
                         <>
-                          <button className="flex-1 px-4 py-2 bg-amber-600/20 hover:bg-amber-600/30 text-blue-400 rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+                          <button className="flex-1 px-4 py-2 bg-amber-600/20 hover:bg-amber-600/30 text-amber-400 rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
                             <RefreshCw className="h-4 w-4" />
                             Sync Now
                           </button>

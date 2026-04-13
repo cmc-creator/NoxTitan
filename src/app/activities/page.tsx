@@ -467,11 +467,11 @@ export default function ActivitiesPage() {
     if (frequency === 'daily') return { color: 'bg-amber-600', label: 'Daily' };
     if (frequency === 'weekly') return { color: 'bg-amber-600', label: 'Weekly' };
     if (frequency === 'monthly') return { color: 'bg-pink-600', label: 'Monthly' };
-    return { color: 'bg-slate-600', label: 'Ongoing' };
+    return { color: 'bg-stone-600', label: 'Ongoing' };
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-stone-900 to-pink-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-amber-700 via-stone-900 to-pink-900 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -479,7 +479,7 @@ export default function ActivitiesPage() {
             <Sparkles className="w-10 h-10 text-yellow-400" />
             Team Engagement Activities
           </h1>
-          <p className="text-slate-300">Connect, compete, and build relationships with your teammates</p>
+          <p className="text-stone-300">Connect, compete, and build relationships with your teammates</p>
         </div>
 
         {/* Featured Activities */}
@@ -516,7 +516,7 @@ export default function ActivitiesPage() {
                 </div>
                 <button
                   onClick={() => participateInActivity(activity.id)}
-                  className="w-full px-4 py-3 bg-stone-950 text-amber-600 hover:bg-slate-100 font-bold rounded-lg transition-all"
+                  className="w-full px-4 py-3 bg-stone-950 text-amber-600 hover:bg-stone-100 font-bold rounded-lg transition-all"
                 >
                   Participate Now
                 </button>
@@ -538,7 +538,7 @@ export default function ActivitiesPage() {
               className={`flex items-center gap-2 px-6 py-3 rounded-lg font-bold transition-all ${
                 activeTab === tab.id
                   ? 'bg-gradient-to-r from-amber-700 to-amber-600 text-white'
-                  : 'bg-slate-800/50 text-slate-400 hover:text-white'
+                  : 'bg-stone-900/50 text-stone-400 hover:text-white'
               }`}
             >
               <tab.icon className="w-5 h-5" />
@@ -559,7 +559,7 @@ export default function ActivitiesPage() {
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all whitespace-nowrap ${
                     selectedCategory === category.id
                       ? 'bg-amber-600 text-white'
-                      : 'bg-slate-800/50 text-slate-400 hover:text-white'
+                      : 'bg-stone-900/50 text-stone-400 hover:text-white'
                   }`}
                 >
                   <category.icon className="w-4 h-4" />
@@ -571,7 +571,7 @@ export default function ActivitiesPage() {
             {/* Activities Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredActivities.map(activity => (
-                <div key={activity.id} className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-amber-500/40/50 transition-all">
+                <div key={activity.id} className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 hover:border-amber-500/40/50 transition-all">
                   <div className="text-center mb-4">
                     <div className="text-5xl mb-2">{activity.icon}</div>
                     <h3 className="text-lg font-bold text-white mb-1">{activity.name}</h3>
@@ -584,20 +584,20 @@ export default function ActivitiesPage() {
                       </span>
                     </div>
                   </div>
-                  <p className="text-sm text-slate-300 mb-4 min-h-[60px]">{activity.description}</p>
+                  <p className="text-sm text-stone-300 mb-4 min-h-[60px]">{activity.description}</p>
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2 text-yellow-400">
                       <Zap className="w-4 h-4" />
                       <span className="font-bold">+{activity.xpReward} XP</span>
                     </div>
-                    <div className="flex items-center gap-2 text-slate-400">
+                    <div className="flex items-center gap-2 text-stone-400">
                       <Users className="w-4 h-4" />
                       <span className="text-sm">{activity.participants}</span>
                     </div>
                   </div>
                   <button
                     onClick={() => participateInActivity(activity.id)}
-                    className="w-full px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg transition-all"
+                    className="w-full px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-700 text-white font-bold rounded-lg transition-all"
                   >
                     Join Activity
                   </button>
@@ -609,18 +609,18 @@ export default function ActivitiesPage() {
 
         {/* My Activities Tab */}
         {activeTab === 'my-activities' && (
-          <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
+          <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
             <h2 className="text-2xl font-bold text-white mb-6">My Participation History</h2>
             {myParticipations.length === 0 ? (
               <div className="text-center py-12">
-                <Sparkles className="w-16 h-16 text-slate-600 mx-auto mb-4" />
-                <p className="text-slate-400 text-lg">No activities completed yet</p>
-                <p className="text-slate-500">Start participating to see your history here!</p>
+                <Sparkles className="w-16 h-16 text-stone-600 mx-auto mb-4" />
+                <p className="text-stone-400 text-lg">No activities completed yet</p>
+                <p className="text-stone-500">Start participating to see your history here!</p>
               </div>
             ) : (
               <div className="space-y-4">
                 {myParticipations.map((participation, idx) => (
-                  <div key={idx} className="bg-slate-900/50 rounded-lg p-4">
+                  <div key={idx} className="bg-stone-950/50 rounded-lg p-4">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-lg font-bold text-white">{participation.activityName}</h3>
                       <div className="flex items-center gap-2 text-yellow-400 font-bold">
@@ -629,9 +629,9 @@ export default function ActivitiesPage() {
                       </div>
                     </div>
                     {participation.response && (
-                      <p className="text-slate-300 mb-2">{participation.response}</p>
+                      <p className="text-stone-300 mb-2">{participation.response}</p>
                     )}
-                    <div className="flex items-center gap-2 text-sm text-slate-400">
+                    <div className="flex items-center gap-2 text-sm text-stone-400">
                       <Clock className="w-4 h-4" />
                       {new Date(participation.completedAt).toLocaleString()}
                     </div>
@@ -644,9 +644,9 @@ export default function ActivitiesPage() {
 
         {/* Leaderboard Tab */}
         {activeTab === 'leaderboard' && (
-          <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
+          <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
             <h2 className="text-2xl font-bold text-white mb-6">Activity Leaderboard</h2>
-            <p className="text-slate-400 text-center py-12">
+            <p className="text-stone-400 text-center py-12">
               Leaderboard coming soon! Track who's most engaged with team activities.
             </p>
           </div>

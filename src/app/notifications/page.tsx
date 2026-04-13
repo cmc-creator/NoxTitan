@@ -140,7 +140,7 @@ export default function NotificationsPage() {
               ? 'from-green-900/40 to-emerald-900/40 border-green-500/30'
               : notification.type === 'warning'
               ? 'from-orange-900/40 to-red-900/40 border-orange-500/30'
-              : 'from-blue-900/40 to-cyan-900/40 border-cyan-500/30';
+              : 'from-amber-700/40 to-cyan-900/40 border-cyan-500/30';
             
             const iconColor = notification.type === 'success' 
               ? 'text-green-400'
@@ -157,7 +157,7 @@ export default function NotificationsPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className={`flex-shrink-0 w-12 h-12 rounded-full ${
-                    notification.unread ? 'bg-amber-500/20' : 'bg-slate-800/50'
+                    notification.unread ? 'bg-amber-500/20' : 'bg-stone-900/50'
                   } flex items-center justify-center`}>
                     <Icon className={`w-6 h-6 ${iconColor}`} />
                   </div>
@@ -184,7 +184,7 @@ export default function NotificationsPage() {
 
         {/* Empty State (when no notifications) */}
         {notifications.length === 0 && (
-          <div className="bg-slate-800/50 backdrop-blur-xl rounded-xl p-12 text-center border-2 border-slate-700">
+          <div className="bg-stone-900/50 backdrop-blur-xl rounded-xl p-12 text-center border-2 border-stone-700">
             <Bell className="w-16 h-16 text-stone-500 mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-white mb-2">All Caught Up!</h3>
             <p className="text-stone-400">You have no new notifications</p>

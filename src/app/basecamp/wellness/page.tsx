@@ -10,7 +10,7 @@ export default function WellnessHub() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900">
       {/* Top Navigation */}
-      <nav className="bg-slate-900/80 backdrop-blur-xl border-b-2 border-emerald-500/30 sticky top-0 z-50">
+      <nav className="bg-stone-950/80 backdrop-blur-xl border-b-2 border-emerald-500/30 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <Link href="/basecamp" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <Mountain className="w-8 h-8 text-emerald-400" />
@@ -54,7 +54,7 @@ export default function WellnessHub() {
                 <div className="text-pink-200 font-semibold">out of 100</div>
               </div>
             </div>
-            <div className="w-full bg-slate-800 rounded-full h-4">
+            <div className="w-full bg-stone-900 rounded-full h-4">
               <div
                 className="bg-gradient-to-r from-pink-500 to-red-500 h-4 rounded-full transition-all"
                 style={{ width: `${wellnessScore}%` }}
@@ -73,15 +73,15 @@ export default function WellnessHub() {
             <div className="text-2xl font-bold text-white mb-1">8,547</div>
             <div className="text-orange-200 text-sm">Steps Today</div>
           </div>
-          <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
-              <Brain className="w-8 h-8 text-blue-400" />
+              <Brain className="w-8 h-8 text-amber-400" />
               <span className="text-green-400 text-sm font-bold">Great!</span>
             </div>
             <div className="text-2xl font-bold text-white mb-1">7.5 hrs</div>
             <div className="text-blue-200 text-sm">Sleep Last Night</div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
               <Smile className="w-8 h-8 text-amber-400" />
               <span className="text-green-400 text-sm font-bold">Positive</span>
@@ -103,44 +103,44 @@ export default function WellnessHub() {
           {/* Left Column */}
           <div className="lg:col-span-2 space-y-6">
             {/* EAP - Employee Assistance Program */}
-            <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="lux-card/80 rounded-xl p-6 border-2 border-amber-500/40/30">
               <div className="flex items-center gap-3 mb-4">
-                <Heart className="w-8 h-8 text-blue-400" />
+                <Heart className="w-8 h-8 text-amber-400" />
                 <div>
                   <h2 className="text-2xl font-bold text-white">Employee Assistance Program (EAP)</h2>
-                  <p className="text-slate-300">Confidential support 24/7 - we're here for you!</p>
+                  <p className="text-stone-300">Confidential support 24/7 - we're here for you!</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <div className="bg-gradient-to-r from-blue-900/40 to-cyan-900/40 rounded-lg p-4 border border-amber-500/40/30">
-                  <div className="text-blue-300 font-semibold mb-2">Mental Health Counseling</div>
-                  <p className="text-slate-300 text-sm mb-3">Free, confidential sessions with licensed therapists</p>
-                  <div className="text-blue-400 text-sm font-bold">📞 1-800-WELLNESS</div>
+                <div className="bg-gradient-to-r from-amber-700/40 to-cyan-900/40 rounded-lg p-4 border border-amber-500/40/30">
+                  <div className="text-amber-400 font-semibold mb-2">Mental Health Counseling</div>
+                  <p className="text-stone-300 text-sm mb-3">Free, confidential sessions with licensed therapists</p>
+                  <div className="text-amber-400 text-sm font-bold">📞 1-800-WELLNESS</div>
                 </div>
-                <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-lg p-4 border border-amber-500/40/30">
+                <div className="bg-gradient-to-r from-stone-900/40 to-pink-900/40 rounded-lg p-4 border border-amber-500/40/30">
                   <div className="text-amber-200 font-semibold mb-2">Financial Counseling</div>
-                  <p className="text-slate-300 text-sm mb-3">Get expert advice on budgeting, debt, and planning</p>
+                  <p className="text-stone-300 text-sm mb-3">Get expert advice on budgeting, debt, and planning</p>
                   <div className="text-amber-400 text-sm font-bold">Available 24/7</div>
                 </div>
                 <div className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 rounded-lg p-4 border border-green-500/30">
                   <div className="text-green-300 font-semibold mb-2">Legal Support</div>
-                  <p className="text-slate-300 text-sm mb-3">Free consultations on legal matters</p>
+                  <p className="text-stone-300 text-sm mb-3">Free consultations on legal matters</p>
                   <div className="text-green-400 text-sm font-bold">30 mins free</div>
                 </div>
                 <div className="bg-gradient-to-r from-orange-900/40 to-red-900/40 rounded-lg p-4 border border-orange-500/30">
                   <div className="text-orange-300 font-semibold mb-2">Work-Life Balance</div>
-                  <p className="text-slate-300 text-sm mb-3">Resources for childcare, eldercare, and more</p>
+                  <p className="text-stone-300 text-sm mb-3">Resources for childcare, eldercare, and more</p>
                   <div className="text-orange-400 text-sm font-bold">Always here</div>
                 </div>
               </div>
 
               <div className="flex gap-3">
-                <button className="flex-1 px-4 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+                <button className="flex-1 px-4 py-3 bg-gradient-to-r from-amber-700 to-cyan-600 hover:from-amber-700 hover:to-cyan-500 text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
                   <Phone className="w-5 h-5" />
                   Call Now
                 </button>
-                <button className="flex-1 px-4 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+                <button className="flex-1 px-4 py-3 bg-stone-900 hover:bg-stone-600 text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
                   <Video className="w-5 h-5" />
                   Virtual Session
                 </button>
@@ -148,7 +148,7 @@ export default function WellnessHub() {
             </div>
 
             {/* Wellness Challenges */}
-            <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="lux-card/80 rounded-xl p-6 border-2 border-amber-500/40/30">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-2">
                   <Trophy className="w-6 h-6 text-yellow-400" />
@@ -171,30 +171,30 @@ export default function WellnessHub() {
                       <div className="text-green-400 text-xs font-semibold">days done!</div>
                     </div>
                   </div>
-                  <div className="w-full bg-slate-700 rounded-full h-2 mb-2">
+                  <div className="w-full bg-stone-900 rounded-full h-2 mb-2">
                     <div className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full" style={{ width: '71%' }} />
                   </div>
                   <div className="text-emerald-400 text-sm">🎁 Reward: $25 Amazon Gift Card</div>
                 </div>
 
-                <div className="bg-gradient-to-r from-blue-900/40 to-cyan-900/40 rounded-lg p-4 border border-amber-500/40/30">
+                <div className="bg-gradient-to-r from-amber-700/40 to-cyan-900/40 rounded-lg p-4 border border-amber-500/40/30">
                   <div className="flex items-start justify-between mb-3">
                     <div>
                       <div className="text-lg font-bold text-white mb-1">💧 Hydration Hero</div>
-                      <div className="text-blue-300 text-sm">Drink 8 glasses of water daily</div>
+                      <div className="text-amber-400 text-sm">Drink 8 glasses of water daily</div>
                     </div>
                     <div className="text-right">
                       <div className="text-2xl font-bold text-white">6/8</div>
-                      <div className="text-blue-400 text-xs font-semibold">today</div>
+                      <div className="text-amber-400 text-xs font-semibold">today</div>
                     </div>
                   </div>
-                  <div className="w-full bg-slate-700 rounded-full h-2 mb-2">
-                    <div className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full" style={{ width: '75%' }} />
+                  <div className="w-full bg-stone-900 rounded-full h-2 mb-2">
+                    <div className="bg-gradient-to-r from-amber-700 to-cyan-500 h-2 rounded-full" style={{ width: '75%' }} />
                   </div>
                   <div className="text-cyan-400 text-sm">🎁 Reward: Reusable Water Bottle</div>
                 </div>
 
-                <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-lg p-4 border border-amber-500/40/30">
+                <div className="bg-gradient-to-r from-stone-900/40 to-pink-900/40 rounded-lg p-4 border border-amber-500/40/30">
                   <div className="flex items-start justify-between mb-3">
                     <div>
                       <div className="text-lg font-bold text-white mb-1">🧘 Mindful Moments</div>
@@ -205,8 +205,8 @@ export default function WellnessHub() {
                       <div className="text-amber-400 text-xs font-semibold">this week</div>
                     </div>
                   </div>
-                  <div className="w-full bg-slate-700 rounded-full h-2 mb-2">
-                    <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style={{ width: '60%' }} />
+                  <div className="w-full bg-stone-900 rounded-full h-2 mb-2">
+                    <div className="bg-gradient-to-r from-stone-900 to-pink-500 h-2 rounded-full" style={{ width: '60%' }} />
                   </div>
                   <div className="text-pink-400 text-sm">🎁 Reward: Meditation App Premium</div>
                 </div>
@@ -221,8 +221,8 @@ export default function WellnessHub() {
               <div className="text-3xl mb-3">💪</div>
               <h3 className="text-xl font-bold text-white mb-2">Gym Membership</h3>
               <p className="text-orange-200 text-sm mb-4">Company-paid membership at any major gym!</p>
-              <div className="bg-slate-900/50 rounded-lg p-3 mb-4">
-                <div className="text-slate-400 text-xs mb-1">Your Gym</div>
+              <div className="bg-stone-950/50 rounded-lg p-3 mb-4">
+                <div className="text-stone-400 text-xs mb-1">Your Gym</div>
                 <div className="text-white font-semibold">FitLife Fitness Center</div>
               </div>
               <button className="w-full px-4 py-3 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white rounded-lg font-semibold transition-all">
@@ -231,31 +231,31 @@ export default function WellnessHub() {
             </div>
 
             {/* Wellness Resources */}
-            <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-xl p-6 border-2 border-emerald-500/30">
+            <div className="lux-card/80 rounded-xl p-6 border-2 border-emerald-500/30">
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-emerald-400" />
                 Quick Resources
               </h3>
               <div className="space-y-3">
-                <button className="w-full p-3 bg-slate-900/50 hover:bg-slate-900 rounded-lg transition-all text-left border border-emerald-500/20">
+                <button className="w-full p-3 bg-stone-950/50 hover:bg-stone-950 rounded-lg transition-all text-left border border-emerald-500/20">
                   <div className="text-white font-semibold text-sm flex items-center justify-between">
                     <span>🧘 Meditation Apps</span>
                     <span className="text-emerald-400">→</span>
                   </div>
                 </button>
-                <button className="w-full p-3 bg-slate-900/50 hover:bg-slate-900 rounded-lg transition-all text-left border border-emerald-500/20">
+                <button className="w-full p-3 bg-stone-950/50 hover:bg-stone-950 rounded-lg transition-all text-left border border-emerald-500/20">
                   <div className="text-white font-semibold text-sm flex items-center justify-between">
                     <span>🏃 Fitness Plans</span>
                     <span className="text-emerald-400">→</span>
                   </div>
                 </button>
-                <button className="w-full p-3 bg-slate-900/50 hover:bg-slate-900 rounded-lg transition-all text-left border border-emerald-500/20">
+                <button className="w-full p-3 bg-stone-950/50 hover:bg-stone-950 rounded-lg transition-all text-left border border-emerald-500/20">
                   <div className="text-white font-semibold text-sm flex items-center justify-between">
                     <span>🥗 Nutrition Guide</span>
                     <span className="text-emerald-400">→</span>
                   </div>
                 </button>
-                <button className="w-full p-3 bg-slate-900/50 hover:bg-slate-900 rounded-lg transition-all text-left border border-emerald-500/20">
+                <button className="w-full p-3 bg-stone-950/50 hover:bg-stone-950 rounded-lg transition-all text-left border border-emerald-500/20">
                   <div className="text-white font-semibold text-sm flex items-center justify-between">
                     <span>😴 Sleep Tips</span>
                     <span className="text-emerald-400">→</span>
@@ -265,23 +265,23 @@ export default function WellnessHub() {
             </div>
 
             {/* Upcoming Wellness Events */}
-            <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Calendar className="w-5 h-5 text-amber-400" />
                 Upcoming Events
               </h3>
               <div className="space-y-3">
-                <div className="bg-slate-900/50 rounded-lg p-3 border border-amber-500/40/20">
+                <div className="bg-stone-950/50 rounded-lg p-3 border border-amber-500/40/20">
                   <div className="text-amber-200 font-semibold text-sm mb-1">Yoga Session</div>
-                  <div className="text-slate-400 text-xs">Wednesday, 12:00 PM</div>
+                  <div className="text-stone-400 text-xs">Wednesday, 12:00 PM</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-lg p-3 border border-amber-500/40/20">
+                <div className="bg-stone-950/50 rounded-lg p-3 border border-amber-500/40/20">
                   <div className="text-amber-200 font-semibold text-sm mb-1">Mental Health Workshop</div>
-                  <div className="text-slate-400 text-xs">Friday, 2:00 PM</div>
+                  <div className="text-stone-400 text-xs">Friday, 2:00 PM</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-lg p-3 border border-amber-500/40/20">
+                <div className="bg-stone-950/50 rounded-lg p-3 border border-amber-500/40/20">
                   <div className="text-amber-200 font-semibold text-sm mb-1">Team Hiking Trip</div>
-                  <div className="text-slate-400 text-xs">Saturday, 9:00 AM</div>
+                  <div className="text-stone-400 text-xs">Saturday, 9:00 AM</div>
                 </div>
               </div>
             </div>

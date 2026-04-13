@@ -15,7 +15,7 @@ export default function SettingsPage() {
   return (
     <div className="space-y-6">
       {/* Theme Customization */}
-      <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg shadow p-6 border-2 border-purple-200">
+      <div className="bg-gradient-to-r from-stone-900 to-pink-50 rounded-lg shadow p-6 border-2 border-purple-200">
         <div className="flex items-center gap-3 mb-2">
           <span className="text-2xl">🎨</span>
           <h3 className="text-xl font-bold text-stone-100">Theme & Appearance</h3>
@@ -27,7 +27,7 @@ export default function SettingsPage() {
       </div>
 
       {/* Onboarding Walkthrough Restart */}
-      <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg shadow p-6 border-2 border-purple-200">
+      <div className="bg-gradient-to-r from-amber-700 to-amber-500 rounded-lg shadow p-6 border-2 border-purple-200">
         <div className="flex items-center gap-3 mb-2">
           <HelpCircle className="w-6 h-6 text-amber-600" />
           <h3 className="text-xl font-bold text-stone-100">Onboarding Walkthrough</h3>
@@ -35,7 +35,7 @@ export default function SettingsPage() {
         <p className="text-stone-500 mb-4">Need a refresher? You can revisit the interactive onboarding walkthrough anytime.</p>
         <button
           onClick={handleRestartTour}
-          className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg font-bold transition-all"
+          className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-500 hover:from-stone-900 hover:to-amber-800 text-white rounded-lg font-bold transition-all"
         >
           Revisit Onboarding Walkthrough
         </button>
@@ -50,7 +50,7 @@ export default function SettingsPage() {
       </div>
 
       {/* Merch Store Setup - NEW */}
-      <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg shadow p-6 border-2 border-blue-200">
+      <div className="bg-gradient-to-r from-amber-700 to-amber-900 rounded-lg shadow p-6 border-2 border-blue-200">
         <div className="flex items-start justify-between">
           <div>
             <div className="flex items-center gap-3 mb-2">
@@ -77,7 +77,7 @@ export default function SettingsPage() {
           </div>
         </div>
         <Link href="/merch-store/setup">
-          <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg font-bold transition-all">
+          <button className="px-6 py-3 bg-gradient-to-r from-amber-800 to-amber-600 hover:from-amber-800 hover:to-amber-600 text-white rounded-lg font-bold transition-all">
             Setup Merch Store →
           </button>
         </Link>

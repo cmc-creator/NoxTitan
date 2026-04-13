@@ -77,7 +77,7 @@ export default function SurveyIntegrationsPage() {
         'Configure sync frequency (real-time or scheduled)',
       ],
       webhookSetup: true,
-      color: 'from-blue-500 to-indigo-500',
+      color: 'from-amber-700 to-amber-800',
     },
     GOOGLE_FORMS: {
       name: 'Google Forms',
@@ -90,7 +90,7 @@ export default function SurveyIntegrationsPage() {
         'Set up automatic sync schedule',
       ],
       webhookSetup: false,
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-stone-900 to-pink-500',
     },
     TYPEFORM: {
       name: 'Typeform',
@@ -124,7 +124,7 @@ export default function SurveyIntegrationsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-900 to-pink-50 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -232,7 +232,7 @@ export default function SurveyIntegrationsPage() {
                     <>
                       <button
                         onClick={() => handleSync(integration.id)}
-                        className="flex-1 px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center justify-center gap-2"
+                        className="flex-1 px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-stone-900 hover:to-pink-700 flex items-center justify-center gap-2"
                       >
                         <RefreshCw className="w-5 h-5" />
                         Sync Now
@@ -253,7 +253,7 @@ export default function SurveyIntegrationsPage() {
                   ) : (
                     <button
                       onClick={() => handleConnect(integration.platform)}
-                      className="flex-1 px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center justify-center gap-2"
+                      className="flex-1 px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-stone-900 hover:to-pink-700 flex items-center justify-center gap-2"
                     >
                       <Link2 className="w-5 h-5" />
                       Connect {info.name}
@@ -371,7 +371,7 @@ export default function SurveyIntegrationsPage() {
                       setSelectedPlatform(null);
                       alert('Integration connected successfully!');
                     }}
-                    className="flex-1 px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 flex items-center justify-center gap-2"
+                    className="flex-1 px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-stone-900 hover:to-pink-700 flex items-center justify-center gap-2"
                   >
                     <Check className="w-5 h-5" />
                     Connect Integration

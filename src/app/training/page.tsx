@@ -463,7 +463,7 @@ export default function TrainingPage() {
         {/* Learning Paths */}
         {activeTab === 'paths' && (
           <div className="space-y-6">
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 mb-6">
+            <div className="bg-gradient-to-r from-amber-700 to-amber-800 p-6 rounded-xl border border-blue-200 mb-6">
               <h2 className="text-2xl font-bold text-stone-100 mb-2">📚 Structured Learning Paths</h2>
               <p className="text-gray-700">
                 Follow curated learning paths designed to develop specific skills systematically. 

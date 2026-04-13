@@ -164,7 +164,7 @@ export default function MerchStorePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-stone-900 to-pink-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-amber-700 via-stone-900 to-pink-900 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -172,7 +172,7 @@ export default function MerchStorePage() {
             <div className="absolute inset-0 bg-pink-500 blur-3xl opacity-50 animate-pulse"></div>
             <ShoppingBag className="w-20 h-20 text-pink-300 relative" />
           </div>
-          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 mb-4">
+          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-stone-900 to-amber-800 mb-4">
             Merch Store
           </h1>
           <p className="text-xl text-amber-100/70 mb-6">
@@ -181,7 +181,7 @@ export default function MerchStorePage() {
         </div>
 
         {/* Cart Summary & Payment Method */}
-        <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 mb-8">
+        <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 mb-8">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-4">
               <ShoppingCart className="w-6 h-6 text-pink-400" />
@@ -204,7 +204,7 @@ export default function MerchStorePage() {
                   <div className="text-2xl font-bold text-yellow-400">
                     {guildProfile.totalXP.toLocaleString()} XP
                   </div>
-                  <div className="text-xs text-slate-400">Available</div>
+                  <div className="text-xs text-stone-400">Available</div>
                 </div>
               )}
 
@@ -214,7 +214,7 @@ export default function MerchStorePage() {
                   className={`px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all ${
                     paymentMethod === 'PAYROLL_DEDUCTION'
                       ? 'bg-amber-600 text-white'
-                      : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                      : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
                   }`}
                 >
                   <DollarSign className="w-4 h-4" />
@@ -225,7 +225,7 @@ export default function MerchStorePage() {
                   className={`px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all ${
                     paymentMethod === 'GUILD_XP'
                       ? 'bg-amber-600 text-white'
-                      : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                      : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
                   }`}
                 >
                   <Zap className="w-4 h-4" />
@@ -238,22 +238,22 @@ export default function MerchStorePage() {
 
         {/* Cart Checkout */}
         {checkoutOpen && cart.length > 0 && (
-          <div className="bg-slate-800 border-2 border-pink-500 rounded-xl p-6 mb-8">
+          <div className="bg-stone-900 border-2 border-pink-500 rounded-xl p-6 mb-8">
             <h2 className="text-2xl font-bold text-white mb-4">Your Cart</h2>
             <div className="space-y-3 mb-6">
               {cart.map(cartItem => (
-                <div key={cartItem.item.id} className="flex items-center justify-between bg-slate-700/50 rounded-lg p-4">
+                <div key={cartItem.item.id} className="flex items-center justify-between bg-stone-900/50 rounded-lg p-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-slate-600 rounded-lg flex items-center justify-center">
+                    <div className="w-16 h-16 bg-stone-600 rounded-lg flex items-center justify-center">
                       {cartItem.item.imageUrl ? (
                         <img src={cartItem.item.imageUrl} alt={cartItem.item.name} className="w-full h-full object-cover rounded-lg" />
                       ) : (
-                        <Package className="w-8 h-8 text-slate-400" />
+                        <Package className="w-8 h-8 text-stone-400" />
                       )}
                     </div>
                     <div>
                       <h3 className="text-white font-bold">{cartItem.item.name}</h3>
-                      <div className="flex items-center gap-4 text-sm text-slate-400">
+                      <div className="flex items-center gap-4 text-sm text-stone-400">
                         {paymentMethod === 'GUILD_XP' && cartItem.item.redeemableWithXP ? (
                           <span className="text-yellow-400 font-bold">{cartItem.item.xpCost} XP each</span>
                         ) : (
@@ -264,7 +264,7 @@ export default function MerchStorePage() {
                           min="1"
                           value={cartItem.quantity}
                           onChange={(e) => updateQuantity(cartItem.item.id, parseInt(e.target.value))}
-                          className="w-16 px-2 py-1 bg-slate-600 text-white rounded"
+                          className="w-16 px-2 py-1 bg-stone-600 text-white rounded"
                         />
                       </div>
                     </div>
@@ -290,7 +290,7 @@ export default function MerchStorePage() {
               ))}
             </div>
 
-            <div className="border-t border-slate-700 pt-4 mb-6">
+            <div className="border-t border-stone-700 pt-4 mb-6">
               <div className="flex justify-between items-center text-2xl font-bold text-white">
                 <span>Total:</span>
                 {paymentMethod === 'GUILD_XP' ? (
@@ -300,7 +300,7 @@ export default function MerchStorePage() {
                 )}
               </div>
               {paymentMethod === 'PAYROLL_DEDUCTION' && (
-                <p className="text-sm text-slate-400 mt-2">
+                <p className="text-sm text-stone-400 mt-2">
                   Amount will be deducted from your next paycheck
                 </p>
               )}
@@ -309,7 +309,7 @@ export default function MerchStorePage() {
             <button
               onClick={checkout}
               disabled={!selectedEmployee}
-              className="w-full px-6 py-4 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white font-bold rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+              className="w-full px-6 py-4 bg-gradient-to-r from-pink-600 to-amber-900 hover:from-pink-700 hover:to-amber-900 text-white font-bold rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
             >
               <CreditCard className="w-6 h-6" />
               Complete Order
@@ -320,18 +320,18 @@ export default function MerchStorePage() {
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {items.map(item => (
-            <div key={item.id} className="bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden hover:border-pink-500/50 transition-all">
-              <div className="aspect-square bg-slate-700 flex items-center justify-center">
+            <div key={item.id} className="bg-stone-900/50 border border-stone-700 rounded-xl overflow-hidden hover:border-pink-500/50 transition-all">
+              <div className="aspect-square bg-stone-900 flex items-center justify-center">
                 {item.imageUrl ? (
                   <img src={item.imageUrl} alt={item.name} className="w-full h-full object-cover" />
                 ) : (
-                  <Package className="w-16 h-16 text-slate-500" />
+                  <Package className="w-16 h-16 text-stone-500" />
                 )}
               </div>
               <div className="p-4">
                 <h3 className="text-lg font-bold text-white mb-2">{item.name}</h3>
                 {item.description && (
-                  <p className="text-sm text-slate-400 mb-3 line-clamp-2">{item.description}</p>
+                  <p className="text-sm text-stone-400 mb-3 line-clamp-2">{item.description}</p>
                 )}
                 
                 <div className="flex items-center justify-between mb-4">
@@ -347,14 +347,14 @@ export default function MerchStorePage() {
                     </div>
                   )}
                   {item.stockQuantity !== null && item.stockQuantity !== undefined && (
-                    <span className="text-xs text-slate-400">{item.stockQuantity} left</span>
+                    <span className="text-xs text-stone-400">{item.stockQuantity} left</span>
                   )}
                 </div>
 
                 <button
                   onClick={() => addToCart(item)}
                   disabled={item.stockQuantity !== null && item.stockQuantity !== undefined && item.stockQuantity <= 0}
-                  className="w-full px-4 py-2 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full px-4 py-2 bg-gradient-to-r from-pink-600 to-amber-900 hover:from-pink-700 hover:to-amber-900 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   <ShoppingBag className="w-4 h-4" />
                   Add to Cart
@@ -373,9 +373,9 @@ export default function MerchStorePage() {
 
         {items.length === 0 && !loading && (
           <div className="text-center py-20">
-            <Package className="w-20 h-20 text-slate-600 mx-auto mb-4" />
+            <Package className="w-20 h-20 text-stone-600 mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-white mb-2">No Items Available</h3>
-            <p className="text-slate-400">Check back later for new merch!</p>
+            <p className="text-stone-400">Check back later for new merch!</p>
           </div>
         )}
       </div>

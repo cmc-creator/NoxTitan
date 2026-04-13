@@ -12,7 +12,7 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
   const [config, setConfig] = useState({
     name: 'Basebot',
     avatar: '🤖',
-    color: 'from-cyan-500 to-blue-500',
+    color: 'from-cyan-500 to-amber-800',
     personality: 'helpful',
     voice: 'professional-female',
   });
@@ -55,13 +55,13 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
 
   // Color schemes
   const colorOptions = [
-    { gradient: 'from-cyan-500 to-blue-500', name: 'Ocean Blue' },
-    { gradient: 'from-purple-500 to-pink-500', name: 'Purple Dream' },
+    { gradient: 'from-cyan-500 to-amber-800', name: 'Ocean Blue' },
+    { gradient: 'from-stone-900 to-pink-500', name: 'Purple Dream' },
     { gradient: 'from-green-500 to-emerald-500', name: 'Forest Green' },
     { gradient: 'from-orange-500 to-red-500', name: 'Sunset' },
     { gradient: 'from-yellow-500 to-orange-500', name: 'Golden Hour' },
     { gradient: 'from-pink-500 to-rose-500', name: 'Rose Garden' },
-    { gradient: 'from-indigo-500 to-purple-500', name: 'Deep Space' },
+    { gradient: 'from-amber-700 to-amber-500', name: 'Deep Space' },
     { gradient: 'from-teal-500 to-cyan-500', name: 'Tropical' },
   ];
 
@@ -129,16 +129,16 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
 
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 max-w-5xl w-full border-2 border-cyan-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div className="lux-card rounded-2xl p-6 max-w-5xl w-full border-2 border-cyan-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <Bot className="w-8 h-8 text-cyan-400" />
             <div>
               <h2 className="text-3xl font-bold text-white">Customize Your Work Partner</h2>
-              <p className="text-sm text-slate-400">Your companion for your entire employment journey</p>
+              <p className="text-sm text-stone-400">Your companion for your entire employment journey</p>
             </div>
           </div>
-          <button onClick={onClose} className="p-2 hover:bg-slate-700 rounded-lg transition-all text-slate-400">
+          <button onClick={onClose} className="p-2 hover:bg-stone-900 rounded-lg transition-all text-stone-400">
             ✕
           </button>
         </div>
@@ -157,7 +157,7 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
                 value={config.name}
                 onChange={(e) => setConfig({ ...config, name: e.target.value })}
                 placeholder="Enter custom name"
-                className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600 mb-3 text-lg font-semibold"
+                className="w-full bg-stone-900 text-white rounded-lg px-4 py-3 border border-stone-700 mb-3 text-lg font-semibold"
                 maxLength={20}
               />
               <div className="grid grid-cols-4 md:grid-cols-7 gap-2">
@@ -168,7 +168,7 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
                     className={`px-3 py-2 rounded-lg text-sm font-semibold transition-all ${
                       config.name === name
                         ? 'bg-cyan-500 text-white'
-                        : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                        : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
                     }`}
                   >
                     {name}
@@ -191,7 +191,7 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
                     className={`text-4xl p-3 rounded-lg transition-all hover:scale-110 ${
                       config.avatar === avatar.emoji
                         ? 'bg-cyan-500/30 border-2 border-cyan-400'
-                        : 'bg-slate-700 hover:bg-slate-600'
+                        : 'bg-stone-900 hover:bg-stone-600'
                     }`}
                     title={avatar.name}
                   >
@@ -239,15 +239,15 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
                     onClick={() => setConfig({ ...config, personality: personality.id })}
                     className={`p-4 rounded-lg transition-all text-left ${
                       config.personality === personality.id
-                        ? 'bg-gradient-to-r from-cyan-500/30 to-blue-500/30 border-2 border-cyan-400'
-                        : 'bg-slate-700 hover:bg-slate-600 border-2 border-transparent'
+                        ? 'bg-gradient-to-r from-cyan-500/30 to-amber-800/30 border-2 border-cyan-400'
+                        : 'bg-stone-900 hover:bg-stone-600 border-2 border-transparent'
                     }`}
                   >
                     <div className="flex items-center gap-3 mb-2">
                       <span className="text-3xl">{personality.icon}</span>
                       <div>
                         <p className="text-white font-bold">{personality.name}</p>
-                        <p className="text-xs text-slate-400">{personality.description}</p>
+                        <p className="text-xs text-stone-400">{personality.description}</p>
                       </div>
                     </div>
                   </button>
@@ -308,14 +308,14 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
               onSave(config);
               onClose();
             }}
-            className="flex-1 px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 rounded-lg font-bold text-white text-lg transition-all flex items-center justify-center gap-2 shadow-lg"
+            className="flex-1 px-6 py-4 bg-gradient-to-r from-cyan-500 to-amber-800 hover:from-cyan-600 hover:to-amber-800 rounded-lg font-bold text-white text-lg transition-all flex items-center justify-center gap-2 shadow-lg"
           >
             <Save className="w-6 h-6" />
             Save My Work Partner
           </button>
           <button
             onClick={onClose}
-            className="px-6 py-4 bg-slate-700 hover:bg-slate-600 rounded-lg font-semibold text-white transition-all"
+            className="px-6 py-4 bg-stone-900 hover:bg-stone-600 rounded-lg font-semibold text-white transition-all"
           >
             Cancel
           </button>

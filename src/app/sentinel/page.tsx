@@ -90,16 +90,16 @@ export default function SentinelPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-stone-900 to-slate-900 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
-              <Shield className="w-10 h-10 text-blue-400" />
+              <Shield className="w-10 h-10 text-amber-400" />
               Sentinel - Visitor Command Center
             </h1>
-            <p className="text-slate-400">Real-time visitor tracking and security management</p>
+            <p className="text-stone-400">Real-time visitor tracking and security management</p>
           </div>
           <div className="flex gap-3">
             <button
@@ -118,7 +118,7 @@ export default function SentinelPage() {
             </button>
             <button
               onClick={() => window.location.href = '/sentinel/check-in'}
-              className="px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold rounded-lg transition-all flex items-center gap-2"
+              className="px-6 py-3 bg-gradient-to-r from-amber-700 to-cyan-600 hover:from-amber-700 hover:to-cyan-700 text-white font-semibold rounded-lg transition-all flex items-center gap-2"
             >
               <UserCheck className="w-5 h-5" />
               Check In Visitor
@@ -141,10 +141,10 @@ export default function SentinelPage() {
 
           <div className="bg-amber-600/10 border border-amber-500/40/50 rounded-xl p-6">
             <div className="flex items-center justify-between mb-2">
-              <TrendingUp className="w-8 h-8 text-blue-400" />
-              <span className="text-4xl font-bold text-blue-400">{stats.todayTotal}</span>
+              <TrendingUp className="w-8 h-8 text-amber-400" />
+              <span className="text-4xl font-bold text-amber-400">{stats.todayTotal}</span>
             </div>
-            <p className="text-blue-300 font-semibold">Today's Total</p>
+            <p className="text-amber-400 font-semibold">Today's Total</p>
           </div>
 
           <div className="bg-orange-500/10 border border-orange-500/50 rounded-xl p-6">
@@ -173,10 +173,10 @@ export default function SentinelPage() {
         </div>
 
         {/* Active Visitors Table */}
-        <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-xl overflow-hidden">
-          <div className="bg-slate-800/80 px-6 py-4 border-b border-slate-700">
+        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl overflow-hidden">
+          <div className="bg-stone-900/80 px-6 py-4 border-b border-stone-700">
             <h2 className="text-xl font-bold text-white flex items-center gap-2">
-              <Eye className="w-6 h-6 text-blue-400" />
+              <Eye className="w-6 h-6 text-amber-400" />
               Currently In Building
             </h2>
           </div>
@@ -184,41 +184,41 @@ export default function SentinelPage() {
           {loading ? (
             <div className="p-12 text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto mb-4"></div>
-              <p className="text-slate-400">Loading visitors...</p>
+              <p className="text-stone-400">Loading visitors...</p>
             </div>
           ) : activeVisitors.length === 0 ? (
             <div className="p-12 text-center">
-              <UserCheck className="w-16 h-16 text-slate-600 mx-auto mb-4" />
+              <UserCheck className="w-16 h-16 text-stone-600 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">No Active Visitors</h3>
-              <p className="text-slate-400">Building is currently clear.</p>
+              <p className="text-stone-400">Building is currently clear.</p>
             </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-slate-800/50">
+                <thead className="bg-stone-900/50">
                   <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300">Visitor</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300">Company</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300">Host</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300">Purpose</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300">Location</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300">Badge</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300">Time In</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-slate-300">Actions</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Visitor</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Company</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Host</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Purpose</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Location</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Badge</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Time In</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {activeVisitors.map((visit) => (
                     <tr 
                       key={visit.id} 
-                      className={`border-t border-slate-700 hover:bg-slate-800/30 transition-colors ${
+                      className={`border-t border-stone-700 hover:bg-stone-900/30 transition-colors ${
                         visit.visitor.isWatchlist ? 'bg-red-500/5 border-red-500/30' : ''
                       }`}
                     >
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 bg-amber-600/20 rounded-full flex items-center justify-center">
-                            <Users className="w-5 h-5 text-blue-400" />
+                            <Users className="w-5 h-5 text-amber-400" />
                           </div>
                           <div>
                             <div className="font-semibold text-white flex items-center gap-2">
@@ -230,17 +230,17 @@ export default function SentinelPage() {
                           </div>
                         </div>
                       </td>
-                      <td className="px-6 py-4 text-slate-300">{visit.visitor.company || '-'}</td>
-                      <td className="px-6 py-4 text-slate-300">{visit.hostName || '-'}</td>
-                      <td className="px-6 py-4 text-slate-300">{visit.purpose}</td>
-                      <td className="px-6 py-4 text-slate-300">{visit.building || '-'}</td>
+                      <td className="px-6 py-4 text-stone-300">{visit.visitor.company || '-'}</td>
+                      <td className="px-6 py-4 text-stone-300">{visit.hostName || '-'}</td>
+                      <td className="px-6 py-4 text-stone-300">{visit.purpose}</td>
+                      <td className="px-6 py-4 text-stone-300">{visit.building || '-'}</td>
                       <td className="px-6 py-4">
-                        <span className="px-2 py-1 bg-amber-600/20 text-blue-400 border border-amber-500/40/50 rounded text-xs font-mono">
+                        <span className="px-2 py-1 bg-amber-600/20 text-amber-400 border border-amber-500/40/50 rounded text-xs font-mono">
                           {visit.badgeNumber || 'N/A'}
                         </span>
                       </td>
                       <td className="px-6 py-4">
-                        <div className="text-sm text-slate-300">
+                        <div className="text-sm text-stone-300">
                           {getTimeInBuilding(visit.checkInTime)}
                         </div>
                       </td>

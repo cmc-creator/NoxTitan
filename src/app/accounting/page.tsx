@@ -5,7 +5,7 @@ export default function AccountingPage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-stone-900 to-black p-8">
       <div className="max-w-7xl mx-auto">
         <div className="bg-black/40 backdrop-blur-sm rounded-2xl border border-amber-500/40/30 p-8 shadow-2xl">
-          <h1 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-600 to-purple-900 mb-4">
+          <h1 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-stone-900 via-stone-900 to-amber-900 mb-4">
              Accounting & Financial Management
           </h1>
           <p className="text-amber-200 text-xl mb-8">
@@ -59,11 +59,11 @@ export default function AccountingPage() {
               <div className="text-3xl font-bold text-white">.00</div>
               <div className="text-red-100 mt-2">Expenses (MTD)</div>
             </div>
-            <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg p-6 text-center">
+            <div className="bg-gradient-to-br from-amber-700 to-amber-500 rounded-lg p-6 text-center">
               <div className="text-3xl font-bold text-white">.00</div>
               <div className="text-blue-100 mt-2">Net Profit (MTD)</div>
             </div>
-            <div className="bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg p-6 text-center">
+            <div className="bg-gradient-to-br from-stone-900 to-amber-900 rounded-lg p-6 text-center">
               <div className="text-3xl font-bold text-white">0</div>
               <div className="text-amber-50 mt-2">Pending Invoices</div>
             </div>

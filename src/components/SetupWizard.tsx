@@ -135,7 +135,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                 {steps[currentStep].description}
               </p>
             </div>
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 max-w-2xl mx-auto">
+            <div className="bg-gradient-to-r from-stone-900 to-pink-50 rounded-xl p-6 max-w-2xl mx-auto">
               <h3 className="text-xl font-bold text-stone-100 mb-3">What we'll set up:</h3>
               <ul className="space-y-2 text-left">
                 <li className="flex items-start gap-3">
@@ -738,7 +738,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
   };
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 z-50 overflow-y-auto">
+    <div className="fixed inset-0 bg-gradient-to-br from-stone-900 via-stone-900 to-amber-800 z-50 overflow-y-auto">
       {showConfetti && <Confetti />}
       
       <div className="min-h-screen p-8">
@@ -746,7 +746,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
         <div className="max-w-5xl mx-auto mb-8">
           <div className="bg-stone-950/10 backdrop-blur-sm rounded-full h-3 mb-4">
             <div
-              className="bg-gradient-to-r from-purple-500 to-pink-500 h-full rounded-full transition-all duration-300"
+              className="bg-gradient-to-r from-stone-900 to-pink-500 h-full rounded-full transition-all duration-300"
               style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
             />
           </div>
@@ -785,7 +785,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
             <button
               onClick={handleNext}
               disabled={!isStepValid()}
-              className="px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:from-purple-700 hover:to-pink-700 transition-all flex items-center gap-2 ml-auto text-lg"
+              className="px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:from-stone-900 hover:to-pink-700 transition-all flex items-center gap-2 ml-auto text-lg"
             >
               <span>{currentStep === steps.length - 1 ? 'Complete Setup' : 'Next'}</span>
               {currentStep === steps.length - 1 ? (

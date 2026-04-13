@@ -674,7 +674,7 @@ export default function EmployeesPage() {
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-4 py-2.5 rounded-lg font-semibold transition-all"
+                  className="flex-1 bg-gradient-to-r from-amber-700 to-amber-500 hover:from-amber-800 hover:to-amber-600 text-white px-4 py-2.5 rounded-lg font-semibold transition-all"
                 >
                   Add Employee
                 </button>

@@ -7,7 +7,7 @@ export const industryQuestTemplates = {
   healthcare: {
     name: 'Healthcare',
     icon: '⚕️',
-    color: 'from-blue-600 to-cyan-600',
+    color: 'from-amber-700 to-cyan-600',
     quests: [
       {
         title: 'Document Patient Encounters',
@@ -207,7 +207,7 @@ export const industryQuestTemplates = {
   retail: {
     name: 'Retail',
     icon: '🛍️',
-    color: 'from-purple-600 to-indigo-600',
+    color: 'from-amber-700 to-amber-500',
     quests: [
       {
         title: 'Customer Service Excellence',
@@ -470,7 +470,7 @@ export const industryQuestTemplates = {
   callcenter: {
     name: 'Call Center/Customer Support',
     icon: '📞',
-    color: 'from-blue-600 to-indigo-600',
+    color: 'from-amber-700 to-amber-800',
     quests: [
       {
         title: 'Call Volume Champion',

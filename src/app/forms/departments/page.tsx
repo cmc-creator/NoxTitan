@@ -25,7 +25,7 @@ export default function DepartmentsPortalPage() {
       id: 'hr',
       name: 'Human Resources',
       icon: Users,
-      color: 'from-blue-600 to-purple-600',
+      color: 'from-amber-800 to-amber-600',
       formCount: 10,
       description: 'FMLA, PAF, onboarding, benefits, compliance forms',
       path: '/forms/departments/hr',
@@ -70,7 +70,7 @@ export default function DepartmentsPortalPage() {
       id: 'training',
       name: 'Training & Development',
       icon: GraduationCap,
-      color: 'from-indigo-600 to-blue-600',
+      color: 'from-amber-700 to-amber-800',
       formCount: 7,
       description: 'Course evaluations, training requests, certifications',
       path: '/forms/departments/training',
@@ -78,7 +78,7 @@ export default function DepartmentsPortalPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-stone-900 to-pink-50 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="bg-stone-950 rounded-xl shadow-lg p-8 mb-8">

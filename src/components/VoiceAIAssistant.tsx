@@ -242,9 +242,9 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
           )}
         </button>
         {/* Hover Tooltip */}
-        <div className="absolute bottom-24 left-0 w-64 bg-slate-900 border border-amber-500/40/50 rounded-lg p-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
+        <div className="absolute bottom-24 left-0 w-64 bg-stone-950 border border-amber-500/40/50 rounded-lg p-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
           <div className="text-amber-200 font-bold text-sm mb-1">🌙 Nox - Strategic AI</div>
-          <div className="text-slate-300 text-xs">
+          <div className="text-stone-300 text-xs">
             Voice-powered assistant for complex scheduling, predictions, and strategic planning. Uses Oracle AI for insights.
           </div>
         </div>
@@ -270,9 +270,9 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
 
       {/* Voice Assistant Window */}
       {isOpen && (
-        <div className={`fixed bottom-6 left-6 w-[420px] h-[600px] bg-slate-900 border-2 rounded-2xl shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom-8`} style={{borderColor: customColor.includes('purple') ? '#a855f7' : '#8b5cf6'}}>
+        <div className={`fixed bottom-6 left-6 w-[420px] h-[600px] bg-stone-950 border-2 rounded-2xl shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom-8`} style={{borderColor: customColor.includes('purple') ? '#a855f7' : '#8b5cf6'}}>
       {/* Header */}
-      <div className={`flex items-center justify-between p-4 border-b border-slate-700 bg-gradient-to-r ${customColor}`}>
+      <div className={`flex items-center justify-between p-4 border-b border-stone-700 bg-gradient-to-r ${customColor}`}>
         <div className="flex items-center gap-3">
           <div className="relative w-10 h-10 rounded-full flex items-center justify-center text-2xl overflow-hidden" style={{background: 'transparent'}}>
             {customAvatar}
@@ -316,13 +316,13 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
             <div
               className={`max-w-[80%] rounded-2xl px-4 py-3 ${
                 msg.role === 'user'
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
-                  : 'bg-slate-800 text-slate-100 border border-slate-700'
+                  ? 'bg-gradient-to-r from-amber-800 to-amber-600 text-white'
+                  : 'bg-stone-900 text-stone-100 border border-stone-700'
               }`}
             >
               <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
               <p className={`text-xs mt-1 ${
-                msg.role === 'user' ? 'text-blue-100' : 'text-slate-500'
+                msg.role === 'user' ? 'text-blue-100' : 'text-stone-500'
               }`}>
                 {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
               </p>
@@ -332,8 +332,8 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
         
         {isLoading && (
           <div className="flex justify-start">
-            <div className="bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3">
-              <Loader2 className="w-5 h-5 text-blue-400 animate-spin" />
+            <div className="bg-stone-900 border border-stone-700 rounded-2xl px-4 py-3">
+              <Loader2 className="w-5 h-5 text-amber-400 animate-spin" />
             </div>
           </div>
         )}
@@ -342,7 +342,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
       </div>
 
       {/* Input Area */}
-      <div className="p-4 border-t border-slate-700 bg-slate-900">
+      <div className="p-4 border-t border-stone-700 bg-stone-950">
         <div className="flex items-end gap-2">
           <div className="flex-1 relative">
             <textarea
@@ -351,7 +351,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
               onKeyPress={handleKeyPress}
               placeholder="Ask me anything or click the mic..."
               rows={1}
-              className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20 resize-none"
+              className="w-full px-4 py-3 bg-stone-900 border border-stone-700 rounded-xl text-white placeholder-stone-500 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20 resize-none"
             />
           </div>
           <button
@@ -360,20 +360,20 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
             className={`p-3 rounded-xl transition-all disabled:opacity-50 ${
               isListening
                 ? 'bg-red-600 hover:bg-red-700 animate-pulse'
-                : 'bg-slate-800 hover:bg-slate-700 border border-slate-700'
+                : 'bg-stone-900 hover:bg-stone-900 border border-stone-700'
             }`}
             title={isListening ? 'Stop listening' : 'Start voice input'}
           >
             {isListening ? (
               <MicOff className="w-5 h-5 text-white" />
             ) : (
-              <Mic className="w-5 h-5 text-slate-300" />
+              <Mic className="w-5 h-5 text-stone-300" />
             )}
           </button>
           <button
             onClick={() => handleSendMessage()}
             disabled={!inputText.trim() || isLoading}
-            className="p-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl transition-all disabled:opacity-50"
+            className="p-3 bg-gradient-to-r from-amber-800 to-amber-600 hover:from-amber-800 hover:to-amber-600 rounded-xl transition-all disabled:opacity-50"
             title="Send message"
           >
             <Send className="w-5 h-5 text-white" />

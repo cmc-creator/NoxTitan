@@ -21,7 +21,7 @@ export default function QuickActionsButton() {
       name: 'Clock In/Out',
       description: 'Start or end shift',
       icon: Clock,
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-amber-700 to-cyan-500',
       action: () => router.push('/timeclock')
     },
     {
@@ -35,7 +35,7 @@ export default function QuickActionsButton() {
       name: 'Request Time Off',
       description: 'Submit PTO request',
       icon: Calendar,
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-stone-900 to-pink-500',
       action: () => router.push('/time-off')
     },
     {
@@ -49,21 +49,21 @@ export default function QuickActionsButton() {
       name: 'Add Shift Log',
       description: 'Document shift notes',
       icon: FileText,
-      color: 'from-indigo-500 to-blue-500',
+      color: 'from-amber-700 to-amber-800',
       action: () => router.push('/shift-logs')
     },
     {
       name: 'Send Message',
       description: 'Chat with team',
       icon: MessageSquare,
-      color: 'from-cyan-500 to-blue-500',
+      color: 'from-cyan-500 to-amber-800',
       action: () => router.push('/messages')
     },
     {
       name: 'Add Employee',
       description: 'Onboard new staff',
       icon: Users,
-      color: 'from-violet-500 to-purple-500',
+      color: 'from-violet-500 to-amber-900',
       action: () => router.push('/employees')
     },
     {

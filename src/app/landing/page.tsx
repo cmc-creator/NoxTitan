@@ -40,7 +40,7 @@ export default function LandingPage() {
           </Link>
         </div>
         <div className="flex gap-4">
-          <Link href="/login" className="px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 font-bold shadow-lg transition-all text-white flex items-center gap-2">
+          <Link href="/login" className="px-6 py-3 rounded-xl bg-gradient-to-br from-stone-900/50 to-pink-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 font-bold shadow-lg transition-all text-white flex items-center gap-2">
             <Lock size={16} /> Login
           </Link>
         </div>
@@ -70,8 +70,8 @@ export default function LandingPage() {
         {/* Action Buttons Row - Cleaned up, no duplicates */}
         <div className="flex flex-row flex-wrap justify-center gap-4 mt-6">
           <Link href="/signup" className="px-6 py-3 rounded-xl bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-2 border-green-600/40 hover:border-green-400 font-bold shadow-lg transition-all text-white text-pop-light">Start Free Trial</Link>
-          <Link href="#contact" className="px-6 py-3 rounded-xl bg-gradient-to-br from-blue-900/50 to-indigo-900/50 border-2 border-amber-600/40/40 hover:border-blue-400 font-bold shadow-lg transition-all text-white text-pop-light">Request Demo</Link>
-          <Link href="/pricing" className="px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 font-bold shadow-lg transition-all text-white text-pop-light">View Pricing</Link>
+          <Link href="#contact" className="px-6 py-3 rounded-xl bg-gradient-to-br from-amber-700/50 to-amber-800/50 border-2 border-amber-600/40/40 hover:border-blue-400 font-bold shadow-lg transition-all text-white text-pop-light">Request Demo</Link>
+          <Link href="/pricing" className="px-6 py-3 rounded-xl bg-gradient-to-br from-stone-900/50 to-pink-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 font-bold shadow-lg transition-all text-white text-pop-light">View Pricing</Link>
         </div>
       </div>
 
@@ -79,8 +79,8 @@ export default function LandingPage() {
         <nav className="w-full flex justify-center items-center py-6 bg-gradient-to-b from-black via-[#1a1a1e] to-black shadow-lg sticky top-0 z-50 animate-fade-in">
           <div className="w-full max-w-6xl flex flex-row items-center justify-between px-4">
             <div className="flex flex-1 justify-center gap-6">
-              <a href="#features" className="px-6 py-3 rounded-xl bg-gradient-to-br from-purple-900/50 to-violet-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] font-bold shadow-lg transition-all text-white">Features</a>
-              <a href="#comparison" className="px-6 py-3 rounded-xl bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border-2 border-amber-600/40/40 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] font-bold shadow-lg transition-all text-white">Comparison</a>
+              <a href="#features" className="px-6 py-3 rounded-xl bg-gradient-to-br from-stone-900/50 to-violet-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] font-bold shadow-lg transition-all text-white">Features</a>
+              <a href="#comparison" className="px-6 py-3 rounded-xl bg-gradient-to-br from-amber-700/50 to-cyan-900/50 border-2 border-amber-600/40/40 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] font-bold shadow-lg transition-all text-white">Comparison</a>
               <a href="#demo-section" className="px-6 py-3 rounded-xl bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-2 border-green-600/40 hover:border-green-400 hover:shadow-[0_0_20px_rgba(34,197,94,0.6)] font-bold shadow-lg transition-all text-white">Demo</a>
               <a href="#contact" className="px-6 py-3 rounded-xl bg-gradient-to-br from-pink-900/50 to-rose-900/50 border-2 border-pink-600/40 hover:border-pink-400 hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] font-bold shadow-lg transition-all text-white">Contact</a>
             </div>
@@ -146,7 +146,7 @@ export default function LandingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {/* Guild Gamification */}
-            <div className="bg-gradient-to-br from-purple-900/50 to-black border-2 border-amber-600/40/40 rounded-xl p-6 hover:border-amber-400/40 transition-all">
+            <div className="bg-gradient-to-br from-stone-900/50 to-black border-2 border-amber-600/40/40 rounded-xl p-6 hover:border-amber-400/40 transition-all">
               <div className="mb-3"><Crown size={36} className="text-amber-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Guild Gamification System</h3>
               <p className="text-amber-100/70 text-sm mb-3">XP, levels, achievements, and rewards turn work into an engaging RPG experience. 7-tier progression from Novice to Grandmaster.</p>
@@ -162,8 +162,8 @@ export default function LandingPage() {
             </div>
 
             {/* Oracle AI */}
-            <div className="bg-gradient-to-br from-blue-900/50 to-black border-2 border-amber-600/40/40 rounded-xl p-6 hover:border-blue-400 transition-all">
-              <div className="mb-3"><Sparkles size={36} className="text-blue-400" /></div>
+            <div className="bg-gradient-to-br from-amber-700/50 to-black border-2 border-amber-600/40/40 rounded-xl p-6 hover:border-blue-400 transition-all">
+              <div className="mb-3"><Sparkles size={36} className="text-amber-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Oracle Predictive AI</h3>
               <p className="text-amber-100/70 text-sm mb-3">Machine learning forecasts staffing needs, predicts turnover, and optimizes schedules before issues arise.</p>
               <div className="text-xs text-amber-400">• Turnover prediction • Staffing optimization • Trend analysis</div>
@@ -194,7 +194,7 @@ export default function LandingPage() {
             </div>
 
             {/* Compliance Suite */}
-            <div className="bg-gradient-to-br from-indigo-900/50 to-black border-2 border-indigo-600/40 rounded-xl p-6 hover:border-indigo-400 transition-all">
+            <div className="bg-gradient-to-br from-amber-700/50 to-black border-2 border-indigo-600/40 rounded-xl p-6 hover:border-indigo-400 transition-all">
               <div className="mb-3"><ClipboardList size={36} className="text-amber-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Compliance Suite</h3>
               <p className="text-amber-100/70 text-sm mb-3">Automated OSHA, CMS, and Joint Commission compliance tracking with audit trails, certifications, and regulatory reporting.</p>
@@ -202,7 +202,7 @@ export default function LandingPage() {
             </div>
 
             {/* Treasury & Signatures */}
-            <div className="bg-gradient-to-br from-purple-900/50 to-black border-2 border-amber-600/40/40 rounded-xl p-6 hover:border-amber-400/40 transition-all">
+            <div className="bg-gradient-to-br from-stone-900/50 to-black border-2 border-amber-600/40/40 rounded-xl p-6 hover:border-amber-400/40 transition-all">
               <div className="mb-3"><PenLine size={36} className="text-amber-400" /></div>
               <h3 className="text-xl font-bold text-white mb-2">Digital Treasury & Signatures</h3>
               <p className="text-amber-100/70 text-sm mb-3">Secure document signing, approval workflows, and treasury management with full audit trails and compliance.</p>
@@ -255,10 +255,10 @@ export default function LandingPage() {
       <section className="w-full flex flex-col items-center py-8">
         <p className="text-amber-200 text-lg font-semibold mb-4 animate-fade-in">Trusted by industry leaders scaling beyond limits.</p>
         <div className="flex flex-wrap justify-center gap-8 animate-fade-in">
-          <div className="bg-gradient-to-r from-purple-700 to-pink-600 text-white px-6 py-3 rounded-lg font-bold shadow-md">Enterprise Corp</div>
-          <div className="bg-gradient-to-r from-purple-700 to-pink-600 text-white px-6 py-3 rounded-lg font-bold shadow-md">Global Tech Inc.</div>
-          <div className="bg-gradient-to-r from-purple-700 to-pink-600 text-white px-6 py-3 rounded-lg font-bold shadow-md">Titan Industries</div>
-          <div className="bg-gradient-to-r from-purple-700 to-pink-600 text-white px-6 py-3 rounded-lg font-bold shadow-md">Innovate Now</div>
+          <div className="bg-gradient-to-r from-stone-900 to-pink-600 text-white px-6 py-3 rounded-lg font-bold shadow-md">Enterprise Corp</div>
+          <div className="bg-gradient-to-r from-stone-900 to-pink-600 text-white px-6 py-3 rounded-lg font-bold shadow-md">Global Tech Inc.</div>
+          <div className="bg-gradient-to-r from-stone-900 to-pink-600 text-white px-6 py-3 rounded-lg font-bold shadow-md">Titan Industries</div>
+          <div className="bg-gradient-to-r from-stone-900 to-pink-600 text-white px-6 py-3 rounded-lg font-bold shadow-md">Innovate Now</div>
         </div>
       </section>
 
@@ -278,7 +278,7 @@ export default function LandingPage() {
           </p>
           <div className="w-full overflow-x-auto animate-fade-in">
             <table className="min-w-full rounded-2xl overflow-hidden shadow-2xl border border-purple-700/40 bg-black">
-              <thead className="bg-gradient-to-r from-purple-700 to-pink-600">
+              <thead className="bg-gradient-to-r from-stone-900 to-pink-600">
                 <tr>
                   <th className="px-6 py-4 text-lg font-bold text-white text-left">What You Need</th>
                   <th className="px-6 py-4 text-lg font-bold text-white text-left">Industry Standard (Multiple Tools)</th>
@@ -371,7 +371,7 @@ export default function LandingPage() {
               </tbody>
             </table>
           </div>
-          <div className="mt-8 p-6 bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-xl border-2 border-amber-500/40/50 max-w-4xl">
+          <div className="mt-8 p-6 bg-gradient-to-r from-stone-900/50 to-pink-900/50 rounded-xl border-2 border-amber-500/40/50 max-w-4xl">
             <p className="text-white text-lg font-semibold mb-2 flex items-center gap-2"><Lightbulb size={20} className="text-yellow-400 shrink-0" /> Not Included in Savings Calculation:</p>
             <ul className="text-amber-100/70 space-y-1 ml-6 list-disc">
               <li>Reduced admin time (40% time savings = $78K+/year for 2 FTE managers)</li>
@@ -396,14 +396,14 @@ export default function LandingPage() {
                 <p className="text-sm text-green-200/80">Replace 8+ tools with one platform</p>
               </div>
             </div>
-            <div className="flex flex-col items-center justify-center bg-gradient-to-br from-blue-800/60 to-indigo-900/60 rounded-2xl shadow-xl p-10 border-2 border-amber-500/40/40 hover:border-blue-400/60 transition-all">
+            <div className="flex flex-col items-center justify-center bg-gradient-to-br from-amber-700/60 to-amber-800/60 rounded-2xl shadow-xl p-10 border-2 border-amber-500/40/40 hover:border-blue-400/60 transition-all">
               <div className="text-center">
-                <h3 className="text-6xl font-black text-blue-300 mb-3 tracking-tight leading-none">$480K</h3>
+                <h3 className="text-6xl font-black text-amber-400 mb-3 tracking-tight leading-none">$480K</h3>
                 <p className="text-xl text-blue-100 font-semibold mb-2">Turnover Cost Savings</p>
                 <p className="text-sm text-blue-200/80">35% reduction in employee churn (100 employees)</p>
               </div>
             </div>
-            <div className="flex flex-col items-center justify-center bg-gradient-to-br from-purple-800/60 to-pink-900/60 rounded-2xl shadow-xl p-10 border-2 border-amber-500/40/40 hover:border-amber-400/40/60 transition-all">
+            <div className="flex flex-col items-center justify-center bg-gradient-to-br from-stone-900/60 to-pink-900/60 rounded-2xl shadow-xl p-10 border-2 border-amber-500/40/40 hover:border-amber-400/40/60 transition-all">
               <div className="text-center">
                 <h3 className="text-6xl font-black text-amber-200 mb-3 tracking-tight leading-none">3 Weeks</h3>
                 <p className="text-xl text-amber-50 font-semibold mb-2">Platform Pays for Itself</p>
@@ -423,7 +423,7 @@ export default function LandingPage() {
         <div className="w-full max-w-5xl mx-auto flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl font-extrabold text-center text-white mb-12 animate-fade-in">Hear from the Titans.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
-            <div className="flex flex-col bg-gradient-to-br from-purple-900/80 to-black rounded-2xl shadow-xl p-8 items-center animate-fade-in">
+            <div className="flex flex-col bg-gradient-to-br from-stone-900/80 to-black rounded-2xl shadow-xl p-8 items-center animate-fade-in">
               <div className="text-yellow-400 text-2xl mb-2">★★★★★</div>
               <p className="text-lg text-amber-50 text-center mb-6">"Migrating to NyxTitan was the single most impactful operational decision we've made in a decade. The speed and clarity we now have is unmatched."</p>
               <div className="flex items-center gap-4">
@@ -434,7 +434,7 @@ export default function LandingPage() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col bg-gradient-to-br from-purple-900/80 to-black rounded-2xl shadow-xl p-8 items-center animate-fade-in">
+            <div className="flex flex-col bg-gradient-to-br from-stone-900/80 to-black rounded-2xl shadow-xl p-8 items-center animate-fade-in">
               <div className="text-yellow-400 text-2xl mb-2">★★★★★</div>
               <p className="text-lg text-amber-50 text-center mb-6">"We eliminated 12 different SaaS subscriptions and gained exponentially more control. NyxTitan isn't just software; it's a competitive advantage."</p>
               <div className="flex items-center gap-4">

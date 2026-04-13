@@ -122,7 +122,7 @@ export default function IdeaBoard() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900">
       {/* Top Navigation */}
-      <nav className="bg-slate-900/80 backdrop-blur-xl border-b-2 border-emerald-500/30 sticky top-0 z-50">
+      <nav className="bg-stone-950/80 backdrop-blur-xl border-b-2 border-emerald-500/30 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/basecamp" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
@@ -180,7 +180,7 @@ export default function IdeaBoard() {
               <Rocket className="w-12 h-12 text-green-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-amber-100/70 text-sm mb-1">This Month</div>
@@ -201,7 +201,7 @@ export default function IdeaBoard() {
         </div>
 
         {/* Filters & Sort */}
-        <div className="bg-slate-800/50 rounded-xl p-4 border-2 border-emerald-500/30 mb-6">
+        <div className="bg-stone-900/50 rounded-xl p-4 border-2 border-emerald-500/30 mb-6">
           <div className="flex flex-wrap items-center gap-4">
             {/* Search */}
             <div className="flex-1 min-w-[300px]">
@@ -210,7 +210,7 @@ export default function IdeaBoard() {
                 <input
                   type="text"
                   placeholder="Search ideas..."
-                  className="w-full bg-slate-900 border-2 border-emerald-500/30 rounded-lg pl-10 pr-4 py-2 text-white focus:border-emerald-400 focus:outline-none"
+                  className="w-full bg-stone-950 border-2 border-emerald-500/30 rounded-lg pl-10 pr-4 py-2 text-white focus:border-emerald-400 focus:outline-none"
                 />
               </div>
             </div>
@@ -221,7 +221,7 @@ export default function IdeaBoard() {
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="bg-slate-900 border-2 border-emerald-500/30 rounded-lg px-4 py-2 text-white focus:border-emerald-400 focus:outline-none"
+                className="bg-stone-950 border-2 border-emerald-500/30 rounded-lg px-4 py-2 text-white focus:border-emerald-400 focus:outline-none"
               >
                 {categories.map(cat => (
                   <option key={cat} value={cat}>{cat === 'all' ? 'All Categories' : cat}</option>
@@ -235,7 +235,7 @@ export default function IdeaBoard() {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="bg-slate-900 border-2 border-emerald-500/30 rounded-lg px-4 py-2 text-white focus:border-emerald-400 focus:outline-none"
+                className="bg-stone-950 border-2 border-emerald-500/30 rounded-lg px-4 py-2 text-white focus:border-emerald-400 focus:outline-none"
               >
                 <option value="votes">Most Votes</option>
                 <option value="comments">Most Comments</option>
@@ -256,19 +256,19 @@ export default function IdeaBoard() {
                     <Star className="w-6 h-6 text-white" />
                   </button>
                   <div className="text-2xl font-bold text-white">{idea.votes}</div>
-                  <div className="text-xs text-slate-400">votes</div>
+                  <div className="text-xs text-stone-400">votes</div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                      <div className="w-10 h-10 bg-gradient-to-br from-stone-900 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
                         {idea.avatar}
                       </div>
                       <div>
                         <div className="text-white font-semibold">{idea.author}</div>
-                        <div className="text-slate-400 text-sm">{idea.timeAgo}</div>
+                        <div className="text-stone-400 text-sm">{idea.timeAgo}</div>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
@@ -289,10 +289,10 @@ export default function IdeaBoard() {
                   </div>
 
                   <h3 className="text-xl font-bold text-white mb-2">{idea.title}</h3>
-                  <p className="text-slate-300 mb-4">{idea.description}</p>
+                  <p className="text-stone-300 mb-4">{idea.description}</p>
 
                   <div className="flex items-center gap-4">
-                    <button className="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-white transition-all">
+                    <button className="flex items-center gap-2 px-4 py-2 bg-stone-900 hover:bg-stone-600 rounded-lg text-white transition-all">
                       <MessageSquare className="w-4 h-4" />
                       <span>{idea.comments} Comments</span>
                     </button>
