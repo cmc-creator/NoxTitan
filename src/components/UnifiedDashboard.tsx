@@ -104,19 +104,19 @@ export default function UnifiedDashboard() {
 
             {/* Expiring Certifications Notification */}
             <Link href="/employees?filter=expiring-certs" className="block">
-              <div className="p-4 bg-orange-500/10 backdrop-blur-sm rounded-lg border border-orange-400/30 hover:border-orange-400/60 transition-all cursor-pointer group">
+              <div className="p-4 backdrop-blur-sm rounded-sm transition-all cursor-pointer group" style={{ background: 'rgba(42,28,8,0.55)', border: '1px solid rgba(140,90,15,0.32)' }}>
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
-                      <AlertCircle className="w-5 h-5 text-orange-300" />
-                      <p className="font-bold text-white group-hover:text-orange-200 transition-colors">Expiring Certifications</p>
-                      <span className="px-2 py-0.5 bg-orange-500/30 rounded-full text-xs font-bold text-orange-200">URGENT</span>
+                      <AlertCircle className="w-5 h-5" style={{ color: '#C9A84C' }} />
+                      <p className="font-bold text-white transition-colors">Expiring Certifications</p>
+                      <span className="px-2 py-0.5 rounded-sm text-xs font-bold" style={{ background: 'rgba(140,90,15,0.25)', color: '#9E8F75', letterSpacing: '0.05em' }}>URGENT</span>
                     </div>
-                    <p className="text-sm text-yellow-100 mb-2">1 certification expiring within 30 days</p>
+                    <p className="text-sm mb-2" style={{ color: '#9E8F75' }}>1 certification expiring within 30 days</p>
                     <div className="flex flex-col gap-1">
-                      <p className="text-xs text-yellow-200">• Jennifer Lee - BLS Certification (Expires: Feb 8, 2026)</p>
+                      <p className="text-xs" style={{ color: '#9E8F75' }}>• Jennifer Lee - BLS Certification (Expires: Feb 8, 2026)</p>
                     </div>
-                    <p className="text-xs text-orange-300 mt-2 font-semibold">Action required: Schedule renewal training</p>
+                    <p className="text-xs mt-2 font-semibold" style={{ color: '#C9A84C' }}>Action required: Schedule renewal training</p>
                   </div>
                   <ArrowRight className="w-5 h-5 text-yellow-300 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -405,15 +405,15 @@ export default function UnifiedDashboard() {
                   </div>
                 </div>
                 <div className="flex items-center gap-3 p-3 bg-stone-950/5 rounded-lg border border-white/10">
-                  <div className="flex items-center justify-center w-8 h-8 bg-orange-300/20 rounded-full">
-                    <span className="text-sm font-bold text-orange-300">3</span>
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full" style={{ background: 'rgba(150,120,60,0.15)' }}>
+                    <span className="text-sm font-bold" style={{ color: '#9E8F75' }}>3</span>
                   </div>
                   <div className="flex-1">
                     <p className="font-semibold text-white">Emily Rodriguez</p>
                     <p className="text-xs text-gray-200">Nursing</p>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Star className="w-4 h-4 text-orange-400" />
+                    <Star className="w-4 h-4" style={{ color: '#9E8F75' }} />
                     <span className="font-bold text-white">1,920</span>
                   </div>
                 </div>
@@ -1035,7 +1035,7 @@ export default function UnifiedDashboard() {
                 </div>
               </div>
 
-              <button className="w-full p-3 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-lg border border-red-400/30 hover:border-red-400/60 transition-all">
+              <button className="w-full p-3 rounded-sm transition-all" style={{ background: 'rgba(48,10,10,0.4)', border: '1px solid rgba(105,32,32,0.38)' }}>
                 <p className="text-sm font-semibold text-red-300 flex items-center justify-center gap-2">
                   <AlertOctagon className="w-4 h-4" />
                   File New Grievance

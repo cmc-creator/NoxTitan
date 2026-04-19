@@ -82,8 +82,8 @@ export default function QuickActionsButton() {
         onClick={() => setIsOpen(!isOpen)}
         style={{
           position: 'fixed',
-          bottom: '112px',
-          left: '32px',
+          bottom: '148px',
+          right: '24px',
           zIndex: 50,
           width: '52px',
           height: '52px',
@@ -120,8 +120,8 @@ export default function QuickActionsButton() {
           {/* Menu */}
           <div style={{
             position: 'fixed',
-            bottom: '176px',
-            left: '32px',
+            bottom: '208px',
+            right: '24px',
             zIndex: 50,
             width: '300px',
             background: '#110F0B',
