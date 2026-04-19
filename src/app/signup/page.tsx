@@ -404,7 +404,7 @@ function SignupForm() {
           </Link>
 
           <p style={{ textAlign: 'center', fontSize: '0.7rem', color: '#3a3020', marginTop: '20px', letterSpacing: '0.5px' }}>
-            by Connie Michelle Consulting & Business Solutions LLC
+            a product of NyxCollective LLC
           </p>
         </div>
       </div>

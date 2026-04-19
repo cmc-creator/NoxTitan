@@ -39,17 +39,17 @@ export default function Footer() {
               </span>
             </div>
             <p style={{ fontSize: '0.72rem', color: '#5A5040', letterSpacing: '0.5px' }}>
-              by <strong style={{ color: '#9E8F75' }}>Connie Michelle Consulting &amp; Business Solutions LLC</strong>
+              a product of <strong style={{ color: '#9E8F75' }}>NyxCollective LLC</strong>
             </p>
           </div>
 
           {/* Links & Copyright */}
           <div style={{ textAlign: 'right' }}>
             <p style={{ fontSize: '0.72rem', color: '#5A5040', marginBottom: '6px' }}>
-              © {currentYear} Connie Michelle Consulting &amp; Business Solutions LLC. All rights reserved.
+              © {currentYear} NyxCollective LLC. All rights reserved.
             </p>
             <p style={{ fontSize: '0.7rem', color: '#3a3020', marginBottom: '10px' }}>
-              NyxTitan™ is a trademark of Connie Michelle Consulting &amp; Business Solutions LLC
+              NyxTitan™ is a product of NyxCollective LLC
             </p>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '12px' }}>
               {[
@@ -76,7 +76,7 @@ export default function Footer() {
         {/* Legal notice */}
         <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid rgba(201,168,76,0.08)', textAlign: 'center' }}>
           <p style={{ fontSize: '0.68rem', color: '#3a3020', lineHeight: 1.7 }}>
-            This software and all associated materials are proprietary to Connie Michelle Consulting &amp; Business Solutions LLC.
+            This software and all associated materials are proprietary to NyxCollective LLC.
             Unauthorized reproduction, distribution, or use is strictly prohibited and may result in civil and criminal penalties.
           </p>
         </div>
