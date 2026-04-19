@@ -129,33 +129,33 @@ export default function AttendancePage() {
         {/* Summary Cards */}
         {summary && (
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-            <div className="bg-gradient-to-br from-green-500/20 to-green-600/10 border border-green-500/50 rounded-2xl p-6">
+            <div style={{ background: 'linear-gradient(135deg, #131009 0%, #110F0B 100%)', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '4px', padding: '24px' }}>
               <div className="flex items-center justify-between mb-2">
-                <Users className="w-8 h-8 text-green-400" />
+                <Users className="w-8 h-8" style={{ color: '#C9A84C' }} />
                 <span className="text-3xl font-bold text-white">{summary.totalPresent}</span>
               </div>
               <p className="text-stone-300 font-semibold">Present Today</p>
             </div>
 
-            <div className="bg-gradient-to-br from-amber-700/20 to-amber-800/10 border border-amber-500/40/50 rounded-2xl p-6">
+            <div style={{ background: 'linear-gradient(135deg, #131009 0%, #110F0B 100%)', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '4px', padding: '24px' }}>
               <div className="flex items-center justify-between mb-2">
-                <Clock className="w-8 h-8 text-amber-400" />
+                <Clock className="w-8 h-8" style={{ color: '#C9A84C' }} />
                 <span className="text-3xl font-bold text-white">{summary.totalActive}</span>
               </div>
               <p className="text-stone-300 font-semibold">Active Now</p>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/50 rounded-2xl p-6">
+            <div style={{ background: 'linear-gradient(135deg, #150C0C 0%, #110F0B 100%)', border: '1px solid rgba(140,40,40,0.35)', borderRadius: '4px', padding: '24px' }}>
               <div className="flex items-center justify-between mb-2">
-                <AlertCircle className="w-8 h-8 text-orange-400" />
+                <AlertCircle className="w-8 h-8" style={{ color: 'rgba(195,95,95,0.85)' }} />
                 <span className="text-3xl font-bold text-white">{summary.totalLate}</span>
               </div>
               <p className="text-stone-300 font-semibold">Late Arrivals</p>
             </div>
 
-            <div className="bg-gradient-to-br from-stone-900/20 to-amber-900/10 border border-amber-500/40/50 rounded-2xl p-6">
+            <div style={{ background: 'linear-gradient(135deg, #131009 0%, #110F0B 100%)', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '4px', padding: '24px' }}>
               <div className="flex items-center justify-between mb-2">
-                <TrendingUp className="w-8 h-8 text-amber-400" />
+                <TrendingUp className="w-8 h-8" style={{ color: '#C9A84C' }} />
                 <span className="text-3xl font-bold text-white">
                   {summary.averageHours.toFixed(1)}h
                 </span>
@@ -224,7 +224,7 @@ export default function AttendancePage() {
                           })}
                         </div>
                         {entry.isLate && (
-                          <span className="text-xs text-orange-400">
+                          <span className="text-xs" style={{ color: 'rgba(195,95,95,0.8)' }}>
                             +{entry.lateMinutes}min late
                           </span>
                         )}
@@ -237,7 +237,7 @@ export default function AttendancePage() {
                               minute: '2-digit' 
                             })}
                             {entry.isEarlyOut && (
-                              <span className="text-xs text-orange-400 block">
+                              <span className="text-xs block" style={{ color: '#9E8F75' }}>
                                 -{entry.earlyMinutes}min early
                               </span>
                             )}
@@ -259,7 +259,7 @@ export default function AttendancePage() {
                           </span>
                         )}
                         {entry.status === 'ON_BREAK' && (
-                          <span className="inline-flex items-center gap-1 px-3 py-1 bg-orange-500/20 text-orange-400 text-xs font-semibold rounded-full">
+                          <span className="inline-flex items-center gap-1 px-3 py-1 text-xs font-semibold" style={{ background: 'rgba(201,168,76,0.1)', color: '#C9A84C', border: '1px solid rgba(201,168,76,0.25)', borderRadius: '4px' }}>
                             <Clock className="w-3 h-3" />
                             On Break
                           </span>

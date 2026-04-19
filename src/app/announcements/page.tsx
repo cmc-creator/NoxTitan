@@ -206,11 +206,11 @@ export default function AnnouncementsPage() {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'urgent': return 'bg-red-500/20 text-red-400 border-red-500';
-      case 'celebration': return 'bg-amber-500/20 text-amber-400 border-amber-500/40';
-      case 'policy': return 'bg-amber-600/20 text-amber-400 border-amber-500/40';
-      case 'event': return 'bg-green-500/20 text-green-400 border-green-500';
-      case 'benefit': return 'bg-orange-500/20 text-orange-400 border-orange-500';
-      default: return 'bg-stone-500/20 text-stone-400 border-stone-500';
+      case 'celebration': return 'bg-amber-500/10 text-amber-300 border-amber-500/25';
+      case 'policy': return 'bg-amber-500/10 text-amber-300 border-amber-500/25';
+      case 'event': return 'bg-amber-500/10 text-amber-300 border-amber-500/25';
+      case 'benefit': return 'bg-amber-500/10 text-amber-300 border-amber-500/25';
+      default: return 'bg-stone-500/10 text-stone-400 border-stone-500/25';
     }
   };
 
@@ -276,36 +276,36 @@ export default function AnnouncementsPage() {
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-sm opacity-70 mb-1">Unread</div>
-                <div className="text-2xl font-bold text-orange-400">{unreadCount}</div>
+                <div className="text-2xl font-bold" style={{ color: '#C9A84C' }}>{unreadCount}</div>
               </div>
-              <Bell className="w-8 h-8 text-orange-400" />
+              <Bell className="w-8 h-8" style={{ color: '#C9A84C' }} />
             </div>
           </div>
           <div className="p-4 rounded-xl" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-sm opacity-70 mb-1">Pinned</div>
-                <div className="text-2xl font-bold text-amber-400">{announcements.filter(a => a.isPinned).length}</div>
+                <div className="text-2xl font-bold" style={{ color: '#C9A84C' }}>{announcements.filter(a => a.isPinned).length}</div>
               </div>
-              <Pin className="w-8 h-8 text-amber-400" />
+              <Pin className="w-8 h-8" style={{ color: '#C9A84C' }} />
             </div>
           </div>
           <div className="p-4 rounded-xl" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-sm opacity-70 mb-1">This Month</div>
-                <div className="text-2xl font-bold text-green-400">{announcements.length}</div>
+                <div className="text-2xl font-bold" style={{ color: '#C9A84C' }}>{announcements.length}</div>
               </div>
-              <TrendingUp className="w-8 h-8 text-green-400" />
+              <TrendingUp className="w-8 h-8" style={{ color: '#C9A84C' }} />
             </div>
           </div>
           <div className="p-4 rounded-xl" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-sm opacity-70 mb-1">Engagement</div>
-                <div className="text-2xl font-bold text-amber-400">92%</div>
+                <div className="text-2xl font-bold" style={{ color: '#C9A84C' }}>92%</div>
               </div>
-              <Users className="w-8 h-8 text-amber-400" />
+              <Users className="w-8 h-8" style={{ color: '#C9A84C' }} />
             </div>
           </div>
         </div>
@@ -375,7 +375,7 @@ export default function AnnouncementsPage() {
                       </span>
                     )}
                     {!announcement.readBy.includes('currentUser') && (
-                      <span className="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-xs font-bold uppercase flex items-center gap-1">
+                      <span className="px-3 py-1 rounded text-xs font-bold uppercase flex items-center gap-1" style={{ background: 'rgba(201,168,76,0.12)', color: '#C9A84C', border: '1px solid rgba(201,168,76,0.28)' }}>
                         <Bell className="w-3 h-3" />
                         NEW
                       </span>
@@ -392,7 +392,7 @@ export default function AnnouncementsPage() {
                       {formatDate(announcement.datePosted)}
                     </span>
                     {announcement.expiresDate && (
-                      <span className="flex items-center gap-1 text-orange-400">
+                      <span className="flex items-center gap-1" style={{ color: '#9E8F75' }}>
                         <AlertCircle className="w-4 h-4" />
                         Expires: {new Date(announcement.expiresDate).toLocaleDateString()}
                       </span>
@@ -418,7 +418,7 @@ export default function AnnouncementsPage() {
                         className="flex items-center justify-between p-3 bg-stone-900/50 rounded-lg hover:bg-stone-900 transition-all cursor-pointer"
                       >
                         <div className="flex items-center gap-3">
-                          <FileText className="w-5 h-5 text-amber-400" />
+                          <FileText className="w-5 h-5" style={{ color: '#9E8F75' }} />
                           <div>
                             <div className="text-white font-semibold">{attachment.name}</div>
                             <div className="text-xs text-stone-400">{attachment.type} • {attachment.size}</div>

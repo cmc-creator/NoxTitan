@@ -89,7 +89,7 @@ export default function ComplianceViolationsPage() {
   function getSeverityColor(severity: string) {
     switch (severity) {
       case 'CRITICAL': return 'text-red-400 bg-red-500/20 border-red-500';
-      case 'HIGH': return 'text-orange-400 bg-orange-500/20 border-orange-500';
+      case 'HIGH': return 'text-red-300 bg-red-900/30 border-red-700/50';
       case 'MEDIUM': return 'text-yellow-400 bg-yellow-500/20 border-yellow-500';
       case 'LOW': return 'text-amber-400 bg-amber-600/20 border-amber-500/40';
       default: return 'text-stone-400 bg-stone-500/20 border-stone-500';
@@ -125,9 +125,9 @@ export default function ComplianceViolationsPage() {
             <div className="text-3xl font-bold text-red-400 mb-1">{stats.critical}</div>
             <div className="text-sm text-red-300">Critical Open</div>
           </div>
-          <div className="bg-orange-500/10 border border-orange-500/50 rounded-xl p-4">
-            <div className="text-3xl font-bold text-orange-400 mb-1">{stats.high}</div>
-            <div className="text-sm text-orange-300">High Priority</div>
+          <div style={{ background: 'rgba(48,10,10,0.4)', border: '1px solid rgba(120,32,32,0.35)', borderRadius: '4px', padding: '16px' }}>
+            <div className="text-3xl font-bold mb-1" style={{ color: 'rgba(195,95,95,0.9)' }}>{stats.high}</div>
+            <div className="text-sm" style={{ color: '#9E8F75' }}>High Priority</div>
           </div>
           <div className="bg-yellow-500/10 border border-yellow-500/50 rounded-xl p-4">
             <div className="text-3xl font-bold text-yellow-400 mb-1">{stats.open}</div>

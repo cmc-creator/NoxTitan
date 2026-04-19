@@ -87,28 +87,28 @@ export default function NotificationsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-stone-900 to-black p-8">
+    <div className="min-h-screen p-8" style={{ background: '#070604' }}>
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
-              <Bell className="w-10 h-10 text-amber-400" />
+              <Bell className="w-8 h-8" style={{ color: '#C9A84C' }} />
               <div>
-                <h1 className="text-4xl font-bold text-white">Notifications</h1>
-                <p className="text-amber-100/70">Stay updated with important events</p>
+                <h1 className="text-4xl font-bold text-white" style={{ fontFamily: "'Cormorant Garamond', serif", letterSpacing: '0.02em' }}>Notifications</h1>
+                <p className="text-sm mt-0.5" style={{ color: '#9E8F75' }}>Stay updated with important events</p>
               </div>
             </div>
             <div className="flex gap-3">
               <button
                 onClick={markAllAsRead}
-                className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-semibold transition-all"
+                style={{ background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.28)', borderRadius: '4px', color: '#C9A84C', padding: '8px 16px', fontSize: '0.84rem', fontWeight: 500, cursor: 'pointer', transition: 'all 0.2s' }}
               >
                 Mark All Read
               </button>
               <button
                 onClick={clearAll}
-                className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition-all"
+                style={{ background: 'rgba(160,40,40,0.1)', border: '1px solid rgba(120,32,32,0.35)', borderRadius: '4px', color: 'rgba(195,95,95,0.9)', padding: '8px 16px', fontSize: '0.84rem', fontWeight: 500, cursor: 'pointer', transition: 'all 0.2s' }}
               >
                 Clear All
               </button>
@@ -117,63 +117,64 @@ export default function NotificationsPage() {
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4">
-            <div className="bg-stone-950/30 backdrop-blur-xl rounded-xl p-4 border border-amber-500/40/30">
+            <div style={{ background: 'linear-gradient(135deg, #131009 0%, #110F0B 100%)', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '4px', padding: '16px' }}>
               <p className="text-3xl font-bold text-white">{notifications.filter(n => n.unread).length}</p>
-              <p className="text-sm text-amber-100/70">Unread</p>
+              <p className="text-sm mt-1" style={{ color: '#9E8F75' }}>Unread</p>
             </div>
-            <div className="bg-cyan-900/30 backdrop-blur-xl rounded-xl p-4 border border-cyan-500/30">
+            <div style={{ background: 'linear-gradient(135deg, #131009 0%, #110F0B 100%)', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '4px', padding: '16px' }}>
               <p className="text-3xl font-bold text-white">{notifications.length}</p>
-              <p className="text-sm text-cyan-200">Total</p>
+              <p className="text-sm mt-1" style={{ color: '#9E8F75' }}>Total</p>
             </div>
-            <div className="bg-green-900/30 backdrop-blur-xl rounded-xl p-4 border border-green-500/30">
+            <div style={{ background: 'linear-gradient(135deg, #131009 0%, #110F0B 100%)', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '4px', padding: '16px' }}>
               <p className="text-3xl font-bold text-white">{notifications.filter(n => n.type === 'success').length}</p>
-              <p className="text-sm text-green-200">Achievements</p>
+              <p className="text-sm mt-1" style={{ color: '#9E8F75' }}>Achievements</p>
             </div>
           </div>
         </div>
 
         {/* Notifications List */}
-        <div className="space-y-3">
+        <div className="space-y-2">
           {notifications.map((notification) => {
             const Icon = notification.icon;
-            const bgColor = notification.type === 'success' 
-              ? 'from-green-900/40 to-emerald-900/40 border-green-500/30'
-              : notification.type === 'warning'
-              ? 'from-orange-900/40 to-red-900/40 border-orange-500/30'
-              : 'from-amber-700/40 to-cyan-900/40 border-cyan-500/30';
-            
-            const iconColor = notification.type === 'success' 
-              ? 'text-green-400'
-              : notification.type === 'warning'
-              ? 'text-orange-400'
-              : 'text-cyan-400';
+            const isWarning = notification.type === 'warning';
+            const isSuccess = notification.type === 'success';
 
             return (
               <div
                 key={notification.id}
-                className={`bg-gradient-to-r ${bgColor} backdrop-blur-xl rounded-xl p-5 border-2 transition-all hover:scale-[1.02] ${
-                  notification.unread ? 'shadow-[0_0_20px_rgba(168,85,247,0.3)]' : ''
-                }`}
+                style={{
+                  background: isWarning
+                    ? 'linear-gradient(135deg, #150C0C 0%, #110F0B 100%)'
+                    : 'linear-gradient(135deg, #131009 0%, #110F0B 100%)',
+                  border: `1px solid ${isWarning ? 'rgba(140,40,40,0.35)' : notification.unread ? 'rgba(201,168,76,0.32)' : 'rgba(201,168,76,0.14)'}`,
+                  borderRadius: '4px',
+                  padding: '16px 20px',
+                  transition: 'border-color 0.2s, transform 0.2s',
+                  boxShadow: notification.unread ? '0 0 20px rgba(201,168,76,0.06), 0 4px 20px rgba(0,0,0,0.5)' : '0 2px 12px rgba(0,0,0,0.4)',
+                }}
               >
                 <div className="flex items-start gap-4">
-                  <div className={`flex-shrink-0 w-12 h-12 rounded-full ${
-                    notification.unread ? 'bg-amber-500/20' : 'bg-stone-900/50'
-                  } flex items-center justify-center`}>
-                    <Icon className={`w-6 h-6 ${iconColor}`} />
+                  <div style={{
+                    flexShrink: 0, width: '40px', height: '40px', borderRadius: '4px',
+                    background: isWarning ? 'rgba(140,40,40,0.15)' : 'rgba(201,168,76,0.08)',
+                    border: `1px solid ${isWarning ? 'rgba(140,40,40,0.25)' : 'rgba(201,168,76,0.15)'}`,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  }}>
+                    <Icon style={{ width: '18px', height: '18px', color: isWarning ? 'rgba(195,95,95,0.9)' : '#C9A84C' }} />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-start justify-between mb-1">
-                      <h3 className="text-lg font-bold text-white">{notification.title}</h3>
+                      <h3 className="text-base font-semibold text-white">{notification.title}</h3>
                       {notification.unread && (
-                        <span className="px-2 py-1 bg-amber-500 text-white text-xs rounded-full font-bold">
+                        <span style={{ padding: '2px 8px', background: 'rgba(201,168,76,0.15)', border: '1px solid rgba(201,168,76,0.35)', borderRadius: '2px', fontSize: '0.65rem', fontWeight: 600, color: '#C9A84C', letterSpacing: '2px', textTransform: 'uppercase', whiteSpace: 'nowrap', marginLeft: '12px' }}>
                           New
                         </span>
                       )}
                     </div>
-                    <p className="text-stone-300 mb-2">{notification.message}</p>
+                    <p className="text-sm mb-2" style={{ color: '#9E8F75' }}>{notification.message}</p>
                     <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-stone-400" />
-                      <span className="text-sm text-stone-400">{notification.time}</span>
+                      <Clock style={{ width: '12px', height: '12px', color: '#5A5040' }} />
+                      <span className="text-xs" style={{ color: '#5A5040' }}>{notification.time}</span>
                     </div>
                   </div>
                 </div>
@@ -182,12 +183,12 @@ export default function NotificationsPage() {
           })}
         </div>
 
-        {/* Empty State (when no notifications) */}
+        {/* Empty State */}
         {notifications.length === 0 && (
-          <div className="bg-stone-900/50 backdrop-blur-xl rounded-xl p-12 text-center border-2 border-stone-700">
-            <Bell className="w-16 h-16 text-stone-500 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-2">All Caught Up!</h3>
-            <p className="text-stone-400">You have no new notifications</p>
+          <div style={{ background: '#110F0B', border: '1px solid rgba(201,168,76,0.14)', borderRadius: '4px', padding: '48px', textAlign: 'center' }}>
+            <Bell style={{ width: '48px', height: '48px', color: '#5A5040', margin: '0 auto 16px' }} />
+            <h3 className="text-xl font-bold text-white mb-2">All Caught Up</h3>
+            <p style={{ color: '#9E8F75' }}>You have no new notifications</p>
           </div>
         )}
       </div>

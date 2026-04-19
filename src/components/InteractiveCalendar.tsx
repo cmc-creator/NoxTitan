@@ -649,7 +649,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           </button>
           <button
             onClick={() => setShowTemplates(true)}
-            className="px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-orange-600 to-amber-600 text-white hover:from-orange-500 hover:to-amber-500 transition-all shadow-lg flex items-center gap-2 text-pop-light"
+            className="px-4 py-2 font-semibold text-white transition-all shadow-lg flex items-center gap-2 text-pop-light" style={{ background: 'rgba(201,168,76,0.12)', border: '1px solid rgba(201,168,76,0.3)', borderRadius: '4px', color: '#C9A84C' }}
           >
             <Copy className="w-5 h-5" />
             Templates
@@ -681,7 +681,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           </button>
           <button
             onClick={() => setShowTimeOffApproval(true)}
-            className="px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-yellow-600 to-orange-600 text-white hover:from-yellow-500 hover:to-orange-500 transition-all shadow-lg flex items-center gap-2 text-pop-light relative"
+            className="px-4 py-2 font-semibold transition-all shadow-lg flex items-center gap-2 text-pop-light relative" style={{ background: 'rgba(201,168,76,0.12)', border: '1px solid rgba(201,168,76,0.3)', borderRadius: '4px', color: '#C9A84C' }}
           >
             <Clock className="w-5 h-5" />
             Time Off
@@ -1322,16 +1322,16 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* Overtime Warnings */}
       {overtimeWarnings.length > 0 && (
-        <div className="mb-4 bg-gradient-to-r from-yellow-900/40 to-orange-900/40 border-2 border-yellow-500/50 rounded-xl p-4">
+        <div className="mb-4 p-4" style={{ background: 'rgba(42,28,8,0.55)', border: '1px solid rgba(140,90,15,0.32)', borderRadius: '4px' }}>
           <div className="flex items-center gap-2 mb-3">
-            <Clock className="w-5 h-5 text-yellow-400" />
-            <h3 className="font-bold text-yellow-200">Overtime Warnings</h3>
+            <Clock className="w-5 h-5" style={{ color: '#C9A84C' }} />
+            <h3 className="font-bold" style={{ color: '#E8C060' }}>Overtime Warnings</h3>
           </div>
           <div className="space-y-2">
             {overtimeWarnings.map((warning, idx) => (
-              <div key={idx} className="flex items-center justify-between p-2 bg-yellow-900/30 rounded">
+              <div key={idx} className="flex items-center justify-between p-2" style={{ background: 'rgba(42,28,8,0.4)', borderRadius: '4px' }}>
                 <span className="text-sm text-white">{warning.employeeName}</span>
-                <span className="text-sm font-bold text-yellow-400">{warning.hours} hrs</span>
+                <span className="text-sm font-bold" style={{ color: '#C9A84C' }}>{warning.hours} hrs</span>
               </div>
             ))}
           </div>
@@ -1602,7 +1602,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                 ].map((item, i) => {
                   const urgencyColors = {
                     'URGENT': 'bg-red-600 animate-pulse',
-                    'HIGH': 'bg-orange-600',
+                    'HIGH': 'bg-red-900/60 border border-red-700/40',
                     'MEDIUM': 'bg-yellow-600',
                     'PREMIUM': 'bg-amber-600 animate-pulse'
                   };
@@ -1790,17 +1790,17 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {/* Templates Modal */}
       {showTemplates && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowTemplates(false)}>
-          <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded-2xl shadow-2xl border-2 border-orange-500/50 max-w-3xl w-full" onClick={(e) => e.stopPropagation()}>
-            <div className="bg-gradient-to-r from-orange-900 via-amber-900 to-orange-900 p-6 border-b-2 border-orange-500">
+          <div className="flex flex-col" style={{ background: '#110F0B', borderRadius: '4px', border: '1px solid rgba(201,168,76,0.28)', boxShadow: '0 24px 64px rgba(0,0,0,0.8)', maxWidth: '48rem', width: '100%' }} onClick={(e) => e.stopPropagation()}>
+            <div className="p-6 flex items-center justify-between" style={{ background: 'linear-gradient(135deg, #1A130A 0%, #110F0B 100%)', borderBottom: '1px solid rgba(201,168,76,0.22)' }}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <Copy className="w-7 h-7 text-orange-300" />
+                  <Copy className="w-7 h-7" style={{ color: '#C9A84C' }} />
                   <div>
                     <h2 className="text-2xl font-bold text-white text-pop-strong">Schedule Templates</h2>
-                    <p className="text-orange-200 text-sm">Save and reuse recurring schedules</p>
+                    <p className="text-sm" style={{ color: '#9E8F75' }}>Save and reuse recurring schedules</p>
                   </div>
                 </div>
-                <button onClick={() => setShowTemplates(false)} className="text-white hover:text-orange-200">
+                <button onClick={() => setShowTemplates(false)} className="text-white hover:opacity-70">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -1808,7 +1808,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
               </div>
             </div>
             <div className="p-6 space-y-4">
-              <button className="w-full bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 rounded-lg transition flex items-center justify-center gap-2">
+              <button className="w-full text-white font-bold py-3 transition flex items-center justify-center gap-2" style={{ background: 'rgba(201,168,76,0.12)', border: '1px solid rgba(201,168,76,0.3)', borderRadius: '4px', color: '#C9A84C' }}>
                 <Copy className="w-5 h-5" />
                 Save Current Schedule as Template
               </button>
@@ -1819,14 +1819,14 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   { name: 'Summer Staffing', shifts: 52, used: 8 },
                   { name: 'Weekend Only', shifts: 24, used: 15 },
                 ].map((template, idx) => (
-                  <div key={idx} className="bg-stone-900/50 rounded-lg p-4 border border-orange-500/30 hover:border-orange-500 transition cursor-pointer">
+                  <div key={idx} className="p-4 cursor-pointer transition" style={{ background: '#131009', border: '1px solid rgba(201,168,76,0.18)', borderRadius: '4px' }}>
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="font-bold text-white">{template.name}</h3>
-                      <span className="text-xs bg-orange-600 text-white px-2 py-1 rounded">SAVED</span>
+                      <span className="text-xs px-2 py-1" style={{ background: 'rgba(201,168,76,0.15)', color: '#C9A84C', border: '1px solid rgba(201,168,76,0.3)', borderRadius: '2px', letterSpacing: '1px' }}>SAVED</span>
                     </div>
                     <div className="text-sm text-stone-300">{template.shifts} shifts • Used {template.used} times</div>
                     <div className="flex gap-2 mt-3">
-                      <button className="flex-1 bg-orange-600 hover:bg-orange-500 text-white text-sm font-semibold py-2 rounded transition">
+                      <button className="flex-1 text-sm font-semibold py-2 transition" style={{ background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.25)', borderRadius: '4px', color: '#C9A84C' }}>
                         Apply
                       </button>
                       <button className="px-3 bg-stone-900 hover:bg-stone-600 text-white text-sm font-semibold rounded transition">
@@ -1973,10 +1973,11 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                               return (
                                 <div
                                   key={idx}
-                                  className="w-full p-3 rounded-lg bg-gradient-to-br from-red-900 to-rose-900 border-2 border-orange-500 text-white font-bold shadow-lg animate-pulse"
+                                  className="w-full p-3 text-white font-bold animate-pulse"
+                                  style={{ background: 'rgba(48,10,10,0.72)', border: '2px solid rgba(170,140,40,0.55)', borderRadius: '4px', boxShadow: '0 0 16px rgba(201,168,76,0.12)' }}
                                 >
                                   <div className="flex flex-col items-center gap-1">
-                                    <div className="flex items-center gap-1 text-orange-300">
+                                    <div className="flex items-center gap-1" style={{ color: '#C9A84C' }}>
                                       <ShoppingBag className="w-4 h-4 animate-bounce" />
                                       <span className="text-xs uppercase">BONUS POSTED</span>
                                     </div>
@@ -1984,7 +1985,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                                       <DollarSign className="w-5 h-5" />
                                       <span>${marketplacePosting.bonus} BONUS</span>
                                     </div>
-                                    <div className="text-[8px] text-orange-200">🕐 Awaiting Pickup</div>
+                                    <div className="text-[8px]" style={{ color: '#9E8F75' }}>Awaiting Pickup</div>
                                     <button
                                       onClick={() => {
                                         // Simulate someone claiming the shift

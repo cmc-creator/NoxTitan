@@ -279,9 +279,9 @@ export default function ChatBot() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-stone-950 dark:bg-stone-900 rounded-2xl shadow-2xl flex flex-col z-50 border border-stone-800 dark:border-stone-700">
+        <div className="fixed bottom-6 right-6 w-96 h-[600px] flex flex-col z-50" style={{ background: '#0D0B08', borderRadius: '4px', border: '1px solid rgba(201,168,76,0.28)', boxShadow: '0 24px 64px rgba(0,0,0,0.8), 0 0 40px rgba(201,168,76,0.06)' }}>
           {/* Header */}
-          <div className={`bg-gradient-to-r ${customColor} p-4 rounded-t-2xl flex items-center justify-between`}>
+          <div className="p-4 flex items-center justify-between" style={{ background: 'linear-gradient(135deg, #1A130A 0%, #110F0B 100%)', borderBottom: '1px solid rgba(201,168,76,0.22)', borderRadius: '4px 4px 0 0' }}>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0" style={{background: 'transparent', boxShadow: '0 0 8px rgba(201,168,76,0.4)'}}>
                 <img src="/titanbot.png" alt="Titan" className="w-full h-full object-contain" />
@@ -338,11 +338,19 @@ export default function ChatBot() {
                   )}
                 </div>
                 <div className={`flex flex-col max-w-[75%] ${message.sender === 'user' ? 'items-end' : 'items-start'}`}>
-                  <div className={`rounded-2xl p-3 ${
+                  <div className={`p-3 ${
                     message.sender === 'user'
-                      ? 'bg-gradient-to-r from-amber-700 to-cyan-500 text-white'
-                      : 'bg-stone-900 dark:bg-stone-900 text-stone-100 dark:text-gray-100'
-                  }`}>
+                      ? 'text-white'
+                      : 'text-stone-100'
+                  }`} style={{
+                    borderRadius: '4px',
+                    background: message.sender === 'user'
+                      ? 'linear-gradient(135deg, rgba(201,168,76,0.22) 0%, rgba(160,120,40,0.18) 100%)'
+                      : '#1A1712',
+                    border: message.sender === 'user'
+                      ? '1px solid rgba(201,168,76,0.32)'
+                      : '1px solid rgba(201,168,76,0.1)',
+                  }}>
                     <p className="text-sm whitespace-pre-line">{message.text}</p>
                   </div>
                   <span className="text-xs text-stone-500 dark:text-stone-400 mt-1">
@@ -357,7 +365,7 @@ export default function ChatBot() {
                 <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
                   <img src="/titanbot.png" alt="Titan" className="h-full w-full object-contain" />
                 </div>
-                <div className="bg-stone-900 dark:bg-stone-900 rounded-2xl p-3">
+                <div className="p-3" style={{ borderRadius: '4px', background: '#1A1712', border: '1px solid rgba(201,168,76,0.1)' }}>
                   <div className="flex gap-1">
                     <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
                     <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
@@ -379,7 +387,7 @@ export default function ChatBot() {
                   <button
                     key={idx}
                     onClick={() => handleQuickQuestion(question)}
-                    className="text-xs px-3 py-1.5 bg-stone-900 text-amber-400 rounded-full hover:bg-stone-800 transition-colors" style={{border: '1px solid rgba(201,168,76,0.2)'}}
+                    className="text-xs px-3 py-1.5 transition-colors" style={{ background: '#1A1712', color: '#C9A84C', border: '1px solid rgba(201,168,76,0.2)', borderRadius: '2px' }}
                   >
                     {question}
                   </button>
@@ -397,12 +405,12 @@ export default function ChatBot() {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Ask me anything..."
-                className="flex-1 px-4 py-2 border border-gray-300 dark:border-stone-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 bg-stone-950 dark:bg-stone-900 text-stone-100 dark:text-white placeholder:text-stone-400"
+                className="flex-1 px-4 py-2 focus:outline-none text-stone-100 placeholder:text-stone-500" style={{ border: '1px solid rgba(201,168,76,0.2)', borderRadius: '4px', background: '#0D0B08', color: '#F0EBE0' }}
               />
               <button
                 onClick={handleSend}
                 disabled={!inputValue.trim()}
-                className="px-4 py-2 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-xl hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed" style={{ background: 'rgba(201,168,76,0.15)', border: '1px solid rgba(201,168,76,0.35)', borderRadius: '4px', color: '#C9A84C' }}
               >
                 <Send className="h-5 w-5" />
               </button>
