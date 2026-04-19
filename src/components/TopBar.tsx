@@ -63,8 +63,8 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
         </button>
 
         <div className="flex-1 md:flex-none">
-          <h1 className="font-semibold truncate" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.25rem', color: '#F0EBE0', letterSpacing: '0.05em' }}>
-            NyxTitan Business Suite
+          <h1 className="font-semibold truncate" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.25rem', letterSpacing: '0.05em' }}>
+            <span style={{ color: '#C9A84C' }}>Nyx</span><span style={{ color: '#C8C8D0' }}>Titan</span><span style={{ color: '#5A5040', fontSize: '1rem', marginLeft: '8px', fontWeight: 300 }}>Business Suite</span>
           </h1>
           <p className="text-xs mt-0.5 hidden sm:block" style={{ color: '#5A5040', letterSpacing: '2px', textTransform: 'uppercase', fontSize: '0.6rem' }}>
             Scheduling · HR · Payroll · Compliance

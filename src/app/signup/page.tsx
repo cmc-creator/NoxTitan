@@ -185,13 +185,9 @@ function SignupForm() {
             fontWeight: 300,
             fontSize: '1.5rem',
             letterSpacing: '3px',
-            background: `linear-gradient(135deg, #E8E0D0 0%, #ffffff 25%, ${goldBright} 55%, ${gold} 75%, #E8E0D0 100%)`,
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
             marginBottom: '6px',
           }}>
-            NyxTitan
+            <span style={{ color: '#C9A84C' }}>Nyx</span><span style={{ color: '#C8C8D0' }}>Titan</span>
           </div>
           <div style={{ fontSize: '0.65rem', fontWeight: 500, letterSpacing: '3px', textTransform: 'uppercase', color: gold }}>
             Create Your Account

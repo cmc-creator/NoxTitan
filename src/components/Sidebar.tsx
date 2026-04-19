@@ -157,17 +157,18 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
           </button>
         )}
         
-        <img 
-          src="/nyxtitan-name-logo.png" 
-          alt="NyxTitan" 
-          className="h-10 object-contain"
-          style={{filter: 'brightness(1.2) drop-shadow(0 4px 12px rgba(212,175,55,0.6))'}}
-        />
-        <span className="text-gray-200 text-[10px] font-bold tracking-widest uppercase mt-2" 
-              style={{ 
-                textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 10px rgba(212,175,55,0.5)',
-                filter: 'brightness(1.2)'
-              }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <img
+            src="/titanlogo.png"
+            alt="NyxTitan"
+            style={{ height: '36px', width: 'auto', filter: 'drop-shadow(0 0 10px rgba(201,168,76,0.5))' }}
+          />
+          <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, fontSize: '1.35rem', letterSpacing: '2px' }}>
+            <span style={{ color: '#C9A84C' }}>Nyx</span><span style={{ color: '#C8C8D0' }}>Titan</span>
+          </span>
+        </div>
+        <span className="text-[10px] font-bold tracking-widest uppercase mt-2"
+              style={{ color: 'rgba(201,168,76,0.6)', letterSpacing: '3px' }}>
           Forged for Titans
         </span>
       </div>

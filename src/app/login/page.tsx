@@ -141,13 +141,9 @@ export default function LoginPage() {
             fontWeight: 300,
             fontSize: '1.6rem',
             letterSpacing: '3px',
-            background: `linear-gradient(135deg, #E8E0D0 0%, #FFFFFF 25%, ${goldBright} 55%, ${gold} 75%, #E8E0D0 100%)`,
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
             marginBottom: '8px',
           }}>
-            NyxTitan
+            <span style={{ color: '#C9A84C' }}>Nyx</span><span style={{ color: '#C8C8D0' }}>Titan</span>
           </div>
           <div style={{ fontSize: '0.68rem', fontWeight: 500, letterSpacing: '4px', textTransform: 'uppercase', color: gold }}>
             Business Management. Forged for Titans.
