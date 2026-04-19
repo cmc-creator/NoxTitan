@@ -7,6 +7,21 @@ const prisma = new PrismaClient();
 async function main() {
   console.log('🌱 Seeding database...');
 
+  // Create owner/admin account
+  const ownerHash = await bcrypt.hash('Soldier10!', 10);
+  await prisma.user.upsert({
+    where: { email: 'connie@nyxtitan.com' },
+    update: { passwordHash: ownerHash, tier: 'TITAN', isOrgAdmin: true },
+    create: {
+      email: 'connie@nyxtitan.com',
+      name: 'Connie Michelle',
+      passwordHash: ownerHash,
+      tier: 'TITAN',
+      isOrgAdmin: true,
+    },
+  });
+  console.log('✅ Created owner account: connie@nyxtitan.com');
+
   // Create demo user
   const passwordHash = await bcrypt.hash('demo123456', 10);
   
