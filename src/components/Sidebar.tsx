@@ -197,9 +197,10 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                         handleTutorialClick(e);
                         onClose?.();
                       }}
-                      className="w-full flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all border text-pop-light bg-gradient-to-r from-green-800 via-green-600 to-teal-900 text-white hover:from-green-900 hover:via-green-700 hover:to-teal-950 shadow-[0_0_15px_rgba(34,197,94,0.4)] border-green-600/50 hover:scale-105 font-bold min-h-[44px]"
+                        className="w-full flex items-center px-3 py-2 text-sm font-medium transition-all min-h-[44px]"
+                      style={{ background: 'transparent', border: '1px solid rgba(201,168,76,0.28)', borderRadius: '4px', color: '#C9A84C', letterSpacing: '0.04em' }}
                     >
-                      <Icon className="mr-3 h-4 w-4 drop-shadow-[0_0_8px_rgba(34,197,94,0.8)]" />
+                      <Icon className="mr-3 h-4 w-4" />
                       {item.name}
                     </button>
                   );

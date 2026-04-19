@@ -1,182 +1,232 @@
-/* Glassmorphism Theme - Black Frosted Glass with Colored Borders */
+/* ============================================================
+   NYXTITAN LUXURY TILE SYSTEM
+   Marble · Gold · Diamond — No rainbow, no cartoon borders
+   ============================================================ */
 
-.glass-tile {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 30, 0.7) 100%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 2px solid;
-  border-radius: 1rem;
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.37),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
-  position: relative;
-  overflow: hidden;
+@keyframes goldSweep {
+  0% { transform: translateX(-100%) skewX(-15deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(300%) skewX(-15deg); opacity: 0; }
 }
 
-/* Shine effect in top left corner */
+@keyframes marblePulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes diamondGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(201,168,76,0.08), 0 12px 40px rgba(0,0,0,0.7), inset 0 1px 0 rgba(201,168,76,0.1); }
+  50%       { box-shadow: 0 0 35px rgba(201,168,76,0.18), 0 12px 50px rgba(0,0,0,0.8), inset 0 1px 0 rgba(201,168,76,0.2); }
+}
+
+.glass-tile {
+  /* Marble dark base with warm stone veining */
+  background:
+    linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(201,168,76,0.03) 30%, rgba(255,255,255,0) 60%),
+    linear-gradient(135deg, #131009 0%, #110F0B 40%, #0F0D09 60%, #131009 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(201,168,76,0.22);
+  border-radius: 4px;
+  box-shadow:
+    0 1px 0 rgba(201,168,76,0.12) inset,
+    0 -1px 0 rgba(0,0,0,0.5) inset,
+    0 12px 40px rgba(0,0,0,0.6),
+    0 2px 8px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  animation: diamondGlow 4s ease-in-out infinite;
+}
+
+/* Gold sweep shimmer on hover */
 .glass-tile::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 60%);
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201,168,76,0.06) 40%,
+    rgba(232,192,96,0.12) 50%,
+    rgba(201,168,76,0.06) 60%,
+    transparent 100%
+  );
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 
-/* Specific border colors for different contexts */
-.glass-tile-blue {
-  border-color: rgba(59, 130, 246, 0.4);
+.glass-tile:hover::before {
+  animation: goldSweep 0.7s ease forwards;
+  opacity: 1;
 }
 
-.glass-tile-blue:hover {
-  border-color: rgba(59, 130, 246, 0.7);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.37),
-    0 0 20px rgba(59, 130, 246, 0.4),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+/* Subtle marble vein — top edge */
+.glass-tile::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.35), rgba(232,192,96,0.5), rgba(201,168,76,0.35), transparent);
+  pointer-events: none;
+  z-index: 3;
 }
 
-.glass-tile-purple {
-  border-color: rgba(168, 85, 247, 0.4);
+.glass-tile:hover {
+  border-color: rgba(201,168,76,0.45);
+  box-shadow:
+    0 1px 0 rgba(201,168,76,0.2) inset,
+    0 -1px 0 rgba(0,0,0,0.5) inset,
+    0 16px 50px rgba(0,0,0,0.7),
+    0 0 30px rgba(201,168,76,0.1);
+  transform: translateY(-1px);
 }
 
-.glass-tile-purple:hover {
-  border-color: rgba(168, 85, 247, 0.7);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.37),
-    0 0 20px rgba(168, 85, 247, 0.4),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
-}
+/* ═════════════════════════════════════════════════════════
+   LUXURY UNIFIED BORDER SYSTEM — All variants → Gold
+   No rainbow, no neon, no cartoon. Marble · Gold · Stone.
+   ═════════════════════════════════════════════════════════ */
 
+.glass-tile-blue,
+.glass-tile-purple,
+.glass-tile-green,
+.glass-tile-cyan,
+.glass-tile-pink,
+.glass-tile-amber,
+.glass-tile-yellow,
 .glass-tile-gold {
-  border-color: rgba(212, 175, 55, 0.4);
+  border-color: rgba(201,168,76,0.28);
+  box-shadow:
+    0 1px 0 rgba(201,168,76,0.14) inset,
+    0 -1px 0 rgba(0,0,0,0.5) inset,
+    0 12px 40px rgba(0,0,0,0.65),
+    0 2px 8px rgba(0,0,0,0.4);
 }
 
+.glass-tile-blue:hover,
+.glass-tile-purple:hover,
+.glass-tile-green:hover,
+.glass-tile-cyan:hover,
+.glass-tile-pink:hover,
+.glass-tile-amber:hover,
+.glass-tile-yellow:hover,
 .glass-tile-gold:hover {
-  border-color: rgba(212, 175, 55, 0.7);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.37),
-    0 0 20px rgba(212, 175, 55, 0.4),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+  border-color: rgba(201,168,76,0.52);
+  box-shadow:
+    0 1px 0 rgba(201,168,76,0.22) inset,
+    0 -1px 0 rgba(0,0,0,0.5) inset,
+    0 16px 50px rgba(0,0,0,0.72),
+    0 0 32px rgba(201,168,76,0.12);
 }
 
-.glass-tile-amber {
-  border-color: rgba(245, 158, 11, 0.4);
-}
-
-.glass-tile-amber:hover {
-  border-color: rgba(245, 158, 11, 0.7);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.37),
-    0 0 20px rgba(245, 158, 11, 0.4),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
-}
-
-.glass-tile-green {
-  border-color: rgba(34, 197, 94, 0.4);
-}
-
-.glass-tile-green:hover {
-  border-color: rgba(34, 197, 94, 0.7);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.37),
-    0 0 20px rgba(34, 197, 94, 0.4),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
-}
-
+/* Alert/Critical — dark crimson, refined, not cartoon red */
 .glass-tile-red {
-  border-color: rgba(239, 68, 68, 0.4);
+  border-color: rgba(160,48,48,0.32);
+  background:
+    linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(160,30,30,0.025) 30%, rgba(255,255,255,0) 60%),
+    linear-gradient(135deg, #150C0C 0%, #110F0B 40%, #0F0D09 60%, #130D0D 100%);
 }
 
 .glass-tile-red:hover {
-  border-color: rgba(239, 68, 68, 0.7);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.37),
-    0 0 20px rgba(239, 68, 68, 0.4),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+  border-color: rgba(160,48,48,0.52);
+  box-shadow:
+    0 1px 0 rgba(160,50,50,0.15) inset,
+    0 16px 50px rgba(0,0,0,0.72),
+    0 0 25px rgba(100,15,15,0.18);
 }
 
-.glass-tile-pink {
-  border-color: rgba(236, 72, 153, 0.4);
-}
-
-.glass-tile-pink:hover {
-  border-color: rgba(236, 72, 153, 0.7);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.37),
-    0 0 20px rgba(236, 72, 153, 0.4),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
-}
-
-.glass-tile-yellow {
-  border-color: rgba(234, 179, 8, 0.4);
-}
-
-.glass-tile-yellow:hover {
-  border-color: rgba(234, 179, 8, 0.7);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.37),
-    0 0 20px rgba(234, 179, 8, 0.4),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
-}
-
-.glass-tile-cyan {
-  border-color: rgba(6, 182, 212, 0.4);
-}
-
-.glass-tile-cyan:hover {
-  border-color: rgba(6, 182, 212, 0.7);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.37),
-    0 0 20px rgba(6, 182, 212, 0.4),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
-}
-
-/* Luxury Tan Marble Variants - High-end aesthetic */
+/* Marble — rich dark veined obsidian */
 .glass-tile-marble {
-  background: 
-    linear-gradient(135deg, rgba(222, 200, 176, 0.15) 0%, rgba(180, 160, 140, 0.12) 100%),
-    linear-gradient(45deg, transparent 30%, rgba(212, 175, 55, 0.03) 40%, transparent 50%, rgba(212, 175, 55, 0.03) 60%, transparent 70%),
-    linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(20, 18, 16, 0.75) 100%);
-  background-size: 100% 100%, 200px 200px, 100% 100%;
-  border-color: rgba(212, 175, 55, 0.5);
+  background:
+    linear-gradient(160deg, rgba(232,218,196,0.04) 0%, rgba(201,168,76,0.02) 25%, transparent 50%),
+    linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(201,168,76,0.025) 30%, rgba(255,255,255,0) 60%),
+    linear-gradient(135deg, #141210 0%, #110F0B 40%, #0D0B07 60%, #141210 100%);
+  border-color: rgba(201,168,76,0.38);
+  box-shadow:
+    0 1px 0 rgba(201,168,76,0.18) inset,
+    0 -1px 0 rgba(0,0,0,0.5) inset,
+    0 12px 40px rgba(0,0,0,0.65);
 }
 
 .glass-tile-marble:hover {
-  border-color: rgba(212, 175, 55, 0.8);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.37),
-    0 0 25px rgba(212, 175, 55, 0.3),
-    inset 2px 2px 4px rgba(255, 255, 255, 0.15),
-    inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+  border-color: rgba(201,168,76,0.62);
+  box-shadow:
+    0 1px 0 rgba(201,168,76,0.26) inset,
+    0 16px 50px rgba(0,0,0,0.72),
+    0 0 32px rgba(201,168,76,0.15);
 }
 
-.glass-tile-marble::before {
-  background: radial-gradient(circle at top left, rgba(255, 235, 205, 0.25), transparent 50%);
-}
-
-/* Luxury Tan Marble - Lighter variant */
+/* Tan marble — warm dark leather with gold veins */
 .glass-tile-tan-marble {
-  background: 
-    linear-gradient(135deg, rgba(210, 180, 140, 0.2) 0%, rgba(188, 143, 108, 0.15) 100%),
-    repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(212, 175, 55, 0.02) 50px, rgba(212, 175, 55, 0.02) 100px),
-    repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(212, 175, 55, 0.02) 50px, rgba(212, 175, 55, 0.02) 100px),
-    linear-gradient(135deg, rgba(26, 22, 18, 0.9) 0%, rgba(45, 36, 22, 0.85) 100%);
-  border-color: rgba(210, 180, 140, 0.6);
+  background:
+    linear-gradient(160deg, rgba(210,180,140,0.055) 0%, rgba(180,140,90,0.03) 40%, transparent 70%),
+    linear-gradient(135deg, #15120E 0%, #110F0B 40%, #0D0B09 60%, #15120E 100%);
+  border-color: rgba(201,168,76,0.32);
 }
 
 .glass-tile-tan-marble:hover {
-  border-color: rgba(210, 180, 140, 0.9);
-  box-shadow: 
-    0 8px 32px 0 rgba(0, 0, 0, 0.37),
-    0 0 30px rgba(210, 180, 140, 0.25),
-    inset 3px 3px 6px rgba(255, 255, 255, 0.12),
-    inset -3px -3px 6px rgba(0, 0, 0, 0.25);
+  border-color: rgba(201,168,76,0.55);
+  box-shadow:
+    0 1px 0 rgba(201,168,76,0.2) inset,
+    0 16px 50px rgba(0,0,0,0.72),
+    0 0 28px rgba(201,168,76,0.12);
 }
 
-.glass-tile-tan-marble::before {
-  background: radial-gradient(circle at top left, rgba(245, 222, 179, 0.3), transparent 55%);
+/* ═════════════════════════════════════════════════════════
+   STATUS SUB-PANELS — toned, dark, no cartoon neons
+   ═════════════════════════════════════════════════════════ */
+
+/* Positive/OK — deep forest, not bright green */
+.glass-tile [class*="bg-green-"][class*="rounded"],
+.glass-tile [class*="bg-green-"][class*="p-"] {
+  background-color: rgba(18, 32, 16, 0.7) !important;
+}
+.glass-tile [class*="border-green-"] {
+  border-color: rgba(55, 88, 45, 0.35) !important;
+}
+.glass-tile [class*="text-green-"] {
+  color: rgba(130, 175, 110, 0.9) !important;
+}
+
+/* Warning — deep ochre, not bright yellow */
+.glass-tile [class*="bg-yellow-"][class*="rounded"],
+.glass-tile [class*="bg-yellow-"][class*="p-"] {
+  background-color: rgba(38, 28, 8, 0.7) !important;
+}
+.glass-tile [class*="border-yellow-"] {
+  border-color: rgba(95, 72, 15, 0.35) !important;
+}
+.glass-tile [class*="text-yellow-"] {
+  color: rgba(175, 138, 58, 0.95) !important;
+}
+
+/* Urgent — deep amber, not bright orange */
+.glass-tile [class*="bg-orange-"][class*="rounded"],
+.glass-tile [class*="bg-orange-"][class*="p-"] {
+  background-color: rgba(42, 20, 5, 0.7) !important;
+}
+.glass-tile [class*="border-orange-"] {
+  border-color: rgba(95, 48, 10, 0.35) !important;
+}
+.glass-tile [class*="text-orange-"] {
+  color: rgba(180, 115, 50, 0.95) !important;
+}
+
+/* Alert/Critical — dark crimson, not cartoon red */
+.glass-tile [class*="bg-red-"][class*="rounded"],
+.glass-tile [class*="bg-red-"][class*="p-"] {
+  background-color: rgba(48, 10, 10, 0.72) !important;
+}
+.glass-tile [class*="border-red-"] {
+  border-color: rgba(105, 32, 32, 0.38) !important;
+}
+.glass-tile [class*="text-red-"] {
+  color: rgba(195, 95, 95, 0.95) !important;
 }

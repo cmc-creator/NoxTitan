@@ -62,16 +62,16 @@ export default function UnifiedDashboard() {
         <div className="mb-6 sm:mb-8">
           <div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">Command Center</h1>
-            <p className="text-base sm:text-lg text-amber-200">Real-time business intelligence and operations hub</p>
+            <p className="text-base sm:text-lg" style={{ color: '#9E8F75' }}>Real-time business intelligence and operations hub</p>
           </div>
         </div>
 
         {/* Active Notifications - Enhanced */}
-        <div className="glass-tile glass-tile-yellow mb-6 p-4 sm:p-6">
+        <div className="glass-tile glass-tile-gold mb-6 p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 mb-4 relative z-10">
             <div className="flex items-center gap-2 sm:gap-3">
-              <div className="p-2 bg-yellow-500/20 rounded-lg flex-shrink-0">
-                <Bell className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-300 animate-pulse" />
+              <div className="p-2 rounded-sm flex-shrink-0" style={{ background: 'rgba(201,168,76,0.1)' }}>
+                <Bell className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse" style={{ color: '#C9A84C' }} />
               </div>
               <h2 className="text-lg sm:text-xl font-bold text-white">2 Active Notifications</h2>
             </div>
@@ -131,8 +131,8 @@ export default function UnifiedDashboard() {
           <Link href="/employees" className="block">
             <div className="glass-tile glass-tile-gold p-6 cursor-pointer group transition-all">
               <div className="flex items-center justify-between mb-4 relative z-10">
-                <div className="p-3 bg-amber-600/20 rounded-lg group-hover:bg-amber-600/30 transition-colors">
-                  <Users className="w-6 h-6 text-amber-400" />
+                <div className="p-3 rounded-sm transition-all" style={{ background: 'rgba(201,168,76,0.08)' }}>
+                  <Users className="w-6 h-6" style={{ color: '#C9A84C' }} />
                 </div>
               </div>
               <h3 className="text-3xl font-bold text-white mb-1 relative z-10">{dashboardData.employees.active}</h3>
@@ -144,10 +144,10 @@ export default function UnifiedDashboard() {
 
           {/* Scheduling */}
           <Link href="/calendar" className="block">
-            <div className="glass-tile glass-tile-green p-6 cursor-pointer group transition-all">
+            <div className="glass-tile glass-tile-gold p-6 cursor-pointer group transition-all">
               <div className="flex items-center justify-between mb-4 relative z-10">
-                <div className="p-3 bg-green-500/20 rounded-lg group-hover:bg-green-500/30 transition-colors">
-                  <Calendar className="w-6 h-6 text-green-300" />
+                <div className="p-3 rounded-sm transition-all" style={{ background: 'rgba(201,168,76,0.08)' }}>
+                  <Calendar className="w-6 h-6" style={{ color: '#C9A84C' }} />
                 </div>
               </div>
               <h3 className="text-3xl font-bold text-white mb-1 relative z-10">{dashboardData.scheduling.upcomingShifts}</h3>
@@ -161,8 +161,8 @@ export default function UnifiedDashboard() {
           <Link href="/time-off" className="block">
             <div className="glass-tile glass-tile-gold p-6 cursor-pointer group transition-all">
               <div className="flex items-center justify-between mb-4 relative z-10">
-                <div className="p-3 bg-amber-500/20 rounded-lg group-hover:bg-amber-500/30 transition-colors">
-                  <Clock className="w-6 h-6 text-amber-200" />
+                <div className="p-3 rounded-sm transition-all" style={{ background: 'rgba(201,168,76,0.08)' }}>
+                  <Clock className="w-6 h-6" style={{ color: '#C9A84C' }} />
                 </div>
               </div>
               <h3 className="text-3xl font-bold text-white mb-1 relative z-10">{dashboardData.timeOff.pending}</h3>
@@ -176,8 +176,8 @@ export default function UnifiedDashboard() {
           <Link href="/qapi" className="block">
             <div className="glass-tile glass-tile-red p-6 cursor-pointer group transition-all">
               <div className="flex items-center justify-between mb-4 relative z-10">
-                <div className="p-3 bg-red-500/20 rounded-lg group-hover:bg-red-500/30 transition-colors">
-                  <AlertTriangle className="w-6 h-6 text-red-300" />
+                <div className="p-3 rounded-sm transition-all" style={{ background: 'rgba(160,40,40,0.12)' }}>
+                  <AlertTriangle className="w-6 h-6" style={{ color: 'rgba(195,95,95,0.9)' }} />
                 </div>
               </div>
               <h3 className="text-3xl font-bold text-white mb-1 relative z-10">{dashboardData.quality.openIncidents}</h3>
@@ -281,17 +281,17 @@ export default function UnifiedDashboard() {
         {/* Financial Overview - Critical Manager Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {/* FTE (Full Time Equivalent) */}
-          <div className="glass-tile glass-tile-green p-6">
+          <div className="glass-tile glass-tile-gold p-6">
             <div className="flex items-center justify-between mb-4 relative z-10">
-              <div className="p-3 bg-green-500/20 rounded-lg">
-                <Briefcase className="w-6 h-6 text-green-300" />
+              <div className="p-3 rounded-sm" style={{ background: 'rgba(201,168,76,0.08)' }}>
+                <Briefcase className="w-6 h-6" style={{ color: '#C9A84C' }} />
               </div>
-              <TrendingUp className="w-5 h-5 text-green-400" />
+              <TrendingUp className="w-5 h-5" style={{ color: '#C9A84C' }} />
             </div>
             <h3 className="text-3xl font-bold text-white mb-1 relative z-10">147.8</h3>
             <p className="text-amber-50 font-semibold relative z-10">Total FTE</p>
             <p className="text-sm text-gray-200 mt-2 relative z-10">Target: 150 FTE</p>
-            <p className="text-xs text-green-300 mt-1 relative z-10">Within budget ✓</p>
+            <p className="text-xs mt-1 relative z-10" style={{ color: 'rgba(130,175,110,0.9)' }}>Within budget ✓</p>
           </div>
 
           {/* EPOB (Employee Per Occupied Bed) */}
@@ -309,17 +309,17 @@ export default function UnifiedDashboard() {
           </div>
 
           {/* Labor Cost */}
-          <div className="glass-tile glass-tile-yellow p-6">
+          <div className="glass-tile glass-tile-gold p-6">
             <div className="flex items-center justify-between mb-4 relative z-10">
-              <div className="p-3 bg-yellow-500/20 rounded-lg">
-                <DollarSign className="w-6 h-6 text-yellow-300" />
+              <div className="p-3 rounded-sm" style={{ background: 'rgba(201,168,76,0.08)' }}>
+                <DollarSign className="w-6 h-6" style={{ color: '#9E8F75' }} />
               </div>
-              <TrendingDown className="w-5 h-5 text-red-400" />
+              <TrendingDown className="w-5 h-5" style={{ color: 'rgba(195,100,100,0.9)' }} />
             </div>
             <h3 className="text-3xl font-bold text-white mb-1 relative z-10">$127K</h3>
             <p className="text-amber-50 font-semibold relative z-10">Weekly Labor Cost</p>
             <p className="text-sm text-gray-200 mt-2 relative z-10">Budget: $135K/week</p>
-            <p className="text-xs text-yellow-300 mt-1 relative z-10">12% overtime this week</p>
+            <p className="text-xs mt-1 relative z-10" style={{ color: '#9E8F75' }}>12% overtime this week</p>
           </div>
         </div>
 
@@ -450,7 +450,7 @@ export default function UnifiedDashboard() {
                 <button className="px-3 py-1 bg-amber-600/20 border border-amber-600/30 rounded-full text-xs text-amber-400 hover:bg-amber-600/30 transition-all">
                   🎯 Great Teamwork
                 </button>
-                <button className="px-3 py-1 bg-green-500/20 border border-green-400/30 rounded-full text-xs text-green-300 hover:bg-green-500/30 transition-all">
+                <button className="px-3 py-1 rounded-full text-xs transition-all" style={{ background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.25)', color: '#9E8F75' }}>
                   ⭐ Excellent Care
                 </button>
                 <button className="px-3 py-1 bg-amber-500/20 border border-amber-400/40/30 rounded-full text-xs text-amber-200 hover:bg-amber-500/30 transition-all">
@@ -526,9 +526,9 @@ export default function UnifiedDashboard() {
           </div>
 
           {/* Budget Status */}
-          <div className="glass-tile glass-tile-green p-6">
+          <div className="glass-tile glass-tile-gold p-6">
             <div className="flex items-center gap-2 mb-4 relative z-10">
-              <Target className="w-6 h-6 text-green-400" />
+              <Target className="w-6 h-6" style={{ color: '#C9A84C' }} />
               <h2 className="text-lg font-bold text-white">Budget Health</h2>
             </div>
             <div className="space-y-2 relative z-10">
@@ -536,8 +536,8 @@ export default function UnifiedDashboard() {
                 <p className="font-semibold text-white text-sm">94% of monthly budget</p>
                 <p className="text-xs text-gray-200 mt-1">$8.1K remaining this period</p>
               </div>
-              <Link href="/payroll" className="block p-3 bg-stone-950/5 rounded-lg border border-white/10 hover:border-green-400 transition-all text-center">
-                <p className="text-sm font-semibold text-green-300">View Payroll →</p>
+              <Link href="/payroll" className="block p-3 bg-stone-950/5 rounded-lg border border-white/10 transition-all text-center" style={{ '--hover-border': 'rgba(201,168,76,0.45)' } as React.CSSProperties}>
+                <p className="text-sm font-semibold" style={{ color: '#C9A84C' }}>View Payroll →</p>
               </Link>
             </div>
           </div>
@@ -565,8 +565,8 @@ export default function UnifiedDashboard() {
           {/* Call-Offs Today */}
           <div className="glass-tile glass-tile-red p-6">
             <div className="flex items-center justify-between mb-3 relative z-10">
-              <div className="p-2 bg-red-500/20 rounded-lg">
-                <UserMinus className="w-5 h-5 text-red-300" />
+              <div className="p-2 rounded-sm" style={{ background: 'rgba(160,40,40,0.12)' }}>
+                <UserMinus className="w-5 h-5" style={{ color: 'rgba(195,95,95,0.9)' }} />
               </div>
               <span className="text-2xl font-bold text-white">3</span>
             </div>
@@ -578,10 +578,10 @@ export default function UnifiedDashboard() {
           </div>
 
           {/* Overtime Hours */}
-          <div className="glass-tile glass-tile-yellow p-6">
+          <div className="glass-tile glass-tile-gold p-6">
             <div className="flex items-center justify-between mb-3 relative z-10">
-              <div className="p-2 bg-yellow-500/20 rounded-lg">
-                <TrendingUp className="w-5 h-5 text-yellow-300" />
+              <div className="p-2 rounded-sm" style={{ background: 'rgba(201,168,76,0.08)' }}>
+                <TrendingUp className="w-5 h-5" style={{ color: '#9E8F75' }} />
               </div>
               <span className="text-2xl font-bold text-white">127</span>
             </div>
@@ -610,16 +610,16 @@ export default function UnifiedDashboard() {
           </div>
 
           {/* Break Compliance */}
-          <div className="glass-tile glass-tile-green p-6">
+          <div className="glass-tile glass-tile-gold p-6">
             <div className="flex items-center justify-between mb-3 relative z-10">
-              <div className="p-2 bg-green-500/20 rounded-lg">
-                <CheckCircle className="w-5 h-5 text-green-300" />
+              <div className="p-2 rounded-sm" style={{ background: 'rgba(201,168,76,0.08)' }}>
+                <CheckCircle className="w-5 h-5" style={{ color: '#C9A84C' }} />
               </div>
               <span className="text-2xl font-bold text-white">96%</span>
             </div>
             <p className="text-amber-50 font-semibold mb-1 relative z-10">Break Compliance</p>
             <p className="text-xs text-gray-200 relative z-10">2 missed breaks today</p>
-            <Link href="/attendance?view=breaks" className="text-xs text-green-300 hover:text-green-200 mt-2 inline-block relative z-10">
+            <Link href="/attendance?view=breaks" className="text-xs mt-2 inline-block relative z-10" style={{ color: '#C9A84C' }}>
               View details →
             </Link>
           </div>
@@ -856,7 +856,7 @@ export default function UnifiedDashboard() {
                 <button className="px-3 py-1 bg-amber-500/20 border border-amber-400/40/30 rounded-full text-xs text-amber-200 hover:bg-amber-500/30 transition-all">
                   ⚠️ Urgent
                 </button>
-                <button className="px-3 py-1 bg-green-500/20 border border-green-400/30 rounded-full text-xs text-green-300 hover:bg-green-500/30 transition-all">
+                <button className="px-3 py-1 rounded-full text-xs transition-all" style={{ background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.25)', color: '#9E8F75' }}>
                   👍 Good News
                 </button>
               </div>
@@ -884,9 +884,9 @@ export default function UnifiedDashboard() {
           </div>
 
           {/* This Week's Payroll */}
-          <div className="glass-tile glass-tile-green p-6">
+          <div className="glass-tile glass-tile-gold p-6">
             <div className="flex items-center gap-2 mb-4 relative z-10">
-              <DollarSign className="w-6 h-6 text-green-400" />
+              <DollarSign className="w-6 h-6" style={{ color: '#C9A84C' }} />
               <h2 className="text-lg font-bold text-white">Payroll Preview</h2>
             </div>
             <div className="space-y-2 relative z-10">
@@ -894,8 +894,8 @@ export default function UnifiedDashboard() {
                 <p className="font-semibold text-white text-sm">$156,340</p>
                 <p className="text-xs text-gray-200 mt-1">Estimated this period</p>
               </div>
-              <Link href="/payroll" className="block p-3 bg-stone-950/5 rounded-lg border border-white/10 hover:border-green-400 transition-all text-center">
-                <p className="text-sm font-semibold text-green-300">View Breakdown →</p>
+              <Link href="/payroll" className="block p-3 bg-stone-950/5 rounded-lg border border-white/10 transition-all text-center">
+                <p className="text-sm font-semibold" style={{ color: '#C9A84C' }}>View Breakdown →</p>
               </Link>
             </div>
           </div>
