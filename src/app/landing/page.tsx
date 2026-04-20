@@ -1,511 +1,394 @@
-// This is the migrated landing page from landing/index.html to Next.js (App Router) format.
-// All static HTML is now JSX, and external CSS should be imported at the top if needed.
-
-
 import React from "react";
 import Link from 'next/link';
-import './landing-galaxy.css';
 import { Gem, Lock, Crown, Gamepad2, Sparkles, Vault, Shield, Tent, ClipboardList, PenLine, GraduationCap, Trophy, Bot, ShoppingBag, Lightbulb, TrendingUp } from 'lucide-react';
 
+const G = '#C9A84C';
+const GB = '#E8C060';
+const GBORDER = 'rgba(201,168,76,0.22)';
+const GBORDER_H = 'rgba(201,168,76,0.45)';
+const BGMAIN = '#070604';
+const BGCARD = '#110F0B';
+const TEXTPRIMARY = '#F0EBE0';
+const TEXTDIM = '#9E8F75';
+
+const navLinkStyle: React.CSSProperties = {
+  padding: '10px 22px',
+  borderRadius: '4px',
+  border: `1px solid ${GBORDER}`,
+  color: G,
+  fontWeight: 600,
+  fontSize: '13px',
+  letterSpacing: '0.1em',
+  textTransform: 'uppercase' as const,
+  background: 'transparent',
+  transition: 'border-color 0.2s, color 0.2s',
+  textDecoration: 'none',
+};
+
+const goldBtnStyle: React.CSSProperties = {
+  padding: '13px 32px',
+  borderRadius: '4px',
+  border: `1px solid ${G}`,
+  background: `linear-gradient(135deg, rgba(201,168,76,0.18) 0%, rgba(201,168,76,0.06) 100%)`,
+  color: GB,
+  fontFamily: "'Cormorant Garamond', serif",
+  fontSize: '15px',
+  fontWeight: 600,
+  letterSpacing: '0.12em',
+  textTransform: 'uppercase' as const,
+  cursor: 'pointer',
+  transition: 'all 0.2s',
+  textDecoration: 'none',
+  display: 'inline-block',
+};
+
+const outlineBtnStyle: React.CSSProperties = {
+  padding: '13px 32px',
+  borderRadius: '4px',
+  border: `1px solid ${GBORDER}`,
+  background: 'transparent',
+  color: TEXTPRIMARY,
+  fontFamily: "'Cormorant Garamond', serif",
+  fontSize: '15px',
+  fontWeight: 600,
+  letterSpacing: '0.12em',
+  textTransform: 'uppercase' as const,
+  cursor: 'pointer',
+  transition: 'all 0.2s',
+  textDecoration: 'none',
+  display: 'inline-block',
+};
+
+const cardStyle: React.CSSProperties = {
+  background: BGCARD,
+  border: `1px solid ${GBORDER}`,
+  borderRadius: '4px',
+  padding: '28px 24px',
+  transition: 'border-color 0.2s',
+};
+
 export default function LandingPage() {
-  // Generate 80 tiny stars with random positions and animation delays
-  const stars = Array.from({ length: 80 }).map((_, i) => {
-    const top = Math.random() * 100;
-    const left = Math.random() * 100;
-    const delay = (Math.random() * 2.5).toFixed(2);
-    return (
-      <div
-        key={i}
-        className="star"
-        style={{
-          top: `${top}%`,
-          left: `${left}%`,
-          animationDelay: `${delay}s`,
-        }}
-      />
-    );
-  });
   return (
-    <div className="galaxy-bg min-h-screen w-full">
-      {/* Render stars absolutely on the background */}
-      <div style={{position: 'absolute', width: '100vw', height: '100vh', top: 0, left: 0, zIndex: 2, pointerEvents: 'none'}}>
-        {stars}
+    <div style={{ minHeight: '100vh', width: '100%', background: BGMAIN, color: TEXTPRIMARY }}>
+      {/* Top Bar */}
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 32px', borderBottom: `1px solid ${GBORDER}` }}>
+        <Link href="/signup?vip=true" style={goldBtnStyle}>
+          <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Gem size={14} /> VIP Access</span>
+        </Link>
+        <Link href="/login" style={outlineBtnStyle}>
+          <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Lock size={14} /> Login</span>
+        </Link>
       </div>
 
-      {/* Simple Top Bar with VIP Access and Login */}
-      <div className="w-full flex justify-between items-center px-8 animate-fade-in">
-        <div className="flex items-center">
-          <Link href="/signup?vip=true" className="px-6 py-3 rounded-xl bg-gradient-to-br from-yellow-900/50 to-amber-900/50 border-2 border-yellow-600/40 hover:border-yellow-400 font-bold shadow-lg transition-all text-white flex items-center gap-2">
-            <Gem size={16} /> VIP Access
-          </Link>
-        </div>
-        <div className="flex gap-4">
-          <Link href="/login" className="px-6 py-3 rounded-xl bg-gradient-to-br from-stone-900/50 to-pink-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 font-bold shadow-lg transition-all text-white flex items-center gap-2">
-            <Lock size={16} /> Login
-          </Link>
-        </div>
-      </div>
-
-      {/* NOXTITAN Title and Tagline */}
-      <div className="w-full flex flex-col items-center animate-fade-in" style={{ marginTop: '-60px' }}>
-        <img 
-          src="/nyxtitan-chrome.png" 
-          alt="NOXTITAN" 
-          className="h-20 md:h-28 w-auto mb-3 object-contain"
-          style={{
-            filter: 'drop-shadow(0px 5px 15px rgba(0,0,0,0.9))',
-            mixBlendMode: 'normal'
-          }}
+      {/* Hero */}
+      <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '72px 32px 48px', textAlign: 'center' }}>
+        <img
+          src="/titanlogo.png"
+          alt="NyxTitan"
+          style={{ height: '80px', width: 'auto', objectFit: 'contain', marginBottom: '24px', filter: 'drop-shadow(0 4px 20px rgba(201,168,76,0.35))' }}
         />
-        <span className="text-base md:text-lg font-bold uppercase text-center tracking-widest" style={{
-          backgroundImage: 'linear-gradient(180deg, #f5f5ff 0%, #d8d8e8 20%, #b0b0d0 40%, #8080a8 47%, #303048 50%, #e0e0f8 52%, #a8a8c8 70%, #606080 100%)',
-          backgroundSize: '100% 100%',
-          WebkitBackgroundClip: 'text',
-          backgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          filter: 'drop-shadow(0px -1px 2px rgba(255,255,255,0.5)) drop-shadow(0px 3px 6px rgba(0,0,0,0.7))'
-        }}>
+        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(42px, 7vw, 82px)', fontWeight: 700, letterSpacing: '0.35em', color: G, margin: '0 0 16px', lineHeight: 1.1 }}>
+          NYXTITAN
+        </h1>
+        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(16px, 2.5vw, 22px)', letterSpacing: '0.2em', color: TEXTDIM, marginBottom: '8px', fontStyle: 'italic' }}>
           Business Management. Forged for Titans.
-        </span>
-        {/* Action Buttons Row - Cleaned up, no duplicates */}
-        <div className="flex flex-row flex-wrap justify-center gap-4 mt-6">
-          <Link href="/signup" className="px-6 py-3 rounded-xl bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-2 border-green-600/40 hover:border-green-400 font-bold shadow-lg transition-all text-white text-pop-light">Start Free Trial</Link>
-          <Link href="#contact" className="px-6 py-3 rounded-xl bg-gradient-to-br from-amber-700/50 to-amber-800/50 border-2 border-amber-600/40/40 hover:border-blue-400 font-bold shadow-lg transition-all text-white text-pop-light">Request Demo</Link>
-          <Link href="/pricing" className="px-6 py-3 rounded-xl bg-gradient-to-br from-stone-900/50 to-pink-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 font-bold shadow-lg transition-all text-white text-pop-light">View Pricing</Link>
+        </p>
+        <p style={{ fontSize: '15px', color: TEXTDIM, maxWidth: '560px', lineHeight: 1.7, marginBottom: '40px' }}>
+          Manage employees, payroll, scheduling, compliance, and operations from a single powerful platform. Replace 8+ expensive systems with one.
+        </p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'center' }}>
+          <Link href="/signup" style={goldBtnStyle}>Start Free Trial</Link>
+          <Link href="#contact" style={outlineBtnStyle}>Request Demo</Link>
+          <Link href="/pricing" style={{ ...outlineBtnStyle, color: TEXTDIM, borderColor: 'rgba(201,168,76,0.12)' }}>View Pricing</Link>
         </div>
       </div>
 
-      {/* Navigation Bar */}
-        <nav className="w-full flex justify-center items-center py-6 bg-gradient-to-b from-black via-[#1a1a1e] to-black shadow-lg sticky top-0 z-50 animate-fade-in">
-          <div className="w-full max-w-6xl flex flex-row items-center justify-between px-4">
-            <div className="flex flex-1 justify-center gap-6">
-              <a href="#features" className="px-6 py-3 rounded-xl bg-gradient-to-br from-stone-900/50 to-violet-900/50 border-2 border-amber-600/40/40 hover:border-amber-400/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] font-bold shadow-lg transition-all text-white">Features</a>
-              <a href="#comparison" className="px-6 py-3 rounded-xl bg-gradient-to-br from-amber-700/50 to-cyan-900/50 border-2 border-amber-600/40/40 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] font-bold shadow-lg transition-all text-white">Comparison</a>
-              <a href="#demo-section" className="px-6 py-3 rounded-xl bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-2 border-green-600/40 hover:border-green-400 hover:shadow-[0_0_20px_rgba(34,197,94,0.6)] font-bold shadow-lg transition-all text-white">Demo</a>
-              <a href="#contact" className="px-6 py-3 rounded-xl bg-gradient-to-br from-pink-900/50 to-rose-900/50 border-2 border-pink-600/40 hover:border-pink-400 hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] font-bold shadow-lg transition-all text-white">Contact</a>
-            </div>
-          </div>
-        </nav>
-      <section className="w-full flex flex-col items-center justify-center py-16">
-        <div className="flex flex-col items-center justify-center mb-8">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            controls
-            poster="/nyxtitan-logo-new.png"
-            className="rounded-2xl shadow-2xl border-4 border-purple-700/40 bg-black w-full max-w-xl h-72 object-cover mb-4 animate-fade-in"
-          >
-            <source src="/nyxtitan-video.mp4" type="video/mp4" />
-            <source src="/nyxtitan-video.webm" type="video/webm" />
-            <source src="/nyxtitan-video.ogg" type="video/ogg" />
-            Your browser does not support the video tag.
-          </video>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-center text-white drop-shadow-lg mt-6 animate-slide-up text-pop-strong">
-            Run Your Entire Business in One Place.
-          </h1>
-          <p className="mt-4 text-lg md:text-2xl text-amber-100/70 text-center max-w-2xl animate-fade-in text-pop">
-            Stop juggling 15 different apps.
-          </p>
-          <p className="mt-2 text-lg md:text-2xl text-amber-100/70 text-center max-w-2xl animate-fade-in text-pop">
-            Manage your employees, payroll, scheduling, compliance, and operations from a single powerful platform.
-          </p>
-          {/* Removed duplicate action buttons below tagline */}
+      {/* Sticky Navigation */}
+      <nav style={{ width: '100%', position: 'sticky', top: 0, zIndex: 50, background: BGMAIN, borderBottom: `1px solid ${GBORDER}`, borderTop: `1px solid ${GBORDER}` }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', justifyContent: 'center', gap: '8px', padding: '12px 16px' }}>
+          {[['#features', 'Features'], ['#comparison', 'Comparison'], ['#demo-section', 'Demo'], ['#contact', 'Contact']].map(([href, label]) => (
+            <a key={href} href={href} style={navLinkStyle}
+              onMouseEnter={e => { (e.target as HTMLElement).style.borderColor = GBORDER_H; (e.target as HTMLElement).style.color = GB; }}
+              onMouseLeave={e => { (e.target as HTMLElement).style.borderColor = GBORDER; (e.target as HTMLElement).style.color = G; }}>
+              {label}
+            </a>
+          ))}
         </div>
-      </section>
+      </nav>
 
-      {/* Video Section (Demo) - Centered and Modern */}
-      <section id="demo-section" className="w-full flex flex-col items-center justify-center py-12">
-        <div className="w-full max-w-7xl mx-auto flex flex-col items-center px-4">
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-white mb-3 animate-fade-in">See What NyxTitan Can Do For You.</h2>
-          <p className="text-lg md:text-xl text-amber-100/70 text-center mb-6 animate-fade-in max-w-2xl">
-            Watch our interactive walkthrough below to see how NyxTitan handles scheduling, payroll, compliance, and more—all in one powerful platform.
+      {/* Demo Section */}
+      <section id="demo-section" style={{ width: '100%', padding: '72px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 700, color: TEXTPRIMARY, letterSpacing: '0.06em', marginBottom: '12px', textAlign: 'center' }}>
+            See NyxTitan In Action
+          </h2>
+          <p style={{ color: TEXTDIM, fontSize: '15px', maxWidth: '580px', textAlign: 'center', marginBottom: '36px', lineHeight: 1.7 }}>
+            Explore our interactive walkthrough — scheduling, payroll, compliance, and more in one platform.
           </p>
-          <div className="w-full flex justify-center items-center animate-fade-in">
+          <div style={{ width: '100%', border: `1px solid ${GBORDER}`, borderRadius: '4px', overflow: 'hidden', boxShadow: `0 0 48px rgba(201,168,76,0.08)` }}>
             <iframe
               src="https://cmc-creator.github.io/NyxTitan/"
               title="NyxTitan Interactive Walkthrough"
               allowFullScreen
-              className="rounded-2xl shadow-2xl border-4 border-purple-700/40 bg-black w-full h-[92vh]"
-              style={{ minHeight: '92vh' }}
-            ></iframe>
+              style={{ width: '100%', minHeight: '92vh', background: '#000', display: 'block', border: 'none' }}
+            />
           </div>
         </div>
       </section>
 
-      {/* Unique Features Section - NEW */}
-      <section id="features" className="w-full flex flex-col items-center justify-center py-20 bg-gradient-to-b from-black via-stone-950/30 to-black">
-        <div className="w-full max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-center text-white mb-4 animate-fade-in">
+      {/* Features Section */}
+      <section id="features" style={{ width: '100%', padding: '80px 24px', borderTop: `1px solid ${GBORDER}` }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 700, color: TEXTPRIMARY, letterSpacing: '0.06em', textAlign: 'center', marginBottom: '12px' }}>
             Features No One Else Has
           </h2>
-          <p className="text-lg md:text-xl text-amber-100/70 text-center mb-12 animate-fade-in">
-            NyxTitan isn't just another business tool—it's a complete ecosystem built for modern teams
+          <p style={{ color: TEXTDIM, fontSize: '15px', textAlign: 'center', marginBottom: '56px', lineHeight: 1.7 }}>
+            NyxTitan isn&apos;t just another business tool — it&apos;s a complete ecosystem built for modern teams.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {/* Guild Gamification */}
-            <div className="bg-gradient-to-br from-stone-900/50 to-black border-2 border-amber-600/40/40 rounded-xl p-6 hover:border-amber-400/40 transition-all">
-              <div className="mb-3"><Crown size={36} className="text-amber-400" /></div>
-              <h3 className="text-xl font-bold text-white mb-2">Guild Gamification System</h3>
-              <p className="text-amber-100/70 text-sm mb-3">XP, levels, achievements, and rewards turn work into an engaging RPG experience. 7-tier progression from Novice to Grandmaster.</p>
-              <div className="text-xs text-amber-400">• Level progression • XP rewards • Achievement badges • Reward shop</div>
-            </div>
-
-            {/* Team Activities */}
-            <div className="bg-gradient-to-br from-pink-900/50 to-black border-2 border-pink-600/40 rounded-xl p-6 hover:border-pink-400 transition-all">
-              <div className="mb-3"><Gamepad2 size={36} className="text-pink-400" /></div>
-              <h3 className="text-xl font-bold text-white mb-2">30+ Team Engagement Activities</h3>
-              <p className="text-amber-100/70 text-sm mb-3">Ice breakers, coffee roulette, trivia nights, manager mixers, and daily challenges keep teams connected and engaged.</p>
-              <div className="text-xs text-amber-400">• Ice breakers • Team bonding • Manager engagement • Competitions</div>
-            </div>
-
-            {/* Oracle AI */}
-            <div className="bg-gradient-to-br from-amber-700/50 to-black border-2 border-amber-600/40/40 rounded-xl p-6 hover:border-blue-400 transition-all">
-              <div className="mb-3"><Sparkles size={36} className="text-amber-400" /></div>
-              <h3 className="text-xl font-bold text-white mb-2">Oracle Predictive AI</h3>
-              <p className="text-amber-100/70 text-sm mb-3">Machine learning forecasts staffing needs, predicts turnover, and optimizes schedules before issues arise.</p>
-              <div className="text-xs text-amber-400">• Turnover prediction • Staffing optimization • Trend analysis</div>
-            </div>
-
-            {/* Asset Vault */}
-            <div className="bg-gradient-to-br from-green-900/50 to-black border-2 border-green-600/40 rounded-xl p-6 hover:border-green-400 transition-all">
-              <div className="mb-3"><Vault size={36} className="text-green-400" /></div>
-              <h3 className="text-xl font-bold text-white mb-2">Asset Vault</h3>
-              <p className="text-amber-100/70 text-sm mb-3">Track equipment, vehicles, supplies, and inventory with full lifecycle management, maintenance tracking, and depreciation.</p>
-              <div className="text-xs text-amber-400">• Equipment tracking • Maintenance logs • Depreciation calc</div>
-            </div>
-
-            {/* Sentinel */}
-            <div className="bg-gradient-to-br from-red-900/50 to-black border-2 border-red-600/40 rounded-xl p-6 hover:border-red-400 transition-all">
-              <div className="mb-3"><Shield size={36} className="text-red-400" /></div>
-              <h3 className="text-xl font-bold text-white mb-2">Sentinel Visitor Management</h3>
-              <p className="text-amber-100/70 text-sm mb-3">Complete visitor tracking, badge printing, access control, and security protocols integrated with your facility management.</p>
-              <div className="text-xs text-amber-400">• Check-in/out • Badge printing • Security alerts • Access logs</div>
-            </div>
-
-            {/* Basecamp Personal Portals */}
-            <div className="bg-gradient-to-br from-yellow-900/50 to-black border-2 border-yellow-600/40 rounded-xl p-6 hover:border-yellow-400 transition-all">
-              <div className="mb-3"><Tent size={36} className="text-yellow-400" /></div>
-              <h3 className="text-xl font-bold text-white mb-2">Basecamp Personal Portals</h3>
-              <p className="text-amber-100/70 text-sm mb-3">Every employee gets a personalized dashboard with their schedule, goals, recognition, and team connections all in one place.</p>
-              <div className="text-xs text-amber-400">• Personal dashboard • Goal tracking • Recognition feed</div>
-            </div>
-
-            {/* Compliance Suite */}
-            <div className="bg-gradient-to-br from-amber-700/50 to-black border-2 border-indigo-600/40 rounded-xl p-6 hover:border-indigo-400 transition-all">
-              <div className="mb-3"><ClipboardList size={36} className="text-amber-400" /></div>
-              <h3 className="text-xl font-bold text-white mb-2">Compliance Suite</h3>
-              <p className="text-amber-100/70 text-sm mb-3">Automated OSHA, CMS, and Joint Commission compliance tracking with audit trails, certifications, and regulatory reporting.</p>
-              <div className="text-xs text-amber-400">• OSHA tracking • CMS compliance • Audit trails • Certifications</div>
-            </div>
-
-            {/* Treasury & Signatures */}
-            <div className="bg-gradient-to-br from-stone-900/50 to-black border-2 border-amber-600/40/40 rounded-xl p-6 hover:border-amber-400/40 transition-all">
-              <div className="mb-3"><PenLine size={36} className="text-amber-400" /></div>
-              <h3 className="text-xl font-bold text-white mb-2">Digital Treasury & Signatures</h3>
-              <p className="text-amber-100/70 text-sm mb-3">Secure document signing, approval workflows, and treasury management with full audit trails and compliance.</p>
-              <div className="text-xs text-amber-400">• E-signatures • Approval workflows • Document vault</div>
-            </div>
-
-            {/* Learning Management */}
-            <div className="bg-gradient-to-br from-teal-900/50 to-black border-2 border-teal-600/40 rounded-xl p-6 hover:border-teal-400 transition-all">
-              <div className="mb-3"><GraduationCap size={36} className="text-teal-400" /></div>
-              <h3 className="text-xl font-bold text-white mb-2">Learning Management System</h3>
-              <p className="text-amber-100/70 text-sm mb-3">Built-in training courses, certification tracking, skill development paths, and automated compliance training.</p>
-              <div className="text-xs text-amber-400">• Training courses • Certifications • Skill tracking • Quizzes</div>
-            </div>
-
-            {/* Recognition System */}
-            <div className="bg-gradient-to-br from-pink-900/50 to-black border-2 border-pink-600/40 rounded-xl p-6 hover:border-pink-400 transition-all">
-              <div className="mb-3"><Trophy size={36} className="text-pink-400" /></div>
-              <h3 className="text-xl font-bold text-white mb-2">Recognition & Rewards</h3>
-              <p className="text-amber-100/70 text-sm mb-3">Public recognition feed, badges, awards, points system, and peer-to-peer appreciation that actually improves retention.</p>
-              <div className="text-xs text-amber-400">• Public recognition • Badge system • Points rewards • Analytics</div>
-            </div>
-
-            {/* Nox & Titan AI Assistants */}
-            <div className="bg-gradient-to-br from-cyan-900/50 to-black border-2 border-cyan-600/40 rounded-xl p-6 hover:border-cyan-400 transition-all">
-              <div className="mb-3"><Bot size={36} className="text-cyan-400" /></div>
-              <h3 className="text-xl font-bold text-white mb-2">Nox & Titan AI Assistants</h3>
-              <p className="text-amber-100/70 text-sm mb-3">Dual AI assistants with text and voice capabilities help with scheduling, HR questions, payroll, and more—24/7.</p>
-              <div className="text-xs text-amber-400">• Chat assistant • Voice commands • Contextual help • 24/7 availability</div>
-            </div>
-
-            {/* Merch Store Integration */}
-            <div className="bg-gradient-to-br from-orange-900/50 to-black border-2 border-orange-600/40 rounded-xl p-6 hover:border-orange-400 transition-all">
-              <div className="mb-3"><ShoppingBag size={36} className="text-orange-400" /></div>
-              <h3 className="text-xl font-bold text-white mb-2">Integrated Merch Store</h3>
-              <p className="text-amber-100/70 text-sm mb-3">Employees can redeem points for branded merchandise, creating a tangible rewards program that builds team culture.</p>
-              <div className="text-xs text-amber-400">• Point redemption • Branded merch • Fulfillment tracking</div>
-            </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '20px', marginBottom: '48px' }}>
+            {[
+              { icon: <Crown size={28} color={G} />, title: 'Guild Gamification System', desc: 'XP, levels, achievements, and rewards turn work into an engaging RPG experience. 7-tier progression from Novice to Grandmaster.', tags: 'Level progression · XP rewards · Achievement badges · Reward shop' },
+              { icon: <Gamepad2 size={28} color={G} />, title: '30+ Team Engagement Activities', desc: 'Ice breakers, coffee roulette, trivia nights, manager mixers, and daily challenges keep teams connected and engaged.', tags: 'Ice breakers · Team bonding · Manager engagement · Competitions' },
+              { icon: <Sparkles size={28} color={G} />, title: 'Oracle Predictive AI', desc: 'Machine learning forecasts staffing needs, predicts turnover, and optimizes schedules before issues arise.', tags: 'Turnover prediction · Staffing optimization · Trend analysis' },
+              { icon: <Vault size={28} color={G} />, title: 'Asset Vault', desc: 'Track equipment, vehicles, supplies, and inventory with full lifecycle management, maintenance tracking, and depreciation.', tags: 'Equipment tracking · Maintenance logs · Depreciation calc' },
+              { icon: <Shield size={28} color={G} />, title: 'Sentinel Visitor Management', desc: 'Complete visitor tracking, badge printing, access control, and security protocols integrated with your facility management.', tags: 'Check-in/out · Badge printing · Security alerts · Access logs' },
+              { icon: <Tent size={28} color={G} />, title: 'Basecamp Personal Portals', desc: 'Every employee gets a personalized dashboard with their schedule, goals, recognition, and team connections all in one place.', tags: 'Personal dashboard · Goal tracking · Recognition feed' },
+              { icon: <ClipboardList size={28} color={G} />, title: 'Compliance Suite', desc: 'Automated OSHA, CMS, and Joint Commission compliance tracking with audit trails, certifications, and regulatory reporting.', tags: 'OSHA tracking · CMS compliance · Audit trails · Certifications' },
+              { icon: <PenLine size={28} color={G} />, title: 'Digital Treasury & Signatures', desc: 'Secure document signing, approval workflows, and treasury management with full audit trails and compliance.', tags: 'E-signatures · Approval workflows · Document vault' },
+              { icon: <GraduationCap size={28} color={G} />, title: 'Learning Management System', desc: 'Built-in training courses, certification tracking, skill development paths, and automated compliance training.', tags: 'Training courses · Certifications · Skill tracking · Quizzes' },
+              { icon: <Trophy size={28} color={G} />, title: 'Recognition & Rewards', desc: 'Public recognition feed, badges, awards, points system, and peer-to-peer appreciation that actually improves retention.', tags: 'Public recognition · Badge system · Points rewards · Analytics' },
+              { icon: <Bot size={28} color={G} />, title: 'Nox & Titan AI Assistants', desc: 'Dual AI assistants with text and voice capabilities help with scheduling, HR questions, payroll, and more — 24/7.', tags: 'Chat assistant · Voice commands · Contextual help · 24/7 availability' },
+              { icon: <ShoppingBag size={28} color={G} />, title: 'Integrated Merch Store', desc: 'Employees can redeem points for branded merchandise, creating a tangible rewards program that builds team culture.', tags: 'Point redemption · Branded merch · Fulfillment tracking' },
+            ].map((f, i) => (
+              <div key={i} style={cardStyle}
+                onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = GBORDER_H}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = GBORDER}>
+                <div style={{ marginBottom: '14px' }}>{f.icon}</div>
+                <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '20px', fontWeight: 700, color: TEXTPRIMARY, marginBottom: '10px', letterSpacing: '0.02em' }}>{f.title}</h3>
+                <p style={{ color: TEXTDIM, fontSize: '14px', lineHeight: 1.7, marginBottom: '12px' }}>{f.desc}</p>
+                <p style={{ color: G, fontSize: '12px', letterSpacing: '0.04em' }}>{f.tags}</p>
+              </div>
+            ))}
           </div>
 
-          <div className="text-center">
-            <Link href="/signup" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-green-600 to-emerald-600 font-bold shadow-lg hover:scale-105 transition-transform border-2 border-green-500 text-white text-xl">
-              Start Your Free Trial →
-            </Link>
-            <p className="text-amber-200 mt-4">No credit card required • 14-day trial • Full access</p>
+          <div style={{ textAlign: 'center' }}>
+            <Link href="/signup" style={goldBtnStyle}>Start Your Free Trial →</Link>
+            <p style={{ color: TEXTDIM, marginTop: '16px', fontSize: '13px', letterSpacing: '0.05em' }}>No credit card required · 14-day trial · Full access</p>
           </div>
         </div>
       </section>
 
       {/* Trust Bar */}
-      <section className="w-full flex flex-col items-center py-8">
-        <p className="text-amber-200 text-lg font-semibold mb-4 animate-fade-in">Trusted by industry leaders scaling beyond limits.</p>
-        <div className="flex flex-wrap justify-center gap-8 animate-fade-in">
-          <div className="bg-gradient-to-r from-stone-900 to-pink-600 text-white px-6 py-3 rounded-lg font-bold shadow-md">Enterprise Corp</div>
-          <div className="bg-gradient-to-r from-stone-900 to-pink-600 text-white px-6 py-3 rounded-lg font-bold shadow-md">Global Tech Inc.</div>
-          <div className="bg-gradient-to-r from-stone-900 to-pink-600 text-white px-6 py-3 rounded-lg font-bold shadow-md">Titan Industries</div>
-          <div className="bg-gradient-to-r from-stone-900 to-pink-600 text-white px-6 py-3 rounded-lg font-bold shadow-md">Innovate Now</div>
+      <section style={{ width: '100%', borderTop: `1px solid ${GBORDER}`, padding: '40px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '16px', letterSpacing: '0.2em', color: TEXTDIM, marginBottom: '24px', textTransform: 'uppercase' }}>
+          Trusted by industry leaders scaling beyond limits
+        </p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '24px' }}>
+          {['Enterprise Corp', 'Global Tech Inc.', 'Titan Industries', 'Innovate Now'].map(name => (
+            <div key={name} style={{ background: BGCARD, border: `1px solid ${GBORDER}`, borderRadius: '4px', padding: '10px 24px', color: TEXTDIM, fontSize: '13px', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+              {name}
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* (Removed duplicate demo section) */}
-
-      {/* Comparison Table - Enhanced Styling */}
-      <section id="comparison" className="w-full flex flex-col items-center justify-center py-20">
-        <div className="w-full max-w-6xl mx-auto flex flex-col items-center px-4">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-center text-white mb-2 animate-fade-in">
-            Stop Bleeding Money on<br />Multiple Subscriptions
+      {/* Comparison Table */}
+      <section id="comparison" style={{ width: '100%', padding: '80px 24px', borderTop: `1px solid ${GBORDER}` }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 700, color: TEXTPRIMARY, textAlign: 'center', marginBottom: '12px', letterSpacing: '0.04em' }}>
+            Stop Bleeding Money on Multiple Subscriptions
           </h2>
-          <p className="text-lg md:text-xl text-amber-100/70 text-center mb-4 animate-fade-in max-w-3xl">
-            Replace 8+ expensive systems with one platform. Save $50K-$200K+ annually.
+          <p style={{ color: TEXTDIM, fontSize: '15px', textAlign: 'center', marginBottom: '8px', lineHeight: 1.7 }}>
+            Replace 8+ expensive systems with one platform. Save $50K–$200K+ annually.
           </p>
-          <p className="text-md text-amber-200 text-center mb-8 animate-fade-in max-w-2xl italic">
-            (Based on 100 employees - your savings scale with team size)
+          <p style={{ color: TEXTDIM, fontSize: '13px', textAlign: 'center', marginBottom: '48px', fontStyle: 'italic' }}>
+            Based on 100 employees — your savings scale with team size.
           </p>
-          <div className="w-full overflow-x-auto animate-fade-in">
-            <table className="min-w-full rounded-2xl overflow-hidden shadow-2xl border border-purple-700/40 bg-black">
-              <thead className="bg-gradient-to-r from-stone-900 to-pink-600">
-                <tr>
-                  <th className="px-6 py-4 text-lg font-bold text-white text-left">What You Need</th>
-                  <th className="px-6 py-4 text-lg font-bold text-white text-left">Industry Standard (Multiple Tools)</th>
-                  <th className="px-6 py-4 text-lg font-bold text-white text-left">Annual Cost</th>
-                  <th className="px-6 py-4 text-lg font-bold text-white text-left">NyxTitan</th>
+
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', background: BGCARD, border: `1px solid ${GBORDER}`, borderRadius: '4px', overflow: 'hidden' }}>
+              <thead>
+                <tr style={{ borderBottom: `1px solid ${GBORDER}` }}>
+                  {['What You Need', 'Industry Standard', 'Annual Cost', 'NyxTitan'].map(h => (
+                    <th key={h} style={{ padding: '16px 20px', textAlign: 'left', fontFamily: "'Cormorant Garamond', serif", fontSize: '14px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: G, borderBottom: `1px solid ${GBORDER}` }}>{h}</th>
+                  ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-purple-900">
-                <tr className="hover:bg-stone-950/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-amber-100/70">HR & Payroll Processing</td>
-                  <td className="px-6 py-4 text-stone-300">
-                    <div className="font-medium">Paycom or ADP Workforce Now</div>
-                    <div className="text-sm text-stone-400">$25-40/employee/month</div>
-                  </td>
-                  <td className="px-6 py-4 text-red-400 font-bold text-lg">$30K-$48K</td>
-                  <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
+              <tbody>
+                {[
+                  ['HR & Payroll Processing', 'Paycom or ADP Workforce Now · $25–40/ee/mo', '$30K–$48K'],
+                  ['Time & Attendance', 'Kronos/UKG or Deputy · $5–8/ee/mo', '$6K–$9.6K'],
+                  ['Employee Scheduling', 'When I Work or Deputy · $2–4/ee/mo', '$2.4K–$4.8K'],
+                  ['Performance Management', 'Lattice or 15Five · $8–11/ee/mo', '$9.6K–$13.2K'],
+                  ['Applicant Tracking', 'Greenhouse or Lever · $6K–15K base', '$12K–$25K'],
+                  ['Learning Management', 'Cornerstone or Docebo · $5–10/ee/mo', '$6K–$12K'],
+                  ['Project Management', 'Asana or Monday.com · $10–25/user/mo', '$12K–$30K'],
+                  ['Team Communication', 'Slack Business+ · $12.50/user/mo', '$15K'],
+                ].map(([what, std, cost], i) => (
+                  <tr key={i} style={{ borderBottom: `1px solid rgba(201,168,76,0.10)` }}>
+                    <td style={{ padding: '14px 20px', color: TEXTPRIMARY, fontSize: '14px', fontWeight: 500 }}>{what}</td>
+                    <td style={{ padding: '14px 20px', color: TEXTDIM, fontSize: '13px' }}>{std}</td>
+                    <td style={{ padding: '14px 20px', color: '#bf6b6b', fontSize: '14px', fontWeight: 600 }}>{cost}</td>
+                    <td style={{ padding: '14px 20px', color: G, fontSize: '15px', fontWeight: 700 }}>✓ Included</td>
+                  </tr>
+                ))}
+                <tr style={{ background: 'rgba(201,168,76,0.06)', borderTop: `1px solid ${GBORDER}` }}>
+                  <td colSpan={2} style={{ padding: '18px 20px', color: TEXTPRIMARY, fontWeight: 700, fontSize: '15px', letterSpacing: '0.06em' }}>TOTAL COST FOR ALL TOOLS</td>
+                  <td style={{ padding: '18px 20px', color: '#bf6b6b', fontWeight: 800, fontSize: '18px' }}>$93K–$157K/yr</td>
+                  <td style={{ padding: '18px 20px', color: G, fontWeight: 800, fontSize: '18px' }}>$17,988/yr</td>
                 </tr>
-                <tr className="hover:bg-stone-950/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-amber-100/70">Time & Attendance Tracking</td>
-                  <td className="px-6 py-4 text-stone-300">
-                    <div className="font-medium">Kronos/UKG or Deputy</div>
-                    <div className="text-sm text-stone-400">$5-8/employee/month</div>
-                  </td>
-                  <td className="px-6 py-4 text-red-400 font-bold text-lg">$6K-$9.6K</td>
-                  <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
-                </tr>
-                <tr className="hover:bg-stone-950/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-amber-100/70">Employee Scheduling</td>
-                  <td className="px-6 py-4 text-stone-300">
-                    <div className="font-medium">When I Work or Deputy</div>
-                    <div className="text-sm text-stone-400">$2-4/employee/month</div>
-                  </td>
-                  <td className="px-6 py-4 text-red-400 font-bold text-lg">$2.4K-$4.8K</td>
-                  <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
-                </tr>
-                <tr className="hover:bg-stone-950/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-amber-100/70">Performance Management</td>
-                  <td className="px-6 py-4 text-stone-300">
-                    <div className="font-medium">Lattice or 15Five</div>
-                    <div className="text-sm text-stone-400">$8-11/employee/month</div>
-                  </td>
-                  <td className="px-6 py-4 text-red-400 font-bold text-lg">$9.6K-$13.2K</td>
-                  <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
-                </tr>
-                <tr className="hover:bg-stone-950/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-amber-100/70">Applicant Tracking System</td>
-                  <td className="px-6 py-4 text-stone-300">
-                    <div className="font-medium">Greenhouse or Lever</div>
-                    <div className="text-sm text-stone-400">$6K-15K base + per job fees</div>
-                  </td>
-                  <td className="px-6 py-4 text-red-400 font-bold text-lg">$12K-$25K</td>
-                  <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
-                </tr>
-                <tr className="hover:bg-stone-950/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-amber-100/70">Learning Management (LMS)</td>
-                  <td className="px-6 py-4 text-stone-300">
-                    <div className="font-medium">Cornerstone or Docebo</div>
-                    <div className="text-sm text-stone-400">$5-10/employee/month</div>
-                  </td>
-                  <td className="px-6 py-4 text-red-400 font-bold text-lg">$6K-$12K</td>
-                  <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
-                </tr>
-                <tr className="hover:bg-stone-950/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-amber-100/70">Project Management</td>
-                  <td className="px-6 py-4 text-stone-300">
-                    <div className="font-medium">Asana or Monday.com</div>
-                    <div className="text-sm text-stone-400">$10-25/user/month</div>
-                  </td>
-                  <td className="px-6 py-4 text-red-400 font-bold text-lg">$12K-$30K</td>
-                  <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
-                </tr>
-                <tr className="hover:bg-stone-950/20 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-amber-100/70">Team Communication</td>
-                  <td className="px-6 py-4 text-stone-300">
-                    <div className="font-medium">Slack Business+</div>
-                    <div className="text-sm text-stone-400">$12.50/user/month</div>
-                  </td>
-                  <td className="px-6 py-4 text-red-400 font-bold text-lg">$15K</td>
-                  <td className="px-6 py-4 text-green-400 text-2xl font-bold">✓ Included</td>
-                </tr>
-                <tr className="bg-purple-950/50 font-bold text-xl">
-                  <td className="px-6 py-5 text-white" colSpan={2}>TOTAL COST FOR ALL TOOLS</td>
-                  <td className="px-6 py-5 text-red-400 text-2xl">$93K-$157K/yr</td>
-                  <td className="px-6 py-5 text-green-400 text-2xl">$17,988/yr</td>
-                </tr>
-                <tr className="bg-gradient-to-r from-green-900/40 to-emerald-900/40">
-                  <td className="px-6 py-5 text-white font-bold text-xl" colSpan={2}>YOUR ANNUAL SAVINGS</td>
-                  <td className="px-6 py-5 text-green-400 font-black text-3xl" colSpan={2}>$75K-$139K+ SAVED</td>
+                <tr style={{ background: 'rgba(201,168,76,0.12)', borderTop: `1px solid ${GBORDER}` }}>
+                  <td colSpan={2} style={{ padding: '18px 20px', color: GB, fontWeight: 800, fontSize: '16px', letterSpacing: '0.08em', fontFamily: "'Cormorant Garamond', serif" }}>YOUR ANNUAL SAVINGS</td>
+                  <td colSpan={2} style={{ padding: '18px 20px', color: GB, fontWeight: 900, fontSize: '24px', fontFamily: "'Cormorant Garamond', serif" }}>$75K–$139K+ SAVED</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div className="mt-8 p-6 bg-gradient-to-r from-stone-900/50 to-pink-900/50 rounded-xl border-2 border-amber-500/40/50 max-w-4xl">
-            <p className="text-white text-lg font-semibold mb-2 flex items-center gap-2"><Lightbulb size={20} className="text-yellow-400 shrink-0" /> Not Included in Savings Calculation:</p>
-            <ul className="text-amber-100/70 space-y-1 ml-6 list-disc">
-              <li>Reduced admin time (40% time savings = $78K+/year for 2 FTE managers)</li>
+
+          <div style={{ marginTop: '32px', background: BGCARD, border: `1px solid ${GBORDER}`, borderRadius: '4px', padding: '28px 32px', maxWidth: '860px', margin: '32px auto 0' }}>
+            <p style={{ color: TEXTPRIMARY, fontSize: '15px', fontWeight: 600, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <Lightbulb size={18} color={G} /> Not Included in Savings Calculation:
+            </p>
+            <ul style={{ color: TEXTDIM, fontSize: '14px', lineHeight: 1.9, paddingLeft: '24px', marginBottom: '20px' }}>
+              <li>Reduced admin time (40% savings = $78K+/year for 2 FTE managers)</li>
               <li>Eliminated context-switching costs (15 hrs/week recovered per employee)</li>
-              <li>Lower turnover from Guild gamification (35% reduction = $480K saved on replacement costs)</li>
+              <li>Lower turnover from Guild gamification (35% reduction = $480K saved)</li>
               <li>No integration fees or IT overhead for managing 8+ systems</li>
             </ul>
-            <p className="text-green-400 font-bold text-xl mt-4 flex items-center gap-2"><Sparkles size={20} className="shrink-0" /> Real Total Savings: $600K+ in Year 1</p>
+            <p style={{ color: G, fontWeight: 700, fontSize: '18px', fontFamily: "'Cormorant Garamond', serif", display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Sparkles size={18} /> Real Total Savings: $600K+ in Year 1
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Stats Section - Enhanced Styling */}
-      <section id="roi" className="w-full flex flex-col items-center justify-center py-20 bg-gradient-to-b from-black via-stone-950/20 to-black">
-        <div className="w-full max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center text-white mb-12 animate-fade-in">By The Numbers</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center justify-center bg-gradient-to-br from-green-800/60 to-emerald-900/60 rounded-2xl shadow-xl p-10 border-2 border-green-500/40 hover:border-green-400/60 transition-all">
-              <div className="text-center">
-                <h3 className="text-6xl font-black text-green-300 mb-3 tracking-tight leading-none">$75K-$139K</h3>
-                <p className="text-xl text-green-100 font-semibold mb-2">Annual Subscription Savings</p>
-                <p className="text-sm text-green-200/80">Replace 8+ tools with one platform</p>
+      {/* Stats Section */}
+      <section id="roi" style={{ width: '100%', padding: '80px 24px', borderTop: `1px solid ${GBORDER}` }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(26px, 3.5vw, 40px)', fontWeight: 700, color: TEXTPRIMARY, textAlign: 'center', marginBottom: '56px', letterSpacing: '0.06em' }}>
+            By The Numbers
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '24px' }}>
+            {[
+              { figure: '$75K–$139K', label: 'Annual Subscription Savings', sub: 'Replace 8+ tools with one platform' },
+              { figure: '$480K', label: 'Turnover Cost Savings', sub: '35% reduction in employee churn (100 employees)' },
+              { figure: '3 Weeks', label: 'Platform Pays for Itself', sub: 'Fastest ROI in the industry' },
+            ].map((s, i) => (
+              <div key={i} style={{ ...cardStyle, textAlign: 'center', padding: '40px 28px' }}
+                onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = GBORDER_H}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = GBORDER}>
+                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 800, color: G, marginBottom: '10px', lineHeight: 1 }}>{s.figure}</div>
+                <div style={{ color: TEXTPRIMARY, fontWeight: 600, fontSize: '16px', marginBottom: '6px' }}>{s.label}</div>
+                <div style={{ color: TEXTDIM, fontSize: '13px' }}>{s.sub}</div>
               </div>
-            </div>
-            <div className="flex flex-col items-center justify-center bg-gradient-to-br from-amber-700/60 to-amber-800/60 rounded-2xl shadow-xl p-10 border-2 border-amber-500/40/40 hover:border-blue-400/60 transition-all">
-              <div className="text-center">
-                <h3 className="text-6xl font-black text-amber-400 mb-3 tracking-tight leading-none">$480K</h3>
-                <p className="text-xl text-blue-100 font-semibold mb-2">Turnover Cost Savings</p>
-                <p className="text-sm text-blue-200/80">35% reduction in employee churn (100 employees)</p>
-              </div>
-            </div>
-            <div className="flex flex-col items-center justify-center bg-gradient-to-br from-stone-900/60 to-pink-900/60 rounded-2xl shadow-xl p-10 border-2 border-amber-500/40/40 hover:border-amber-400/40/60 transition-all">
-              <div className="text-center">
-                <h3 className="text-6xl font-black text-amber-200 mb-3 tracking-tight leading-none">3 Weeks</h3>
-                <p className="text-xl text-amber-50 font-semibold mb-2">Platform Pays for Itself</p>
-                <p className="text-sm text-amber-100/70/80">Fastest ROI in the industry</p>
-              </div>
-            </div>
+            ))}
           </div>
-          <div className="mt-10 text-center">
-            <p className="text-2xl font-bold text-white mb-2 flex items-center justify-center gap-2"><TrendingUp size={24} className="text-green-400" /> Total Year 1 Impact</p>
-            <p className="text-5xl font-black bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">$600K+ Saved</p>
+          <div style={{ marginTop: '48px', textAlign: 'center' }}>
+            <p style={{ color: TEXTPRIMARY, fontSize: '20px', fontWeight: 700, fontFamily: "'Cormorant Garamond', serif", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '8px' }}>
+              <TrendingUp size={22} color={G} /> Total Year 1 Impact
+            </p>
+            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(36px, 6vw, 64px)', fontWeight: 900, color: G, letterSpacing: '0.04em' }}>$600K+ Saved</p>
           </div>
         </div>
       </section>
 
-      {/* Testimonials - Enhanced Styling */}
-      <section className="w-full flex flex-col items-center justify-center py-20">
-        <div className="w-full max-w-5xl mx-auto flex flex-col items-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-center text-white mb-12 animate-fade-in">Hear from the Titans.</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
-            <div className="flex flex-col bg-gradient-to-br from-stone-900/80 to-black rounded-2xl shadow-xl p-8 items-center animate-fade-in">
-              <div className="text-yellow-400 text-2xl mb-2">★★★★★</div>
-              <p className="text-lg text-amber-50 text-center mb-6">"Migrating to NyxTitan was the single most impactful operational decision we've made in a decade. The speed and clarity we now have is unmatched."</p>
-              <div className="flex items-center gap-4">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Chen" className="w-14 h-14 rounded-full object-cover border-2 border-amber-400/40" />
-                <div className="flex flex-col">
-                  <span className="font-bold text-white">Sarah Chen</span>
-                  <span className="text-amber-200 text-sm">CTO, Apex Dynamics</span>
+      {/* Testimonials */}
+      <section style={{ width: '100%', padding: '80px 24px', borderTop: `1px solid ${GBORDER}` }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 700, color: TEXTPRIMARY, textAlign: 'center', marginBottom: '56px', letterSpacing: '0.06em' }}>
+            Hear from the Titans.
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))', gap: '24px', width: '100%' }}>
+            {[
+              { stars: '★★★★★', quote: '"Migrating to NyxTitan was the single most impactful operational decision we\'ve made in a decade. The speed and clarity we now have is unmatched."', name: 'Sarah Chen', title: 'CTO, Apex Dynamics' },
+              { stars: '★★★★★', quote: '"We eliminated 12 different SaaS subscriptions and gained exponentially more control. NyxTitan isn\'t just software; it\'s a competitive advantage."', name: 'Marcus Thorne', title: 'CEO, OmniCorp Global' },
+            ].map((t, i) => (
+              <div key={i} style={{ ...cardStyle, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '36px 28px', textAlign: 'center' }}
+                onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = GBORDER_H}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = GBORDER}>
+                <div style={{ color: G, fontSize: '20px', marginBottom: '16px', letterSpacing: '4px' }}>{t.stars}</div>
+                <p style={{ color: TEXTPRIMARY, fontSize: '15px', lineHeight: 1.8, marginBottom: '24px', fontStyle: 'italic' }}>{t.quote}</p>
+                <div style={{ borderTop: `1px solid ${GBORDER}`, paddingTop: '20px', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
+                  <span style={{ color: TEXTPRIMARY, fontWeight: 700, fontSize: '15px', fontFamily: "'Cormorant Garamond', serif" }}>{t.name}</span>
+                  <span style={{ color: G, fontSize: '13px', letterSpacing: '0.08em' }}>{t.title}</span>
                 </div>
               </div>
-            </div>
-            <div className="flex flex-col bg-gradient-to-br from-stone-900/80 to-black rounded-2xl shadow-xl p-8 items-center animate-fade-in">
-              <div className="text-yellow-400 text-2xl mb-2">★★★★★</div>
-              <p className="text-lg text-amber-50 text-center mb-6">"We eliminated 12 different SaaS subscriptions and gained exponentially more control. NyxTitan isn't just software; it's a competitive advantage."</p>
-              <div className="flex items-center gap-4">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marcus Thorne" className="w-14 h-14 rounded-full object-cover border-2 border-amber-400/40" />
-                <div className="flex flex-col">
-                  <span className="font-bold text-white">Marcus Thorne</span>
-                  <span className="text-amber-200 text-sm">CEO, OmniCorp Global</span>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
 
-      {/* Contact Section - Beautifully Styled */}
-      <section id="contact" className="w-full flex flex-col items-center justify-center py-20">
-        <div className="w-full max-w-4xl mx-auto flex flex-col md:flex-row gap-12 items-center justify-center">
-          <div className="flex-1 flex flex-col items-start mb-8 md:mb-0">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 animate-fade-in">Ready to Simplify Your Operations?</h2>
-            <p className="text-lg text-amber-100/70 mb-6 animate-fade-in">Tell us about your business and we'll show you exactly how NyxTitan can help. No pressure, just solutions.</p>
-            <p className="text-amber-200 text-sm animate-fade-in">Or email us directly at <a href="mailto:info@nyxtitan.com" className="text-amber-400 underline hover:text-white transition-colors">info@nyxtitan.com</a></p>
+      {/* Contact Section */}
+      <section id="contact" style={{ width: '100%', padding: '80px 24px', borderTop: `1px solid ${GBORDER}` }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '48px' }}>
+          <div style={{ textAlign: 'center' }}>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 700, color: TEXTPRIMARY, letterSpacing: '0.04em', marginBottom: '12px' }}>
+              Ready to Simplify Your Operations?
+            </h2>
+            <p style={{ color: TEXTDIM, fontSize: '15px', lineHeight: 1.7 }}>
+              Tell us about your business and we&apos;ll show you exactly how NyxTitan can help.{' '}
+              <a href="mailto:info@nyxtitan.com" style={{ color: G, textDecoration: 'none' }}>info@nyxtitan.com</a>
+            </p>
           </div>
-          <div className="flex-1 w-full">
-            <form className="bg-black/80 rounded-2xl shadow-xl p-8 flex flex-col gap-6 animate-fade-in" action="mailto:info@nyxtitan.com" method="post" encType="text/plain">
+
+          <form style={{ background: BGCARD, border: `1px solid ${GBORDER}`, borderRadius: '4px', padding: '40px', display: 'flex', flexDirection: 'column', gap: '24px' }}
+            action="mailto:info@nyxtitan.com" method="post" encType="text/plain">
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px' }}>
               <div>
-                <label htmlFor="name" className="block text-amber-100/70 font-semibold mb-2">Full Name</label>
-                <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-lg bg-[#18181b] text-white border border-purple-700 focus:ring-2 focus:ring-amber-500 outline-none" />
+                <label style={{ display: 'block', color: TEXTDIM, fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px' }}>Full Name</label>
+                <input type="text" name="name" required
+                  style={{ width: '100%', padding: '12px 16px', background: BGMAIN, border: `1px solid ${GBORDER}`, borderRadius: '4px', color: TEXTPRIMARY, fontSize: '14px', outline: 'none', boxSizing: 'border-box' }} />
               </div>
               <div>
-                <label htmlFor="email" className="block text-amber-100/70 font-semibold mb-2">Work Email</label>
-                <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg bg-[#18181b] text-white border border-purple-700 focus:ring-2 focus:ring-amber-500 outline-none" />
+                <label style={{ display: 'block', color: TEXTDIM, fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px' }}>Work Email</label>
+                <input type="email" name="email" required
+                  style={{ width: '100%', padding: '12px 16px', background: BGMAIN, border: `1px solid ${GBORDER}`, borderRadius: '4px', color: TEXTPRIMARY, fontSize: '14px', outline: 'none', boxSizing: 'border-box' }} />
               </div>
-              <div>
-                <label htmlFor="company-size" className="block text-amber-100/70 font-semibold mb-2">How Many Employees?</label>
-                <select id="company-size" name="company-size" className="w-full px-4 py-3 rounded-lg bg-[#18181b] text-white border border-purple-700 focus:ring-2 focus:ring-amber-500 outline-none">
-                  <option value="">Select Size</option>
-                  <option value="1-50">1-50 Employees</option>
-                  <option value="51-200">51-200 Employees</option>
-                  <option value="201-500">201-500 Employees</option>
-                  <option value="500+">500+ Employees</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="pain-points" className="block text-amber-100/70 font-semibold mb-2">What challenges are you facing? (Optional)</label>
-                <textarea id="pain-points" name="pain-points" rows={4} placeholder="Scheduling conflicts, payroll errors, compliance issues, etc." className="w-full px-4 py-3 rounded-lg bg-[#18181b] text-white border border-purple-700 focus:ring-2 focus:ring-amber-500 outline-none"></textarea>
-              </div>
-              <button type="submit" className="w-full py-4 rounded-xl bg-gradient-to-r from-amber-700 to-amber-600 text-white font-bold shadow-lg hover:scale-105 transition-transform text-lg">Get Started - Request Demo</button>
-            </form>
-          </div>
+            </div>
+
+            <div>
+              <label style={{ display: 'block', color: TEXTDIM, fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px' }}>How Many Employees?</label>
+              <select name="company-size"
+                style={{ width: '100%', padding: '12px 16px', background: BGMAIN, border: `1px solid ${GBORDER}`, borderRadius: '4px', color: TEXTPRIMARY, fontSize: '14px', outline: 'none' }}>
+                <option value="">Select Size</option>
+                <option value="1-50">1–50 Employees</option>
+                <option value="51-200">51–200 Employees</option>
+                <option value="201-500">201–500 Employees</option>
+                <option value="500+">500+ Employees</option>
+              </select>
+            </div>
+
+            <div>
+              <label style={{ display: 'block', color: TEXTDIM, fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px' }}>Challenges You&apos;re Facing (Optional)</label>
+              <textarea name="pain-points" rows={4} placeholder="Scheduling conflicts, payroll errors, compliance issues..."
+                style={{ width: '100%', padding: '12px 16px', background: BGMAIN, border: `1px solid ${GBORDER}`, borderRadius: '4px', color: TEXTPRIMARY, fontSize: '14px', outline: 'none', resize: 'vertical', boxSizing: 'border-box' }} />
+            </div>
+
+            <button type="submit" style={{ ...goldBtnStyle, width: '100%', textAlign: 'center', fontSize: '14px', padding: '16px' }}>
+              Get Started — Request Demo
+            </button>
+          </form>
         </div>
       </section>
 
-      {/* Footer - Beautifully Styled */}
-      <footer className="w-full border-t border-purple-900 py-12 flex flex-col items-center">
-        <div className="w-full max-w-4xl flex flex-col items-center">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-white text-center mb-6">Stop juggling software.<br />Start running your business.</h2>
-          <Link href="#contact" className="px-8 py-4 rounded-xl bg-gradient-to-r from-amber-700 to-amber-600 text-white font-bold shadow-lg hover:scale-105 transition-transform text-lg mb-8">Request Executive Demo</Link>
-          <p className="text-amber-200 text-sm text-center mb-2">&copy; 2024 NyxTitan™. A solution provided by Connie Michelle Consulting & Business Solutions LLC. All rights reserved.</p>
-          <div className="flex gap-4">
-            <Link href="/privacy" className="text-amber-400 hover:underline text-sm">Privacy Policy</Link>
-            <span className="text-amber-400">|</span>
-            <Link href="/terms" className="text-amber-400 hover:underline text-sm">Terms of Service</Link>
-          </div>
+      {/* Footer */}
+      <footer style={{ width: '100%', borderTop: `1px solid ${GBORDER}`, padding: '56px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
+        <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 700, color: TEXTPRIMARY, textAlign: 'center', letterSpacing: '0.04em' }}>
+          Stop juggling software.<br />Start running your business.
+        </h2>
+        <Link href="#contact" style={goldBtnStyle}>Request Executive Demo</Link>
+        <p style={{ color: TEXTDIM, fontSize: '13px', textAlign: 'center' }}>
+          &copy; 2024 NyxTitan™. A solution provided by Connie Michelle Consulting &amp; Business Solutions LLC. All rights reserved.
+        </p>
+        <div style={{ display: 'flex', gap: '24px' }}>
+          <Link href="/privacy" style={{ color: G, fontSize: '13px', textDecoration: 'none' }}>Privacy Policy</Link>
+          <span style={{ color: TEXTDIM }}>|</span>
+          <Link href="/terms" style={{ color: G, fontSize: '13px', textDecoration: 'none' }}>Terms of Service</Link>
         </div>
       </footer>
-
-      {/* Sales Assistant - Only on landing page */}
-      <div style={{position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 1000, pointerEvents: 'auto'}}>
-      </div>
-      {/* AIAssistant now handled globally in ConditionalBots */}
     </div>
   );
 }
