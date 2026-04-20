@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Bot, User, Sparkles, Clock, Shield, TrendingUp, AlertCircle } from 'lucide-react';
+import { X, Send, User } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -11,11 +11,12 @@ interface Message {
   category?: 'compliance' | 'scheduling' | 'optimization' | 'general';
 }
 
-interface QuickAction {
-  id: string;
-  label: string;
-  icon: React.ReactNode;
-  description: string;
+
+function getTimeGreeting() {
+  const h = new Date().getHours();
+  if (h < 12) return 'Good morning';
+  if (h < 17) return 'Good afternoon';
+  return 'Good evening';
 }
 
 export default function ChatBot() {
@@ -23,7 +24,7 @@ export default function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "Hey there! ⚡ I'm Titan, your quick-help assistant! I can help you with scheduling, employee management, compliance questions, and more. What can I help you with?",
+      text: `${getTimeGreeting()}. Welcome to the NyxTitan Elite Service. I am the face of NyxTitan. How may I assist you with your bespoke requirements today?`,
       sender: 'bot',
       timestamp: new Date(),
       category: 'general',
@@ -31,52 +32,14 @@ export default function ChatBot() {
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const [showQuickActions, setShowQuickActions] = useState(true);
-  const [customColor, setCustomColor] = useState('from-pink-600 to-amber-900');
-  const [customAvatar, setCustomAvatar] = useState('💬');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Load customization preferences
+  // Load customization preferences (avatar only)
   useEffect(() => {
-    const loadPreferences = () => {
-      const stored = localStorage.getItem('chatbotPreferences');
-      if (stored) {
-        const prefs = JSON.parse(stored);
-        if (prefs.titan) {
-          setCustomColor(prefs.titan.color || 'from-pink-600 to-amber-900');
-          setCustomAvatar(prefs.titan.avatar || '💬');
-        }
-      }
-    };
-
-    loadPreferences();
-
-    // Listen for preference changes
-    const handlePreferenceChange = (event: any) => {
-      const prefs = event.detail;
-      if (prefs?.titan) {
-        setCustomColor(prefs.titan.color || 'from-pink-600 to-amber-900');
-        setCustomAvatar(prefs.titan.avatar || '💬');
-      }
-    };
-
-    window.addEventListener('chatbotPreferencesChanged', handlePreferenceChange);
-    return () => window.removeEventListener('chatbotPreferencesChanged', handlePreferenceChange);
+    return () => {};
   }, []);
 
-  const quickActions: QuickAction[] = [
-    { id: '1', label: 'Schedule Help', icon: <Clock className="w-4 h-4" />, description: 'Create, edit, or manage shifts' },
-    { id: '2', label: 'Compliance Q&A', icon: <Shield className="w-4 h-4" />, description: 'Labor laws & break rules' },
-    { id: '3', label: 'Optimize Costs', icon: <TrendingUp className="w-4 h-4" />, description: 'Reduce labor expenses' },
-    { id: '4', label: 'Quick Tips', icon: <Sparkles className="w-4 h-4" />, description: 'Best practices & shortcuts' },
-  ];
-
-  const dadJokes = [
-    "Why did the coffee file a police report? It got mugged! ☕",
-    "What do you call cheese that isn't yours? Nacho cheese! 🧀",
-    "Why did the bicycle fall over? Because it was two-tired! 🚴",
-    "What do you call a factory that makes okay products? A satisfactory! 🏭",
-  ];
+  const quickActions = [];
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -205,7 +168,6 @@ export default function ChatBot() {
 
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
-    setShowQuickActions(false);
     setIsTyping(true);
 
     // Simulate bot thinking
@@ -221,17 +183,7 @@ export default function ChatBot() {
     }, 1200);
   };
 
-  const handleQuickAction = (action: QuickAction) => {
-    setShowQuickActions(false);
-    const queries: { [key: string]: string } = {
-      '1': 'How do I create and manage shifts?',
-      '2': 'What are the break and overtime requirements?',
-      '3': 'How can I optimize my labor costs?',
-      '4': 'What are some scheduling best practices?',
-    };
-    setInputValue(queries[action.id] || action.description);
-    setTimeout(() => handleSend(), 100);
-  };
+  const handleQuickAction = (_action: any) => {};
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -240,181 +192,232 @@ export default function ChatBot() {
     }
   };
 
-  const quickQuestions = [
-    "How do I create a shift?",
-    "What are the subscription tiers?",
-    "How do I add employees?",
-    "Tell me about themes",
-  ];
-
-  const handleQuickQuestion = (question: string) => {
-    setInputValue(question);
-    setTimeout(() => handleSend(), 100);
-  };
+  const isIntroState = messages.length === 1 && !isTyping;
 
   return (
     <>
-      {/* Chat Button */}
+      {/* FAB — titanbot circle, bottom-right */}
       {!isOpen && (
         <div className="fixed bottom-6 right-6 z-50 group">
           <button
             onClick={() => setIsOpen(true)}
             className="relative w-28 h-28 rounded-full transition-all hover:scale-110 flex items-center justify-center overflow-hidden"
-            style={{background: 'transparent', boxShadow: '0 0 24px rgba(201,168,76,0.35), 0 8px 32px rgba(0,0,0,0.5)'}}
-            aria-label="Open Titan chat"
-            title="Titan - Quick Help Assistant"
+            style={{ background: 'transparent', boxShadow: '0 0 24px rgba(201,168,76,0.35), 0 8px 32px rgba(0,0,0,0.5)' }}
+            aria-label="Open NyxTitan AI Advisor"
           >
-            <img src="/titanbot.png" alt="Titan" className="w-full h-full object-contain group-hover:scale-110 transition-transform drop-shadow-xl" />
-            <span className="absolute -top-1 -right-1 w-4 h-4 bg-amber-400 rounded-full animate-pulse" style={{boxShadow: '0 0 8px rgba(201,168,76,0.8)'}}></span>
+            <img src="/titanbot.png" alt="NyxTitan" className="w-full h-full object-contain drop-shadow-xl" />
+            <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full animate-pulse" style={{ background: '#C9A84C', boxShadow: '0 0 8px rgba(201,168,76,0.8)' }} />
           </button>
-          {/* Hover Tooltip */}
-          <div className="absolute bottom-24 right-0 w-64 bg-stone-950 rounded-lg p-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl" style={{border: '1px solid rgba(201,168,76,0.4)'}}>
-            <div className="text-amber-400 font-bold text-sm mb-1">⚡ Titan AI — Quick Help</div>
-            <div className="text-stone-300 text-xs">
-              Fast answers for scheduling, employee management, and system navigation. Your go-to for quick questions.
-            </div>
+          <div className="absolute bottom-28 right-0 w-56 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" style={{ background: '#0D0B08', border: '1px solid rgba(201,168,76,0.3)', borderRadius: '4px', padding: '10px 14px' }}>
+            <div className="text-sm font-semibold mb-1" style={{ color: '#C9A84C', fontFamily: "'Cormorant Garamond', serif", letterSpacing: '0.05em' }}>NyxTitan AI Advisor</div>
+            <div className="text-xs" style={{ color: '#9E8F75' }}>Your bespoke scheduling intelligence, available 24/7.</div>
           </div>
         </div>
       )}
 
-      {/* Chat Window */}
+      {/* Full-screen luxury overlay */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-96 h-[600px] flex flex-col z-50" style={{ background: '#0D0B08', borderRadius: '4px', border: '1px solid rgba(201,168,76,0.28)', boxShadow: '0 24px 64px rgba(0,0,0,0.8), 0 0 40px rgba(201,168,76,0.06)' }}>
-          {/* Header */}
-          <div className="p-4 flex items-center justify-between" style={{ background: 'linear-gradient(135deg, #1A130A 0%, #110F0B 100%)', borderBottom: '1px solid rgba(201,168,76,0.22)', borderRadius: '4px 4px 0 0' }}>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0" style={{background: 'transparent', boxShadow: '0 0 8px rgba(201,168,76,0.4)'}}>
-                <img src="/titanbot.png" alt="Titan" className="w-full h-full object-contain" />
-              </div>
-              <div>
-                <h3 className="font-bold text-white text-pop-light">⚡ Titan AI Assistant</h3>
-                <p className="text-xs text-amber-50">Quick help & smart answers</p>
-              </div>
-            </div>
+        <div
+          className="fixed inset-0 z-60 flex items-center justify-center"
+          style={{ background: 'rgba(3,2,5,0.94)', backdropFilter: 'blur(16px)' }}
+        >
+          {/* Ambient city-light blobs */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div style={{ position: 'absolute', bottom: 0, left: '5%', width: '45%', height: '55%', background: 'radial-gradient(ellipse at bottom, rgba(18,28,55,0.7) 0%, transparent 70%)' }} />
+            <div style={{ position: 'absolute', bottom: 0, right: '5%', width: '50%', height: '50%', background: 'radial-gradient(ellipse at bottom, rgba(35,20,55,0.6) 0%, transparent 70%)' }} />
+            <div style={{ position: 'absolute', bottom: '8%', left: '25%', width: '50%', height: '30%', background: 'radial-gradient(ellipse, rgba(40,30,15,0.35) 0%, transparent 70%)' }} />
+          </div>
+
+          {/* Panel */}
+          <div className="relative flex flex-col items-center w-full mx-4" style={{ maxWidth: '620px', maxHeight: '92vh' }}>
+
+            {/* Close */}
             <button
               onClick={() => setIsOpen(false)}
-              className="text-white hover:bg-stone-950/20 p-2 rounded-lg transition-colors"
+              className="absolute top-0 right-0 z-10 transition-opacity hover:opacity-70"
+              style={{ color: '#5A5040', padding: '8px' }}
             >
-              <X className="h-5 w-5" />
+              <X className="w-6 h-6" />
             </button>
-          </div>
 
-          {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
-            {showQuickActions && messages.length === 1 && (
-              <div className="mb-4">
-                <p className="text-xs text-stone-500 dark:text-stone-400 mb-2 text-center">Quick Actions</p>
-                <div className="grid grid-cols-2 gap-2">
-                  {quickActions.map((action) => (
-                    <button
-                      key={action.id}
-                      onClick={() => handleQuickAction(action)}
-                      className="flex flex-col items-center gap-2 p-3 bg-stone-900 rounded-lg hover:shadow-lg transition-all hover:scale-105"
-                      style={{border: '1px solid rgba(201,168,76,0.2)'}}
-                    >
-                      <div className="text-amber-600 dark:text-amber-400">{action.icon}</div>
-                      <span className="text-xs font-semibold text-stone-300 dark:text-gray-200">{action.label}</span>
-                      <span className="text-[10px] text-stone-500 dark:text-stone-400 text-center">{action.description}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
+            {/* NYXTITAN branding */}
+            <div className="text-center" style={{ marginBottom: isIntroState ? '32px' : '16px', paddingTop: '8px' }}>
+              <h1 style={{
+                fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+                fontSize: isIntroState ? '3rem' : '1.75rem',
+                fontWeight: 400,
+                letterSpacing: '0.45em',
+                color: '#C9A84C',
+                margin: 0,
+                lineHeight: 1,
+                textTransform: 'uppercase',
+                transition: 'font-size 0.3s',
+              }}>
+                NyxTitan
+              </h1>
+              <p style={{ color: '#9E8F75', fontSize: '0.72rem', letterSpacing: '0.22em', marginTop: '8px', textTransform: 'uppercase' }}>
+                AI Advisor &nbsp;·&nbsp; Online
+              </p>
+            </div>
 
-            {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`flex gap-3 ${message.sender === 'user' ? 'flex-row-reverse' : 'flex-row'}`}
-              >
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                  message.sender === 'user' 
-                    ? 'bg-amber-700' 
-                    : 'overflow-hidden'
-                }`} style={message.sender === 'bot' ? {background: 'transparent'} : {}}>
-                  {message.sender === 'user' ? (
-                    <User className="h-4 w-4 text-white" />
-                  ) : (
-                    <img src="/titanbot.png" alt="Titan" className="h-full w-full object-contain" />
-                  )}
+            {isIntroState ? (
+              /* ── INTRO STATE — mirrors the screenshot ── */
+              <>
+                {/* Large circular avatar */}
+                <div style={{
+                  width: '210px', height: '210px', borderRadius: '50%',
+                  border: '1.5px solid rgba(201,168,76,0.45)',
+                  overflow: 'hidden',
+                  marginBottom: '32px',
+                  boxShadow: '0 0 0 10px rgba(201,168,76,0.04), 0 0 60px rgba(201,168,76,0.14), 0 24px 80px rgba(0,0,0,0.8)',
+                  flexShrink: 0,
+                }}>
+                  <img src="/titanbot.png" alt="NyxTitan AI Advisor" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
-                <div className={`flex flex-col max-w-[75%] ${message.sender === 'user' ? 'items-end' : 'items-start'}`}>
-                  <div className={`p-3 ${
-                    message.sender === 'user'
-                      ? 'text-white'
-                      : 'text-stone-100'
-                  }`} style={{
-                    borderRadius: '4px',
-                    background: message.sender === 'user'
-                      ? 'linear-gradient(135deg, rgba(201,168,76,0.22) 0%, rgba(160,120,40,0.18) 100%)'
-                      : '#1A1712',
-                    border: message.sender === 'user'
-                      ? '1px solid rgba(201,168,76,0.32)'
-                      : '1px solid rgba(201,168,76,0.1)',
+
+                {/* Welcome message — white card */}
+                <div style={{
+                  background: 'rgba(250,246,238,0.93)',
+                  borderRadius: '12px',
+                  padding: '24px 28px',
+                  marginBottom: '20px',
+                  width: '100%',
+                  boxShadow: '0 16px 56px rgba(0,0,0,0.65)',
+                }}>
+                  <p style={{
+                    color: '#1C1A14',
+                    fontSize: '1.02rem',
+                    lineHeight: '1.72',
+                    margin: 0,
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontWeight: 400,
                   }}>
-                    <p className="text-sm whitespace-pre-line">{message.text}</p>
-                  </div>
-                  <span className="text-xs text-stone-500 dark:text-stone-400 mt-1">
-                    {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                  </span>
+                    {messages[0].text}
+                  </p>
                 </div>
-              </div>
-            ))}
 
-            {isTyping && (
-              <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
-                  <img src="/titanbot.png" alt="Titan" className="h-full w-full object-contain" />
-                </div>
-                <div className="p-3" style={{ borderRadius: '4px', background: '#1A1712', border: '1px solid rgba(201,168,76,0.1)' }}>
-                  <div className="flex gap-1">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                {/* Input */}
+                <input
+                  type="text"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Start your consultation..."
+                  autoFocus
+                  style={{
+                    width: '100%',
+                    background: 'rgba(255,255,255,0.05)',
+                    border: '1px solid rgba(201,168,76,0.3)',
+                    borderRadius: '8px',
+                    padding: '16px 24px',
+                    color: '#F0EBE0',
+                    fontSize: '0.95rem',
+                    outline: 'none',
+                    letterSpacing: '0.025em',
+                    caretColor: '#C9A84C',
+                    fontFamily: 'inherit',
+                  }}
+                />
+              </>
+            ) : (
+              /* ── CONVERSATION STATE ── */
+              <div className="w-full flex flex-col" style={{ flex: 1, overflow: 'hidden', maxHeight: 'calc(92vh - 110px)' }}>
+
+                {/* Compact avatar row */}
+                <div className="flex items-center gap-3" style={{ marginBottom: '16px', paddingBottom: '14px', borderBottom: '1px solid rgba(201,168,76,0.12)' }}>
+                  <div style={{ width: '48px', height: '48px', borderRadius: '50%', border: '1px solid rgba(201,168,76,0.4)', overflow: 'hidden', flexShrink: 0, boxShadow: '0 0 16px rgba(201,168,76,0.12)' }}>
+                    <img src="/titanbot.png" alt="NyxTitan" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
+                  <div>
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '0.95rem', color: '#C9A84C', letterSpacing: '0.08em' }}>NyxTitan Advisor</div>
+                    <div className="flex items-center gap-1.5">
+                      <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#4ade80', display: 'inline-block' }} />
+                      <span style={{ fontSize: '0.7rem', color: '#9E8F75', letterSpacing: '0.05em' }}>Online</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Message thread */}
+                <div className="flex-1 overflow-y-auto space-y-3" style={{ paddingRight: '4px' }}>
+                  {messages.map((msg) => (
+                    <div key={msg.id} style={{ display: 'flex', justifyContent: msg.sender === 'user' ? 'flex-end' : 'flex-start' }}>
+                      <div style={{
+                        maxWidth: '82%',
+                        background: msg.sender === 'bot' ? 'rgba(250,246,238,0.93)' : 'rgba(201,168,76,0.1)',
+                        border: msg.sender === 'user' ? '1px solid rgba(201,168,76,0.25)' : 'none',
+                        borderRadius: '8px',
+                        padding: '12px 16px',
+                        boxShadow: msg.sender === 'bot' ? '0 4px 20px rgba(0,0,0,0.4)' : 'none',
+                      }}>
+                        <p style={{
+                          color: msg.sender === 'bot' ? '#1C1A14' : '#F0EBE0',
+                          fontSize: '0.9rem',
+                          lineHeight: '1.65',
+                          margin: 0,
+                          whiteSpace: 'pre-line',
+                          fontFamily: msg.sender === 'bot' ? "'Cormorant Garamond', Georgia, serif" : 'inherit',
+                        }}>
+                          {msg.text}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+
+                  {isTyping && (
+                    <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+                      <div style={{ background: 'rgba(250,246,238,0.93)', borderRadius: '8px', padding: '14px 18px', boxShadow: '0 4px 20px rgba(0,0,0,0.4)' }}>
+                        <div className="flex gap-1">
+                          {[0, 150, 300].map((d) => (
+                            <div key={d} className="w-2 h-2 rounded-full animate-bounce" style={{ background: '#9E8F75', animationDelay: `${d}ms` }} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  <div ref={messagesEndRef} />
+                </div>
+
+                {/* Input row */}
+                <div className="flex gap-2" style={{ marginTop: '14px', paddingTop: '14px', borderTop: '1px solid rgba(201,168,76,0.12)' }}>
+                  <input
+                    type="text"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    onKeyPress={handleKeyPress}
+                    placeholder="Continue your consultation..."
+                    autoFocus
+                    style={{
+                      flex: 1,
+                      background: 'rgba(255,255,255,0.05)',
+                      border: '1px solid rgba(201,168,76,0.25)',
+                      borderRadius: '6px',
+                      padding: '12px 18px',
+                      color: '#F0EBE0',
+                      fontSize: '0.9rem',
+                      outline: 'none',
+                      caretColor: '#C9A84C',
+                      fontFamily: 'inherit',
+                    }}
+                  />
+                  <button
+                    onClick={handleSend}
+                    disabled={!inputValue.trim()}
+                    style={{
+                      padding: '12px 16px',
+                      background: 'rgba(201,168,76,0.12)',
+                      border: '1px solid rgba(201,168,76,0.3)',
+                      borderRadius: '6px',
+                      color: '#C9A84C',
+                      cursor: inputValue.trim() ? 'pointer' : 'not-allowed',
+                      opacity: inputValue.trim() ? 1 : 0.35,
+                      transition: 'opacity 0.2s',
+                    }}
+                  >
+                    <Send style={{ width: '18px', height: '18px' }} />
+                  </button>
                 </div>
               </div>
             )}
-
-            <div ref={messagesEndRef} />
-          </div>
-
-          {/* Quick Questions */}
-          {messages.length === 1 && (
-            <div className="px-4 pb-2">
-              <p className="text-xs text-stone-500 dark:text-stone-400 mb-2">Quick questions:</p>
-              <div className="flex flex-wrap gap-2">
-                {quickQuestions.map((question, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleQuickQuestion(question)}
-                    className="text-xs px-3 py-1.5 transition-colors" style={{ background: '#1A1712', color: '#C9A84C', border: '1px solid rgba(201,168,76,0.2)', borderRadius: '2px' }}
-                  >
-                    {question}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Input */}
-          <div className="p-4 border-t border-stone-800 dark:border-stone-700">
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Ask me anything..."
-                className="flex-1 px-4 py-2 focus:outline-none text-stone-100 placeholder:text-stone-500" style={{ border: '1px solid rgba(201,168,76,0.2)', borderRadius: '4px', background: '#0D0B08', color: '#F0EBE0' }}
-              />
-              <button
-                onClick={handleSend}
-                disabled={!inputValue.trim()}
-                className="px-4 py-2 text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed" style={{ background: 'rgba(201,168,76,0.15)', border: '1px solid rgba(201,168,76,0.35)', borderRadius: '4px', color: '#C9A84C' }}
-              >
-                <Send className="h-5 w-5" />
-              </button>
-            </div>
           </div>
         </div>
       )}
