@@ -205,7 +205,7 @@ export default function ChatBot() {
             style={{ background: 'transparent', boxShadow: '0 0 24px rgba(201,168,76,0.35), 0 8px 32px rgba(0,0,0,0.5)' }}
             aria-label="Open NyxTitan AI Advisor"
           >
-            <img src="/titanbot.png" alt="NyxTitan" className="w-full h-full object-contain drop-shadow-xl" />
+            <img src="/advisor-portrait.png" alt="NyxTitan" className="w-full h-full object-contain drop-shadow-xl" />
             <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full animate-pulse" style={{ background: '#C9A84C', boxShadow: '0 0 8px rgba(201,168,76,0.8)' }} />
           </button>
           <div className="absolute bottom-28 right-0 w-56 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" style={{ background: '#0D0B08', border: '1px solid rgba(201,168,76,0.3)', borderRadius: '4px', padding: '10px 14px' }}>
@@ -272,7 +272,7 @@ export default function ChatBot() {
                   boxShadow: '0 0 0 10px rgba(201,168,76,0.04), 0 0 60px rgba(201,168,76,0.14), 0 24px 80px rgba(0,0,0,0.8)',
                   flexShrink: 0,
                 }}>
-                  <img src="/titanbot.png" alt="NyxTitan AI Advisor" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src="/advisor-portrait.png" alt="NyxTitan AI Advisor" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
 
                 {/* Welcome message — white card */}
@@ -326,7 +326,7 @@ export default function ChatBot() {
                 {/* Compact avatar row */}
                 <div className="flex items-center gap-3" style={{ marginBottom: '16px', paddingBottom: '14px', borderBottom: '1px solid rgba(201,168,76,0.12)' }}>
                   <div style={{ width: '48px', height: '48px', borderRadius: '50%', border: '1px solid rgba(201,168,76,0.4)', overflow: 'hidden', flexShrink: 0, boxShadow: '0 0 16px rgba(201,168,76,0.12)' }}>
-                    <img src="/titanbot.png" alt="NyxTitan" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src="/advisor-portrait.png" alt="NyxTitan" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <div>
                     <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '0.95rem', color: '#C9A84C', letterSpacing: '0.08em' }}>NyxTitan Advisor</div>
