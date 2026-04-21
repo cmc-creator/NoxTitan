@@ -1,4 +1,4 @@
-// Industry-specific compliance sections for NyxTitan
+﻿// Industry-specific compliance sections for NyxTitan
 import { Shield, AlertTriangle, CheckCircle, Clock, FileText, ExternalLink } from 'lucide-react';
 
 export function OSHASection({ oshaView, setOshaView }: { oshaView: 'general' | 'recordkeeping' | 'training', setOshaView: (view: 'general' | 'recordkeeping' | 'training') => void }) {
@@ -8,7 +8,7 @@ export function OSHASection({ oshaView, setOshaView }: { oshaView: 'general' | '
       <div className="flex gap-4 mb-8 flex-wrap">
         <button
           onClick={() => setOshaView('general')}
-          className={`px-6 py-3 rounded-xl font-semibold transition-all ${
+          className={`px-6 py-3 rounded font-semibold transition-all ${
             oshaView === 'general' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
           }`}
           style={{
@@ -20,7 +20,7 @@ export function OSHASection({ oshaView, setOshaView }: { oshaView: 'general' | '
         </button>
         <button
           onClick={() => setOshaView('recordkeeping')}
-          className={`px-6 py-3 rounded-xl font-semibold transition-all ${
+          className={`px-6 py-3 rounded font-semibold transition-all ${
             oshaView === 'recordkeeping' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
           }`}
           style={{
@@ -32,7 +32,7 @@ export function OSHASection({ oshaView, setOshaView }: { oshaView: 'general' | '
         </button>
         <button
           onClick={() => setOshaView('training')}
-          className={`px-6 py-3 rounded-xl font-semibold transition-all ${
+          className={`px-6 py-3 rounded font-semibold transition-all ${
             oshaView === 'training' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
           }`}
           style={{
@@ -106,7 +106,7 @@ function OSHAGeneralSection() {
   return (
     <div className="space-y-6">
       {/* Overview Banner */}
-      <div className="p-6 rounded-xl shadow-lg border-l-4 border-orange-500" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg border-l-4 border-[#C9A84C]" style={{ background: 'var(--card-bg)' }}>
         <div className="flex items-start gap-4">
           <Shield className="h-8 w-8 text-orange-500 flex-shrink-0 mt-1" />
           <div>
@@ -132,7 +132,7 @@ function OSHAGeneralSection() {
         {oshaRequirements.map((req, index) => (
           <div 
             key={index}
-            className={`p-6 rounded-xl shadow-lg border-l-4 ${
+            className={`p-6 rounded shadow-lg border-l-4 ${
               req.status === 'compliant' 
                 ? 'border-green-500' 
                 : req.status === 'warning'
@@ -176,7 +176,7 @@ function OSHAGeneralSection() {
       </div>
 
       {/* OSHA Resources */}
-      <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
           🔗 OSHA Resources
         </h3>
@@ -185,7 +185,7 @@ function OSHAGeneralSection() {
             href="https://www.osha.gov/laws-regs/regulations/standardnumber"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 p-4 rounded-lg hover:scale-105 transition-all"
+            className="flex items-center gap-3 p-4 rounded-lg transition-all"
             style={{ background: 'var(--calendar-bg)' }}
           >
             <ExternalLink className="h-5 w-5" style={{ color: 'var(--today-highlight)' }} />
@@ -198,7 +198,7 @@ function OSHAGeneralSection() {
             href="https://www.osha.gov/small-business"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 p-4 rounded-lg hover:scale-105 transition-all"
+            className="flex items-center gap-3 p-4 rounded-lg transition-all"
             style={{ background: 'var(--calendar-bg)' }}
           >
             <ExternalLink className="h-5 w-5" style={{ color: 'var(--today-highlight)' }} />
@@ -244,7 +244,7 @@ function OSHARecordkeepingSection() {
   return (
     <div className="space-y-6">
       {/* Recordkeeping Overview */}
-      <div className="p-6 rounded-xl shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg border-l-4 border-[rgba(201,168,76,0.45)]" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
           📋 OSHA Recordkeeping Requirements (29 CFR 1904)
         </h3>
@@ -271,7 +271,7 @@ function OSHARecordkeepingSection() {
       {/* OSHA Forms Status */}
       <div className="space-y-4">
         {recordkeepingItems.map((item, index) => (
-          <div key={index} className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div key={index} className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
@@ -304,7 +304,7 @@ function OSHARecordkeepingSection() {
       </div>
 
       {/* Action Items */}
-      <div className="p-6 rounded-xl shadow-lg border-l-4 border-yellow-500" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg border-l-4 border-[#C9A84C]" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-xl font-bold mb-4 text-yellow-500">⚡ Upcoming Deadlines</h3>
         <ul className="space-y-3">
           <li className="flex items-start gap-3 p-3 rounded-lg" style={{ background: 'var(--calendar-bg)' }}>
@@ -342,7 +342,7 @@ function OSHATrainingSection() {
   return (
     <div className="space-y-6">
       {/* Training Overview */}
-      <div className="p-6 rounded-xl shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg border-l-4 border-[rgba(201,168,76,0.45)]" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
           🎓 OSHA Training Requirements
         </h3>
@@ -367,7 +367,7 @@ function OSHATrainingSection() {
         {trainingRequirements.map((training, index) => {
           const complianceRate = (training.compliant / training.employees) * 100;
           return (
-            <div key={index} className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+            <div key={index} className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <h4 className="text-xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>{training.topic}</h4>

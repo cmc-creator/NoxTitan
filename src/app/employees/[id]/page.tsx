@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -293,42 +293,42 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
   };
 
   return (
-    <div className="min-h-screen p-8 bg-gray-50">
+    <div className="min-h-screen p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <button
           onClick={() => router.back()}
-          className="flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-6"
+          className="flex items-center gap-2 text-[#9E8F75] hover:text-[#F0EBE0] mb-6"
         >
           <ArrowLeft className="w-5 h-5" />
           Back to Employees
         </button>
 
         {/* Employee Info Card */}
-        <div className="bg-white rounded-xl shadow-md p-8 mb-8">
+        <div className="bg-[#110F0B] rounded shadow-md p-8 mb-8">
           <div className="flex items-start gap-6">
-            <div className="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center text-4xl font-bold text-blue-600">
+            <div className="w-24 h-24 bg-[rgba(201,168,76,0.1)] rounded flex items-center justify-center text-4xl font-bold text-[#C9A84C]">
               {employee.name.split(' ').map(n => n[0]).join('')}
             </div>
             <div className="flex-1">
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">{employee.name}</h1>
-              <p className="text-xl text-gray-600 mb-4">{employee.title}</p>
+              <h1 className="text-3xl font-bold text-[#F0EBE0] mb-2">{employee.name}</h1>
+              <p className="text-xl text-[#9E8F75] mb-4">{employee.title}</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                 <div>
-                  <span className="text-gray-500">Department</span>
-                  <p className="font-semibold text-gray-900">{employee.department}</p>
+                  <span className="text-[#5A5040]">Department</span>
+                  <p className="font-semibold text-[#F0EBE0]">{employee.department}</p>
                 </div>
                 <div>
-                  <span className="text-gray-500">Email</span>
-                  <p className="font-semibold text-gray-900">{employee.email}</p>
+                  <span className="text-[#5A5040]">Email</span>
+                  <p className="font-semibold text-[#F0EBE0]">{employee.email}</p>
                 </div>
                 <div>
-                  <span className="text-gray-500">Phone</span>
-                  <p className="font-semibold text-gray-900">{employee.phone}</p>
+                  <span className="text-[#5A5040]">Phone</span>
+                  <p className="font-semibold text-[#F0EBE0]">{employee.phone}</p>
                 </div>
                 <div>
-                  <span className="text-gray-500">Hire Date</span>
-                  <p className="font-semibold text-gray-900">{formatDate(employee.hireDate)}</p>
+                  <span className="text-[#5A5040]">Hire Date</span>
+                  <p className="font-semibold text-[#F0EBE0]">{formatDate(employee.hireDate)}</p>
                 </div>
               </div>
             </div>
@@ -337,37 +337,37 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white p-6 rounded-xl shadow-md">
+          <div className="bg-[#110F0B] p-6 rounded shadow-md">
             <div className="flex items-center justify-between mb-2">
-              <Award className="w-8 h-8 text-blue-600" />
-              <span className="text-3xl font-bold text-gray-900">{skills.length}</span>
+              <Award className="w-8 h-8 text-[#C9A84C]" />
+              <span className="text-3xl font-bold text-[#F0EBE0]">{skills.length}</span>
             </div>
-            <p className="text-gray-600">Skills</p>
-            <p className="text-sm text-gray-500">{skills.filter(s => s.verified).length} verified</p>
+            <p className="text-[#9E8F75]">Skills</p>
+            <p className="text-sm text-[#5A5040]">{skills.filter(s => s.verified).length} verified</p>
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-md">
+          <div className="bg-[#110F0B] p-6 rounded shadow-md">
             <div className="flex items-center justify-between mb-2">
-              <FileText className="w-8 h-8 text-green-600" />
-              <span className="text-3xl font-bold text-gray-900">{certifications.length}</span>
+              <FileText className="w-8 h-8 text-[#C9A84C]" />
+              <span className="text-3xl font-bold text-[#F0EBE0]">{certifications.length}</span>
             </div>
-            <p className="text-gray-600">Certifications</p>
+            <p className="text-[#9E8F75]">Certifications</p>
             <p className="text-sm text-amber-600">{certifications.filter(c => c.status === 'expiring-soon').length} expiring soon</p>
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-md">
+          <div className="bg-[#110F0B] p-6 rounded shadow-md">
             <div className="flex items-center justify-between mb-2">
-              <BookOpen className="w-8 h-8 text-purple-600" />
-              <span className="text-3xl font-bold text-gray-900">{training.length}</span>
+              <BookOpen className="w-8 h-8 text-[#C9A84C]" />
+              <span className="text-3xl font-bold text-[#F0EBE0]">{training.length}</span>
             </div>
-            <p className="text-gray-600">Training Courses</p>
-            <p className="text-sm text-gray-500">{training.reduce((sum, t) => sum + t.hours, 0)} total hours</p>
+            <p className="text-[#9E8F75]">Training Courses</p>
+            <p className="text-sm text-[#5A5040]">{training.reduce((sum, t) => sum + t.hours, 0)} total hours</p>
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-md">
+          <div className="bg-[#110F0B] p-6 rounded shadow-md">
             <div className="flex items-center justify-between mb-2">
               <Star className="w-8 h-8 text-amber-600" />
-              <span className="text-3xl font-bold text-gray-900">{reviews[0]?.overallRating.toFixed(1)}</span>
+              <span className="text-3xl font-bold text-[#F0EBE0]">{reviews[0]?.overallRating.toFixed(1)}</span>
             </div>
-            <p className="text-gray-600">Performance Rating</p>
-            <p className="text-sm text-gray-500">Last review: {formatDate(reviews[0]?.reviewDate)}</p>
+            <p className="text-[#9E8F75]">Performance Rating</p>
+            <p className="text-sm text-[#5A5040]">Last review: {formatDate(reviews[0]?.reviewDate)}</p>
           </div>
         </div>
 
@@ -375,8 +375,8 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
         <div className="flex gap-4 mb-6 flex-wrap">
           <button
             onClick={() => setActiveTab('skills')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-              activeTab === 'skills' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-gray-50'
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
+              activeTab === 'skills' ? 'bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.45)] text-[#C9A84C] shadow-none' : 'bg-[#110F0B] text-[#C9A84C] hover:bg-[rgba(201,168,76,0.04)]'
             }`}
           >
             <Award className="w-5 h-5" />
@@ -384,8 +384,8 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
           </button>
           <button
             onClick={() => setActiveTab('certifications')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-              activeTab === 'certifications' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-gray-50'
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
+              activeTab === 'certifications' ? 'bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.45)] text-[#C9A84C] shadow-none' : 'bg-[#110F0B] text-[#C9A84C] hover:bg-[rgba(201,168,76,0.04)]'
             }`}
           >
             <FileText className="w-5 h-5" />
@@ -393,8 +393,8 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
           </button>
           <button
             onClick={() => setActiveTab('training')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-              activeTab === 'training' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-gray-50'
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
+              activeTab === 'training' ? 'bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.45)] text-[#C9A84C] shadow-none' : 'bg-[#110F0B] text-[#C9A84C] hover:bg-[rgba(201,168,76,0.04)]'
             }`}
           >
             <BookOpen className="w-5 h-5" />
@@ -402,8 +402,8 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
           </button>
           <button
             onClick={() => setActiveTab('performance')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-              activeTab === 'performance' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-gray-50'
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
+              activeTab === 'performance' ? 'bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.45)] text-[#C9A84C] shadow-none' : 'bg-[#110F0B] text-[#C9A84C] hover:bg-[rgba(201,168,76,0.04)]'
             }`}
           >
             <TrendingUp className="w-5 h-5" />
@@ -413,10 +413,10 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
 
         {/* Skills Tab */}
         {activeTab === 'skills' && (
-          <div className="bg-white rounded-xl shadow-md p-8">
+          <div className="bg-[#110F0B] rounded shadow-md p-8">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">Skills & Competencies</h2>
-              <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+              <h2 className="text-2xl font-bold text-[#F0EBE0]">Skills & Competencies</h2>
+              <button className="flex items-center gap-2 px-4 py-2 rounded bg-[rgba(201,168,76,0.12)] border border-[rgba(201,168,76,0.45)] text-[#C9A84C]">
                 <Plus className="w-4 h-4" />
                 Add Skill
               </button>
@@ -424,27 +424,27 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {skills.map((skill) => (
-                <div key={skill.id} className="p-4 border border-gray-200 rounded-lg hover:border-blue-300 transition-all">
+                <div key={skill.id} className="p-4 border border-[rgba(201,168,76,0.22)] rounded-lg hover:border-[rgba(201,168,76,0.45)] transition-all">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <h3 className="font-bold text-gray-900">{skill.name}</h3>
+                        <h3 className="font-bold text-[#F0EBE0]">{skill.name}</h3>
                         {skill.verified && <CheckCircle className="w-5 h-5 text-green-500" />}
                       </div>
-                      <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getSkillLevelColor(skill.level)}`}>
+                      <span className={`px-3 py-1 rounded text-sm font-semibold ${getSkillLevelColor(skill.level)}`}>
                         {skill.level.charAt(0).toUpperCase() + skill.level.slice(1)}
                       </span>
                     </div>
                     <div className="flex gap-2">
-                      <button className="p-2 hover:bg-gray-100 rounded-lg">
-                        <Edit className="w-4 h-4 text-gray-600" />
+                      <button className="p-2 hover:bg-[rgba(201,168,76,0.06)] rounded-lg">
+                        <Edit className="w-4 h-4 text-[#9E8F75]" />
                       </button>
-                      <button className="p-2 hover:bg-gray-100 rounded-lg">
+                      <button className="p-2 hover:bg-[rgba(201,168,76,0.06)] rounded-lg">
                         <Trash2 className="w-4 h-4 text-red-600" />
                       </button>
                     </div>
                   </div>
-                  <p className="text-sm text-gray-600">{skill.yearsExperience} years experience</p>
+                  <p className="text-sm text-[#9E8F75]">{skill.yearsExperience} years experience</p>
                 </div>
               ))}
             </div>
@@ -453,22 +453,22 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
 
         {/* Certifications Tab */}
         {activeTab === 'certifications' && (
-          <div className="bg-white rounded-xl shadow-md p-8">
+          <div className="bg-[#110F0B] rounded shadow-md p-8">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">Certifications & Licenses</h2>
-              <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+              <h2 className="text-2xl font-bold text-[#F0EBE0]">Certifications & Licenses</h2>
+              <button className="flex items-center gap-2 px-4 py-2 rounded bg-[rgba(201,168,76,0.12)] border border-[rgba(201,168,76,0.45)] text-[#C9A84C]">
                 <Plus className="w-4 h-4" />
                 Add Certification
               </button>
             </div>
 
             {certifications.filter(c => c.status === 'expiring-soon').length > 0 && (
-              <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+              <div className="mb-6 p-4 bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.3)] rounded">
                 <div className="flex items-start gap-3">
                   <AlertTriangle className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-amber-900">Action Required</p>
-                    <p className="text-sm text-amber-700 mt-1">
+                    <p className="font-semibold text-[#F0EBE0]">Action Required</p>
+                    <p className="text-sm text-[#C9A84C] mt-1">
                       {certifications.filter(c => c.status === 'expiring-soon').length} certification(s) expiring within 180 days. 
                       Please renew to maintain compliance.
                     </p>
@@ -481,43 +481,43 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
               {certifications.map((cert) => {
                 const daysUntilExp = getDaysUntilExpiration(cert.expirationDate);
                 return (
-                  <div key={cert.id} className="p-6 border border-gray-200 rounded-lg hover:border-blue-300 transition-all">
+                  <div key={cert.id} className="p-6 border border-[rgba(201,168,76,0.22)] rounded-lg hover:border-[rgba(201,168,76,0.45)] transition-all">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
-                        <h3 className="font-bold text-lg text-gray-900 mb-2">{cert.name}</h3>
-                        <p className="text-gray-600 mb-2">{cert.issuingOrganization}</p>
-                        <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getCertStatusColor(cert.status)}`}>
+                        <h3 className="font-bold text-lg text-[#F0EBE0] mb-2">{cert.name}</h3>
+                        <p className="text-[#9E8F75] mb-2">{cert.issuingOrganization}</p>
+                        <span className={`px-3 py-1 rounded text-sm font-semibold ${getCertStatusColor(cert.status)}`}>
                           {cert.status === 'expiring-soon' ? `Expires in ${daysUntilExp} days` : 
                            cert.status === 'active' ? 'Active' : 'Expired'}
                         </span>
                       </div>
                       <div className="flex gap-2">
                         {cert.documentUrl && (
-                          <button className="p-2 hover:bg-gray-100 rounded-lg">
-                            <Download className="w-4 h-4 text-gray-600" />
+                          <button className="p-2 hover:bg-[rgba(201,168,76,0.06)] rounded-lg">
+                            <Download className="w-4 h-4 text-[#9E8F75]" />
                           </button>
                         )}
-                        <button className="p-2 hover:bg-gray-100 rounded-lg">
-                          <Edit className="w-4 h-4 text-gray-600" />
+                        <button className="p-2 hover:bg-[rgba(201,168,76,0.06)] rounded-lg">
+                          <Edit className="w-4 h-4 text-[#9E8F75]" />
                         </button>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                       <div>
-                        <span className="text-gray-500">Certificate #</span>
-                        <p className="font-semibold text-gray-900">{cert.certificateNumber}</p>
+                        <span className="text-[#5A5040]">Certificate #</span>
+                        <p className="font-semibold text-[#F0EBE0]">{cert.certificateNumber}</p>
                       </div>
                       <div>
-                        <span className="text-gray-500">Issue Date</span>
-                        <p className="font-semibold text-gray-900">{formatDate(cert.issueDate)}</p>
+                        <span className="text-[#5A5040]">Issue Date</span>
+                        <p className="font-semibold text-[#F0EBE0]">{formatDate(cert.issueDate)}</p>
                       </div>
                       <div>
-                        <span className="text-gray-500">Expiration</span>
-                        <p className="font-semibold text-gray-900">{formatDate(cert.expirationDate)}</p>
+                        <span className="text-[#5A5040]">Expiration</span>
+                        <p className="font-semibold text-[#F0EBE0]">{formatDate(cert.expirationDate)}</p>
                       </div>
                       <div>
-                        <span className="text-gray-500">Status</span>
-                        <p className={`font-semibold ${cert.status === 'active' ? 'text-green-600' : cert.status === 'expiring-soon' ? 'text-amber-600' : 'text-red-600'}`}>
+                        <span className="text-[#5A5040]">Status</span>
+                        <p className={`font-semibold ${cert.status === 'active' ? 'text-[#C9A84C]' : cert.status === 'expiring-soon' ? 'text-amber-600' : 'text-red-600'}`}>
                           {cert.status === 'active' ? 'Valid' : cert.status === 'expiring-soon' ? 'Renewal Due' : 'Expired'}
                         </p>
                       </div>
@@ -531,10 +531,10 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
 
         {/* Training Tab */}
         {activeTab === 'training' && (
-          <div className="bg-white rounded-xl shadow-md p-8">
+          <div className="bg-[#110F0B] rounded shadow-md p-8">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">Training History</h2>
-              <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+              <h2 className="text-2xl font-bold text-[#F0EBE0]">Training History</h2>
+              <button className="flex items-center gap-2 px-4 py-2 rounded bg-[rgba(201,168,76,0.12)] border border-[rgba(201,168,76,0.45)] text-[#C9A84C]">
                 <Plus className="w-4 h-4" />
                 Add Training
               </button>
@@ -543,35 +543,35 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-gray-200">
-                    <th className="text-left py-3 px-4 font-semibold text-gray-700">Course Name</th>
-                    <th className="text-left py-3 px-4 font-semibold text-gray-700">Category</th>
-                    <th className="text-left py-3 px-4 font-semibold text-gray-700">Completed</th>
-                    <th className="text-left py-3 px-4 font-semibold text-gray-700">Instructor</th>
-                    <th className="text-right py-3 px-4 font-semibold text-gray-700">Hours</th>
-                    <th className="text-right py-3 px-4 font-semibold text-gray-700">Score</th>
-                    <th className="text-right py-3 px-4 font-semibold text-gray-700">Actions</th>
+                  <tr className="border-b border-[rgba(201,168,76,0.22)]">
+                    <th className="text-left py-3 px-4 font-semibold text-[#C9A84C]">Course Name</th>
+                    <th className="text-left py-3 px-4 font-semibold text-[#C9A84C]">Category</th>
+                    <th className="text-left py-3 px-4 font-semibold text-[#C9A84C]">Completed</th>
+                    <th className="text-left py-3 px-4 font-semibold text-[#C9A84C]">Instructor</th>
+                    <th className="text-right py-3 px-4 font-semibold text-[#C9A84C]">Hours</th>
+                    <th className="text-right py-3 px-4 font-semibold text-[#C9A84C]">Score</th>
+                    <th className="text-right py-3 px-4 font-semibold text-[#C9A84C]">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {training.map((course) => (
-                    <tr key={course.id} className="border-b border-gray-100 hover:bg-gray-50">
+                    <tr key={course.id} className="border-b border-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.04)]">
                       <td className="py-4 px-4">
-                        <span className="font-semibold text-gray-900">{course.courseName}</span>
+                        <span className="font-semibold text-[#F0EBE0]">{course.courseName}</span>
                       </td>
                       <td className="py-4 px-4">
-                        <span className="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700">
+                        <span className="px-3 py-1 rounded text-sm bg-[rgba(201,168,76,0.12)] text-[#C9A84C]">
                           {course.category}
                         </span>
                       </td>
-                      <td className="py-4 px-4 text-gray-700">{formatDate(course.completedDate)}</td>
-                      <td className="py-4 px-4 text-gray-700">{course.instructor}</td>
-                      <td className="text-right py-4 px-4 font-semibold text-gray-900">{course.hours}</td>
+                      <td className="py-4 px-4 text-[#C9A84C]">{formatDate(course.completedDate)}</td>
+                      <td className="py-4 px-4 text-[#C9A84C]">{course.instructor}</td>
+                      <td className="text-right py-4 px-4 font-semibold text-[#F0EBE0]">{course.hours}</td>
                       <td className="text-right py-4 px-4">
                         {course.score && (
                           <span className={`font-semibold ${
-                            course.score >= 90 ? 'text-green-600' : 
-                            course.score >= 80 ? 'text-blue-600' : 
+                            course.score >= 90 ? 'text-[#C9A84C]' : 
+                            course.score >= 80 ? 'text-[#C9A84C]' : 
                             course.score >= 70 ? 'text-amber-600' : 'text-red-600'
                           }`}>
                             {course.score}%
@@ -580,21 +580,21 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
                       </td>
                       <td className="text-right py-4 px-4">
                         {course.certificateUrl && (
-                          <button className="p-2 hover:bg-gray-100 rounded-lg">
-                            <Download className="w-4 h-4 text-gray-600" />
+                          <button className="p-2 hover:bg-[rgba(201,168,76,0.06)] rounded-lg">
+                            <Download className="w-4 h-4 text-[#9E8F75]" />
                           </button>
                         )}
                       </td>
                     </tr>
                   ))}
                 </tbody>
-                <tfoot className="bg-gray-50">
+                <tfoot className="bg-[rgba(201,168,76,0.04)]">
                   <tr className="font-bold">
-                    <td colSpan={4} className="py-4 px-4 text-gray-900">Total</td>
-                    <td className="text-right py-4 px-4 text-gray-900">
+                    <td colSpan={4} className="py-4 px-4 text-[#F0EBE0]">Total</td>
+                    <td className="text-right py-4 px-4 text-[#F0EBE0]">
                       {training.reduce((sum, t) => sum + t.hours, 0)} hrs
                     </td>
-                    <td className="text-right py-4 px-4 text-gray-900">
+                    <td className="text-right py-4 px-4 text-[#F0EBE0]">
                       {(training.reduce((sum, t) => sum + (t.score || 0), 0) / training.filter(t => t.score).length).toFixed(1)}%
                     </td>
                     <td></td>
@@ -607,10 +607,10 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
 
         {/* Performance Tab */}
         {activeTab === 'performance' && (
-          <div className="bg-white rounded-xl shadow-md p-8">
+          <div className="bg-[#110F0B] rounded shadow-md p-8">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">Performance Reviews</h2>
-              <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+              <h2 className="text-2xl font-bold text-[#F0EBE0]">Performance Reviews</h2>
+              <button className="flex items-center gap-2 px-4 py-2 rounded bg-[rgba(201,168,76,0.12)] border border-[rgba(201,168,76,0.45)] text-[#C9A84C]">
                 <Plus className="w-4 h-4" />
                 Add Review
               </button>
@@ -618,65 +618,65 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
 
             <div className="space-y-6">
               {reviews.map((review) => (
-                <div key={review.id} className="p-6 border border-gray-200 rounded-lg">
+                <div key={review.id} className="p-6 border border-[rgba(201,168,76,0.22)] rounded-lg">
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <div className="flex items-center gap-3 mb-2">
-                        <h3 className="font-bold text-lg text-gray-900">{formatDate(review.reviewDate)}</h3>
+                        <h3 className="font-bold text-lg text-[#F0EBE0]">{formatDate(review.reviewDate)}</h3>
                         <div className="flex items-center gap-1">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className={`w-5 h-5 ${i < Math.floor(review.overallRating) ? 'fill-amber-400 text-amber-400' : 'text-gray-300'}`} />
+                            <Star key={i} className={`w-5 h-5 ${i < Math.floor(review.overallRating) ? 'fill-amber-400 text-amber-400' : 'text-[#3A3028]'}`} />
                           ))}
-                          <span className="ml-2 font-bold text-gray-900">{review.overallRating.toFixed(1)}</span>
+                          <span className="ml-2 font-bold text-[#F0EBE0]">{review.overallRating.toFixed(1)}</span>
                         </div>
                       </div>
-                      <p className="text-gray-600">Reviewed by: {review.reviewer}</p>
+                      <p className="text-[#9E8F75]">Reviewed by: {review.reviewer}</p>
                     </div>
-                    <button className="p-2 hover:bg-gray-100 rounded-lg">
-                      <Edit className="w-4 h-4 text-gray-600" />
+                    <button className="p-2 hover:bg-[rgba(201,168,76,0.06)] rounded-lg">
+                      <Edit className="w-4 h-4 text-[#9E8F75]" />
                     </button>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5 text-green-600" />
+                      <h4 className="font-semibold text-[#F0EBE0] mb-2 flex items-center gap-2">
+                        <CheckCircle className="w-5 h-5 text-[#C9A84C]" />
                         Strengths
                       </h4>
                       <ul className="space-y-1">
                         {review.strengths.map((strength, i) => (
-                          <li key={i} className="text-gray-700 text-sm">• {strength}</li>
+                          <li key={i} className="text-[#C9A84C] text-sm">• {strength}</li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                        <TrendingUp className="w-5 h-5 text-blue-600" />
+                      <h4 className="font-semibold text-[#F0EBE0] mb-2 flex items-center gap-2">
+                        <TrendingUp className="w-5 h-5 text-[#C9A84C]" />
                         Areas for Improvement
                       </h4>
                       <ul className="space-y-1">
                         {review.areasForImprovement.map((area, i) => (
-                          <li key={i} className="text-gray-700 text-sm">• {area}</li>
+                          <li key={i} className="text-[#C9A84C] text-sm">• {area}</li>
                         ))}
                       </ul>
                     </div>
                   </div>
 
                   <div className="mb-4">
-                    <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                      <Award className="w-5 h-5 text-purple-600" />
+                    <h4 className="font-semibold text-[#F0EBE0] mb-2 flex items-center gap-2">
+                      <Award className="w-5 h-5 text-[#C9A84C]" />
                       Goals for Next Review Period
                     </h4>
                     <ul className="space-y-1">
                       {review.goals.map((goal, i) => (
-                        <li key={i} className="text-gray-700 text-sm">• {goal}</li>
+                        <li key={i} className="text-[#C9A84C] text-sm">• {goal}</li>
                       ))}
                     </ul>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Comments</h4>
-                    <p className="text-gray-700 text-sm">{review.comments}</p>
+                    <h4 className="font-semibold text-[#F0EBE0] mb-2">Comments</h4>
+                    <p className="text-[#C9A84C] text-sm">{review.comments}</p>
                   </div>
                 </div>
               ))}

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import { 
@@ -135,7 +135,7 @@ export default function FormsPage() {
             </button>
             <button
               onClick={() => router.push('/forms/builder')}
-              className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-stone-900 hover:to-pink-700 flex items-center gap-2"
+              className="px-6 py-3 rounded flex items-center gap-2"
             >
               <Plus className="w-5 h-5" />
               Create New Form
@@ -145,7 +145,7 @@ export default function FormsPage() {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-4 gap-6 mb-8">
-          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
+          <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
               <span className="text-stone-500">Total Forms</span>
               <FileText className="w-5 h-5 text-amber-600" />
@@ -153,7 +153,7 @@ export default function FormsPage() {
             <div className="text-4xl font-bold text-stone-200">{templates.length}</div>
             <div className="text-sm text-stone-500 mt-1">+3 this month</div>
           </div>
-          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
+          <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
               <span className="text-stone-500">Submissions</span>
               <CheckCircle className="w-5 h-5 text-green-600" />
@@ -163,7 +163,7 @@ export default function FormsPage() {
             </div>
             <div className="text-sm text-stone-500 mt-1">+89 this week</div>
           </div>
-          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
+          <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
               <span className="text-stone-500">Active Forms</span>
               <Clock className="w-5 h-5 text-amber-400" />
@@ -173,7 +173,7 @@ export default function FormsPage() {
             </div>
             <div className="text-sm text-stone-500 mt-1">All working</div>
           </div>
-          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
+          <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
               <span className="text-stone-500">Shared</span>
               <Share2 className="w-5 h-5 text-pink-600" />
@@ -186,7 +186,7 @@ export default function FormsPage() {
         </div>
 
         {/* Filters & Search */}
-        <div className="bg-stone-950 rounded-xl shadow-lg p-6 mb-6">
+        <div className="p-6 mb-6 rounded">
           <div className="flex gap-4 items-center">
             <div className="flex-1 relative">
               <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-stone-400" />
@@ -205,7 +205,7 @@ export default function FormsPage() {
                   onClick={() => setSelectedCategory(value)}
                   className={`px-4 py-2 rounded-lg flex items-center gap-2 whitespace-nowrap ${
                     selectedCategory === value
-                      ? 'bg-gradient-to-r from-amber-700 to-amber-600 text-white'
+                      ? 'text-[#C9A84C]'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -222,7 +222,7 @@ export default function FormsPage() {
           {filteredTemplates.map(template => (
             <div
               key={template.id}
-              className="bg-stone-950 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all cursor-pointer group"
+              className="p-6 transition-colors cursor-pointer group rounded"
               onClick={() => router.push(`/forms/${template.id}`)}
             >
               <div className="flex justify-between items-start mb-4">
@@ -287,13 +287,13 @@ export default function FormsPage() {
         </div>
 
         {filteredTemplates.length === 0 && (
-          <div className="text-center py-12 bg-stone-950 rounded-xl shadow-lg">
+          <div className="text-center py-12 rounded">
             <FileText className="w-16 h-16 text-stone-300 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-stone-200 mb-2">No forms found</h3>
             <p className="text-stone-500 mb-6">Try adjusting your search or create a new form</p>
             <button
               onClick={() => router.push('/forms/builder')}
-              className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-stone-900 hover:to-pink-700"
+              className="px-6 py-3 rounded"
             >
               Create New Form
             </button>

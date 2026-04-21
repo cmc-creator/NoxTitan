@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Megaphone, Bell, AlertCircle, TrendingUp, Gift, FileText, Calendar, Users, CheckCircle, Star, Award, MessageSquare, ThumbsUp, Share2, Pin, Filter, Search, Plus, Edit, Trash2 } from 'lucide-react';
@@ -246,7 +246,7 @@ export default function AnnouncementsPage() {
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-amber-800 to-amber-600 rounded-xl">
+              <div className="p-3 rounded flex items-center justify-center">
                 <Megaphone className="h-8 w-8 text-white" />
               </div>
               <div>
@@ -261,7 +261,7 @@ export default function AnnouncementsPage() {
             {user?.role === 'admin' || user?.role === 'manager' ? (
               <button
                 onClick={() => setShowNewAnnouncement(true)}
-                className="px-6 py-3 bg-gradient-to-r from-amber-800 to-amber-600 hover:from-amber-800 hover:to-amber-600 text-white rounded-xl font-semibold transition-all flex items-center gap-2 shadow-lg hover:shadow-xl"
+                className="px-6 py-3 font-semibold transition-colors flex items-center gap-2"
               >
                 <Plus className="w-5 h-5" />
                 New Announcement
@@ -272,7 +272,7 @@ export default function AnnouncementsPage() {
 
         {/* Stats Bar */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <div className="p-4 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-sm opacity-70 mb-1">Unread</div>
@@ -281,7 +281,7 @@ export default function AnnouncementsPage() {
               <Bell className="w-8 h-8" style={{ color: '#C9A84C' }} />
             </div>
           </div>
-          <div className="p-4 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-sm opacity-70 mb-1">Pinned</div>
@@ -290,7 +290,7 @@ export default function AnnouncementsPage() {
               <Pin className="w-8 h-8" style={{ color: '#C9A84C' }} />
             </div>
           </div>
-          <div className="p-4 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-sm opacity-70 mb-1">This Month</div>
@@ -299,7 +299,7 @@ export default function AnnouncementsPage() {
               <TrendingUp className="w-8 h-8" style={{ color: '#C9A84C' }} />
             </div>
           </div>
-          <div className="p-4 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-sm opacity-70 mb-1">Engagement</div>
@@ -319,7 +319,7 @@ export default function AnnouncementsPage() {
               placeholder="Search announcements..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 rounded-xl border border-stone-700 focus:outline-none focus:border-amber-500/40 transition-all"
+              className="w-full pl-12 pr-4 py-3 rounded border border-stone-700 focus:outline-none focus:border-amber-500/40 transition-all"
               style={{ background: 'var(--card-bg)', color: 'var(--body-text)' }}
             />
           </div>
@@ -345,7 +345,7 @@ export default function AnnouncementsPage() {
           {filteredAnnouncements.map((announcement) => (
             <div
               key={announcement.id}
-              className="p-6 rounded-xl shadow-lg border-l-4 hover:shadow-xl transition-all relative"
+              className="p-6 rounded shadow-lg border-l-4 hover:shadow-xl transition-all relative"
               style={{
                 background: 'var(--card-bg)',
                 borderLeftColor: announcement.category === 'urgent' ? '#ef4444' : 
@@ -461,7 +461,7 @@ export default function AnnouncementsPage() {
         </div>
 
         {filteredAnnouncements.length === 0 && (
-          <div className="text-center py-12 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+          <div className="text-center py-12 rounded" style={{ background: 'var(--card-bg)' }}>
             <Megaphone className="w-16 h-16 mx-auto mb-4 opacity-50" />
             <p className="text-xl font-semibold opacity-70">No announcements found</p>
             <p className="text-sm opacity-50 mt-2">Try adjusting your filters or search query</p>

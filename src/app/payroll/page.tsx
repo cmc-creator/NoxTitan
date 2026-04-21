@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { DollarSign, Calendar, Download, Upload, Users, TrendingUp, Clock, FileText, Settings, CheckCircle, AlertCircle, ExternalLink, RefreshCw } from 'lucide-react';
@@ -381,7 +381,7 @@ export default function PayrollPage() {
 
         {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Current Period Total</div>
               <TrendingUp className="h-5 w-5 text-green-500" />
@@ -392,7 +392,7 @@ export default function PayrollPage() {
             <div className="text-xs opacity-60">{currentPeriod.totalHours.toLocaleString()} hours</div>
           </div>
 
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Active Employees</div>
               <Users className="h-5 w-5 text-amber-400" />
@@ -403,7 +403,7 @@ export default function PayrollPage() {
             <div className="text-xs opacity-60">This pay period</div>
           </div>
 
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Avg Hours/Employee</div>
               <Clock className="h-5 w-5 text-amber-500" />
@@ -414,7 +414,7 @@ export default function PayrollPage() {
             <div className="text-xs opacity-60">Per pay period</div>
           </div>
 
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Integration Status</div>
               <CheckCircle className="h-5 w-5 text-green-500" />
@@ -429,21 +429,21 @@ export default function PayrollPage() {
         {/* Action Buttons */}
         <div className="flex gap-3 mb-6 flex-wrap">
           <button
-            className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-white shadow-lg hover:scale-105 transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-white shadow-lg transition-all"
             style={{ background: 'var(--primary-btn)' }}
           >
             <CheckCircle className="h-4 w-4" />
             Approve Pay Period
           </button>
           <button
-            className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-white shadow-lg hover:scale-105 transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-white shadow-lg transition-all"
             style={{ background: 'var(--secondary-btn)' }}
           >
             <Download className="h-4 w-4" />
             Export Hours
           </button>
           <button
-            className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-white shadow-lg hover:scale-105 transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-white shadow-lg transition-all"
             style={{ background: 'var(--secondary-btn)' }}
           >
             <RefreshCw className="h-4 w-4" />
@@ -455,7 +455,7 @@ export default function PayrollPage() {
         <div className="flex gap-4 mb-8 flex-wrap">
           <button
             onClick={() => setActiveTab('overview')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'overview' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -468,7 +468,7 @@ export default function PayrollPage() {
           </button>
           <button
             onClick={() => setActiveTab('current-period')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'current-period' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -481,7 +481,7 @@ export default function PayrollPage() {
           </button>
           <button
             onClick={() => setActiveTab('employees')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'employees' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -494,7 +494,7 @@ export default function PayrollPage() {
           </button>
           <button
             onClick={() => setActiveTab('benefits')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'benefits' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -507,7 +507,7 @@ export default function PayrollPage() {
           </button>
           <button
             onClick={() => setActiveTab('history')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'history' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -520,7 +520,7 @@ export default function PayrollPage() {
           </button>
           <button
             onClick={() => setActiveTab('integrations')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'integrations' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -537,7 +537,7 @@ export default function PayrollPage() {
         {activeTab === 'overview' && (
           <div className="space-y-6">
             {/* Current Pay Period Card */}
-            <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+            <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-bold" style={{ color: 'var(--header-text)' }}>
                   Current Pay Period
@@ -565,14 +565,14 @@ export default function PayrollPage() {
               <div className="flex gap-3">
                 <button
                   onClick={() => setActiveTab('current-period')}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-white hover:scale-105 transition-all"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-white transition-all"
                   style={{ background: 'var(--primary-btn)' }}
                 >
                   <FileText className="h-4 w-4" />
                   View Details
                 </button>
                 <button
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold hover:scale-105 transition-all"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all"
                   style={{ background: 'var(--card-bg)', border: '1px solid var(--border-color)' }}
                 >
                   <Download className="h-4 w-4" />
@@ -584,7 +584,7 @@ export default function PayrollPage() {
             {/* Quick Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Overtime Summary */}
-              <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+              <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
                 <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
                   <Clock className="h-5 w-5 text-amber-400" />
                   Overtime Summary
@@ -606,7 +606,7 @@ export default function PayrollPage() {
               </div>
 
               {/* Department Breakdown */}
-              <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+              <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
                 <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
                   <Users className="h-5 w-5 text-amber-400" />
                   Department Breakdown
@@ -632,7 +632,7 @@ export default function PayrollPage() {
 
         {activeTab === 'current-period' && (
           <div className="space-y-6">
-            <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+            <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
               <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
                 Employee Payroll Details
               </h2>
@@ -697,7 +697,7 @@ export default function PayrollPage() {
         )}
 
         {activeTab === 'employees' && (
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
               Employee Pay Rates
             </h2>
@@ -746,7 +746,7 @@ export default function PayrollPage() {
 
         {activeTab === 'history' && (
           <div className="space-y-4">
-            <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+            <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
               <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--header-text)' }}>
                 Pay Period History
               </h2>
@@ -791,7 +791,7 @@ export default function PayrollPage() {
 
         {activeTab === 'benefits' && (
           <div className="space-y-6">
-            <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+            <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
               <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
                 Employee Benefits Administration
               </h2>
@@ -980,7 +980,7 @@ export default function PayrollPage() {
 
         {activeTab === 'integrations' && (
           <div className="space-y-6">
-            <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+            <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
               <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
                 Payroll System Integrations
               </h2>
@@ -1031,7 +1031,7 @@ export default function PayrollPage() {
                           </button>
                         </>
                       ) : (
-                        <button className="flex-1 px-4 py-2 rounded-lg font-semibold transition-all hover:scale-105"
+                        <button className="flex-1 px-4 py-2 rounded-lg font-semibold transition-all"
                           style={{ background: 'var(--primary-btn)', color: '#ffffff' }}
                         >
                           {integration.provider === 'manual' ? 'Configure Export' : 'Connect'}
@@ -1054,7 +1054,7 @@ export default function PayrollPage() {
             </div>
 
             {/* Export Settings */}
-            <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+            <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
               <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
                 Export Settings
               </h3>
@@ -1098,7 +1098,7 @@ export default function PayrollPage() {
                 </div>
 
                 <button 
-                  className="px-6 py-2 rounded-lg font-semibold hover:scale-105 transition-all"
+                  className="px-6 py-2 rounded-lg font-semibold transition-all"
                   style={{ background: 'var(--primary-btn)', color: '#ffffff' }}
                 >
                   Save Export Settings

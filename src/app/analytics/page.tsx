@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { 
@@ -190,7 +190,7 @@ export default function Analytics() {
 
       {/* Key Metrics Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+        <div className="p-6 rounded">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-amber-900/30 rounded-lg">
               <DollarSign className="w-6 h-6 text-amber-400" />
@@ -205,9 +205,9 @@ export default function Analytics() {
           <p className="text-xs text-stone-500 mt-1">Budget: {formatCurrency(currentMonth.budgetedCost)}</p>
         </div>
 
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+        <div className="p-6 rounded">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 bg-amber-100 rounded-lg">
+            <div className="p-3 rounded">
               <Clock className="w-6 h-6 text-amber-600" />
             </div>
             <div className="text-sm font-medium text-amber-600">
@@ -219,7 +219,7 @@ export default function Analytics() {
           <p className="text-xs text-stone-500 mt-1">of {formatNumber(totalHours)} total hours</p>
         </div>
 
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+        <div className="p-6 rounded">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-green-100 rounded-lg">
               <Target className="w-6 h-6 text-green-600" />
@@ -233,7 +233,7 @@ export default function Analytics() {
           <p className="text-xs text-stone-500 mt-1">Avg. shift fill rate</p>
         </div>
 
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+        <div className="p-6 rounded">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-purple-100 rounded-lg">
               <Users className="w-6 h-6 text-amber-600" />
@@ -249,7 +249,7 @@ export default function Analytics() {
       </div>
 
       {/* Labor Cost Trends Chart */}
-      <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800 mb-8">
+      <div className="p-6 rounded mb-8">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-xl font-bold text-stone-100 flex items-center gap-2">
@@ -308,7 +308,7 @@ export default function Analytics() {
       </div>
 
       {/* Department Performance */}
-      <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800 mb-8">
+      <div className="p-6 rounded mb-8">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-xl font-bold text-stone-100 flex items-center gap-2">
@@ -398,7 +398,7 @@ export default function Analytics() {
       {/* Scheduling Efficiency & Forecast */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
         {/* Scheduling Efficiency */}
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+        <div className="p-6 rounded">
           <div className="mb-6">
             <h2 className="text-xl font-bold text-stone-100 flex items-center gap-2">
               <Calendar className="w-5 h-5 text-green-600" />
@@ -440,7 +440,7 @@ export default function Analytics() {
         </div>
 
         {/* 3-Month Forecast */}
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+        <div className="p-6 rounded">
           <div className="mb-6">
             <h2 className="text-xl font-bold text-stone-100 flex items-center gap-2">
               <TrendingUp className="w-5 h-5 text-amber-400" />
@@ -504,9 +504,9 @@ export default function Analytics() {
       </div>
 
       {/* Alerts & Recommendations */}
-      <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-xl shadow-md border border-amber-200">
+      <div className="p-6 rounded">
         <div className="flex items-start gap-4">
-          <div className="p-3 bg-amber-100 rounded-lg">
+          <div className="p-3 rounded">
             <AlertTriangle className="w-6 h-6 text-amber-600" />
           </div>
           <div className="flex-1">

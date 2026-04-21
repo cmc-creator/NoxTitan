@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import {
@@ -74,7 +74,7 @@ export default function SurveyAnalyticsPage() {
               <option value="90">Last 90 days</option>
               <option value="365">Last year</option>
             </select>
-            <button className="px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-stone-900 hover:to-pink-700 flex items-center gap-2">
+            <button className="px-6 py-3 rounded flex items-center gap-2">
               <Download className="w-5 h-5" />
               Export Report
             </button>
@@ -83,7 +83,7 @@ export default function SurveyAnalyticsPage() {
 
         {/* Overview Stats */}
         <div className="grid grid-cols-4 gap-6 mb-8">
-          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
+          <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
               <span className="text-stone-500">Total Responses</span>
               <Users className="w-5 h-5 text-amber-600" />
@@ -97,7 +97,7 @@ export default function SurveyAnalyticsPage() {
             </div>
           </div>
 
-          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
+          <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
               <span className="text-stone-500">Average Score</span>
               <Star className="w-5 h-5 text-yellow-500" />
@@ -112,7 +112,7 @@ export default function SurveyAnalyticsPage() {
             </div>
           </div>
 
-          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
+          <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
               <span className="text-stone-500">Positive Sentiment</span>
               <ThumbsUp className="w-5 h-5 text-green-600" />
@@ -123,7 +123,7 @@ export default function SurveyAnalyticsPage() {
             <div className="text-sm text-stone-500 mt-1">Across all surveys</div>
           </div>
 
-          <div className="bg-stone-950 rounded-xl shadow-lg p-6">
+          <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
               <span className="text-stone-500">Active Surveys</span>
               <CheckCircle className="w-5 h-5 text-amber-400" />
@@ -136,7 +136,7 @@ export default function SurveyAnalyticsPage() {
         {/* Survey Breakdown */}
         <div className="grid grid-cols-2 gap-6 mb-8">
           {surveys.map((survey, index) => (
-            <div key={index} className="bg-stone-950 rounded-xl shadow-lg p-8">
+            <div key={index} className="p-8 rounded">
               <div className="flex items-start justify-between mb-6">
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-stone-200 mb-2">{survey.name}</h3>
@@ -172,7 +172,7 @@ export default function SurveyAnalyticsPage() {
                 </div>
                 <div className="flex h-3 rounded-full overflow-hidden">
                   <div
-                    className="bg-green-500"
+                    className=""
                     style={{ width: `${survey.sentiment.positive}%` }}
                   />
                   <div
@@ -205,29 +205,29 @@ export default function SurveyAnalyticsPage() {
                 <div className="flex flex-wrap gap-2">
                   {survey.type === 'PATIENT_SATISFACTION' && (
                     <>
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Wait times improved</span>
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Staff friendliness</span>
+                      <span className="px-3 py-1 text-sm rounded">Wait times improved</span>
+                      <span className="px-3 py-1 text-sm rounded">Staff friendliness</span>
                       <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm">Parking issues</span>
                     </>
                   )}
                   {survey.type === 'EMPLOYEE_ENGAGEMENT' && (
                     <>
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Work-life balance</span>
+                      <span className="px-3 py-1 text-sm rounded">Work-life balance</span>
                       <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm">Communication</span>
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Benefits package</span>
+                      <span className="px-3 py-1 text-sm rounded">Benefits package</span>
                     </>
                   )}
                   {survey.type === 'CULTURE_OF_SAFETY' && (
                     <>
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Reporting process</span>
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Leadership support</span>
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Training quality</span>
+                      <span className="px-3 py-1 text-sm rounded">Reporting process</span>
+                      <span className="px-3 py-1 text-sm rounded">Leadership support</span>
+                      <span className="px-3 py-1 text-sm rounded">Training quality</span>
                     </>
                   )}
                   {survey.type === 'TRAINING_EVALUATION' && (
                     <>
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Content quality</span>
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Trainer expertise</span>
+                      <span className="px-3 py-1 text-sm rounded">Content quality</span>
+                      <span className="px-3 py-1 text-sm rounded">Trainer expertise</span>
                       <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm">Duration too long</span>
                     </>
                   )}
@@ -238,7 +238,7 @@ export default function SurveyAnalyticsPage() {
         </div>
 
         {/* Action Items */}
-        <div className="bg-stone-950 rounded-xl shadow-lg p-8">
+        <div className="p-8 rounded">
           <h2 className="text-2xl font-bold text-stone-200 mb-6">Recommended Actions</h2>
           <div className="space-y-4">
             <div className="flex items-start gap-4 p-4 bg-red-50 border-l-4 border-red-500 rounded">
@@ -267,7 +267,7 @@ export default function SurveyAnalyticsPage() {
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-4 bg-green-50 border-l-4 border-green-500 rounded">
+            <div className="flex items-start gap-4 p-4 rounded border-l-4 border-[#C9A84C]">
               <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
               <div className="flex-1">
                 <h4 className="font-semibold text-stone-200 mb-1">Safety Culture Exceeding Goals</h4>

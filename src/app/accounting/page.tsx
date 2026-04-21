@@ -1,77 +1,64 @@
 import Link from 'next/link';
 
+const GOLD = '#C9A84C';
+const GOLD_DIM = '#9E8F75';
+const TEXT_PRIMARY = '#F0EBE0';
+const CARD_BG = '#110F0B';
+const BORDER = 'rgba(201,168,76,0.22)';
+const BORDER_HOVER = 'rgba(201,168,76,0.45)';
+
+const modules = [
+  { href: '/analytics', icon: '📊', title: 'Financial Overview', desc: 'Real-time financial dashboards and reporting', cta: 'View Dashboard' },
+  { href: '/expenses', icon: '💳', title: 'Expense Tracking', desc: 'Track and categorize business expenses', cta: 'Manage Expenses' },
+  { href: '/invoices', icon: '🧾', title: 'Invoicing', desc: 'Create and manage professional invoices', cta: 'Create Invoice' },
+  { href: '/budgets', icon: '📋', title: 'Budget Management', desc: 'Set and track departmental budgets', cta: 'View Budgets' },
+  { href: '/reports', icon: '📈', title: 'Financial Reports', desc: 'P&L, balance sheets, and custom reports', cta: 'Generate Reports' },
+  { href: '/tax', icon: '🏛️', title: 'Tax Management', desc: 'Tax preparation and compliance tools', cta: 'Tax Center' },
+];
+
+const metrics = [
+  { label: 'Revenue (MTD)', value: '$0.00' },
+  { label: 'Expenses (MTD)', value: '$0.00' },
+  { label: 'Net Profit (MTD)', value: '$0.00' },
+  { label: 'Pending Invoices', value: '0' },
+];
+
 export default function AccountingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-stone-900 to-black p-8">
+    <div className="min-h-screen p-8" style={{ backgroundColor: '#070604', color: TEXT_PRIMARY }}>
       <div className="max-w-7xl mx-auto">
-        <div className="bg-black/40 backdrop-blur-sm rounded-2xl border border-amber-500/40/30 p-8 shadow-2xl">
-          <h1 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-stone-900 via-stone-900 to-amber-900 mb-4">
-             Accounting & Financial Management
+        <div className="p-8" style={{ background: CARD_BG, border: `1px solid ${BORDER}`, borderRadius: 4 }}>
+          <h1 className="text-4xl font-bold mb-2" style={{ fontFamily: "'Cormorant Garamond', serif", color: GOLD }}>
+            Accounting &amp; Financial Management
           </h1>
-          <p className="text-amber-200 text-xl mb-8">
+          <p className="text-lg mb-10" style={{ color: GOLD_DIM }}>
             Comprehensive financial management and accounting tools for your business.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            <div className="bg-stone-950/20 border border-amber-500/40/30 rounded-xl p-6 hover:bg-stone-950/30 transition-all">
-              <h3 className="text-2xl font-bold text-amber-200 mb-3"> Financial Overview</h3>
-              <p className="text-amber-100/70 mb-4">Real-time financial dashboards and reporting</p>
-              <Link href="/analytics" className="inline-block px-4 py-2 bg-amber-600 hover:bg-amber-700 rounded-lg text-white font-semibold transition-colors">View Dashboard</Link>
-            </div>
-
-            <div className="bg-stone-950/20 border border-amber-500/40/30 rounded-xl p-6 hover:bg-stone-950/30 transition-all">
-              <h3 className="text-2xl font-bold text-amber-200 mb-3"> Expense Tracking</h3>
-              <p className="text-amber-100/70 mb-4">Track and categorize business expenses</p>
-              <Link href="/expenses" className="inline-block px-4 py-2 bg-amber-600 hover:bg-amber-700 rounded-lg text-white font-semibold transition-colors">Manage Expenses</Link>
-            </div>
-
-            <div className="bg-stone-950/20 border border-amber-500/40/30 rounded-xl p-6 hover:bg-stone-950/30 transition-all">
-              <h3 className="text-2xl font-bold text-amber-200 mb-3"> Invoicing</h3>
-              <p className="text-amber-100/70 mb-4">Create and manage professional invoices</p>
-              <Link href="/invoices" className="inline-block px-4 py-2 bg-amber-600 hover:bg-amber-700 rounded-lg text-white font-semibold transition-colors">Create Invoice</Link>
-            </div>
-
-            <div className="bg-stone-950/20 border border-amber-500/40/30 rounded-xl p-6 hover:bg-stone-950/30 transition-all">
-              <h3 className="text-2xl font-bold text-amber-200 mb-3"> Budget Management</h3>
-              <p className="text-amber-100/70 mb-4">Set and track departmental budgets</p>
-              <Link href="/budgets" className="inline-block px-4 py-2 bg-amber-600 hover:bg-amber-700 rounded-lg text-white font-semibold transition-colors">View Budgets</Link>
-            </div>
-
-            <div className="bg-stone-950/20 border border-amber-500/40/30 rounded-xl p-6 hover:bg-stone-950/30 transition-all">
-              <h3 className="text-2xl font-bold text-amber-200 mb-3"> Financial Reports</h3>
-              <p className="text-amber-100/70 mb-4">P&L, balance sheets, and custom reports</p>
-              <Link href="/reports" className="inline-block px-4 py-2 bg-amber-600 hover:bg-amber-700 rounded-lg text-white font-semibold transition-colors">Generate Reports</Link>
-            </div>
-
-            <div className="bg-stone-950/20 border border-amber-500/40/30 rounded-xl p-6 hover:bg-stone-950/30 transition-all">
-              <h3 className="text-2xl font-bold text-amber-200 mb-3"> Tax Management</h3>
-              <p className="text-amber-100/70 mb-4">Tax preparation and compliance tools</p>
-              <Link href="/tax" className="inline-block px-4 py-2 bg-amber-600 hover:bg-amber-700 rounded-lg text-white font-semibold transition-colors">Tax Center</Link>
-            </div>
+            {modules.map((m) => (
+              <div key={m.href} className="p-6 transition-colors" style={{ background: 'rgba(201,168,76,0.04)', border: `1px solid ${BORDER}`, borderRadius: 4 }}>
+                <h3 className="text-xl font-semibold mb-2" style={{ color: GOLD }}>{m.icon} {m.title}</h3>
+                <p className="mb-4 text-sm" style={{ color: GOLD_DIM }}>{m.desc}</p>
+                <Link href={m.href} className="inline-block px-4 py-2 text-sm font-semibold transition-colors" style={{ border: `1px solid ${BORDER}`, borderRadius: 4, color: GOLD, background: 'transparent' }}>
+                  {m.cta}
+                </Link>
+              </div>
+            ))}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-12">
-            <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-lg p-6 text-center">
-              <div className="text-3xl font-bold text-white">.00</div>
-              <div className="text-green-100 mt-2">Revenue (MTD)</div>
-            </div>
-            <div className="bg-gradient-to-br from-red-600 to-red-800 rounded-lg p-6 text-center">
-              <div className="text-3xl font-bold text-white">.00</div>
-              <div className="text-red-100 mt-2">Expenses (MTD)</div>
-            </div>
-            <div className="bg-gradient-to-br from-amber-700 to-amber-500 rounded-lg p-6 text-center">
-              <div className="text-3xl font-bold text-white">.00</div>
-              <div className="text-blue-100 mt-2">Net Profit (MTD)</div>
-            </div>
-            <div className="bg-gradient-to-br from-stone-900 to-amber-900 rounded-lg p-6 text-center">
-              <div className="text-3xl font-bold text-white">0</div>
-              <div className="text-amber-50 mt-2">Pending Invoices</div>
-            </div>
+            {metrics.map((m) => (
+              <div key={m.label} className="p-6 text-center" style={{ background: 'rgba(201,168,76,0.06)', border: `1px solid ${BORDER}`, borderRadius: 4 }}>
+                <div className="text-3xl font-bold" style={{ color: GOLD }}>{m.value}</div>
+                <div className="mt-2 text-sm" style={{ color: GOLD_DIM }}>{m.label}</div>
+              </div>
+            ))}
           </div>
 
-          <div className="mt-8 p-6 bg-yellow-900/20 border border-yellow-600/30 rounded-xl">
-            <p className="text-yellow-300 text-sm">
-              <span className="font-bold"> Coming Soon:</span> Full accounting integration with QuickBooks, Xero, and other major accounting platforms. Stay tuned!
+          <div className="mt-8 p-5" style={{ background: 'rgba(201,168,76,0.04)', border: `1px solid ${BORDER}`, borderRadius: 4 }}>
+            <p className="text-sm" style={{ color: GOLD_DIM }}>
+              <span className="font-semibold" style={{ color: GOLD }}>Coming Soon:</span> Full accounting integration with QuickBooks, Xero, and other major accounting platforms.
             </p>
           </div>
         </div>
