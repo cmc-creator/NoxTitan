@@ -88,7 +88,7 @@ export default function OnboardingPage() {
   const totalSteps = data.role === 'manager' ? 5 : 4;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-700 via-stone-900 to-pink-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#070604] via-[#070604] to-[#070604] p-8">
       <div className="max-w-3xl mx-auto">
         {/* Progress Bar */}
         <div className="mb-8">
@@ -120,7 +120,7 @@ export default function OnboardingPage() {
               >
                 <User className="w-12 h-12 mx-auto mb-3" />
                 <div className="font-bold text-lg">Employee</div>
-                <div className="text-sm text-blue-200 mt-2">Team member</div>
+                <div className="text-sm text-[#C9A84C] 200 mt-2">Team member</div>
               </button>
               
               <button
@@ -138,7 +138,7 @@ export default function OnboardingPage() {
               >
                 <Target className="w-12 h-12 mx-auto mb-3" />
                 <div className="font-bold text-lg">Admin</div>
-                <div className="text-sm text-pink-200 mt-2">System admin</div>
+                <div className="text-sm text-[#C9A84C] 200 mt-2">System admin</div>
               </button>
             </div>
           </div>

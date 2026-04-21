@@ -164,13 +164,13 @@ export default function MerchStorePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-700 via-stone-900 to-pink-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#070604] via-[#070604] to-[#070604] p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-block relative mb-6">
-            <div className="absolute inset-0 bg-pink-500 blur-3xl opacity-50 animate-pulse"></div>
-            <ShoppingBag className="w-20 h-20 text-pink-300 relative" />
+            <div className="absolute inset-0 bg-[#110F0B] 500 blur-3xl opacity-50 animate-pulse"></div>
+            <ShoppingBag className="w-20 h-20 text-[#C9A84C] 300 relative" />
           </div>
           <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-[#110F0B] from-REMOVED-300 via-stone-900 to-amber-800 mb-4">
             Merch Store
@@ -184,14 +184,14 @@ export default function MerchStorePage() {
         <div className="bg-stone-900/50 border border-stone-700 rounded p-6 mb-8">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-4">
-              <ShoppingCart className="w-6 h-6 text-pink-400" />
+              <ShoppingCart className="w-6 h-6 text-[#C9A84C] 400" />
               <span className="text-white font-bold">
                 Cart: {cart.length} items
               </span>
               {cart.length > 0 && (
                 <button
                   onClick={() => setCheckoutOpen(!checkoutOpen)}
-                  className="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-lg transition-colors"
+                  className="px-4 py-2 bg-[#110F0B] 600 hover:bg-[#110F0B] 700 text-white font-bold rounded-lg transition-colors"
                 >
                   {checkoutOpen ? 'Continue Shopping' : 'View Cart'}
                 </button>
@@ -257,7 +257,7 @@ export default function MerchStorePage() {
                         {paymentMethod === 'GUILD_XP' && cartItem.item.redeemableWithXP ? (
                           <span className="text-yellow-400 font-bold">{cartItem.item.xpCost} XP each</span>
                         ) : (
-                          <span className="text-green-400 font-bold">${cartItem.item.price.toFixed(2)} each</span>
+                          <span className="text-[#C9A84C] 400 font-bold">${cartItem.item.price.toFixed(2)} each</span>
                         )}
                         <input
                           type="number"
@@ -275,13 +275,13 @@ export default function MerchStorePage() {
                         {(cartItem.item.xpCost! * cartItem.quantity).toLocaleString()} XP
                       </div>
                     ) : (
-                      <div className="text-xl font-bold text-green-400">
+                      <div className="text-xl font-bold text-[#C9A84C] 400">
                         ${(cartItem.item.price * cartItem.quantity).toFixed(2)}
                       </div>
                     )}
                     <button
                       onClick={() => removeFromCart(cartItem.item.id)}
-                      className="text-xs text-red-400 hover:text-red-300 mt-1"
+                      className="text-xs text-[#9E8F75] 400 hover:text-[#9E8F75] 300 mt-1"
                     >
                       Remove
                     </button>
@@ -296,7 +296,7 @@ export default function MerchStorePage() {
                 {paymentMethod === 'GUILD_XP' ? (
                   <span className="text-yellow-400">{getCartXP().toLocaleString()} XP</span>
                 ) : (
-                  <span className="text-green-400">${getCartTotal().toFixed(2)}</span>
+                  <span className="text-[#C9A84C] 400">${getCartTotal().toFixed(2)}</span>
                 )}
               </div>
               {paymentMethod === 'PAYROLL_DEDUCTION' && (
@@ -342,8 +342,8 @@ export default function MerchStorePage() {
                     </div>
                   ) : (
                     <div className="flex items-center gap-2">
-                      <DollarSign className="w-5 h-5 text-green-400" />
-                      <span className="text-xl font-bold text-green-400">{item.price.toFixed(2)}</span>
+                      <DollarSign className="w-5 h-5 text-[#C9A84C] 400" />
+                      <span className="text-xl font-bold text-[#C9A84C] 400">{item.price.toFixed(2)}</span>
                     </div>
                   )}
                   {item.stockQuantity !== null && item.stockQuantity !== undefined && (

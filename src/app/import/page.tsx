@@ -170,17 +170,17 @@ export default function ImportPage() {
                   <div className="flex flex-col items-center flex-1">
                     <div className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all ${
                       isActive ? 'bg-amber-600 border-amber-600/40 text-white' :
-                      isCompleted ? 'bg-green-600 border-green-600 text-white' :
+                      isCompleted ? 'bg-[#C9A84C] border-[rgba(201,168,76,0.22)] 600 text-white' :
                       'bg-stone-900 border-stone-700 text-stone-400'
                     }`}>
                       {isCompleted ? <Check className="w-6 h-6" /> : <Icon className="w-6 h-6" />}
                     </div>
-                    <span className={`mt-2 text-sm font-semibold ${isActive ? 'text-amber-400' : isCompleted ? 'text-green-400' : 'text-stone-500'}`}>
+                    <span className={`mt-2 text-sm font-semibold ${isActive ? 'text-amber-400' : isCompleted ? 'text-[#C9A84C] 400' : 'text-stone-500'}`}>
                       {step.label}
                     </span>
                   </div>
                   {index < 4 && (
-                    <div className={`flex-1 h-0.5 ${isCompleted ? 'bg-green-600' : 'bg-stone-900'}`} />
+                    <div className={`flex-1 h-0.5 ${isCompleted ? 'bg-[#C9A84C]' : 'bg-stone-900'}`} />
                   )}
                 </div>
               );
@@ -192,9 +192,9 @@ export default function ImportPage() {
         {activeStep === 'select' && (
           <div className="space-y-6">
             {/* Quick Start Banner */}
-            <div className="p-6 rounded bg-[#110F0B] from-REMOVED-600/20 to-amber-800/20 border-2 border-green-500/30">
+            <div className="p-6 rounded bg-[#110F0B] from-REMOVED-600/20 to-amber-800/20 border-2 border-[rgba(201,168,76,0.22)] 500/30">
               <div className="flex items-start gap-4">
-                <Zap className="w-8 h-8 text-green-400 mt-1" />
+                <Zap className="w-8 h-8 text-[#C9A84C] 400 mt-1" />
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">Seamless Migration from Any System</h3>
                   <p className="text-stone-300 mb-4">
@@ -203,7 +203,7 @@ export default function ImportPage() {
                   </p>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="bg-stone-900/50 rounded-lg p-3">
-                      <div className="text-2xl font-bold text-green-400">50+</div>
+                      <div className="text-2xl font-bold text-[#C9A84C] 400">50+</div>
                       <div className="text-xs text-stone-400">Integrations</div>
                     </div>
                     <div className="bg-stone-900/50 rounded-lg p-3">
@@ -245,7 +245,7 @@ export default function ImportPage() {
                     : 'border-stone-700 bg-stone-900/30 hover:border-stone-500'
                 }`}
               >
-                <RefreshCw className="w-12 h-12 text-green-400 mb-3" />
+                <RefreshCw className="w-12 h-12 text-[#C9A84C] 400 mb-3" />
                 <h3 className="text-xl font-bold text-white mb-2">Direct Integration</h3>
                 <p className="text-sm text-stone-400">Connect directly to your existing software</p>
               </button>
@@ -319,8 +319,8 @@ export default function ImportPage() {
               <button className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-semibold transition-all">
                 Choose File
               </button>
-              <div className="mt-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg inline-block">
-                <p className="text-green-400 font-semibold">✓ Sample file uploaded: employees_export.csv (45 KB, 127 rows)</p>
+              <div className="mt-6 p-4 bg-[#C9A84C]/20 border border-[rgba(201,168,76,0.22)] 500/50 rounded-lg inline-block">
+                <p className="text-[#C9A84C] 400 font-semibold">✓ Sample file uploaded: employees_export.csv (45 KB, 127 rows)</p>
               </div>
             </div>
 
@@ -331,7 +331,7 @@ export default function ImportPage() {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <button className="p-4 bg-stone-900/30 rounded-lg hover:bg-stone-900/50 transition-all text-left">
-                  <FileSpreadsheet className="w-8 h-8 text-green-400 mb-2" />
+                  <FileSpreadsheet className="w-8 h-8 text-[#C9A84C] 400 mb-2" />
                   <div className="font-semibold text-white">Employee Template</div>
                   <div className="text-xs text-stone-400">CSV format with sample data</div>
                 </button>
@@ -376,7 +376,7 @@ export default function ImportPage() {
               <div className="space-y-3">
                 {sampleMapping.map((map, index) => (
                   <div key={index} className={`p-4 rounded-lg flex items-center justify-between ${
-                    map.status === 'mapped' ? 'bg-green-500/10 border border-green-500/30' : 'bg-red-500/10 border border-red-500/30'
+                    map.status === 'mapped' ? 'bg-[#C9A84C]/10 border border-[rgba(201,168,76,0.22)] 500/30' : 'bg-[#110F0B] 500/10 border border-[rgba(201,168,76,0.22)] 500/30'
                   }`}>
                     <div className="flex items-center gap-4 flex-1">
                       <div className="flex-1">
@@ -399,9 +399,9 @@ export default function ImportPage() {
                       </div>
                     </div>
                     {map.status === 'mapped' ? (
-                      <CheckCircle className="w-6 h-6 text-green-400" />
+                      <CheckCircle className="w-6 h-6 text-[#C9A84C] 400" />
                     ) : (
-                      <AlertCircle className="w-6 h-6 text-red-400" />
+                      <AlertCircle className="w-6 h-6 text-[#9E8F75] 400" />
                     )}
                   </div>
                 ))}
@@ -422,16 +422,16 @@ export default function ImportPage() {
         {activeStep === 'preview' && (
           <div className="space-y-6">
             <div className="grid grid-cols-3 gap-4">
-              <div className="p-4 rounded bg-green-500/20 border border-green-500/50">
-                <div className="text-3xl font-bold text-green-400">122</div>
+              <div className="p-4 rounded bg-[#C9A84C]/20 border border-[rgba(201,168,76,0.22)] 500/50">
+                <div className="text-3xl font-bold text-[#C9A84C] 400">122</div>
                 <div className="text-sm text-stone-300">Valid Records</div>
               </div>
               <div className="p-4 rounded bg-yellow-500/20 border border-yellow-500/50">
                 <div className="text-3xl font-bold text-yellow-400">3</div>
                 <div className="text-sm text-stone-300">Warnings</div>
               </div>
-              <div className="p-4 rounded bg-red-500/20 border border-red-500/50">
-                <div className="text-3xl font-bold text-red-400">2</div>
+              <div className="p-4 rounded bg-[#110F0B] 500/20 border border-[rgba(201,168,76,0.22)] 500/50">
+                <div className="text-3xl font-bold text-[#9E8F75] 400">2</div>
                 <div className="text-sm text-stone-300">Errors</div>
               </div>
             </div>
@@ -455,13 +455,13 @@ export default function ImportPage() {
                     {previewData.map((row, index) => (
                       <tr key={index} className="border-b border-stone-700/50">
                         <td className="py-3 px-4">
-                          {row.status === 'valid' && <CheckCircle className="w-5 h-5 text-green-400" />}
+                          {row.status === 'valid' && <CheckCircle className="w-5 h-5 text-[#C9A84C] 400" />}
                           {row.status === 'warning' && <AlertCircle className="w-5 h-5 text-yellow-400" />}
-                          {row.status === 'error' && <AlertCircle className="w-5 h-5 text-red-400" />}
+                          {row.status === 'error' && <AlertCircle className="w-5 h-5 text-[#9E8F75] 400" />}
                         </td>
                         <td className="py-3 px-4 text-white">{row.firstName}</td>
                         <td className="py-3 px-4 text-white">{row.lastName || <span className="text-yellow-400">Missing</span>}</td>
-                        <td className="py-3 px-4 text-white">{row.status === 'error' ? <span className="text-red-400">{row.email}</span> : row.email}</td>
+                        <td className="py-3 px-4 text-white">{row.status === 'error' ? <span className="text-[#9E8F75] 400">{row.email}</span> : row.email}</td>
                         <td className="py-3 px-4 text-white">{row.department}</td>
                         <td className="py-3 px-4 text-white">{row.role}</td>
                         <td className="py-3 px-4 text-white">{row.payRate}</td>
@@ -490,15 +490,15 @@ export default function ImportPage() {
         {/* Step 5: Complete */}
         {activeStep === 'complete' && (
           <div className="text-center py-12">
-            <div className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="w-24 h-24 bg-[#C9A84C] rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="w-16 h-16 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-white mb-4">Import Complete!</h2>
             <p className="text-xl text-stone-300 mb-8">Successfully imported 122 employee records</p>
             
             <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-8">
-              <div className="p-6 rounded bg-green-500/20 border border-green-500/50">
-                <div className="text-4xl font-bold text-green-400">122</div>
+              <div className="p-6 rounded bg-[#C9A84C]/20 border border-[rgba(201,168,76,0.22)] 500/50">
+                <div className="text-4xl font-bold text-[#C9A84C] 400">122</div>
                 <div className="text-sm text-stone-300">Records Imported</div>
               </div>
               <div className="p-6 rounded bg-amber-600/20 border border-amber-500/40/50">

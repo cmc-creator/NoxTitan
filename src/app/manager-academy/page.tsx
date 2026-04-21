@@ -190,7 +190,7 @@ export default function ManagerAcademyPage() {
                   onClick={() => handleModuleClick(module.id)}
                   className={`w-full bg-stone-900 border-2 rounded p-6 transition-all ${
                     isCompleted
-                      ? 'border-green-500'
+                      ? 'border-[rgba(201,168,76,0.22)] 500'
                       : isActive
                       ? 'border-amber-500/40'
                       : 'border-stone-700 hover:border-amber-400/40'
@@ -201,9 +201,9 @@ export default function ManagerAcademyPage() {
                       {module.icon}
                     </div>
                     {isCompleted ? (
-                      <CheckCircle className="w-8 h-8 text-green-500" />
+                      <CheckCircle className="w-8 h-8 text-[#C9A84C] 500" />
                     ) : module.required ? (
-                      <span className="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded">REQUIRED</span>
+                      <span className="px-2 py-1 bg-[#110F0B] 500 text-white text-xs font-bold rounded">REQUIRED</span>
                     ) : (
                       <span className="px-2 py-1 bg-amber-600 text-white text-xs font-bold rounded">OPTIONAL</span>
                     )}
@@ -242,7 +242,7 @@ export default function ManagerAcademyPage() {
         {/* Leadership Tips */}
         <div className="mt-12 bg-stone-900 border-2 border-stone-700 rounded p-8">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-            <Heart className="w-8 h-8 text-pink-500" />
+            <Heart className="w-8 h-8 text-[#C9A84C] 500" />
             Servant Leadership Core Principles
           </h2>
           <div className="grid grid-cols-2 gap-6">

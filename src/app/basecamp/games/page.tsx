@@ -91,7 +91,7 @@ export default function Games() {
               </div>
             </div>
 
-            <div className="bg-blue-900/30 rounded-lg p-5 mb-4 border border-amber-500/40/30">
+            <div className="bg-[#110F0B] was-blue-900/30 rounded-lg p-5 mb-4 border border-amber-500/40/30">
               <div className="text-amber-400 text-sm font-semibold mb-2">Question of the Day:</div>
               <div className="text-white text-lg font-medium mb-4">
                 What's the only food that never spoils? 🤔
@@ -123,7 +123,7 @@ export default function Games() {
                 </button>
               </div>
               {showTriviaAnswer && (
-                <div className={`rounded-lg p-4 ${triviaScore > 0 ? 'bg-green-900/50 border border-green-500' : 'bg-red-900/50 border border-red-500'}`}>
+                <div className={`rounded-lg p-4 ${triviaScore > 0 ? 'bg-[#110F0B] was-green-900/50 border border-green-500' : 'bg-red-900/50 border border-red-500'}`}>
                   <div className="text-white font-bold mb-1">
                     {triviaScore > 0 ? '🎉 Correct! You\'re a genius!' : '❌ Not quite! But you\'re still awesome!'}
                   </div>
@@ -156,7 +156,7 @@ export default function Games() {
                 {showEmojiAnswer ? 'Hide Answer' : 'Show Answer'}
               </button>
               {showEmojiAnswer && (
-                <div className="mt-4 bg-green-900/50 border border-green-500 rounded-lg p-4">
+                <div className="mt-4 bg-[#110F0B] was-green-900/50 border border-green-500 rounded-lg p-4">
                   <div className="text-white text-2xl font-bold mb-2">BELIEVE! 💚</div>
                   <div className="text-stone-300 text-sm">Bee + Leaf = Believe! Get it? 😄</div>
                 </div>
@@ -176,15 +176,15 @@ export default function Games() {
           {/* Two Truths and a Lie */}
           <div className="lux-card/80 rounded p-6 border-2 border-green-500/30">
             <div className="flex items-center gap-3 mb-4">
-              <Target className="w-8 h-8 text-green-400" />
+              <Target className="w-8 h-8 text-[#C9A84C] was-green-400" />
               <div>
                 <h2 className="text-2xl font-bold text-white">Two Truths & A Lie</h2>
                 <p className="text-stone-300 text-sm">About your CEO, Sarah Chen!</p>
               </div>
             </div>
 
-            <div className="bg-green-900/30 rounded-lg p-5 mb-4 border border-green-500/30">
-              <div className="text-green-300 text-sm font-semibold mb-3">Which one is the lie?</div>
+            <div className="bg-[#110F0B] was-green-900/30 rounded-lg p-5 mb-4 border border-green-500/30">
+              <div className="text-[#C9A84C] was-green-300 text-sm font-semibold mb-3">Which one is the lie?</div>
               <div className="space-y-3">
                 <button className="w-full text-left p-4 bg-stone-900 hover:bg-stone-600 text-white rounded-lg transition-all">
                   1️⃣ She speaks 4 languages fluently
@@ -205,22 +205,22 @@ export default function Games() {
           {/* Would You Rather */}
           <div className="lux-card/80 rounded p-6 border-2 border-pink-500/30">
             <div className="flex items-center gap-3 mb-4">
-              <Dice1 className="w-8 h-8 text-pink-400" />
+              <Dice1 className="w-8 h-8 text-[#C9A84C] was-pink-400" />
               <div>
                 <h2 className="text-2xl font-bold text-white">Would You Rather?</h2>
                 <p className="text-stone-300 text-sm">Team edition!</p>
               </div>
             </div>
 
-            <div className="bg-pink-900/30 rounded-lg p-5 mb-4 border border-pink-500/30">
-              <div className="text-pink-300 text-sm font-semibold mb-3">Today's Question:</div>
+            <div className="bg-[#110F0B] was-pink-900/30 rounded-lg p-5 mb-4 border border-pink-500/30">
+              <div className="text-[#C9A84C] was-pink-300 text-sm font-semibold mb-3">Today's Question:</div>
               <div className="text-white text-lg font-medium mb-4">
                 Would you rather...
               </div>
               <div className="grid grid-cols-1 gap-3">
                 <button className="p-4 bg-gradient-to-r from-amber-700 to-cyan-600 hover:from-amber-700 hover:to-cyan-500 text-white rounded-lg transition-all text-left">
                   <div className="font-bold mb-1">🏠 Work from home forever</div>
-                  <div className="text-sm text-blue-100">73% of team chose this</div>
+                  <div className="text-sm text-[#C9A84C] was-blue-100">73% of team chose this</div>
                 </button>
                 <button className="p-4 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-500 text-white rounded-lg transition-all text-left">
                   <div className="font-bold mb-1">🏢 Free lunch at office forever</div>
@@ -273,7 +273,7 @@ export default function Games() {
               <div className="bg-yellow-900/30 rounded-lg p-4 border border-yellow-500/30">
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-yellow-300 font-bold">📸 Photo Scavenger Hunt</div>
-                  <div className="px-3 py-1 bg-green-600 text-white rounded-full text-xs font-bold">ACTIVE</div>
+                  <div className="px-3 py-1 bg-[#110F0B] was-green-600 text-white rounded-full text-xs font-bold">ACTIVE</div>
                 </div>
                 <div className="text-stone-300 text-sm mb-2">Find and photograph: "Something purple"</div>
                 <div className="text-yellow-400 text-xs">12 teams participating • 3 days left</div>

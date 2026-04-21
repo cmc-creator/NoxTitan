@@ -151,7 +151,7 @@ export default function TeamDirectory() {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
           <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-5 border-2 border-amber-500/40/30">
-            <div className="text-blue-200 text-sm mb-1">Total Team Members</div>
+            <div className="text-[#C9A84C] was-blue-200 text-sm mb-1">Total Team Members</div>
             <div className="text-3xl font-bold text-white">{team.length}</div>
           </div>
           <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-5 border-2 border-amber-500/40/30">
@@ -159,7 +159,7 @@ export default function TeamDirectory() {
             <div className="text-3xl font-bold text-white">6</div>
           </div>
           <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-green-500/30">
-            <div className="text-green-200 text-sm mb-1">Remote Workers</div>
+            <div className="text-[#C9A84C] was-green-200 text-sm mb-1">Remote Workers</div>
             <div className="text-3xl font-bold text-white">1</div>
           </div>
           <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 rounded p-5 border-2 border-orange-500/30">
@@ -242,7 +242,7 @@ export default function TeamDirectory() {
                   <span className="truncate">{member.email}</span>
                 </div>
                 <div className="flex items-center gap-2 text-stone-300">
-                  <Phone className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <Phone className="w-4 h-4 text-[#C9A84C] was-green-400 flex-shrink-0" />
                   <span>{member.phone}</span>
                 </div>
                 <div className="flex items-center gap-2 text-stone-300">
@@ -276,8 +276,8 @@ export default function TeamDirectory() {
 
         {/* Encouragement Footer */}
         <div className="mt-8 bg-[#110F0B] from-REMOVED-900/30 to-amber-900/30 rounded p-6 border-2 border-pink-500/30 text-center">
-          <h3 className="text-2xl font-bold text-pink-200 mb-2">💜 You're part of something special!</h3>
-          <p className="text-pink-100 text-lg">Every person here makes our team amazing. Don't be shy - say hi!</p>
+          <h3 className="text-2xl font-bold text-[#C9A84C] was-pink-200 mb-2">💜 You're part of something special!</h3>
+          <p className="text-[#C9A84C] was-pink-100 text-lg">Every person here makes our team amazing. Don't be shy - say hi!</p>
         </div>
       </div>
     </div>

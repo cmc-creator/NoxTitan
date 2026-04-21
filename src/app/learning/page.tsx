@@ -34,7 +34,7 @@ export default function LearningHubPage() {
           </div>
           <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-green-500">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-[#C9A84C]">
                 <CheckCircle className="h-6 w-6 text-white" />
               </div>
               <div>
@@ -399,7 +399,7 @@ function CertificationsSection() {
                   </div>
                 </div>
                 {cert.verified && (
-                  <div className="bg-green-500 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                  <div className="bg-[#C9A84C] text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
                     <CheckCircle className="h-3 w-3" />
                     Verified
                   </div>

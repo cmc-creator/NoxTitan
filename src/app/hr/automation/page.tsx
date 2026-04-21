@@ -237,7 +237,7 @@ export default function AutomationPage() {
                         <h3 className="text-lg font-bold text-white">{rule.name}</h3>
                         <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
                           rule.isActive 
-                            ? 'bg-green-500/20 text-green-400' 
+                            ? 'bg-[#110F0B] 500/20 text-[#9E8F75] 400' 
                             : 'bg-stone-900 text-stone-400'
                         }`}>
                           {rule.isActive ? 'Active' : 'Inactive'}

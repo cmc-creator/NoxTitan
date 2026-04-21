@@ -33,7 +33,7 @@ export default function WellnessHub() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/hr" className="inline-flex items-center gap-2 text-pink-300 hover:text-pink-100 mb-4 transition-colors">
+          <Link href="/hr" className="inline-flex items-center gap-2 text-[#C9A84C] 300 hover:text-[#C9A84C] 100 mb-4 transition-colors">
             ← Back to HR Center
           </Link>
           <div className="flex items-center justify-between">
@@ -46,16 +46,16 @@ export default function WellnessHub() {
                   }}>
                 Employee Wellness Hub
               </h1>
-              <p className="text-pink-200">Holistic health, mental wellness & work-life balance</p>
+              <p className="text-[#C9A84C] 200">Holistic health, mental wellness & work-life balance</p>
             </div>
             <div className="text-right">
-              <div className="text-sm text-pink-300 mb-1">Your Wellness Score</div>
+              <div className="text-sm text-[#C9A84C] 300 mb-1">Your Wellness Score</div>
               <div className="flex items-center gap-3">
-                <div className="w-20 h-20 rounded-full border-4 border-pink-500 flex items-center justify-center bg-pink-900/50">
+                <div className="w-20 h-20 rounded-full border-4 border-pink-500 flex items-center justify-center bg-[#110F0B] 900/50">
                   <span className="text-3xl font-black text-white">{wellnessScore}</span>
                 </div>
                 <div>
-                  <div className="text-pink-200 text-sm">Top 15% of employees</div>
+                  <div className="text-[#C9A84C] 200 text-sm">Top 15% of employees</div>
                   <div className="text-white font-semibold">+8 points this month</div>
                 </div>
               </div>
@@ -72,10 +72,10 @@ export default function WellnessHub() {
             <div className="text-amber-400 text-xs mt-1">+205 this week</div>
           </div>
           <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-4 border-2 border-pink-500/30">
-            <Heart className="w-8 h-8 text-pink-400 mb-2" />
+            <Heart className="w-8 h-8 text-[#C9A84C] 400 mb-2" />
             <div className="text-stone-300 text-sm mb-1">Health Score</div>
             <div className="text-3xl font-bold text-white">82</div>
-            <div className="text-pink-400 text-xs mt-1">Excellent</div>
+            <div className="text-[#C9A84C] 400 text-xs mt-1">Excellent</div>
           </div>
           <div className="bg-gradient-to-br from-stone-900/50 to-amber-800/50 rounded p-4 border-2 border-amber-500/40/30">
             <Brain className="w-8 h-8 text-amber-400 mb-2" />
@@ -109,7 +109,7 @@ export default function WellnessHub() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
-                activeTab === tab.id ? 'bg-pink-600 text-white' : 'text-stone-300 hover:bg-stone-900'
+                activeTab === tab.id ? 'bg-[#110F0B] 600 text-white' : 'text-stone-300 hover:bg-stone-900'
               }`}
             >
               {tab.label}
@@ -193,7 +193,7 @@ export default function WellnessHub() {
                       <span className="text-white font-bold">4 / 5</span>
                     </div>
                     <div className="w-full bg-stone-900 rounded-full h-3">
-                      <div className="bg-pink-500 h-3 rounded-full" style={{width: '80%'}}></div>
+                      <div className="bg-[#110F0B] 500 h-3 rounded-full" style={{width: '80%'}}></div>
                     </div>
                   </div>
                 </div>
@@ -275,12 +275,12 @@ export default function WellnessHub() {
             <div className="grid grid-cols-2 gap-6">
               {eapResources.map((resource, idx) => (
                 <div key={idx} className="bg-stone-900/50 rounded p-6 border-2 border-pink-500/30 hover:border-pink-400 transition-all group">
-                  <resource.icon className="w-12 h-12 text-pink-400 mb-4 group-hover:scale-110 transition-transform" />
+                  <resource.icon className="w-12 h-12 text-[#C9A84C] 400 mb-4 group-hover:scale-110 transition-transform" />
                   <h3 className="text-xl font-bold text-white mb-2">{resource.title}</h3>
                   <p className="text-stone-300 mb-4">{resource.description}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-pink-300">{resource.sessions}</span>
-                    <button className="px-4 py-2 bg-pink-600 hover:bg-pink-500 text-white rounded-lg font-semibold text-sm">
+                    <span className="text-sm text-[#C9A84C] 300">{resource.sessions}</span>
+                    <button className="px-4 py-2 bg-[#110F0B] 600 hover:bg-[#110F0B] 500 text-white rounded-lg font-semibold text-sm">
                       Learn More
                     </button>
                   </div>
@@ -317,7 +317,7 @@ export default function WellnessHub() {
               ))}
             </div>
 
-            <div className="bg-blue-900/30 rounded-lg p-6 border border-amber-500/40/30">
+            <div className="bg-[#110F0B] 900/30 rounded-lg p-6 border border-amber-500/40/30">
               <h3 className="text-xl font-bold text-white mb-4">Recent Visits</h3>
               <div className="space-y-3">
                 {[

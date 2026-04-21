@@ -47,11 +47,11 @@ export default function WellnessHub() {
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h2 className="text-3xl font-bold text-white mb-2">Your Wellness Score</h2>
-                <p className="text-pink-200">You're doing great! Keep it up! 🌟</p>
+                <p className="text-[#C9A84C] was-pink-200">You're doing great! Keep it up! 🌟</p>
               </div>
               <div className="text-center">
                 <div className="text-6xl font-black text-white mb-2">{wellnessScore}</div>
-                <div className="text-pink-200 font-semibold">out of 100</div>
+                <div className="text-[#C9A84C] was-pink-200 font-semibold">out of 100</div>
               </div>
             </div>
             <div className="w-full bg-stone-900 rounded-full h-4">
@@ -68,7 +68,7 @@ export default function WellnessHub() {
           <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 rounded p-5 border-2 border-orange-500/30">
             <div className="flex items-center justify-between mb-2">
               <Activity className="w-8 h-8 text-orange-400" />
-              <span className="text-green-400 text-sm font-bold">↑ 12%</span>
+              <span className="text-[#C9A84C] was-green-400 text-sm font-bold">↑ 12%</span>
             </div>
             <div className="text-2xl font-bold text-white mb-1">8,547</div>
             <div className="text-orange-200 text-sm">Steps Today</div>
@@ -76,26 +76,26 @@ export default function WellnessHub() {
           <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
               <Brain className="w-8 h-8 text-amber-400" />
-              <span className="text-green-400 text-sm font-bold">Great!</span>
+              <span className="text-[#C9A84C] was-green-400 text-sm font-bold">Great!</span>
             </div>
             <div className="text-2xl font-bold text-white mb-1">7.5 hrs</div>
-            <div className="text-blue-200 text-sm">Sleep Last Night</div>
+            <div className="text-[#C9A84C] was-blue-200 text-sm">Sleep Last Night</div>
           </div>
           <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
               <Smile className="w-8 h-8 text-amber-400" />
-              <span className="text-green-400 text-sm font-bold">Positive</span>
+              <span className="text-[#C9A84C] was-green-400 text-sm font-bold">Positive</span>
             </div>
             <div className="text-2xl font-bold text-white mb-1">85%</div>
             <div className="text-amber-100/70 text-sm">Mood Score</div>
           </div>
           <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-green-500/30">
             <div className="flex items-center justify-between mb-2">
-              <Coffee className="w-8 h-8 text-green-400" />
+              <Coffee className="w-8 h-8 text-[#C9A84C] was-green-400" />
               <span className="text-yellow-400 text-sm font-bold">Perfect</span>
             </div>
             <div className="text-2xl font-bold text-white mb-1">3</div>
-            <div className="text-green-200 text-sm">Break Time!</div>
+            <div className="text-[#C9A84C] was-green-200 text-sm">Break Time!</div>
           </div>
         </div>
 
@@ -124,9 +124,9 @@ export default function WellnessHub() {
                   <div className="text-amber-400 text-sm font-bold">Available 24/7</div>
                 </div>
                 <div className="bg-[#110F0B] from-REMOVED-900/40 to-emerald-900/40 rounded-lg p-4 border border-green-500/30">
-                  <div className="text-green-300 font-semibold mb-2">Legal Support</div>
+                  <div className="text-[#C9A84C] was-green-300 font-semibold mb-2">Legal Support</div>
                   <p className="text-stone-300 text-sm mb-3">Free consultations on legal matters</p>
-                  <div className="text-green-400 text-sm font-bold">30 mins free</div>
+                  <div className="text-[#C9A84C] was-green-400 text-sm font-bold">30 mins free</div>
                 </div>
                 <div className="bg-gradient-to-r from-orange-900/40 to-red-900/40 rounded-lg p-4 border border-orange-500/30">
                   <div className="text-orange-300 font-semibold mb-2">Work-Life Balance</div>
@@ -164,11 +164,11 @@ export default function WellnessHub() {
                   <div className="flex items-start justify-between mb-3">
                     <div>
                       <div className="text-lg font-bold text-white mb-1">🚶 10,000 Steps Challenge</div>
-                      <div className="text-green-300 text-sm">Hit 10k steps daily for a week</div>
+                      <div className="text-[#C9A84C] was-green-300 text-sm">Hit 10k steps daily for a week</div>
                     </div>
                     <div className="text-right">
                       <div className="text-2xl font-bold text-white">5/7</div>
-                      <div className="text-green-400 text-xs font-semibold">days done!</div>
+                      <div className="text-[#C9A84C] was-green-400 text-xs font-semibold">days done!</div>
                     </div>
                   </div>
                   <div className="w-full bg-stone-900 rounded-full h-2 mb-2">
@@ -208,7 +208,7 @@ export default function WellnessHub() {
                   <div className="w-full bg-stone-900 rounded-full h-2 mb-2">
                     <div className="bg-gradient-to-r from-stone-900 to-pink-500 h-2 rounded-full" style={{ width: '60%' }} />
                   </div>
-                  <div className="text-pink-400 text-sm">🎁 Reward: Meditation App Premium</div>
+                  <div className="text-[#C9A84C] was-pink-400 text-sm">🎁 Reward: Meditation App Premium</div>
                 </div>
               </div>
             </div>
@@ -290,8 +290,8 @@ export default function WellnessHub() {
 
         {/* Encouragement Banner */}
         <div className="mt-8 bg-[#110F0B] from-REMOVED-900/30 to-red-900/30 rounded p-6 border-2 border-pink-500/30 text-center">
-          <h3 className="text-2xl font-bold text-pink-200 mb-2">💖 You Matter!</h3>
-          <p className="text-pink-100 text-lg">Taking care of yourself isn't selfish - it's essential. We're proud of you for being here!</p>
+          <h3 className="text-2xl font-bold text-[#C9A84C] was-pink-200 mb-2">💖 You Matter!</h3>
+          <p className="text-[#C9A84C] was-pink-100 text-lg">Taking care of yourself isn't selfish - it's essential. We're proud of you for being here!</p>
         </div>
       </div>
     </div>

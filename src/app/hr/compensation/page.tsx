@@ -156,7 +156,7 @@ export default function CompensationManagement() {
                       <td className="py-4 px-4 text-center">
                         <span className={`font-bold ${
                           emp.compaRatio >= 0.98 ? 'text-emerald-400' :
-                          emp.compaRatio >= 0.95 ? 'text-yellow-400' : 'text-red-400'
+                          emp.compaRatio >= 0.95 ? 'text-yellow-400' : 'text-[#9E8F75] 400'
                         }`}>
                           {emp.compaRatio.toFixed(2)}
                         </span>
@@ -240,7 +240,7 @@ export default function CompensationManagement() {
               ))}
             </div>
 
-            <div className="mt-8 bg-blue-900/30 rounded-lg p-6 border-2 border-amber-500/40/30">
+            <div className="mt-8 bg-[#110F0B] 900/30 rounded-lg p-6 border-2 border-amber-500/40/30">
               <h3 className="text-xl font-bold text-white mb-4">Bonus Pool Summary</h3>
               <div className="grid grid-cols-4 gap-6">
                 <div>
@@ -286,7 +286,7 @@ export default function CompensationManagement() {
                   <div className="relative h-16 bg-[#110F0B] from-REMOVED-500/20 via-yellow-500/20 to-emerald-500/20 rounded-lg mb-2">
                     <div className="absolute inset-0 flex items-center justify-between px-4">
                       <div className="text-center">
-                        <div className="w-1 h-8 bg-red-500"></div>
+                        <div className="w-1 h-8 bg-[#110F0B] 500"></div>
                         <div className="text-xs text-stone-300 mt-1">25th</div>
                         <div className="text-xs text-white font-bold">${(role.market25/1000).toFixed(0)}K</div>
                       </div>

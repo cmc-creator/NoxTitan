@@ -399,7 +399,7 @@ export default function EmployeesPage() {
                 </div>
               )}
               {!employee.isActive && employee.terminationDate && (
-                <div className="text-sm text-red-600 pt-2 border-t border-stone-800">
+                <div className="text-sm text-[#9E8F75] 600 pt-2 border-t border-stone-800">
                   <span className="font-semibold">Terminated:</span> {new Date(employee.terminationDate).toLocaleDateString()}
                   {employee.terminationReason && (
                     <p className="text-xs mt-1 text-stone-500">Reason: {employee.terminationReason}</p>
@@ -510,7 +510,7 @@ export default function EmployeesPage() {
                         key={idx}
                         type="button"
                         onClick={() => setSelectedEmployee({ ...selectedEmployee!, avatar: avatarUrl })}
-                        className={`w-12 h-12 rounded-full border-2 ${selectedEmployee?.avatar === avatarUrl ? 'border-amber-500/40 ring-2 ring-blue-300' : 'border-stone-700'} hover:border-blue-400 transition-all`}
+                        className={`w-12 h-12 rounded-full border-2 ${selectedEmployee?.avatar === avatarUrl ? 'border-amber-500/40 ring-2 ring-blue-300' : 'border-stone-700'} hover:border-[rgba(201,168,76,0.22)] 400 transition-all`}
                       >
                         <img src={avatarUrl} alt={`Avatar ${idx + 1}`} className="w-full h-full rounded-full" />
                       </button>
@@ -690,8 +690,8 @@ export default function EmployeesPage() {
           <div className="bg-stone-950 rounded shadow-2xl max-w-md w-full">
             <div className="p-6">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
-                  <AlertCircle className="w-6 h-6 text-red-600" />
+                <div className="w-12 h-12 rounded-full bg-[#110F0B] 100 flex items-center justify-center">
+                  <AlertCircle className="w-6 h-6 text-[#9E8F75] 600" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-stone-100">Deactivate Employee</h3>
@@ -723,7 +723,7 @@ export default function EmployeesPage() {
                 <select
                   value={deactivationReason}
                   onChange={(e) => setDeactivationReason(e.target.value)}
-                  className="w-full px-4 py-2.5 border border-stone-700 rounded-lg focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 mb-3"
+                  className="w-full px-4 py-2.5 border border-stone-700 rounded-lg focus:outline-none focus:border-[rgba(201,168,76,0.22)] 500 focus:ring-2 focus:ring-red-500/20 mb-3"
                   required
                 >
                   <option value="">Select a reason...</option>

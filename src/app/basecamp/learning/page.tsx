@@ -131,7 +131,7 @@ export default function LearningHub() {
           <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-blue-200 text-sm mb-1">Courses Enrolled</div>
+                <div className="text-[#C9A84C] was-blue-200 text-sm mb-1">Courses Enrolled</div>
                 <div className="text-3xl font-bold text-white">3</div>
               </div>
               <BookOpen className="w-12 h-12 text-amber-400 opacity-50" />
@@ -140,10 +140,10 @@ export default function LearningHub() {
           <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-green-500/30">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-green-200 text-sm mb-1">Completed</div>
+                <div className="text-[#C9A84C] was-green-200 text-sm mb-1">Completed</div>
                 <div className="text-3xl font-bold text-white">1</div>
               </div>
-              <CheckCircle className="w-12 h-12 text-green-400 opacity-50" />
+              <CheckCircle className="w-12 h-12 text-[#C9A84C] was-green-400 opacity-50" />
             </div>
           </div>
           <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-5 border-2 border-amber-500/40/30">
@@ -313,7 +313,7 @@ export default function LearningHub() {
                     <span className="px-3 py-1 bg-emerald-900/50 border border-emerald-500/30 text-emerald-300 rounded-full text-xs font-semibold">
                       {course.category}
                     </span>
-                    <span className="px-3 py-1 bg-blue-900/50 border border-amber-500/40/30 text-amber-400 rounded-full text-xs font-semibold">
+                    <span className="px-3 py-1 bg-[#110F0B] was-blue-900/50 border border-amber-500/40/30 text-amber-400 rounded-full text-xs font-semibold">
                       {course.level}
                     </span>
                   </div>

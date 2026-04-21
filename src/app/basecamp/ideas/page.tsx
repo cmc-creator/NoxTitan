@@ -174,10 +174,10 @@ export default function IdeaBoard() {
           <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-green-500/30">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-green-200 text-sm mb-1">Implemented</div>
+                <div className="text-[#C9A84C] was-green-200 text-sm mb-1">Implemented</div>
                 <div className="text-3xl font-bold text-white">23</div>
               </div>
-              <Rocket className="w-12 h-12 text-green-400 opacity-50" />
+              <Rocket className="w-12 h-12 text-[#C9A84C] was-green-400 opacity-50" />
             </div>
           </div>
           <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-5 border-2 border-amber-500/40/30">

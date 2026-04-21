@@ -152,7 +152,7 @@ export default function HRPlanner() {
               <div className="relative">
                 <button className="px-4 py-2 bg-stone-900/50 border-2 border-violet-500/30 hover:border-violet-400 text-white rounded-lg font-semibold flex items-center gap-2 transition-all">
                   <Bell className="w-5 h-5" />
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-xs font-bold animate-pulse">
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#110F0B] 500 rounded-full flex items-center justify-center text-xs font-bold animate-pulse">
                     3
                   </span>
                 </button>
@@ -191,11 +191,11 @@ export default function HRPlanner() {
             <div className="text-3xl font-bold text-white">{managerReminders.length}</div>
             <div className="text-orange-400 text-xs mt-1">1 overdue</div>
           </div>
-          <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-4 border-2 border-red-500/30">
-            <AlertTriangle className="w-8 h-8 text-red-400 mb-2 animate-pulse" />
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-4 border-2 border-[rgba(201,168,76,0.22)] 500/30">
+            <AlertTriangle className="w-8 h-8 text-[#9E8F75] 400 mb-2 animate-pulse" />
             <div className="text-stone-300 text-sm mb-1">High Priority</div>
             <div className="text-3xl font-bold text-white">4</div>
-            <div className="text-red-400 text-xs mt-1">Needs attention</div>
+            <div className="text-[#9E8F75] 400 text-xs mt-1">Needs attention</div>
           </div>
           <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-4 border-2 border-amber-500/40/30">
             <Calendar className="w-8 h-8 text-amber-400 mb-2" />
@@ -394,7 +394,7 @@ export default function HRPlanner() {
                         isCompleted
                           ? 'bg-emerald-900/20 border-emerald-500/30'
                           : task.priority === 'high'
-                          ? 'bg-[#110F0B] from-REMOVED-900/30 to-orange-900/30 border-red-500/30'
+                          ? 'bg-[#110F0B] from-REMOVED-900/30 to-orange-900/30 border-[rgba(201,168,76,0.22)] 500/30'
                           : task.priority === 'medium'
                           ? 'bg-gradient-to-r from-orange-900/30 to-yellow-900/30 border-orange-500/30'
                           : 'bg-stone-950/50 border-stone-700'
@@ -427,7 +427,7 @@ export default function HRPlanner() {
                           
                           <div className="flex items-center gap-2 flex-wrap mb-3">
                             <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                              task.priority === 'high' ? 'bg-red-600 text-white' :
+                              task.priority === 'high' ? 'bg-[#110F0B] 600 text-white' :
                               task.priority === 'medium' ? 'bg-orange-600 text-white' :
                               'bg-amber-600 text-white'
                             }`}>
@@ -507,7 +507,7 @@ export default function HRPlanner() {
                                   <Archive className="w-4 h-4" />
                                   Archive
                                 </button>
-                                <button className="w-full px-4 py-2 text-left text-red-400 hover:bg-stone-900 flex items-center gap-2">
+                                <button className="w-full px-4 py-2 text-left text-[#9E8F75] 400 hover:bg-stone-900 flex items-center gap-2">
                                   <Trash2 className="w-4 h-4" />
                                   Delete
                                 </button>
@@ -524,20 +524,20 @@ export default function HRPlanner() {
 
             {/* Quick Actions */}
             <div className="grid grid-cols-3 gap-4">
-              <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-5 border-2 border-amber-500/40/30 hover:border-blue-400 cursor-pointer transition-all group">
+              <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-5 border-2 border-amber-500/40/30 hover:border-[rgba(201,168,76,0.22)] 400 cursor-pointer transition-all group">
                 <FileText className="w-10 h-10 text-amber-400 mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-bold text-white mb-2">Review Applications</h3>
-                <p className="text-sm text-blue-200">12 new applications awaiting review</p>
+                <p className="text-sm text-[#C9A84C] 200">12 new applications awaiting review</p>
               </div>
               <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded p-5 border-2 border-orange-500/30 hover:border-orange-400 cursor-pointer transition-all group">
                 <Award className="w-10 h-10 text-orange-400 mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-bold text-white mb-2">Performance Reviews</h3>
                 <p className="text-sm text-orange-200">23 reviews pending completion</p>
               </div>
-              <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-5 border-2 border-red-500/30 hover:border-red-400 cursor-pointer transition-all group">
-                <Shield className="w-10 h-10 text-red-400 mb-3 group-hover:scale-110 transition-transform" />
+              <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-5 border-2 border-[rgba(201,168,76,0.22)] 500/30 hover:border-[rgba(201,168,76,0.22)] 400 cursor-pointer transition-all group">
+                <Shield className="w-10 h-10 text-[#9E8F75] 400 mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-bold text-white mb-2">Compliance Check</h3>
-                <p className="text-sm text-red-200">8 certifications expiring soon</p>
+                <p className="text-sm text-[#9E8F75] 200">8 certifications expiring soon</p>
               </div>
             </div>
           </div>
@@ -559,7 +559,7 @@ export default function HRPlanner() {
                   key={reminder.id}
                   className={`rounded-lg p-5 border-2 ${
                     reminder.overdue
-                      ? 'bg-[#110F0B] from-REMOVED-900/40 to-orange-900/40 border-red-500/50 animate-pulse'
+                      ? 'bg-[#110F0B] from-REMOVED-900/40 to-orange-900/40 border-[rgba(201,168,76,0.22)] 500/50 animate-pulse'
                       : 'bg-stone-950/50 border-stone-700 hover:border-orange-500'
                   } transition-all`}
                 >
@@ -568,7 +568,7 @@ export default function HRPlanner() {
                       <div className="flex items-center gap-3 mb-2">
                         <h3 className="text-xl font-bold text-white">{reminder.manager}</h3>
                         <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                          reminder.overdue ? 'bg-red-600 text-white animate-pulse' :
+                          reminder.overdue ? 'bg-[#110F0B] 600 text-white animate-pulse' :
                           reminder.priority === 'high' ? 'bg-orange-600 text-white' :
                           'bg-amber-600 text-white'
                         }`}>
@@ -580,12 +580,12 @@ export default function HRPlanner() {
                       </div>
                       <div className="text-lg text-stone-200 mb-3">{reminder.action}</div>
                       <div className="flex items-center gap-4 text-sm">
-                        <span className={`flex items-center gap-1 ${reminder.overdue ? 'text-red-400 font-bold' : 'text-stone-400'}`}>
+                        <span className={`flex items-center gap-1 ${reminder.overdue ? 'text-[#9E8F75] 400 font-bold' : 'text-stone-400'}`}>
                           <Calendar className="w-4 h-4" />
                           Due: {reminder.dueDate}
                         </span>
                         {reminder.overdue && (
-                          <span className="text-red-400 font-bold flex items-center gap-1">
+                          <span className="text-[#9E8F75] 400 font-bold flex items-center gap-1">
                             <AlertTriangle className="w-4 h-4" />
                             ACTION REQUIRED
                           </span>
@@ -596,7 +596,7 @@ export default function HRPlanner() {
                       <button
                         onClick={() => sendManagerReminder(reminder.id)}
                         className={`px-4 py-2 ${
-                          reminder.overdue ? 'bg-red-600 hover:bg-red-500' : 'bg-orange-600 hover:bg-orange-500'
+                          reminder.overdue ? 'bg-[#110F0B] 600 hover:bg-[#110F0B] 500' : 'bg-orange-600 hover:bg-orange-500'
                         } text-white rounded-lg font-semibold flex items-center gap-2 text-sm`}
                       >
                         <Bell className="w-4 h-4" />
@@ -625,7 +625,7 @@ export default function HRPlanner() {
                       <div className="flex items-center gap-3 mb-2">
                         <h3 className="text-xl font-bold text-white">{deadline.title}</h3>
                         <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                          deadline.daysUntil <= 7 ? 'bg-red-600 text-white' :
+                          deadline.daysUntil <= 7 ? 'bg-[#110F0B] 600 text-white' :
                           deadline.daysUntil <= 14 ? 'bg-orange-600 text-white' :
                           'bg-amber-600 text-white'
                         }`}>

@@ -513,7 +513,7 @@ export default function IntegrationsPage() {
           <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Connected Services</div>
-              <CheckCircle className="h-5 w-5 text-green-500" />
+              <CheckCircle className="h-5 w-5 text-[#C9A84C] 500" />
             </div>
             <div className="text-3xl font-bold mb-1" style={{ color: 'var(--header-text)' }}>{connectedCount}</div>
             <div className="text-xs opacity-60">Active integrations</div>
@@ -601,9 +601,9 @@ export default function IntegrationsPage() {
                   </div>
                 </div>
                 {integration.status === 'connected' ? (
-                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-[#C9A84C] 500 flex-shrink-0" />
                 ) : integration.status === 'error' ? (
-                  <AlertCircle className="h-5 w-5 text-red-500 flex-shrink-0" />
+                  <AlertCircle className="h-5 w-5 text-[#9E8F75] 500 flex-shrink-0" />
                 ) : null}
               </div>
 
@@ -649,7 +649,7 @@ export default function IntegrationsPage() {
                       <RefreshCw className="h-4 w-4" />
                       Sync
                     </button>
-                    <button className="px-4 py-2 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg font-semibold transition-all">
+                    <button className="px-4 py-2 bg-[#110F0B] 500/20 hover:bg-[#110F0B] 500/30 text-[#9E8F75] 400 rounded-lg font-semibold transition-all">
                       Disconnect
                     </button>
                   </>

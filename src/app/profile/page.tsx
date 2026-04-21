@@ -263,7 +263,7 @@ export default function ProfilePage() {
             <h2 className="text-2xl font-bold text-white mb-1 mt-4">
               {user.firstName} {user.lastName}
             </h2>
-            <p className="text-blue-100 text-sm capitalize">{user.role}</p>
+            <p className="text-[#C9A84C] 100 text-sm capitalize">{user.role}</p>
             
             {/* Edit Button */}
             {!isEditing && (
@@ -406,7 +406,7 @@ export default function ProfilePage() {
                 {/* Employment Information */}
                 <div>
                   <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                    <Briefcase className="w-5 h-5 text-green-400" />
+                    <Briefcase className="w-5 h-5 text-[#C9A84C] 400" />
                     Employment Information
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -426,8 +426,8 @@ export default function ProfilePage() {
                         <Calendar className="w-4 h-4" />
                         Status
                       </label>
-                      <span className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-semibold">
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#C9A84C]/20 text-[#C9A84C] 400 rounded-full text-sm font-semibold">
+                        <div className="w-2 h-2 bg-[#110F0B] 400 rounded-full animate-pulse"></div>
                         Active
                       </span>
                     </div>
@@ -437,7 +437,7 @@ export default function ProfilePage() {
                 {/* My Benefits Section */}
                 <div>
                   <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                    <Heart className="w-5 h-5 text-pink-400" />
+                    <Heart className="w-5 h-5 text-[#C9A84C] 400" />
                     My Benefits
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -463,7 +463,7 @@ export default function ProfilePage() {
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-stone-300 text-sm">Employer Pays</span>
-                          <span className="text-green-400 font-semibold">$520/month</span>
+                          <span className="text-[#C9A84C] 400 font-semibold">$520/month</span>
                         </div>
                         <div className="flex justify-between items-center pt-3 border-t border-amber-500/40/30">
                           <span className="text-stone-300 text-sm">Deductible</span>
@@ -494,7 +494,7 @@ export default function ProfilePage() {
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-stone-300 text-sm">Employer Match</span>
-                          <span className="text-green-400 font-semibold">4% ($130/pay)</span>
+                          <span className="text-[#C9A84C] 400 font-semibold">4% ($130/pay)</span>
                         </div>
                         <div className="flex justify-between items-center pt-3 border-t border-amber-500/40/30">
                           <span className="text-stone-300 text-sm">Current Balance</span>
@@ -506,20 +506,20 @@ export default function ProfilePage() {
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-stone-300 text-sm">Est. Annual Growth</span>
-                          <span className="text-green-400 font-semibold">+8.2%</span>
+                          <span className="text-[#C9A84C] 400 font-semibold">+8.2%</span>
                         </div>
                       </div>
                     </div>
 
                     {/* FSA/HSA */}
-                    <div className="bg-[#110F0B] from-REMOVED-600/20 to-emerald-600/20 rounded p-6 border border-green-500/30">
+                    <div className="bg-[#110F0B] from-REMOVED-600/20 to-emerald-600/20 rounded p-6 border border-[rgba(201,168,76,0.22)] 500/30">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="p-3 bg-green-500/20 rounded-lg">
-                          <DollarSign className="w-6 h-6 text-green-400" />
+                        <div className="p-3 bg-[#C9A84C]/20 rounded-lg">
+                          <DollarSign className="w-6 h-6 text-[#C9A84C] 400" />
                         </div>
                         <div>
                           <h4 className="text-white font-bold text-lg">Flexible Spending Account</h4>
-                          <p className="text-green-300 text-sm">Healthcare FSA</p>
+                          <p className="text-[#C9A84C] 300 text-sm">Healthcare FSA</p>
                         </div>
                       </div>
                       <div className="space-y-3">
@@ -531,16 +531,16 @@ export default function ProfilePage() {
                           <span className="text-stone-300 text-sm">Per Paycheck</span>
                           <span className="text-white font-semibold">$96.15</span>
                         </div>
-                        <div className="flex justify-between items-center pt-3 border-t border-green-500/30">
+                        <div className="flex justify-between items-center pt-3 border-t border-[rgba(201,168,76,0.22)] 500/30">
                           <span className="text-stone-300 text-sm">Available Balance</span>
-                          <span className="text-green-400 font-bold text-lg">$1,850</span>
+                          <span className="text-[#C9A84C] 400 font-bold text-lg">$1,850</span>
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-stone-300 text-sm">Used This Year</span>
                           <span className="text-white font-semibold">$650</span>
                         </div>
                       </div>
-                      <button className="w-full mt-4 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold transition-all text-sm">
+                      <button className="w-full mt-4 bg-[#C9A84C] hover:bg-[#110F0B] text-white px-4 py-2 rounded-lg font-semibold transition-all text-sm">
                         Submit Claim
                       </button>
                     </div>
@@ -563,7 +563,7 @@ export default function ProfilePage() {
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-stone-300 text-sm">Basic Premium</span>
-                          <span className="text-green-400 font-semibold">Employer Paid</span>
+                          <span className="text-[#C9A84C] 400 font-semibold">Employer Paid</span>
                         </div>
                         <div className="flex justify-between items-center pt-3 border-t border-amber-500/30">
                           <span className="text-stone-300 text-sm">Supplemental Coverage</span>
@@ -605,7 +605,7 @@ export default function ProfilePage() {
                         <div>
                           <label className="text-stone-400 text-sm block mb-2">Accrual Rate</label>
                           <p className="text-white font-bold text-2xl">6.67</p>
-                          <p className="text-green-400 text-sm mt-1">hours/pay period</p>
+                          <p className="text-[#C9A84C] 400 text-sm mt-1">hours/pay period</p>
                         </div>
                         <div>
                           <label className="text-stone-400 text-sm block mb-2">Max Balance</label>
@@ -641,8 +641,8 @@ export default function ProfilePage() {
                       </div>
                       <div>
                         <label className="text-stone-400 text-sm block mb-2">Employer Contribution</label>
-                        <p className="text-green-400 font-bold text-2xl">$9,880</p>
-                        <p className="text-green-300 text-sm mt-1">Company pays</p>
+                        <p className="text-[#C9A84C] 400 font-bold text-2xl">$9,880</p>
+                        <p className="text-[#C9A84C] 300 text-sm mt-1">Company pays</p>
                       </div>
                       <div>
                         <label className="text-stone-400 text-sm block mb-2">Total Package Value</label>
@@ -689,8 +689,8 @@ export default function ProfilePage() {
                   {uploadStatus && (
                     <div className={`mb-4 p-4 rounded-lg flex items-center gap-2 ${
                       uploadStatus.type === 'success' 
-                        ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
-                        : 'bg-red-500/20 text-red-400 border border-red-500/30'
+                        ? 'bg-[#C9A84C]/20 text-[#C9A84C] 400 border border-[rgba(201,168,76,0.22)] 500/30' 
+                        : 'bg-[#110F0B] 500/20 text-[#9E8F75] 400 border border-[rgba(201,168,76,0.22)] 500/30'
                     }`}>
                       {uploadStatus.type === 'success' ? (
                         <CheckCircle className="w-5 h-5" />
@@ -760,7 +760,7 @@ export default function ProfilePage() {
                               </button>
                               <button
                                 onClick={() => handleDeleteDocument(doc.id)}
-                                className="p-2 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg transition-all"
+                                className="p-2 bg-[#110F0B] 500/20 hover:bg-[#110F0B] 500/30 text-[#9E8F75] 400 rounded-lg transition-all"
                                 title="Delete"
                               >
                                 <Trash2 className="w-4 h-4" />
@@ -897,7 +897,7 @@ export default function ProfilePage() {
                           >
                             <div className="flex items-start justify-between gap-3">
                               <div className="flex items-start gap-3 flex-1">
-                                <Ban className="w-5 h-5 text-red-400 mt-1" />
+                                <Ban className="w-5 h-5 text-[#9E8F75] 400 mt-1" />
                                 <div className="flex-1">
                                   <div className="flex items-center gap-2 mb-1">
                                     <p className="text-white font-semibold">
@@ -909,7 +909,7 @@ export default function ProfilePage() {
                                       </span>
                                     )}
                                     {unavailable.isAllDay && (
-                                      <span className="px-2 py-0.5 bg-red-500/20 text-red-400 text-xs rounded">
+                                      <span className="px-2 py-0.5 bg-[#110F0B] 500/20 text-[#9E8F75] 400 text-xs rounded">
                                         All Day
                                       </span>
                                     )}
@@ -921,7 +921,7 @@ export default function ProfilePage() {
                               </div>
                               <button
                                 onClick={() => handleDeleteUnavailable(unavailable.id)}
-                                className="p-2 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg transition-all"
+                                className="p-2 bg-[#110F0B] 500/20 hover:bg-[#110F0B] 500/30 text-[#9E8F75] 400 rounded-lg transition-all"
                                 title="Remove"
                               >
                                 <Trash2 className="w-4 h-4" />

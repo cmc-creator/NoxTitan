@@ -104,7 +104,7 @@ export default function SentinelPage() {
           <div className="flex gap-3">
             <button
               onClick={() => window.location.href = '/sentinel/watchlist'}
-              className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
+              className="px-6 py-3 bg-[#110F0B] 600 hover:bg-[#110F0B] 700 text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
             >
               <AlertTriangle className="w-5 h-5" />
               Watchlist
@@ -128,13 +128,13 @@ export default function SentinelPage() {
 
         {/* Live Stats */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
-          <div className="bg-[#110F0B] from-REMOVED-500/20 to-green-600/20 border border-green-500/50 rounded p-6">
+          <div className="bg-[#110F0B] from-REMOVED-500/20 to-green-600/20 border border-[rgba(201,168,76,0.22)] 500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
-              <Users className="w-8 h-8 text-green-400" />
-              <span className="text-4xl font-bold text-green-400">{stats.currentlyInBuilding}</span>
+              <Users className="w-8 h-8 text-[#C9A84C] 400" />
+              <span className="text-4xl font-bold text-[#C9A84C] 400">{stats.currentlyInBuilding}</span>
             </div>
-            <p className="text-green-300 font-semibold flex items-center gap-2">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            <p className="text-[#C9A84C] 300 font-semibold flex items-center gap-2">
+              <span className="w-2 h-2 bg-[#110F0B] 400 rounded-full animate-pulse"></span>
               In Building Now
             </p>
           </div>
@@ -155,12 +155,12 @@ export default function SentinelPage() {
             <p className="text-orange-300 font-semibold">Overdue Checkouts</p>
           </div>
 
-          <div className="bg-red-500/10 border border-red-500/50 rounded p-6">
+          <div className="bg-[#110F0B] 500/10 border border-[rgba(201,168,76,0.22)] 500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
-              <AlertTriangle className="w-8 h-8 text-red-400" />
-              <span className="text-4xl font-bold text-red-400">{stats.watchlistAlerts}</span>
+              <AlertTriangle className="w-8 h-8 text-[#9E8F75] 400" />
+              <span className="text-4xl font-bold text-[#9E8F75] 400">{stats.watchlistAlerts}</span>
             </div>
-            <p className="text-red-300 font-semibold">Watchlist Alerts</p>
+            <p className="text-[#9E8F75] 300 font-semibold">Watchlist Alerts</p>
           </div>
 
           <div className="bg-amber-500/10 border border-amber-500/40/50 rounded p-6">
@@ -212,7 +212,7 @@ export default function SentinelPage() {
                     <tr 
                       key={visit.id} 
                       className={`border-t border-stone-700 hover:bg-stone-900/30 transition-colors ${
-                        visit.visitor.isWatchlist ? 'bg-red-500/5 border-red-500/30' : ''
+                        visit.visitor.isWatchlist ? 'bg-[#110F0B] 500/5 border-[rgba(201,168,76,0.22)] 500/30' : ''
                       }`}
                     >
                       <td className="px-6 py-4">
@@ -224,7 +224,7 @@ export default function SentinelPage() {
                             <div className="font-semibold text-white flex items-center gap-2">
                               {visit.visitor.firstName} {visit.visitor.lastName}
                               {visit.visitor.isWatchlist && (
-                                <AlertTriangle className="w-4 h-4 text-red-500" />
+                                <AlertTriangle className="w-4 h-4 text-[#9E8F75] 500" />
                               )}
                             </div>
                           </div>
@@ -247,7 +247,7 @@ export default function SentinelPage() {
                       <td className="px-6 py-4">
                         <button
                           onClick={() => window.location.href = `/sentinel/checkout/${visit.id}`}
-                          className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-semibold rounded-lg transition-colors"
+                          className="px-4 py-2 bg-[#110F0B] 600 hover:bg-[#110F0B] 700 text-white text-sm font-semibold rounded-lg transition-colors"
                         >
                           Check Out
                         </button>

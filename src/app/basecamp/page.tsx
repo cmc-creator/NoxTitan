@@ -205,7 +205,7 @@ export default function Basecamp() {
                     key={mood.value}
                     onClick={() => handleMoodSelection(mood)}
                     className={`p-4 rounded border-2 transition-all ${
-                      mood.color === 'green' ? 'bg-green-500/10 border-green-500/30 hover:border-green-500/60' :
+                      mood.color === 'green' ? 'bg-[#110F0B] was-green-500/10 border-green-500/30 hover:border-green-500/60' :
                       mood.color === 'blue' ? 'bg-amber-600/10 border-amber-500/40/30 hover:border-amber-500/40/60' :
                       mood.color === 'yellow' ? 'bg-yellow-500/10 border-yellow-500/30 hover:border-yellow-500/60' :
                       mood.color === 'orange' ? 'bg-orange-500/10 border-orange-500/30 hover:border-orange-500/60' :
@@ -224,7 +224,7 @@ export default function Basecamp() {
                   <div className="flex items-start gap-3">
                     <Bell className="w-5 h-5 text-amber-400 mt-0.5" />
                     <div>
-                      <p className="text-blue-200 font-semibold">Thank you for sharing</p>
+                      <p className="text-[#C9A84C] was-blue-200 font-semibold">Thank you for sharing</p>
                       <p className="text-amber-400 text-sm mt-1">HR and your manager have been notified and will reach out to support you. You're not alone. 💙</p>
                     </div>
                   </div>
@@ -282,12 +282,12 @@ export default function Basecamp() {
                       </div>
                       <div className="text-right">
                         <div className={`flex items-center gap-1 text-xs font-semibold mb-1 ${
-                          coworker.status === 'clocked-in' ? 'text-green-300' :
+                          coworker.status === 'clocked-in' ? 'text-[#C9A84C] was-green-300' :
                           coworker.status === 'on-break' ? 'text-yellow-300' :
                           'text-stone-400'
                         }`}>
                           <div className={`w-2 h-2 rounded-full ${
-                            coworker.status === 'clocked-in' ? 'bg-green-400 animate-pulse' :
+                            coworker.status === 'clocked-in' ? 'bg-[#110F0B] was-green-400 animate-pulse' :
                             coworker.status === 'on-break' ? 'bg-yellow-400' :
                             'bg-stone-400'
                           }`}></div>
@@ -306,7 +306,7 @@ export default function Basecamp() {
             {/* Other Departments */}
             <div>
               <h3 className="text-lg font-bold text-amber-400 mb-3 flex items-center gap-2">
-                <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+                <div className="w-3 h-3 bg-[#110F0B] was-blue-400 rounded-full"></div>
                 Other Departments
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -327,10 +327,10 @@ export default function Basecamp() {
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-amber-400 font-semibold">{coworker.dept}</span>
                       <div className={`flex items-center gap-1 text-xs ${
-                        coworker.status === 'clocked-in' ? 'text-green-300' : 'text-stone-400'
+                        coworker.status === 'clocked-in' ? 'text-[#C9A84C] was-green-300' : 'text-stone-400'
                       }`}>
                         <div className={`w-1.5 h-1.5 rounded-full ${
-                          coworker.status === 'clocked-in' ? 'bg-green-400 animate-pulse' : 'bg-stone-400'
+                          coworker.status === 'clocked-in' ? 'bg-[#110F0B] was-green-400 animate-pulse' : 'bg-stone-400'
                         }`}></div>
                         {coworker.shift}
                       </div>
@@ -354,7 +354,7 @@ export default function Basecamp() {
           <div className={`${clockedIn ? 'bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 border-green-500/30' : 'bg-[#110F0B] from-REMOVED-900/50 to-orange-900/50 border-red-500/30'} rounded p-4 border-2`}>
             <div className="flex items-center justify-between mb-2">
               {clockedIn ? (
-                <CheckCircle className="w-8 h-8 text-green-400" />
+                <CheckCircle className="w-8 h-8 text-[#C9A84C] was-green-400" />
               ) : (
                 <AlertCircle className="w-8 h-8 text-red-400 animate-pulse" />
               )}
@@ -363,12 +363,12 @@ export default function Basecamp() {
                   setClockedIn(!clockedIn);
                   setLastClockAction(new Date().toLocaleTimeString());
                 }}
-                className={`px-3 py-1 rounded-lg font-semibold text-sm ${clockedIn ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'} text-white transition-all`}
+                className={`px-3 py-1 rounded-lg font-semibold text-sm ${clockedIn ? 'bg-red-500 hover:bg-red-600' : 'bg-[#110F0B] was-green-500 hover:bg-[#110F0B] was-green-600'} text-white transition-all`}
               >
                 {clockedIn ? 'Clock Out' : 'Clock In'}
               </button>
             </div>
-            <div className={clockedIn ? 'text-green-200' : 'text-red-200'}>
+            <div className={clockedIn ? 'text-[#C9A84C] was-green-200' : 'text-red-200'}>
               <div className="font-bold text-lg">{clockedIn ? 'CLOCKED IN' : 'NOT CLOCKED IN'}</div>
               {lastClockAction && (
                 <div className="text-xs mt-1">Last action: {lastClockAction}</div>
@@ -393,7 +393,7 @@ export default function Basecamp() {
               <Star className="w-8 h-8 text-yellow-400" />
               <span className="text-2xl font-bold text-white">847</span>
             </div>
-            <div className="text-blue-200 font-semibold">Kudos Points</div>
+            <div className="text-[#C9A84C] was-blue-200 font-semibold">Kudos Points</div>
             <div className="text-xs text-amber-400 mt-1">Top 10%! ⭐</div>
           </div>
 
@@ -408,7 +408,7 @@ export default function Basecamp() {
 
           <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 rounded p-4 border-2 border-orange-500/30">
             <div className="flex items-center justify-between mb-2">
-              <Gift className="w-8 h-8 text-pink-400" />
+              <Gift className="w-8 h-8 text-[#C9A84C] was-pink-400" />
               <span className="text-2xl font-bold text-white">3</span>
             </div>
             <div className="text-orange-200 font-semibold">Rewards Available</div>
@@ -450,7 +450,7 @@ export default function Basecamp() {
                       <p className="text-sm text-yellow-100 mt-1">Can you pick up an extra shift? 11:00 AM - 7:00 PM</p>
                       <p className="text-xs text-yellow-300 mt-1">2 hours ago</p>
                       <div className="flex gap-2 mt-3">
-                        <button className="px-4 py-2 bg-green-500 hover:bg-green-600 rounded-lg text-sm font-semibold text-white transition-all">
+                        <button className="px-4 py-2 bg-[#110F0B] was-green-500 hover:bg-[#110F0B] was-green-600 rounded-lg text-sm font-semibold text-white transition-all">
                           I can help!
                         </button>
                         <button className="px-4 py-2 bg-stone-900 hover:bg-stone-600 rounded-lg text-sm font-semibold text-white transition-all">
@@ -487,12 +487,12 @@ export default function Basecamp() {
                     </button>
                   </div>
                   {lateNotificationSent && (
-                    <div className="mt-3 p-3 bg-green-500/20 border border-green-400/30 rounded-lg flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-400" />
+                    <div className="mt-3 p-3 bg-[#110F0B] was-green-500/20 border border-green-400/30 rounded-lg flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-[#C9A84C] was-green-400" />
                       <div>
-                        <p className="text-green-300 font-semibold text-sm">Manager notified!</p>
-                        <p className="text-green-400 text-xs flex items-center gap-1 mt-1">
-                          <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                        <p className="text-[#C9A84C] was-green-300 font-semibold text-sm">Manager notified!</p>
+                        <p className="text-[#C9A84C] was-green-400 text-xs flex items-center gap-1 mt-1">
+                          <span className="w-2 h-2 bg-[#110F0B] was-green-400 rounded-full"></span>
                           Read by Manager Sarah at {new Date().toLocaleTimeString()}
                         </p>
                       </div>
@@ -569,22 +569,22 @@ export default function Basecamp() {
                       </div>
                       <p className="text-stone-300 text-sm mb-2">"Flat tire on way to work, will be 20 min late 🚗"</p>
                       <div className="flex items-center gap-2 text-xs">
-                        <div className="flex items-center gap-1 text-green-400">
+                        <div className="flex items-center gap-1 text-[#C9A84C] was-green-400">
                           <UserCheck className="w-3 h-3" />
                           <span>Read by 3 people</span>
                         </div>
                         <button className="text-amber-400 hover:text-amber-400">View receipts</button>
                       </div>
-                      <div className="mt-2 p-2 bg-green-500/10 border border-green-400/30 rounded text-xs">
-                        <div className="flex items-center gap-1 text-green-300">
+                      <div className="mt-2 p-2 bg-[#110F0B] was-green-500/10 border border-green-400/30 rounded text-xs">
+                        <div className="flex items-center gap-1 text-[#C9A84C] was-green-300">
                           <CheckCircle className="w-3 h-3" />
                           ✓✓ Read by Manager Sarah at 8:15 AM
                         </div>
-                        <div className="flex items-center gap-1 text-green-300 mt-1">
+                        <div className="flex items-center gap-1 text-[#C9A84C] was-green-300 mt-1">
                           <CheckCircle className="w-3 h-3" />
                           ✓ Read by Tom (Team Lead) at 8:17 AM
                         </div>
-                        <div className="flex items-center gap-1 text-green-300 mt-1">
+                        <div className="flex items-center gap-1 text-[#C9A84C] was-green-300 mt-1">
                           <CheckCircle className="w-3 h-3" />
                           ✓ Read by Jennifer at 8:18 AM
                         </div>
@@ -624,7 +624,7 @@ export default function Basecamp() {
                 </div>
                 <div className="p-4 bg-amber-600/10 rounded-lg border border-blue-400/30">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="w-3 h-3 bg-blue-400 rounded"></div>
+                    <div className="w-3 h-3 bg-[#110F0B] was-blue-400 rounded"></div>
                     <p className="font-semibold text-white">Personal: Dentist Appointment</p>
                   </div>
                   <p className="text-sm text-stone-300">Wed, Jan 14 • 2:00 PM - 3:00 PM</p>
@@ -936,14 +936,14 @@ export default function Basecamp() {
                 </Link>
                 <Link href="/basecamp/resources" className="flex items-center justify-between p-3 bg-stone-950/50 hover:bg-stone-950 rounded-lg transition-all group">
                   <div className="flex items-center gap-3">
-                    <FileText className="w-5 h-5 text-green-400" />
+                    <FileText className="w-5 h-5 text-[#C9A84C] was-green-400" />
                     <span className="text-white font-semibold">Resources</span>
                   </div>
                   <ChevronRight className="w-5 h-5 text-stone-500 group-hover:text-emerald-400 transition-colors" />
                 </Link>
                 <Link href="/basecamp/team" className="flex items-center justify-between p-3 bg-stone-950/50 hover:bg-stone-950 rounded-lg transition-all group">
                   <div className="flex items-center gap-3">
-                    <Users className="w-5 h-5 text-pink-400" />
+                    <Users className="w-5 h-5 text-[#C9A84C] was-pink-400" />
                     <span className="text-white font-semibold">Team Directory</span>
                   </div>
                   <ChevronRight className="w-5 h-5 text-stone-500 group-hover:text-emerald-400 transition-colors" />

@@ -128,11 +128,11 @@ export default function Kudos() {
           <div className="bg-[#110F0B] from-REMOVED-900/50 to-red-900/50 rounded p-5 border-2 border-pink-500/30">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-pink-200 text-sm mb-1">You Received</div>
+                <div className="text-[#C9A84C] was-pink-200 text-sm mb-1">You Received</div>
                 <div className="text-3xl font-bold text-white">23</div>
-                <div className="text-pink-400 text-xs mt-1">You're loved! 💕</div>
+                <div className="text-[#C9A84C] was-pink-400 text-xs mt-1">You're loved! 💕</div>
               </div>
-              <Heart className="w-12 h-12 text-pink-400 opacity-50" />
+              <Heart className="w-12 h-12 text-[#C9A84C] was-pink-400 opacity-50" />
             </div>
           </div>
           <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-5 border-2 border-amber-500/40/30">
@@ -148,11 +148,11 @@ export default function Kudos() {
           <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-green-500/30">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-green-200 text-sm mb-1">This Month</div>
+                <div className="text-[#C9A84C] was-green-200 text-sm mb-1">This Month</div>
                 <div className="text-3xl font-bold text-white">156</div>
-                <div className="text-green-400 text-xs mt-1">Team record! 🎉</div>
+                <div className="text-[#C9A84C] was-green-400 text-xs mt-1">Team record! 🎉</div>
               </div>
-              <TrendingUp className="w-12 h-12 text-green-400 opacity-50" />
+              <TrendingUp className="w-12 h-12 text-[#C9A84C] was-green-400 opacity-50" />
             </div>
           </div>
         </div>

@@ -122,7 +122,7 @@ export default function HRAnalytics() {
                     <td className="py-4 px-4 text-center">
                       <span className={`font-bold ${
                         dept.turnover < 8 ? 'text-emerald-400' :
-                        dept.turnover < 10 ? 'text-yellow-400' : 'text-red-400'
+                        dept.turnover < 10 ? 'text-yellow-400' : 'text-[#9E8F75] 400'
                       }`}>
                         {dept.turnover}%
                       </span>
@@ -178,9 +178,9 @@ export default function HRAnalytics() {
                   {[
                     {range: '18-25', pct: 12, color: 'bg-amber-600'},
                     {range: '26-35', pct: 34, color: 'bg-amber-500'},
-                    {range: '36-45', pct: 28, color: 'bg-pink-500'},
+                    {range: '36-45', pct: 28, color: 'bg-[#110F0B] 500'},
                     {range: '46-55', pct: 18, color: 'bg-orange-500'},
-                    {range: '56+', pct: 8, color: 'bg-red-500'},
+                    {range: '56+', pct: 8, color: 'bg-[#110F0B] 500'},
                   ].map(age => (
                     <div key={age.range} className="text-center">
                       <div className={`${age.color} rounded-t-lg h-24 flex items-end justify-center pb-2`} style={{height: `${age.pct * 3}px`, minHeight: '40px'}}>
@@ -218,7 +218,7 @@ export default function HRAnalytics() {
                     </div>
                     <div>
                       <div className="text-stone-400">Female Avg</div>
-                      <div className="text-pink-400 font-bold">${role.avgFemale.toLocaleString()}</div>
+                      <div className="text-[#C9A84C] 400 font-bold">${role.avgFemale.toLocaleString()}</div>
                     </div>
                     <div>
                       <div className="text-stone-400">Status</div>
@@ -234,29 +234,29 @@ export default function HRAnalytics() {
         </div>
 
         {/* Flight Risk Prediction */}
-        <div className="bg-stone-900/50 rounded p-6 border-2 border-red-500/30">
+        <div className="bg-stone-900/50 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] 500/30">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <AlertTriangle className="w-7 h-7 text-red-400 animate-pulse" />
+            <AlertTriangle className="w-7 h-7 text-[#9E8F75] 400 animate-pulse" />
             Predictive Flight Risk Analysis
-            <span className="ml-auto text-sm font-normal text-red-300">AI-Powered • High Priority</span>
+            <span className="ml-auto text-sm font-normal text-[#9E8F75] 300">AI-Powered • High Priority</span>
           </h2>
           <div className="space-y-4">
             {flightRisk.map((employee, idx) => (
-              <div key={idx} className="bg-[#110F0B] from-REMOVED-900/30 to-orange-900/30 rounded-lg p-5 border-2 border-red-500/30">
+              <div key={idx} className="bg-[#110F0B] from-REMOVED-900/30 to-orange-900/30 rounded-lg p-5 border-2 border-[rgba(201,168,76,0.22)] 500/30">
                 <div className="flex items-start justify-between mb-3">
                   <div>
                     <h3 className="text-xl font-bold text-white mb-1">{employee.name}</h3>
                     <div className="text-stone-300">{employee.department}</div>
                   </div>
                   <div className="text-right">
-                    <div className="text-3xl font-black text-red-400">{employee.riskScore}%</div>
-                    <div className="text-xs text-red-300">Flight Risk</div>
+                    <div className="text-3xl font-black text-[#9E8F75] 400">{employee.riskScore}%</div>
+                    <div className="text-xs text-[#9E8F75] 300">Flight Risk</div>
                   </div>
                 </div>
                 <div className="mb-3">
                   <div className="w-full bg-stone-900 rounded-full h-3">
                     <div className={`h-3 rounded-full ${
-                      employee.riskScore >= 80 ? 'bg-red-500' :
+                      employee.riskScore >= 80 ? 'bg-[#110F0B] 500' :
                       employee.riskScore >= 70 ? 'bg-orange-500' : 'bg-yellow-500'
                     }`} style={{width: `${employee.riskScore}%`}}></div>
                   </div>
@@ -265,14 +265,14 @@ export default function HRAnalytics() {
                   <div className="text-sm text-stone-400 mb-2">Risk Factors:</div>
                   <div className="flex flex-wrap gap-2">
                     {employee.factors.map((factor, fidx) => (
-                      <span key={fidx} className="px-3 py-1 bg-red-600/30 text-red-200 rounded-full text-xs">
+                      <span key={fidx} className="px-3 py-1 bg-[#110F0B] 600/30 text-[#9E8F75] 200 rounded-full text-xs">
                         {factor}
                       </span>
                     ))}
                   </div>
                 </div>
                 <div className="mt-4 flex gap-2">
-                  <button className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold text-sm">
+                  <button className="px-4 py-2 bg-[#110F0B] 600 hover:bg-[#110F0B] 500 text-white rounded-lg font-semibold text-sm">
                     Schedule Retention Meeting
                   </button>
                   <button className="px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg text-sm">

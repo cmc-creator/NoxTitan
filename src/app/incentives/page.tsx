@@ -156,12 +156,12 @@ export default function IncentivesPage() {
           <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Total Bonuses</div>
-              <DollarSign className="h-5 w-5 text-green-500" />
+              <DollarSign className="h-5 w-5 text-[#C9A84C] 500" />
             </div>
             <div className="text-3xl font-bold" style={{ color: 'var(--header-text)' }}>
               ${availableShifts.reduce((sum, s) => sum + s.bonus * (s.bonusType === 'hourly' ? parseInt(s.duration) : 1), 0)}
             </div>
-            <div className="text-xs text-green-500">Up for grabs</div>
+            <div className="text-xs text-[#C9A84C] 500">Up for grabs</div>
           </div>
 
           <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
@@ -254,8 +254,8 @@ export default function IncentivesPage() {
                 <div className="absolute top-4 right-4">
                   <div
                     className={`px-3 py-1 rounded-full text-xs font-bold text-white flex items-center gap-1 ${
-                      shift.urgency === 'high' ? 'bg-red-500 animate-pulse' :
-                      shift.urgency === 'medium' ? 'bg-yellow-500' : 'bg-green-500'
+                      shift.urgency === 'high' ? 'bg-[#110F0B] 500 animate-pulse' :
+                      shift.urgency === 'medium' ? 'bg-yellow-500' : 'bg-[#C9A84C]'
                     }`}
                   >
                     <Zap className="h-3 w-3" />
@@ -266,7 +266,7 @@ export default function IncentivesPage() {
                 {/* Bonus Amount - Big and Bold */}
                 <div className="mb-4">
                   <div className="flex items-baseline gap-2">
-                    <div className="text-5xl font-black text-green-500">
+                    <div className="text-5xl font-black text-[#C9A84C] 500">
                       ${shift.bonus}
                     </div>
                     <div className="text-lg font-semibold opacity-70">
@@ -339,7 +339,7 @@ export default function IncentivesPage() {
                       <h3 className="text-xl font-bold" style={{ color: 'var(--header-text)' }}>
                         {shift.title}
                       </h3>
-                      <div className="px-3 py-1 rounded-full bg-green-500 text-white text-xs font-bold">
+                      <div className="px-3 py-1 rounded-full bg-[#C9A84C] text-white text-xs font-bold">
                         ✓ CLAIMED
                       </div>
                     </div>
@@ -358,7 +358,7 @@ export default function IncentivesPage() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-3xl font-black text-green-500 mb-1">
+                    <div className="text-3xl font-black text-[#C9A84C] 500 mb-1">
                       ${shift.bonus}
                     </div>
                     <div className="text-xs opacity-60">{shift.bonusType === 'hourly' ? 'per hour' : 'bonus'}</div>
@@ -382,7 +382,7 @@ export default function IncentivesPage() {
                   <div className="text-6xl mb-2">{leaderboard[1].avatar}</div>
                   <div className="text-5xl mb-2">🥈</div>
                   <div className="font-bold text-lg" style={{ color: 'var(--header-text)' }}>{leaderboard[1].name}</div>
-                  <div className="text-3xl font-black text-green-500 mt-2">${leaderboard[1].bonusEarned}</div>
+                  <div className="text-3xl font-black text-[#C9A84C] 500 mt-2">${leaderboard[1].bonusEarned}</div>
                   <div className="text-sm opacity-60">{leaderboard[1].shiftsPickedUp} shifts</div>
                 </div>
 
@@ -427,7 +427,7 @@ export default function IncentivesPage() {
                       <div className="text-sm opacity-60">{person.shiftsPickedUp} bonus shifts claimed</div>
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-black text-green-500">${person.bonusEarned}</div>
+                      <div className="text-2xl font-black text-[#C9A84C] 500">${person.bonusEarned}</div>
                       <div className="text-xs opacity-60">Total earned</div>
                     </div>
                   </div>
@@ -511,13 +511,13 @@ export default function IncentivesPage() {
                 <div>
                   <label className="block text-sm font-semibold mb-2">Urgency Level</label>
                   <div className="flex gap-3">
-                    <button className="flex-1 p-3 rounded-lg border-2 border-green-500 bg-green-500/20 font-semibold">
+                    <button className="flex-1 p-3 rounded-lg border-2 border-[rgba(201,168,76,0.22)] 500 bg-[#C9A84C]/20 font-semibold">
                       🟢 Low
                     </button>
                     <button className="flex-1 p-3 rounded-lg border-2 border-yellow-500 bg-yellow-500/20 font-semibold">
                       🟡 Medium
                     </button>
-                    <button className="flex-1 p-3 rounded-lg border-2 border-red-500 bg-red-500/20 font-semibold">
+                    <button className="flex-1 p-3 rounded-lg border-2 border-[rgba(201,168,76,0.22)] 500 bg-[#110F0B] 500/20 font-semibold">
                       🔴 High
                     </button>
                   </div>

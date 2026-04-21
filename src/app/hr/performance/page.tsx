@@ -73,10 +73,10 @@ export default function PerformanceReviews() {
             <div className="text-3xl font-bold text-white">23</div>
             <div className="text-orange-400 text-xs mt-1">26% in progress</div>
           </div>
-          <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-4 border-2 border-red-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-4 border-2 border-[rgba(201,168,76,0.22)] 500/30">
             <div className="text-stone-300 text-sm mb-1">Overdue</div>
             <div className="text-3xl font-bold text-white">12</div>
-            <div className="text-red-400 text-xs mt-1 animate-pulse">Action needed</div>
+            <div className="text-[#9E8F75] 400 text-xs mt-1 animate-pulse">Action needed</div>
           </div>
           <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-4 border-2 border-amber-500/40/30">
             <div className="text-stone-300 text-sm mb-1">Avg Rating</div>
@@ -127,7 +127,7 @@ export default function PerformanceReviews() {
                         <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                           review.status === 'completed' ? 'bg-emerald-600 text-white' :
                           review.status === 'in-progress' ? 'bg-orange-600 text-white' :
-                          review.status === 'overdue' ? 'bg-red-600 text-white animate-pulse' :
+                          review.status === 'overdue' ? 'bg-[#110F0B] 600 text-white animate-pulse' :
                           'bg-stone-600 text-white'
                         }`}>
                           {review.status.toUpperCase().replace('-', ' ')}
@@ -148,7 +148,7 @@ export default function PerformanceReviews() {
                         <div>
                           <div className="text-xs text-stone-400">Due Date</div>
                           <div className={`font-semibold ${
-                            review.status === 'overdue' ? 'text-red-400' : 'text-white'
+                            review.status === 'overdue' ? 'text-[#9E8F75] 400' : 'text-white'
                           }`}>
                             {review.dueDate}
                           </div>
@@ -198,7 +198,7 @@ export default function PerformanceReviews() {
                         <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                           goal.status === 'exceeding' ? 'bg-emerald-600 text-white' :
                           goal.status === 'on-track' ? 'bg-amber-600 text-white' :
-                          'bg-red-600 text-white'
+                          'bg-[#110F0B] 600 text-white'
                         }`}>
                           {goal.status.toUpperCase().replace('-', ' ')}
                         </span>
@@ -268,7 +268,7 @@ export default function PerformanceReviews() {
                 </div>
               ))}
             </div>
-            <div className="mt-6 bg-blue-900/30 rounded-lg p-4 border border-amber-500/40/30">
+            <div className="mt-6 bg-[#110F0B] 900/30 rounded-lg p-4 border border-amber-500/40/30">
               <div className="flex items-center gap-3">
                 <MessageSquare className="w-6 h-6 text-amber-400" />
                 <div>

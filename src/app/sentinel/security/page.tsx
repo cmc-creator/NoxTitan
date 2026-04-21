@@ -86,20 +86,20 @@ export default function SecurityPage() {
 
   function getStatusColor(status: string) {
     switch (status) {
-      case 'ONLINE': return 'text-green-400 bg-green-500/20 border-green-500';
-      case 'OFFLINE': return 'text-red-400 bg-red-500/20 border-red-500';
+      case 'ONLINE': return 'text-[#C9A84C] 400 bg-[#C9A84C]/20 border-[rgba(201,168,76,0.22)] 500';
+      case 'OFFLINE': return 'text-[#9E8F75] 400 bg-[#110F0B] 500/20 border-[rgba(201,168,76,0.22)] 500';
       case 'MAINTENANCE': return 'text-yellow-400 bg-yellow-500/20 border-yellow-500';
-      case 'ERROR': return 'text-red-400 bg-red-500/20 border-red-500';
+      case 'ERROR': return 'text-[#9E8F75] 400 bg-[#110F0B] 500/20 border-[rgba(201,168,76,0.22)] 500';
       case 'OPEN': return 'text-orange-400 bg-orange-500/20 border-orange-500';
-      case 'CLOSED': return 'text-green-400 bg-green-500/20 border-green-500';
-      case 'ALARM': return 'text-red-400 bg-red-500/20 border-red-500 animate-pulse';
+      case 'CLOSED': return 'text-[#C9A84C] 400 bg-[#C9A84C]/20 border-[rgba(201,168,76,0.22)] 500';
+      case 'ALARM': return 'text-[#9E8F75] 400 bg-[#110F0B] 500/20 border-[rgba(201,168,76,0.22)] 500 animate-pulse';
       default: return 'text-stone-400 bg-stone-500/20 border-stone-500';
     }
   }
 
   function getSeverityColor(severity: string) {
     switch (severity) {
-      case 'CRITICAL': return 'bg-red-600 text-white';
+      case 'CRITICAL': return 'bg-[#110F0B] 600 text-white';
       case 'HIGH': return 'bg-orange-600 text-white';
       case 'MEDIUM': return 'bg-yellow-600 text-white';
       case 'LOW': return 'bg-amber-600 text-white';
@@ -130,7 +130,7 @@ export default function SecurityPage() {
             </button>
             <button
               onClick={() => window.location.href = '/sentinel/security/doors/add'}
-              className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
+              className="px-6 py-3 bg-[#C9A84C] hover:bg-[#110F0B] text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
             >
               <Lock className="w-5 h-5" />
               Add Door
@@ -140,15 +140,15 @@ export default function SecurityPage() {
 
         {/* Live Stats */}
         <div className="grid grid-cols-1 md:grid-cols-6 gap-6 mb-8">
-          <div className="bg-[#110F0B] from-REMOVED-500/20 to-green-600/20 border border-green-500/50 rounded p-6">
+          <div className="bg-[#110F0B] from-REMOVED-500/20 to-green-600/20 border border-[rgba(201,168,76,0.22)] 500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
-              <Camera className="w-8 h-8 text-green-400" />
+              <Camera className="w-8 h-8 text-[#C9A84C] 400" />
               <div className="text-right">
-                <span className="text-3xl font-bold text-green-400">{stats.camerasOnline}</span>
+                <span className="text-3xl font-bold text-[#C9A84C] 400">{stats.camerasOnline}</span>
                 <span className="text-stone-400">/{stats.camerasTotal}</span>
               </div>
             </div>
-            <p className="text-green-300 font-semibold flex items-center gap-2">
+            <p className="text-[#C9A84C] 300 font-semibold flex items-center gap-2">
               <Radio className="w-3 h-3 animate-pulse" />
               Cameras Online
             </p>
@@ -165,12 +165,12 @@ export default function SecurityPage() {
             <p className="text-amber-400 font-semibold">Doors Online</p>
           </div>
 
-          <div className="bg-red-500/10 border border-red-500/50 rounded p-6">
+          <div className="bg-[#110F0B] 500/10 border border-[rgba(201,168,76,0.22)] 500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
-              <AlertTriangle className="w-8 h-8 text-red-400" />
-              <span className="text-4xl font-bold text-red-400">{stats.activeAlerts}</span>
+              <AlertTriangle className="w-8 h-8 text-[#9E8F75] 400" />
+              <span className="text-4xl font-bold text-[#9E8F75] 400">{stats.activeAlerts}</span>
             </div>
-            <p className="text-red-300 font-semibold">Active Alerts</p>
+            <p className="text-[#9E8F75] 300 font-semibold">Active Alerts</p>
           </div>
 
           <div className="bg-amber-500/10 border border-amber-500/40/50 rounded p-6">
@@ -190,7 +190,7 @@ export default function SecurityPage() {
                   <p className="text-sm text-stone-400">All systems operational</p>
                 </div>
               </div>
-              <div className="w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
+              <div className="w-4 h-4 bg-[#110F0B] 400 rounded-full animate-pulse"></div>
             </div>
           </div>
         </div>
@@ -213,7 +213,7 @@ export default function SecurityPage() {
               onClick={() => setActiveTab('doors')}
               className={`flex-1 px-6 py-4 font-semibold flex items-center justify-center gap-2 transition-colors ${
                 activeTab === 'doors'
-                  ? 'bg-green-600 text-white'
+                  ? 'bg-[#C9A84C] text-white'
                   : 'text-stone-400 hover:text-white hover:bg-stone-900/50'
               }`}
             >
@@ -224,7 +224,7 @@ export default function SecurityPage() {
               onClick={() => setActiveTab('alerts')}
               className={`flex-1 px-6 py-4 font-semibold flex items-center justify-center gap-2 transition-colors ${
                 activeTab === 'alerts'
-                  ? 'bg-red-600 text-white'
+                  ? 'bg-[#110F0B] 600 text-white'
                   : 'text-stone-400 hover:text-white hover:bg-stone-900/50'
               }`}
             >
@@ -246,10 +246,10 @@ export default function SecurityPage() {
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-3">
                         <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${
-                          camera.status === 'ONLINE' ? 'bg-green-500/20' : 'bg-red-500/20'
+                          camera.status === 'ONLINE' ? 'bg-[#C9A84C]/20' : 'bg-[#110F0B] 500/20'
                         }`}>
                           {camera.isRecording ? (
-                            <Video className={`w-6 h-6 ${camera.status === 'ONLINE' ? 'text-green-400' : 'text-red-400'}`} />
+                            <Video className={`w-6 h-6 ${camera.status === 'ONLINE' ? 'text-[#C9A84C] 400' : 'text-[#9E8F75] 400'}`} />
                           ) : (
                             <Camera className="w-6 h-6 text-stone-400" />
                           )}
@@ -280,15 +280,15 @@ export default function SecurityPage() {
                 {doors.map((door) => (
                   <div
                     key={door.id}
-                    className="bg-stone-900/50 border border-stone-700 rounded p-4 hover:border-green-500/50 transition-all"
+                    className="bg-stone-900/50 border border-stone-700 rounded p-4 hover:border-[rgba(201,168,76,0.22)] 500/50 transition-all"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-3">
                         <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${
-                          door.status === 'CLOSED' ? 'bg-green-500/20' : 'bg-orange-500/20'
+                          door.status === 'CLOSED' ? 'bg-[#C9A84C]/20' : 'bg-orange-500/20'
                         }`}>
                           {door.status === 'CLOSED' ? (
-                            <DoorClosed className="w-6 h-6 text-green-400" />
+                            <DoorClosed className="w-6 h-6 text-[#C9A84C] 400" />
                           ) : (
                             <DoorOpen className="w-6 h-6 text-orange-400" />
                           )}
@@ -324,11 +324,11 @@ export default function SecurityPage() {
                 {alerts.map((alert) => (
                   <div
                     key={alert.id}
-                    className="bg-stone-900/50 border border-stone-700 rounded p-4 hover:border-red-500/50 transition-all"
+                    className="bg-stone-900/50 border border-stone-700 rounded p-4 hover:border-[rgba(201,168,76,0.22)] 500/50 transition-all"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <AlertTriangle className="w-6 h-6 text-red-400" />
+                      <div className="w-12 h-12 bg-[#110F0B] 500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <AlertTriangle className="w-6 h-6 text-[#9E8F75] 400" />
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
@@ -345,7 +345,7 @@ export default function SecurityPage() {
                           <button className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold rounded transition-colors">
                             Acknowledge
                           </button>
-                          <button className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded transition-colors">
+                          <button className="px-4 py-2 bg-[#C9A84C] hover:bg-[#110F0B] text-white text-sm font-semibold rounded transition-colors">
                             Resolve
                           </button>
                           <button className="px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white text-sm font-semibold rounded transition-colors">

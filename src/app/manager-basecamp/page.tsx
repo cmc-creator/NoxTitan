@@ -76,7 +76,7 @@ export default function ManagerBasecamp() {
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="lux-card rounded p-8 max-w-2xl w-full border-2 border-amber-500/40/30 shadow-2xl">
             <h2 className="text-3xl font-bold text-white mb-2 text-center">How are you feeling today, {userName}?</h2>
-            <p className="text-blue-200 text-center mb-6">Your wellbeing matters - even as a leader 💙</p>
+            <p className="text-[#C9A84C] 200 text-center mb-6">Your wellbeing matters - even as a leader 💙</p>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
               {moodOptions.map((mood) => (
@@ -84,11 +84,11 @@ export default function ManagerBasecamp() {
                   key={mood.value}
                   onClick={() => handleMoodSelection(mood)}
                   className={`p-4 rounded border-2 transition-all ${
-                    mood.color === 'green' ? 'bg-green-500/10 border-green-500/30 hover:border-green-500/60' :
+                    mood.color === 'green' ? 'bg-[#C9A84C]/10 border-[rgba(201,168,76,0.22)] 500/30 hover:border-[rgba(201,168,76,0.22)] 500/60' :
                     mood.color === 'blue' ? 'bg-amber-600/10 border-amber-500/40/30 hover:border-amber-500/40/60' :
                     mood.color === 'yellow' ? 'bg-yellow-500/10 border-yellow-500/30 hover:border-yellow-500/60' :
                     mood.color === 'orange' ? 'bg-orange-500/10 border-orange-500/30 hover:border-orange-500/60' :
-                    'bg-red-500/10 border-red-500/30 hover:border-red-500/60'
+                    'bg-[#110F0B] 500/10 border-[rgba(201,168,76,0.22)] 500/30 hover:border-[rgba(201,168,76,0.22)] 500/60'
                   }`}
                 >
                   <div className="text-4xl mb-2">{mood.emoji}</div>
@@ -98,11 +98,11 @@ export default function ManagerBasecamp() {
             </div>
 
             {moodAlertSent && (
-              <div className="p-4 bg-amber-600/20 border border-blue-400/30 rounded-lg mb-4">
+              <div className="p-4 bg-amber-600/20 border border-[rgba(201,168,76,0.22)] 400/30 rounded-lg mb-4">
                 <div className="flex items-start gap-3">
                   <Bell className="w-5 h-5 text-amber-400 mt-0.5" />
                   <div>
-                    <p className="text-blue-200 font-semibold">Your executive team has been notified</p>
+                    <p className="text-[#C9A84C] 200 font-semibold">Your executive team has been notified</p>
                     <p className="text-amber-400 text-sm mt-1">Leadership support will reach out. Remember - taking care of yourself helps you take care of your team. 💙</p>
                   </div>
                 </div>
@@ -152,7 +152,7 @@ export default function ManagerBasecamp() {
                   className="relative p-2 bg-stone-900 hover:bg-stone-900 rounded-lg transition-all"
                 >
                   <Bell className="w-6 h-6 text-amber-400" />
-                  <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-[#110F0B] 600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                     5
                   </span>
                 </button>
@@ -182,7 +182,7 @@ export default function ManagerBasecamp() {
 
       <div className="max-w-7xl mx-auto p-6">
         {/* Welcome Banner */}
-        <div className="bg-gradient-to-r from-amber-700 via-cyan-600 to-amber-800 rounded p-8 mb-6 border-2 border-blue-400/50 shadow-2xl relative overflow-hidden">
+        <div className="bg-gradient-to-r from-amber-700 via-cyan-600 to-amber-800 rounded p-8 mb-6 border-2 border-[rgba(201,168,76,0.22)] 400/50 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-10">
             <Mountain className="w-64 h-64 text-white" />
           </div>
@@ -190,7 +190,7 @@ export default function ManagerBasecamp() {
             <h1 className="text-4xl font-black text-white mb-2">
               Welcome back, {userName}! 👔
             </h1>
-            <p className="text-blue-100 text-xl font-semibold mb-4">
+            <p className="text-[#C9A84C] 100 text-xl font-semibold mb-4">
               Leadership Dashboard • Your team depends on you
             </p>
             <div className="flex items-center gap-2 text-white/90 mb-3">
@@ -202,13 +202,13 @@ export default function ManagerBasecamp() {
 
         {/* Quick Stats Row */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-4 border-2 border-green-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-4 border-2 border-[rgba(201,168,76,0.22)] 500/30">
             <div className="flex items-center justify-between mb-2">
-              <CheckCircle className="w-8 h-8 text-green-400" />
+              <CheckCircle className="w-8 h-8 text-[#C9A84C] 400" />
               <span className="text-2xl font-bold text-white">96%</span>
             </div>
-            <div className="text-green-200 font-semibold">Team Attendance</div>
-            <div className="text-xs text-green-300 mt-1">2 call-offs today</div>
+            <div className="text-[#C9A84C] 200 font-semibold">Team Attendance</div>
+            <div className="text-xs text-[#C9A84C] 300 mt-1">2 call-offs today</div>
           </div>
 
           <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-4 border-2 border-amber-500/40/30">
@@ -216,7 +216,7 @@ export default function ManagerBasecamp() {
               <Target className="w-8 h-8 text-cyan-400" />
               <span className="text-2xl font-bold text-white">$127K</span>
             </div>
-            <div className="text-blue-200 font-semibold">Labor Cost (Week)</div>
+            <div className="text-[#C9A84C] 200 font-semibold">Labor Cost (Week)</div>
             <div className="text-xs text-amber-400 mt-1">Under budget! 💪</div>
           </div>
 
@@ -312,7 +312,7 @@ export default function ManagerBasecamp() {
                 <div className="flex gap-2">
                   <button
                     onClick={() => setShowChatCustomizer(true)}
-                    className="px-3 py-1 bg-pink-500/20 border border-pink-400/30 rounded-lg text-xs font-semibold text-pink-300 hover:bg-pink-500/30 transition-all"
+                    className="px-3 py-1 bg-[#110F0B] 500/20 border border-pink-400/30 rounded-lg text-xs font-semibold text-[#C9A84C] 300 hover:bg-[#110F0B] 500/30 transition-all"
                   >
                     Avatar
                   </button>
@@ -348,7 +348,7 @@ export default function ManagerBasecamp() {
               <div className="space-y-2">
                 <Link href="/employees" className="flex items-center justify-between p-3 bg-stone-950/50 hover:bg-stone-950 rounded-lg transition-all group">
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-400" />
+                    <CheckCircle className="w-5 h-5 text-[#C9A84C] 400" />
                     <span className="text-white font-semibold">42 Active Staff</span>
                   </div>
                   <ChevronRight className="w-5 h-5 text-stone-500 group-hover:text-amber-400 transition-colors" />
@@ -362,7 +362,7 @@ export default function ManagerBasecamp() {
                 </Link>
                 <Link href="/qapi" className="flex items-center justify-between p-3 bg-stone-950/50 hover:bg-stone-950 rounded-lg transition-all group">
                   <div className="flex items-center gap-3">
-                    <AlertCircle className="w-5 h-5 text-red-400" />
+                    <AlertCircle className="w-5 h-5 text-[#9E8F75] 400" />
                     <span className="text-white font-semibold">3 Open Incidents</span>
                   </div>
                   <ChevronRight className="w-5 h-5 text-stone-500 group-hover:text-amber-400 transition-colors" />

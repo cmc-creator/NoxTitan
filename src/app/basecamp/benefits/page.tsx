@@ -43,15 +43,15 @@ export default function Benefits() {
           <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-6 border-2 border-amber-500/40/30">
             <Shield className="w-12 h-12 text-amber-400 mb-3" />
             <div className="text-2xl font-bold text-white mb-1">Full Coverage</div>
-            <div className="text-blue-200">Medical, Dental, Vision</div>
+            <div className="text-[#C9A84C] was-blue-200">Medical, Dental, Vision</div>
           </div>
           <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-6 border-2 border-green-500/30">
-            <PiggyBank className="w-12 h-12 text-green-400 mb-3" />
+            <PiggyBank className="w-12 h-12 text-[#C9A84C] was-green-400 mb-3" />
             <div className="text-2xl font-bold text-white mb-1">401(k) Match</div>
-            <div className="text-green-200">Up to 6% company match</div>
+            <div className="text-[#C9A84C] was-green-200">Up to 6% company match</div>
           </div>
           <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-6 border-2 border-amber-500/40/30">
-            <Heart className="w-12 h-12 text-pink-400 mb-3" />
+            <Heart className="w-12 h-12 text-[#C9A84C] was-pink-400 mb-3" />
             <div className="text-2xl font-bold text-white mb-1">Wellness</div>
             <div className="text-amber-100/70">Gym membership & EAP</div>
           </div>
@@ -146,7 +146,7 @@ export default function Benefits() {
                         <div className="text-amber-400 text-sm mb-1">Your Current Plan</div>
                         <div className="text-2xl font-bold text-white">Gold PPO Plan</div>
                       </div>
-                      <div className="px-4 py-2 bg-green-600 text-white rounded-lg font-bold">
+                      <div className="px-4 py-2 bg-[#110F0B] was-green-600 text-white rounded-lg font-bold">
                         ACTIVE
                       </div>
                     </div>
@@ -170,27 +170,27 @@ export default function Benefits() {
                   <h3 className="text-lg font-bold text-white mb-3">What's Covered:</h3>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3 text-stone-300">
-                      <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs">✓</div>
+                      <div className="w-6 h-6 bg-[#110F0B] was-green-600 rounded-full flex items-center justify-center text-white text-xs">✓</div>
                       <span>Doctor visits - $20 copay</span>
                     </div>
                     <div className="flex items-center gap-3 text-stone-300">
-                      <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs">✓</div>
+                      <div className="w-6 h-6 bg-[#110F0B] was-green-600 rounded-full flex items-center justify-center text-white text-xs">✓</div>
                       <span>Specialist visits - $40 copay</span>
                     </div>
                     <div className="flex items-center gap-3 text-stone-300">
-                      <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs">✓</div>
+                      <div className="w-6 h-6 bg-[#110F0B] was-green-600 rounded-full flex items-center justify-center text-white text-xs">✓</div>
                       <span>Prescription drugs - $10/$30/$50 copay</span>
                     </div>
                     <div className="flex items-center gap-3 text-stone-300">
-                      <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs">✓</div>
+                      <div className="w-6 h-6 bg-[#110F0B] was-green-600 rounded-full flex items-center justify-center text-white text-xs">✓</div>
                       <span>Emergency room - $150 copay</span>
                     </div>
                     <div className="flex items-center gap-3 text-stone-300">
-                      <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs">✓</div>
+                      <div className="w-6 h-6 bg-[#110F0B] was-green-600 rounded-full flex items-center justify-center text-white text-xs">✓</div>
                       <span>Preventive care - 100% covered</span>
                     </div>
                     <div className="flex items-center gap-3 text-stone-300">
-                      <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs">✓</div>
+                      <div className="w-6 h-6 bg-[#110F0B] was-green-600 rounded-full flex items-center justify-center text-white text-xs">✓</div>
                       <span>Mental health services - Same as primary care</span>
                     </div>
                   </div>
@@ -217,7 +217,7 @@ export default function Benefits() {
                     <div>
                       <div className="text-stone-400 text-sm mb-1">Your Balance</div>
                       <div className="text-3xl font-bold text-white">$47,823</div>
-                      <div className="text-green-400 text-sm mt-1">↑ $2,456 this year</div>
+                      <div className="text-[#C9A84C] was-green-400 text-sm mt-1">↑ $2,456 this year</div>
                     </div>
                     <div>
                       <div className="text-stone-400 text-sm mb-1">Company Match</div>
@@ -237,7 +237,7 @@ export default function Benefits() {
                     </div>
                     <div className="text-center">
                       <div className="text-stone-400 text-sm">Total Monthly</div>
-                      <div className="text-green-400 font-bold text-lg">$770</div>
+                      <div className="text-[#C9A84C] was-green-400 font-bold text-lg">$770</div>
                     </div>
                   </div>
                 </div>
@@ -247,14 +247,14 @@ export default function Benefits() {
                   <div className="bg-stone-950/50 rounded-lg p-4 border border-stone-700">
                     <div className="flex items-center justify-between mb-2">
                       <div className="text-white font-semibold">Target Date 2055 Fund</div>
-                      <div className="text-green-400 font-bold">+12.8%</div>
+                      <div className="text-[#C9A84C] was-green-400 font-bold">+12.8%</div>
                     </div>
                     <div className="text-stone-400 text-sm">70% allocation</div>
                   </div>
                   <div className="bg-stone-950/50 rounded-lg p-4 border border-stone-700">
                     <div className="flex items-center justify-between mb-2">
                       <div className="text-white font-semibold">S&P 500 Index Fund</div>
-                      <div className="text-green-400 font-bold">+14.2%</div>
+                      <div className="text-[#C9A84C] was-green-400 font-bold">+14.2%</div>
                     </div>
                     <div className="text-stone-400 text-sm">20% allocation</div>
                   </div>

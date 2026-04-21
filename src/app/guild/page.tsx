@@ -129,11 +129,11 @@ export default function GuildPage() {
 
   function getRarityColor(rarity: string) {
     switch (rarity) {
-      case 'LEGENDARY': return 'from-yellow-600 to-orange-600 border-yellow-500';
-      case 'EPIC': return 'from-amber-700 to-amber-600 border-amber-500/40';
-      case 'RARE': return 'from-amber-700 to-cyan-600 border-amber-500/40';
-      case 'UNCOMMON': return 'from-green-600 to-emerald-600 border-green-500';
-      default: return 'from-slate-600 to-slate-700 border-stone-500';
+      case 'LEGENDARY': return 'border-[rgba(201,168,76,0.6)]';
+      case 'EPIC': return 'border-[rgba(201,168,76,0.45)]';
+      case 'RARE': return 'border-[rgba(201,168,76,0.3)]';
+      case 'UNCOMMON': return 'border-[rgba(201,168,76,0.18)]';
+      default: return 'border-[rgba(201,168,76,0.12)]';
     }
   }
 
@@ -145,18 +145,18 @@ export default function GuildPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-700 via-stone-900 to-pink-900 p-8">
+    <div className="min-h-screen p-8">
       <div className="max-w-7xl mx-auto">
         {/* Epic Header */}
         <div className="text-center mb-12">
           <div className="inline-block relative mb-6">
-            <div className="absolute inset-0 bg-yellow-500 blur-3xl opacity-50 animate-pulse"></div>
-            <Trophy className="w-20 h-20 text-yellow-300 relative animate-bounce" />
+            <div className="hidden"></div>
+            <Trophy className="w-16 h-16" />
           </div>
-          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-pink-300 to-amber-900 mb-4">
+          <h1 className="text-5xl font-bold mb-4">
             The Guild
           </h1>
-          <p className="text-xl text-amber-100/70 mb-6">Gamified Learning & Culture • Level Up Your Career</p>
+          <p className="text-lg mb-6">Gamified Learning & Culture • Level Up Your Career</p>
         </div>
 
         {/* Navigation Tabs */}
