@@ -123,15 +123,15 @@ export default function HRDashboard() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* HR Daily Planner - FEATURED */}
           <Link href="/hr/planner" className="group">
-            <div className="bg-gradient-to-br from-violet-900/60 to-amber-900/60 rounded p-6 border-2 border-violet-500/40 shadow-xl hover:shadow-2xl hover:border-violet-400 transition-all relative overflow-hidden">
+            <div className="bg-gradient-to-br from-[#110F0B] 900/60 to-amber-900/60 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] 500/40 shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] 400 transition-all relative overflow-hidden">
               <div className="absolute top-0 right-0 bg-yellow-500 text-black px-3 py-1 text-xs font-black transform rotate-12 translate-x-2 -translate-y-1">
                 ⭐ NEW
               </div>
-              <Calendar className="w-12 h-12 text-violet-300 mb-4 group-hover:scale-110 transition-transform" />
+              <Calendar className="w-12 h-12 text-[#C9A84C] 300 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">HR Daily Planner</h3>
-              <p className="text-violet-200 text-sm mb-4">Your personal task manager + manager reminder system for daily HR operations</p>
-              <div className="flex items-center gap-2 text-violet-300 text-sm">
-                <span className="bg-violet-500 px-2 py-1 rounded-full text-white font-bold">6 Tasks Today</span>
+              <p className="text-[#C9A84C] 200 text-sm mb-4">Your personal task manager + manager reminder system for daily HR operations</p>
+              <div className="flex items-center gap-2 text-[#C9A84C] 300 text-sm">
+                <span className="bg-[#110F0B] 500 px-2 py-1 rounded-full text-white font-bold">6 Tasks Today</span>
                 <span>→</span>
               </div>
             </div>
@@ -282,11 +282,11 @@ export default function HRDashboard() {
 
           {/* HR Automation */}
           <Link href="/hr/automation" className="group">
-            <div className="bg-gradient-to-br from-violet-900/60 to-amber-900/60 rounded p-6 border-2 border-violet-500/40 shadow-xl hover:shadow-2xl hover:border-violet-400 transition-all">
-              <Clock className="w-12 h-12 text-violet-300 mb-4 group-hover:scale-110 transition-transform" />
+            <div className="bg-gradient-to-br from-[#110F0B] 900/60 to-amber-900/60 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] 500/40 shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] 400 transition-all">
+              <Clock className="w-12 h-12 text-[#C9A84C] 300 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">HR Automation</h3>
-              <p className="text-violet-200 text-sm mb-4">Automate onboarding, reminders, surveys, and recurring HR workflows</p>
-              <div className="flex items-center gap-2 text-violet-300 text-sm">
+              <p className="text-[#C9A84C] 200 text-sm mb-4">Automate onboarding, reminders, surveys, and recurring HR workflows</p>
+              <div className="flex items-center gap-2 text-[#C9A84C] 300 text-sm">
                 <span>Configure Automation</span>
                 <span>→</span>
               </div>

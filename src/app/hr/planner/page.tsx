@@ -137,7 +137,7 @@ export default function HRPlanner() {
           </Link>
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-200 via-stone-900 to-violet-200 mb-2"
+              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#C9A84C] via-[#F0EBE0] to-[#C9A84C] mb-2"
                   style={{
                     textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(139,92,246,0.6)',
                     WebkitTextStroke: '1px rgba(139,92,246,0.3)',
@@ -161,7 +161,7 @@ export default function HRPlanner() {
               {/* Settings Button */}
               <button
                 onClick={() => setShowSettings(true)}
-                className="px-6 py-3 bg-gradient-to-r from-violet-600 to-amber-900 hover:from-violet-500 hover:to-amber-900 text-white rounded-lg font-bold transition-all shadow-lg flex items-center gap-2"
+                className="px-6 py-3 font-bold rounded transition-colors flex items-center gap-2"
               >
                 <Settings className="w-5 h-5" />
                 Settings
@@ -329,7 +329,7 @@ export default function HRPlanner() {
         </div>
 
         {/* Task Templates Quick Access */}
-        <div className="bg-gradient-to-r from-violet-900/30 to-amber-900/30 rounded p-4 border-2 border-violet-500/30 mb-6">
+        <div className="p-4 mb-6 rounded">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
               <Zap className="w-5 h-5 text-yellow-400" />
@@ -948,7 +948,7 @@ export default function HRPlanner() {
                     // Here you would save settings to database/localStorage
                     alert('Settings saved successfully!');
                   }}
-                  className="px-6 py-3 bg-gradient-to-r from-violet-600 to-amber-900 hover:from-violet-500 hover:to-amber-900 text-white rounded-lg font-semibold transition-all shadow-lg shadow-violet-500/30"
+                  className="px-6 py-3 font-semibold rounded transition-colors"
                 >
                   Save Changes
                 </button>
