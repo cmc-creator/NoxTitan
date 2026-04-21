@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import Confetti from './Confetti';
@@ -147,7 +147,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
       id: 'training',
       title: 'Leadership Training',
       description: 'Develop your managers with expert-led courses. Perfect for new managers transitioning from individual contributors.',
-      icon: <BookOpen className="w-12 h-12 text-teal-600" />,
+      icon: <BookOpen className="w-12 h-12 text-[#9E8F75]" />,
       features: [
         '12+ leadership development courses',
         'New manager essentials (communication, delegation)',
@@ -204,7 +204,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
       <Confetti />
       <div className="lux-app-bg rounded shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col border border-purple-700">
         {/* Header */}
-        <div className="p-4 border-b border-stone-800">
+        <div className="p-4 border-b border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center justify-between mb-0">
             <div className="flex flex-col items-center gap-0 w-full mb-0">
               {/* Use Next.js Image for reliability and premium style */}
@@ -227,12 +227,12 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
           {/* Progress bar */}
           <div className="space-y-2">
             <div className="flex items-center justify-between text-sm">
-              <span className="text-stone-500">Step {currentStep + 1} of {steps.length}</span>
+              <span className="text-[#9E8F75]">Step {currentStep + 1} of {steps.length}</span>
               <span className="text-amber-400 font-semibold">{Math.round(progress)}% Complete</span>
             </div>
-            <div className="w-full h-2 bg-stone-800 rounded-full overflow-hidden">
+            <div className="w-full h-2 bg-[rgba(201,168,76,0.08)] rounded-full overflow-hidden">
               <div 
-                className="h-full bg-gradient-to-r from-amber-700 to-amber-500 transition-all duration-500"
+                className="h-full bg-[rgba(201,168,76,0.08)] transition-all duration-500"
                 style={{ width: `${progress}%` }}
               ></div>
             </div>
@@ -245,10 +245,10 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
                 onClick={() => handleStepClick(index)}
                 className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold transition-all shadow-lg border-2 mt-1 cursor-pointer ${
                   index === currentStep
-                    ? 'bg-gradient-to-br from-pink-400 via-stone-900 to-amber-800 text-white scale-110 border-pink-300 ring-4 ring-purple-300'
+                    ? 'bg-[rgba(201,168,76,0.08)] text-white scale-110 border-pink-300 ring-4 ring-purple-300'
                     : completedSteps.has(index) || index <= currentStep
-                    ? 'bg-gradient-to-br from-green-400 to-amber-800 text-white border-green-300 hover:ring-2 hover:ring-purple-400'
-                    : 'bg-gradient-to-br from-slate-700 to-slate-900 text-gray-200 border-stone-500 hover:bg-stone-900 opacity-60 cursor-not-allowed'
+                    ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white border-green-300 hover:ring-2 hover:ring-purple-400'
+                    : 'bg-[rgba(201,168,76,0.08)] text-gray-200 border-[rgba(201,168,76,0.22)] hover:bg-[rgba(201,168,76,0.04)] opacity-60 cursor-not-allowed'
                 }`}
                 style={{ boxShadow: index === currentStep ? '0 0 16px #a78bfa' : undefined }}
                 disabled={index > currentStep + 1 && !completedSteps.has(index)}
@@ -279,18 +279,18 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
               {currentStepData.description}
             </p>
             {/* Features List */}
-            <div className="bg-gradient-to-br from-amber-700 to-amber-900 rounded p-6 mb-6">
-              <h4 className="font-bold text-stone-100 mb-2 flex items-center gap-2 text-lg">
+            <div className="bg-gradient-to-br from-[#070604] to-[#070604] rounded p-6 mb-6">
+              <h4 className="font-bold text-[#9E8F75] mb-2 flex items-center gap-2 text-lg">
                 <Sparkles className="w-5 h-5 text-amber-400" />
                 Key Features:
               </h4>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {currentStepData.features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-2 bg-stone-950/70 rounded-lg px-3 py-2 shadow-sm">
+                  <li key={index} className="flex items-start gap-2 bg-[#110F0B]/70 rounded-lg px-3 py-2 shadow-sm">
                     <div className="flex-shrink-0 w-5 h-5 bg-amber-600 rounded-full flex items-center justify-center mt-0.5">
                       <Check className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-stone-300 text-sm">{feature}</span>
+                    <span className="text-[#9E8F75] text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -327,15 +327,15 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
           </div>
         </div>
         {/* Footer */}
-        <div className="p-6 border-t border-stone-800 bg-stone-950">
+        <div className="p-6 border-t border-[rgba(201,168,76,0.22)] bg-[#110F0B]">
           <div className="flex items-center justify-between">
             <button
               onClick={handlePrevious}
               disabled={currentStep === 0}
               className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
                 currentStep === 0
-                  ? 'bg-stone-800 text-stone-400 cursor-not-allowed'
-                  : 'bg-stone-950 border border-gray-300 text-stone-300 hover:bg-stone-950'
+                  ? 'bg-[rgba(201,168,76,0.08)] text-[#9E8F75] cursor-not-allowed'
+                  : 'bg-[#110F0B] border border-gray-300 text-[#9E8F75] hover:bg-[#110F0B]'
               }`}
             >
               <ChevronLeft className="w-5 h-5" />
@@ -343,13 +343,13 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
             </button>
             <button
               onClick={onSkip}
-              className="px-4 py-2 text-stone-500 hover:text-stone-100 transition-all"
+              className="px-4 py-2 text-[#9E8F75] hover:text-[#9E8F75] transition-all"
             >
               Skip Tour
             </button>
             <button
               onClick={handleNext}
-              className="px-6 py-3 bg-gradient-to-r from-amber-800 to-amber-600 text-white rounded-lg font-semibold hover:from-amber-800 hover:to-amber-600 transition-all flex items-center gap-2"
+              className="px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-semibold transition-all flex items-center gap-2"
             >
               {currentStep === steps.length - 1 ? (
                 <span>

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { BookOpen, Heart, Users, TrendingUp, Shield, MessageCircle, Award, CheckCircle, Lock, Play } from 'lucide-react';
@@ -28,7 +28,7 @@ export default function ManagerAcademyPage() {
       title: 'Developing Your Team',
       icon: <Users className="w-8 h-8" />,
       duration: '50 min',
-      color: 'from-amber-700 to-cyan-600',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       lessons: [
         'Identifying Strengths & Growth Areas',
         'Setting SMART Goals Together',
@@ -43,7 +43,7 @@ export default function ManagerAcademyPage() {
       title: 'Effective Communication',
       icon: <MessageCircle className="w-8 h-8" />,
       duration: '40 min',
-      color: 'from-amber-700 to-amber-600',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       lessons: [
         'Clear & Transparent Communication',
         'Giving Constructive Feedback',
@@ -88,7 +88,7 @@ export default function ManagerAcademyPage() {
       title: 'NyxTitan Platform Mastery',
       icon: <BookOpen className="w-8 h-8" />,
       duration: '35 min',
-      color: 'from-amber-700 to-amber-600',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       lessons: [
         'Schedule Creation & Optimization',
         'Approval Workflows',
@@ -127,17 +127,17 @@ export default function ManagerAcademyPage() {
           <h1 className="text-5xl font-bold text-white mb-3">
             Manager Academy
           </h1>
-          <p className="text-xl text-amber-100/70 max-w-3xl mx-auto">
+          <p className="text-xl text-[#F0EBE0]/70 max-w-3xl mx-auto">
             Become an exceptional leader with servant leadership principles and best practices
           </p>
         </div>
 
         {/* Progress Card */}
-        <div className="bg-gradient-to-r from-amber-700 to-amber-600 rounded p-8 mb-8 shadow-2xl">
+        <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded p-8 mb-8 shadow-2xl">
           <div className="flex items-center justify-between gap-6">
             <div className="text-white">
               <h2 className="text-3xl font-bold mb-2">Your Progress</h2>
-              <p className="text-amber-50 text-lg">
+              <p className="text-[#F0EBE0] text-lg">
                 {completedRequired} of {requiredModules.length} required modules completed
               </p>
             </div>
@@ -170,10 +170,10 @@ export default function ManagerAcademyPage() {
           </div>
 
           {progressPercent === 100 && (
-            <div className="mt-6 bg-stone-950/20 backdrop-blur-sm rounded p-4 text-center">
+            <div className="mt-6 bg-[#110F0B]/20 backdrop-blur-sm rounded p-4 text-center">
               <Award className="w-8 h-8 text-yellow-300 mx-auto mb-2" />
               <p className="text-white font-bold text-lg">🎉 Congratulations! You've completed Manager Academy!</p>
-              <p className="text-amber-50 text-sm mt-1">Certificate available in your profile</p>
+              <p className="text-[#F0EBE0] text-sm mt-1">Certificate available in your profile</p>
             </div>
           )}
         </div>
@@ -188,16 +188,16 @@ export default function ManagerAcademyPage() {
               <div key={module.id} className="relative">
                 <button
                   onClick={() => handleModuleClick(module.id)}
-                  className={`w-full bg-stone-900 border-2 rounded p-6 transition-all ${
+                  className={`w-full bg-[rgba(201,168,76,0.04)] border-2 rounded p-6 transition-all ${
                     isCompleted
                       ? 'border-[rgba(201,168,76,0.22)] 500'
                       : isActive
                       ? 'border-amber-500/40'
-                      : 'border-stone-700 hover:border-amber-400/40'
+                      : 'border-[rgba(201,168,76,0.22)] hover:border-amber-400/40'
                   }`}
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <div className={`p-3 rounded-lg bg-gradient-to-br ${module.color}`}>
+                    <div className={`p-3 rounded-lg `${module.color}}>
                       {module.icon}
                     </div>
                     {isCompleted ? (
@@ -210,12 +210,12 @@ export default function ManagerAcademyPage() {
                   </div>
 
                   <h3 className="text-xl font-bold text-white mb-2 text-left">{module.title}</h3>
-                  <p className="text-amber-200 text-sm mb-4 text-left">⏱️ {module.duration}</p>
+                  <p className="text-[#C9A84C] text-sm mb-4 text-left">⏱️ {module.duration}</p>
 
                   {isActive && (
-                    <div className="mt-4 pt-4 border-t border-stone-700 text-left space-y-2">
+                    <div className="mt-4 pt-4 border-t border-[rgba(201,168,76,0.22)] text-left space-y-2">
                       {module.lessons.map((lesson, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-sm text-amber-100/70">
+                        <div key={idx} className="flex items-center gap-2 text-sm text-[#F0EBE0]/70">
                           <Play className="w-4 h-4 flex-shrink-0" />
                           <span>{lesson}</span>
                         </div>
@@ -226,7 +226,7 @@ export default function ManagerAcademyPage() {
                             e.stopPropagation();
                             handleCompleteModule(module.id);
                           }}
-                          className={`mt-4 w-full py-2 bg-gradient-to-r ${module.color} text-white rounded-lg font-semibold hover:opacity-90 transition-all`}
+                          className={`mt-4 w-full py-2 `${module.color}` text-white rounded-lg font-semibold hover:opacity-90 transition-all`}
                         >
                           Start Module
                         </button>
@@ -240,7 +240,7 @@ export default function ManagerAcademyPage() {
         </div>
 
         {/* Leadership Tips */}
-        <div className="mt-12 bg-stone-900 border-2 border-stone-700 rounded p-8">
+        <div className="mt-12 bg-[rgba(201,168,76,0.04)] border-2 border-[rgba(201,168,76,0.22)] rounded p-8">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <Heart className="w-8 h-8 text-[#C9A84C] 500" />
             Servant Leadership Core Principles
@@ -251,21 +251,21 @@ export default function ManagerAcademyPage() {
                 <span className="text-2xl">🙏</span>
                 <div>
                   <h4 className="font-bold text-white mb-1">Put People First</h4>
-                  <p className="text-sm text-amber-100/70">Your team's wellbeing and growth come before results</p>
+                  <p className="text-sm text-[#F0EBE0]/70">Your team's wellbeing and growth come before results</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-2xl">👂</span>
                 <div>
                   <h4 className="font-bold text-white mb-1">Listen Actively</h4>
-                  <p className="text-sm text-amber-100/70">Understand before being understood</p>
+                  <p className="text-sm text-[#F0EBE0]/70">Understand before being understood</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-2xl">💪</span>
                 <div>
                   <h4 className="font-bold text-white mb-1">Empower, Don't Control</h4>
-                  <p className="text-sm text-amber-100/70">Trust your team and give them autonomy</p>
+                  <p className="text-sm text-[#F0EBE0]/70">Trust your team and give them autonomy</p>
                 </div>
               </div>
             </div>
@@ -274,21 +274,21 @@ export default function ManagerAcademyPage() {
                 <span className="text-2xl">🌱</span>
                 <div>
                   <h4 className="font-bold text-white mb-1">Grow Your Team</h4>
-                  <p className="text-sm text-amber-100/70">Invest in development and career growth</p>
+                  <p className="text-sm text-[#F0EBE0]/70">Invest in development and career growth</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-2xl">🤝</span>
                 <div>
                   <h4 className="font-bold text-white mb-1">Build Community</h4>
-                  <p className="text-sm text-amber-100/70">Foster belonging and collaboration</p>
+                  <p className="text-sm text-[#F0EBE0]/70">Foster belonging and collaboration</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-2xl">⚖️</span>
                 <div>
                   <h4 className="font-bold text-white mb-1">Lead with Integrity</h4>
-                  <p className="text-sm text-amber-100/70">Model the behavior you expect</p>
+                  <p className="text-sm text-[#F0EBE0]/70">Model the behavior you expect</p>
                 </div>
               </div>
             </div>

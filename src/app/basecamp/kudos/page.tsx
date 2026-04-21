@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -10,14 +10,14 @@ export default function Kudos() {
   const [message, setMessage] = useState('');
 
   const badges = [
-    { id: 'rockstar', emoji: '🌟', name: 'Rockstar', color: 'from-yellow-600 to-orange-600' },
-    { id: 'hero', emoji: '🦸', name: 'Team Hero', color: 'from-amber-700 to-cyan-600' },
-    { id: 'genius', emoji: '🧠', name: 'Big Brain', color: 'from-amber-700 to-amber-600' },
+    { id: 'rockstar', emoji: '🌟', name: 'Rockstar', color: 'bg-[rgba(201,168,76,0.12)]' },
+    { id: 'hero', emoji: '🦸', name: 'Team Hero', color: 'bg-[rgba(201,168,76,0.12)]' },
+    { id: 'genius', emoji: '🧠', name: 'Big Brain', color: 'bg-[rgba(201,168,76,0.12)]' },
     { id: 'helper', emoji: '🤝', name: 'Super Helper', color: 'from-[#110F0B] 600 to-emerald-600' },
-    { id: 'innovator', emoji: '💡', name: 'Innovator', color: 'from-orange-600 to-red-600' },
+    { id: 'innovator', emoji: '💡', name: 'Innovator', color: 'bg-[rgba(201,168,76,0.12)]' },
     { id: 'positive', emoji: '😊', name: 'Positivity King/Queen', color: 'from-[#110F0B] 600 to-red-600' },
-    { id: 'mentor', emoji: '🎓', name: 'Amazing Mentor', color: 'from-amber-700 to-amber-600' },
-    { id: 'clutch', emoji: '⚡', name: 'Clutch Player', color: 'from-yellow-600 to-yellow-600' }
+    { id: 'mentor', emoji: '🎓', name: 'Amazing Mentor', color: 'bg-[rgba(201,168,76,0.12)]' },
+    { id: 'clutch', emoji: '⚡', name: 'Clutch Player', color: 'bg-[rgba(201,168,76,0.12)]' }
   ];
 
   const recentKudos = [
@@ -84,13 +84,13 @@ export default function Kudos() {
   const randomFunny = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900">
+    <div className="min-h-screen bg-[#070604]">
       {/* Top Navigation */}
-      <nav className="bg-stone-950/80 backdrop-blur-xl border-b-2 border-emerald-500/30 sticky top-0 z-50">
+      <nav className="bg-[#110F0B]/80 backdrop-blur-xl border-b-2 border-[rgba(201,168,76,0.22)] sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <Link href="/basecamp" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <Mountain className="w-8 h-8 text-emerald-400" />
-            <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-teal-200">
+            <Mountain className="w-8 h-8 text-[#9E8F75]" />
+            <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#E8C060] to-[#C9A84C]">
               Your Basecamp
             </span>
           </Link>
@@ -100,10 +100,10 @@ export default function Kudos() {
       <div className="max-w-7xl mx-auto p-6">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/basecamp" className="inline-flex items-center gap-2 text-emerald-300 hover:text-emerald-100 mb-4 transition-colors">
+          <Link href="/basecamp" className="inline-flex items-center gap-2 text-[#9E8F75] hover:text-[#9E8F75] mb-4 transition-colors">
             ← Back to Basecamp
           </Link>
-          <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-orange-200 to-yellow-200 mb-2"
+          <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#E8C060] to-[#C9A84C] mb-2"
               style={{
                 textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(251,191,36,0.6)',
                 WebkitTextStroke: '1px rgba(251,191,36,0.3)',
@@ -111,12 +111,12 @@ export default function Kudos() {
               }}>
             👏 Kudos Wall
           </h1>
-          <p className="text-emerald-200 text-lg">Spread the love! Recognize your amazing teammates! 💚</p>
+          <p className="text-[#9E8F75] text-lg">Spread the love! Recognize your amazing teammates! 💚</p>
         </div>
 
         {/* Stats Banner */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded p-5 border-2 border-yellow-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-yellow-500/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-yellow-200 text-sm mb-1">Kudos Given</div>
@@ -135,10 +135,10 @@ export default function Kudos() {
               <Heart className="w-12 h-12 text-[#C9A84C] was-pink-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-5 border-2 border-amber-500/40/30">
+          <div className="bg-[rgba(201,168,76,0.04)] rounded p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-amber-100/70 text-sm mb-1">You Gave</div>
+                <div className="text-[#F0EBE0]/70 text-sm mb-1">You Gave</div>
                 <div className="text-3xl font-bold text-white">18</div>
                 <div className="text-amber-400 text-xs mt-1">Generous spirit! ✨</div>
               </div>
@@ -160,20 +160,20 @@ export default function Kudos() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left - Give Kudos */}
           <div className="lg:col-span-1">
-            <div className="lux-card/80 rounded p-6 border-2 border-emerald-500/30 sticky top-24">
+            <div className="lux-card/80 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] sticky top-24">
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <Sparkles className="w-6 h-6 text-emerald-400" />
+                <Sparkles className="w-6 h-6 text-[#9E8F75]" />
                 Give Kudos!
               </h2>
 
               <div className="space-y-4">
                 {/* Select Recipient */}
                 <div>
-                  <label className="text-emerald-200 font-semibold block mb-2">Who deserves kudos?</label>
+                  <label className="text-[#9E8F75] font-semibold block mb-2">Who deserves kudos?</label>
                   <select
                     value={selectedRecipient}
                     onChange={(e) => setSelectedRecipient(e.target.value)}
-                    className="w-full bg-stone-950 border-2 border-emerald-500/30 rounded-lg px-4 py-3 text-white focus:border-emerald-400 focus:outline-none"
+                    className="w-full bg-[#110F0B] border-2 border-[rgba(201,168,76,0.22)] rounded-lg px-4 py-3 text-white focus:border-[rgba(201,168,76,0.22)] focus:outline-none"
                   >
                     <option value="">Select a teammate...</option>
                     <option value="sarah">Sarah Chen</option>
@@ -188,7 +188,7 @@ export default function Kudos() {
 
                 {/* Select Badge */}
                 <div>
-                  <label className="text-emerald-200 font-semibold block mb-2">Pick a badge:</label>
+                  <label className="text-[#9E8F75] font-semibold block mb-2">Pick a badge:</label>
                   <div className="grid grid-cols-2 gap-2">
                     {badges.map(badge => (
                       <button
@@ -196,8 +196,8 @@ export default function Kudos() {
                         onClick={() => setSelectedBadge(badge.id)}
                         className={`p-3 rounded-lg border-2 transition-all ${
                           selectedBadge === badge.id
-                            ? `bg-gradient-to-r ${badge.color} border-white text-white scale-105`
-                            : 'bg-stone-950 border-stone-700 text-stone-300 hover:border-emerald-500/50'
+                            ? ${badge.color}` border-white text-white scale-105`
+                            : 'bg-[#110F0B] border-[rgba(201,168,76,0.22)] text-[#9E8F75] hover:border-[rgba(201,168,76,0.22)]'
                         }`}
                       >
                         <div className="text-2xl mb-1">{badge.emoji}</div>
@@ -209,23 +209,23 @@ export default function Kudos() {
 
                 {/* Message */}
                 <div>
-                  <label className="text-emerald-200 font-semibold block mb-2">Your message:</label>
+                  <label className="text-[#9E8F75] font-semibold block mb-2">Your message:</label>
                   <textarea
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder={randomFunny}
-                    className="w-full bg-stone-950 border-2 border-emerald-500/30 rounded-lg px-4 py-3 text-white focus:border-emerald-400 focus:outline-none resize-none"
+                    className="w-full bg-[#110F0B] border-2 border-[rgba(201,168,76,0.22)] rounded-lg px-4 py-3 text-white focus:border-[rgba(201,168,76,0.22)] focus:outline-none resize-none"
                     rows={4}
                   />
                 </div>
 
                 {/* Send Button */}
-                <button className="w-full px-6 py-4 bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-500 hover:to-orange-500 text-white rounded-lg font-bold transition-all shadow-lg shadow-yellow-500/30 flex items-center justify-center gap-2">
+                <button className="w-full px-6 py-4 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-bold transition-all shadow-lg shadow-yellow-500/30 flex items-center justify-center gap-2">
                   <Send className="w-5 h-5" />
                   Send Kudos! 🎉
                 </button>
 
-                <div className="text-center text-stone-400 text-sm">
+                <div className="text-center text-[#9E8F75] text-sm">
                   💡 Tip: Be specific! Tell them exactly what they did that was awesome!
                 </div>
               </div>
@@ -239,7 +239,7 @@ export default function Kudos() {
                 <Trophy className="w-6 h-6 text-yellow-400" />
                 Recent Kudos
               </h2>
-              <select className="bg-stone-900 border-2 border-emerald-500/30 rounded-lg px-4 py-2 text-white">
+              <select className="bg-[rgba(201,168,76,0.04)] border-2 border-[rgba(201,168,76,0.22)] rounded-lg px-4 py-2 text-white">
                 <option>All Kudos</option>
                 <option>My Kudos</option>
                 <option>My Team</option>
@@ -250,38 +250,38 @@ export default function Kudos() {
               {recentKudos.map(kudos => (
                 <div key={kudos.id} className={`rounded p-6 border-2 transition-all hover:scale-[1.02] ${
                   kudos.to.includes('You')
-                    ? 'bg-gradient-to-r from-emerald-900/60 to-teal-900/60 border-emerald-500/50 ring-2 ring-emerald-400'
-                    : 'bg-gradient-to-r from-slate-800/80 to-slate-900/80 border-yellow-500/30'
+                    ? 'bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)] ring-2 ring-[rgba(201,168,76,0.45)]'
+                    : 'bg-[rgba(201,168,76,0.06)] border-yellow-500/30'
                 }`}>
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-stone-900 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                    <div className="w-16 h-16 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
                       {kudos.from.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-white font-bold">{kudos.from}</span>
-                        <span className="text-stone-400">→</span>
-                        <span className={`font-bold ${kudos.to.includes('You') ? 'text-emerald-300 text-lg' : 'text-white'}`}>
+                        <span className="text-[#9E8F75]">→</span>
+                        <span className={`font-bold ${kudos.to.includes('You') ? 'text-[#9E8F75] text-lg' : 'text-white'}`}>
                           {kudos.to}
                           {kudos.to.includes('You') && <span className="ml-2">🎉</span>}
                         </span>
                       </div>
-                      <div className="text-stone-400 text-sm">{kudos.time}</div>
+                      <div className="text-[#9E8F75] text-sm">{kudos.time}</div>
                     </div>
                     <div className="text-5xl">{kudos.badge}</div>
                   </div>
 
-                  <div className="bg-stone-950/50 rounded-lg p-4 mb-3 border border-yellow-500/20">
+                  <div className="bg-[#110F0B]/50 rounded-lg p-4 mb-3 border border-yellow-500/20">
                     <div className="text-yellow-400 text-xs font-bold mb-2">{kudos.badgeName.toUpperCase()}</div>
                     <div className="text-white text-lg">{kudos.message}</div>
                   </div>
 
                   <div className="flex items-center gap-4">
-                    <button className="flex items-center gap-2 px-4 py-2 bg-stone-900 hover:bg-stone-600 rounded-lg transition-all text-white">
+                    <button className="flex items-center gap-2 px-4 py-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] rounded-lg transition-all text-white">
                       <Heart className="w-4 h-4" />
                       <span>{kudos.likes}</span>
                     </button>
-                    <button className="px-4 py-2 bg-stone-900 hover:bg-stone-600 rounded-lg transition-all text-white">
+                    <button className="px-4 py-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] rounded-lg transition-all text-white">
                       Add to this!
                     </button>
                   </div>
@@ -290,14 +290,14 @@ export default function Kudos() {
             </div>
 
             {/* Load More */}
-            <button className="w-full mt-6 px-6 py-3 bg-stone-900 hover:bg-stone-900 border-2 border-emerald-500/30 text-white rounded-lg font-semibold transition-all">
+            <button className="w-full mt-6 px-6 py-3 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.04)] border-2 border-[rgba(201,168,76,0.22)] text-white rounded-lg font-semibold transition-all">
               Load More Awesome Recognition 👇
             </button>
           </div>
         </div>
 
         {/* Fun Footer */}
-        <div className="mt-8 bg-gradient-to-r from-yellow-900/30 to-orange-900/30 rounded p-6 border-2 border-yellow-500/30 text-center">
+        <div className="mt-8 bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-yellow-500/30 text-center">
           <h3 className="text-2xl font-bold text-yellow-200 mb-2">🌟 Fun Fact!</h3>
           <p className="text-yellow-100 text-lg mb-2">
             Teams that recognize each other are 5x happier at work!

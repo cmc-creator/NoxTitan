@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { Gift, Heart, Users, TrendingUp, Award, AlertCircle, CheckCircle, DollarSign, Lock } from 'lucide-react';
@@ -125,7 +125,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
   return (
     <div className="space-y-6">
       {/* Header with Stats */}
-      <div className="bg-gradient-to-r from-pink-900/40 to-amber-900/40 backdrop-blur-xl rounded p-6 border-2 border-pink-500/30">
+      <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-pink-500/30">
         <div className="flex items-center gap-3 mb-4">
           <Gift className="w-8 h-8 text-pink-400" />
           <div>
@@ -135,10 +135,10 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div className="bg-cyan-500/20 rounded-lg p-4 text-center border border-cyan-500/30">
-            <DollarSign className="w-6 h-6 text-cyan-400 mx-auto mb-1" />
+          <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-4 text-center border border-[rgba(201,168,76,0.22)]">
+            <DollarSign className="w-6 h-6 text-[#9E8F75] mx-auto mb-1" />
             <p className="text-3xl font-bold text-white">{userDonationStats.xpBalance}</p>
-            <p className="text-sm text-cyan-200">Your XP Balance</p>
+            <p className="text-sm text-[#9E8F75]">Your XP Balance</p>
           </div>
           <div className="bg-green-500/20 rounded-lg p-4 text-center border border-green-500/30">
             <Heart className="w-6 h-6 text-green-400 mx-auto mb-1" />
@@ -148,7 +148,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
           <div className="bg-amber-500/20 rounded-lg p-4 text-center border border-amber-500/40/30">
             <TrendingUp className="w-6 h-6 text-amber-400 mx-auto mb-1" />
             <p className="text-3xl font-bold text-white">{userDonationStats.yearlyGiven}</p>
-            <p className="text-sm text-amber-100/70">Donated This Year</p>
+            <p className="text-sm text-[#F0EBE0]/70">Donated This Year</p>
           </div>
           <div className="bg-yellow-500/20 rounded-lg p-4 text-center border border-yellow-500/30">
             <Award className="w-6 h-6 text-yellow-400 mx-auto mb-1" />
@@ -165,12 +165,12 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
               {userDonationStats.yearlyGiven} / {userDonationStats.yearlyLimit} XP
             </span>
           </div>
-          <div className="w-full bg-stone-900 rounded-full h-3">
+          <div className="w-full bg-[rgba(201,168,76,0.04)] rounded-full h-3">
             <div
               className={`h-3 rounded-full transition-all ${
                 (userDonationStats.yearlyGiven / userDonationStats.yearlyLimit) > 0.8
-                  ? 'bg-gradient-to-r from-red-500 to-orange-500'
-                  : 'bg-gradient-to-r from-green-500 to-emerald-500'
+                  ? 'bg-[rgba(201,168,76,0.08)]'
+                  : 'bg-[rgba(201,168,76,0.08)]'
               }`}
               style={{ width: `${(userDonationStats.yearlyGiven / userDonationStats.yearlyLimit) * 100}%` }}
             ></div>
@@ -184,8 +184,8 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
           onClick={() => setActiveTab('give')}
           className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
             activeTab === 'give'
-              ? 'bg-gradient-to-r from-pink-500 to-amber-900 text-white'
-              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
+              ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white'
+              : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[#110F0B]'
           }`}
         >
           <Gift className="w-5 h-5" />
@@ -195,8 +195,8 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
           onClick={() => setActiveTab('received')}
           className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
             activeTab === 'received'
-              ? 'bg-gradient-to-r from-pink-500 to-amber-900 text-white'
-              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
+              ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white'
+              : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[#110F0B]'
           }`}
         >
           <Heart className="w-5 h-5" />
@@ -206,8 +206,8 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
           onClick={() => setActiveTab('limits')}
           className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
             activeTab === 'limits'
-              ? 'bg-gradient-to-r from-pink-500 to-amber-900 text-white'
-              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
+              ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white'
+              : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[#110F0B]'
           }`}
         >
           <AlertCircle className="w-5 h-5" />
@@ -232,7 +232,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
                 <select
                   value={selectedRecipient}
                   onChange={(e) => setSelectedRecipient(e.target.value)}
-                  className="w-full bg-stone-900 text-white rounded-lg px-4 py-3 border border-stone-700"
+                  className="w-full bg-[rgba(201,168,76,0.04)] text-white rounded-lg px-4 py-3 border border-[rgba(201,168,76,0.22)]"
                 >
                   <option value="">Select a teammate...</option>
                   <option value="jessica">Jessica Williams - Emergency</option>
@@ -254,8 +254,8 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
                       onClick={() => setSelectedAmount(amount)}
                       className={`px-3 py-2 rounded-lg font-bold transition-all ${
                         selectedAmount === amount
-                          ? 'bg-gradient-to-r from-pink-500 to-amber-900 text-white'
-                          : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
+                          ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white'
+                          : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[rgba(201,168,76,0.08)]'
                       }`}
                     >
                       {amount}
@@ -271,9 +271,9 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
                   className="w-full"
                 />
                 <div className="flex justify-between mt-2">
-                  <span className="text-sm text-stone-400">10 XP</span>
+                  <span className="text-sm text-[#9E8F75]">10 XP</span>
                   <span className="text-lg font-bold text-pink-400">{selectedAmount} XP</span>
-                  <span className="text-sm text-stone-400">{currentLimit.singleMax} XP max</span>
+                  <span className="text-sm text-[#9E8F75]">{currentLimit.singleMax} XP max</span>
                 </div>
               </div>
 
@@ -284,7 +284,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
                   value={donationReason}
                   onChange={(e) => setDonationReason(e.target.value)}
                   placeholder="Share why you're recognizing them... (optional but encouraged!)"
-                  className="w-full bg-stone-900 text-white rounded-lg px-4 py-3 border border-stone-700"
+                  className="w-full bg-[rgba(201,168,76,0.04)] text-white rounded-lg px-4 py-3 border border-[rgba(201,168,76,0.22)]"
                   rows={3}
                 ></textarea>
               </div>
@@ -312,7 +312,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
               <button
                 onClick={handleDonate}
                 disabled={!selectedRecipient || selectedAmount > userDonationStats.remainingThisYear || selectedAmount > userDonationStats.xpBalance}
-                className="w-full px-6 py-4 bg-gradient-to-r from-pink-500 to-amber-900 hover:from-pink-600 hover:to-amber-900 disabled:from-slate-600 disabled:to-slate-700 disabled:cursor-not-allowed rounded-lg font-bold text-white text-lg transition-all flex items-center justify-center gap-2"
+                className="w-full px-6 py-4 bg-[rgba(201,168,76,0.08)] disabled:from-slate-600 disabled:to-slate-700 disabled:cursor-not-allowed rounded-lg font-bold text-white text-lg transition-all flex items-center justify-center gap-2"
               >
                 <Gift className="w-6 h-6" />
                 Donate {selectedAmount} XP
@@ -321,20 +321,20 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
           </div>
 
           {/* Recent Donations */}
-          <div className="lux-card/80 backdrop-blur-xl rounded p-6 border-2 border-cyan-500/30">
+          <div className="lux-card/80 backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <h3 className="text-xl font-bold text-white mb-4">Recent Donations</h3>
             <div className="space-y-3">
               {recentDonations.map(donation => (
-                <div key={donation.id} className="bg-stone-950/50 rounded-lg p-4">
+                <div key={donation.id} className="bg-[#110F0B]/50 rounded-lg p-4">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
-                      <Users className="w-5 h-5 text-cyan-400" />
+                      <Users className="w-5 h-5 text-[#9E8F75]" />
                       <p className="font-bold text-white">{donation.recipient}</p>
                     </div>
                     <p className="text-xl font-bold text-pink-400">-{donation.amount} XP</p>
                   </div>
-                  <p className="text-sm text-stone-300 italic mb-1">&ldquo;{donation.reason}&rdquo;</p>
-                  <p className="text-xs text-stone-500">{donation.date}</p>
+                  <p className="text-sm text-[#9E8F75] italic mb-1">&ldquo;{donation.reason}&rdquo;</p>
+                  <p className="text-xs text-[#9E8F75]">{donation.date}</p>
                 </div>
               ))}
             </div>
@@ -348,14 +348,14 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
           {receivedGifts.map(gift => (
             <div
               key={gift.id}
-              className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 backdrop-blur-xl rounded p-6 border-2 border-green-500/30"
+              className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-green-500/30"
             >
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-3">
                   <Heart className="w-8 h-8 text-pink-400 fill-pink-400" />
                   <div>
                     <p className="text-lg font-bold text-white">{gift.sender}</p>
-                    <p className="text-sm text-stone-400">{gift.date}</p>
+                    <p className="text-sm text-[#9E8F75]">{gift.date}</p>
                   </div>
                 </div>
                 <div className="text-right">
@@ -363,7 +363,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
                   <p className="text-xs text-green-200">Gifted</p>
                 </div>
               </div>
-              <div className="bg-stone-950/50 rounded-lg p-3">
+              <div className="bg-[#110F0B]/50 rounded-lg p-3">
                 <p className="text-white italic">&ldquo;{gift.reason}&rdquo;</p>
               </div>
             </div>
@@ -375,7 +375,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
       {activeTab === 'limits' && (
         <div className="space-y-6">
           {/* Your Limits */}
-          <div className="bg-gradient-to-br from-stone-900/40 to-pink-900/40 backdrop-blur-xl rounded p-6 border-2 border-amber-500/40/30">
+          <div className="bg-[rgba(201,168,76,0.04)] backdrop-blur-xl rounded p-6 border-2 border-amber-500/40/30">
             <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
               <Lock className="w-6 h-6 text-amber-400" />
               Your Donation Limits ({userRole.charAt(0).toUpperCase() + userRole.slice(1)})
@@ -384,74 +384,74 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div className="bg-amber-500/20 rounded-lg p-6 text-center border border-amber-500/40/30">
                 <p className="text-5xl font-bold text-white mb-2">{currentLimit.yearlyMax}</p>
-                <p className="text-amber-100/70 font-semibold">Annual Donation Limit</p>
-                <p className="text-xs text-stone-400 mt-2">Resets January 1st each year</p>
+                <p className="text-[#F0EBE0]/70 font-semibold">Annual Donation Limit</p>
+                <p className="text-xs text-[#9E8F75] mt-2">Resets January 1st each year</p>
               </div>
               <div className="bg-pink-500/20 rounded-lg p-6 text-center border border-pink-500/30">
                 <p className="text-5xl font-bold text-white mb-2">{currentLimit.singleMax}</p>
                 <p className="text-pink-200 font-semibold">Max Per Single Gift</p>
-                <p className="text-xs text-stone-400 mt-2">Per transaction limit</p>
+                <p className="text-xs text-[#9E8F75] mt-2">Per transaction limit</p>
               </div>
             </div>
 
-            <div className="bg-stone-950/50 rounded-lg p-4">
-              <p className="text-stone-300">{currentLimit.description}</p>
+            <div className="bg-[#110F0B]/50 rounded-lg p-4">
+              <p className="text-[#9E8F75]">{currentLimit.description}</p>
             </div>
           </div>
 
           {/* Rules & Guidelines */}
-          <div className="bg-gradient-to-br from-cyan-900/40 to-amber-800/40 backdrop-blur-xl rounded p-6 border-2 border-cyan-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <h3 className="text-xl font-bold text-white mb-4">Donation Rules & Guidelines</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-white font-semibold">Annual Cap Prevents Gaming</p>
-                  <p className="text-sm text-stone-400">Limited yearly donations prevent XP inflation and maintain system integrity</p>
+                  <p className="text-sm text-[#9E8F75]">Limited yearly donations prevent XP inflation and maintain system integrity</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-white font-semibold">Can't Exceed Your Balance</p>
-                  <p className="text-sm text-stone-400">You can only donate XP you've actually earned through work</p>
+                  <p className="text-sm text-[#9E8F75]">You can only donate XP you've actually earned through work</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-white font-semibold">All Donations Are Logged</p>
-                  <p className="text-sm text-stone-400">Timestamp, IP, and reason recorded to prevent abuse</p>
+                  <p className="text-sm text-[#9E8F75]">Timestamp, IP, and reason recorded to prevent abuse</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-white font-semibold">Team Donations Count as Individual</p>
-                  <p className="text-sm text-stone-400">Donating to a team splits XP among members, counts toward your limit</p>
+                  <p className="text-sm text-[#9E8F75]">Donating to a team splits XP among members, counts toward your limit</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-white font-semibold">Higher Roles = Higher Limits</p>
-                  <p className="text-sm text-stone-400">Managers (1000/year) and Admins (2000/year) can give more than employees (500/year)</p>
+                  <p className="text-sm text-[#9E8F75]">Managers (1000/year) and Admins (2000/year) can give more than employees (500/year)</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <AlertCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-white font-semibold">No Refunds or Reversals</p>
-                  <p className="text-sm text-stone-400">Once donated, XP cannot be returned. Double-check before sending!</p>
+                  <p className="text-sm text-[#9E8F75]">Once donated, XP cannot be returned. Double-check before sending!</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Why These Limits? */}
-          <div className="lux-card/80 backdrop-blur-xl rounded p-6 border-2 border-stone-700">
+          <div className="lux-card/80 backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <h3 className="text-xl font-bold text-white mb-4">Why Do We Have Donation Limits?</h3>
-            <div className="space-y-3 text-stone-300">
+            <div className="space-y-3 text-[#9E8F75]">
               <p>💡 <strong>Prevents System Gaming:</strong> Without limits, users could trade XP to artificially boost rankings.</p>
               <p>💡 <strong>Maintains XP Value:</strong> Scarcity keeps XP meaningful and rewards actually valuable.</p>
               <p>💡 <strong>Encourages Earning:</strong> Users should earn XP through work, not just receive gifts.</p>

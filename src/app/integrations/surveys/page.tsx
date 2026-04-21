@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { 
@@ -77,7 +77,7 @@ export default function SurveyIntegrationsPage() {
         'Configure sync frequency (real-time or scheduled)',
       ],
       webhookSetup: true,
-      color: 'from-amber-700 to-amber-800',
+      color: 'bg-[rgba(201,168,76,0.12)]',
     },
     GOOGLE_FORMS: {
       name: 'Google Forms',
@@ -90,7 +90,7 @@ export default function SurveyIntegrationsPage() {
         'Set up automatic sync schedule',
       ],
       webhookSetup: false,
-      color: 'from-stone-900 to-pink-500',
+      color: 'bg-[rgba(201,168,76,0.12)]',
     },
     TYPEFORM: {
       name: 'Typeform',
@@ -104,7 +104,7 @@ export default function SurveyIntegrationsPage() {
         'Paste the token below',
       ],
       webhookSetup: true,
-      color: 'from-orange-500 to-red-500',
+      color: 'bg-[rgba(201,168,76,0.12)]',
     },
   };
 
@@ -124,53 +124,53 @@ export default function SurveyIntegrationsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-900 to-pink-50 p-8">
+    <div className="min-h-screen bg-[#070604] p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-5xl font-bold text-stone-200 mb-2">Survey Integrations</h1>
-          <p className="text-xl text-stone-500">Connect your survey platforms for real-time data sync</p>
+          <h1 className="text-5xl font-bold text-[#9E8F75] mb-2">Survey Integrations</h1>
+          <p className="text-xl text-[#9E8F75]">Connect your survey platforms for real-time data sync</p>
         </div>
 
         {/* Stats Overview */}
         <div className="grid grid-cols-4 gap-6 mb-8">
-          <div className="bg-stone-950 rounded shadow-lg p-6">
+          <div className="bg-[#110F0B] rounded shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-stone-500">Connected</span>
+              <span className="text-[#9E8F75]">Connected</span>
               <CheckCircle className="w-5 h-5 text-[#C9A84C] 600" />
             </div>
-            <div className="text-4xl font-bold text-stone-200">
+            <div className="text-4xl font-bold text-[#9E8F75]">
               {integrations.filter(i => i.isConnected).length}
             </div>
-            <div className="text-sm text-stone-500 mt-1">of {integrations.length} platforms</div>
+            <div className="text-sm text-[#9E8F75] mt-1">of {integrations.length} platforms</div>
           </div>
-          <div className="bg-stone-950 rounded shadow-lg p-6">
+          <div className="bg-[#110F0B] rounded shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-stone-500">Total Responses</span>
+              <span className="text-[#9E8F75]">Total Responses</span>
               <BarChart className="w-5 h-5 text-amber-600" />
             </div>
-            <div className="text-4xl font-bold text-stone-200">
+            <div className="text-4xl font-bold text-[#9E8F75]">
               {integrations.reduce((sum, i) => sum + i.totalResponses, 0)}
             </div>
-            <div className="text-sm text-stone-500 mt-1">All platforms</div>
+            <div className="text-sm text-[#9E8F75] mt-1">All platforms</div>
           </div>
-          <div className="bg-stone-950 rounded shadow-lg p-6">
+          <div className="bg-[#110F0B] rounded shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-stone-500">Active Surveys</span>
+              <span className="text-[#9E8F75]">Active Surveys</span>
               <Activity className="w-5 h-5 text-amber-400" />
             </div>
-            <div className="text-4xl font-bold text-stone-200">
+            <div className="text-4xl font-bold text-[#9E8F75]">
               {integrations.reduce((sum, i) => sum + i.activeSurveys, 0)}
             </div>
-            <div className="text-sm text-stone-500 mt-1">Collecting data</div>
+            <div className="text-sm text-[#9E8F75] mt-1">Collecting data</div>
           </div>
-          <div className="bg-stone-950 rounded shadow-lg p-6">
+          <div className="bg-[#110F0B] rounded shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-stone-500">Last Sync</span>
+              <span className="text-[#9E8F75]">Last Sync</span>
               <Clock className="w-5 h-5 text-[#C9A84C] 600" />
             </div>
-            <div className="text-2xl font-bold text-stone-200">2 min</div>
-            <div className="text-sm text-stone-500 mt-1">ago</div>
+            <div className="text-2xl font-bold text-[#9E8F75]">2 min</div>
+            <div className="text-sm text-[#9E8F75] mt-1">ago</div>
           </div>
         </div>
 
@@ -181,16 +181,16 @@ export default function SurveyIntegrationsPage() {
             return (
               <div
                 key={integration.id}
-                className="bg-stone-950 rounded shadow-lg p-8 hover:shadow-xl transition-shadow"
+                className="bg-[#110F0B] rounded shadow-lg p-8 hover:shadow-xl transition-shadow"
               >
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center gap-4">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${info.color} rounded flex items-center justify-center text-4xl`}>
+                    <div className={`w-16 h-16 `${info.color}` rounded flex items-center justify-center text-4xl`}>
                       {info.icon}
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-stone-200">{info.name}</h3>
-                      <p className="text-stone-500">{info.description}</p>
+                      <h3 className="text-2xl font-bold text-[#9E8F75]">{info.name}</h3>
+                      <p className="text-[#9E8F75]">{info.description}</p>
                     </div>
                   </div>
                   {integration.isConnected ? (
@@ -199,7 +199,7 @@ export default function SurveyIntegrationsPage() {
                       <span className="text-sm font-medium">Connected</span>
                     </div>
                   ) : (
-                    <div className="flex items-center gap-2 px-4 py-2 bg-[rgba(201,168,76,0.06)] text-stone-500 rounded-full">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-[rgba(201,168,76,0.06)] text-[#9E8F75] rounded-full">
                       <AlertCircle className="w-4 h-4" />
                       <span className="text-sm font-medium">Not Connected</span>
                     </div>
@@ -207,19 +207,19 @@ export default function SurveyIntegrationsPage() {
                 </div>
 
                 {integration.isConnected && (
-                  <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-stone-950 rounded-lg">
+                  <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-[#110F0B] rounded-lg">
                     <div>
-                      <div className="text-sm text-stone-500 mb-1">Responses</div>
-                      <div className="text-2xl font-bold text-stone-200">{integration.totalResponses}</div>
+                      <div className="text-sm text-[#9E8F75] mb-1">Responses</div>
+                      <div className="text-2xl font-bold text-[#9E8F75]">{integration.totalResponses}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-stone-500 mb-1">Active Surveys</div>
-                      <div className="text-2xl font-bold text-stone-200">{integration.activeSurveys}</div>
+                      <div className="text-sm text-[#9E8F75] mb-1">Active Surveys</div>
+                      <div className="text-2xl font-bold text-[#9E8F75]">{integration.activeSurveys}</div>
                     </div>
                     {integration.lastSync && (
                       <div className="col-span-2">
-                        <div className="text-sm text-stone-500 mb-1">Last Synced</div>
-                        <div className="text-sm font-medium text-stone-200">
+                        <div className="text-sm text-[#9E8F75] mb-1">Last Synced</div>
+                        <div className="text-sm font-medium text-[#9E8F75]">
                           {integration.lastSync.toLocaleString()}
                         </div>
                       </div>
@@ -232,7 +232,7 @@ export default function SurveyIntegrationsPage() {
                     <>
                       <button
                         onClick={() => handleSync(integration.id)}
-                        className="flex-1 px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-stone-900 hover:to-pink-700 flex items-center justify-center gap-2"
+                        className="flex-1 px-4 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg flex items-center justify-center gap-2"
                       >
                         <RefreshCw className="w-5 h-5" />
                         Sync Now
@@ -253,7 +253,7 @@ export default function SurveyIntegrationsPage() {
                   ) : (
                     <button
                       onClick={() => handleConnect(integration.platform)}
-                      className="flex-1 px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-stone-900 hover:to-pink-700 flex items-center justify-center gap-2"
+                      className="flex-1 px-4 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg flex items-center justify-center gap-2"
                     >
                       <Link2 className="w-5 h-5" />
                       Connect {info.name}
@@ -268,22 +268,22 @@ export default function SurveyIntegrationsPage() {
         {/* Setup Modal */}
         {selectedPlatform && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-            <div className="bg-stone-950 rounded shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-[#110F0B] rounded shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               <div className="p-8">
                 <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-3xl font-bold text-stone-200">
+                  <h2 className="text-3xl font-bold text-[#9E8F75]">
                     Connect {platformInfo[selectedPlatform as keyof typeof platformInfo].name}
                   </h2>
                   <button
                     onClick={() => setSelectedPlatform(null)}
-                    className="text-stone-400 hover:text-stone-500"
+                    className="text-[#9E8F75] hover:text-[#9E8F75]"
                   >
                     <X className="w-6 h-6" />
                   </button>
                 </div>
 
                 <div className="mb-6">
-                  <h3 className="text-xl font-semibold text-stone-200 mb-4">Setup Instructions</h3>
+                  <h3 className="text-xl font-semibold text-[#9E8F75] mb-4">Setup Instructions</h3>
                   <ol className="space-y-3">
                     {platformInfo[selectedPlatform as keyof typeof platformInfo].setupInstructions.map((step, index) => (
                       <li key={index} className="flex gap-3">
@@ -309,7 +309,7 @@ export default function SurveyIntegrationsPage() {
                       />
                       <button
                         onClick={() => setShowApiKey(showApiKey === selectedPlatform ? null : selectedPlatform)}
-                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-stone-400 hover:text-stone-500"
+                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#9E8F75] hover:text-[#9E8F75]"
                       >
                         {showApiKey === selectedPlatform ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                       </button>
@@ -326,7 +326,7 @@ export default function SurveyIntegrationsPage() {
                           type="text"
                           value={`https://nox-titan.vercel.app/api/webhooks/${selectedPlatform.toLowerCase()}`}
                           readOnly
-                          className="flex-1 px-4 py-3 border rounded-lg bg-stone-950"
+                          className="flex-1 px-4 py-3 border rounded-lg bg-[#110F0B]"
                         />
                         <button
                           onClick={() => navigator.clipboard.writeText(`https://nox-titan.vercel.app/api/webhooks/${selectedPlatform.toLowerCase()}`)}
@@ -335,7 +335,7 @@ export default function SurveyIntegrationsPage() {
                           Copy
                         </button>
                       </div>
-                      <p className="text-sm text-stone-500 mt-2">
+                      <p className="text-sm text-[#9E8F75] mt-2">
                         Add this webhook URL in your {platformInfo[selectedPlatform as keyof typeof platformInfo].name} settings to enable real-time sync
                       </p>
                     </div>
@@ -371,7 +371,7 @@ export default function SurveyIntegrationsPage() {
                       setSelectedPlatform(null);
                       alert('Integration connected successfully!');
                     }}
-                    className="flex-1 px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg hover:from-stone-900 hover:to-pink-700 flex items-center justify-center gap-2"
+                    className="flex-1 px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg flex items-center justify-center gap-2"
                   >
                     <Check className="w-5 h-5" />
                     Connect Integration

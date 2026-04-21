@@ -36,11 +36,11 @@ export default function SetupPage() {
 
   if (isComplete) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-stone-900 via-stone-900 to-amber-800 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-[#070604] flex items-center justify-center p-4">
         <div className="text-center">
           <div className="text-6xl mb-6">🎉</div>
           <h1 className="text-4xl font-bold text-white mb-4">Setup Complete!</h1>
-          <p className="text-xl text-amber-100/70">Redirecting to your dashboard...</p>
+          <p className="text-xl text-[#F0EBE0]/70">Redirecting to your dashboard...</p>
         </div>
       </div>
     );

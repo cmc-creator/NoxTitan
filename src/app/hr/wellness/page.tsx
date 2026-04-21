@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -29,7 +29,7 @@ export default function WellnessHub() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-pink-900 to-slate-900 p-6">
+    <div className="min-h-screen bg-[#070604] p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -65,40 +65,40 @@ export default function WellnessHub() {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-5 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-4 border-2 border-amber-500/40/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-amber-500/40/30">
             <Activity className="w-8 h-8 text-amber-400 mb-2" />
-            <div className="text-stone-300 text-sm mb-1">Activity Points</div>
+            <div className="text-[#9E8F75] text-sm mb-1">Activity Points</div>
             <div className="text-3xl font-bold text-white">1,250</div>
             <div className="text-amber-400 text-xs mt-1">+205 this week</div>
           </div>
           <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-4 border-2 border-pink-500/30">
             <Heart className="w-8 h-8 text-[#C9A84C] 400 mb-2" />
-            <div className="text-stone-300 text-sm mb-1">Health Score</div>
+            <div className="text-[#9E8F75] text-sm mb-1">Health Score</div>
             <div className="text-3xl font-bold text-white">82</div>
             <div className="text-[#C9A84C] 400 text-xs mt-1">Excellent</div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-amber-800/50 rounded p-4 border-2 border-amber-500/40/30">
+          <div className="bg-[rgba(201,168,76,0.04)] rounded p-4 border-2 border-amber-500/40/30">
             <Brain className="w-8 h-8 text-amber-400 mb-2" />
-            <div className="text-stone-300 text-sm mb-1">Mental Wellness</div>
+            <div className="text-[#9E8F75] text-sm mb-1">Mental Wellness</div>
             <div className="text-3xl font-bold text-white">75</div>
             <div className="text-amber-400 text-xs mt-1">Good</div>
           </div>
-          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded p-4 border-2 border-emerald-500/30">
-            <Apple className="w-8 h-8 text-emerald-400 mb-2" />
-            <div className="text-stone-300 text-sm mb-1">Nutrition</div>
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
+            <Apple className="w-8 h-8 text-[#9E8F75] mb-2" />
+            <div className="text-[#9E8F75] text-sm mb-1">Nutrition</div>
             <div className="text-3xl font-bold text-white">68</div>
-            <div className="text-emerald-400 text-xs mt-1">Improving</div>
+            <div className="text-[#9E8F75] text-xs mt-1">Improving</div>
           </div>
-          <div className="bg-gradient-to-br from-amber-700/50 to-amber-800/50 rounded p-4 border-2 border-amber-500/40/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-amber-500/40/30">
             <Moon className="w-8 h-8 text-amber-400 mb-2" />
-            <div className="text-stone-300 text-sm mb-1">Sleep Quality</div>
+            <div className="text-[#9E8F75] text-sm mb-1">Sleep Quality</div>
             <div className="text-3xl font-bold text-white">7.2h</div>
             <div className="text-amber-400 text-xs mt-1">Avg per night</div>
           </div>
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-2 mb-6 bg-stone-900/50 p-2 rounded-lg">
+        <div className="flex gap-2 mb-6 bg-[rgba(201,168,76,0.06)]/50 p-2 rounded-lg">
           {[
             { id: 'dashboard', label: 'Dashboard' },
             { id: 'challenges', label: 'Challenges' },
@@ -109,7 +109,7 @@ export default function WellnessHub() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-all ${
-                activeTab === tab.id ? 'bg-[#110F0B] 600 text-white' : 'text-stone-300 hover:bg-stone-900'
+                activeTab === tab.id ? 'bg-[#110F0B] 600 text-white' : 'text-[#9E8F75] hover:bg-[#110F0B]'
               }`}
             >
               {tab.label}
@@ -121,7 +121,7 @@ export default function WellnessHub() {
         {activeTab === 'dashboard' && (
           <div className="space-y-6">
             {/* Activity Log */}
-            <div className="bg-stone-900/50 rounded p-6 border-2 border-pink-500/30">
+            <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-pink-500/30">
               <h2 className="text-2xl font-bold text-white mb-6">Recent Activity</h2>
               <div className="space-y-3">
                 {activityLog.map((log, idx) => (
@@ -130,12 +130,12 @@ export default function WellnessHub() {
                       <Zap className="w-6 h-6 text-yellow-400" />
                       <div>
                         <div className="text-white font-semibold">{log.activity}</div>
-                        <div className="text-sm text-stone-400">{log.date} • {log.category}</div>
+                        <div className="text-sm text-[#9E8F75]">{log.date} • {log.category}</div>
                       </div>
                     </div>
                     <div className="text-right">
                       <div className="text-2xl font-bold text-yellow-400">+{log.points}</div>
-                      <div className="text-xs text-stone-400">points</div>
+                      <div className="text-xs text-[#9E8F75]">points</div>
                     </div>
                   </div>
                 ))}
@@ -144,55 +144,55 @@ export default function WellnessHub() {
 
             <div className="grid grid-cols-2 gap-6">
               {/* HSA Info */}
-              <div className="bg-stone-900/50 rounded p-6 border-2 border-emerald-500/30">
+              <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
                 <h3 className="text-xl font-bold text-white mb-4">Health Savings Account</h3>
                 <div className="space-y-4">
                   <div>
-                    <div className="text-sm text-stone-400 mb-1">Current Balance</div>
-                    <div className="text-4xl font-bold text-emerald-400">$2,450</div>
+                    <div className="text-sm text-[#9E8F75] mb-1">Current Balance</div>
+                    <div className="text-4xl font-bold text-[#9E8F75]">$2,450</div>
                   </div>
                   <div>
-                    <div className="text-sm text-stone-400 mb-1">2026 Contributions</div>
+                    <div className="text-sm text-[#9E8F75] mb-1">2026 Contributions</div>
                     <div className="text-2xl font-bold text-white">$850</div>
                   </div>
                   <div>
-                    <div className="text-sm text-stone-400 mb-1">Employer Match</div>
+                    <div className="text-sm text-[#9E8F75] mb-1">Employer Match</div>
                     <div className="text-xl font-bold text-amber-400">$500 annually</div>
                   </div>
-                  <button className="w-full px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold">
+                  <button className="w-full px-4 py-2 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.15)] text-white rounded-lg font-semibold">
                     Manage HSA
                   </button>
                 </div>
               </div>
 
               {/* Fitness Tracking */}
-              <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
+              <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-amber-500/40/30">
                 <h3 className="text-xl font-bold text-white mb-4">This Week's Activity</h3>
                 <div className="space-y-4">
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-stone-300">Steps</span>
+                      <span className="text-[#9E8F75]">Steps</span>
                       <span className="text-white font-bold">42,380 / 70,000</span>
                     </div>
-                    <div className="w-full bg-stone-900 rounded-full h-3">
+                    <div className="w-full bg-[rgba(201,168,76,0.04)] rounded-full h-3">
                       <div className="bg-amber-600 h-3 rounded-full" style={{width: '60%'}}></div>
                     </div>
                   </div>
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-stone-300">Active Minutes</span>
+                      <span className="text-[#9E8F75]">Active Minutes</span>
                       <span className="text-white font-bold">180 / 300</span>
                     </div>
-                    <div className="w-full bg-stone-900 rounded-full h-3">
+                    <div className="w-full bg-[rgba(201,168,76,0.04)] rounded-full h-3">
                       <div className="bg-amber-500 h-3 rounded-full" style={{width: '60%'}}></div>
                     </div>
                   </div>
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-stone-300">Workouts</span>
+                      <span className="text-[#9E8F75]">Workouts</span>
                       <span className="text-white font-bold">4 / 5</span>
                     </div>
-                    <div className="w-full bg-stone-900 rounded-full h-3">
+                    <div className="w-full bg-[rgba(201,168,76,0.04)] rounded-full h-3">
                       <div className="bg-[#110F0B] 500 h-3 rounded-full" style={{width: '80%'}}></div>
                     </div>
                   </div>
@@ -204,18 +204,18 @@ export default function WellnessHub() {
 
         {/* Challenges Tab */}
         {activeTab === 'challenges' && (
-          <div className="bg-stone-900/50 rounded p-6 border-2 border-orange-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-orange-500/30">
             <h2 className="text-2xl font-bold text-white mb-6">Active Wellness Challenges</h2>
             <div className="space-y-4">
               {challenges.map(challenge => (
-                <div key={challenge.id} className="bg-gradient-to-r from-orange-900/30 to-amber-900/30 rounded-lg p-6 border-2 border-orange-500/30">
+                <div key={challenge.id} className="bg-[rgba(201,168,76,0.06)] rounded-lg p-6 border-2 border-orange-500/30">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
                         <h3 className="text-2xl font-bold text-white">{challenge.name}</h3>
                         <Award className="w-6 h-6 text-yellow-400" />
                       </div>
-                      <div className="flex items-center gap-4 text-sm text-stone-300 mb-3">
+                      <div className="flex items-center gap-4 text-sm text-[#9E8F75] mb-3">
                         <span className="flex items-center gap-1">
                           <Users className="w-4 h-4" />
                           {challenge.participants} participants
@@ -227,18 +227,18 @@ export default function WellnessHub() {
                       </div>
                       <div className="mb-3">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-stone-300">Your Progress</span>
+                          <span className="text-[#9E8F75]">Your Progress</span>
                           <span className="text-white font-bold">{challenge.progress}%</span>
                         </div>
-                        <div className="w-full bg-stone-900 rounded-full h-4">
+                        <div className="w-full bg-[rgba(201,168,76,0.04)] rounded-full h-4">
                           <div className={`h-4 rounded-full ${
-                            challenge.progress >= 80 ? 'bg-emerald-500' :
+                            challenge.progress >= 80 ? 'bg-[rgba(201,168,76,0.15)]' :
                             challenge.progress >= 50 ? 'bg-amber-600' : 'bg-orange-500'
                           }`} style={{width: `${challenge.progress}%`}}></div>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="text-sm text-stone-400">Reward:</span>
+                        <span className="text-sm text-[#9E8F75]">Reward:</span>
                         <span className="px-3 py-1 bg-yellow-600 text-white rounded-full text-sm font-bold">
                           {challenge.reward}
                         </span>
@@ -257,16 +257,16 @@ export default function WellnessHub() {
         {/* EAP Resources Tab */}
         {activeTab === 'eap' && (
           <div className="space-y-6">
-            <div className="bg-gradient-to-r from-stone-900/30 to-pink-900/30 rounded p-6 border-2 border-amber-500/40/30">
+            <div className="bg-[rgba(201,168,76,0.04)] rounded p-6 border-2 border-amber-500/40/30">
               <h2 className="text-2xl font-bold text-white mb-3">Employee Assistance Program (EAP)</h2>
-              <p className="text-amber-100/70 mb-4">
+              <p className="text-[#F0EBE0]/70 mb-4">
                 Confidential support for you and your family. All services are free and available 24/7.
               </p>
               <div className="flex items-center gap-4 text-white">
                 <div className="px-4 py-2 bg-amber-600 rounded-lg font-bold">
                   📞 1-800-EAP-HELP
                 </div>
-                <div className="text-sm text-amber-100/70">
+                <div className="text-sm text-[#F0EBE0]/70">
                   Available 24/7 • Completely Confidential
                 </div>
               </div>
@@ -274,10 +274,10 @@ export default function WellnessHub() {
 
             <div className="grid grid-cols-2 gap-6">
               {eapResources.map((resource, idx) => (
-                <div key={idx} className="bg-stone-900/50 rounded p-6 border-2 border-pink-500/30 hover:border-pink-400 transition-all group">
+                <div key={idx} className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-pink-500/30 hover:border-pink-400 transition-all group">
                   <resource.icon className="w-12 h-12 text-[#C9A84C] 400 mb-4 group-hover:scale-110 transition-transform" />
                   <h3 className="text-xl font-bold text-white mb-2">{resource.title}</h3>
-                  <p className="text-stone-300 mb-4">{resource.description}</p>
+                  <p className="text-[#9E8F75] mb-4">{resource.description}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-[#C9A84C] 300">{resource.sessions}</span>
                     <button className="px-4 py-2 bg-[#110F0B] 600 hover:bg-[#110F0B] 500 text-white rounded-lg font-semibold text-sm">
@@ -292,7 +292,7 @@ export default function WellnessHub() {
 
         {/* Telemedicine Tab */}
         {activeTab === 'telemedicine' && (
-          <div className="bg-stone-900/50 rounded p-6 border-2 border-cyan-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <h2 className="text-2xl font-bold text-white mb-6">Telemedicine Services</h2>
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[
@@ -300,17 +300,17 @@ export default function WellnessHub() {
                 { name: 'Mental Health', wait: '< 15 min', cost: '$0 copay', available: true },
                 { name: 'Dermatology', wait: '< 30 min', cost: '$20 copay', available: true },
               ].map((service, idx) => (
-                <div key={idx} className="bg-gradient-to-br from-cyan-900/50 to-amber-800/50 rounded-lg p-5 border border-cyan-500/30">
+                <div key={idx} className="bg-[rgba(201,168,76,0.06)] rounded-lg p-5 border border-[rgba(201,168,76,0.22)]">
                   <h3 className="text-xl font-bold text-white mb-3">{service.name}</h3>
                   <div className="space-y-2 mb-4">
-                    <div className="text-sm text-stone-300">
-                      <span className="text-stone-400">Wait time:</span> <span className="text-emerald-400 font-bold">{service.wait}</span>
+                    <div className="text-sm text-[#9E8F75]">
+                      <span className="text-[#9E8F75]">Wait time:</span> <span className="text-[#9E8F75] font-bold">{service.wait}</span>
                     </div>
-                    <div className="text-sm text-stone-300">
-                      <span className="text-stone-400">Cost:</span> <span className="text-white font-bold">{service.cost}</span>
+                    <div className="text-sm text-[#9E8F75]">
+                      <span className="text-[#9E8F75]">Cost:</span> <span className="text-white font-bold">{service.cost}</span>
                     </div>
                   </div>
-                  <button className="w-full px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-semibold">
+                  <button className="w-full px-4 py-2 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.15)] text-white rounded-lg font-semibold">
                     Start Visit
                   </button>
                 </div>
@@ -324,12 +324,12 @@ export default function WellnessHub() {
                   { date: '2025-12-15', type: 'Primary Care', doctor: 'Dr. Sarah Williams', reason: 'Annual Checkup' },
                   { date: '2025-11-08', type: 'Mental Health', doctor: 'Dr. Michael Chen', reason: 'Stress Management' },
                 ].map((visit, idx) => (
-                  <div key={idx} className="flex items-center justify-between p-3 bg-stone-900 rounded-lg">
+                  <div key={idx} className="flex items-center justify-between p-3 bg-[rgba(201,168,76,0.04)] rounded-lg">
                     <div>
                       <div className="text-white font-semibold">{visit.type}</div>
-                      <div className="text-sm text-stone-400">{visit.doctor} • {visit.reason}</div>
+                      <div className="text-sm text-[#9E8F75]">{visit.doctor} • {visit.reason}</div>
                     </div>
-                    <div className="text-sm text-stone-400">{visit.date}</div>
+                    <div className="text-sm text-[#9E8F75]">{visit.date}</div>
                   </div>
                 ))}
               </div>

@@ -13,7 +13,7 @@ export default function AppLayout({ children, userTier = 'PROFESSIONAL' }: AppLa
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-b from-black via-amber-950 to-black">
+    <div className="flex min-h-screen bg-[rgba(201,168,76,0.08)]">
       {/* Sidebar - responsive */}
       <Sidebar 
         isOpen={sidebarOpen} 

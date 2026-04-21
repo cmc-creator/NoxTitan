@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import {
@@ -197,33 +197,33 @@ export default function HRFormsPortalPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-700 via-stone-900 to-pink-50 p-8">
+    <div className="min-h-screen bg-[#070604] via-stone-900 to-pink-50 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="bg-stone-950 rounded shadow-lg p-8 mb-8">
+        <div className="bg-[#110F0B] rounded shadow-lg p-8 mb-8">
           <div className="flex justify-between items-start mb-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-16 h-16 bg-gradient-to-br from-amber-800 to-amber-600 rounded flex items-center justify-center text-3xl">
+                <div className="w-16 h-16 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded flex items-center justify-center text-3xl">
                   👥
                 </div>
                 <div>
-                  <h1 className="text-5xl font-bold text-stone-200">HR Forms Portal</h1>
-                  <p className="text-xl text-stone-500">Your magic forms headquarters</p>
+                  <h1 className="text-5xl font-bold text-[#9E8F75]">HR Forms Portal</h1>
+                  <p className="text-xl text-[#9E8F75]">Your magic forms headquarters</p>
                 </div>
               </div>
             </div>
             <div className="flex gap-3">
               <button
                 onClick={() => setShowUploadModal(true)}
-                className="px-6 py-3 bg-stone-950 border-2 border-amber-600/40 text-amber-600 rounded-lg hover:bg-purple-50 flex items-center gap-2"
+                className="px-6 py-3 bg-[#110F0B] border-2 border-amber-600/40 text-amber-600 rounded-lg hover:bg-purple-50 flex items-center gap-2"
               >
                 <Upload className="w-5 h-5" />
                 Upload Existing Form
               </button>
               <button
                 onClick={() => router.push('/forms/builder?department=hr')}
-                className="px-6 py-3 bg-gradient-to-r from-amber-800 to-amber-600 text-white rounded-lg hover:from-amber-800 hover:to-amber-600 flex items-center gap-2"
+                className="px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg flex items-center gap-2"
               >
                 <Plus className="w-5 h-5" />
                 Create New Form
@@ -233,14 +233,14 @@ export default function HRFormsPortalPage() {
 
           {/* Quick Stats */}
           <div className="grid grid-cols-4 gap-6">
-            <div className="bg-gradient-to-br from-amber-700 to-amber-500 rounded-lg p-4">
+            <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg p-4">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-blue-800 font-medium">Total Forms</span>
                 <FileText className="w-5 h-5 text-amber-400" />
               </div>
               <div className="text-3xl font-bold text-blue-900">{forms.length}</div>
             </div>
-            <div className="bg-gradient-to-br from-stone-900 to-amber-900 rounded-lg p-4">
+            <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg p-4">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-purple-800 font-medium">Custom Forms</span>
                 <FilePlus className="w-5 h-5 text-amber-600" />
@@ -271,10 +271,10 @@ export default function HRFormsPortalPage() {
         </div>
 
         {/* Search & Filters */}
-        <div className="bg-stone-950 rounded shadow-lg p-6 mb-6">
+        <div className="bg-[#110F0B] rounded shadow-lg p-6 mb-6">
           <div className="flex gap-4 items-center mb-4">
             <div className="flex-1 relative">
-              <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-stone-400" />
+              <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-[#9E8F75]" />
               <input
                 type="text"
                 placeholder="Search HR forms..."
@@ -307,14 +307,14 @@ export default function HRFormsPortalPage() {
                 onClick={() => setSelectedCategory(value)}
                 className={`px-4 py-2 rounded-lg flex items-center gap-2 whitespace-nowrap transition-all ${
                   selectedCategory === value
-                    ? 'bg-gradient-to-r from-amber-800 to-amber-600 text-white shadow-lg scale-105'
+                    ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white shadow-lg scale-105'
                     : 'bg-[rgba(201,168,76,0.06)] text-[#C9A84C] hover:bg-gray-200'
                 }`}
               >
                 <Icon className="w-4 h-4" />
                 {label}
                 <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${
-                  selectedCategory === value ? 'bg-stone-950/20' : 'bg-stone-950/50'
+                  selectedCategory === value ? 'bg-[#110F0B]/20' : 'bg-[#110F0B]/50'
                 }`}>
                   {count}
                 </span>
@@ -329,7 +329,7 @@ export default function HRFormsPortalPage() {
             {filteredForms.map(form => (
               <div
                 key={form.id}
-                className="bg-stone-950 rounded shadow-lg p-6 hover:shadow-2xl transition-all cursor-pointer group relative"
+                className="bg-[#110F0B] rounded shadow-lg p-6 hover:shadow-2xl transition-all cursor-pointer group relative"
                 onClick={() => form.isEditable ? router.push(`/forms/${form.id}`) : window.open(form.fileUrl)}
               >
                 {form.isFavorite && (
@@ -347,15 +347,15 @@ export default function HRFormsPortalPage() {
                      <FileCheck className="w-6 h-6 text-pink-600" />}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-stone-200 mb-1 group-hover:text-amber-600">
+                    <h3 className="text-lg font-bold text-[#9E8F75] mb-1 group-hover:text-amber-600">
                       {form.name}
                     </h3>
-                    <p className="text-sm text-stone-500">{form.description}</p>
+                    <p className="text-sm text-[#9E8F75]">{form.description}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-100 text-amber-300 rounded-full text-xs font-medium">
+                  <span className="px-3 py-1 bg-blue-100 text-[#E8C060] rounded-full text-xs font-medium">
                     {form.category}
                   </span>
                   {form.isEditable ? (
@@ -375,23 +375,23 @@ export default function HRFormsPortalPage() {
                     </div>
                   ) : (
                     <div title="Private">
-                      <Lock className="w-4 h-4 text-stone-400" />
+                      <Lock className="w-4 h-4 text-[#9E8F75]" />
                     </div>
                   )}
                 </div>
 
                 <div className="border-t pt-4 space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-stone-500">Uses:</span>
-                    <span className="font-medium text-stone-200">{form.usageCount}</span>
+                    <span className="text-[#9E8F75]">Uses:</span>
+                    <span className="font-medium text-[#9E8F75]">{form.usageCount}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-stone-500">Created by:</span>
-                    <span className="font-medium text-stone-200">{form.createdBy}</span>
+                    <span className="text-[#9E8F75]">Created by:</span>
+                    <span className="font-medium text-[#9E8F75]">{form.createdBy}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-stone-500">Updated:</span>
-                    <span className="font-medium text-stone-200">
+                    <span className="text-[#9E8F75]">Updated:</span>
+                    <span className="font-medium text-[#9E8F75]">
                       {form.lastModified.toLocaleDateString()}
                     </span>
                   </div>
@@ -408,7 +408,7 @@ export default function HRFormsPortalPage() {
                   {form.isEditable && (
                     <button
                       onClick={(e) => { e.stopPropagation(); router.push(`/forms/${form.id}/edit`); }}
-                      className="flex-1 px-3 py-2 bg-blue-100 text-amber-300 rounded-lg hover:bg-blue-200 flex items-center justify-center gap-2 text-sm"
+                      className="flex-1 px-3 py-2 bg-blue-100 text-[#E8C060] rounded-lg hover:bg-blue-200 flex items-center justify-center gap-2 text-sm"
                     >
                       <Edit className="w-4 h-4" />
                       Edit
@@ -425,9 +425,9 @@ export default function HRFormsPortalPage() {
             ))}
           </div>
         ) : (
-          <div className="bg-stone-950 rounded shadow-lg overflow-hidden">
+          <div className="bg-[#110F0B] rounded shadow-lg overflow-hidden">
             <table className="w-full">
-              <thead className="bg-stone-950">
+              <thead className="bg-[#110F0B]">
                 <tr>
                   <th className="px-6 py-4 text-left text-sm font-semibold text-[#C9A84C]">Form Name</th>
                   <th className="px-6 py-4 text-left text-sm font-semibold text-[#C9A84C]">Category</th>
@@ -439,18 +439,18 @@ export default function HRFormsPortalPage() {
               </thead>
               <tbody className="divide-y">
                 {filteredForms.map(form => (
-                  <tr key={form.id} className="hover:bg-stone-950">
+                  <tr key={form.id} className="hover:bg-[#110F0B]">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
                         {form.isFavorite && <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />}
                         <div>
-                          <div className="font-medium text-stone-200">{form.name}</div>
-                          <div className="text-sm text-stone-500">{form.description}</div>
+                          <div className="font-medium text-[#9E8F75]">{form.name}</div>
+                          <div className="text-sm text-[#9E8F75]">{form.description}</div>
                         </div>
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <span className="px-3 py-1 bg-blue-100 text-amber-300 rounded-full text-xs font-medium">
+                      <span className="px-3 py-1 bg-blue-100 text-[#E8C060] rounded-full text-xs font-medium">
                         {form.category}
                       </span>
                     </td>
@@ -461,14 +461,14 @@ export default function HRFormsPortalPage() {
                           Editable
                         </span>
                       ) : (
-                        <span className="text-stone-500 text-sm flex items-center gap-1">
+                        <span className="text-[#9E8F75] text-sm flex items-center gap-1">
                           <FileText className="w-4 h-4" />
                           PDF
                         </span>
                       )}
                     </td>
-                    <td className="px-6 py-4 text-stone-200">{form.usageCount}</td>
-                    <td className="px-6 py-4 text-stone-500 text-sm">
+                    <td className="px-6 py-4 text-[#9E8F75]">{form.usageCount}</td>
+                    <td className="px-6 py-4 text-[#9E8F75] text-sm">
                       {form.lastModified.toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4">
@@ -477,7 +477,7 @@ export default function HRFormsPortalPage() {
                           <Eye className="w-4 h-4" />
                         </button>
                         {form.isEditable && (
-                          <button className="p-2 bg-blue-100 text-amber-300 rounded hover:bg-blue-200">
+                          <button className="p-2 bg-blue-100 text-[#E8C060] rounded hover:bg-blue-200">
                             <Edit className="w-4 h-4" />
                           </button>
                         )}
@@ -496,12 +496,12 @@ export default function HRFormsPortalPage() {
         {/* Upload Modal */}
         {showUploadModal && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-            <div className="bg-stone-950 rounded shadow-2xl max-w-2xl w-full p-8">
+            <div className="bg-[#110F0B] rounded shadow-2xl max-w-2xl w-full p-8">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-3xl font-bold text-stone-200">Upload Existing Form</h2>
+                <h2 className="text-3xl font-bold text-[#9E8F75]">Upload Existing Form</h2>
                 <button
                   onClick={() => setShowUploadModal(false)}
-                  className="text-stone-400 hover:text-stone-500"
+                  className="text-[#9E8F75] hover:text-[#9E8F75]"
                 >
                   <span className="text-2xl">×</span>
                 </button>
@@ -549,12 +549,12 @@ export default function HRFormsPortalPage() {
                   <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                     Upload File
                   </label>
-                  <div className="border-2 border-dashed border-stone-700 rounded-lg p-8 text-center hover:border-amber-400/40 cursor-pointer">
-                    <Upload className="w-12 h-12 text-stone-400 mx-auto mb-4" />
-                    <p className="text-stone-500 mb-2">
+                  <div className="border-2 border-dashed border-[rgba(201,168,76,0.22)] rounded-lg p-8 text-center hover:border-amber-400/40 cursor-pointer">
+                    <Upload className="w-12 h-12 text-[#9E8F75] mx-auto mb-4" />
+                    <p className="text-[#9E8F75] mb-2">
                       <span className="text-amber-600 font-medium">Click to upload</span> or drag and drop
                     </p>
-                    <p className="text-sm text-stone-500">PDF, Word, Excel up to 10MB</p>
+                    <p className="text-sm text-[#9E8F75]">PDF, Word, Excel up to 10MB</p>
                   </div>
                 </div>
 
@@ -576,7 +576,7 @@ export default function HRFormsPortalPage() {
                     setShowUploadModal(false);
                     alert('Form uploaded successfully!');
                   }}
-                  className="flex-1 px-6 py-3 bg-gradient-to-r from-amber-800 to-amber-600 text-white rounded-lg hover:from-amber-800 hover:to-amber-600"
+                  className="flex-1 px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg"
                 >
                   Upload Form
                 </button>

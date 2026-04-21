@@ -21,56 +21,56 @@ export default function QuickActionsButton() {
       name: 'Clock In/Out',
       description: 'Start or end shift',
       icon: Clock,
-      color: 'from-amber-700 to-cyan-500',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       action: () => router.push('/timeclock')
     },
     {
       name: 'View Schedule',
       description: 'Check your shifts',
       icon: Calendar,
-      color: 'from-green-500 to-emerald-500',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       action: () => router.push('/calendar')
     },
     {
       name: 'Request Time Off',
       description: 'Submit PTO request',
       icon: Calendar,
-      color: 'from-stone-900 to-pink-500',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       action: () => router.push('/time-off')
     },
     {
       name: 'Report Incident',
       description: 'Log safety issue',
       icon: Shield,
-      color: 'from-red-500 to-orange-500',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       action: () => router.push('/qapi')
     },
     {
       name: 'Add Shift Log',
       description: 'Document shift notes',
       icon: FileText,
-      color: 'from-amber-700 to-amber-800',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       action: () => router.push('/shift-logs')
     },
     {
       name: 'Send Message',
       description: 'Chat with team',
       icon: MessageSquare,
-      color: 'from-cyan-500 to-amber-800',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       action: () => router.push('/messages')
     },
     {
       name: 'Add Employee',
       description: 'Onboard new staff',
       icon: Users,
-      color: 'from-violet-500 to-amber-900',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       action: () => router.push('/employees')
     },
     {
       name: 'View Payroll',
       description: 'Check pay details',
       icon: DollarSign,
-      color: 'from-green-500 to-teal-500',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       action: () => router.push('/payroll')
     }
   ];

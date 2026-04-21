@@ -45,7 +45,7 @@ export const industryTemplates: Record<string, IndustryTemplate> = {
     name: 'Healthcare',
     icon: '⚕️',
     description: 'Hospitals, clinics, nursing homes, medical facilities',
-    color: 'from-amber-700 to-cyan-600',
+    color: 'bg-[rgba(201,168,76,0.12)]',
     compliance: {
       breakRules: {
         mealBreakAfterHours: 6,
@@ -141,7 +141,7 @@ export const industryTemplates: Record<string, IndustryTemplate> = {
     name: 'Retail',
     icon: '🏪',
     description: 'Stores, boutiques, shopping centers',
-    color: 'from-pink-600 to-rose-600',
+    color: 'bg-[rgba(201,168,76,0.12)]',
     compliance: {
       breakRules: {
         mealBreakAfterHours: 5,
@@ -228,7 +228,7 @@ export const industryTemplates: Record<string, IndustryTemplate> = {
     name: 'Restaurant & Hospitality',
     icon: '🍽️',
     description: 'Restaurants, cafes, bars, catering',
-    color: 'from-orange-600 to-red-600',
+    color: 'bg-[rgba(201,168,76,0.12)]',
     compliance: {
       breakRules: {
         mealBreakAfterHours: 6,
@@ -317,7 +317,7 @@ export const industryTemplates: Record<string, IndustryTemplate> = {
     name: 'Construction',
     icon: '🏗️',
     description: 'Building, trades, contractors',
-    color: 'from-yellow-600 to-orange-700',
+    color: 'bg-[rgba(201,168,76,0.12)]',
     compliance: {
       breakRules: {
         mealBreakAfterHours: 5,
@@ -408,7 +408,7 @@ export const industryTemplates: Record<string, IndustryTemplate> = {
     name: 'Manufacturing',
     icon: '🏭',
     description: 'Factories, warehouses, production facilities',
-    color: 'from-slate-600 to-gray-700',
+    color: 'bg-[rgba(201,168,76,0.12)]',
     compliance: {
       breakRules: {
         mealBreakAfterHours: 5,
@@ -497,7 +497,7 @@ export const industryTemplates: Record<string, IndustryTemplate> = {
     name: 'Education',
     icon: '🎓',
     description: 'Schools, universities, training centers',
-    color: 'from-amber-700 to-amber-800',
+    color: 'bg-[rgba(201,168,76,0.12)]',
     compliance: {
       breakRules: {
         mealBreakAfterHours: 6,

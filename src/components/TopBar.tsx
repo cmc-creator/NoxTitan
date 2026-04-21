@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { User, LogOut, Crown, Zap, TrendingUp, Sparkles, Settings, Menu, X } from 'lucide-react';
 import Link from 'next/link';
@@ -13,10 +13,10 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const tierColors = {
-    VIP: 'bg-gradient-to-r from-amber-500 to-yellow-400',
-    PROFESSIONAL: 'bg-gradient-to-r from-amber-700 to-amber-600',
-    ENTERPRISE: 'bg-gradient-to-r from-amber-600 to-yellow-500',
-    TITAN: 'bg-gradient-to-r from-yellow-500 to-amber-400',
+    VIP: 'bg-[rgba(201,168,76,0.08)]',
+    PROFESSIONAL: 'bg-[rgba(201,168,76,0.08)]',
+    ENTERPRISE: 'bg-[rgba(201,168,76,0.08)]',
+    TITAN: 'bg-[rgba(201,168,76,0.08)]',
   };
 
   const getUpsellMessage = () => {
@@ -26,21 +26,21 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
           icon: <Crown className="h-4 w-4" />,
           text: 'Upgrade to Enterprise',
           link: '/upgrade',
-          color: 'text-amber-400 hover:text-amber-300 border-amber-600/40 hover:border-amber-400 hover:bg-amber-600/10'
+          color: 'text-amber-400 hover:text-[#E8C060] border-amber-600/40 hover:border-amber-400 hover:bg-amber-600/10'
         };
       case 'ENTERPRISE':
         return {
           icon: <Zap className="h-4 w-4" />,
           text: 'Go Titan',
           link: '/upgrade',
-          color: 'text-amber-300 hover:text-amber-200 border-amber-500/40 hover:border-amber-300 hover:bg-amber-500/10'
+          color: 'text-[#E8C060] hover:text-[#C9A84C] border-amber-500/40 hover:border-amber-300 hover:bg-amber-500/10'
         };
       case 'TITAN':
         return {
           icon: <TrendingUp className="h-4 w-4" />,
           text: 'Request Custom Features',
           link: '/custom-features',
-          color: 'text-amber-300 border-amber-500/30 hover:bg-amber-500/10 hover:text-amber-200 hover:border-amber-400'
+          color: 'text-[#E8C060] border-amber-500/30 hover:bg-amber-500/10 hover:text-[#C9A84C] hover:border-amber-400'
         };
       default:
         return null;

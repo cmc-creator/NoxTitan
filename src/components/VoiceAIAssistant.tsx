@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect, useRef } from 'react';
 import { MessageSquare, Mic, MicOff, Volume2, VolumeX, Send, X, Sparkles, Loader2 } from 'lucide-react';
@@ -242,9 +242,9 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
           )}
         </button>
         {/* Hover Tooltip */}
-        <div className="absolute bottom-24 left-0 w-64 bg-stone-950 border border-amber-500/40/50 rounded-lg p-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
-          <div className="text-amber-200 font-bold text-sm mb-1">🌙 Nox - Strategic AI</div>
-          <div className="text-stone-300 text-xs">
+        <div className="absolute bottom-24 left-0 w-64 bg-[#110F0B] border border-amber-500/40/50 rounded-lg p-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
+          <div className="text-[#C9A84C] font-bold text-sm mb-1">🌙 Nox - Strategic AI</div>
+          <div className="text-[#9E8F75] text-xs">
             Voice-powered assistant for complex scheduling, predictions, and strategic planning. Uses Oracle AI for insights.
           </div>
         </div>
@@ -258,7 +258,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-28 bg-gradient-to-br from-amber-700 to-amber-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-40 border-2 border-white/30"
+          className="fixed bottom-6 right-28 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-40 border-2 border-white/30"
           title="Nox - Voice AI Assistant"
         >
           <div className="relative">
@@ -270,14 +270,14 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
 
       {/* Voice Assistant Window */}
       {isOpen && (
-        <div className={`fixed bottom-6 left-6 w-[420px] h-[600px] bg-stone-950 border-2 rounded shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom-8`} style={{borderColor: customColor.includes('purple') ? '#a855f7' : '#8b5cf6'}}>
+        <div className={`fixed bottom-6 left-6 w-[420px] h-[600px] bg-[#110F0B] border-2 rounded shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom-8`} style={{borderColor: customColor.includes('purple') ? '#a855f7' : '#8b5cf6'}}>
       {/* Header */}
-      <div className={`flex items-center justify-between p-4 border-b border-stone-700 bg-gradient-to-r ${customColor}`}>
+      <div className={`flex items-center justify-between p-4 border-b border-[rgba(201,168,76,0.22)] `${customColor}}>
         <div className="flex items-center gap-3">
           <div className="relative w-10 h-10 rounded-full flex items-center justify-center text-2xl overflow-hidden" style={{background: 'transparent'}}>
             {customAvatar}
             {isSpeaking && (
-              <div className="absolute -inset-1 bg-stone-950 rounded-full animate-ping opacity-75"></div>
+              <div className="absolute -inset-1 bg-[#110F0B] rounded-full animate-ping opacity-75"></div>
             )}
           </div>
           <div>
@@ -288,7 +288,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
         <div className="flex items-center gap-2">
           <button
             onClick={() => setVoiceEnabled(!voiceEnabled)}
-            className="p-2 hover:bg-stone-950/20 rounded-lg transition-colors"
+            className="p-2 hover:bg-[#110F0B]/20 rounded-lg transition-colors"
             title={voiceEnabled ? 'Disable voice' : 'Enable voice'}
           >
             {voiceEnabled ? (
@@ -299,7 +299,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
           </button>
           <button
             onClick={() => setIsOpen(false)}
-            className="p-2 hover:bg-stone-950/20 rounded-lg transition-colors"
+            className="p-2 hover:bg-[#110F0B]/20 rounded-lg transition-colors"
           >
             <X className="w-5 h-5 text-white" />
           </button>
@@ -316,13 +316,13 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
             <div
               className={`max-w-[80%] rounded px-4 py-3 ${
                 msg.role === 'user'
-                  ? 'bg-gradient-to-r from-amber-800 to-amber-600 text-white'
-                  : 'bg-stone-900 text-stone-100 border border-stone-700'
+                  ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white'
+                  : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] border border-[rgba(201,168,76,0.22)]'
               }`}
             >
               <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
               <p className={`text-xs mt-1 ${
-                msg.role === 'user' ? 'text-blue-100' : 'text-stone-500'
+                msg.role === 'user' ? 'text-blue-100' : 'text-[#9E8F75]'
               }`}>
                 {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
               </p>
@@ -332,7 +332,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
         
         {isLoading && (
           <div className="flex justify-start">
-            <div className="bg-stone-900 border border-stone-700 rounded px-4 py-3">
+            <div className="bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded px-4 py-3">
               <Loader2 className="w-5 h-5 text-amber-400 animate-spin" />
             </div>
           </div>
@@ -342,7 +342,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
       </div>
 
       {/* Input Area */}
-      <div className="p-4 border-t border-stone-700 bg-stone-950">
+      <div className="p-4 border-t border-[rgba(201,168,76,0.22)] bg-[#110F0B]">
         <div className="flex items-end gap-2">
           <div className="flex-1 relative">
             <textarea
@@ -351,7 +351,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
               onKeyPress={handleKeyPress}
               placeholder="Ask me anything or click the mic..."
               rows={1}
-              className="w-full px-4 py-3 bg-stone-900 border border-stone-700 rounded text-white placeholder-stone-500 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20 resize-none"
+              className="w-full px-4 py-3 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded text-white placeholder-stone-500 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20 resize-none"
             />
           </div>
           <button
@@ -360,20 +360,20 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
             className={`p-3 rounded transition-all disabled:opacity-50 ${
               isListening
                 ? 'bg-red-600 hover:bg-red-700 animate-pulse'
-                : 'bg-stone-900 hover:bg-stone-900 border border-stone-700'
+                : 'bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)]'
             }`}
             title={isListening ? 'Stop listening' : 'Start voice input'}
           >
             {isListening ? (
               <MicOff className="w-5 h-5 text-white" />
             ) : (
-              <Mic className="w-5 h-5 text-stone-300" />
+              <Mic className="w-5 h-5 text-[#9E8F75]" />
             )}
           </button>
           <button
             onClick={() => handleSendMessage()}
             disabled={!inputText.trim() || isLoading}
-            className="p-3 bg-gradient-to-r from-amber-800 to-amber-600 hover:from-amber-800 hover:to-amber-600 rounded transition-all disabled:opacity-50"
+            className="p-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded transition-all disabled:opacity-50"
             title="Send message"
           >
             <Send className="w-5 h-5 text-white" />

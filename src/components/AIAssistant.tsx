@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect, useRef } from 'react';
 import { 
@@ -248,9 +248,9 @@ export default function AIAssistant() {
           <span className="absolute top-0 right-0 w-4 h-4 bg-green-400 rounded-full animate-pulse"></span>
           
           {/* Tooltip */}
-          <div className="absolute bottom-24 right-0 bg-stone-950 text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          <div className="absolute bottom-24 right-0 bg-[#110F0B] text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
             Titan Buddy
-            <div className="absolute -bottom-1 right-4 w-2 h-2 bg-stone-950 transform rotate-45"></div>
+            <div className="absolute -bottom-1 right-4 w-2 h-2 bg-[#110F0B] transform rotate-45"></div>
           </div>
         </button>
       )}

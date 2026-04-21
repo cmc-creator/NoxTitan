@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { Sparkles, Check, Home, Bot } from 'lucide-react';
@@ -35,10 +35,10 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
   ];
 
   const adventures = [
-    { id: 'tomb-raider', name: 'Tomb Raider', icon: '🗿', desc: 'Collect Ancient Gems', color: 'from-amber-700 to-orange-900' },
-    { id: 'treasure-hunt', name: 'Treasure Hunt', icon: '🏴‍☠️', desc: 'Find Gold Doubloons', color: 'from-yellow-600 to-amber-800' },
-    { id: 'space-explorer', name: 'Space Explorer', icon: '🚀', desc: 'Gather Star Crystals', color: 'from-amber-700 to-amber-500' },
-    { id: 'detective', name: 'Detective', icon: '🔍', desc: 'Solve with Clues', color: 'from-slate-700 to-gray-900' },
+    { id: 'tomb-raider', name: 'Tomb Raider', icon: '🗿', desc: 'Collect Ancient Gems', color: 'bg-[rgba(201,168,76,0.12)]' },
+    { id: 'treasure-hunt', name: 'Treasure Hunt', icon: '🏴‍☠️', desc: 'Find Gold Doubloons', color: 'bg-[rgba(201,168,76,0.12)]' },
+    { id: 'space-explorer', name: 'Space Explorer', icon: '🚀', desc: 'Gather Star Crystals', color: 'bg-[rgba(201,168,76,0.12)]' },
+    { id: 'detective', name: 'Detective', icon: '🔍', desc: 'Solve with Clues', color: 'bg-[rgba(201,168,76,0.12)]' },
   ];
 
   const avatars = ['🤖', '⚡', '🎯', '🚀', '💎', '🔥', '⭐', '🌟'];
@@ -50,7 +50,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
   ];
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-stone-900 via-stone-900 to-amber-800 z-50 overflow-y-auto">
+    <div className="fixed inset-0 bg-[rgba(201,168,76,0.08)] z-50 overflow-y-auto">
       <div className="min-h-screen p-8">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
@@ -59,15 +59,15 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
             <h1 className="text-5xl font-bold text-white mb-2">
               Welcome to Your Basecamp, {employeeName}! 🎉
             </h1>
-            <p className="text-amber-100/70 text-xl">
+            <p className="text-[#F0EBE0]/70 text-xl">
               Let's personalize your workspace and meet your AI companion
             </p>
           </div>
 
-          <div className="bg-stone-950 rounded shadow-2xl p-10 space-y-8">
+          <div className="bg-[#110F0B] rounded shadow-2xl p-10 space-y-8">
             {/* Theme Selection */}
             <div>
-              <h2 className="text-2xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
                 <Sparkles className="w-6 h-6 text-amber-600" />
                 Choose Your Theme
               </h2>
@@ -82,8 +82,8 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                         : 'border-gray-300 hover:border-amber-400/40'
                     }`}
                   >
-                    <div className={`h-12 rounded-lg bg-gradient-to-r ${theme.colors} mb-2`} />
-                    <p className="text-sm font-semibold text-stone-100">{theme.name}</p>
+                    <div className={`h-12 rounded-lg `${theme.colors}` mb-2`} />
+                    <p className="text-sm font-semibold text-[#9E8F75]">{theme.name}</p>
                   </button>
                 ))}
               </div>
@@ -91,7 +91,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
 
             {/* Adventure Mode */}
             <div>
-              <h2 className="text-2xl font-bold text-stone-100 mb-4">Pick Your Adventure</h2>
+              <h2 className="text-2xl font-bold text-[#9E8F75] mb-4">Pick Your Adventure</h2>
               <div className="grid grid-cols-2 gap-4">
                 {adventures.map((adventure) => (
                   <button
@@ -106,8 +106,8 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                     <div className="flex items-center gap-3 mb-2">
                       <span className="text-4xl">{adventure.icon}</span>
                       <div>
-                        <h3 className="font-bold text-stone-100">{adventure.name}</h3>
-                        <p className="text-sm text-stone-500">{adventure.desc}</p>
+                        <h3 className="font-bold text-[#9E8F75]">{adventure.name}</h3>
+                        <p className="text-sm text-[#9E8F75]">{adventure.desc}</p>
                       </div>
                     </div>
                     {settings.adventureMode === adventure.id && (
@@ -123,7 +123,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
 
             {/* Basebot Customization */}
             <div>
-              <h2 className="text-2xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+              <h2 className="text-2xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
                 <Bot className="w-6 h-6 text-amber-600" />
                 Customize Your AI Companion
               </h2>
@@ -131,7 +131,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
               <div className="space-y-4">
                 {/* Name */}
                 <div>
-                  <label className="block text-sm font-semibold text-stone-300 mb-2">
+                  <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                     Give Your Basebot a Name
                   </label>
                   <input
@@ -145,7 +145,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
 
                 {/* Avatar */}
                 <div>
-                  <label className="block text-sm font-semibold text-stone-300 mb-2">
+                  <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                     Choose an Avatar
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -156,7 +156,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                         className={`w-14 h-14 text-2xl rounded-lg transition-all ${
                           settings.basebotAvatar === avatar
                             ? 'bg-purple-200 border-2 border-amber-600/40 scale-110'
-                            : 'bg-stone-900 hover:bg-stone-800 border border-gray-300'
+                            : 'bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] border border-gray-300'
                         }`}
                       >
                         {avatar}
@@ -167,7 +167,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
 
                 {/* Personality */}
                 <div>
-                  <label className="block text-sm font-semibold text-stone-300 mb-2">
+                  <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                     Select Personality
                   </label>
                   <div className="grid grid-cols-4 gap-4">
@@ -182,7 +182,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                         }`}
                       >
                         <div className="text-2xl mb-1">{personality.icon}</div>
-                        <p className="text-sm font-semibold text-stone-100">{personality.name}</p>
+                        <p className="text-sm font-semibold text-[#9E8F75]">{personality.name}</p>
                       </button>
                     ))}
                   </div>
@@ -191,9 +191,9 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
             </div>
 
             {/* Preview */}
-            <div className={`bg-gradient-to-r ${themes.find(t => t.id === settings.theme)?.colors} rounded p-6 text-white`}>
+            <div className={`${themes.find(t => t.id === settings.theme)?.colors} rounded p-6 text-white`}>
               <h3 className="text-xl font-bold mb-3">Preview Your Basecamp</h3>
-              <div className="bg-stone-950/20 backdrop-blur-sm rounded-lg p-4 flex items-center gap-4">
+              <div className="bg-[#110F0B]/20 backdrop-blur-sm rounded-lg p-4 flex items-center gap-4">
                 <div className="text-4xl">{settings.basebotAvatar}</div>
                 <div>
                   <p className="font-bold text-lg">Hi, I'm {settings.basebotName}!</p>
@@ -207,7 +207,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
             {/* Complete Button */}
             <button
               onClick={() => onComplete(settings)}
-              className="w-full py-5 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-700 text-white rounded-lg font-bold text-xl transition-all flex items-center justify-center gap-2"
+              className="w-full py-5 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-bold text-xl transition-all flex items-center justify-center gap-2"
             >
               <Check className="w-7 h-7" />
               Complete Setup & Enter Basecamp

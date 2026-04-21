@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { 
@@ -164,13 +164,13 @@ export default function Analytics() {
     <div className="p-8">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-stone-100 mb-2">Analytics & Insights</h1>
-        <p className="text-stone-500">Workforce analytics, labor cost trends, and forecasting</p>
+        <h1 className="text-3xl font-bold text-[#9E8F75] mb-2">Analytics & Insights</h1>
+        <p className="text-[#9E8F75]">Workforce analytics, labor cost trends, and forecasting</p>
       </div>
 
       {/* Period Selector */}
       <div className="mb-6 flex items-center gap-4">
-        <label className="text-sm font-medium text-stone-300">Time Period:</label>
+        <label className="text-sm font-medium text-[#9E8F75]">Time Period:</label>
         <div className="flex gap-2">
           {(['week', 'month', 'quarter', 'year'] as const).map((period) => (
             <button
@@ -179,7 +179,7 @@ export default function Analytics() {
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 selectedPeriod === period
                   ? 'bg-amber-600 text-white shadow-lg'
-                  : 'bg-stone-950 text-stone-300 hover:bg-stone-950 border border-stone-700'
+                  : 'bg-[#110F0B] text-[#9E8F75] hover:bg-[#110F0B] border border-[rgba(201,168,76,0.22)]'
               }`}
             >
               {period.charAt(0).toUpperCase() + period.slice(1)}
@@ -200,9 +200,9 @@ export default function Analytics() {
               {Math.abs(costChange).toFixed(1)}%
             </div>
           </div>
-          <h3 className="text-sm font-medium text-stone-500 mb-1">Monthly Labor Cost</h3>
-          <p className="text-2xl font-bold text-stone-100">{formatCurrency(currentMonth.actualCost)}</p>
-          <p className="text-xs text-stone-500 mt-1">Budget: {formatCurrency(currentMonth.budgetedCost)}</p>
+          <h3 className="text-sm font-medium text-[#9E8F75] mb-1">Monthly Labor Cost</h3>
+          <p className="text-2xl font-bold text-[#9E8F75]">{formatCurrency(currentMonth.actualCost)}</p>
+          <p className="text-xs text-[#9E8F75] mt-1">Budget: {formatCurrency(currentMonth.budgetedCost)}</p>
         </div>
 
         <div className="p-6 rounded">
@@ -214,9 +214,9 @@ export default function Analytics() {
               {((totalOvertime / totalHours) * 100).toFixed(1)}%
             </div>
           </div>
-          <h3 className="text-sm font-medium text-stone-500 mb-1">Overtime Hours</h3>
-          <p className="text-2xl font-bold text-stone-100">{formatNumber(totalOvertime)}</p>
-          <p className="text-xs text-stone-500 mt-1">of {formatNumber(totalHours)} total hours</p>
+          <h3 className="text-sm font-medium text-[#9E8F75] mb-1">Overtime Hours</h3>
+          <p className="text-2xl font-bold text-[#9E8F75]">{formatNumber(totalOvertime)}</p>
+          <p className="text-xs text-[#9E8F75] mt-1">of {formatNumber(totalHours)} total hours</p>
         </div>
 
         <div className="p-6 rounded">
@@ -228,9 +228,9 @@ export default function Analytics() {
               {avgCoverageRate.toFixed(1)}%
             </div>
           </div>
-          <h3 className="text-sm font-medium text-stone-500 mb-1">Schedule Coverage</h3>
-          <p className="text-2xl font-bold text-stone-100">{avgCoverageRate.toFixed(1)}%</p>
-          <p className="text-xs text-stone-500 mt-1">Avg. shift fill rate</p>
+          <h3 className="text-sm font-medium text-[#9E8F75] mb-1">Schedule Coverage</h3>
+          <p className="text-2xl font-bold text-[#9E8F75]">{avgCoverageRate.toFixed(1)}%</p>
+          <p className="text-xs text-[#9E8F75] mt-1">Avg. shift fill rate</p>
         </div>
 
         <div className="p-6 rounded">
@@ -242,9 +242,9 @@ export default function Analytics() {
               {budgetVariance > 0 ? '+' : ''}{budgetVariance.toFixed(1)}%
             </div>
           </div>
-          <h3 className="text-sm font-medium text-stone-500 mb-1">Budget Variance</h3>
-          <p className="text-2xl font-bold text-stone-100">{formatCurrency(Math.abs(currentMonth.actualCost - currentMonth.budgetedCost))}</p>
-          <p className="text-xs text-stone-500 mt-1">{budgetVariance > 0 ? 'Over' : 'Under'} budget</p>
+          <h3 className="text-sm font-medium text-[#9E8F75] mb-1">Budget Variance</h3>
+          <p className="text-2xl font-bold text-[#9E8F75]">{formatCurrency(Math.abs(currentMonth.actualCost - currentMonth.budgetedCost))}</p>
+          <p className="text-xs text-[#9E8F75] mt-1">{budgetVariance > 0 ? 'Over' : 'Under'} budget</p>
         </div>
       </div>
 
@@ -252,11 +252,11 @@ export default function Analytics() {
       <div className="p-6 rounded mb-8">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-xl font-bold text-stone-100 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-[#9E8F75] flex items-center gap-2">
               <LineChart className="w-5 h-5 text-amber-400" />
               Labor Cost Trends
             </h2>
-            <p className="text-sm text-stone-500 mt-1">Actual vs. budgeted costs over time</p>
+            <p className="text-sm text-[#9E8F75] mt-1">Actual vs. budgeted costs over time</p>
           </div>
         </div>
         
@@ -270,9 +270,9 @@ export default function Analytics() {
             return (
               <div key={index} className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-stone-300 w-24">{month.month}</span>
+                  <span className="text-sm font-medium text-[#9E8F75] w-24">{month.month}</span>
                   <div className="flex-1 flex items-center gap-4">
-                    <div className="flex-1 relative h-8 bg-stone-900 rounded-lg overflow-hidden">
+                    <div className="flex-1 relative h-8 bg-[rgba(201,168,76,0.04)] rounded-lg overflow-hidden">
                       <div 
                         className="absolute h-full bg-amber-600 rounded-lg transition-all"
                         style={{ width: `${actualWidth}%` }}
@@ -282,7 +282,7 @@ export default function Analytics() {
                         style={{ width: `${budgetWidth}%` }}
                       />
                     </div>
-                    <span className="text-sm font-semibold text-stone-100 w-24 text-right">
+                    <span className="text-sm font-semibold text-[#9E8F75] w-24 text-right">
                       {formatCurrency(month.actualCost)}
                     </span>
                     <span className={`text-xs font-medium w-16 text-right ${variance > 0 ? 'text-red-600' : 'text-green-600'}`}>
@@ -298,11 +298,11 @@ export default function Analytics() {
         <div className="mt-6 flex items-center gap-6 text-sm">
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 bg-amber-600 rounded"></div>
-            <span className="text-stone-500">Actual Cost</span>
+            <span className="text-[#9E8F75]">Actual Cost</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 border-2 border-dashed border-gray-400 rounded"></div>
-            <span className="text-stone-500">Budgeted Cost</span>
+            <span className="text-[#9E8F75]">Budgeted Cost</span>
           </div>
         </div>
       </div>
@@ -311,41 +311,41 @@ export default function Analytics() {
       <div className="p-6 rounded mb-8">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-xl font-bold text-stone-100 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-[#9E8F75] flex items-center gap-2">
               <BarChart3 className="w-5 h-5 text-amber-600" />
               Department Performance
             </h2>
-            <p className="text-sm text-stone-500 mt-1">Cost, efficiency, and overtime analysis by department</p>
+            <p className="text-sm text-[#9E8F75] mt-1">Cost, efficiency, and overtime analysis by department</p>
           </div>
         </div>
 
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-stone-800">
-                <th className="text-left py-3 px-4 text-sm font-semibold text-stone-300">Department</th>
-                <th className="text-right py-3 px-4 text-sm font-semibold text-stone-300">Total Cost</th>
-                <th className="text-right py-3 px-4 text-sm font-semibold text-stone-300">Avg Rate</th>
-                <th className="text-right py-3 px-4 text-sm font-semibold text-stone-300">Hours</th>
-                <th className="text-right py-3 px-4 text-sm font-semibold text-stone-300">OT %</th>
-                <th className="text-right py-3 px-4 text-sm font-semibold text-stone-300">Headcount</th>
-                <th className="text-right py-3 px-4 text-sm font-semibold text-stone-300">Cost/Employee</th>
-                <th className="text-right py-3 px-4 text-sm font-semibold text-stone-300">Efficiency</th>
+              <tr className="border-b border-[rgba(201,168,76,0.22)]">
+                <th className="text-left py-3 px-4 text-sm font-semibold text-[#9E8F75]">Department</th>
+                <th className="text-right py-3 px-4 text-sm font-semibold text-[#9E8F75]">Total Cost</th>
+                <th className="text-right py-3 px-4 text-sm font-semibold text-[#9E8F75]">Avg Rate</th>
+                <th className="text-right py-3 px-4 text-sm font-semibold text-[#9E8F75]">Hours</th>
+                <th className="text-right py-3 px-4 text-sm font-semibold text-[#9E8F75]">OT %</th>
+                <th className="text-right py-3 px-4 text-sm font-semibold text-[#9E8F75]">Headcount</th>
+                <th className="text-right py-3 px-4 text-sm font-semibold text-[#9E8F75]">Cost/Employee</th>
+                <th className="text-right py-3 px-4 text-sm font-semibold text-[#9E8F75]">Efficiency</th>
               </tr>
             </thead>
             <tbody>
               {departmentMetrics.map((dept, index) => (
-                <tr key={index} className="border-b border-stone-800 hover:bg-stone-950">
+                <tr key={index} className="border-b border-[rgba(201,168,76,0.22)] hover:bg-[#110F0B]">
                   <td className="py-4 px-4">
-                    <span className="font-medium text-stone-100">{dept.name}</span>
+                    <span className="font-medium text-[#9E8F75]">{dept.name}</span>
                   </td>
-                  <td className="text-right py-4 px-4 font-semibold text-stone-100">
+                  <td className="text-right py-4 px-4 font-semibold text-[#9E8F75]">
                     {formatCurrency(dept.totalCost)}
                   </td>
-                  <td className="text-right py-4 px-4 text-stone-300">
+                  <td className="text-right py-4 px-4 text-[#9E8F75]">
                     ${dept.avgHourlyRate.toFixed(2)}
                   </td>
-                  <td className="text-right py-4 px-4 text-stone-300">
+                  <td className="text-right py-4 px-4 text-[#9E8F75]">
                     {formatNumber(dept.totalHours)}
                   </td>
                   <td className="text-right py-4 px-4">
@@ -353,42 +353,42 @@ export default function Analytics() {
                       {dept.overtimePercent.toFixed(1)}%
                     </span>
                   </td>
-                  <td className="text-right py-4 px-4 text-stone-300">
+                  <td className="text-right py-4 px-4 text-[#9E8F75]">
                     {dept.headcount}
                   </td>
-                  <td className="text-right py-4 px-4 text-stone-300">
+                  <td className="text-right py-4 px-4 text-[#9E8F75]">
                     {formatCurrency(dept.costPerEmployee)}
                   </td>
                   <td className="text-right py-4 px-4">
                     <div className="flex items-center justify-end gap-2">
-                      <div className="w-16 h-2 bg-stone-800 rounded-full overflow-hidden">
+                      <div className="w-16 h-2 bg-[rgba(201,168,76,0.08)] rounded-full overflow-hidden">
                         <div 
                           className={`h-full ${dept.efficiency >= 95 ? 'bg-green-500' : dept.efficiency >= 90 ? 'bg-amber-600' : 'bg-amber-500'}`}
                           style={{ width: `${dept.efficiency}%` }}
                         />
                       </div>
-                      <span className="text-sm font-medium text-stone-100 w-10">{dept.efficiency}%</span>
+                      <span className="text-sm font-medium text-[#9E8F75] w-10">{dept.efficiency}%</span>
                     </div>
                   </td>
                 </tr>
               ))}
             </tbody>
-            <tfoot className="bg-stone-950">
+            <tfoot className="bg-[#110F0B]">
               <tr className="font-bold">
-                <td className="py-4 px-4 text-stone-100">Total</td>
-                <td className="text-right py-4 px-4 text-stone-100">
+                <td className="py-4 px-4 text-[#9E8F75]">Total</td>
+                <td className="text-right py-4 px-4 text-[#9E8F75]">
                   {formatCurrency(departmentMetrics.reduce((sum, d) => sum + d.totalCost, 0))}
                 </td>
-                <td className="text-right py-4 px-4 text-stone-300">—</td>
-                <td className="text-right py-4 px-4 text-stone-100">
+                <td className="text-right py-4 px-4 text-[#9E8F75]">—</td>
+                <td className="text-right py-4 px-4 text-[#9E8F75]">
                   {formatNumber(departmentMetrics.reduce((sum, d) => sum + d.totalHours, 0))}
                 </td>
-                <td className="text-right py-4 px-4 text-stone-300">—</td>
-                <td className="text-right py-4 px-4 text-stone-100">
+                <td className="text-right py-4 px-4 text-[#9E8F75]">—</td>
+                <td className="text-right py-4 px-4 text-[#9E8F75]">
                   {departmentMetrics.reduce((sum, d) => sum + d.headcount, 0)}
                 </td>
-                <td className="text-right py-4 px-4 text-stone-300">—</td>
-                <td className="text-right py-4 px-4 text-stone-300">—</td>
+                <td className="text-right py-4 px-4 text-[#9E8F75]">—</td>
+                <td className="text-right py-4 px-4 text-[#9E8F75]">—</td>
               </tr>
             </tfoot>
           </table>
@@ -400,21 +400,21 @@ export default function Analytics() {
         {/* Scheduling Efficiency */}
         <div className="p-6 rounded">
           <div className="mb-6">
-            <h2 className="text-xl font-bold text-stone-100 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-[#9E8F75] flex items-center gap-2">
               <Calendar className="w-5 h-5 text-green-600" />
               Scheduling Efficiency
             </h2>
-            <p className="text-sm text-stone-500 mt-1">Weekly schedule adherence and coverage</p>
+            <p className="text-sm text-[#9E8F75] mt-1">Weekly schedule adherence and coverage</p>
           </div>
 
           <div className="space-y-4">
             {schedulingMetrics.map((week, index) => (
-              <div key={index} className="p-4 bg-stone-950 rounded-lg">
+              <div key={index} className="p-4 bg-[#110F0B] rounded-lg">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="font-semibold text-stone-100">{week.week}</span>
+                  <span className="font-semibold text-[#9E8F75]">{week.week}</span>
                   <span className={`text-sm font-medium px-3 py-1 rounded-full ${
                     week.coverageRate >= 99 ? 'bg-green-100 text-green-700' :
-                    week.coverageRate >= 97 ? 'bg-amber-900/30 text-amber-300' :
+                    week.coverageRate >= 97 ? 'bg-amber-900/30 text-[#E8C060]' :
                     'bg-amber-100 text-amber-700'
                   }`}>
                     {week.coverageRate.toFixed(1)}% Coverage
@@ -422,16 +422,16 @@ export default function Analytics() {
                 </div>
                 <div className="grid grid-cols-3 gap-3 text-sm">
                   <div>
-                    <span className="text-stone-500">Callouts</span>
-                    <p className="font-semibold text-stone-100">{week.callouts}</p>
+                    <span className="text-[#9E8F75]">Callouts</span>
+                    <p className="font-semibold text-[#9E8F75]">{week.callouts}</p>
                   </div>
                   <div>
-                    <span className="text-stone-500">Open Shifts</span>
-                    <p className="font-semibold text-stone-100">{week.openShifts}</p>
+                    <span className="text-[#9E8F75]">Open Shifts</span>
+                    <p className="font-semibold text-[#9E8F75]">{week.openShifts}</p>
                   </div>
                   <div>
-                    <span className="text-stone-500">Swaps</span>
-                    <p className="font-semibold text-stone-100">{week.swaps}</p>
+                    <span className="text-[#9E8F75]">Swaps</span>
+                    <p className="font-semibold text-[#9E8F75]">{week.swaps}</p>
                   </div>
                 </div>
               </div>
@@ -442,35 +442,35 @@ export default function Analytics() {
         {/* 3-Month Forecast */}
         <div className="p-6 rounded">
           <div className="mb-6">
-            <h2 className="text-xl font-bold text-stone-100 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-[#9E8F75] flex items-center gap-2">
               <TrendingUp className="w-5 h-5 text-amber-400" />
               Cost Forecast
             </h2>
-            <p className="text-sm text-stone-500 mt-1">Projected labor costs for next quarter</p>
+            <p className="text-sm text-[#9E8F75] mt-1">Projected labor costs for next quarter</p>
           </div>
 
           <div className="space-y-4">
             {forecast.map((month, index) => (
-              <div key={index} className="p-4 bg-gradient-to-r from-amber-700 to-amber-500 rounded-lg border border-indigo-100">
+              <div key={index} className="p-4 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg border border-indigo-100">
                 <div className="flex items-center justify-between mb-3">
                   <div>
-                    <span className="font-semibold text-stone-100">{month.month}</span>
+                    <span className="font-semibold text-[#9E8F75]">{month.month}</span>
                     <div className="flex items-center gap-2 mt-1">
                       {month.trend === 'increasing' && <TrendingUp className="w-4 h-4 text-red-600" />}
                       {month.trend === 'decreasing' && <TrendingDown className="w-4 h-4 text-green-600" />}
                       {month.trend === 'stable' && <div className="w-4 h-0.5 bg-amber-600" />}
-                      <span className="text-xs text-stone-500 capitalize">{month.trend}</span>
+                      <span className="text-xs text-[#9E8F75] capitalize">{month.trend}</span>
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-xl font-bold text-stone-100">{formatCurrency(month.projectedCost)}</p>
-                    <p className="text-xs text-stone-500">{formatNumber(month.projectedHours)} hours</p>
+                    <p className="text-xl font-bold text-[#9E8F75]">{formatCurrency(month.projectedCost)}</p>
+                    <p className="text-xs text-[#9E8F75]">{formatNumber(month.projectedHours)} hours</p>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-stone-500">Confidence Level</span>
+                  <span className="text-xs text-[#9E8F75]">Confidence Level</span>
                   <div className="flex items-center gap-2">
-                    <div className="w-32 h-2 bg-stone-800 rounded-full overflow-hidden">
+                    <div className="w-32 h-2 bg-[rgba(201,168,76,0.08)] rounded-full overflow-hidden">
                       <div 
                         className={`h-full ${
                           month.confidence >= 85 ? 'bg-green-500' : 
@@ -480,7 +480,7 @@ export default function Analytics() {
                         style={{ width: `${month.confidence}%` }}
                       />
                     </div>
-                    <span className="text-sm font-medium text-stone-100">{month.confidence}%</span>
+                    <span className="text-sm font-medium text-[#9E8F75]">{month.confidence}%</span>
                   </div>
                 </div>
               </div>
@@ -492,7 +492,7 @@ export default function Analytics() {
               <Award className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" />
               <div>
                 <p className="text-sm font-medium text-blue-900">Forecast Insights</p>
-                <p className="text-xs text-amber-300 mt-1">
+                <p className="text-xs text-[#E8C060] mt-1">
                   Projected Q1 2026 total: {formatCurrency(forecast.reduce((sum, m) => sum + m.projectedCost, 0))}
                   <br/>
                   Based on historical trends, seasonal patterns, and current staffing levels.
@@ -510,8 +510,8 @@ export default function Analytics() {
             <AlertTriangle className="w-6 h-6 text-amber-600" />
           </div>
           <div className="flex-1">
-            <h3 className="text-lg font-bold text-stone-100 mb-2">Recommendations</h3>
-            <ul className="space-y-2 text-sm text-stone-300">
+            <h3 className="text-lg font-bold text-[#9E8F75] mb-2">Recommendations</h3>
+            <ul className="space-y-2 text-sm text-[#9E8F75]">
               <li className="flex items-start gap-2">
                 <span className="text-amber-600 mt-1">•</span>
                 <span><strong>Emergency Department:</strong> Overtime at 6.2% (target: 5%). Consider adding 1-2 PRN staff for peak periods.</span>

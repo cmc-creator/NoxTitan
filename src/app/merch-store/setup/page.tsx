@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import { Store, Key, Zap, CheckCircle, AlertCircle, RefreshCw, Package, DollarSign, Settings, Bot } from 'lucide-react';
@@ -196,7 +196,7 @@ export default function MerchSetupPage() {
   const platform = PLATFORMS.find(p => p.id === selectedPlatform);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-700 via-stone-900 to-amber-900 p-8">
+    <div className="min-h-screen bg-[#070604] p-8">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -204,10 +204,10 @@ export default function MerchSetupPage() {
             <div className="absolute inset-0 bg-amber-600 blur-3xl opacity-50"></div>
             <Store className="w-20 h-20 text-amber-400 relative" />
           </div>
-          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-700 via-stone-900 to-pink-300 mb-4">
+          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E8C060] to-[#C9A84C] mb-4">
             Merch Store Setup
           </h1>
-          <p className="text-xl text-amber-100/70">Connect your store in 3 easy steps</p>
+          <p className="text-xl text-[#F0EBE0]/70">Connect your store in 3 easy steps</p>
         </div>
 
         {/* Progress Steps */}
@@ -221,16 +221,16 @@ export default function MerchSetupPage() {
               <div
                 className={`flex items-center gap-3 px-6 py-3 rounded ${
                   step === s.id
-                    ? 'bg-gradient-to-r from-amber-800 to-amber-600 text-white'
+                    ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white'
                     : stores.length > 0 && idx < 2
                     ? 'bg-green-600 text-white'
-                    : 'bg-stone-900/50 text-stone-400'
+                    : 'bg-[rgba(201,168,76,0.06)]/50 text-[#9E8F75]'
                 }`}
               >
                 <s.icon className="w-5 h-5" />
                 <span className="font-bold">{s.label}</span>
               </div>
-              {idx < 2 && <div className="w-8 h-0.5 bg-stone-900"></div>}
+              {idx < 2 && <div className="w-8 h-0.5 bg-[#110F0B]"></div>}
             </div>
           ))}
         </div>
@@ -248,7 +248,7 @@ export default function MerchSetupPage() {
                     setFormData({ ...formData, name: `${p.name} Store` });
                     setStep('configure');
                   }}
-                  className="bg-stone-900/50 border-2 border-stone-700 hover:border-amber-500/40 rounded p-6 text-left transition-all group"
+                  className="bg-[rgba(201,168,76,0.06)]/50 border-2 border-[rgba(201,168,76,0.22)] hover:border-amber-500/40 rounded p-6 text-left transition-all group"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <h3 className="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
@@ -256,7 +256,7 @@ export default function MerchSetupPage() {
                     </h3>
                     <Store className="w-8 h-8 text-amber-400" />
                   </div>
-                  <p className="text-stone-300 mb-4">{p.description}</p>
+                  <p className="text-[#9E8F75] mb-4">{p.description}</p>
                   <div className="flex items-center gap-2 text-sm text-amber-400 font-semibold">
                     <span>Setup Guide Available</span>
                     <CheckCircle className="w-4 h-4" />
@@ -274,17 +274,17 @@ export default function MerchSetupPage() {
             <div className="mb-6">
               <button
                 onClick={() => setShowAssistant(!showAssistant)}
-                className="w-full flex items-center justify-between bg-gradient-to-r from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-700 text-white px-6 py-4 rounded font-bold transition-all"
+                className="w-full flex items-center justify-between bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white px-6 py-4 rounded font-bold transition-all"
               >
                 <div className="flex items-center gap-3">
                   <Bot className="w-6 h-6" />
                   <span>{showAssistant ? 'Hide' : 'Show'} AI Setup Assistant</span>
-                  <span className="px-3 py-1 bg-stone-950/20 rounded-full text-xs">NEW!</span>
+                  <span className="px-3 py-1 bg-[#110F0B]/20 rounded-full text-xs">NEW!</span>
                 </div>
                 <span className="text-2xl">{showAssistant ? '▼' : '▶'}</span>
               </button>
               {!showAssistant && (
-                <p className="text-center text-amber-100/70 mt-2 text-sm">
+                <p className="text-center text-[#F0EBE0]/70 mt-2 text-sm">
                   💡 Click here for step-by-step guidance on finding your API key
                 </p>
               )}
@@ -303,15 +303,15 @@ export default function MerchSetupPage() {
               </div>
             )}
 
-            <div className="bg-stone-900/50 border-2 border-stone-700 rounded p-8">
+            <div className="bg-[rgba(201,168,76,0.06)]/50 border-2 border-[rgba(201,168,76,0.22)] rounded p-8">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h2 className="text-3xl font-bold text-white mb-2">Configure {platform.name}</h2>
-                <p className="text-stone-400">{platform.setupInstructions}</p>
+                <p className="text-[#9E8F75]">{platform.setupInstructions}</p>
               </div>
               <button
                 onClick={resetForm}
-                className="px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg transition-colors"
+                className="px-4 py-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] text-white rounded-lg transition-colors"
               >
                 Change Platform
               </button>
@@ -343,7 +343,7 @@ export default function MerchSetupPage() {
                   value={formData.name}
                   onChange={e => setFormData({ ...formData, name: e.target.value })}
                   placeholder="e.g., Company Merch Store"
-                  className="w-full px-4 py-3 bg-stone-900 text-white rounded-lg border border-stone-700 focus:border-amber-500/40 focus:outline-none"
+                  className="w-full px-4 py-3 bg-[rgba(201,168,76,0.04)] text-white rounded-lg border border-[rgba(201,168,76,0.22)] focus:border-amber-500/40 focus:outline-none"
                 />
               </div>
 
@@ -355,7 +355,7 @@ export default function MerchSetupPage() {
                     value={formData.storeUrl}
                     onChange={e => setFormData({ ...formData, storeUrl: e.target.value })}
                     placeholder={platform.urlLabel}
-                    className="w-full px-4 py-3 bg-stone-900 text-white rounded-lg border border-stone-700 focus:border-amber-500/40 focus:outline-none"
+                    className="w-full px-4 py-3 bg-[rgba(201,168,76,0.04)] text-white rounded-lg border border-[rgba(201,168,76,0.22)] focus:border-amber-500/40 focus:outline-none"
                   />
                 </div>
               )}
@@ -367,7 +367,7 @@ export default function MerchSetupPage() {
                   value={formData.apiKey}
                   onChange={e => setFormData({ ...formData, apiKey: e.target.value })}
                   placeholder="Paste your API key here"
-                  className="w-full px-4 py-3 bg-stone-900 text-white rounded-lg border border-stone-700 focus:border-amber-500/40 focus:outline-none"
+                  className="w-full px-4 py-3 bg-[rgba(201,168,76,0.04)] text-white rounded-lg border border-[rgba(201,168,76,0.22)] focus:border-amber-500/40 focus:outline-none"
                 />
               </div>
 
@@ -379,7 +379,7 @@ export default function MerchSetupPage() {
                     value={formData.apiSecret}
                     onChange={e => setFormData({ ...formData, apiSecret: e.target.value })}
                     placeholder="Paste your API secret here"
-                    className="w-full px-4 py-3 bg-stone-900 text-white rounded-lg border border-stone-700 focus:border-amber-500/40 focus:outline-none"
+                    className="w-full px-4 py-3 bg-[rgba(201,168,76,0.04)] text-white rounded-lg border border-[rgba(201,168,76,0.22)] focus:border-amber-500/40 focus:outline-none"
                   />
                 </div>
               )}
@@ -421,7 +421,7 @@ export default function MerchSetupPage() {
               <button
                 onClick={saveStore}
                 disabled={!testResult?.success || saving}
-                className="flex-1 px-6 py-4 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-700 text-white font-bold rounded transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                className="flex-1 px-6 py-4 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white font-bold rounded transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
               >
                 <CheckCircle className="w-5 h-5" />
                 {saving ? 'Saving...' : 'Save & Continue'}
@@ -437,7 +437,7 @@ export default function MerchSetupPage() {
             <h2 className="text-3xl font-bold text-white mb-6">Connected Stores</h2>
             <div className="space-y-4">
               {stores.map(store => (
-                <div key={store.id} className="bg-stone-900/50 border-2 border-stone-700 rounded p-6">
+                <div key={store.id} className="bg-[rgba(201,168,76,0.06)]/50 border-2 border-[rgba(201,168,76,0.22)] rounded p-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
                       <div className="p-3 bg-amber-600 rounded">
@@ -445,7 +445,7 @@ export default function MerchSetupPage() {
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-white mb-1">{store.name}</h3>
-                        <div className="flex items-center gap-3 text-sm text-stone-400">
+                        <div className="flex items-center gap-3 text-sm text-[#9E8F75]">
                           <span className="flex items-center gap-1">
                             <Package className="w-4 h-4" />
                             {store.platform}
@@ -459,7 +459,7 @@ export default function MerchSetupPage() {
                     <div className="flex items-center gap-3">
                       <div
                         className={`px-3 py-1 rounded-full text-xs font-bold ${
-                          store.isActive ? 'bg-green-600 text-white' : 'bg-stone-600 text-stone-300'
+                          store.isActive ? 'bg-green-600 text-white' : 'bg-[rgba(201,168,76,0.08)] text-[#9E8F75]'
                         }`}
                       >
                         {store.isActive ? 'Active' : 'Inactive'}
@@ -480,7 +480,7 @@ export default function MerchSetupPage() {
 
             <button
               onClick={() => setStep('select')}
-              className="mt-6 w-full px-6 py-4 bg-stone-900 hover:bg-stone-600 text-white font-bold rounded transition-colors flex items-center justify-center gap-3"
+              className="mt-6 w-full px-6 py-4 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] text-white font-bold rounded transition-colors flex items-center justify-center gap-3"
             >
               <Store className="w-5 h-5" />
               Add Another Store

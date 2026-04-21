@@ -100,7 +100,7 @@ export default function ReportsAnalytics() {
   return (
     <Card className="max-w-2xl mx-auto mt-8 p-6 shadow-lg border border-gray-200">
       <h2 className="text-2xl font-bold mb-4">Reports & Analytics</h2>
-      <p className="mb-2 text-sm text-stone-500">All reports are HIPAA & legally compliant. Data is encrypted, access-controlled, and audit-logged.</p>
+      <p className="mb-2 text-sm text-[#9E8F75]">All reports are HIPAA & legally compliant. Data is encrypted, access-controlled, and audit-logged.</p>
       {error && <div className="text-red-500 mb-2">{error}</div>}
       <Input
         placeholder="Search reports..."
@@ -119,7 +119,7 @@ export default function ReportsAnalytics() {
         Export Report
       </Button>
       {/* Render report list, analytics dashboard, filter by search/type */}
-      {loading && <div className="text-stone-400">Loading...</div>}
+      {loading && <div className="text-[#9E8F75]">Loading...</div>}
       <ul className="mb-4">
         {filteredReports.map((r: any) => (
           <li key={r.id} className="border-b py-2 text-sm">
@@ -153,7 +153,7 @@ export default function ReportsAnalytics() {
           <Button className="w-full" onClick={handleExport} disabled={loading}>
             {loading ? 'Exporting...' : 'Export'}
           </Button>
-          <p className="mt-2 text-xs text-stone-500">All exports are logged and reviewed for HIPAA/legal compliance.</p>
+          <p className="mt-2 text-xs text-[#9E8F75]">All exports are logged and reviewed for HIPAA/legal compliance.</p>
         </Card>
       </Modal>
     </Card>

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { 
@@ -110,25 +110,25 @@ export default function FormsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-900 to-pink-50 p-8">
+    <div className="min-h-screen bg-[#070604] p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-5xl font-bold text-stone-200 mb-2">Forms & Templates</h1>
-            <p className="text-xl text-stone-500">Create, manage, and share custom forms</p>
+            <h1 className="text-5xl font-bold text-[#9E8F75] mb-2">Forms & Templates</h1>
+            <p className="text-xl text-[#9E8F75]">Create, manage, and share custom forms</p>
           </div>
           <div className="flex gap-3">
             <button
               onClick={() => router.push('/forms/departments')}
-              className="px-6 py-3 bg-stone-950 border-2 border-amber-600/40 text-amber-400 rounded-lg hover:bg-amber-900/20 flex items-center gap-2"
+              className="px-6 py-3 bg-[#110F0B] border-2 border-amber-600/40 text-amber-400 rounded-lg hover:bg-amber-900/20 flex items-center gap-2"
             >
               <Folder className="w-5 h-5" />
               Department Portals
             </button>
             <button
               onClick={() => router.push('/forms/import')}
-              className="px-6 py-3 bg-stone-950 border-2 border-amber-600/40 text-amber-600 rounded-lg hover:bg-purple-50 flex items-center gap-2"
+              className="px-6 py-3 bg-[#110F0B] border-2 border-amber-600/40 text-amber-600 rounded-lg hover:bg-purple-50 flex items-center gap-2"
             >
               <Upload className="w-5 h-5" />
               Import Templates
@@ -147,41 +147,41 @@ export default function FormsPage() {
         <div className="grid grid-cols-4 gap-6 mb-8">
           <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-stone-500">Total Forms</span>
+              <span className="text-[#9E8F75]">Total Forms</span>
               <FileText className="w-5 h-5 text-amber-600" />
             </div>
-            <div className="text-4xl font-bold text-stone-200">{templates.length}</div>
-            <div className="text-sm text-stone-500 mt-1">+3 this month</div>
+            <div className="text-4xl font-bold text-[#9E8F75]">{templates.length}</div>
+            <div className="text-sm text-[#9E8F75] mt-1">+3 this month</div>
           </div>
           <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-stone-500">Submissions</span>
+              <span className="text-[#9E8F75]">Submissions</span>
               <CheckCircle className="w-5 h-5 text-green-600" />
             </div>
-            <div className="text-4xl font-bold text-stone-200">
+            <div className="text-4xl font-bold text-[#9E8F75]">
               {templates.reduce((sum, t) => sum + t.submissionCount, 0)}
             </div>
-            <div className="text-sm text-stone-500 mt-1">+89 this week</div>
+            <div className="text-sm text-[#9E8F75] mt-1">+89 this week</div>
           </div>
           <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-stone-500">Active Forms</span>
+              <span className="text-[#9E8F75]">Active Forms</span>
               <Clock className="w-5 h-5 text-amber-400" />
             </div>
-            <div className="text-4xl font-bold text-stone-200">
+            <div className="text-4xl font-bold text-[#9E8F75]">
               {templates.filter(t => t.status === 'active').length}
             </div>
-            <div className="text-sm text-stone-500 mt-1">All working</div>
+            <div className="text-sm text-[#9E8F75] mt-1">All working</div>
           </div>
           <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-stone-500">Shared</span>
+              <span className="text-[#9E8F75]">Shared</span>
               <Share2 className="w-5 h-5 text-pink-600" />
             </div>
-            <div className="text-4xl font-bold text-stone-200">
+            <div className="text-4xl font-bold text-[#9E8F75]">
               {templates.filter(t => t.isPublic).length}
             </div>
-            <div className="text-sm text-stone-500 mt-1">Public templates</div>
+            <div className="text-sm text-[#9E8F75] mt-1">Public templates</div>
           </div>
         </div>
 
@@ -189,7 +189,7 @@ export default function FormsPage() {
         <div className="p-6 mb-6 rounded">
           <div className="flex gap-4 items-center">
             <div className="flex-1 relative">
-              <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-stone-400" />
+              <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-[#9E8F75]" />
               <input
                 type="text"
                 placeholder="Search forms..."
@@ -227,10 +227,10 @@ export default function FormsPage() {
             >
               <div className="flex justify-between items-start mb-4">
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-stone-200 mb-2 group-hover:text-amber-600">
+                  <h3 className="text-xl font-bold text-[#9E8F75] mb-2 group-hover:text-amber-600">
                     {template.name}
                   </h3>
-                  <p className="text-stone-500 text-sm mb-3">{template.description}</p>
+                  <p className="text-[#9E8F75] text-sm mb-3">{template.description}</p>
                   <div className="flex items-center gap-2">
                     <span className="px-3 py-1 bg-purple-100 text-amber-700 rounded-full text-xs font-medium">
                       {template.category}
@@ -247,16 +247,16 @@ export default function FormsPage() {
 
               <div className="border-t pt-4 space-y-2">
                 <div className="flex justify-between text-sm">
-                  <span className="text-stone-500">Submissions:</span>
-                  <span className="font-medium text-stone-200">{template.submissionCount}</span>
+                  <span className="text-[#9E8F75]">Submissions:</span>
+                  <span className="font-medium text-[#9E8F75]">{template.submissionCount}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-stone-500">Uses:</span>
-                  <span className="font-medium text-stone-200">{template.usageCount}</span>
+                  <span className="text-[#9E8F75]">Uses:</span>
+                  <span className="font-medium text-[#9E8F75]">{template.usageCount}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-stone-500">Created by:</span>
-                  <span className="font-medium text-stone-200">{template.createdBy}</span>
+                  <span className="text-[#9E8F75]">Created by:</span>
+                  <span className="font-medium text-[#9E8F75]">{template.createdBy}</span>
                 </div>
               </div>
 
@@ -288,9 +288,9 @@ export default function FormsPage() {
 
         {filteredTemplates.length === 0 && (
           <div className="text-center py-12 rounded">
-            <FileText className="w-16 h-16 text-stone-300 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-stone-200 mb-2">No forms found</h3>
-            <p className="text-stone-500 mb-6">Try adjusting your search or create a new form</p>
+            <FileText className="w-16 h-16 text-[#9E8F75] mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-[#9E8F75] mb-2">No forms found</h3>
+            <p className="text-[#9E8F75] mb-6">Try adjusting your search or create a new form</p>
             <button
               onClick={() => router.push('/forms/builder')}
               className="px-6 py-3 rounded"

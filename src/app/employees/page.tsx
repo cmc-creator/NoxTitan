@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useRef } from 'react';
 import { Plus, Search, Edit, Trash2, Mail, Phone, Upload, User as UserIcon, UserX, UserCheck, AlertCircle, X } from 'lucide-react';
@@ -356,12 +356,12 @@ export default function EmployeesPage() {
                   </div>
                 )}
                 <div>
-                  <h3 className="text-lg font-semibold text-stone-100">
+                  <h3 className="text-lg font-semibold text-[#9E8F75]">
                     {employee.firstName} {employee.lastName}
                   </h3>
-                  <p className="text-sm text-stone-500">{employee.position}</p>
+                  <p className="text-sm text-[#9E8F75]">{employee.position}</p>
                   {employee.department && (
-                    <p className="text-xs text-stone-400">{employee.department}</p>
+                    <p className="text-xs text-[#9E8F75]">{employee.department}</p>
                   )}
                 </div>
               </div>
@@ -379,30 +379,30 @@ export default function EmployeesPage() {
             </div>
 
             <div className="space-y-2 mb-4">
-              <div className="flex items-center text-sm text-stone-500">
+              <div className="flex items-center text-sm text-[#9E8F75]">
                 <Mail className="h-4 w-4 mr-2" />
                 {employee.email}
               </div>
-              <div className="flex items-center text-sm text-stone-500">
+              <div className="flex items-center text-sm text-[#9E8F75]">
                 <Phone className="h-4 w-4 mr-2" />
                 {employee.phone}
               </div>
-              <div className="text-sm text-stone-500">
+              <div className="text-sm text-[#9E8F75]">
                 <span className="font-semibold">Rate:</span> ${employee.hourlyRate}/hr
               </div>
-              <div className="text-sm text-stone-500 capitalize">
+              <div className="text-sm text-[#9E8F75] capitalize">
                 <span className="font-semibold">Type:</span> {employee.employmentType} ({employee.weeklyHourLimit} hrs/week)
               </div>
               {employee.notes && (
-                <div className="text-xs text-stone-500 bg-stone-950 p-2 rounded mt-2 border border-stone-800">
+                <div className="text-xs text-[#9E8F75] bg-[#110F0B] p-2 rounded mt-2 border border-[rgba(201,168,76,0.22)]">
                   <span className="font-semibold">Notes:</span> {employee.notes}
                 </div>
               )}
               {!employee.isActive && employee.terminationDate && (
-                <div className="text-sm text-[#9E8F75] 600 pt-2 border-t border-stone-800">
+                <div className="text-sm text-[#9E8F75] 600 pt-2 border-t border-[rgba(201,168,76,0.22)]">
                   <span className="font-semibold">Terminated:</span> {new Date(employee.terminationDate).toLocaleDateString()}
                   {employee.terminationReason && (
-                    <p className="text-xs mt-1 text-stone-500">Reason: {employee.terminationReason}</p>
+                    <p className="text-xs mt-1 text-[#9E8F75]">Reason: {employee.terminationReason}</p>
                   )}
                 </div>
               )}
@@ -451,14 +451,14 @@ export default function EmployeesPage() {
       {/* Add/Edit Employee Modal */}
       {showAddModal && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-stone-950 rounded shadow-2xl max-w-md w-full my-8">
+          <div className="bg-[#110F0B] rounded shadow-2xl max-w-md w-full my-8">
             <form onSubmit={handleSaveEmployee} className="p-6">
               <div className="flex justify-between items-start mb-6">
-                <h3 className="text-2xl font-bold text-stone-100">Add New Employee</h3>
+                <h3 className="text-2xl font-bold text-[#9E8F75]">Add New Employee</h3>
                 <button
                   type="button"
                   onClick={() => { setShowAddModal(false); setSelectedEmployee(null); }}
-                  className="text-stone-400 hover:text-stone-500 transition-colors"
+                  className="text-[#9E8F75] hover:text-[#9E8F75] transition-colors"
                 >
                   <X className="w-6 h-6" />
                 </button>
@@ -477,18 +477,18 @@ export default function EmployeesPage() {
                     <img 
                       src={selectedEmployee.avatar} 
                       alt="Avatar"
-                      className="w-24 h-24 rounded-full object-cover border-4 border-stone-800"
+                      className="w-24 h-24 rounded-full object-cover border-4 border-[rgba(201,168,76,0.22)]"
                     />
                   ) : (
                     <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center">
-                      <UserIcon className="w-12 h-12 text-stone-400" />
+                      <UserIcon className="w-12 h-12 text-[#9E8F75]" />
                     </div>
                   )}
                   <div className="absolute inset-0 rounded-full bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <Upload className="w-6 h-6 text-white" />
                   </div>
                 </div>
-                <p className="text-sm text-stone-500 mt-2">Click to upload your own photo</p>
+                <p className="text-sm text-[#9E8F75] mt-2">Click to upload your own photo</p>
                 
                 {/* Default Avatar Selector */}
                 <div className="mt-4 w-full">
@@ -510,7 +510,7 @@ export default function EmployeesPage() {
                         key={idx}
                         type="button"
                         onClick={() => setSelectedEmployee({ ...selectedEmployee!, avatar: avatarUrl })}
-                        className={`w-12 h-12 rounded-full border-2 ${selectedEmployee?.avatar === avatarUrl ? 'border-amber-500/40 ring-2 ring-blue-300' : 'border-stone-700'} hover:border-[rgba(201,168,76,0.22)] 400 transition-all`}
+                        className={`w-12 h-12 rounded-full border-2 ${selectedEmployee?.avatar === avatarUrl ? 'border-amber-500/40 ring-2 ring-blue-300' : 'border-[rgba(201,168,76,0.22)]'} hover:border-[rgba(201,168,76,0.22)] 400 transition-all`}
                       >
                         <img src={avatarUrl} alt={`Avatar ${idx + 1}`} className="w-full h-full rounded-full" />
                       </button>
@@ -527,7 +527,7 @@ export default function EmployeesPage() {
                       type="text"
                       name="firstName"
                       required
-                      className="w-full px-4 py-2.5 border border-stone-700 rounded-lg text-stone-100 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                      className="w-full px-4 py-2.5 border border-[rgba(201,168,76,0.22)] rounded-lg text-[#9E8F75] focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                       placeholder="John"
                     />
                   </div>
@@ -537,7 +537,7 @@ export default function EmployeesPage() {
                       type="text"
                       name="lastName"
                       required
-                      className="w-full px-4 py-2.5 border border-stone-700 rounded-lg text-stone-100 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                      className="w-full px-4 py-2.5 border border-[rgba(201,168,76,0.22)] rounded-lg text-[#9E8F75] focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                       placeholder="Doe"
                     />
                   </div>
@@ -549,7 +549,7 @@ export default function EmployeesPage() {
                     type="email"
                     name="email"
                     required
-                    className="w-full px-4 py-2.5 border border-stone-700 rounded-lg text-stone-100 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                    className="w-full px-4 py-2.5 border border-[rgba(201,168,76,0.22)] rounded-lg text-[#9E8F75] focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -559,7 +559,7 @@ export default function EmployeesPage() {
                   <input
                     type="tel"
                     name="phone"
-                    className="w-full px-4 py-2.5 border border-stone-700 rounded-lg text-stone-100 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                    className="w-full px-4 py-2.5 border border-[rgba(201,168,76,0.22)] rounded-lg text-[#9E8F75] focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     placeholder="(555) 123-4567"
                   />
                 </div>
@@ -570,7 +570,7 @@ export default function EmployeesPage() {
                     type="text"
                     name="position"
                     required
-                    className="w-full px-4 py-2.5 border border-stone-700 rounded-lg text-stone-100 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                    className="w-full px-4 py-2.5 border border-[rgba(201,168,76,0.22)] rounded-lg text-[#9E8F75] focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     placeholder="Manager"
                   />
                 </div>
@@ -580,7 +580,7 @@ export default function EmployeesPage() {
                   <input
                     type="text"
                     name="department"
-                    className="w-full px-4 py-2.5 border border-stone-700 rounded-lg text-stone-100 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                    className="w-full px-4 py-2.5 border border-[rgba(201,168,76,0.22)] rounded-lg text-[#9E8F75] focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     placeholder="Operations"
                   />
                 </div>
@@ -593,7 +593,7 @@ export default function EmployeesPage() {
                     required
                     step="0.01"
                     min="0"
-                    className="w-full px-4 py-2.5 border border-stone-700 rounded-lg text-stone-100 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                    className="w-full px-4 py-2.5 border border-[rgba(201,168,76,0.22)] rounded-lg text-[#9E8F75] focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     placeholder="25.00"
                   />
                 </div>
@@ -603,7 +603,7 @@ export default function EmployeesPage() {
                   <select
                     name="employmentType"
                     required
-                    className="w-full px-4 py-2.5 border border-stone-700 rounded-lg text-stone-100 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                    className="w-full px-4 py-2.5 border border-[rgba(201,168,76,0.22)] rounded-lg text-[#9E8F75] focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     onChange={(e) => {
                       const select = e.target;
                       const weeklyHourInput = select.form?.elements.namedItem('weeklyHourLimit') as HTMLInputElement;
@@ -636,10 +636,10 @@ export default function EmployeesPage() {
                     min="1"
                     max="80"
                     defaultValue="40"
-                    className="w-full px-4 py-2.5 border border-stone-700 rounded-lg text-stone-100 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                    className="w-full px-4 py-2.5 border border-[rgba(201,168,76,0.22)] rounded-lg text-[#9E8F75] focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
                     placeholder="40"
                   />
-                  <p className="text-xs text-stone-500 mt-1">Shifts will turn red when exceeding this limit</p>
+                  <p className="text-xs text-[#9E8F75] mt-1">Shifts will turn red when exceeding this limit</p>
                 </div>
 
                 <div>
@@ -655,7 +655,7 @@ export default function EmployeesPage() {
                           className="sr-only peer"
                         />
                         <div
-                          className="w-10 h-10 rounded-lg border-2 border-stone-700 peer-checked:border-gray-900 peer-checked:scale-110 transition-all shadow-sm"
+                          className="w-10 h-10 rounded-lg border-2 border-[rgba(201,168,76,0.22)] peer-checked:border-gray-900 peer-checked:scale-110 transition-all shadow-sm"
                           style={{ backgroundColor: color }}
                         />
                       </label>
@@ -668,13 +668,13 @@ export default function EmployeesPage() {
                 <button
                   type="button"
                   onClick={() => { setShowAddModal(false); setSelectedEmployee(null); }}
-                  className="flex-1 bg-gray-200 hover:bg-gray-300 text-stone-100 px-4 py-2.5 rounded-lg font-semibold transition-all"
+                  className="flex-1 bg-gray-200 hover:bg-gray-300 text-[#9E8F75] px-4 py-2.5 rounded-lg font-semibold transition-all"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 bg-gradient-to-r from-amber-700 to-amber-500 hover:from-amber-800 hover:to-amber-600 text-white px-4 py-2.5 rounded-lg font-semibold transition-all"
+                  className="flex-1 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white px-4 py-2.5 rounded-lg font-semibold transition-all"
                 >
                   Add Employee
                 </button>
@@ -687,19 +687,19 @@ export default function EmployeesPage() {
       {/* Deactivate Employee Modal */}
       {showDeactivateModal && employeeToDeactivate && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-stone-950 rounded shadow-2xl max-w-md w-full">
+          <div className="bg-[#110F0B] rounded shadow-2xl max-w-md w-full">
             <div className="p-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-full bg-[#110F0B] 100 flex items-center justify-center">
                   <AlertCircle className="w-6 h-6 text-[#9E8F75] 600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-stone-100">Deactivate Employee</h3>
-                  <p className="text-sm text-stone-500">This will mark the employee as inactive</p>
+                  <h3 className="text-xl font-bold text-[#9E8F75]">Deactivate Employee</h3>
+                  <p className="text-sm text-[#9E8F75]">This will mark the employee as inactive</p>
                 </div>
               </div>
 
-              <div className="bg-stone-950 rounded-lg p-4 mb-6">
+              <div className="bg-[#110F0B] rounded-lg p-4 mb-6">
                 <div className="flex items-center gap-3">
                   <div 
                     className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold"
@@ -708,10 +708,10 @@ export default function EmployeesPage() {
                     {employeeToDeactivate.firstName[0]}{employeeToDeactivate.lastName[0]}
                   </div>
                   <div>
-                    <p className="font-semibold text-stone-100">
+                    <p className="font-semibold text-[#9E8F75]">
                       {employeeToDeactivate.firstName} {employeeToDeactivate.lastName}
                     </p>
-                    <p className="text-sm text-stone-500">{employeeToDeactivate.position}</p>
+                    <p className="text-sm text-[#9E8F75]">{employeeToDeactivate.position}</p>
                   </div>
                 </div>
               </div>
@@ -723,7 +723,7 @@ export default function EmployeesPage() {
                 <select
                   value={deactivationReason}
                   onChange={(e) => setDeactivationReason(e.target.value)}
-                  className="w-full px-4 py-2.5 border border-stone-700 rounded-lg focus:outline-none focus:border-[rgba(201,168,76,0.22)] 500 focus:ring-2 focus:ring-red-500/20 mb-3"
+                  className="w-full px-4 py-2.5 border border-[rgba(201,168,76,0.22)] rounded-lg focus:outline-none focus:border-[rgba(201,168,76,0.22)] 500 focus:ring-2 focus:ring-red-500/20 mb-3"
                   required
                 >
                   <option value="">Select a reason...</option>
@@ -757,14 +757,14 @@ export default function EmployeesPage() {
                     setEmployeeToDeactivate(null);
                     setDeactivationReason('');
                   }}
-                  className="flex-1 bg-gray-200 hover:bg-gray-300 text-stone-100 px-4 py-2.5 rounded-lg font-semibold transition-all"
+                  className="flex-1 bg-gray-200 hover:bg-gray-300 text-[#9E8F75] px-4 py-2.5 rounded-lg font-semibold transition-all"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleDeactivateEmployee}
                   disabled={!deactivationReason}
-                  className="flex-1 bg-[#110F0B] from-REMOVED-500 to-red-600 hover:from-[#110F0B] 600 hover:to-red-700 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed text-white px-4 py-2.5 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
+                  className="flex-1 bg-[#110F0B] from-REMOVED-500 to-red-600 hover:from-[#110F0B] 600 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed text-white px-4 py-2.5 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
                 >
                   <UserX className="w-5 h-5" />
                   Deactivate

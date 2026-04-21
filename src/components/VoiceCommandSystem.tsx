@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import { Mic, MicOff, Volume2, VolumeX, Settings, Sparkles } from 'lucide-react';
@@ -95,8 +95,8 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
           onClick={toggleListening}
           className={`relative px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${
             isListening
-              ? 'bg-gradient-to-r from-red-500 to-pink-500 text-white animate-pulse'
-              : 'bg-gradient-to-r from-amber-700 to-amber-500 hover:from-stone-900 hover:to-amber-800 text-white'
+              ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white animate-pulse'
+              : 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white'
           }`}
         >
           {isListening ? (
@@ -120,7 +120,7 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
           className={`p-2 rounded-lg transition-all ${
             isSpeaking
               ? 'bg-green-500/20 text-green-400 hover:bg-green-500/30'
-              : 'bg-stone-900 text-stone-400 hover:bg-stone-600'
+              : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[rgba(201,168,76,0.08)]'
           }`}
           title={isSpeaking ? 'Voice Enabled' : 'Voice Muted'}
         >
@@ -129,7 +129,7 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
 
         <button
           onClick={() => setShowSettings(!showSettings)}
-          className="p-2 bg-stone-900 hover:bg-stone-600 rounded-lg text-white transition-all"
+          className="p-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] rounded-lg text-white transition-all"
           title="Voice Settings"
         >
           <Settings className="w-5 h-5" />
@@ -138,10 +138,10 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
 
       {/* Transcript Display */}
       {transcript && (
-        <div className="mt-3 p-3 bg-gradient-to-r from-stone-900/20 to-amber-800/20 rounded-lg border border-amber-500/40/30">
+        <div className="mt-3 p-3 bg-[rgba(201,168,76,0.04)] rounded-lg border border-amber-500/40/30">
           <div className="flex items-center gap-2 mb-1">
             <Sparkles className="w-4 h-4 text-amber-400" />
-            <span className="text-xs text-amber-200 font-semibold">YOU SAID:</span>
+            <span className="text-xs text-[#C9A84C] font-semibold">YOU SAID:</span>
           </div>
           <p className="text-white font-medium">&ldquo;{transcript}&rdquo;</p>
         </div>
@@ -149,21 +149,21 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
 
       {/* Voice Settings Modal */}
       {showSettings && (
-        <div className="absolute top-full mt-2 right-0 w-96 bg-stone-900 rounded p-6 border-2 border-amber-500/40/30 shadow-2xl z-50">
+        <div className="absolute top-full mt-2 right-0 w-96 bg-[rgba(201,168,76,0.04)] rounded p-6 border-2 border-amber-500/40/30 shadow-2xl z-50">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-bold text-white">Voice Settings</h3>
-            <button onClick={() => setShowSettings(false)} className="text-stone-400 hover:text-white">
+            <button onClick={() => setShowSettings(false)} className="text-[#9E8F75] hover:text-white">
               ✕
             </button>
           </div>
 
           {/* Voice Selection */}
           <div className="mb-4">
-            <label className="text-sm text-stone-300 font-semibold mb-2 block">Voice Style</label>
+            <label className="text-sm text-[#9E8F75] font-semibold mb-2 block">Voice Style</label>
             <select
               value={voiceSettings.voice}
               onChange={(e) => setVoiceSettings({ ...voiceSettings, voice: e.target.value })}
-              className="w-full bg-stone-900 text-white rounded-lg px-3 py-2 border border-stone-700"
+              className="w-full bg-[rgba(201,168,76,0.04)] text-white rounded-lg px-3 py-2 border border-[rgba(201,168,76,0.22)]"
             >
               {voiceOptions.map(voice => (
                 <option key={voice.id} value={voice.id}>
@@ -176,7 +176,7 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
           {/* Speed Control */}
           <div className="mb-4">
             <div className="flex justify-between mb-2">
-              <label className="text-sm text-stone-300 font-semibold">Speed</label>
+              <label className="text-sm text-[#9E8F75] font-semibold">Speed</label>
               <span className="text-sm text-white">{voiceSettings.speed.toFixed(1)}x</span>
             </div>
             <input
@@ -193,7 +193,7 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
           {/* Pitch Control */}
           <div className="mb-4">
             <div className="flex justify-between mb-2">
-              <label className="text-sm text-stone-300 font-semibold">Pitch</label>
+              <label className="text-sm text-[#9E8F75] font-semibold">Pitch</label>
               <span className="text-sm text-white">{voiceSettings.pitch.toFixed(1)}</span>
             </div>
             <input
@@ -210,7 +210,7 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
           {/* Volume Control */}
           <div className="mb-4">
             <div className="flex justify-between mb-2">
-              <label className="text-sm text-stone-300 font-semibold">Volume</label>
+              <label className="text-sm text-[#9E8F75] font-semibold">Volume</label>
               <span className="text-sm text-white">{Math.round(voiceSettings.volume * 100)}%</span>
             </div>
             <input
@@ -227,7 +227,7 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
           {/* Test Button */}
           <button
             onClick={() => speak(`Hi, I'm ${botName}. How can I help you today?`)}
-            className="w-full px-4 py-2 bg-gradient-to-r from-amber-700 to-amber-500 hover:from-stone-900 hover:to-amber-800 text-white rounded-lg font-semibold transition-all"
+            className="w-full px-4 py-2 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-semibold transition-all"
           >
             Test Voice
           </button>
@@ -243,7 +243,7 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
               if (onCommand) onCommand(cmd.command);
               speak(`Got it! ${cmd.label}`);
             }}
-            className="px-3 py-2 bg-stone-900 hover:bg-stone-900 text-white rounded-lg text-sm font-medium transition-all text-left"
+            className="px-3 py-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.04)] text-white rounded-lg text-sm font-medium transition-all text-left"
           >
             {cmd.label}
           </button>

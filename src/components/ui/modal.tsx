@@ -1,4 +1,4 @@
-import * as React from "react"
+﻿import * as React from "react"
 import { cn } from "@/lib/utils"
 
 export interface ModalProps {
@@ -19,7 +19,7 @@ export const Modal: React.FC<ModalProps> = ({ open, onOpenChange, className, chi
       onClick={handleClose}
     >
       <div
-        className="bg-stone-950 rounded-lg shadow-lg p-6"
+        className="bg-[#110F0B] rounded-lg shadow-lg p-6"
         onClick={e => e.stopPropagation()}
       >
         {children}

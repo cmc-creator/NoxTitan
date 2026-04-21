@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import { AlertTriangle, DollarSign, User, Package, Calendar, CheckCircle, XCircle, Clock } from 'lucide-react';
@@ -95,9 +95,9 @@ export default function PayrollFlagsPage() {
       case 'PENDING': return 'bg-yellow-500/20 text-yellow-400 border-yellow-500';
       case 'APPROVED': return 'bg-amber-600/20 text-amber-400 border-amber-500/40';
       case 'APPLIED': return 'bg-green-500/20 text-green-400 border-green-500';
-      case 'CANCELLED': return 'bg-stone-500/20 text-stone-400 border-stone-500';
+      case 'CANCELLED': return 'bg-[rgba(201,168,76,0.06)] text-[#9E8F75] border-[rgba(201,168,76,0.22)]';
       case 'DISPUTED': return 'bg-red-500/20 text-red-400 border-red-500';
-      default: return 'bg-stone-500/20 text-stone-400 border-stone-500';
+      default: return 'bg-[rgba(201,168,76,0.06)] text-[#9E8F75] border-[rgba(201,168,76,0.22)]';
     }
   }
 
@@ -111,12 +111,12 @@ export default function PayrollFlagsPage() {
               <AlertTriangle className="w-10 h-10 text-orange-400" />
               Payroll Deduction Flags
             </h1>
-            <p className="text-stone-400">Unreturned & damaged asset deductions</p>
+            <p className="text-[#9E8F75]">Unreturned & damaged asset deductions</p>
           </div>
           <button
             onClick={checkOverdueAssets}
             disabled={loading}
-            className="px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-semibold rounded-lg transition-all disabled:opacity-50"
+            className="px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white font-semibold rounded-lg transition-all disabled:opacity-50"
           >
             {loading ? 'Checking...' : 'Check Overdue Assets'}
           </button>
@@ -124,12 +124,12 @@ export default function PayrollFlagsPage() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
-          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6">
+          <div className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <AlertTriangle className="w-8 h-8 text-orange-400" />
               <span className="text-3xl font-bold text-white">{stats.total}</span>
             </div>
-            <p className="text-stone-300 font-semibold">Total Flags</p>
+            <p className="text-[#9E8F75] font-semibold">Total Flags</p>
           </div>
 
           <div className="bg-yellow-500/10 border border-yellow-500/50 rounded p-6">
@@ -163,16 +163,16 @@ export default function PayrollFlagsPage() {
                 ${(stats.totalAmount / 1000).toFixed(1)}K
               </span>
             </div>
-            <p className="text-amber-200 font-semibold">Total Amount</p>
+            <p className="text-[#C9A84C] font-semibold">Total Amount</p>
           </div>
         </div>
 
         {/* Filter */}
-        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-4 mb-6">
+        <div className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-4 mb-6">
           <select
             value={filterStatus}
             onChange={(e) => setFilterStatus(e.target.value)}
-            className="px-4 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
+            className="px-4 py-2 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg text-white focus:outline-none focus:border-amber-500/40"
           >
             <option value="all">All Status</option>
             <option value="PENDING">Pending</option>
@@ -186,7 +186,7 @@ export default function PayrollFlagsPage() {
         {/* Deductions List */}
         <div className="space-y-4">
           {filteredDeductions.map((deduction) => (
-            <div key={deduction.id} className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6">
+            <div key={deduction.id} className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-start gap-4 flex-1">
                   <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center flex-shrink-0">
@@ -203,24 +203,24 @@ export default function PayrollFlagsPage() {
                     </div>
 
                     <div className="grid grid-cols-2 gap-4 mb-3">
-                      <div className="flex items-center gap-2 text-stone-300">
-                        <User className="w-4 h-4 text-stone-500" />
+                      <div className="flex items-center gap-2 text-[#9E8F75]">
+                        <User className="w-4 h-4 text-[#9E8F75]" />
                         <span className="text-sm">{deduction.employee.employeeId}</span>
                       </div>
                       {deduction.asset && (
-                        <div className="flex items-center gap-2 text-stone-300">
-                          <Package className="w-4 h-4 text-stone-500" />
+                        <div className="flex items-center gap-2 text-[#9E8F75]">
+                          <Package className="w-4 h-4 text-[#9E8F75]" />
                           <span className="text-sm">{deduction.asset.name} ({deduction.asset.assetTag})</span>
                         </div>
                       )}
                     </div>
 
-                    <p className="text-stone-400 mb-3">{deduction.reason}</p>
+                    <p className="text-[#9E8F75] mb-3">{deduction.reason}</p>
 
                     <div className="flex items-center gap-4 text-sm">
                       <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4 text-stone-500" />
-                        <span className="text-stone-400">
+                        <Calendar className="w-4 h-4 text-[#9E8F75]" />
+                        <span className="text-[#9E8F75]">
                           Scheduled: {new Date(deduction.scheduledDate).toLocaleDateString()}
                         </span>
                       </div>
@@ -251,7 +251,7 @@ export default function PayrollFlagsPage() {
                       </button>
                       <button
                         onClick={() => updateStatus(deduction.id, 'CANCELLED')}
-                        className="px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white text-sm font-semibold rounded-lg transition-colors"
+                        className="px-4 py-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] text-white text-sm font-semibold rounded-lg transition-colors"
                       >
                         Cancel
                       </button>
@@ -272,10 +272,10 @@ export default function PayrollFlagsPage() {
           ))}
 
           {filteredDeductions.length === 0 && (
-            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-12 text-center">
+            <div className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-12 text-center">
               <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">All Clear!</h3>
-              <p className="text-stone-400">No payroll deductions at this time.</p>
+              <p className="text-[#9E8F75]">No payroll deductions at this time.</p>
             </div>
           )}
         </div>

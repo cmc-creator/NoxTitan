@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import { Plus, Edit2, Trash2, Wifi, WifiOff, MapPin, Settings, CheckCircle, XCircle } from 'lucide-react';
@@ -144,14 +144,14 @@ export default function TimeClockDevicesPage() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-4xl font-bold text-white mb-2">Time Clock Devices</h1>
-            <p className="text-stone-400">Manage your time clock hardware</p>
+            <p className="text-[#9E8F75]">Manage your time clock hardware</p>
           </div>
           <button
             onClick={() => {
               resetForm();
               setShowModal(true);
             }}
-            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-800 to-amber-600 hover:from-amber-800 hover:to-amber-600 text-white font-semibold rounded-lg transition-all"
+            className="flex items-center gap-2 px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white font-semibold rounded-lg transition-all"
           >
             <Plus className="w-5 h-5" />
             Add Device
@@ -162,13 +162,13 @@ export default function TimeClockDevicesPage() {
         {loading ? (
           <div className="text-center py-12">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto"></div>
-            <p className="text-stone-400 mt-4">Loading devices...</p>
+            <p className="text-[#9E8F75] mt-4">Loading devices...</p>
           </div>
         ) : devices.length === 0 ? (
-          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-12 text-center">
-            <Wifi className="w-16 h-16 text-stone-600 mx-auto mb-4" />
+          <div className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-12 text-center">
+            <Wifi className="w-16 h-16 text-[#9E8F75] mx-auto mb-4" />
             <h3 className="text-xl font-bold text-white mb-2">No Devices Registered</h3>
-            <p className="text-stone-400 mb-6">Add your first time clock to get started</p>
+            <p className="text-[#9E8F75] mb-6">Add your first time clock to get started</p>
             <button
               onClick={() => setShowModal(true)}
               className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors"
@@ -181,15 +181,15 @@ export default function TimeClockDevicesPage() {
             {devices.map((device) => (
               <div
                 key={device.id}
-                className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6 hover:border-amber-500/40/50 transition-colors"
+                className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-amber-500/40/50 transition-colors"
               >
                 {/* Device Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-lg font-bold text-white mb-1">{device.name}</h3>
-                    <p className="text-sm text-stone-400">{device.brand}</p>
+                    <p className="text-sm text-[#9E8F75]">{device.brand}</p>
                     {device.model && (
-                      <p className="text-xs text-stone-500">{device.model}</p>
+                      <p className="text-xs text-[#9E8F75]">{device.model}</p>
                     )}
                   </div>
                   <div className="flex items-center gap-2">
@@ -204,18 +204,18 @@ export default function TimeClockDevicesPage() {
                 {/* Device Info */}
                 <div className="space-y-2 mb-4">
                   {device.location && (
-                    <div className="flex items-center gap-2 text-sm text-stone-300">
-                      <MapPin className="w-4 h-4 text-stone-500" />
+                    <div className="flex items-center gap-2 text-sm text-[#9E8F75]">
+                      <MapPin className="w-4 h-4 text-[#9E8F75]" />
                       <span>{device.location}</span>
                     </div>
                   )}
                   {device.ipAddress && (
-                    <div className="text-sm text-stone-400">
+                    <div className="text-sm text-[#9E8F75]">
                       IP: {device.ipAddress}
                     </div>
                   )}
                   {device.lastSync && (
-                    <div className="text-xs text-stone-500">
+                    <div className="text-xs text-[#9E8F75]">
                       Last sync: {new Date(device.lastSync).toLocaleString()}
                     </div>
                   )}
@@ -229,7 +229,7 @@ export default function TimeClockDevicesPage() {
                     </span>
                   )}
                   {device.requireBiometric && (
-                    <span className="px-2 py-1 bg-amber-500/20 text-amber-200 text-xs rounded-full">
+                    <span className="px-2 py-1 bg-amber-500/20 text-[#C9A84C] text-xs rounded-full">
                       👆 Biometric
                     </span>
                   )}
@@ -244,7 +244,7 @@ export default function TimeClockDevicesPage() {
                 <div className="flex gap-2">
                   <button
                     onClick={() => openEditModal(device)}
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg transition-colors"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] text-white rounded-lg transition-colors"
                   >
                     <Edit2 className="w-4 h-4" />
                     Edit
@@ -264,7 +264,7 @@ export default function TimeClockDevicesPage() {
         {/* Add/Edit Modal */}
         {showModal && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-            <div className="bg-stone-900 border border-stone-700 rounded p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               <h2 className="text-2xl font-bold text-white mb-6">
                 {editingDevice ? 'Edit Device' : 'Add New Device'}
               </h2>
@@ -272,7 +272,7 @@ export default function TimeClockDevicesPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Device Name */}
                 <div>
-                  <label className="block text-sm font-semibold text-stone-300 mb-2">
+                  <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                     Device Name *
                   </label>
                   <input
@@ -281,20 +281,20 @@ export default function TimeClockDevicesPage() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Front Desk Clock"
-                    className="w-full px-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40"
+                    className="w-full px-4 py-3 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40"
                   />
                 </div>
 
                 {/* Brand */}
                 <div>
-                  <label className="block text-sm font-semibold text-stone-300 mb-2">
+                  <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                     Brand *
                   </label>
                   <select
                     required
                     value={formData.brand}
                     onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
-                    className="w-full px-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white focus:outline-none focus:border-amber-500/40"
+                    className="w-full px-4 py-3 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded-lg text-white focus:outline-none focus:border-amber-500/40"
                   >
                     <option value="">Select a brand...</option>
                     {supportedBrands.map((brand) => (
@@ -306,7 +306,7 @@ export default function TimeClockDevicesPage() {
                 {/* Model & Location */}
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-stone-300 mb-2">
+                    <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                       Model
                     </label>
                     <input
@@ -314,11 +314,11 @@ export default function TimeClockDevicesPage() {
                       value={formData.model}
                       onChange={(e) => setFormData({ ...formData, model: e.target.value })}
                       placeholder="Model number"
-                      className="w-full px-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40"
+                      className="w-full px-4 py-3 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-stone-300 mb-2">
+                    <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                       IP Address
                     </label>
                     <input
@@ -326,14 +326,14 @@ export default function TimeClockDevicesPage() {
                       value={formData.ipAddress}
                       onChange={(e) => setFormData({ ...formData, ipAddress: e.target.value })}
                       placeholder="192.168.1.100"
-                      className="w-full px-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40"
+                      className="w-full px-4 py-3 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40"
                     />
                   </div>
                 </div>
 
                 {/* Location */}
                 <div>
-                  <label className="block text-sm font-semibold text-stone-300 mb-2">
+                  <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                     Physical Location
                   </label>
                   <input
@@ -341,43 +341,43 @@ export default function TimeClockDevicesPage() {
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                     placeholder="Building A - Main Entrance"
-                    className="w-full px-4 py-3 bg-stone-900/50 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40"
+                    className="w-full px-4 py-3 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40"
                   />
                 </div>
 
                 {/* Geofencing */}
-                <div className="p-4 bg-stone-900/30 rounded-lg">
+                <div className="p-4 bg-[rgba(201,168,76,0.06)]/30 rounded-lg">
                   <h4 className="text-sm font-semibold text-white mb-3">Geofencing (Optional)</h4>
                   <div className="grid grid-cols-3 gap-3">
                     <div>
-                      <label className="block text-xs text-stone-400 mb-1">Latitude</label>
+                      <label className="block text-xs text-[#9E8F75] mb-1">Latitude</label>
                       <input
                         type="number"
                         step="any"
                         value={formData.latitude}
                         onChange={(e) => setFormData({ ...formData, latitude: e.target.value })}
                         placeholder="37.7749"
-                        className="w-full px-3 py-2 bg-stone-900/50 border border-stone-700 rounded text-white text-sm focus:outline-none focus:border-amber-500/40"
+                        className="w-full px-3 py-2 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded text-white text-sm focus:outline-none focus:border-amber-500/40"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs text-stone-400 mb-1">Longitude</label>
+                      <label className="block text-xs text-[#9E8F75] mb-1">Longitude</label>
                       <input
                         type="number"
                         step="any"
                         value={formData.longitude}
                         onChange={(e) => setFormData({ ...formData, longitude: e.target.value })}
                         placeholder="-122.4194"
-                        className="w-full px-3 py-2 bg-stone-900/50 border border-stone-700 rounded text-white text-sm focus:outline-none focus:border-amber-500/40"
+                        className="w-full px-3 py-2 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded text-white text-sm focus:outline-none focus:border-amber-500/40"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs text-stone-400 mb-1">Radius (m)</label>
+                      <label className="block text-xs text-[#9E8F75] mb-1">Radius (m)</label>
                       <input
                         type="number"
                         value={formData.geofenceRadius}
                         onChange={(e) => setFormData({ ...formData, geofenceRadius: e.target.value })}
-                        className="w-full px-3 py-2 bg-stone-900/50 border border-stone-700 rounded text-white text-sm focus:outline-none focus:border-amber-500/40"
+                        className="w-full px-3 py-2 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded text-white text-sm focus:outline-none focus:border-amber-500/40"
                       />
                     </div>
                   </div>
@@ -390,18 +390,18 @@ export default function TimeClockDevicesPage() {
                       type="checkbox"
                       checked={formData.requirePhoto}
                       onChange={(e) => setFormData({ ...formData, requirePhoto: e.target.checked })}
-                      className="w-5 h-5 rounded border-stone-700 bg-stone-900 text-amber-400"
+                      className="w-5 h-5 rounded border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.04)] text-amber-400"
                     />
-                    <span className="text-stone-300">Require photo verification</span>
+                    <span className="text-[#9E8F75]">Require photo verification</span>
                   </label>
                   <label className="flex items-center gap-3 cursor-pointer">
                     <input
                       type="checkbox"
                       checked={formData.requireBiometric}
                       onChange={(e) => setFormData({ ...formData, requireBiometric: e.target.checked })}
-                      className="w-5 h-5 rounded border-stone-700 bg-stone-900 text-amber-400"
+                      className="w-5 h-5 rounded border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.04)] text-amber-400"
                     />
-                    <span className="text-stone-300">Require biometric authentication</span>
+                    <span className="text-[#9E8F75]">Require biometric authentication</span>
                   </label>
                 </div>
 
@@ -413,13 +413,13 @@ export default function TimeClockDevicesPage() {
                       setShowModal(false);
                       resetForm();
                     }}
-                    className="flex-1 px-4 py-3 bg-stone-900 hover:bg-stone-600 text-white rounded-lg transition-colors"
+                    className="flex-1 px-4 py-3 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] text-white rounded-lg transition-colors"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 px-4 py-3 bg-gradient-to-r from-amber-800 to-amber-600 hover:from-amber-800 hover:to-amber-600 text-white font-semibold rounded-lg transition-all"
+                    className="flex-1 px-4 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white font-semibold rounded-lg transition-all"
                   >
                     {editingDevice ? 'Update Device' : 'Add Device'}
                   </button>

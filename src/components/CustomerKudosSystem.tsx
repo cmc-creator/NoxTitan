@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { Star, Heart, Award, ThumbsUp, CheckCircle, Clock, AlertCircle, Gift, Sparkles } from 'lucide-react';
@@ -150,7 +150,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-gradient-to-r from-yellow-900/40 to-orange-900/40 backdrop-blur-xl rounded p-6 border-2 border-yellow-500/30">
+      <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-yellow-500/30">
         <div className="flex items-center gap-3 mb-3">
           <Award className="w-8 h-8 text-yellow-400" />
           <div>
@@ -169,11 +169,11 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           </div>
           <div className="bg-amber-500/20 rounded-lg p-3 text-center border border-amber-500/40/30">
             <p className="text-3xl font-bold text-white">1,247</p>
-            <p className="text-sm text-amber-100/70">Total This Month</p>
+            <p className="text-sm text-[#F0EBE0]/70">Total This Month</p>
           </div>
-          <div className="bg-cyan-500/20 rounded-lg p-3 text-center border border-cyan-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-3 text-center border border-[rgba(201,168,76,0.22)]">
             <p className="text-3xl font-bold text-white">37,890</p>
-            <p className="text-sm text-cyan-200">XP Awarded</p>
+            <p className="text-sm text-[#9E8F75]">XP Awarded</p>
           </div>
         </div>
       </div>
@@ -184,8 +184,8 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           onClick={() => setActiveTab('pending')}
           className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
             activeTab === 'pending'
-              ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white'
-              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
+              ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white'
+              : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[#110F0B]'
           }`}
         >
           <Clock className="w-5 h-5" />
@@ -195,8 +195,8 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           onClick={() => setActiveTab('approved')}
           className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
             activeTab === 'approved'
-              ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white'
-              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
+              ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white'
+              : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[#110F0B]'
           }`}
         >
           <CheckCircle className="w-5 h-5" />
@@ -206,8 +206,8 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           onClick={() => setActiveTab('standalone')}
           className={`px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2 ${
             activeTab === 'standalone'
-              ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white'
-              : 'bg-stone-900 text-stone-300 hover:bg-stone-900'
+              ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white'
+              : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[#110F0B]'
           }`}
         >
           <Sparkles className="w-5 h-5" />
@@ -224,12 +224,12 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
               className={`lux-card/80 backdrop-blur-xl rounded p-6 border-2 ${
                 kudos.priority === 'high' 
                   ? 'border-yellow-500/50' 
-                  : 'border-cyan-500/30'
+                  : 'border-[rgba(201,168,76,0.22)]'
               }`}
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-start gap-4 flex-1">
-                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                  <div className="w-16 h-16 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-full flex items-center justify-center text-white font-bold text-xl">
                     {kudos.employeeName.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div className="flex-1">
@@ -241,12 +241,12 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
                         </span>
                       )}
                     </div>
-                    <p className="text-sm text-stone-400">{kudos.department} • {kudos.employeeId}</p>
+                    <p className="text-sm text-[#9E8F75]">{kudos.department} • {kudos.employeeId}</p>
                     <div className="flex items-center gap-2 mt-2">
-                      <span className="px-2 py-1 bg-amber-500/20 rounded text-xs font-semibold text-amber-200">
+                      <span className="px-2 py-1 bg-amber-500/20 rounded text-xs font-semibold text-[#C9A84C]">
                         {kudos.feedbackType}
                       </span>
-                      <span className="text-xs text-stone-400">{kudos.hoursAgo}h ago</span>
+                      <span className="text-xs text-[#9E8F75]">{kudos.hoursAgo}h ago</span>
                     </div>
                   </div>
                 </div>
@@ -264,7 +264,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
               </div>
 
               {/* Customer Feedback */}
-              <div className="bg-stone-950/50 rounded-lg p-4 mb-4">
+              <div className="bg-[#110F0B]/50 rounded-lg p-4 mb-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Heart className="w-5 h-5 text-pink-400" />
                   <p className="text-sm font-semibold text-pink-300">From: {kudos.customerName} ({kudos.recommendedBy})</p>
@@ -273,19 +273,19 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
                 
                 {/* Specific Actions */}
                 <div className="space-y-1">
-                  <p className="text-xs font-semibold text-cyan-400 mb-2">Specific Actions Recognized:</p>
+                  <p className="text-xs font-semibold text-[#9E8F75] mb-2">Specific Actions Recognized:</p>
                   {kudos.specificActions.map((action, index) => (
                     <div key={index} className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-green-400" />
-                      <p className="text-sm text-stone-300">{action}</p>
+                      <p className="text-sm text-[#9E8F75]">{action}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* XP Adjustment */}
-              <div className="bg-cyan-500/10 rounded-lg p-4 mb-4 border border-cyan-500/30">
-                <p className="text-sm font-semibold text-cyan-300 mb-2">Adjust XP Award (Optional)</p>
+              <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-4 mb-4 border border-[rgba(201,168,76,0.22)]">
+                <p className="text-sm font-semibold text-[#9E8F75] mb-2">Adjust XP Award (Optional)</p>
                 <div className="flex items-center gap-4">
                   <input
                     type="range"
@@ -297,7 +297,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
                   />
                   <span className="text-white font-bold">{kudos.xpAwarded} XP</span>
                 </div>
-                <p className="text-xs text-stone-400 mt-1">
+                <p className="text-xs text-[#9E8F75] mt-1">
                   Suggested range: {xpRanges[kudos.feedbackType as keyof typeof xpRanges]?.min}-
                   {xpRanges[kudos.feedbackType as keyof typeof xpRanges]?.max} XP
                 </p>
@@ -307,7 +307,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
               <div className="flex gap-3">
                 <button
                   onClick={() => handleApprove(kudos.id)}
-                  className="flex-1 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 rounded-lg font-bold text-white transition-all flex items-center justify-center gap-2"
+                  className="flex-1 px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg font-bold text-white transition-all flex items-center justify-center gap-2"
                 >
                   <CheckCircle className="w-5 h-5" />
                   Approve & Award XP
@@ -321,7 +321,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
               </div>
 
               {/* Anti-Cheating Notice */}
-              <div className="mt-3 flex items-start gap-2 text-xs text-stone-400">
+              <div className="mt-3 flex items-start gap-2 text-xs text-[#9E8F75]">
                 <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
                 <p>All customer kudos require manager approval to prevent gaming the system. IP and timestamp logged.</p>
               </div>
@@ -329,10 +329,10 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           ))}
 
           {pendingKudos.length === 0 && (
-            <div className="bg-stone-900/50 rounded p-12 text-center border-2 border-stone-700">
+            <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-12 text-center border-2 border-[rgba(201,168,76,0.22)]">
               <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-white mb-2">All Caught Up!</h3>
-              <p className="text-stone-300">No pending customer recognition to review.</p>
+              <p className="text-[#9E8F75]">No pending customer recognition to review.</p>
             </div>
           )}
         </div>
@@ -344,23 +344,23 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           {approvedKudos.map(kudos => (
             <div
               key={kudos.id}
-              className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 backdrop-blur-xl rounded p-4 border-2 border-green-500/30"
+              className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-4 border-2 border-green-500/30"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-8 h-8 text-green-400" />
                   <div>
                     <p className="text-lg font-bold text-white">{kudos.employeeName}</p>
-                    <p className="text-sm text-stone-400">{kudos.department}</p>
+                    <p className="text-sm text-[#9E8F75]">{kudos.department}</p>
                   </div>
                 </div>
                 <div className="text-right">
                   <p className="text-2xl font-bold text-green-400">+{kudos.xpAwarded} XP</p>
-                  <p className="text-xs text-stone-400">Approved by {kudos.approvedBy}</p>
-                  <p className="text-xs text-stone-500">{kudos.approvedDate}</p>
+                  <p className="text-xs text-[#9E8F75]">Approved by {kudos.approvedBy}</p>
+                  <p className="text-xs text-[#9E8F75]">{kudos.approvedDate}</p>
                 </div>
               </div>
-              <p className="text-sm text-stone-300 mt-2 italic">&ldquo;{kudos.comment}&rdquo;</p>
+              <p className="text-sm text-[#9E8F75] mt-2 italic">&ldquo;{kudos.comment}&rdquo;</p>
             </div>
           ))}
         </div>
@@ -368,14 +368,14 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
 
       {/* Standalone Recognition Form */}
       {activeTab === 'standalone' && (
-        <div className="bg-gradient-to-br from-stone-900/40 to-pink-900/40 backdrop-blur-xl rounded p-6 border-2 border-amber-500/40/30">
+        <div className="bg-[rgba(201,168,76,0.04)] backdrop-blur-xl rounded p-6 border-2 border-amber-500/40/30">
           <h3 className="text-2xl font-bold text-white mb-4">Give Recognition</h3>
-          <p className="text-amber-100/70 mb-6">Managers and admins can give instant recognition, or recommend employees for customer feedback.</p>
+          <p className="text-[#F0EBE0]/70 mb-6">Managers and admins can give instant recognition, or recommend employees for customer feedback.</p>
           
           <div className="space-y-4">
             <div>
               <label className="text-white font-semibold mb-2 block">Employee</label>
-              <select className="w-full bg-stone-900 text-white rounded-lg px-4 py-3 border border-stone-700">
+              <select className="w-full bg-[rgba(201,168,76,0.04)] text-white rounded-lg px-4 py-3 border border-[rgba(201,168,76,0.22)]">
                 <option>Select employee...</option>
                 <option>Jessica Williams - Emergency</option>
                 <option>Michael Chen - Respiratory</option>
@@ -385,7 +385,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
 
             <div>
               <label className="text-white font-semibold mb-2 block">Recognition Type</label>
-              <select className="w-full bg-stone-900 text-white rounded-lg px-4 py-3 border border-stone-700">
+              <select className="w-full bg-[rgba(201,168,76,0.04)] text-white rounded-lg px-4 py-3 border border-[rgba(201,168,76,0.22)]">
                 <option>Manager Recommendation</option>
                 <option>Peer Recognition</option>
                 <option>Customer Feedback (Enter on their behalf)</option>
@@ -395,7 +395,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
             <div>
               <label className="text-white font-semibold mb-2 block">What did they do?</label>
               <textarea
-                className="w-full bg-stone-900 text-white rounded-lg px-4 py-3 border border-stone-700"
+                className="w-full bg-[rgba(201,168,76,0.04)] text-white rounded-lg px-4 py-3 border border-[rgba(201,168,76,0.22)]"
                 rows={4}
                 placeholder="Describe the specific actions that deserve recognition..."
               ></textarea>
@@ -408,12 +408,12 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
                 min="10"
                 max="100"
                 defaultValue="50"
-                className="w-full bg-stone-900 text-white rounded-lg px-4 py-3 border border-stone-700"
+                className="w-full bg-[rgba(201,168,76,0.04)] text-white rounded-lg px-4 py-3 border border-[rgba(201,168,76,0.22)]"
               />
-              <p className="text-xs text-stone-400 mt-1">Range: 10-100 XP based on recognition type</p>
+              <p className="text-xs text-[#9E8F75] mt-1">Range: 10-100 XP based on recognition type</p>
             </div>
 
-            <button className="w-full px-6 py-4 bg-gradient-to-r from-stone-900 to-pink-500 hover:from-stone-900 hover:to-pink-600 rounded-lg font-bold text-white text-lg transition-all">
+            <button className="w-full px-6 py-4 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg font-bold text-white text-lg transition-all">
               Submit Recognition
             </button>
           </div>

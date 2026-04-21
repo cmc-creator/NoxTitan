@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { Megaphone, Bell, AlertCircle, TrendingUp, Gift, FileText, Calendar, Users, CheckCircle, Star, Award, MessageSquare, ThumbsUp, Share2, Pin, Filter, Search, Plus, Edit, Trash2 } from 'lucide-react';
@@ -206,11 +206,11 @@ export default function AnnouncementsPage() {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'urgent': return 'bg-red-500/20 text-red-400 border-red-500';
-      case 'celebration': return 'bg-amber-500/10 text-amber-300 border-amber-500/25';
-      case 'policy': return 'bg-amber-500/10 text-amber-300 border-amber-500/25';
-      case 'event': return 'bg-amber-500/10 text-amber-300 border-amber-500/25';
-      case 'benefit': return 'bg-amber-500/10 text-amber-300 border-amber-500/25';
-      default: return 'bg-stone-500/10 text-stone-400 border-stone-500/25';
+      case 'celebration': return 'bg-amber-500/10 text-[#E8C060] border-amber-500/25';
+      case 'policy': return 'bg-amber-500/10 text-[#E8C060] border-amber-500/25';
+      case 'event': return 'bg-amber-500/10 text-[#E8C060] border-amber-500/25';
+      case 'benefit': return 'bg-amber-500/10 text-[#E8C060] border-amber-500/25';
+      default: return 'bg-[rgba(201,168,76,0.06)] text-[#9E8F75] border-[rgba(201,168,76,0.22)]';
     }
   };
 
@@ -319,7 +319,7 @@ export default function AnnouncementsPage() {
               placeholder="Search announcements..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 rounded border border-stone-700 focus:outline-none focus:border-amber-500/40 transition-all"
+              className="w-full pl-12 pr-4 py-3 rounded border border-[rgba(201,168,76,0.22)] focus:outline-none focus:border-amber-500/40 transition-all"
               style={{ background: 'var(--card-bg)', color: 'var(--body-text)' }}
             />
           </div>
@@ -331,7 +331,7 @@ export default function AnnouncementsPage() {
                 className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                   activeFilter === filter
                     ? 'bg-amber-600 text-white'
-                    : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
+                    : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[rgba(201,168,76,0.08)]'
                 }`}
               >
                 {filter.charAt(0).toUpperCase() + filter.slice(1)}
@@ -382,7 +382,7 @@ export default function AnnouncementsPage() {
                     )}
                   </div>
                   <h3 className="text-2xl font-bold mb-2 text-white">{announcement.title}</h3>
-                  <div className="flex items-center gap-4 text-sm text-stone-400">
+                  <div className="flex items-center gap-4 text-sm text-[#9E8F75]">
                     <span className="flex items-center gap-1">
                       <Users className="w-4 h-4" />
                       {announcement.author} • {announcement.authorRole}
@@ -402,12 +402,12 @@ export default function AnnouncementsPage() {
               </div>
 
               {/* Content */}
-              <p className="text-stone-300 mb-4 leading-relaxed">{announcement.content}</p>
+              <p className="text-[#9E8F75] mb-4 leading-relaxed">{announcement.content}</p>
 
               {/* Attachments */}
               {announcement.attachments && announcement.attachments.length > 0 && (
-                <div className="mb-4 p-4 bg-stone-900/30 rounded-lg">
-                  <div className="text-sm font-semibold text-stone-400 mb-2 flex items-center gap-2">
+                <div className="mb-4 p-4 bg-[rgba(201,168,76,0.06)]/30 rounded-lg">
+                  <div className="text-sm font-semibold text-[#9E8F75] mb-2 flex items-center gap-2">
                     <FileText className="w-4 h-4" />
                     Attachments
                   </div>
@@ -415,13 +415,13 @@ export default function AnnouncementsPage() {
                     {announcement.attachments.map((attachment, index) => (
                       <div
                         key={index}
-                        className="flex items-center justify-between p-3 bg-stone-900/50 rounded-lg hover:bg-stone-900 transition-all cursor-pointer"
+                        className="flex items-center justify-between p-3 bg-[rgba(201,168,76,0.06)]/50 rounded-lg hover:bg-[rgba(201,168,76,0.04)] transition-all cursor-pointer"
                       >
                         <div className="flex items-center gap-3">
                           <FileText className="w-5 h-5" style={{ color: '#9E8F75' }} />
                           <div>
                             <div className="text-white font-semibold">{attachment.name}</div>
-                            <div className="text-xs text-stone-400">{attachment.type} • {attachment.size}</div>
+                            <div className="text-xs text-[#9E8F75]">{attachment.type} • {attachment.size}</div>
                           </div>
                         </div>
                         <button className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg text-sm font-semibold transition-all">
@@ -434,17 +434,17 @@ export default function AnnouncementsPage() {
               )}
 
               {/* Actions */}
-              <div className="flex items-center justify-between pt-4 border-t border-stone-700">
+              <div className="flex items-center justify-between pt-4 border-t border-[rgba(201,168,76,0.22)]">
                 <div className="flex items-center gap-4">
-                  <button className="flex items-center gap-2 px-4 py-2 bg-stone-900 hover:bg-stone-600 text-stone-300 rounded-lg transition-all">
+                  <button className="flex items-center gap-2 px-4 py-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] text-[#9E8F75] rounded-lg transition-all">
                     <ThumbsUp className="w-4 h-4" />
                     <span className="font-semibold">{announcement.likes}</span>
                   </button>
-                  <button className="flex items-center gap-2 px-4 py-2 bg-stone-900 hover:bg-stone-600 text-stone-300 rounded-lg transition-all">
+                  <button className="flex items-center gap-2 px-4 py-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] text-[#9E8F75] rounded-lg transition-all">
                     <MessageSquare className="w-4 h-4" />
                     <span className="font-semibold">{announcement.comments}</span>
                   </button>
-                  <button className="flex items-center gap-2 px-4 py-2 bg-stone-900 hover:bg-stone-600 text-stone-300 rounded-lg transition-all">
+                  <button className="flex items-center gap-2 px-4 py-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] text-[#9E8F75] rounded-lg transition-all">
                     <Share2 className="w-4 h-4" />
                     Share
                   </button>

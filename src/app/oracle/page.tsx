@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import { Sparkles, TrendingUp, TrendingDown, AlertTriangle, Users, Clock, Target, Award, Shield, Brain } from 'lucide-react';
@@ -98,7 +98,7 @@ export default function OraclePage() {
       case 'HIGH': return 'border-[rgba(201,168,76,0.45)]';
       case 'MEDIUM': return 'border-[rgba(201,168,76,0.3)]';
       case 'LOW': return 'border-[rgba(201,168,76,0.2)]';
-      default: return 'from-slate-600 to-slate-700 border-stone-500';
+      default: return 'from-slate-600 to-slate-700 border-[rgba(201,168,76,0.22)]';
     }
   }
 
@@ -115,18 +115,18 @@ export default function OraclePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-900 via-stone-900 to-black p-8">
+    <div className="min-h-screen bg-[rgba(201,168,76,0.08)] p-8">
       <div className="max-w-7xl mx-auto">
         {/* Mystical Header */}
         <div className="text-center mb-12">
           <div className="inline-block relative mb-6">
             <div className="absolute inset-0 bg-amber-500 blur-3xl opacity-50"></div>
-            <Sparkles className="w-20 h-20 text-amber-200 relative" />
+            <Sparkles className="w-20 h-20 text-[#C9A84C] relative" />
           </div>
-          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-900 via-pink-300 to-amber-900 mb-4">
+          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E8C060] to-[#C9A84C] mb-4">
             The Oracle
           </h1>
-          <p className="text-xl text-amber-100/70 mb-6">Predictive AI Analytics • See The Future Before It Happens</p>
+          <p className="text-xl text-[#F0EBE0]/70 mb-6">Predictive AI Analytics • See The Future Before It Happens</p>
           <button
             onClick={runAnalysis}
             disabled={analyzing}
@@ -147,15 +147,15 @@ export default function OraclePage() {
             {prophecies.map((prophecy) => (
               <div
                 key={prophecy.id}
-                className={`relative rounded p-6 border-2 bg-gradient-to-br ${getSeverityColor(prophecy.severity)} transform transition-all hover:shadow-2xl cursor-pointer`}
+                className={`relative rounded p-6 border-2 ${getSeverityColor(prophecy.severity)} transform transition-all hover:shadow-2xl cursor-pointer`}
               >
                 {/* Mystical glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-10 rounded"></div>
+                <div className="absolute inset-0 bg-[rgba(201,168,76,0.08)] opacity-10 rounded"></div>
                 
                 <div className="relative">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="p-3 bg-stone-950/20 rounded backdrop-blur">
+                      <div className="p-3 bg-[#110F0B]/20 rounded backdrop-blur">
                         {getProphecyIcon(prophecy.prophecyType)}
                       </div>
                       <div>
@@ -218,10 +218,10 @@ export default function OraclePage() {
             ))}
 
             {prophecies.length === 0 && !loading && (
-              <div className="col-span-2 text-center py-12 bg-stone-900/50 rounded border border-stone-700">
+              <div className="col-span-2 text-center py-12 bg-[rgba(201,168,76,0.06)]/50 rounded border border-[rgba(201,168,76,0.22)]">
                 <Sparkles className="w-16 h-16 text-amber-400 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-white mb-2">The Oracle Awaits</h3>
-                <p className="text-stone-400 mb-6">Run an analysis to reveal prophecies</p>
+                <p className="text-[#9E8F75] mb-6">Run an analysis to reveal prophecies</p>
               </div>
             )}
           </div>
@@ -250,7 +250,7 @@ export default function OraclePage() {
                   </div>
                   <div className="text-right">
                     <div className="text-3xl font-bold" style={{ color: 'rgba(195,95,95,0.9)' }}>{Math.round(risk.score)}%</div>
-                    <div className="text-xs text-stone-400">Risk Score</div>
+                    <div className="text-xs text-[#9E8F75]">Risk Score</div>
                   </div>
                 </div>
 
@@ -266,10 +266,10 @@ export default function OraclePage() {
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-bold text-stone-400 mb-2">Contributing Factors:</h4>
+                  <h4 className="text-xs font-bold text-[#9E8F75] mb-2">Contributing Factors:</h4>
                   <ul className="space-y-1">
                     {risk.factors.slice(0, 3).map((factor, idx) => (
-                      <li key={idx} className="text-xs text-stone-300">• {factor}</li>
+                      <li key={idx} className="text-xs text-[#9E8F75]">• {factor}</li>
                     ))}
                   </ul>
                 </div>
@@ -288,7 +288,7 @@ export default function OraclePage() {
             {insights.map((insight) => (
               <div
                 key={insight.id}
-                className="bg-stone-900/50 border border-stone-700 rounded p-6 hover:border-amber-500/40/50 transition-all"
+                className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-amber-500/40/50 transition-all"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
@@ -302,18 +302,18 @@ export default function OraclePage() {
                       }`}>
                         {insight.impact}
                       </span>
-                      <span className="text-sm text-stone-400">{insight.timeframe}</span>
+                      <span className="text-sm text-[#9E8F75]">{insight.timeframe}</span>
                     </div>
-                    <p className="text-stone-300 mb-3">{insight.description}</p>
+                    <p className="text-[#9E8F75] mb-3">{insight.description}</p>
                     <div className="flex items-center gap-4 text-sm">
                       <div className="flex items-center gap-2">
                         <div className="text-amber-400 font-bold">{Math.round(insight.likelihood)}%</div>
-                        <span className="text-stone-400">Likelihood</span>
+                        <span className="text-[#9E8F75]">Likelihood</span>
                       </div>
                       {insight.affectedCount && (
                         <div className="flex items-center gap-2">
-                          <Users className="w-4 h-4 text-stone-400" />
-                          <span className="text-stone-300">{insight.affectedCount} affected</span>
+                          <Users className="w-4 h-4 text-[#9E8F75]" />
+                          <span className="text-[#9E8F75]">{insight.affectedCount} affected</span>
                         </div>
                       )}
                     </div>

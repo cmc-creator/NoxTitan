@@ -7,7 +7,7 @@ export const industryQuestTemplates = {
   healthcare: {
     name: 'Healthcare',
     icon: '⚕️',
-    color: 'from-amber-700 to-cyan-600',
+    color: 'bg-[rgba(201,168,76,0.12)]',
     quests: [
       {
         title: 'Document Patient Encounters',
@@ -48,7 +48,7 @@ export const industryQuestTemplates = {
   construction: {
     name: 'Construction',
     icon: '🏗️',
-    color: 'from-orange-600 to-yellow-600',
+    color: 'bg-[rgba(201,168,76,0.12)]',
     quests: [
       {
         title: 'Complete Safety Inspections',
@@ -122,7 +122,7 @@ export const industryQuestTemplates = {
   restaurant: {
     name: 'Restaurant',
     icon: '🍽️',
-    color: 'from-red-600 to-pink-600',
+    color: 'bg-[rgba(201,168,76,0.12)]',
     quests: [
       {
         title: 'Perfect Table Service Rush',
@@ -207,7 +207,7 @@ export const industryQuestTemplates = {
   retail: {
     name: 'Retail',
     icon: '🛍️',
-    color: 'from-amber-700 to-amber-500',
+    color: 'bg-[rgba(201,168,76,0.12)]',
     quests: [
       {
         title: 'Customer Service Excellence',
@@ -292,7 +292,7 @@ export const industryQuestTemplates = {
   manufacturing: {
     name: 'Manufacturing',
     icon: '🏭',
-    color: 'from-slate-600 to-gray-700',
+    color: 'bg-[rgba(201,168,76,0.12)]',
     quests: [
       {
         title: 'Production Quota',
@@ -355,7 +355,7 @@ export const industryQuestTemplates = {
   hospitality: {
     name: 'Hospitality/Hotel',
     icon: '🏨',
-    color: 'from-teal-600 to-cyan-600',
+    color: 'bg-[rgba(201,168,76,0.12)]',
     quests: [
       {
         title: 'Perfect Room Inspections',
@@ -407,7 +407,7 @@ export const industryQuestTemplates = {
   warehouse: {
     name: 'Warehouse/Logistics',
     icon: '📦',
-    color: 'from-green-600 to-emerald-600',
+    color: 'bg-[rgba(201,168,76,0.12)]',
     quests: [
       {
         title: 'Pick & Pack Orders',
@@ -470,7 +470,7 @@ export const industryQuestTemplates = {
   callcenter: {
     name: 'Call Center/Customer Support',
     icon: '📞',
-    color: 'from-amber-700 to-amber-800',
+    color: 'bg-[rgba(201,168,76,0.12)]',
     quests: [
       {
         title: 'Call Volume Champion',

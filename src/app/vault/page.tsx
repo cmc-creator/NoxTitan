@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import { Package, Plus, Search, Filter, Barcode, MapPin, User, Calendar, TrendingUp, AlertCircle, CheckCircle, DollarSign, FileSignature } from 'lucide-react';
@@ -89,10 +89,10 @@ export default function AssetVaultPage() {
       case 'AVAILABLE': return 'bg-green-500/20 text-green-400 border-green-500';
       case 'ASSIGNED': return 'bg-amber-600/20 text-amber-400 border-amber-500/40';
       case 'IN_MAINTENANCE': return 'bg-orange-500/20 text-orange-400 border-orange-500';
-      case 'RETIRED': return 'bg-stone-500/20 text-stone-400 border-stone-500';
+      case 'RETIRED': return 'bg-[rgba(201,168,76,0.06)] text-[#9E8F75] border-[rgba(201,168,76,0.22)]';
       case 'LOST': return 'bg-red-500/20 text-red-400 border-red-500';
       case 'DAMAGED': return 'bg-red-500/20 text-red-400 border-red-500';
-      default: return 'bg-stone-500/20 text-stone-400 border-stone-500';
+      default: return 'bg-[rgba(201,168,76,0.06)] text-[#9E8F75] border-[rgba(201,168,76,0.22)]';
     }
   }
 
@@ -103,7 +103,7 @@ export default function AssetVaultPage() {
       case 'FAIR': return 'text-yellow-400';
       case 'POOR': return 'text-orange-400';
       case 'DAMAGED': return 'text-red-400';
-      default: return 'text-stone-400';
+      default: return 'text-[#9E8F75]';
     }
   }
 
@@ -117,7 +117,7 @@ export default function AssetVaultPage() {
               <Package className="w-10 h-10 text-amber-400" />
               Asset Vault
             </h1>
-            <p className="text-stone-400">Inventory & equipment management</p>
+            <p className="text-[#9E8F75]">Inventory & equipment management</p>
           </div>
           <div className="flex gap-3">
             <button
@@ -136,13 +136,13 @@ export default function AssetVaultPage() {
             </button>
             <button
               onClick={() => window.location.href = '/vault/categories'}
-              className="px-6 py-3 bg-stone-900 hover:bg-stone-600 text-white font-semibold rounded-lg transition-colors"
+              className="px-6 py-3 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] text-white font-semibold rounded-lg transition-colors"
             >
               Manage Categories
             </button>
             <button
               onClick={() => setShowAddModal(true)}
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-700 text-white font-semibold rounded-lg transition-all"
+              className="flex items-center gap-2 px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white font-semibold rounded-lg transition-all"
             >
               <Plus className="w-5 h-5" />
               Add Asset
@@ -152,12 +152,12 @@ export default function AssetVaultPage() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
-          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6">
+          <div className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <Package className="w-8 h-8 text-amber-400" />
               <span className="text-3xl font-bold text-white">{stats.total}</span>
             </div>
-            <p className="text-stone-300 font-semibold">Total Assets</p>
+            <p className="text-[#9E8F75] font-semibold">Total Assets</p>
           </div>
 
           <div className="bg-green-500/10 border border-green-500/50 rounded p-6">
@@ -191,28 +191,28 @@ export default function AssetVaultPage() {
                 ${(stats.totalValue / 1000).toFixed(0)}K
               </span>
             </div>
-            <p className="text-amber-200 font-semibold">Total Value</p>
+            <p className="text-[#C9A84C] font-semibold">Total Value</p>
           </div>
         </div>
 
         {/* Search & Filters */}
-        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-4 mb-6">
+        <div className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-4 mb-6">
           <div className="flex items-center gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#9E8F75]" />
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search by name, asset tag, or serial number..."
-                className="w-full pl-11 pr-4 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40"
+                className="w-full pl-11 pr-4 py-2 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg text-white placeholder-stone-600 focus:outline-none focus:border-amber-500/40"
               />
             </div>
-            <Filter className="w-5 h-5 text-stone-400" />
+            <Filter className="w-5 h-5 text-[#9E8F75]" />
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="px-4 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white text-sm focus:outline-none focus:border-amber-500/40"
+              className="px-4 py-2 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg text-white text-sm focus:outline-none focus:border-amber-500/40"
             >
               <option value="all">All Status</option>
               <option value="AVAILABLE">Available</option>
@@ -223,7 +223,7 @@ export default function AssetVaultPage() {
             <select
               value={filterCategory}
               onChange={(e) => setFilterCategory(e.target.value)}
-              className="px-4 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white text-sm focus:outline-none focus:border-amber-500/40"
+              className="px-4 py-2 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg text-white text-sm focus:outline-none focus:border-amber-500/40"
             >
               <option value="all">All Categories</option>
               {categories.map(cat => (
@@ -236,15 +236,15 @@ export default function AssetVaultPage() {
         {/* Assets Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {loading ? (
-            <div className="col-span-full bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-12 text-center">
+            <div className="col-span-full bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-12 text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto mb-4"></div>
-              <p className="text-stone-400">Loading assets...</p>
+              <p className="text-[#9E8F75]">Loading assets...</p>
             </div>
           ) : filteredAssets.length === 0 ? (
-            <div className="col-span-full bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-12 text-center">
-              <Package className="w-16 h-16 text-stone-600 mx-auto mb-4" />
+            <div className="col-span-full bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-12 text-center">
+              <Package className="w-16 h-16 text-[#9E8F75] mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">No Assets Found</h3>
-              <p className="text-stone-400 mb-6">Add your first asset to get started!</p>
+              <p className="text-[#9E8F75] mb-6">Add your first asset to get started!</p>
               <button
                 onClick={() => setShowAddModal(true)}
                 className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors"
@@ -257,13 +257,13 @@ export default function AssetVaultPage() {
               <div
                 key={asset.id}
                 onClick={() => window.location.href = `/vault/assets/${asset.id}`}
-                className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6 hover:border-amber-500/40/50 transition-all cursor-pointer group"
+                className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-amber-500/40/50 transition-all cursor-pointer group"
               >
                 {/* Category Badge */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-2">
                     <span className="text-2xl">{asset.category.icon || '📦'}</span>
-                    <span className="text-sm text-stone-400">{asset.category.name}</span>
+                    <span className="text-sm text-[#9E8F75]">{asset.category.name}</span>
                   </div>
                   <span className={`px-2 py-1 border rounded-lg text-xs font-semibold ${getStatusColor(asset.status)}`}>
                     {asset.status}
@@ -275,29 +275,29 @@ export default function AssetVaultPage() {
                   {asset.name}
                 </h3>
                 <div className="flex items-center gap-2 mb-3">
-                  <Barcode className="w-4 h-4 text-stone-500" />
-                  <span className="text-sm text-stone-400">{asset.assetTag}</span>
+                  <Barcode className="w-4 h-4 text-[#9E8F75]" />
+                  <span className="text-sm text-[#9E8F75]">{asset.assetTag}</span>
                 </div>
 
                 {asset.description && (
-                  <p className="text-sm text-stone-400 mb-3 line-clamp-2">{asset.description}</p>
+                  <p className="text-sm text-[#9E8F75] mb-3 line-clamp-2">{asset.description}</p>
                 )}
 
                 {/* Details */}
                 <div className="space-y-2 mb-4">
                   {asset.manufacturer && (
-                    <div className="text-sm text-stone-300">
-                      <span className="text-stone-500">Make/Model:</span> {asset.manufacturer} {asset.model}
+                    <div className="text-sm text-[#9E8F75]">
+                      <span className="text-[#9E8F75]">Make/Model:</span> {asset.manufacturer} {asset.model}
                     </div>
                   )}
                   {asset.serialNumber && (
-                    <div className="text-sm text-stone-300">
-                      <span className="text-stone-500">S/N:</span> {asset.serialNumber}
+                    <div className="text-sm text-[#9E8F75]">
+                      <span className="text-[#9E8F75]">S/N:</span> {asset.serialNumber}
                     </div>
                   )}
                   {asset.location && (
-                    <div className="flex items-center gap-2 text-sm text-stone-300">
-                      <MapPin className="w-4 h-4 text-stone-500" />
+                    <div className="flex items-center gap-2 text-sm text-[#9E8F75]">
+                      <MapPin className="w-4 h-4 text-[#9E8F75]" />
                       <span>{asset.location}</span>
                     </div>
                   )}
@@ -314,7 +314,7 @@ export default function AssetVaultPage() {
                 )}
 
                 {/* Footer */}
-                <div className="flex items-center justify-between pt-3 border-t border-stone-700">
+                <div className="flex items-center justify-between pt-3 border-t border-[rgba(201,168,76,0.22)]">
                   <div>
                     <div className={`text-sm font-semibold ${getConditionColor(asset.condition)}`}>
                       {asset.condition}
@@ -325,7 +325,7 @@ export default function AssetVaultPage() {
                       <div className="text-lg font-bold text-white">
                         ${asset.currentValue.toLocaleString()}
                       </div>
-                      <div className="text-xs text-stone-500">Current Value</div>
+                      <div className="text-xs text-[#9E8F75]">Current Value</div>
                     </div>
                   )}
                 </div>

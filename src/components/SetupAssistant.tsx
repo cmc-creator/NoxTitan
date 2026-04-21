@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { Bot, ChevronRight, ExternalLink, Copy, CheckCircle, Volume2, VolumeX } from 'lucide-react';
@@ -305,7 +305,7 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
   const currentStepData = guide.steps[currentStep];
 
   return (
-    <div className="bg-gradient-to-br from-amber-700 to-amber-900 rounded p-6 border-2 border-amber-500/40">
+    <div className="bg-gradient-to-br from-[#070604] to-[#070604] rounded p-6 border-2 border-amber-500/40">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
@@ -320,7 +320,7 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
         <button
           onClick={() => setVoiceEnabled(!voiceEnabled)}
           className={`p-2 rounded-lg transition-colors ${
-            voiceEnabled ? 'bg-green-600 text-white' : 'bg-stone-900 text-stone-400'
+            voiceEnabled ? 'bg-green-600 text-white' : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75]'
           }`}
           title={voiceEnabled ? 'Voice guidance ON' : 'Voice guidance OFF'}
         >
@@ -342,17 +342,17 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
                     ? 'bg-amber-600 text-white scale-105'
                     : currentStep > idx
                     ? 'bg-green-600/30 text-green-200 hover:bg-green-600/50'
-                    : 'bg-stone-900/50 text-stone-300 hover:bg-stone-900/50'
+                    : 'bg-[rgba(201,168,76,0.06)]/50 text-[#9E8F75] hover:bg-[rgba(201,168,76,0.06)]/50'
                 }`}
               >
                 <div className="flex items-center gap-2">
                   <div
                     className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
                       currentStep === idx
-                        ? 'bg-stone-950 text-amber-400'
+                        ? 'bg-[#110F0B] text-amber-400'
                         : currentStep > idx
                         ? 'bg-green-500 text-white'
-                        : 'bg-stone-900 text-stone-400'
+                        : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75]'
                     }`}
                   >
                     {currentStep > idx ? '✓' : step.step}
@@ -366,7 +366,7 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
 
         {/* Main Content */}
         <div className="lg:col-span-2">
-          <div className="bg-stone-900/50 rounded p-6">
+          <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6">
             {/* Step Header */}
             <div className="flex items-start justify-between mb-4">
               <div>
@@ -377,7 +377,7 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
             </div>
 
             {/* Description */}
-            <p className="text-lg text-stone-200 mb-4">{currentStepData.description}</p>
+            <p className="text-lg text-[#9E8F75] mb-4">{currentStepData.description}</p>
 
             {/* Highlight */}
             {currentStepData.highlight && (
@@ -419,9 +419,9 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
             )}
 
             {/* Copy Helper */}
-            <div className="bg-stone-950/50 rounded-lg p-4 mb-4">
-              <div className="text-xs font-bold text-stone-400 mb-2">HELPFUL TIP:</div>
-              <div className="text-sm text-stone-300 flex items-start gap-2">
+            <div className="bg-[#110F0B]/50 rounded-lg p-4 mb-4">
+              <div className="text-xs font-bold text-[#9E8F75] mb-2">HELPFUL TIP:</div>
+              <div className="text-sm text-[#9E8F75] flex items-start gap-2">
                 <span>💡</span>
                 <span>
                   Keep this window open on one side of your screen and {guide.name} on the other. 
@@ -439,12 +439,12 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
                   }
                 }}
                 disabled={currentStep === 0}
-                className="px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg font-semibold disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                className="px-4 py-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] text-white rounded-lg font-semibold disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
               >
                 ← Previous
               </button>
 
-              <div className="text-sm text-stone-400">
+              <div className="text-sm text-[#9E8F75]">
                 Step {currentStep + 1} of {guide.steps.length}
               </div>
 

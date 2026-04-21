@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { Calendar, dateFnsLocalizer, View } from 'react-big-calendar';
@@ -61,7 +61,7 @@ export default function BigCalendar({
   };
 
   return (
-    <div className="h-[calc(100vh-12rem)] lux-card rounded shadow-2xl p-6 border border-stone-700">
+    <div className="h-[calc(100vh-12rem)] lux-card rounded shadow-2xl p-6 border border-[rgba(201,168,76,0.22)]">
       <Calendar
         localizer={localizer}
         events={events}

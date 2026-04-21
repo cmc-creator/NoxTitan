@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { Settings, Sparkles, X, Plus, Eye, EyeOff, Move, CheckCircle } from 'lucide-react';
@@ -86,9 +86,9 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-stone-900 rounded-lg transition-all"
+            className="p-2 hover:bg-[rgba(201,168,76,0.04)] rounded-lg transition-all"
           >
-            <X className="w-6 h-6 text-stone-400" />
+            <X className="w-6 h-6 text-[#9E8F75]" />
           </button>
         </div>
 
@@ -99,7 +99,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
             className={`px-6 py-3 rounded-lg font-semibold transition-all ${
               activeTab === 'layout'
                 ? 'bg-amber-500 text-white'
-                : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
+                : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[rgba(201,168,76,0.08)]'
             }`}
           >
             Layout & Tiles
@@ -109,7 +109,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
             className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'suggestions'
                 ? 'bg-amber-500 text-white'
-                : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
+                : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[rgba(201,168,76,0.08)]'
             }`}
           >
             <Sparkles className="w-5 h-5" />
@@ -121,7 +121,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
         {activeTab === 'layout' && (
           <div>
             <div className="mb-6 p-4 bg-amber-500/10 border border-amber-400/30 rounded-lg">
-              <p className="text-amber-200 text-sm">
+              <p className="text-[#C9A84C] text-sm">
                 🎨 Drag and drop tiles to rearrange, or toggle visibility. Your layout is saved automatically.
               </p>
             </div>
@@ -139,8 +139,8 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                       key={tile.id}
                       className={`p-4 rounded border-2 transition-all ${
                         tile.enabled
-                          ? 'bg-stone-900/50 border-amber-500/30'
-                          : 'bg-stone-900/30 border-stone-700'
+                          ? 'bg-[rgba(201,168,76,0.06)]/50 border-amber-500/30'
+                          : 'bg-[rgba(201,168,76,0.06)]/30 border-[rgba(201,168,76,0.22)]'
                       }`}
                     >
                       <div className="flex items-center justify-between mb-2">
@@ -153,17 +153,17 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                           className={`p-2 rounded-lg transition-all ${
                             tile.enabled
                               ? 'bg-green-500/20 hover:bg-green-500/30'
-                              : 'bg-stone-600 hover:bg-stone-500'
+                              : 'bg-[rgba(201,168,76,0.08)] hover:bg-[rgba(201,168,76,0.08)]'
                           }`}
                         >
                           {tile.enabled ? (
                             <Eye className="w-4 h-4 text-green-300" />
                           ) : (
-                            <EyeOff className="w-4 h-4 text-stone-400" />
+                            <EyeOff className="w-4 h-4 text-[#9E8F75]" />
                           )}
                         </button>
                       </div>
-                      <p className="text-xs text-stone-400">
+                      <p className="text-xs text-[#9E8F75]">
                         {tile.enabled ? 'Visible' : 'Hidden'}
                       </p>
                     </div>
@@ -177,12 +177,12 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
         {/* AI Suggestions Tab */}
         {activeTab === 'suggestions' && (
           <div>
-            <div className="mb-6 p-4 bg-cyan-500/10 border border-cyan-400/30 rounded-lg">
+            <div className="mb-6 p-4 bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg">
               <div className="flex items-start gap-3">
-                <Sparkles className="w-6 h-6 text-cyan-400 mt-0.5" />
+                <Sparkles className="w-6 h-6 text-[#9E8F75] mt-0.5" />
                 <div>
-                  <p className="text-cyan-200 font-semibold mb-1">AI-Powered Recommendations</p>
-                  <p className="text-cyan-300 text-sm">
+                  <p className="text-[#9E8F75] font-semibold mb-1">AI-Powered Recommendations</p>
+                  <p className="text-[#9E8F75] text-sm">
                     Based on your usage patterns and current needs, we suggest adding these tiles to your dashboard.
                   </p>
                 </div>
@@ -221,10 +221,10 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                               {suggestion.priority.toUpperCase()} PRIORITY
                             </span>
                           </div>
-                          <p className="text-stone-300 mb-3">{suggestion.reason}</p>
+                          <p className="text-[#9E8F75] mb-3">{suggestion.reason}</p>
                           <button
                             onClick={() => enableSuggestion(tile.id)}
-                            className="px-4 py-2 bg-gradient-to-r from-stone-900 to-pink-500 hover:from-stone-900 hover:to-pink-600 rounded-lg font-semibold text-white transition-all flex items-center gap-2"
+                            className="px-4 py-2 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg font-semibold text-white transition-all flex items-center gap-2"
                           >
                             <Plus className="w-4 h-4" />
                             Add to Dashboard
@@ -243,7 +243,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                 <div className="p-8 text-center">
                   <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
                   <p className="text-xl font-bold text-white mb-2">You're all set!</p>
-                  <p className="text-stone-300">No new suggestions at this time. We'll notify you when we have more recommendations.</p>
+                  <p className="text-[#9E8F75]">No new suggestions at this time. We'll notify you when we have more recommendations.</p>
                 </div>
               )}
             </div>
@@ -269,7 +269,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
         <div className="mt-6">
           <button
             onClick={onClose}
-            className="w-full px-6 py-3 bg-gradient-to-r from-stone-900 to-pink-500 hover:from-stone-900 hover:to-pink-600 rounded-lg font-bold text-white transition-all"
+            className="w-full px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg font-bold text-white transition-all"
           >
             Save Customizations
           </button>

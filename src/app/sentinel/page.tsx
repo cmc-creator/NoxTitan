@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import { Shield, UserCheck, UserX, Clock, AlertTriangle, Bell, TrendingUp, Users, Upload, Eye } from 'lucide-react';
@@ -90,7 +90,7 @@ export default function SentinelPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-stone-900 to-slate-900 p-8">
+    <div className="min-h-screen bg-[#070604] p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
@@ -99,7 +99,7 @@ export default function SentinelPage() {
               <Shield className="w-10 h-10 text-amber-400" />
               Sentinel - Visitor Command Center
             </h1>
-            <p className="text-stone-400">Real-time visitor tracking and security management</p>
+            <p className="text-[#9E8F75]">Real-time visitor tracking and security management</p>
           </div>
           <div className="flex gap-3">
             <button
@@ -118,7 +118,7 @@ export default function SentinelPage() {
             </button>
             <button
               onClick={() => window.location.href = '/sentinel/check-in'}
-              className="px-6 py-3 bg-gradient-to-r from-amber-700 to-cyan-600 hover:from-amber-700 hover:to-cyan-700 text-white font-semibold rounded-lg transition-all flex items-center gap-2"
+              className="px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white font-semibold rounded-lg transition-all flex items-center gap-2"
             >
               <UserCheck className="w-5 h-5" />
               Check In Visitor
@@ -168,13 +168,13 @@ export default function SentinelPage() {
               <Clock className="w-8 h-8 text-amber-400" />
               <span className="text-4xl font-bold text-amber-400">{stats.avgDuration}</span>
             </div>
-            <p className="text-amber-200 font-semibold">Avg Duration (min)</p>
+            <p className="text-[#C9A84C] font-semibold">Avg Duration (min)</p>
           </div>
         </div>
 
         {/* Active Visitors Table */}
-        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded overflow-hidden">
-          <div className="bg-stone-900/80 px-6 py-4 border-b border-stone-700">
+        <div className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded overflow-hidden">
+          <div className="bg-[rgba(201,168,76,0.06)]/80 px-6 py-4 border-b border-[rgba(201,168,76,0.22)]">
             <h2 className="text-xl font-bold text-white flex items-center gap-2">
               <Eye className="w-6 h-6 text-amber-400" />
               Currently In Building
@@ -184,34 +184,34 @@ export default function SentinelPage() {
           {loading ? (
             <div className="p-12 text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto mb-4"></div>
-              <p className="text-stone-400">Loading visitors...</p>
+              <p className="text-[#9E8F75]">Loading visitors...</p>
             </div>
           ) : activeVisitors.length === 0 ? (
             <div className="p-12 text-center">
-              <UserCheck className="w-16 h-16 text-stone-600 mx-auto mb-4" />
+              <UserCheck className="w-16 h-16 text-[#9E8F75] mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">No Active Visitors</h3>
-              <p className="text-stone-400">Building is currently clear.</p>
+              <p className="text-[#9E8F75]">Building is currently clear.</p>
             </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-stone-900/50">
+                <thead className="bg-[rgba(201,168,76,0.06)]/50">
                   <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Visitor</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Company</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Host</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Purpose</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Location</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Badge</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Time In</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-stone-300">Actions</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Visitor</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Company</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Host</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Purpose</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Location</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Badge</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Time In</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {activeVisitors.map((visit) => (
                     <tr 
                       key={visit.id} 
-                      className={`border-t border-stone-700 hover:bg-stone-900/30 transition-colors ${
+                      className={`border-t border-[rgba(201,168,76,0.22)] hover:bg-[rgba(201,168,76,0.06)]/30 transition-colors ${
                         visit.visitor.isWatchlist ? 'bg-[#110F0B] 500/5 border-[rgba(201,168,76,0.22)] 500/30' : ''
                       }`}
                     >
@@ -230,17 +230,17 @@ export default function SentinelPage() {
                           </div>
                         </div>
                       </td>
-                      <td className="px-6 py-4 text-stone-300">{visit.visitor.company || '-'}</td>
-                      <td className="px-6 py-4 text-stone-300">{visit.hostName || '-'}</td>
-                      <td className="px-6 py-4 text-stone-300">{visit.purpose}</td>
-                      <td className="px-6 py-4 text-stone-300">{visit.building || '-'}</td>
+                      <td className="px-6 py-4 text-[#9E8F75]">{visit.visitor.company || '-'}</td>
+                      <td className="px-6 py-4 text-[#9E8F75]">{visit.hostName || '-'}</td>
+                      <td className="px-6 py-4 text-[#9E8F75]">{visit.purpose}</td>
+                      <td className="px-6 py-4 text-[#9E8F75]">{visit.building || '-'}</td>
                       <td className="px-6 py-4">
                         <span className="px-2 py-1 bg-amber-600/20 text-amber-400 border border-amber-500/40/50 rounded text-xs font-mono">
                           {visit.badgeNumber || 'N/A'}
                         </span>
                       </td>
                       <td className="px-6 py-4">
-                        <div className="text-sm text-stone-300">
+                        <div className="text-sm text-[#9E8F75]">
                           {getTimeInBuilding(visit.checkInTime)}
                         </div>
                       </td>

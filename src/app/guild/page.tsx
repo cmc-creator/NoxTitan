@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import { Trophy, Zap, Gift, Award, Target, TrendingUp, Star, Crown, Shield, Flame, Users, Clock } from 'lucide-react';
@@ -123,7 +123,7 @@ export default function GuildPage() {
       case 'Expert': return <Trophy className="w-6 h-6 text-amber-400" />;
       case 'Journeyman': return <Shield className="w-6 h-6 text-green-400" />;
       case 'Apprentice': return <Target className="w-6 h-6 text-orange-400" />;
-      default: return <Zap className="w-6 h-6 text-stone-400" />;
+      default: return <Zap className="w-6 h-6 text-[#9E8F75]" />;
     }
   }
 
@@ -172,8 +172,8 @@ export default function GuildPage() {
               onClick={() => setActiveTab(tab.id as any)}
               className={`px-6 py-3 rounded font-bold flex items-center gap-2 transition-all ${
                 activeTab === tab.id
-                  ? 'bg-gradient-to-r from-amber-700 to-amber-600 text-white scale-105'
-                  : 'bg-stone-900/50 text-stone-300 hover:bg-stone-900/50'
+                  ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white scale-105'
+                  : 'bg-[rgba(201,168,76,0.06)]/50 text-[#9E8F75] hover:bg-[rgba(201,168,76,0.06)]/50'
               }`}
             >
               <tab.icon className="w-5 h-5" />
@@ -189,7 +189,7 @@ export default function GuildPage() {
             <div className="lux-card border-2 border-amber-500/40/50 rounded p-8">
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center gap-4">
-                  <div className="p-4 bg-gradient-to-br from-amber-700 to-amber-600 rounded">
+                  <div className="p-4 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded">
                     {getLevelIcon(profile.levelName)}
                   </div>
                   <div>
@@ -198,25 +198,25 @@ export default function GuildPage() {
                     </h2>
                     <div className="flex items-center gap-2">
                       <span className="text-2xl font-bold text-amber-400">{profile.levelName}</span>
-                      <span className="text-stone-400">• Level {profile.currentLevel}</span>
+                      <span className="text-[#9E8F75]">• Level {profile.currentLevel}</span>
                     </div>
                   </div>
                 </div>
                 <div className="text-right">
                   <div className="text-4xl font-bold text-yellow-400">{profile.totalXP.toLocaleString()}</div>
-                  <div className="text-sm text-stone-400">Total XP</div>
+                  <div className="text-sm text-[#9E8F75]">Total XP</div>
                 </div>
               </div>
 
               {/* XP Progress Bar */}
               <div className="mb-6">
-                <div className="flex justify-between text-sm text-stone-400 mb-2">
+                <div className="flex justify-between text-sm text-[#9E8F75] mb-2">
                   <span>{profile.currentXP} XP</span>
                   <span>{profile.xpToNextLevel} XP to Level {profile.currentLevel + 1}</span>
                 </div>
-                <div className="h-6 bg-stone-900 rounded-full overflow-hidden">
+                <div className="h-6 bg-[rgba(201,168,76,0.04)] rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-stone-900 via-pink-600 to-yellow-600 transition-all duration-500 flex items-center justify-center"
+                    className="h-full bg-[rgba(201,168,76,0.08)] transition-all duration-500 flex items-center justify-center"
                     style={{ width: `${(profile.currentXP / profile.xpToNextLevel) * 100}%` }}
                   >
                     <span className="text-xs font-bold text-white">
@@ -228,46 +228,46 @@ export default function GuildPage() {
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4">
-                <div className="bg-stone-900/50 rounded p-4 text-center">
+                <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-4 text-center">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <Flame className="w-5 h-5 text-orange-400" />
                     <span className="text-2xl font-bold text-white">{profile.streak}</span>
                   </div>
-                  <div className="text-sm text-stone-400">Day Streak</div>
+                  <div className="text-sm text-[#9E8F75]">Day Streak</div>
                 </div>
-                <div className="bg-stone-900/50 rounded p-4 text-center">
+                <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-4 text-center">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <Trophy className="w-5 h-5 text-yellow-400" />
                     <span className="text-2xl font-bold text-white">#{profile.rank || '-'}</span>
                   </div>
-                  <div className="text-sm text-stone-400">Rank</div>
+                  <div className="text-sm text-[#9E8F75]">Rank</div>
                 </div>
-                <div className="bg-stone-900/50 rounded p-4 text-center">
+                <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-4 text-center">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <Award className="w-5 h-5 text-amber-400" />
                     <span className="text-2xl font-bold text-white">{profile.badges.length}</span>
                   </div>
-                  <div className="text-sm text-stone-400">Badges</div>
+                  <div className="text-sm text-[#9E8F75]">Badges</div>
                 </div>
               </div>
             </div>
 
             {/* Recent Activity */}
-            <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
+            <div className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-6">
               <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-yellow-400" />
                 Recent XP Activity
               </h3>
               <div className="space-y-3">
                 {recentActivity.slice(0, 10).map(activity => (
-                  <div key={activity.id} className="flex items-center justify-between bg-stone-900/30 rounded-lg p-3">
+                  <div key={activity.id} className="flex items-center justify-between bg-[rgba(201,168,76,0.06)]/30 rounded-lg p-3">
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-amber-600/20 rounded-lg text-amber-400">
                         {getXPTypeIcon(activity.type)}
                       </div>
                       <div>
                         <div className="text-white font-medium">{activity.source}</div>
-                        <div className="text-xs text-stone-400">
+                        <div className="text-xs text-[#9E8F75]">
                           {new Date(activity.createdAt).toLocaleString()}
                         </div>
                       </div>
@@ -278,7 +278,7 @@ export default function GuildPage() {
                   </div>
                 ))}
                 {recentActivity.length === 0 && (
-                  <div className="text-center py-8 text-stone-400">
+                  <div className="text-center py-8 text-[#9E8F75]">
                     No activity yet. Start earning XP!
                   </div>
                 )}
@@ -298,31 +298,31 @@ export default function GuildPage() {
               {profile && (
                 <div className="text-right">
                   <div className="text-3xl font-bold text-yellow-400">{profile.totalXP.toLocaleString()}</div>
-                  <div className="text-sm text-stone-400">Available XP</div>
+                  <div className="text-sm text-[#9E8F75]">Available XP</div>
                 </div>
               )}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {rewards.map(reward => (
-                <div key={reward.id} className="bg-stone-900/50 border border-stone-700 rounded p-6 hover:border-amber-500/40/50 transition-all">
-                  <div className="aspect-square bg-gradient-to-br from-amber-700 to-amber-600 rounded mb-4 flex items-center justify-center">
+                <div key={reward.id} className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-amber-500/40/50 transition-all">
+                  <div className="aspect-square bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded mb-4 flex items-center justify-center">
                     <Gift className="w-16 h-16 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">{reward.name}</h3>
-                  <p className="text-sm text-stone-400 mb-4">{reward.description}</p>
+                  <p className="text-sm text-[#9E8F75] mb-4">{reward.description}</p>
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
                       <Zap className="w-5 h-5 text-yellow-400" />
                       <span className="text-2xl font-bold text-yellow-400">{reward.xpCost}</span>
                     </div>
                     {reward.stockQuantity !== null && (
-                      <span className="text-sm text-stone-400">{reward.stockQuantity} left</span>
+                      <span className="text-sm text-[#9E8F75]">{reward.stockQuantity} left</span>
                     )}
                   </div>
                   <button
                     onClick={() => purchaseReward(reward.id)}
                     disabled={!profile || profile.totalXP < reward.xpCost}
-                    className="w-full px-4 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-700 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Purchase
                   </button>
@@ -345,8 +345,8 @@ export default function GuildPage() {
                   key={achievement.id}
                   className={`rounded p-6 border-2 ${
                     achievement.unlocked
-                      ? `bg-gradient-to-br ${getRarityColor(achievement.rarity)}`
-                      : 'bg-stone-900/30 border-stone-700 grayscale opacity-50'
+                      ? `${getRarityColor(achievement.rarity)}`
+                      : 'bg-[rgba(201,168,76,0.06)]/30 border-[rgba(201,168,76,0.22)] grayscale opacity-50'
                   }`}
                 >
                   <div className="text-center mb-4">
@@ -357,7 +357,7 @@ export default function GuildPage() {
                       achievement.rarity === 'EPIC' ? 'bg-amber-600' :
                       achievement.rarity === 'RARE' ? 'bg-amber-600' :
                       achievement.rarity === 'UNCOMMON' ? 'bg-green-600' :
-                      'bg-stone-600'
+                      'bg-[rgba(201,168,76,0.08)]'
                     } text-white`}>
                       {achievement.rarity}
                     </span>
@@ -391,16 +391,16 @@ export default function GuildPage() {
                   key={idx}
                   className={`flex items-center justify-between p-6 rounded ${
                     idx < 3
-                      ? 'bg-gradient-to-r from-yellow-600/20 to-orange-600/20 border-2 border-yellow-500/50'
-                      : 'bg-stone-900/50 border border-stone-700'
+                      ? 'bg-[rgba(201,168,76,0.06)] border-2 border-yellow-500/50'
+                      : 'bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)]'
                   }`}
                 >
                   <div className="flex items-center gap-4">
                     <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-2xl ${
                       idx === 0 ? 'bg-yellow-600 text-white' :
-                      idx === 1 ? 'bg-stone-400 text-white' :
+                      idx === 1 ? 'bg-[rgba(201,168,76,0.08)] text-white' :
                       idx === 2 ? 'bg-orange-600 text-white' :
-                      'bg-stone-900 text-stone-300'
+                      'bg-[rgba(201,168,76,0.04)] text-[#9E8F75]'
                     }`}>
                       {idx + 1}
                     </div>
@@ -416,7 +416,7 @@ export default function GuildPage() {
                   </div>
                   <div className="text-right">
                     <div className="text-3xl font-bold text-yellow-400">{entry.totalXP.toLocaleString()}</div>
-                    <div className="text-sm text-stone-400">Total XP</div>
+                    <div className="text-sm text-[#9E8F75]">Total XP</div>
                   </div>
                 </div>
               ))}

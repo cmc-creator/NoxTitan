@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -92,13 +92,13 @@ export default function LearningHub() {
   const availableCourses = courses.filter(c => c.progress === 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900">
+    <div className="min-h-screen bg-[#070604]">
       {/* Top Navigation */}
-      <nav className="bg-stone-950/80 backdrop-blur-xl border-b-2 border-emerald-500/30 sticky top-0 z-50">
+      <nav className="bg-[#110F0B]/80 backdrop-blur-xl border-b-2 border-[rgba(201,168,76,0.22)] sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <Link href="/basecamp" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <Mountain className="w-8 h-8 text-emerald-400" />
-            <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-teal-200">
+            <Mountain className="w-8 h-8 text-[#9E8F75]" />
+            <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#E8C060] to-[#C9A84C]">
               Your Basecamp
             </span>
           </Link>
@@ -108,12 +108,12 @@ export default function LearningHub() {
       <div className="max-w-7xl mx-auto p-6">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/basecamp" className="inline-flex items-center gap-2 text-emerald-300 hover:text-emerald-100 mb-4 transition-colors">
+          <Link href="/basecamp" className="inline-flex items-center gap-2 text-[#9E8F75] hover:text-[#9E8F75] mb-4 transition-colors">
             ← Back to Basecamp
           </Link>
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-orange-200 to-yellow-200 mb-2"
+              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#E8C060] to-[#C9A84C] mb-2"
                   style={{
                     textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(251,191,36,0.6)',
                     WebkitTextStroke: '1px rgba(251,191,36,0.3)',
@@ -121,14 +121,14 @@ export default function LearningHub() {
                   }}>
                 📚 Learning Hub
               </h1>
-              <p className="text-emerald-200 text-lg">Grow your skills, unlock your potential!</p>
+              <p className="text-[#9E8F75] text-lg">Grow your skills, unlock your potential!</p>
             </div>
           </div>
         </div>
 
         {/* Learning Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-5 border-2 border-amber-500/40/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-[#C9A84C] was-blue-200 text-sm mb-1">Courses Enrolled</div>
@@ -146,16 +146,16 @@ export default function LearningHub() {
               <CheckCircle className="w-12 h-12 text-[#C9A84C] was-green-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-5 border-2 border-amber-500/40/30">
+          <div className="bg-[rgba(201,168,76,0.04)] rounded p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-amber-100/70 text-sm mb-1">Learning Hours</div>
+                <div className="text-[#F0EBE0]/70 text-sm mb-1">Learning Hours</div>
                 <div className="text-3xl font-bold text-white">12.5</div>
               </div>
               <Clock className="w-12 h-12 text-amber-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded p-5 border-2 border-yellow-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-yellow-500/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-yellow-200 text-sm mb-1">Certificates</div>
@@ -167,13 +167,13 @@ export default function LearningHub() {
         </div>
 
         {/* Tabs */}
-        <div className="bg-stone-900/50 rounded p-2 border-2 border-emerald-500/30 mb-6 inline-flex gap-2">
+        <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-2 border-2 border-[rgba(201,168,76,0.22)] mb-6 inline-flex gap-2">
           <button
             onClick={() => setActiveTab('my-learning')}
             className={`px-6 py-3 rounded-lg font-semibold transition-all ${
               activeTab === 'my-learning'
-                ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg'
-                : 'text-stone-300 hover:text-white'
+                ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white shadow-lg'
+                : 'text-[#9E8F75] hover:text-white'
             }`}
           >
             My Learning ({myLearning.length})
@@ -182,8 +182,8 @@ export default function LearningHub() {
             onClick={() => setActiveTab('explore')}
             className={`px-6 py-3 rounded-lg font-semibold transition-all ${
               activeTab === 'explore'
-                ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg'
-                : 'text-stone-300 hover:text-white'
+                ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white shadow-lg'
+                : 'text-[#9E8F75] hover:text-white'
             }`}
           >
             Explore Courses
@@ -192,8 +192,8 @@ export default function LearningHub() {
             onClick={() => setActiveTab('achievements')}
             className={`px-6 py-3 rounded-lg font-semibold transition-all ${
               activeTab === 'achievements'
-                ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg'
-                : 'text-stone-300 hover:text-white'
+                ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white shadow-lg'
+                : 'text-[#9E8F75] hover:text-white'
             }`}
           >
             Achievements
@@ -204,13 +204,13 @@ export default function LearningHub() {
         {activeTab === 'my-learning' && (
           <div>
             {myLearning.length === 0 ? (
-              <div className="bg-stone-900/50 rounded p-12 border-2 border-emerald-500/30 text-center">
-                <BookOpen className="w-16 h-16 text-stone-600 mx-auto mb-4" />
+              <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-12 border-2 border-[rgba(201,168,76,0.22)] text-center">
+                <BookOpen className="w-16 h-16 text-[#9E8F75] mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-white mb-2">No courses yet!</h3>
-                <p className="text-stone-400 mb-4">Start learning something new today</p>
+                <p className="text-[#9E8F75] mb-4">Start learning something new today</p>
                 <button
                   onClick={() => setActiveTab('explore')}
-                  className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-lg font-semibold transition-all"
+                  className="px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-semibold transition-all"
                 >
                   Explore Courses
                 </button>
@@ -218,39 +218,39 @@ export default function LearningHub() {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {myLearning.map(course => (
-                  <div key={course.id} className="lux-card/80 rounded p-6 border-2 border-emerald-500/30 hover:border-emerald-400/50 transition-all">
+                  <div key={course.id} className="lux-card/80 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all">
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-amber-700 to-amber-600 rounded-lg flex items-center justify-center text-3xl">
+                      <div className="w-16 h-16 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg flex items-center justify-center text-3xl">
                         {course.image}
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-bold text-white mb-1">{course.title}</h3>
-                        <p className="text-stone-400 text-sm">{course.instructor}</p>
+                        <p className="text-[#9E8F75] text-sm">{course.instructor}</p>
                       </div>
                     </div>
 
                     {/* Progress Bar */}
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-stone-300 text-sm font-semibold">Progress</span>
-                        <span className="text-emerald-400 font-bold">{course.progress}%</span>
+                        <span className="text-[#9E8F75] text-sm font-semibold">Progress</span>
+                        <span className="text-[#9E8F75] font-bold">{course.progress}%</span>
                       </div>
-                      <div className="w-full bg-stone-900 rounded-full h-2">
+                      <div className="w-full bg-[rgba(201,168,76,0.04)] rounded-full h-2">
                         <div
-                          className="bg-gradient-to-r from-emerald-600 to-teal-600 h-2 rounded-full transition-all"
+                          className="bg-[rgba(201,168,76,0.08)] h-2 rounded-full transition-all"
                           style={{ width: `${course.progress}%` }}
                         />
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between mb-4 text-sm text-stone-400">
+                    <div className="flex items-center justify-between mb-4 text-sm text-[#9E8F75]">
                       <span className="flex items-center gap-1">
                         <Clock className="w-4 h-4" /> {course.duration}
                       </span>
                       <span>{course.modules} modules</span>
                     </div>
 
-                    <button className="w-full px-4 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+                    <button className="w-full px-4 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
                       {course.progress === 100 ? (
                         <>
                           <CheckCircle className="w-5 h-5" />
@@ -274,26 +274,26 @@ export default function LearningHub() {
         {activeTab === 'explore' && (
           <div>
             {/* Search & Filters */}
-            <div className="bg-stone-900/50 rounded p-4 border-2 border-emerald-500/30 mb-6">
+            <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-4 border-2 border-[rgba(201,168,76,0.22)] mb-6">
               <div className="flex flex-wrap items-center gap-4">
                 <div className="flex-1 min-w-[300px]">
                   <div className="relative">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-emerald-400" />
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#9E8F75]" />
                     <input
                       type="text"
                       placeholder="Search courses..."
-                      className="w-full bg-stone-950 border-2 border-emerald-500/30 rounded-lg pl-10 pr-4 py-2 text-white focus:border-emerald-400 focus:outline-none"
+                      className="w-full bg-[#110F0B] border-2 border-[rgba(201,168,76,0.22)] rounded-lg pl-10 pr-4 py-2 text-white focus:border-[rgba(201,168,76,0.22)] focus:outline-none"
                     />
                   </div>
                 </div>
-                <select className="bg-stone-950 border-2 border-emerald-500/30 rounded-lg px-4 py-2 text-white focus:border-emerald-400 focus:outline-none">
+                <select className="bg-[#110F0B] border-2 border-[rgba(201,168,76,0.22)] rounded-lg px-4 py-2 text-white focus:border-[rgba(201,168,76,0.22)] focus:outline-none">
                   <option>All Categories</option>
                   <option>Leadership</option>
                   <option>Soft Skills</option>
                   <option>Technical</option>
                   <option>Management</option>
                 </select>
-                <select className="bg-stone-950 border-2 border-emerald-500/30 rounded-lg px-4 py-2 text-white focus:border-emerald-400 focus:outline-none">
+                <select className="bg-[#110F0B] border-2 border-[rgba(201,168,76,0.22)] rounded-lg px-4 py-2 text-white focus:border-[rgba(201,168,76,0.22)] focus:outline-none">
                   <option>All Levels</option>
                   <option>Beginner</option>
                   <option>Intermediate</option>
@@ -304,13 +304,13 @@ export default function LearningHub() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {availableCourses.map(course => (
-                <div key={course.id} className="lux-card/80 rounded p-6 border-2 border-emerald-500/30 hover:border-emerald-400/50 transition-all group">
-                  <div className="w-full h-32 bg-gradient-to-br from-amber-700 to-amber-600 rounded-lg flex items-center justify-center text-6xl mb-4">
+                <div key={course.id} className="lux-card/80 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all group">
+                  <div className="w-full h-32 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg flex items-center justify-center text-6xl mb-4">
                     {course.image}
                   </div>
 
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="px-3 py-1 bg-emerald-900/50 border border-emerald-500/30 text-emerald-300 rounded-full text-xs font-semibold">
+                    <span className="px-3 py-1 bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] text-[#9E8F75] rounded-full text-xs font-semibold">
                       {course.category}
                     </span>
                     <span className="px-3 py-1 bg-[#110F0B] was-blue-900/50 border border-amber-500/40/30 text-amber-400 rounded-full text-xs font-semibold">
@@ -318,10 +318,10 @@ export default function LearningHub() {
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">{course.title}</h3>
-                  <p className="text-stone-400 text-sm mb-4">{course.instructor}</p>
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#9E8F75] transition-colors">{course.title}</h3>
+                  <p className="text-[#9E8F75] text-sm mb-4">{course.instructor}</p>
 
-                  <div className="flex items-center justify-between text-sm text-stone-400 mb-4">
+                  <div className="flex items-center justify-between text-sm text-[#9E8F75] mb-4">
                     <span className="flex items-center gap-1">
                       <Clock className="w-4 h-4" /> {course.duration}
                     </span>
@@ -330,7 +330,7 @@ export default function LearningHub() {
                     </span>
                   </div>
 
-                  <button className="w-full px-4 py-3 bg-gradient-to-r from-amber-700 to-cyan-600 hover:from-amber-700 hover:to-cyan-500 text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+                  <button className="w-full px-4 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
                     <Zap className="w-5 h-5" />
                     Enroll Now
                   </button>
@@ -343,33 +343,33 @@ export default function LearningHub() {
         {/* Achievements Tab */}
         {activeTab === 'achievements' && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded p-6 border-2 border-yellow-500/30 text-center">
+            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-yellow-500/30 text-center">
               <div className="text-6xl mb-3">🏆</div>
               <div className="text-yellow-300 font-bold mb-1">Time Master</div>
-              <div className="text-stone-400 text-sm">Completed Time Management</div>
+              <div className="text-[#9E8F75] text-sm">Completed Time Management</div>
             </div>
-            <div className="bg-stone-900/30 rounded p-6 border-2 border-stone-700 text-center opacity-50">
+            <div className="bg-[rgba(201,168,76,0.06)]/30 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] text-center opacity-50">
               <div className="text-6xl mb-3 grayscale">🎯</div>
-              <div className="text-stone-500 font-bold mb-1">Goal Crusher</div>
-              <div className="text-stone-600 text-sm">Complete 5 courses</div>
+              <div className="text-[#9E8F75] font-bold mb-1">Goal Crusher</div>
+              <div className="text-[#9E8F75] text-sm">Complete 5 courses</div>
             </div>
-            <div className="bg-stone-900/30 rounded p-6 border-2 border-stone-700 text-center opacity-50">
+            <div className="bg-[rgba(201,168,76,0.06)]/30 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] text-center opacity-50">
               <div className="text-6xl mb-3 grayscale">📚</div>
-              <div className="text-stone-500 font-bold mb-1">Knowledge Seeker</div>
-              <div className="text-stone-600 text-sm">20 hours of learning</div>
+              <div className="text-[#9E8F75] font-bold mb-1">Knowledge Seeker</div>
+              <div className="text-[#9E8F75] text-sm">20 hours of learning</div>
             </div>
-            <div className="bg-stone-900/30 rounded p-6 border-2 border-stone-700 text-center opacity-50">
+            <div className="bg-[rgba(201,168,76,0.06)]/30 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] text-center opacity-50">
               <div className="text-6xl mb-3 grayscale">⭐</div>
-              <div className="text-stone-500 font-bold mb-1">Rising Star</div>
-              <div className="text-stone-600 text-sm">Top 10% learner</div>
+              <div className="text-[#9E8F75] font-bold mb-1">Rising Star</div>
+              <div className="text-[#9E8F75] text-sm">Top 10% learner</div>
             </div>
           </div>
         )}
 
         {/* Encouragement Banner */}
-        <div className="mt-8 bg-gradient-to-r from-stone-900/30 to-pink-900/30 rounded p-6 border-2 border-amber-500/40/30 text-center">
-          <h3 className="text-2xl font-bold text-amber-100/70 mb-2">🚀 You're doing amazing!</h3>
-          <p className="text-amber-50 text-lg">Every course completed is a step toward your best self. Keep learning!</p>
+        <div className="mt-8 bg-[rgba(201,168,76,0.04)] rounded p-6 border-2 border-amber-500/40/30 text-center">
+          <h3 className="text-2xl font-bold text-[#F0EBE0]/70 mb-2">🚀 You're doing amazing!</h3>
+          <p className="text-[#F0EBE0] text-lg">Every course completed is a step toward your best self. Keep learning!</p>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import { Coffee, Clock, Play, Pause, XCircle } from 'lucide-react';
@@ -53,8 +53,8 @@ export default function BreakTimer({ activeBreak, onEndBreak }: BreakTimerProps)
   return (
     <div className={`fixed bottom-6 right-6 ${
       isOverdue 
-        ? 'bg-gradient-to-br from-red-600 to-orange-600' 
-        : 'bg-gradient-to-br from-amber-800 to-amber-600'
+        ? 'bg-[rgba(201,168,76,0.08)]' 
+        : 'bg-[rgba(201,168,76,0.08)]'
     } text-white rounded shadow-2xl p-6 min-w-[320px] z-50 animate-in slide-in-from-bottom-8`}>
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
@@ -66,7 +66,7 @@ export default function BreakTimer({ activeBreak, onEndBreak }: BreakTimerProps)
           </span>
         </div>
         {activeBreak.isPaid && (
-          <span className="px-2 py-1 bg-stone-950/20 rounded-full text-xs font-semibold">
+          <span className="px-2 py-1 bg-[#110F0B]/20 rounded-full text-xs font-semibold">
             Paid
           </span>
         )}
@@ -91,9 +91,9 @@ export default function BreakTimer({ activeBreak, onEndBreak }: BreakTimerProps)
 
       {/* Progress Bar */}
       <div className="mb-4">
-        <div className="h-2 bg-stone-950/20 rounded-full overflow-hidden">
+        <div className="h-2 bg-[#110F0B]/20 rounded-full overflow-hidden">
           <div 
-            className="h-full bg-stone-950 transition-all duration-1000"
+            className="h-full bg-[#110F0B] transition-all duration-1000"
             style={{ 
               width: `${Math.min((minutes / expectedDuration) * 100, 100)}%` 
             }}
@@ -103,7 +103,7 @@ export default function BreakTimer({ activeBreak, onEndBreak }: BreakTimerProps)
 
       {/* Warning if overdue */}
       {isOverdue && (
-        <div className="bg-stone-950/20 rounded-lg p-3 mb-4 text-sm">
+        <div className="bg-[#110F0B]/20 rounded-lg p-3 mb-4 text-sm">
           ⚠️ This break has exceeded the expected duration. Please return to work or extend if approved.
         </div>
       )}
@@ -111,7 +111,7 @@ export default function BreakTimer({ activeBreak, onEndBreak }: BreakTimerProps)
       {/* End Break Button */}
       <button
         onClick={onEndBreak}
-        className="w-full py-3 bg-stone-950 text-stone-900 font-bold rounded-lg hover:bg-stone-100 transition-colors flex items-center justify-center gap-2"
+        className="w-full py-3 bg-[#110F0B] text-[#9E8F75] font-bold rounded-lg hover:bg-[rgba(201,168,76,0.04)] transition-colors flex items-center justify-center gap-2"
       >
         <XCircle className="w-5 h-5" />
         End Break

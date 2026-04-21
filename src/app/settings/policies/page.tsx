@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { 
@@ -176,8 +176,8 @@ export default function PoliciesPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-stone-100 mb-2">Policy Configuration Center</h1>
-            <p className="text-stone-500">Configure PTO, sick leave, FMLA, and other time-off policies. Changes apply system-wide.</p>
+            <h1 className="text-3xl font-bold text-[#9E8F75] mb-2">Policy Configuration Center</h1>
+            <p className="text-[#9E8F75]">Configure PTO, sick leave, FMLA, and other time-off policies. Changes apply system-wide.</p>
           </div>
           <div className="flex gap-3">
             {hasChanges && (
@@ -191,7 +191,7 @@ export default function PoliciesPage() {
             )}
             <button
               onClick={() => setShowPreview(!showPreview)}
-              className="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-amber-300 rounded-lg font-medium transition-all flex items-center gap-2"
+              className="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-[#E8C060] rounded-lg font-medium transition-all flex items-center gap-2"
             >
               <Eye className="w-4 h-4" />
               {showPreview ? 'Hide' : 'Show'} Preview
@@ -202,7 +202,7 @@ export default function PoliciesPage() {
               className={`px-6 py-2 rounded-lg font-medium transition-all flex items-center gap-2 ${
                 hasChanges
                   ? 'bg-green-600 hover:bg-green-700 text-white'
-                  : 'bg-gray-200 text-stone-400 cursor-not-allowed'
+                  : 'bg-gray-200 text-[#9E8F75] cursor-not-allowed'
               }`}
             >
               <Save className="w-4 h-4" />
@@ -234,7 +234,7 @@ export default function PoliciesPage() {
           className={`px-6 py-3 rounded-lg font-medium transition-all whitespace-nowrap ${
             activeTab === 'pto'
               ? 'bg-amber-600 text-white shadow-lg'
-              : 'bg-stone-950 text-[#C9A84C] border border-stone-700 hover:bg-stone-950'
+              : 'bg-[#110F0B] text-[#C9A84C] border border-[rgba(201,168,76,0.22)] hover:bg-[#110F0B]'
           }`}
         >
           <Calendar className="w-5 h-5 inline mr-2" />
@@ -245,7 +245,7 @@ export default function PoliciesPage() {
           className={`px-6 py-3 rounded-lg font-medium transition-all whitespace-nowrap ${
             activeTab === 'sick'
               ? 'bg-amber-600 text-white shadow-lg'
-              : 'bg-stone-950 text-[#C9A84C] border border-stone-700 hover:bg-stone-950'
+              : 'bg-[#110F0B] text-[#C9A84C] border border-[rgba(201,168,76,0.22)] hover:bg-[#110F0B]'
           }`}
         >
           <Heart className="w-5 h-5 inline mr-2" />
@@ -256,7 +256,7 @@ export default function PoliciesPage() {
           className={`px-6 py-3 rounded-lg font-medium transition-all whitespace-nowrap ${
             activeTab === 'fmla'
               ? 'bg-amber-600 text-white shadow-lg'
-              : 'bg-stone-950 text-[#C9A84C] border border-stone-700 hover:bg-stone-950'
+              : 'bg-[#110F0B] text-[#C9A84C] border border-[rgba(201,168,76,0.22)] hover:bg-[#110F0B]'
           }`}
         >
           <Shield className="w-5 h-5 inline mr-2" />
@@ -267,7 +267,7 @@ export default function PoliciesPage() {
           className={`px-6 py-3 rounded-lg font-medium transition-all whitespace-nowrap ${
             activeTab === 'bereavement'
               ? 'bg-amber-600 text-white shadow-lg'
-              : 'bg-stone-950 text-[#C9A84C] border border-stone-700 hover:bg-stone-950'
+              : 'bg-[#110F0B] text-[#C9A84C] border border-[rgba(201,168,76,0.22)] hover:bg-[#110F0B]'
           }`}
         >
           <FileText className="w-5 h-5 inline mr-2" />
@@ -278,7 +278,7 @@ export default function PoliciesPage() {
           className={`px-6 py-3 rounded-lg font-medium transition-all whitespace-nowrap ${
             activeTab === 'holidays'
               ? 'bg-amber-600 text-white shadow-lg'
-              : 'bg-stone-950 text-[#C9A84C] border border-stone-700 hover:bg-stone-950'
+              : 'bg-[#110F0B] text-[#C9A84C] border border-[rgba(201,168,76,0.22)] hover:bg-[#110F0B]'
           }`}
         >
           <Bell className="w-5 h-5 inline mr-2" />
@@ -290,8 +290,8 @@ export default function PoliciesPage() {
       {activeTab === 'pto' && (
         <div className="space-y-6">
           {/* Accrual Settings */}
-          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
-            <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+          <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
+            <h2 className="text-xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
               <Clock className="w-5 h-5 text-amber-400" />
               PTO Accrual Settings
             </h2>
@@ -309,9 +309,9 @@ export default function PoliciesPage() {
                     setPtoPolicy({ ...ptoPolicy, accrualRate: parseFloat(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 />
-                <p className="text-xs text-stone-500 mt-1">Annual total: {calculateAnnualPTO().toFixed(1)} hours</p>
+                <p className="text-xs text-[#9E8F75] mt-1">Annual total: {calculateAnnualPTO().toFixed(1)} hours</p>
               </div>
 
               <div>
@@ -324,7 +324,7 @@ export default function PoliciesPage() {
                     setPtoPolicy({ ...ptoPolicy, accrualFrequency: e.target.value as any });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 >
                   <option value="weekly">Weekly</option>
                   <option value="biweekly">Bi-Weekly</option>
@@ -344,9 +344,9 @@ export default function PoliciesPage() {
                     setPtoPolicy({ ...ptoPolicy, maxAccrual: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 />
-                <p className="text-xs text-stone-500 mt-1">Accrual stops when this limit is reached</p>
+                <p className="text-xs text-[#9E8F75] mt-1">Accrual stops when this limit is reached</p>
               </div>
 
               <div>
@@ -360,16 +360,16 @@ export default function PoliciesPage() {
                     setPtoPolicy({ ...ptoPolicy, maxCarryover: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 />
-                <p className="text-xs text-stone-500 mt-1">Maximum hours that roll over to next year</p>
+                <p className="text-xs text-[#9E8F75] mt-1">Maximum hours that roll over to next year</p>
               </div>
             </div>
           </div>
 
           {/* Eligibility & Usage Rules */}
-          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
-            <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+          <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
+            <h2 className="text-xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
               <Users className="w-5 h-5 text-amber-600" />
               Eligibility & Usage Rules
             </h2>
@@ -386,9 +386,9 @@ export default function PoliciesPage() {
                     setPtoPolicy({ ...ptoPolicy, probationPeriod: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 />
-                <p className="text-xs text-stone-500 mt-1">Days before eligible to use PTO</p>
+                <p className="text-xs text-[#9E8F75] mt-1">Days before eligible to use PTO</p>
               </div>
 
               <div>
@@ -403,9 +403,9 @@ export default function PoliciesPage() {
                     setPtoPolicy({ ...ptoPolicy, minimumIncrement: parseFloat(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 />
-                <p className="text-xs text-stone-500 mt-1">Smallest unit of PTO that can be requested</p>
+                <p className="text-xs text-[#9E8F75] mt-1">Smallest unit of PTO that can be requested</p>
               </div>
 
               <div>
@@ -419,9 +419,9 @@ export default function PoliciesPage() {
                     setPtoPolicy({ ...ptoPolicy, requireAdvanceNotice: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 />
-                <p className="text-xs text-stone-500 mt-1">Days in advance PTO must be requested</p>
+                <p className="text-xs text-[#9E8F75] mt-1">Days in advance PTO must be requested</p>
               </div>
 
               <div>
@@ -466,7 +466,7 @@ export default function PoliciesPage() {
                 <div className="space-y-2">
                   {ptoPolicy.approvalChain.map((role, index) => (
                     <div key={index} className="flex items-center gap-2">
-                      <span className="bg-blue-100 text-amber-300 px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-blue-100 text-[#E8C060] px-3 py-1 rounded-full text-sm font-medium">
                         {index + 1}. {role}
                       </span>
                       <button
@@ -489,7 +489,7 @@ export default function PoliciesPage() {
                         setHasChanges(true);
                       }
                     }}
-                    className="text-amber-400 hover:text-amber-300 text-sm font-medium flex items-center gap-1"
+                    className="text-amber-400 hover:text-[#E8C060] text-sm font-medium flex items-center gap-1"
                   >
                     <Plus className="w-4 h-4" />
                     Add Approval Level
@@ -500,12 +500,12 @@ export default function PoliciesPage() {
           </div>
 
           {/* Blackout Dates */}
-          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
-            <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+          <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
+            <h2 className="text-xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
               <AlertCircle className="w-5 h-5 text-red-600" />
               Blackout Dates
             </h2>
-            <p className="text-sm text-stone-500 mb-4">Dates when PTO requests are not allowed</p>
+            <p className="text-sm text-[#9E8F75] mb-4">Dates when PTO requests are not allowed</p>
             
             <div className="space-y-2">
               {ptoPolicy.blackoutDates.map((date, index) => (
@@ -519,7 +519,7 @@ export default function PoliciesPage() {
                       setPtoPolicy({ ...ptoPolicy, blackoutDates: newDates });
                       setHasChanges(true);
                     }}
-                    className="px-4 py-2 border border-stone-700 rounded-lg"
+                    className="px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg"
                   />
                   <button
                     onClick={() => {
@@ -538,7 +538,7 @@ export default function PoliciesPage() {
                   setPtoPolicy({ ...ptoPolicy, blackoutDates: [...ptoPolicy.blackoutDates, ''] });
                   setHasChanges(true);
                 }}
-                className="text-amber-400 hover:text-amber-300 text-sm font-medium flex items-center gap-1 mt-2"
+                className="text-amber-400 hover:text-[#E8C060] text-sm font-medium flex items-center gap-1 mt-2"
               >
                 <Plus className="w-4 h-4" />
                 Add Blackout Date
@@ -551,8 +551,8 @@ export default function PoliciesPage() {
       {/* Sick Leave Policy Configuration */}
       {activeTab === 'sick' && (
         <div className="space-y-6">
-          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
-            <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+          <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
+            <h2 className="text-xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
               <Clock className="w-5 h-5 text-red-600" />
               Sick Leave Accrual Settings
             </h2>
@@ -570,9 +570,9 @@ export default function PoliciesPage() {
                     setSickPolicy({ ...sickPolicy, accrualRate: parseFloat(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 />
-                <p className="text-xs text-stone-500 mt-1">Annual total: {calculateAnnualSick().toFixed(1)} hours</p>
+                <p className="text-xs text-[#9E8F75] mt-1">Annual total: {calculateAnnualSick().toFixed(1)} hours</p>
               </div>
 
               <div>
@@ -585,7 +585,7 @@ export default function PoliciesPage() {
                     setSickPolicy({ ...sickPolicy, accrualFrequency: e.target.value as any });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 >
                   <option value="weekly">Weekly</option>
                   <option value="biweekly">Bi-Weekly</option>
@@ -605,7 +605,7 @@ export default function PoliciesPage() {
                     setSickPolicy({ ...sickPolicy, maxAccrual: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 />
               </div>
 
@@ -621,7 +621,7 @@ export default function PoliciesPage() {
                     setSickPolicy({ ...sickPolicy, carryoverMax: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent disabled:bg-[rgba(201,168,76,0.06)]"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent disabled:bg-[rgba(201,168,76,0.06)]"
                 />
                 <label className="flex items-center mt-2">
                   <input
@@ -633,15 +633,15 @@ export default function PoliciesPage() {
                     }}
                     className="mr-2"
                   />
-                  <span className="text-sm text-stone-500">Allow carryover</span>
+                  <span className="text-sm text-[#9E8F75]">Allow carryover</span>
                 </label>
               </div>
             </div>
           </div>
 
           {/* Documentation Requirements */}
-          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
-            <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+          <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
+            <h2 className="text-xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
               <FileText className="w-5 h-5 text-amber-600" />
               Documentation & Approval
             </h2>
@@ -691,9 +691,9 @@ export default function PoliciesPage() {
                       setSickPolicy({ ...sickPolicy, documentationThreshold: parseInt(e.target.value) });
                       setHasChanges(true);
                     }}
-                    className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
-                  <p className="text-xs text-stone-500 mt-1">Doctor's note required after this many days</p>
+                  <p className="text-xs text-[#9E8F75] mt-1">Doctor's note required after this many days</p>
                 </div>
               )}
 
@@ -773,9 +773,9 @@ export default function PoliciesPage() {
                       setSickPolicy({ ...sickPolicy, negativeBalanceLimit: parseInt(e.target.value) });
                       setHasChanges(true);
                     }}
-                    className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
-                  <p className="text-xs text-stone-500 mt-1">Maximum negative hours allowed (e.g., -16)</p>
+                  <p className="text-xs text-[#9E8F75] mt-1">Maximum negative hours allowed (e.g., -16)</p>
                 </div>
               )}
             </div>
@@ -786,8 +786,8 @@ export default function PoliciesPage() {
       {/* FMLA Policy Configuration */}
       {activeTab === 'fmla' && (
         <div className="space-y-6">
-          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
-            <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+          <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
+            <h2 className="text-xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
               <Shield className="w-5 h-5 text-amber-400" />
               FMLA Eligibility & Entitlement
             </h2>
@@ -804,9 +804,9 @@ export default function PoliciesPage() {
                     setFmlaPolicy({ ...fmlaPolicy, eligibilityMonths: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 />
-                <p className="text-xs text-stone-500 mt-1">Federal requirement: 12 months</p>
+                <p className="text-xs text-[#9E8F75] mt-1">Federal requirement: 12 months</p>
               </div>
 
               <div>
@@ -820,9 +820,9 @@ export default function PoliciesPage() {
                     setFmlaPolicy({ ...fmlaPolicy, eligibilityHours: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 />
-                <p className="text-xs text-stone-500 mt-1">Federal requirement: 1,250 hours</p>
+                <p className="text-xs text-[#9E8F75] mt-1">Federal requirement: 1,250 hours</p>
               </div>
 
               <div>
@@ -836,9 +836,9 @@ export default function PoliciesPage() {
                     setFmlaPolicy({ ...fmlaPolicy, maxWeeksPerYear: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 />
-                <p className="text-xs text-stone-500 mt-1">Federal requirement: 12 weeks</p>
+                <p className="text-xs text-[#9E8F75] mt-1">Federal requirement: 12 weeks</p>
               </div>
             </div>
 
@@ -915,9 +915,9 @@ export default function PoliciesPage() {
       {/* Bereavement Policy Configuration */}
       {activeTab === 'bereavement' && (
         <div className="space-y-6">
-          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
-            <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
-              <Heart className="w-5 h-5 text-stone-500" />
+          <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
+            <h2 className="text-xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
+              <Heart className="w-5 h-5 text-[#9E8F75]" />
               Bereavement Leave Eligibility
             </h2>
             
@@ -933,7 +933,7 @@ export default function PoliciesPage() {
                       setBereavementPolicy({ ...bereavementPolicy, eligibleRelationships: newRels });
                       setHasChanges(true);
                     }}
-                    className="flex-1 px-4 py-2 border border-stone-700 rounded-lg"
+                    className="flex-1 px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg"
                     placeholder="Relationship (e.g., Spouse, Parent)"
                   />
                   <div className="flex items-center gap-2">
@@ -946,9 +946,9 @@ export default function PoliciesPage() {
                         setBereavementPolicy({ ...bereavementPolicy, eligibleRelationships: newRels });
                         setHasChanges(true);
                       }}
-                      className="w-20 px-4 py-2 border border-stone-700 rounded-lg"
+                      className="w-20 px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg"
                     />
-                    <span className="text-sm text-stone-500">days</span>
+                    <span className="text-sm text-[#9E8F75]">days</span>
                   </div>
                   <button
                     onClick={() => {
@@ -971,7 +971,7 @@ export default function PoliciesPage() {
                   });
                   setHasChanges(true);
                 }}
-                className="text-amber-400 hover:text-amber-300 text-sm font-medium flex items-center gap-1"
+                className="text-amber-400 hover:text-[#E8C060] text-sm font-medium flex items-center gap-1"
               >
                 <Plus className="w-4 h-4" />
                 Add Relationship
@@ -1012,15 +1012,15 @@ export default function PoliciesPage() {
       {/* Holiday Calendar Configuration */}
       {activeTab === 'holidays' && (
         <div className="space-y-6">
-          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
-            <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+          <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
+            <h2 className="text-xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
               <Calendar className="w-5 h-5 text-green-600" />
               Company Holidays
             </h2>
             
             <div className="space-y-3 mb-6">
               {holidayCalendar.holidays.map((holiday, index) => (
-                <div key={index} className="flex items-center gap-4 p-3 bg-stone-950 rounded-lg">
+                <div key={index} className="flex items-center gap-4 p-3 bg-[#110F0B] rounded-lg">
                   <input
                     type="date"
                     value={holiday.date}
@@ -1030,7 +1030,7 @@ export default function PoliciesPage() {
                       setHolidayCalendar({ ...holidayCalendar, holidays: newHolidays });
                       setHasChanges(true);
                     }}
-                    className="px-4 py-2 border border-stone-700 rounded-lg"
+                    className="px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg"
                   />
                   <input
                     type="text"
@@ -1041,7 +1041,7 @@ export default function PoliciesPage() {
                       setHolidayCalendar({ ...holidayCalendar, holidays: newHolidays });
                       setHasChanges(true);
                     }}
-                    className="flex-1 px-4 py-2 border border-stone-700 rounded-lg"
+                    className="flex-1 px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg"
                     placeholder="Holiday Name"
                   />
                   <label className="flex items-center">
@@ -1056,7 +1056,7 @@ export default function PoliciesPage() {
                       }}
                       className="mr-2"
                     />
-                    <span className="text-sm text-stone-500">Paid</span>
+                    <span className="text-sm text-[#9E8F75]">Paid</span>
                   </label>
                   <button
                     onClick={() => {
@@ -1080,13 +1080,13 @@ export default function PoliciesPage() {
                 });
                 setHasChanges(true);
               }}
-              className="text-amber-400 hover:text-amber-300 text-sm font-medium flex items-center gap-1 mb-6"
+              className="text-amber-400 hover:text-[#E8C060] text-sm font-medium flex items-center gap-1 mb-6"
             >
               <Plus className="w-4 h-4" />
               Add Holiday
             </button>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-stone-800">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-[rgba(201,168,76,0.22)]">
               <div>
                 <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Floating Holidays Per Year
@@ -1098,9 +1098,9 @@ export default function PoliciesPage() {
                     setHolidayCalendar({ ...holidayCalendar, floatingHolidays: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 />
-                <p className="text-xs text-stone-500 mt-1">Personal holidays employees can schedule</p>
+                <p className="text-xs text-[#9E8F75] mt-1">Personal holidays employees can schedule</p>
               </div>
 
               <div>
@@ -1114,7 +1114,7 @@ export default function PoliciesPage() {
                     setHolidayCalendar({ ...holidayCalendar, eligibilityRequirement: e.target.value });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   placeholder="e.g., 90 days of employment"
                 />
               </div>
@@ -1125,36 +1125,36 @@ export default function PoliciesPage() {
 
       {/* Policy Impact Preview */}
       {showPreview && (
-        <div className="bg-gradient-to-r from-amber-700 to-amber-500 p-6 rounded shadow-md border-2 border-purple-200">
-          <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
+        <div className="bg-[rgba(201,168,76,0.08)] p-6 rounded shadow-md border-2 border-purple-200">
+          <h2 className="text-xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
             <Eye className="w-5 h-5 text-amber-600" />
             Policy Impact Preview
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-stone-950 p-4 rounded-lg">
-              <h3 className="font-semibold text-stone-100 mb-2">Sample Employee (Full-Time)</h3>
+            <div className="bg-[#110F0B] p-4 rounded-lg">
+              <h3 className="font-semibold text-[#9E8F75] mb-2">Sample Employee (Full-Time)</h3>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-stone-500">Annual PTO:</span>
+                  <span className="text-[#9E8F75]">Annual PTO:</span>
                   <span className="font-semibold">{calculateAnnualPTO().toFixed(0)} hours</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-stone-500">Annual Sick Leave:</span>
+                  <span className="text-[#9E8F75]">Annual Sick Leave:</span>
                   <span className="font-semibold">{calculateAnnualSick().toFixed(0)} hours</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-stone-500">Max Carryover:</span>
+                  <span className="text-[#9E8F75]">Max Carryover:</span>
                   <span className="font-semibold">{ptoPolicy.maxCarryover} hours</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-stone-500">Paid Holidays:</span>
+                  <span className="text-[#9E8F75]">Paid Holidays:</span>
                   <span className="font-semibold">{holidayCalendar.holidays.filter(h => h.paid).length} days</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-stone-950 p-4 rounded-lg">
-              <h3 className="font-semibold text-stone-100 mb-2">System Impact</h3>
+            <div className="bg-[#110F0B] p-4 rounded-lg">
+              <h3 className="font-semibold text-[#9E8F75] mb-2">System Impact</h3>
               <ul className="space-y-2 text-sm text-[#C9A84C]">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
@@ -1175,14 +1175,14 @@ export default function PoliciesPage() {
               </ul>
             </div>
 
-            <div className="bg-stone-950 p-4 rounded-lg">
-              <h3 className="font-semibold text-stone-100 mb-2">Effective Date</h3>
+            <div className="bg-[#110F0B] p-4 rounded-lg">
+              <h3 className="font-semibold text-[#9E8F75] mb-2">Effective Date</h3>
               <input
                 type="date"
-                className="w-full px-4 py-2 border border-stone-700 rounded-lg mb-3"
+                className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg mb-3"
                 defaultValue={new Date().toISOString().split('T')[0]}
               />
-              <p className="text-xs text-stone-500">
+              <p className="text-xs text-[#9E8F75]">
                 Changes will take effect on this date. Future-dated changes allow time for communication.
               </p>
             </div>

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import { ShoppingBag, Zap, DollarSign, Package, Truck, CreditCard, Award, ShoppingCart } from 'lucide-react';
@@ -164,7 +164,7 @@ export default function MerchStorePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#070604] via-[#070604] to-[#070604] p-8">
+    <div className="min-h-screen bg-[#070604] p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -175,13 +175,13 @@ export default function MerchStorePage() {
           <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-[#110F0B] from-REMOVED-300 via-stone-900 to-amber-800 mb-4">
             Merch Store
           </h1>
-          <p className="text-xl text-amber-100/70 mb-6">
+          <p className="text-xl text-[#F0EBE0]/70 mb-6">
             Pay with Payroll Deduction OR Guild XP Rewards
           </p>
         </div>
 
         {/* Cart Summary & Payment Method */}
-        <div className="bg-stone-900/50 border border-stone-700 rounded p-6 mb-8">
+        <div className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-6 mb-8">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-4">
               <ShoppingCart className="w-6 h-6 text-[#C9A84C] 400" />
@@ -204,7 +204,7 @@ export default function MerchStorePage() {
                   <div className="text-2xl font-bold text-yellow-400">
                     {guildProfile.totalXP.toLocaleString()} XP
                   </div>
-                  <div className="text-xs text-stone-400">Available</div>
+                  <div className="text-xs text-[#9E8F75]">Available</div>
                 </div>
               )}
 
@@ -214,7 +214,7 @@ export default function MerchStorePage() {
                   className={`px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all ${
                     paymentMethod === 'PAYROLL_DEDUCTION'
                       ? 'bg-amber-600 text-white'
-                      : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
+                      : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[rgba(201,168,76,0.08)]'
                   }`}
                 >
                   <DollarSign className="w-4 h-4" />
@@ -225,7 +225,7 @@ export default function MerchStorePage() {
                   className={`px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all ${
                     paymentMethod === 'GUILD_XP'
                       ? 'bg-amber-600 text-white'
-                      : 'bg-stone-900 text-stone-300 hover:bg-stone-600'
+                      : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[rgba(201,168,76,0.08)]'
                   }`}
                 >
                   <Zap className="w-4 h-4" />
@@ -238,22 +238,22 @@ export default function MerchStorePage() {
 
         {/* Cart Checkout */}
         {checkoutOpen && cart.length > 0 && (
-          <div className="bg-stone-900 border-2 border-pink-500 rounded p-6 mb-8">
+          <div className="bg-[rgba(201,168,76,0.04)] border-2 border-pink-500 rounded p-6 mb-8">
             <h2 className="text-2xl font-bold text-white mb-4">Your Cart</h2>
             <div className="space-y-3 mb-6">
               {cart.map(cartItem => (
-                <div key={cartItem.item.id} className="flex items-center justify-between bg-stone-900/50 rounded-lg p-4">
+                <div key={cartItem.item.id} className="flex items-center justify-between bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-stone-600 rounded-lg flex items-center justify-center">
+                    <div className="w-16 h-16 bg-[rgba(201,168,76,0.08)] rounded-lg flex items-center justify-center">
                       {cartItem.item.imageUrl ? (
                         <img src={cartItem.item.imageUrl} alt={cartItem.item.name} className="w-full h-full object-cover rounded-lg" />
                       ) : (
-                        <Package className="w-8 h-8 text-stone-400" />
+                        <Package className="w-8 h-8 text-[#9E8F75]" />
                       )}
                     </div>
                     <div>
                       <h3 className="text-white font-bold">{cartItem.item.name}</h3>
-                      <div className="flex items-center gap-4 text-sm text-stone-400">
+                      <div className="flex items-center gap-4 text-sm text-[#9E8F75]">
                         {paymentMethod === 'GUILD_XP' && cartItem.item.redeemableWithXP ? (
                           <span className="text-yellow-400 font-bold">{cartItem.item.xpCost} XP each</span>
                         ) : (
@@ -264,7 +264,7 @@ export default function MerchStorePage() {
                           min="1"
                           value={cartItem.quantity}
                           onChange={(e) => updateQuantity(cartItem.item.id, parseInt(e.target.value))}
-                          className="w-16 px-2 py-1 bg-stone-600 text-white rounded"
+                          className="w-16 px-2 py-1 bg-[rgba(201,168,76,0.08)] text-white rounded"
                         />
                       </div>
                     </div>
@@ -290,7 +290,7 @@ export default function MerchStorePage() {
               ))}
             </div>
 
-            <div className="border-t border-stone-700 pt-4 mb-6">
+            <div className="border-t border-[rgba(201,168,76,0.22)] pt-4 mb-6">
               <div className="flex justify-between items-center text-2xl font-bold text-white">
                 <span>Total:</span>
                 {paymentMethod === 'GUILD_XP' ? (
@@ -300,7 +300,7 @@ export default function MerchStorePage() {
                 )}
               </div>
               {paymentMethod === 'PAYROLL_DEDUCTION' && (
-                <p className="text-sm text-stone-400 mt-2">
+                <p className="text-sm text-[#9E8F75] mt-2">
                   Amount will be deducted from your next paycheck
                 </p>
               )}
@@ -309,7 +309,7 @@ export default function MerchStorePage() {
             <button
               onClick={checkout}
               disabled={!selectedEmployee}
-              className="w-full px-6 py-4 bg-[#110F0B] from-REMOVED-600 to-amber-900 hover:from-[#110F0B] 700 hover:to-amber-900 text-white font-bold rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+              className="w-full px-6 py-4 bg-[#110F0B] from-REMOVED-600 to-amber-900 hover:from-[#110F0B] 700 text-white font-bold rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
             >
               <CreditCard className="w-6 h-6" />
               Complete Order
@@ -320,18 +320,18 @@ export default function MerchStorePage() {
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {items.map(item => (
-            <div key={item.id} className="bg-stone-900/50 border border-stone-700 rounded overflow-hidden hover:border-pink-500/50 transition-all">
-              <div className="aspect-square bg-stone-900 flex items-center justify-center">
+            <div key={item.id} className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded overflow-hidden hover:border-pink-500/50 transition-all">
+              <div className="aspect-square bg-[rgba(201,168,76,0.04)] flex items-center justify-center">
                 {item.imageUrl ? (
                   <img src={item.imageUrl} alt={item.name} className="w-full h-full object-cover" />
                 ) : (
-                  <Package className="w-16 h-16 text-stone-500" />
+                  <Package className="w-16 h-16 text-[#9E8F75]" />
                 )}
               </div>
               <div className="p-4">
                 <h3 className="text-lg font-bold text-white mb-2">{item.name}</h3>
                 {item.description && (
-                  <p className="text-sm text-stone-400 mb-3 line-clamp-2">{item.description}</p>
+                  <p className="text-sm text-[#9E8F75] mb-3 line-clamp-2">{item.description}</p>
                 )}
                 
                 <div className="flex items-center justify-between mb-4">
@@ -347,14 +347,14 @@ export default function MerchStorePage() {
                     </div>
                   )}
                   {item.stockQuantity !== null && item.stockQuantity !== undefined && (
-                    <span className="text-xs text-stone-400">{item.stockQuantity} left</span>
+                    <span className="text-xs text-[#9E8F75]">{item.stockQuantity} left</span>
                   )}
                 </div>
 
                 <button
                   onClick={() => addToCart(item)}
                   disabled={item.stockQuantity !== null && item.stockQuantity !== undefined && item.stockQuantity <= 0}
-                  className="w-full px-4 py-2 bg-[#110F0B] from-REMOVED-600 to-amber-900 hover:from-[#110F0B] 700 hover:to-amber-900 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full px-4 py-2 bg-[#110F0B] from-REMOVED-600 to-amber-900 hover:from-[#110F0B] 700 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   <ShoppingBag className="w-4 h-4" />
                   Add to Cart
@@ -373,9 +373,9 @@ export default function MerchStorePage() {
 
         {items.length === 0 && !loading && (
           <div className="text-center py-20">
-            <Package className="w-20 h-20 text-stone-600 mx-auto mb-4" />
+            <Package className="w-20 h-20 text-[#9E8F75] mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-white mb-2">No Items Available</h3>
-            <p className="text-stone-400">Check back later for new merch!</p>
+            <p className="text-[#9E8F75]">Check back later for new merch!</p>
           </div>
         )}
       </div>

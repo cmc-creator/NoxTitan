@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { ChevronRight, ChevronLeft, Check, Building2, Briefcase, Shield, Users, Settings as SettingsIcon, Palette, Rocket } from 'lucide-react';
@@ -128,35 +128,35 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
               {steps[currentStep].icon}
             </div>
             <div>
-              <h2 className="text-5xl font-bold text-stone-100 mb-4">
+              <h2 className="text-5xl font-bold text-[#9E8F75] mb-4">
                 {steps[currentStep].title}
               </h2>
-              <p className="text-xl text-stone-500 max-w-2xl mx-auto">
+              <p className="text-xl text-[#9E8F75] max-w-2xl mx-auto">
                 {steps[currentStep].description}
               </p>
             </div>
-            <div className="bg-gradient-to-r from-stone-900 to-pink-50 rounded p-6 max-w-2xl mx-auto">
-              <h3 className="text-xl font-bold text-stone-100 mb-3">What we'll set up:</h3>
+            <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded p-6 max-w-2xl mx-auto">
+              <h3 className="text-xl font-bold text-[#9E8F75] mb-3">What we'll set up:</h3>
               <ul className="space-y-2 text-left">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-stone-300">Company profile and branding</span>
+                  <span className="text-[#9E8F75]">Company profile and branding</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-stone-300">Industry-specific compliance rules</span>
+                  <span className="text-[#9E8F75]">Industry-specific compliance rules</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-stone-300">Departments and positions</span>
+                  <span className="text-[#9E8F75]">Departments and positions</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-stone-300">Feature selection and configuration</span>
+                  <span className="text-[#9E8F75]">Feature selection and configuration</span>
                 </li>
               </ul>
             </div>
-            <p className="text-sm text-stone-500">⏱️ Takes about 5-7 minutes</p>
+            <p className="text-sm text-[#9E8F75]">⏱️ Takes about 5-7 minutes</p>
           </div>
         );
 
@@ -167,15 +167,15 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
               <div className="flex justify-center mb-4">
                 {steps[currentStep].icon}
               </div>
-              <h2 className="text-4xl font-bold text-stone-100 mb-2">
+              <h2 className="text-4xl font-bold text-[#9E8F75] mb-2">
                 {steps[currentStep].title}
               </h2>
-              <p className="text-lg text-stone-500">{steps[currentStep].description}</p>
+              <p className="text-lg text-[#9E8F75]">{steps[currentStep].description}</p>
             </div>
 
             <div className="space-y-4 max-w-2xl mx-auto">
               <div>
-                <label className="block text-sm font-semibold text-stone-300 mb-2">
+                <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                   Company Name *
                 </label>
                 <input
@@ -188,7 +188,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-stone-300 mb-2">
+                <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                   Timezone
                 </label>
                 <select
@@ -216,10 +216,10 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
               <div className="flex justify-center mb-4">
                 {steps[currentStep].icon}
               </div>
-              <h2 className="text-4xl font-bold text-stone-100 mb-2">
+              <h2 className="text-4xl font-bold text-[#9E8F75] mb-2">
                 {steps[currentStep].title}
               </h2>
-              <p className="text-lg text-stone-500">{steps[currentStep].description}</p>
+              <p className="text-lg text-[#9E8F75]">{steps[currentStep].description}</p>
             </div>
 
             <div className="grid grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -243,8 +243,8 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                   }`}
                 >
                   <div className="text-4xl mb-3">{industry.icon}</div>
-                  <h3 className="text-xl font-bold text-stone-100 mb-2">{industry.name}</h3>
-                  <p className="text-sm text-stone-500">{industry.description}</p>
+                  <h3 className="text-xl font-bold text-[#9E8F75] mb-2">{industry.name}</h3>
+                  <p className="text-sm text-[#9E8F75]">{industry.description}</p>
                   {setupData.industry === industry.id && (
                     <div className="mt-3 flex items-center gap-2 text-amber-600">
                       <Check className="w-5 h-5" />
@@ -264,16 +264,16 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
               <div className="flex justify-center mb-4">
                 {steps[currentStep].icon}
               </div>
-              <h2 className="text-4xl font-bold text-stone-100 mb-2">
+              <h2 className="text-4xl font-bold text-[#9E8F75] mb-2">
                 {steps[currentStep].title}
               </h2>
-              <p className="text-lg text-stone-500">{steps[currentStep].description}</p>
+              <p className="text-lg text-[#9E8F75]">{steps[currentStep].description}</p>
             </div>
 
             <div className="max-w-4xl mx-auto space-y-6">
               <div className="grid grid-cols-3 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-stone-300 mb-2">
+                  <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                     Primary Color
                   </label>
                   <div className="flex items-center gap-3">
@@ -294,7 +294,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-stone-300 mb-2">
+                  <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                     Secondary Color
                   </label>
                   <div className="flex items-center gap-3">
@@ -315,7 +315,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-stone-300 mb-2">
+                  <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                     Accent Color
                   </label>
                   <div className="flex items-center gap-3">
@@ -336,8 +336,8 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                 </div>
               </div>
 
-              <div className="bg-stone-950 rounded p-6 border-2 border-gray-300">
-                <h3 className="text-lg font-bold text-stone-100 mb-4">Preview</h3>
+              <div className="bg-[#110F0B] rounded p-6 border-2 border-gray-300">
+                <h3 className="text-lg font-bold text-[#9E8F75] mb-4">Preview</h3>
                 <div className="space-y-3">
                   <div
                     className="h-16 rounded-lg flex items-center justify-center text-white font-bold text-lg"
@@ -378,10 +378,10 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
               <div className="flex justify-center mb-4">
                 {steps[currentStep].icon}
               </div>
-              <h2 className="text-4xl font-bold text-stone-100 mb-2">
+              <h2 className="text-4xl font-bold text-[#9E8F75] mb-2">
                 {steps[currentStep].title}
               </h2>
-              <p className="text-lg text-stone-500">{steps[currentStep].description}</p>
+              <p className="text-lg text-[#9E8F75]">{steps[currentStep].description}</p>
             </div>
 
             {selectedIndustry && (
@@ -393,7 +393,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                 </div>
 
                 <div>
-                  <label className="block text-lg font-bold text-stone-100 mb-3">
+                  <label className="block text-lg font-bold text-[#9E8F75] mb-3">
                     Departments ({setupData.departments.length})
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -418,7 +418,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                 </div>
 
                 <div>
-                  <label className="block text-lg font-bold text-stone-100 mb-3">
+                  <label className="block text-lg font-bold text-[#9E8F75] mb-3">
                     Positions ({setupData.positions.length})
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -453,10 +453,10 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
               <div className="flex justify-center mb-4">
                 {steps[currentStep].icon}
               </div>
-              <h2 className="text-4xl font-bold text-stone-100 mb-2">
+              <h2 className="text-4xl font-bold text-[#9E8F75] mb-2">
                 {steps[currentStep].title}
               </h2>
-              <p className="text-lg text-stone-500">{steps[currentStep].description}</p>
+              <p className="text-lg text-[#9E8F75]">{steps[currentStep].description}</p>
             </div>
 
             {selectedIndustry && (
@@ -488,10 +488,10 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                         className="w-5 h-5 text-amber-600 rounded focus:ring-2 focus:ring-amber-500 mt-0.5"
                       />
                       <div className="flex-1">
-                        <div className="font-semibold text-stone-100 capitalize">
+                        <div className="font-semibold text-[#9E8F75] capitalize">
                           {feature.replace(/([A-Z])/g, ' $1').trim()}
                         </div>
-                        <div className="text-sm text-stone-500 mt-1">
+                        <div className="text-sm text-[#9E8F75] mt-1">
                           {getFeatureDescription(feature)}
                         </div>
                       </div>
@@ -510,10 +510,10 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
               <div className="flex justify-center mb-4">
                 {steps[currentStep].icon}
               </div>
-              <h2 className="text-4xl font-bold text-stone-100 mb-2">
+              <h2 className="text-4xl font-bold text-[#9E8F75] mb-2">
                 {steps[currentStep].title}
               </h2>
-              <p className="text-lg text-stone-500">{steps[currentStep].description}</p>
+              <p className="text-lg text-[#9E8F75]">{steps[currentStep].description}</p>
             </div>
 
             {selectedIndustry && setupData.complianceSettings && (
@@ -524,12 +524,12 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                   </p>
                 </div>
 
-                <div className="bg-stone-950 rounded p-6 border-2 border-gray-300 space-y-6">
+                <div className="bg-[#110F0B] rounded p-6 border-2 border-gray-300 space-y-6">
                   <div>
-                    <h3 className="text-lg font-bold text-stone-100 mb-4">Break Rules</h3>
+                    <h3 className="text-lg font-bold text-[#9E8F75] mb-4">Break Rules</h3>
                     <div className="grid grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-semibold text-stone-300 mb-2">
+                        <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                           Meal Break After (hours)
                         </label>
                         <input
@@ -552,7 +552,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-semibold text-stone-300 mb-2">
+                        <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                           Meal Break Duration (minutes)
                         </label>
                         <input
@@ -575,7 +575,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-semibold text-stone-300 mb-2">
+                        <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                           Rest Break Interval (hours)
                         </label>
                         <input
@@ -598,7 +598,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-semibold text-stone-300 mb-2">
+                        <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                           Rest Break Duration (minutes)
                         </label>
                         <input
@@ -623,11 +623,11 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-bold text-stone-100 mb-4">Overtime Rules</h3>
+                    <h3 className="text-lg font-bold text-[#9E8F75] mb-4">Overtime Rules</h3>
                     <div className="grid grid-cols-2 gap-6">
                       {setupData.complianceSettings.overtimeRules?.dailyThreshold && (
                         <div>
-                          <label className="block text-sm font-semibold text-stone-300 mb-2">
+                          <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                             Daily Overtime After (hours)
                           </label>
                           <input
@@ -651,7 +651,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                       )}
 
                       <div>
-                        <label className="block text-sm font-semibold text-stone-300 mb-2">
+                        <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                           Weekly Overtime After (hours)
                         </label>
                         <input
@@ -674,7 +674,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-semibold text-stone-300 mb-2">
+                        <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
                           Overtime Rate Multiplier
                         </label>
                         <input
@@ -700,7 +700,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-bold text-stone-100 mb-3">Required Certifications</h3>
+                    <h3 className="text-lg font-bold text-[#9E8F75] mb-3">Required Certifications</h3>
                     <div className="flex flex-wrap gap-2">
                       {setupData.complianceSettings.requiredCertifications?.map((cert: string, index: number) => (
                         <div
@@ -738,15 +738,15 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
   };
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-stone-900 via-stone-900 to-amber-800 z-50 overflow-y-auto">
+    <div className="fixed inset-0 bg-[rgba(201,168,76,0.08)] z-50 overflow-y-auto">
       {showConfetti && <Confetti />}
       
       <div className="min-h-screen p-8">
         {/* Progress Bar */}
         <div className="max-w-5xl mx-auto mb-8">
-          <div className="bg-stone-950/10 backdrop-blur-sm rounded-full h-3 mb-4">
+          <div className="bg-[#110F0B]/10 backdrop-blur-sm rounded-full h-3 mb-4">
             <div
-              className="bg-gradient-to-r from-stone-900 to-pink-500 h-full rounded-full transition-all duration-300"
+              className="bg-[rgba(201,168,76,0.08)] h-full rounded-full transition-all duration-300"
               style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
             />
           </div>
@@ -758,7 +758,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
 
         {/* Main Content */}
         <div className="max-w-6xl mx-auto">
-          <div className="bg-stone-950 rounded shadow-2xl p-10 min-h-[700px]">
+          <div className="bg-[#110F0B] rounded shadow-2xl p-10 min-h-[700px]">
             {renderStepContent()}
           </div>
 
@@ -767,7 +767,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
             <button
               onClick={handlePrev}
               disabled={currentStep === 0}
-              className="px-8 py-4 bg-stone-950/20 text-white rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:bg-stone-950/30 transition-all flex items-center gap-2 text-lg"
+              className="px-8 py-4 bg-[#110F0B]/20 text-white rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#110F0B]/30 transition-all flex items-center gap-2 text-lg"
             >
               <ChevronLeft className="w-5 h-5" />
               <span>Previous</span>
@@ -776,7 +776,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
             {onSkip && currentStep === 0 && (
               <button
                 onClick={onSkip}
-                className="px-8 py-4 bg-stone-950/10 text-white rounded-lg font-semibold hover:bg-stone-950/20 transition-all text-lg"
+                className="px-8 py-4 bg-[#110F0B]/10 text-white rounded-lg font-semibold hover:bg-[#110F0B]/20 transition-all text-lg"
               >
                 Skip Setup
               </button>
@@ -785,7 +785,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
             <button
               onClick={handleNext}
               disabled={!isStepValid()}
-              className="px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:from-stone-900 hover:to-pink-700 transition-all flex items-center gap-2 ml-auto text-lg"
+              className="px-8 py-4 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center gap-2 ml-auto text-lg"
             >
               <span>{currentStep === steps.length - 1 ? 'Complete Setup' : 'Next'}</span>
               {currentStep === steps.length - 1 ? (

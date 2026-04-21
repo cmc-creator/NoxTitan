@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -70,7 +70,7 @@ export default function ManagerBasecamp() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-stone-900 to-slate-900">
+    <div className="min-h-screen bg-[#070604]">
       {/* Mood Check-In Modal */}
       {showMoodCheckIn && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
@@ -111,7 +111,7 @@ export default function ManagerBasecamp() {
 
             <button
               onClick={() => setShowMoodCheckIn(false)}
-              className="w-full py-2 text-stone-400 hover:text-white text-sm transition-colors"
+              className="w-full py-2 text-[#9E8F75] hover:text-white text-sm transition-colors"
             >
               Skip for now
             </button>
@@ -132,13 +132,13 @@ export default function ManagerBasecamp() {
       )}
 
       {/* Top Navigation Bar */}
-      <nav className="bg-stone-950/80 backdrop-blur-xl border-b-2 border-amber-500/40/30 sticky top-0 z-40">
+      <nav className="bg-[#110F0B]/80 backdrop-blur-xl border-b-2 border-amber-500/40/30 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center gap-3">
               <Mountain className="w-8 h-8 text-amber-400" />
-              <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-cyan-200">
+              <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#E8C060] to-[#C9A84C]">
                 Manager Basecamp
               </span>
             </div>
@@ -149,7 +149,7 @@ export default function ManagerBasecamp() {
               <div className="relative">
                 <button
                   onClick={() => setShowNotifications(!showNotifications)}
-                  className="relative p-2 bg-stone-900 hover:bg-stone-900 rounded-lg transition-all"
+                  className="relative p-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.04)] rounded-lg transition-all"
                 >
                   <Bell className="w-6 h-6 text-amber-400" />
                   <span className="absolute -top-1 -right-1 bg-[#110F0B] 600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
@@ -159,8 +159,8 @@ export default function ManagerBasecamp() {
               </div>
 
               {/* User Menu */}
-              <div className="flex items-center gap-3 bg-stone-900 rounded-lg px-4 py-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-amber-700 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold">
+              <div className="flex items-center gap-3 bg-[rgba(201,168,76,0.04)] rounded-lg px-4 py-2">
+                <div className="w-10 h-10 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-full flex items-center justify-center text-white font-bold">
                   {userName.charAt(0)}
                 </div>
                 <div>
@@ -171,7 +171,7 @@ export default function ManagerBasecamp() {
 
               <button
                 onClick={() => setShowDashboardCustomizer(true)}
-                className="p-2 bg-stone-900 hover:bg-stone-900 rounded-lg transition-all"
+                className="p-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.04)] rounded-lg transition-all"
               >
                 <Settings className="w-6 h-6 text-amber-400" />
               </button>
@@ -182,7 +182,7 @@ export default function ManagerBasecamp() {
 
       <div className="max-w-7xl mx-auto p-6">
         {/* Welcome Banner */}
-        <div className="bg-gradient-to-r from-amber-700 via-cyan-600 to-amber-800 rounded p-8 mb-6 border-2 border-[rgba(201,168,76,0.22)] 400/50 shadow-2xl relative overflow-hidden">
+        <div className="bg-[rgba(201,168,76,0.08)] rounded p-8 mb-6 border-2 border-[rgba(201,168,76,0.22)] 400/50 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-10">
             <Mountain className="w-64 h-64 text-white" />
           </div>
@@ -211,7 +211,7 @@ export default function ManagerBasecamp() {
             <div className="text-xs text-[#C9A84C] 300 mt-1">2 call-offs today</div>
           </div>
 
-          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-4 border-2 border-amber-500/40/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
               <Target className="w-8 h-8 text-[#C9A84C] 400" />
               <span className="text-2xl font-bold text-white">$127K</span>
@@ -220,16 +220,16 @@ export default function ManagerBasecamp() {
             <div className="text-xs text-amber-400 mt-1">Under budget! 💪</div>
           </div>
 
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-4 border-2 border-amber-500/40/30">
+          <div className="bg-[rgba(201,168,76,0.04)] rounded p-4 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
               <Star className="w-8 h-8 text-yellow-400" />
               <span className="text-2xl font-bold text-white">4.6</span>
             </div>
-            <div className="text-amber-100/70 font-semibold">Patient Satisfaction</div>
-            <div className="text-xs text-amber-200 mt-1">+8% vs last month</div>
+            <div className="text-[#F0EBE0]/70 font-semibold">Patient Satisfaction</div>
+            <div className="text-xs text-[#C9A84C] mt-1">+8% vs last month</div>
           </div>
 
-          <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 rounded p-4 border-2 border-orange-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-orange-500/30">
             <div className="flex items-center justify-between mb-2">
               <AlertCircle className="w-8 h-8 text-orange-400" />
               <span className="text-2xl font-bold text-white">12</span>
@@ -244,25 +244,25 @@ export default function ManagerBasecamp() {
           {/* Left Column */}
           <div className="lg:col-span-2 space-y-6">
             {/* Quick access links to Command Center */}
-            <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
+            <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-amber-500/40/30">
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-yellow-400" />
                 Quick Actions
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                <Link href="/dashboard" className="bg-gradient-to-br from-amber-700 to-cyan-600 hover:from-amber-700 hover:to-cyan-500 rounded-lg p-4 text-center transition-all shadow-lg group">
+                <Link href="/dashboard" className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg p-4 text-center transition-all shadow-lg group">
                   <BarChart3 className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <div className="text-white font-semibold text-sm">Command Center</div>
                 </Link>
-                <Link href="/employees" className="bg-gradient-to-br from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 rounded-lg p-4 text-center transition-all shadow-lg group">
+                <Link href="/employees" className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg p-4 text-center transition-all shadow-lg group">
                   <Users className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <div className="text-white font-semibold text-sm">Manage Team</div>
                 </Link>
-                <Link href="/calendar" className="bg-gradient-to-br from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-500 rounded-lg p-4 text-center transition-all shadow-lg group">
+                <Link href="/calendar" className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg p-4 text-center transition-all shadow-lg group">
                   <Calendar className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <div className="text-white font-semibold text-sm">Schedule</div>
                 </Link>
-                <Link href="/qapi" className="bg-[#110F0B] from-REMOVED-600 to-orange-600 hover:from-[#110F0B] 500 hover:to-orange-500 rounded-lg p-4 text-center transition-all shadow-lg group">
+                <Link href="/qapi" className="bg-[#110F0B] from-REMOVED-600 to-orange-600 hover:from-[#110F0B] 500 rounded-lg p-4 text-center transition-all shadow-lg group">
                   <Shield className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <div className="text-white font-semibold text-sm">QAPI</div>
                 </Link>
@@ -270,16 +270,16 @@ export default function ManagerBasecamp() {
             </div>
 
             {/* Your Reports (You have a boss too!) */}
-            <div className="bg-gradient-to-br from-cyan-900/30 to-amber-800/30 rounded p-6 border-2 border-cyan-500/30">
+            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <TrendingUp className="w-6 h-6 text-[#C9A84C] 400" />
                 Report to Leadership
               </h2>
               <div className="space-y-3">
-                <div className="bg-stone-950/50 rounded-lg p-4 border border-cyan-500/20">
+                <div className="bg-[#110F0B]/50 rounded-lg p-4 border border-[rgba(201,168,76,0.22)]">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-amber-800 rounded-full flex items-center justify-center text-white font-bold">
+                      <div className="w-12 h-12 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-full flex items-center justify-center text-white font-bold">
                         JD
                       </div>
                       <div>
@@ -287,11 +287,11 @@ export default function ManagerBasecamp() {
                         <p className="text-sm text-[#C9A84C] 300">Chief Nursing Officer</p>
                       </div>
                     </div>
-                    <Link href="/messages" className="px-3 py-1 bg-[#110F0B] 500/20 border border-cyan-400/30 rounded-lg text-sm text-[#C9A84C] 300 hover:bg-[#110F0B] 500/30 transition-all">
+                    <Link href="/messages" className="px-3 py-1 bg-[#110F0B] 500/20 border border-[rgba(201,168,76,0.22)] rounded-lg text-sm text-[#C9A84C] 300 hover:bg-[#110F0B] 500/30 transition-all">
                       Message
                     </Link>
                   </div>
-                  <div className="text-sm text-stone-300">
+                  <div className="text-sm text-[#9E8F75]">
                     <p className="mb-1"><strong>Next 1:1:</strong> Friday 2:00 PM</p>
                     <p><strong>Pending:</strong> Weekly report due tomorrow</p>
                   </div>
@@ -303,7 +303,7 @@ export default function ManagerBasecamp() {
           {/* Right Column */}
           <div className="space-y-6">
             {/* Nox Manager Assistant */}
-            <div className="bg-gradient-to-br from-stone-900/30 to-pink-900/30 rounded p-6 border-2 border-amber-500/40/30 shadow-xl">
+            <div className="bg-[rgba(201,168,76,0.04)] rounded p-6 border-2 border-amber-500/40/30 shadow-xl">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <Bot className="w-6 h-6 text-amber-400" />
@@ -318,7 +318,7 @@ export default function ManagerBasecamp() {
                   </button>
                   <button
                     onClick={() => setShowNoxChat(!showNoxChat)}
-                    className="px-3 py-1 bg-amber-500/20 border border-amber-400/40/30 rounded-lg text-sm font-semibold text-amber-200 hover:bg-amber-500/30 transition-all"
+                    className="px-3 py-1 bg-amber-500/20 border border-amber-400/40/30 rounded-lg text-sm font-semibold text-[#C9A84C] hover:bg-amber-500/30 transition-all"
                   >
                     {showNoxChat ? 'Close' : 'Chat'}
                   </button>
@@ -329,7 +329,7 @@ export default function ManagerBasecamp() {
                 <p className="text-sm text-amber-50">
                   <strong>Your leadership AI partner!</strong> I can help with:
                 </p>
-                <ul className="text-xs text-amber-100/70 mt-2 space-y-1">
+                <ul className="text-xs text-[#F0EBE0]/70 mt-2 space-y-1">
                   <li>• Team analytics & insights</li>
                   <li>• Schedule optimization</li>
                   <li>• Budget analysis</li>
@@ -340,32 +340,32 @@ export default function ManagerBasecamp() {
             </div>
 
             {/* Team Status */}
-            <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
+            <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-amber-500/40/30">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Users className="w-5 h-5 text-amber-400" />
                 Team Status
               </h2>
               <div className="space-y-2">
-                <Link href="/employees" className="flex items-center justify-between p-3 bg-stone-950/50 hover:bg-stone-950 rounded-lg transition-all group">
+                <Link href="/employees" className="flex items-center justify-between p-3 bg-[#110F0B]/50 hover:bg-[#110F0B] rounded-lg transition-all group">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-[#C9A84C] 400" />
                     <span className="text-white font-semibold">42 Active Staff</span>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-stone-500 group-hover:text-amber-400 transition-colors" />
+                  <ChevronRight className="w-5 h-5 text-[#9E8F75] group-hover:text-amber-400 transition-colors" />
                 </Link>
-                <Link href="/time-off" className="flex items-center justify-between p-3 bg-stone-950/50 hover:bg-stone-950 rounded-lg transition-all group">
+                <Link href="/time-off" className="flex items-center justify-between p-3 bg-[#110F0B]/50 hover:bg-[#110F0B] rounded-lg transition-all group">
                   <div className="flex items-center gap-3">
                     <Clock className="w-5 h-5 text-yellow-400" />
                     <span className="text-white font-semibold">8 Time-Off Requests</span>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-stone-500 group-hover:text-amber-400 transition-colors" />
+                  <ChevronRight className="w-5 h-5 text-[#9E8F75] group-hover:text-amber-400 transition-colors" />
                 </Link>
-                <Link href="/qapi" className="flex items-center justify-between p-3 bg-stone-950/50 hover:bg-stone-950 rounded-lg transition-all group">
+                <Link href="/qapi" className="flex items-center justify-between p-3 bg-[#110F0B]/50 hover:bg-[#110F0B] rounded-lg transition-all group">
                   <div className="flex items-center gap-3">
                     <AlertCircle className="w-5 h-5 text-[#9E8F75] 400" />
                     <span className="text-white font-semibold">3 Open Incidents</span>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-stone-500 group-hover:text-amber-400 transition-colors" />
+                  <ChevronRight className="w-5 h-5 text-[#9E8F75] group-hover:text-amber-400 transition-colors" />
                 </Link>
               </div>
             </div>

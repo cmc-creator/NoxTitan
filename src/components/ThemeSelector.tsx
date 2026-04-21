@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { Moon, Sun, Palette, Type, Image, X, Search } from 'lucide-react';
@@ -87,7 +87,7 @@ export default function ThemeSelector() {
         {/* Dark/Light Mode Toggle */}
         <button
           onClick={toggleDarkMode}
-          className="flex items-center gap-2 px-3 py-2 bg-stone-950/10 backdrop-blur-sm text-white rounded-lg hover:bg-stone-950/20 transition-all border border-white/20"
+          className="flex items-center gap-2 px-3 py-2 bg-[#110F0B]/10 backdrop-blur-sm text-white rounded-lg hover:bg-[#110F0B]/20 transition-all border border-white/20"
           title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
         >
           {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -96,7 +96,7 @@ export default function ThemeSelector() {
         {/* Theme Customizer */}
         <button 
           onClick={() => setShowPanel(!showPanel)}
-          className="flex items-center gap-2 px-4 py-2 bg-stone-950/10 backdrop-blur-sm text-white rounded-lg hover:bg-stone-950/20 transition-all border border-white/20"
+          className="flex items-center gap-2 px-4 py-2 bg-[#110F0B]/10 backdrop-blur-sm text-white rounded-lg hover:bg-[#110F0B]/20 transition-all border border-white/20"
         >
           <Palette className="h-5 w-5" />
           <span className="hidden md:inline">Customize</span>
@@ -105,32 +105,32 @@ export default function ThemeSelector() {
 
       {showPanel && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-stone-950 rounded shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden border border-stone-700">
+          <div className="bg-[#110F0B] rounded shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden border border-[rgba(201,168,76,0.22)]">
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-stone-700">
+            <div className="flex items-center justify-between p-6 border-b border-[rgba(201,168,76,0.22)]">
               <div>
                 <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                   <Palette className="h-7 w-7 text-amber-400" />
                   Customize Your Experience
                 </h2>
-                <p className="text-stone-400 text-sm mt-1">Choose your perfect color theme, font, and background</p>
+                <p className="text-[#9E8F75] text-sm mt-1">Choose your perfect color theme, font, and background</p>
               </div>
               <button
                 onClick={() => setShowPanel(false)}
-                className="p-2 hover:bg-stone-900 rounded-lg transition-colors"
+                className="p-2 hover:bg-[rgba(201,168,76,0.04)] rounded-lg transition-colors"
               >
-                <X className="h-6 w-6 text-stone-400" />
+                <X className="h-6 w-6 text-[#9E8F75]" />
               </button>
             </div>
 
             {/* Tabs */}
-            <div className="flex gap-2 px-6 pt-4 border-b border-stone-800">
+            <div className="flex gap-2 px-6 pt-4 border-b border-[rgba(201,168,76,0.22)]">
               <button
                 onClick={() => setActiveTab('colors')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-t-lg transition-colors ${
                   activeTab === 'colors' 
-                    ? 'bg-stone-900 text-white' 
-                    : 'text-stone-400 hover:text-white hover:bg-stone-900/50'
+                    ? 'bg-[rgba(201,168,76,0.04)] text-white' 
+                    : 'text-[#9E8F75] hover:text-white hover:bg-[rgba(201,168,76,0.06)]/50'
                 }`}
               >
                 <Palette className="h-4 w-4" />
@@ -140,8 +140,8 @@ export default function ThemeSelector() {
                 onClick={() => setActiveTab('fonts')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-t-lg transition-colors ${
                   activeTab === 'fonts' 
-                    ? 'bg-stone-900 text-white' 
-                    : 'text-stone-400 hover:text-white hover:bg-stone-900/50'
+                    ? 'bg-[rgba(201,168,76,0.04)] text-white' 
+                    : 'text-[#9E8F75] hover:text-white hover:bg-[rgba(201,168,76,0.06)]/50'
                 }`}
               >
                 <Type className="h-4 w-4" />
@@ -151,8 +151,8 @@ export default function ThemeSelector() {
                 onClick={() => setActiveTab('backgrounds')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-t-lg transition-colors ${
                   activeTab === 'backgrounds' 
-                    ? 'bg-stone-900 text-white' 
-                    : 'text-stone-400 hover:text-white hover:bg-stone-900/50'
+                    ? 'bg-[rgba(201,168,76,0.04)] text-white' 
+                    : 'text-[#9E8F75] hover:text-white hover:bg-[rgba(201,168,76,0.06)]/50'
                 }`}
               >
                 <Image className="h-4 w-4" />
@@ -167,20 +167,20 @@ export default function ThemeSelector() {
                   {/* Search */}
                   <div className="mb-6">
                     <div className="relative">
-                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-stone-400" />
+                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-[#9E8F75]" />
                       <input
                         type="text"
                         placeholder="Search themes..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2 bg-stone-900 border border-stone-700 rounded-lg text-white placeholder-stone-600 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        className="w-full pl-10 pr-4 py-2 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg text-white placeholder-stone-600 focus:outline-none focus:ring-2 focus:ring-amber-500"
                       />
                     </div>
                   </div>
 
                   {/* Essential Light/Dark Modes */}
                   <div className="mb-8">
-                    <h3 className="text-lg font-bold text-amber-200 mb-4">Essential Modes</h3>
+                    <h3 className="text-lg font-bold text-[#C9A84C] mb-4">Essential Modes</h3>
                     <div className="grid grid-cols-2 gap-4">
                       {filteredThemes.filter(t => t.collection === 'Essential').map((t) => (
                         <button
@@ -188,11 +188,11 @@ export default function ThemeSelector() {
                           onClick={() => setTheme(t.id as any)}
                           className={`relative group p-4 rounded border-2 transition-all ${
                             theme === t.id 
-                              ? 'border-amber-500/40 bg-stone-900 ring-4 ring-purple-500/30' 
-                              : 'border-stone-700 bg-stone-900/50 hover:border-stone-700'
+                              ? 'border-amber-500/40 bg-[rgba(201,168,76,0.04)] ring-4 ring-purple-500/30' 
+                              : 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]/50 hover:border-[rgba(201,168,76,0.22)]'
                           }`}
                         >
-                          <div className={`w-full h-24 rounded-lg bg-gradient-to-br ${t.colors} shadow-lg mb-3`}></div>
+                          <div className={`w-full h-24 rounded-lg `${t.colors}` shadow-lg mb-3`}></div>
                           <div className="text-white font-bold text-base">{t.name}</div>
                           {theme === t.id && (
                             <div className="absolute top-2 right-2 bg-amber-500 text-white rounded-full p-1">
@@ -212,7 +212,7 @@ export default function ThemeSelector() {
                     if (collectionThemes.length === 0) return null;
                     return (
                       <div key={collection} className="mb-8">
-                        <h3 className="text-lg font-bold text-amber-200 mb-4">{collection} Collection</h3>
+                        <h3 className="text-lg font-bold text-[#C9A84C] mb-4">{collection} Collection</h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                           {collectionThemes.map((t) => (
                             <button
@@ -220,11 +220,11 @@ export default function ThemeSelector() {
                               onClick={() => setTheme(t.id as any)}
                               className={`relative group p-4 rounded border-2 transition-all ${
                                 theme === t.id 
-                                  ? 'border-amber-500/40 bg-stone-900' 
-                                  : 'border-stone-700 bg-stone-900/50 hover:border-stone-700'
+                                  ? 'border-amber-500/40 bg-[#110F0B]' 
+                                  : 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]/50 hover:border-[rgba(201,168,76,0.22)]'
                               }`}
                             >
-                              <div className={`w-full h-20 rounded-lg bg-gradient-to-br ${t.colors} shadow-lg mb-3`}></div>
+                              <div className={`w-full h-20 rounded-lg `${t.colors}` shadow-lg mb-3`}></div>
                               <div className="text-white font-medium text-sm">{t.name}</div>
                               {theme === t.id && (
                                 <div className="absolute top-2 right-2 bg-amber-500 text-white rounded-full p-1">
@@ -250,15 +250,15 @@ export default function ThemeSelector() {
                       onClick={() => setFont(f.id as any)}
                       className={`relative p-6 rounded border-2 transition-all text-left ${
                         font === f.id 
-                          ? 'border-amber-500/40 bg-stone-900' 
-                          : 'border-stone-700 bg-stone-900/50 hover:border-stone-700'
+                          ? 'border-amber-500/40 bg-[#110F0B]' 
+                          : 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]/50 hover:border-[rgba(201,168,76,0.22)]'
                       }`}
                     >
                       <div className={`text-2xl font-bold text-white mb-2 ${f.className}`}>
                         {f.name}
                       </div>
-                      <div className="text-stone-400 text-sm mb-3">{f.style}</div>
-                      <div className={`text-stone-300 text-sm ${f.className}`}>
+                      <div className="text-[#9E8F75] text-sm mb-3">{f.style}</div>
+                      <div className={`text-[#9E8F75] text-sm ${f.className}`}>
                         The quick brown fox jumps over the lazy dog
                       </div>
                       {font === f.id && (
@@ -293,12 +293,12 @@ export default function ThemeSelector() {
                       onClick={() => setBackgroundImage(null)}
                       className={`relative p-4 rounded border-2 transition-all ${
                         !backgroundImage 
-                          ? 'border-amber-500/40 bg-stone-900' 
-                          : 'border-stone-700 bg-stone-900/50 hover:border-stone-700'
+                          ? 'border-amber-500/40 bg-[#110F0B]' 
+                          : 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]/50 hover:border-[rgba(201,168,76,0.22)]'
                       }`}
                     >
-                      <div className="w-full h-32 rounded-lg bg-gradient-to-br from-slate-700 to-slate-800 shadow-lg mb-3 flex items-center justify-center">
-                        <span className="text-stone-400 text-sm">No Background</span>
+                      <div className="w-full h-32 rounded-lg bg-[rgba(201,168,76,0.08)] shadow-lg mb-3 flex items-center justify-center">
+                        <span className="text-[#9E8F75] text-sm">No Background</span>
                       </div>
                       <div className="text-white font-medium text-sm">None</div>
                       {!backgroundImage && (
@@ -336,8 +336,8 @@ export default function ThemeSelector() {
                         onClick={() => setBackgroundImage(bg.path)}
                         className={`relative p-4 rounded border-2 transition-all ${
                           backgroundImage === bg.path 
-                            ? 'border-amber-500/40 bg-stone-900' 
-                            : 'border-stone-700 bg-stone-900/50 hover:border-stone-700'
+                            ? 'border-amber-500/40 bg-[#110F0B]' 
+                            : 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]/50 hover:border-[rgba(201,168,76,0.22)]'
                         }`}
                       >
                         <div 
@@ -356,11 +356,11 @@ export default function ThemeSelector() {
                     ))}
 
                     {/* Upload New */}
-                    <label className="relative p-4 rounded border-2 border-dashed border-stone-700 bg-stone-900/50 hover:border-amber-500/40 hover:bg-stone-900 transition-all cursor-pointer group">
-                      <div className="w-full h-32 rounded-lg bg-stone-900/50 mb-3 flex items-center justify-center">
+                    <label className="relative p-4 rounded border-2 border-dashed border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]/50 hover:border-amber-500/40 hover:bg-[rgba(201,168,76,0.04)] transition-all cursor-pointer group">
+                      <div className="w-full h-32 rounded-lg bg-[rgba(201,168,76,0.06)]/50 mb-3 flex items-center justify-center">
                         <div className="text-center">
-                          <Image className="h-8 w-8 text-stone-400 mx-auto mb-2 group-hover:text-amber-400 transition-colors" />
-                          <span className="text-stone-400 text-xs group-hover:text-amber-200">Upload Custom</span>
+                          <Image className="h-8 w-8 text-[#9E8F75] mx-auto mb-2 group-hover:text-amber-400 transition-colors" />
+                          <span className="text-[#9E8F75] text-xs group-hover:text-[#C9A84C]">Upload Custom</span>
                         </div>
                       </div>
                       <div className="text-white font-medium text-sm">Add Your Own</div>

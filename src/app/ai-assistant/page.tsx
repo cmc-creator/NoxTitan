@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { 
@@ -31,7 +31,7 @@ export default function AIAssistantPage() {
       icon: <Shield className="w-8 h-8" />,
       title: 'Real-Time Compliance Monitoring',
       description: 'Stay ahead of regulations',
-      color: 'from-amber-700 to-cyan-600',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       details: 'Our AI continuously monitors federal and state labor laws, industry regulations, and compliance requirements. Get instant alerts when laws change that affect your business.',
       capabilities: [
         'Monitors 50 state labor laws in real-time',
@@ -46,7 +46,7 @@ export default function AIAssistantPage() {
       icon: <Brain className="w-8 h-8" />,
       title: 'Continuous Learning',
       description: 'Gets smarter every day',
-      color: 'from-stone-900 to-pink-600',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       details: 'The AI learns from every interaction, court decision, and regulatory update. It adapts to your industry and business needs.',
       capabilities: [
         'Daily updates from legal databases',
@@ -76,7 +76,7 @@ export default function AIAssistantPage() {
       icon: <Zap className="w-8 h-8" />,
       title: 'Predictive Analytics',
       description: 'See problems before they happen',
-      color: 'from-amber-500 to-orange-600',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       details: 'Advanced machine learning predicts potential issues like compliance violations, overtime spikes, and staffing shortages.',
       capabilities: [
         'Predicts compliance risks before violations occur',
@@ -91,7 +91,7 @@ export default function AIAssistantPage() {
       icon: <Bot className="w-8 h-8" />,
       title: '24/7 AI Chat Assistant',
       description: 'Friendly help anytime',
-      color: 'from-amber-700 to-amber-500',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       details: 'Chat with your AI assistant anytime to get answers about labor laws, scheduling questions, and best practices. Complete with occasional dad jokes!',
       capabilities: [
         'Answers questions in plain English',
@@ -106,7 +106,7 @@ export default function AIAssistantPage() {
       icon: <Globe className="w-8 h-8" />,
       title: 'Multi-Industry Expertise',
       description: 'Knows your industry inside out',
-      color: 'from-rose-500 to-red-600',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       details: 'Specialized knowledge for healthcare, retail, hospitality, construction, and more. Understands industry-specific regulations and best practices.',
       capabilities: [
         'Healthcare: HIPAA, Joint Commission, patient ratios',
@@ -150,7 +150,7 @@ export default function AIAssistantPage() {
   ];
 
   return (
-    <div className="min-h-screen p-8 bg-stone-950">
+    <div className="min-h-screen p-8 bg-[#110F0B]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -159,14 +159,14 @@ export default function AIAssistantPage() {
               <Bot className="w-12 h-12" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold text-stone-100 mb-2 flex items-center gap-3">
+              <h1 className="text-4xl font-bold text-[#9E8F75] mb-2 flex items-center gap-3">
                 AI Assistant
                 <span className="px-3 py-1 bg-[rgba(201,168,76,0.12)] border border-[rgba(201,168,76,0.45)] text-[#C9A84C] text-sm font-bold rounded flex items-center gap-1">
                   <Crown className="w-4 h-4" />
                   Premium
                 </span>
               </h1>
-              <p className="text-lg text-stone-500">Your intelligent compliance and optimization partner</p>
+              <p className="text-lg text-[#9E8F75]">Your intelligent compliance and optimization partner</p>
             </div>
           </div>
         </div>
@@ -181,7 +181,7 @@ export default function AIAssistantPage() {
               <Sparkles className="w-8 h-8" />
               <h2 className="text-3xl font-bold">AI-Powered Intelligence</h2>
             </div>
-            <p className="text-amber-50 text-lg mb-6 max-w-3xl">
+            <p className="text-[#F0EBE0] text-lg mb-6 max-w-3xl">
               Our AI continuously learns and monitors thousands of labor laws, regulations, and industry standards across all 50 states. 
               Get instant answers, proactive alerts, and optimization suggestions - all with a friendly personality that includes the occasional dad joke! 😄
             </p>
@@ -199,29 +199,29 @@ export default function AIAssistantPage() {
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           {stats.map((stat, index) => (
-            <div key={index} className="bg-stone-950 rounded shadow-md p-6">
+            <div key={index} className="bg-[#110F0B] rounded shadow-md p-6">
               <div className="flex items-center justify-between mb-3">
                 <div className="p-3 bg-[rgba(201,168,76,0.1)] text-[#C9A84C] rounded border border-[rgba(201,168,76,0.22)]">
                   {stat.icon}
                 </div>
-                <span className="text-3xl font-bold text-stone-100">{stat.value}</span>
+                <span className="text-3xl font-bold text-[#9E8F75]">{stat.value}</span>
               </div>
-              <p className="text-stone-500 font-semibold">{stat.label}</p>
+              <p className="text-[#9E8F75] font-semibold">{stat.label}</p>
             </div>
           ))}
         </div>
 
         {/* Features Grid */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-stone-100 mb-6">AI Capabilities</h2>
+          <h2 className="text-2xl font-bold text-[#9E8F75] mb-6">AI Capabilities</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature) => (
               <div
                 key={feature.id}
                 onClick={() => setSelectedFeature(feature.id === selectedFeature ? null : feature.id)}
-                className="bg-stone-950 rounded shadow-md hover:shadow-xl transition-all cursor-pointer overflow-hidden"
+                className="bg-[#110F0B] rounded shadow-md hover:shadow-xl transition-all cursor-pointer overflow-hidden"
               >
-                <div className={`bg-gradient-to-br ${feature.color} p-6 text-white`}>
+                <div className={${feature.color}` p-6 text-white`}>
                   <div className="mb-4">{feature.icon}</div>
                   <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
                   <p className="text-sm opacity-90">{feature.description}</p>
@@ -229,12 +229,12 @@ export default function AIAssistantPage() {
                 <div className="p-6">
                   <p className="mb-4 text-[#9E8F75]">{feature.details}</p>
                   {selectedFeature === feature.id && (
-                    <div className="space-y-2 mt-4 pt-4 border-t border-stone-800">
-                      <p className="font-semibold text-stone-100 text-sm mb-2">Key Capabilities:</p>
+                    <div className="space-y-2 mt-4 pt-4 border-t border-[rgba(201,168,76,0.22)]">
+                      <p className="font-semibold text-[#9E8F75] text-sm mb-2">Key Capabilities:</p>
                       {feature.capabilities.map((capability, idx) => (
                         <div key={idx} className="flex items-start gap-2">
                           <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-stone-500">{capability}</span>
+                          <span className="text-sm text-[#9E8F75]">{capability}</span>
                         </div>
                       ))}
                     </div>
@@ -249,9 +249,9 @@ export default function AIAssistantPage() {
         </div>
 
         {/* Recent AI Updates */}
-        <div className="bg-stone-950 rounded shadow-md p-6 mb-8">
+        <div className="bg-[#110F0B] rounded shadow-md p-6 mb-8">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-stone-100 flex items-center gap-2">
+            <h2 className="text-2xl font-bold text-[#9E8F75] flex items-center gap-2">
               <Rocket className="w-6 h-6 text-amber-600" />
               Recent Knowledge Updates
             </h2>
@@ -267,7 +267,7 @@ export default function AIAssistantPage() {
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-sm text-stone-500">{update.date}</span>
+                      <span className="text-sm text-[#9E8F75]">{update.date}</span>
                       <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
                         update.impact === 'High' ? 'bg-[rgba(201,168,76,0.1)] text-[#C9A84C]' :
                         update.impact === 'Medium' ? 'bg-[rgba(201,168,76,0.1)] text-[#C9A84C]' :
@@ -276,8 +276,8 @@ export default function AIAssistantPage() {
                         {update.impact} Impact
                       </span>
                     </div>
-                    <h3 className="font-bold text-stone-100 mb-1">{update.title}</h3>
-                    <p className="text-sm text-stone-500 mb-2">{update.description}</p>
+                    <h3 className="font-bold text-[#9E8F75] mb-1">{update.title}</h3>
+                    <p className="text-sm text-[#9E8F75] mb-2">{update.description}</p>
                     <p className="text-xs text-amber-600 font-semibold">
                       Affects: {update.affected}
                     </p>
@@ -293,7 +293,7 @@ export default function AIAssistantPage() {
 
         {/* How It Works */}
         <div className="lux-card p-8">
-          <h2 className="text-2xl font-bold text-stone-100 mb-6 flex items-center gap-2">
+          <h2 className="text-2xl font-bold text-[#9E8F75] mb-6 flex items-center gap-2">
             <Lightbulb className="w-6 h-6 text-amber-600" />
             How the AI Works
           </h2>
@@ -303,8 +303,8 @@ export default function AIAssistantPage() {
               <div className="w-16 h-16 border-2 border-[rgba(201,168,76,0.45)] bg-[rgba(201,168,76,0.1)] text-[#C9A84C] rounded flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                 1
               </div>
-              <h3 className="font-bold text-stone-100 mb-2">Continuous Monitoring</h3>
-              <p className="text-stone-500 text-sm">
+              <h3 className="font-bold text-[#9E8F75] mb-2">Continuous Monitoring</h3>
+              <p className="text-[#9E8F75] text-sm">
                 AI scans thousands of legal databases, government sites, and industry publications daily for updates
               </p>
             </div>
@@ -312,8 +312,8 @@ export default function AIAssistantPage() {
               <div className="w-16 h-16 border-2 border-[rgba(201,168,76,0.45)] bg-[rgba(201,168,76,0.1)] text-[#C9A84C] rounded flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                 2
               </div>
-              <h3 className="font-bold text-stone-100 mb-2">Smart Analysis</h3>
-              <p className="text-stone-500 text-sm">
+              <h3 className="font-bold text-[#9E8F75] mb-2">Smart Analysis</h3>
+              <p className="text-[#9E8F75] text-sm">
                 Machine learning analyzes changes and determines how they affect your specific business and employees
               </p>
             </div>
@@ -321,8 +321,8 @@ export default function AIAssistantPage() {
               <div className="w-16 h-16 border-2 border-[rgba(201,168,76,0.45)] bg-[rgba(201,168,76,0.1)] text-[#C9A84C] rounded flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                 3
               </div>
-              <h3 className="font-bold text-stone-100 mb-2">Proactive Alerts</h3>
-              <p className="text-stone-500 text-sm">
+              <h3 className="font-bold text-[#9E8F75] mb-2">Proactive Alerts</h3>
+              <p className="text-[#9E8F75] text-sm">
                 Get notified immediately about changes that matter to you, with clear action steps in plain English
               </p>
             </div>

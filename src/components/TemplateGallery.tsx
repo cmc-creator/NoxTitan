@@ -93,7 +93,7 @@ export default function TemplateGallery() {
   return (
     <Card className="max-w-2xl mx-auto mt-8 p-6 shadow-lg border border-gray-200">
       <h2 className="text-2xl font-bold mb-4">Template & Form Gallery</h2>
-      <p className="mb-2 text-sm text-stone-500">All templates are HIPAA & legally compliant. Documents are securely stored and access-controlled.</p>
+      <p className="mb-2 text-sm text-[#9E8F75]">All templates are HIPAA & legally compliant. Documents are securely stored and access-controlled.</p>
       {error && <div className="text-red-500 mb-2">{error}</div>}
       <Input
         placeholder="Search templates..."
@@ -112,7 +112,7 @@ export default function TemplateGallery() {
         Upload New Template
       </Button>
       {/* Render template list, filter by search/type */}
-      {loading && <div className="text-stone-400">Loading...</div>}
+      {loading && <div className="text-[#9E8F75]">Loading...</div>}
       <ul className="mb-4">
         {filteredTemplates.map((t: any) => (
           <li key={t.id} className="border-b py-2 text-sm">
@@ -146,7 +146,7 @@ export default function TemplateGallery() {
           <Button className="w-full" onClick={handleUpload} disabled={loading}>
             {loading ? 'Uploading...' : 'Upload'}
           </Button>
-          <p className="mt-2 text-xs text-stone-500">All uploads are logged and reviewed for HIPAA/legal compliance.</p>
+          <p className="mt-2 text-xs text-[#9E8F75]">All uploads are logged and reviewed for HIPAA/legal compliance.</p>
         </Card>
       </Modal>
     </Card>

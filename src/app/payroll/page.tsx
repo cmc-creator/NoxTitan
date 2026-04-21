@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { DollarSign, Calendar, Download, Upload, Users, TrendingUp, Clock, FileText, Settings, CheckCircle, AlertCircle, ExternalLink, RefreshCw } from 'lucide-react';
@@ -656,7 +656,7 @@ export default function PayrollPage() {
                   </thead>
                   <tbody>
                     {employeePayroll.map((emp) => (
-                      <tr key={emp.id} className="border-b hover:bg-stone-950/5" style={{ borderColor: 'var(--border-color)' }}>
+                      <tr key={emp.id} className="border-b hover:bg-[#110F0B]/5" style={{ borderColor: 'var(--border-color)' }}>
                         <td className="py-3 px-2 font-semibold">{emp.name}</td>
                         <td className="py-3 px-2 opacity-70">{emp.department}</td>
                         <td className="py-3 px-2 text-right">
@@ -717,7 +717,7 @@ export default function PayrollPage() {
                 </thead>
                 <tbody>
                   {employeePayroll.map((emp) => (
-                    <tr key={emp.id} className="border-b hover:bg-stone-950/5" style={{ borderColor: 'var(--border-color)' }}>
+                    <tr key={emp.id} className="border-b hover:bg-[#110F0B]/5" style={{ borderColor: 'var(--border-color)' }}>
                       <td className="py-3 px-2 font-semibold">{emp.name}</td>
                       <td className="py-3 px-2">{emp.department}</td>
                       <td className="py-3 px-2">
@@ -754,7 +754,7 @@ export default function PayrollPage() {
               {payPeriods.map((period) => (
                 <div 
                   key={period.id}
-                  className="p-4 mb-4 rounded-lg hover:bg-stone-950/5 transition-all cursor-pointer border"
+                  className="p-4 mb-4 rounded-lg hover:bg-[#110F0B]/5 transition-all cursor-pointer border"
                   style={{ borderColor: 'var(--border-color)' }}
                 >
                   <div className="flex items-center justify-between mb-3">
@@ -768,7 +768,7 @@ export default function PayrollPage() {
                       period.status === 'paid' ? 'bg-green-500/20 text-green-400' :
                       period.status === 'approved' ? 'bg-amber-600/20 text-amber-400' :
                       period.status === 'processing' ? 'bg-yellow-500/20 text-yellow-400' :
-                      'bg-[rgba(201,168,76,0.04)]0/20 text-stone-400'
+                      'bg-[rgba(201,168,76,0.04)]0/20 text-[#9E8F75]'
                     }`}>
                       {period.status.toUpperCase()}
                     </span>
@@ -862,7 +862,7 @@ export default function PayrollPage() {
                           <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
                             employee.healthInsurance.plan === 'premium' ? 'bg-amber-500/20 text-amber-400' :
                             employee.healthInsurance.plan === 'basic' ? 'bg-amber-600/20 text-amber-400' :
-                            'bg-[rgba(201,168,76,0.04)]0/20 text-stone-400'
+                            'bg-[rgba(201,168,76,0.04)]0/20 text-[#9E8F75]'
                           }`}>
                             {employee.healthInsurance.plan === 'none' ? 'Not Enrolled' : 
                              employee.healthInsurance.plan.charAt(0).toUpperCase() + employee.healthInsurance.plan.slice(1)}
@@ -887,7 +887,7 @@ export default function PayrollPage() {
                               </div>
                             </>
                           ) : (
-                            <span className="text-stone-500">—</span>
+                            <span className="text-[#9E8F75]">—</span>
                           )}
                         </td>
                         <td className="text-right py-4 px-4">
@@ -896,7 +896,7 @@ export default function PayrollPage() {
                               {formatCurrency(employee.retirement401k.employerMatch)}
                             </div>
                           ) : (
-                            <span className="text-stone-500">—</span>
+                            <span className="text-[#9E8F75]">—</span>
                           )}
                         </td>
                         <td className="text-right py-4 px-4">
@@ -910,7 +910,7 @@ export default function PayrollPage() {
                               </div>
                             </>
                           ) : (
-                            <span className="text-stone-500">Not enrolled</span>
+                            <span className="text-[#9E8F75]">Not enrolled</span>
                           )}
                         </td>
                         <td className="text-right py-4 px-4">

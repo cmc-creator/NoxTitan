@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import { Camera, Lock, AlertTriangle, Activity, Video, DoorOpen, DoorClosed, Shield, Eye, Radio } from 'lucide-react';
@@ -93,7 +93,7 @@ export default function SecurityPage() {
       case 'OPEN': return 'text-orange-400 bg-orange-500/20 border-orange-500';
       case 'CLOSED': return 'text-[#C9A84C] 400 bg-[#C9A84C]/20 border-[rgba(201,168,76,0.22)] 500';
       case 'ALARM': return 'text-[#9E8F75] 400 bg-[#110F0B] 500/20 border-[rgba(201,168,76,0.22)] 500';
-      default: return 'text-stone-400 bg-stone-500/20 border-stone-500';
+      default: return 'text-[#9E8F75] bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]';
     }
   }
 
@@ -103,13 +103,13 @@ export default function SecurityPage() {
       case 'HIGH': return 'bg-orange-600 text-white';
       case 'MEDIUM': return 'bg-yellow-600 text-white';
       case 'LOW': return 'bg-amber-600 text-white';
-      case 'INFO': return 'bg-stone-600 text-white';
-      default: return 'bg-stone-600 text-white';
+      case 'INFO': return 'bg-[rgba(201,168,76,0.08)] text-white';
+      default: return 'bg-[rgba(201,168,76,0.08)] text-white';
     }
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-stone-900 to-slate-900 p-8">
+    <div className="min-h-screen bg-[#070604] p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
@@ -118,7 +118,7 @@ export default function SecurityPage() {
               <Shield className="w-10 h-10 text-amber-400" />
               Security Operations Center
             </h1>
-            <p className="text-stone-400">Camera feeds, access control, and security monitoring</p>
+            <p className="text-[#9E8F75]">Camera feeds, access control, and security monitoring</p>
           </div>
           <div className="flex gap-3">
             <button
@@ -145,7 +145,7 @@ export default function SecurityPage() {
               <Camera className="w-8 h-8 text-[#C9A84C] 400" />
               <div className="text-right">
                 <span className="text-3xl font-bold text-[#C9A84C] 400">{stats.camerasOnline}</span>
-                <span className="text-stone-400">/{stats.camerasTotal}</span>
+                <span className="text-[#9E8F75]">/{stats.camerasTotal}</span>
               </div>
             </div>
             <p className="text-[#C9A84C] 300 font-semibold flex items-center gap-2">
@@ -159,7 +159,7 @@ export default function SecurityPage() {
               <Lock className="w-8 h-8 text-amber-400" />
               <div className="text-right">
                 <span className="text-3xl font-bold text-amber-400">{stats.doorsOnline}</span>
-                <span className="text-stone-400">/{stats.doorsTotal}</span>
+                <span className="text-[#9E8F75]">/{stats.doorsTotal}</span>
               </div>
             </div>
             <p className="text-amber-400 font-semibold">Doors Online</p>
@@ -178,16 +178,16 @@ export default function SecurityPage() {
               <Activity className="w-8 h-8 text-amber-400" />
               <span className="text-4xl font-bold text-amber-400">{stats.todayEvents}</span>
             </div>
-            <p className="text-amber-200 font-semibold">Today's Events</p>
+            <p className="text-[#C9A84C] font-semibold">Today's Events</p>
           </div>
 
-          <div className="col-span-2 bg-gradient-to-br from-amber-700/20 to-amber-900/20 border border-amber-500/40/50 rounded p-6">
+          <div className="col-span-2 bg-[rgba(201,168,76,0.06)] border border-amber-500/40/50 rounded p-6">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
                 <Eye className="w-8 h-8 text-amber-400" />
                 <div>
                   <h3 className="text-lg font-bold text-white">System Status</h3>
-                  <p className="text-sm text-stone-400">All systems operational</p>
+                  <p className="text-sm text-[#9E8F75]">All systems operational</p>
                 </div>
               </div>
               <div className="w-4 h-4 bg-[#110F0B] 400 rounded-full"></div>
@@ -196,14 +196,14 @@ export default function SecurityPage() {
         </div>
 
         {/* Tabs */}
-        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded overflow-hidden mb-6">
-          <div className="flex border-b border-stone-700">
+        <div className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded overflow-hidden mb-6">
+          <div className="flex border-b border-[rgba(201,168,76,0.22)]">
             <button
               onClick={() => setActiveTab('cameras')}
               className={`flex-1 px-6 py-4 font-semibold flex items-center justify-center gap-2 transition-colors ${
                 activeTab === 'cameras'
                   ? 'bg-amber-600 text-white'
-                  : 'text-stone-400 hover:text-white hover:bg-stone-900/50'
+                  : 'text-[#9E8F75] hover:text-white hover:bg-[rgba(201,168,76,0.06)]/50'
               }`}
             >
               <Camera className="w-5 h-5" />
@@ -214,7 +214,7 @@ export default function SecurityPage() {
               className={`flex-1 px-6 py-4 font-semibold flex items-center justify-center gap-2 transition-colors ${
                 activeTab === 'doors'
                   ? 'bg-[#C9A84C] text-white'
-                  : 'text-stone-400 hover:text-white hover:bg-stone-900/50'
+                  : 'text-[#9E8F75] hover:text-white hover:bg-[rgba(201,168,76,0.06)]/50'
               }`}
             >
               <Lock className="w-5 h-5" />
@@ -225,7 +225,7 @@ export default function SecurityPage() {
               className={`flex-1 px-6 py-4 font-semibold flex items-center justify-center gap-2 transition-colors ${
                 activeTab === 'alerts'
                   ? 'bg-[#110F0B] 600 text-white'
-                  : 'text-stone-400 hover:text-white hover:bg-stone-900/50'
+                  : 'text-[#9E8F75] hover:text-white hover:bg-[rgba(201,168,76,0.06)]/50'
               }`}
             >
               <AlertTriangle className="w-5 h-5" />
@@ -240,7 +240,7 @@ export default function SecurityPage() {
                 {cameras.map((camera) => (
                   <div
                     key={camera.id}
-                    className="bg-stone-900/50 border border-stone-700 rounded p-4 hover:border-amber-500/40/50 transition-all cursor-pointer"
+                    className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-4 hover:border-amber-500/40/50 transition-all cursor-pointer"
                     onClick={() => window.location.href = `/sentinel/security/cameras/${camera.id}`}
                   >
                     <div className="flex items-start justify-between mb-3">
@@ -251,12 +251,12 @@ export default function SecurityPage() {
                           {camera.isRecording ? (
                             <Video className={`w-6 h-6 ${camera.status === 'ONLINE' ? 'text-[#C9A84C] 400' : 'text-[#9E8F75] 400'}`} />
                           ) : (
-                            <Camera className="w-6 h-6 text-stone-400" />
+                            <Camera className="w-6 h-6 text-[#9E8F75]" />
                           )}
                         </div>
                         <div>
                           <h3 className="font-bold text-white">{camera.name}</h3>
-                          <p className="text-sm text-stone-400">{camera.location}</p>
+                          <p className="text-sm text-[#9E8F75]">{camera.location}</p>
                         </div>
                       </div>
                       <span className={`px-2 py-1 border rounded text-xs font-semibold ${getStatusColor(camera.status)}`}>
@@ -264,8 +264,8 @@ export default function SecurityPage() {
                       </span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-stone-400">{camera.cameraType}</span>
-                      <span className="text-stone-300 font-mono">{camera.resolution || 'N/A'}</span>
+                      <span className="text-[#9E8F75]">{camera.cameraType}</span>
+                      <span className="text-[#9E8F75] font-mono">{camera.resolution || 'N/A'}</span>
                     </div>
                   </div>
                 ))}
@@ -280,7 +280,7 @@ export default function SecurityPage() {
                 {doors.map((door) => (
                   <div
                     key={door.id}
-                    className="bg-stone-900/50 border border-stone-700 rounded p-4 hover:border-[rgba(201,168,76,0.22)] 500/50 transition-all"
+                    className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-4 hover:border-[rgba(201,168,76,0.22)] 500/50 transition-all"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-3">
@@ -298,7 +298,7 @@ export default function SecurityPage() {
                             {door.name}
                             {door.isLocked && <Lock className="w-4 h-4 text-amber-400" />}
                           </h3>
-                          <p className="text-sm text-stone-400">{door.location}</p>
+                          <p className="text-sm text-[#9E8F75]">{door.location}</p>
                         </div>
                       </div>
                       <span className={`px-2 py-1 border rounded text-xs font-semibold ${getStatusColor(door.status)}`}>
@@ -306,7 +306,7 @@ export default function SecurityPage() {
                       </span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-stone-400">{door.doorType}</span>
+                      <span className="text-[#9E8F75]">{door.doorType}</span>
                       <button className="px-3 py-1 bg-amber-600 hover:bg-amber-700 text-white text-xs font-semibold rounded transition-colors">
                         View Logs
                       </button>
@@ -324,7 +324,7 @@ export default function SecurityPage() {
                 {alerts.map((alert) => (
                   <div
                     key={alert.id}
-                    className="bg-stone-900/50 border border-stone-700 rounded p-4 hover:border-[rgba(201,168,76,0.22)] 500/50 transition-all"
+                    className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-4 hover:border-[rgba(201,168,76,0.22)] 500/50 transition-all"
                   >
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-[#110F0B] 500/20 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -336,11 +336,11 @@ export default function SecurityPage() {
                           <span className={`px-2 py-1 rounded text-xs font-bold ${getSeverityColor(alert.severity)}`}>
                             {alert.severity}
                           </span>
-                          <span className="text-sm text-stone-400">
+                          <span className="text-sm text-[#9E8F75]">
                             {new Date(alert.timestamp).toLocaleTimeString()}
                           </span>
                         </div>
-                        <p className="text-stone-400 mb-3">{alert.description}</p>
+                        <p className="text-[#9E8F75] mb-3">{alert.description}</p>
                         <div className="flex gap-2">
                           <button className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold rounded transition-colors">
                             Acknowledge
@@ -348,7 +348,7 @@ export default function SecurityPage() {
                           <button className="px-4 py-2 bg-[#C9A84C] hover:bg-[#110F0B] text-white text-sm font-semibold rounded transition-colors">
                             Resolve
                           </button>
-                          <button className="px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white text-sm font-semibold rounded transition-colors">
+                          <button className="px-4 py-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] text-white text-sm font-semibold rounded transition-colors">
                             False Alarm
                           </button>
                         </div>

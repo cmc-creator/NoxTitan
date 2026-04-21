@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { 
@@ -336,84 +336,84 @@ export default function TrainingPage() {
   const getLevelColor = (level: string) => {
     switch (level) {
       case 'beginner': return 'bg-green-100 text-green-700';
-      case 'intermediate': return 'bg-blue-100 text-amber-300';
+      case 'intermediate': return 'bg-blue-100 text-[#E8C060]';
       case 'advanced': return 'bg-purple-100 text-amber-700';
       default: return 'bg-[rgba(201,168,76,0.06)] text-[#C9A84C]';
     }
   };
 
   return (
-    <div className="min-h-screen p-8 bg-stone-950">
+    <div className="min-h-screen p-8 bg-[#110F0B]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-stone-100 mb-2 flex items-center gap-3">
+          <h1 className="text-4xl font-bold text-[#9E8F75] mb-2 flex items-center gap-3">
             <BookOpen className="w-10 h-10 text-amber-400" />
             Training & Development
           </h1>
-          <p className="text-lg text-stone-500">Grow your skills with expert-led courses and structured learning paths</p>
+          <p className="text-lg text-[#9E8F75]">Grow your skills with expert-led courses and structured learning paths</p>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-stone-950 p-6 rounded shadow-md">
+          <div className="bg-[#110F0B] p-6 rounded shadow-md">
             <div className="flex items-center justify-between mb-2">
               <BookOpen className="w-8 h-8 text-amber-400" />
-              <span className="text-3xl font-bold text-stone-100">{courses.length}</span>
+              <span className="text-3xl font-bold text-[#9E8F75]">{courses.length}</span>
             </div>
-            <p className="text-stone-500">Available Courses</p>
-            <p className="text-sm text-stone-500">Across all categories</p>
+            <p className="text-[#9E8F75]">Available Courses</p>
+            <p className="text-sm text-[#9E8F75]">Across all categories</p>
           </div>
-          <div className="bg-stone-950 p-6 rounded shadow-md">
+          <div className="bg-[#110F0B] p-6 rounded shadow-md">
             <div className="flex items-center justify-between mb-2">
               <PlayCircle className="w-8 h-8 text-green-600" />
-              <span className="text-3xl font-bold text-stone-100">
+              <span className="text-3xl font-bold text-[#9E8F75]">
                 {courses.filter(c => c.progress).length}
               </span>
             </div>
-            <p className="text-stone-500">In Progress</p>
-            <p className="text-sm text-stone-500">Your active courses</p>
+            <p className="text-[#9E8F75]">In Progress</p>
+            <p className="text-sm text-[#9E8F75]">Your active courses</p>
           </div>
-          <div className="bg-stone-950 p-6 rounded shadow-md">
+          <div className="bg-[#110F0B] p-6 rounded shadow-md">
             <div className="flex items-center justify-between mb-2">
               <CheckCircle className="w-8 h-8 text-amber-600" />
-              <span className="text-3xl font-bold text-stone-100">
+              <span className="text-3xl font-bold text-[#9E8F75]">
                 {courses.filter(c => c.completed).length}
               </span>
             </div>
-            <p className="text-stone-500">Completed</p>
-            <p className="text-sm text-stone-500">Certificates earned</p>
+            <p className="text-[#9E8F75]">Completed</p>
+            <p className="text-sm text-[#9E8F75]">Certificates earned</p>
           </div>
-          <div className="bg-stone-950 p-6 rounded shadow-md">
+          <div className="bg-[#110F0B] p-6 rounded shadow-md">
             <div className="flex items-center justify-between mb-2">
               <Clock className="w-8 h-8 text-amber-600" />
-              <span className="text-3xl font-bold text-stone-100">
+              <span className="text-3xl font-bold text-[#9E8F75]">
                 {Math.round(courses.reduce((sum, c) => sum + c.duration, 0) / 60)}
               </span>
             </div>
-            <p className="text-stone-500">Learning Hours</p>
-            <p className="text-sm text-stone-500">Total content available</p>
+            <p className="text-[#9E8F75]">Learning Hours</p>
+            <p className="text-sm text-[#9E8F75]">Total content available</p>
           </div>
         </div>
 
         {/* Search and Filters */}
-        <div className="bg-stone-950 p-6 rounded shadow-md mb-8">
+        <div className="bg-[#110F0B] p-6 rounded shadow-md mb-8">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-stone-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#9E8F75]" />
               <input
                 type="text"
                 placeholder="Search courses..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500/40"
+                className="w-full pl-10 pr-4 py-3 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500/40"
               />
             </div>
             <div className="flex gap-2">
               <select
                 value={selectedLevel}
                 onChange={(e) => setSelectedLevel(e.target.value as any)}
-                className="px-4 py-3 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500"
+                className="px-4 py-3 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500"
               >
                 <option value="all">All Levels</option>
                 <option value="beginner">Beginner</option>
@@ -429,7 +429,7 @@ export default function TrainingPage() {
           <button
             onClick={() => setActiveTab('leadership')}
             className={`px-6 py-3 rounded font-semibold transition-all ${
-              activeTab === 'leadership' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-[#C9A84C] hover:bg-stone-950'
+              activeTab === 'leadership' ? 'bg-amber-600 text-white shadow-lg' : 'bg-[#110F0B] text-[#C9A84C] hover:bg-[#110F0B]'
             }`}
           >
             🚀 Leadership Development
@@ -437,7 +437,7 @@ export default function TrainingPage() {
           <button
             onClick={() => setActiveTab('my-courses')}
             className={`px-6 py-3 rounded font-semibold transition-all ${
-              activeTab === 'my-courses' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-[#C9A84C] hover:bg-stone-950'
+              activeTab === 'my-courses' ? 'bg-amber-600 text-white shadow-lg' : 'bg-[#110F0B] text-[#C9A84C] hover:bg-[#110F0B]'
             }`}
           >
             📚 My Courses
@@ -445,7 +445,7 @@ export default function TrainingPage() {
           <button
             onClick={() => setActiveTab('paths')}
             className={`px-6 py-3 rounded font-semibold transition-all ${
-              activeTab === 'paths' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-[#C9A84C] hover:bg-stone-950'
+              activeTab === 'paths' ? 'bg-amber-600 text-white shadow-lg' : 'bg-[#110F0B] text-[#C9A84C] hover:bg-[#110F0B]'
             }`}
           >
             🛤️ Learning Paths
@@ -453,7 +453,7 @@ export default function TrainingPage() {
           <button
             onClick={() => setActiveTab('all')}
             className={`px-6 py-3 rounded font-semibold transition-all ${
-              activeTab === 'all' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-[#C9A84C] hover:bg-stone-950'
+              activeTab === 'all' ? 'bg-amber-600 text-white shadow-lg' : 'bg-[#110F0B] text-[#C9A84C] hover:bg-[#110F0B]'
             }`}
           >
             📖 All Courses
@@ -463,8 +463,8 @@ export default function TrainingPage() {
         {/* Learning Paths */}
         {activeTab === 'paths' && (
           <div className="space-y-6">
-            <div className="bg-gradient-to-r from-amber-700 to-amber-800 p-6 rounded border border-blue-200 mb-6">
-              <h2 className="text-2xl font-bold text-stone-100 mb-2">📚 Structured Learning Paths</h2>
+            <div className="bg-[rgba(201,168,76,0.08)] p-6 rounded border border-blue-200 mb-6">
+              <h2 className="text-2xl font-bold text-[#9E8F75] mb-2">📚 Structured Learning Paths</h2>
               <p className="text-[#C9A84C]">
                 Follow curated learning paths designed to develop specific skills systematically. 
                 Complete all courses in a path to earn a completion certificate.
@@ -472,11 +472,11 @@ export default function TrainingPage() {
             </div>
 
             {learningPaths.map((path) => (
-              <div key={path.id} className="bg-stone-950 rounded shadow-md p-8">
+              <div key={path.id} className="bg-[#110F0B] rounded shadow-md p-8">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-stone-100 mb-2">{path.title}</h3>
-                    <p className="text-stone-500 mb-4">{path.description}</p>
+                    <h3 className="text-2xl font-bold text-[#9E8F75] mb-2">{path.title}</h3>
+                    <p className="text-[#9E8F75] mb-4">{path.description}</p>
                     <div className="flex flex-wrap gap-4 text-sm">
                       <span className="flex items-center gap-2 text-[#C9A84C]">
                         <BookOpen className="w-4 h-4" />
@@ -504,18 +504,18 @@ export default function TrainingPage() {
 
                 {/* Course list in path */}
                 <div className="mt-6 space-y-2">
-                  <h4 className="font-semibold text-stone-100 mb-3">Courses in this path:</h4>
+                  <h4 className="font-semibold text-[#9E8F75] mb-3">Courses in this path:</h4>
                   {path.courses.map((courseId, index) => {
                     const course = courses.find(c => c.id === courseId);
                     if (!course) return null;
                     return (
-                      <div key={courseId} className="flex items-center gap-3 p-3 bg-stone-950 rounded-lg">
+                      <div key={courseId} className="flex items-center gap-3 p-3 bg-[#110F0B] rounded-lg">
                         <span className="flex items-center justify-center w-8 h-8 bg-blue-100 text-amber-400 rounded-full font-bold text-sm">
                           {index + 1}
                         </span>
                         <div className="flex-1">
-                          <p className="font-semibold text-stone-100">{course.title}</p>
-                          <p className="text-sm text-stone-500">{course.duration} minutes • {course.modules} modules</p>
+                          <p className="font-semibold text-[#9E8F75]">{course.title}</p>
+                          <p className="text-sm text-[#9E8F75]">{course.duration} minutes • {course.modules} modules</p>
                         </div>
                         <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getLevelColor(course.level)}`}>
                           {course.level}
@@ -537,7 +537,7 @@ export default function TrainingPage() {
                 <div className="flex items-start gap-4">
                   <Award className="w-12 h-12 text-amber-600 flex-shrink-0" />
                   <div>
-                    <h2 className="text-2xl font-bold text-stone-100 mb-2">� New Manager? Start Here!</h2>
+                    <h2 className="text-2xl font-bold text-[#9E8F75] mb-2">� New Manager? Start Here!</h2>
                     <p className="text-[#C9A84C] mb-3">
                       Congratulations on your promotion! Being promoted to manager is exciting, but it can also feel overwhelming. 
                       These courses are specifically designed to help you make a successful transition from individual contributor to leader.
@@ -552,17 +552,17 @@ export default function TrainingPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {filteredCourses.map((course) => (
-                <div key={course.id} className={`bg-stone-950 rounded shadow-md p-6 hover:shadow-lg transition-all ${
+                <div key={course.id} className={`bg-[#110F0B] rounded shadow-md p-6 hover:shadow-lg transition-all ${
                   course.featured ? 'ring-2 ring-blue-400' : ''
                 }`}>
                   {course.featured && (
-                    <span className="inline-block px-3 py-1 bg-blue-100 text-amber-300 text-sm font-semibold rounded-full mb-3">
+                    <span className="inline-block px-3 py-1 bg-blue-100 text-[#E8C060] text-sm font-semibold rounded-full mb-3">
                       ⭐ Featured for New Managers
                     </span>
                   )}
 
-                  <h3 className="text-xl font-bold text-stone-100 mb-2">{course.title}</h3>
-                  <p className="text-stone-500 mb-4">{course.description}</p>
+                  <h3 className="text-xl font-bold text-[#9E8F75] mb-2">{course.title}</h3>
+                  <p className="text-[#9E8F75] mb-4">{course.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getLevelColor(course.level)}`}>
@@ -576,7 +576,7 @@ export default function TrainingPage() {
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-4 mb-4 text-sm text-stone-500">
+                  <div className="flex items-center gap-4 mb-4 text-sm text-[#9E8F75]">
                     <span className="flex items-center gap-1">
                       <Users className="w-4 h-4" />
                       {course.enrolled} enrolled
@@ -594,7 +594,7 @@ export default function TrainingPage() {
                   {course.progress !== undefined && (
                     <div className="mb-4">
                       <div className="flex items-center justify-between text-sm mb-2">
-                        <span className="text-stone-500">Progress</span>
+                        <span className="text-[#9E8F75]">Progress</span>
                         <span className="font-semibold text-amber-400">{course.progress}%</span>
                       </div>
                       <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
@@ -620,14 +620,14 @@ export default function TrainingPage() {
                         </>
                       )}
                     </button>
-                    <button className="px-4 py-3 border border-stone-700 rounded-lg font-semibold hover:bg-stone-950 transition-all">
-                      <FileText className="w-5 h-5 text-stone-500" />
+                    <button className="px-4 py-3 border border-[rgba(201,168,76,0.22)] rounded-lg font-semibold hover:bg-[#110F0B] transition-all">
+                      <FileText className="w-5 h-5 text-[#9E8F75]" />
                     </button>
                   </div>
 
                   {/* Objectives dropdown */}
                   <details className="mt-4">
-                    <summary className="cursor-pointer text-sm font-semibold text-amber-400 hover:text-amber-300">
+                    <summary className="cursor-pointer text-sm font-semibold text-amber-400 hover:text-[#E8C060]">
                       View Learning Objectives
                     </summary>
                     <ul className="mt-3 space-y-2">
@@ -647,9 +647,9 @@ export default function TrainingPage() {
 
         {filteredCourses.length === 0 && activeTab !== 'paths' && (
           <div className="text-center py-12">
-            <BookOpen className="w-16 h-16 text-stone-400 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-stone-100 mb-2">No courses found</h3>
-            <p className="text-stone-500">Try adjusting your search or filters</p>
+            <BookOpen className="w-16 h-16 text-[#9E8F75] mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-[#9E8F75] mb-2">No courses found</h3>
+            <p className="text-[#9E8F75]">Try adjusting your search or filters</p>
           </div>
         )}
       </div>

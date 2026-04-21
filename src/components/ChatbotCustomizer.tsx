@@ -33,11 +33,11 @@ const avatarOptions = [
 export default function ChatbotCustomizer() {
   const [preferences, setPreferences] = useState<ChatbotPreferences>({
     titan: {
-      color: 'from-pink-600 to-amber-900',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       avatar: '💬'
     },
     nox: {
-      color: 'from-amber-700 to-amber-600',
+      color: 'bg-[rgba(201,168,76,0.12)]',
       avatar: '🎤'
     }
   });
@@ -64,31 +64,31 @@ export default function ChatbotCustomizer() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-stone-900 to-pink-50 rounded-lg shadow p-6 border-2 border-purple-200">
+    <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg shadow p-6 border-2 border-purple-200">
       <div className="flex items-center gap-3 mb-4">
         <Palette className="w-6 h-6 text-amber-600" />
-        <h3 className="text-xl font-bold text-stone-100">🤖 Chatbot Customization</h3>
+        <h3 className="text-xl font-bold text-[#9E8F75]">🤖 Chatbot Customization</h3>
       </div>
-      <p className="text-stone-500 mb-6">
+      <p className="text-[#9E8F75] mb-6">
         Personalize your AI assistants Titan and Nox with custom colors and avatars.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Titan Customization */}
-        <div className="bg-stone-950 rounded-lg p-6 border-2 border-pink-200">
+        <div className="bg-[#110F0B] rounded-lg p-6 border-2 border-pink-200">
           <div className="flex items-center gap-3 mb-4">
-            <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${preferences.titan.color} flex items-center justify-center text-2xl`}>
+            <div className={`w-12 h-12 rounded-full `${preferences.titan.color}` flex items-center justify-center text-2xl`}>
               {preferences.titan.avatar}
             </div>
             <div>
-              <h4 className="text-lg font-bold text-stone-100">Titan</h4>
-              <p className="text-sm text-stone-500">Quick Help Assistant</p>
+              <h4 className="text-lg font-bold text-[#9E8F75]">Titan</h4>
+              <p className="text-sm text-[#9E8F75]">Quick Help Assistant</p>
             </div>
           </div>
 
           {/* Avatar Selection */}
           <div className="mb-4">
-            <label className="block text-sm font-semibold text-stone-300 mb-2">
+            <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
               Avatar
             </label>
             <div className="grid grid-cols-8 gap-2">
@@ -99,7 +99,7 @@ export default function ChatbotCustomizer() {
                   className={`w-10 h-10 rounded-lg text-xl flex items-center justify-center transition-all ${
                     preferences.titan.avatar === avatar
                       ? 'bg-pink-200 border-2 border-pink-600 scale-110'
-                      : 'bg-stone-900 hover:bg-stone-800 border border-gray-300'
+                      : 'bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] border border-gray-300'
                   }`}
                 >
                   {avatar}
@@ -110,7 +110,7 @@ export default function ChatbotCustomizer() {
 
           {/* Color Selection */}
           <div>
-            <label className="block text-sm font-semibold text-stone-300 mb-2">
+            <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
               Color Theme
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -124,8 +124,8 @@ export default function ChatbotCustomizer() {
                       : 'border-gray-300 hover:border-gray-400'
                   }`}
                 >
-                  <div className={`h-6 rounded bg-gradient-to-r ${color.value} mb-1`}></div>
-                  <p className="text-xs text-stone-300 text-center">{color.text}</p>
+                  <div className={`h-6 rounded `${color.value}` mb-1`}></div>
+                  <p className="text-xs text-[#9E8F75] text-center">{color.text}</p>
                   {preferences.titan.color === color.value && (
                     <Check className="absolute top-1 right-1 w-4 h-4 text-pink-600" />
                   )}
@@ -136,20 +136,20 @@ export default function ChatbotCustomizer() {
         </div>
 
         {/* Nox Customization */}
-        <div className="bg-stone-950 rounded-lg p-6 border-2 border-purple-200">
+        <div className="bg-[#110F0B] rounded-lg p-6 border-2 border-purple-200">
           <div className="flex items-center gap-3 mb-4">
-            <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${preferences.nox.color} flex items-center justify-center text-2xl`}>
+            <div className={`w-12 h-12 rounded-full `${preferences.nox.color}` flex items-center justify-center text-2xl`}>
               {preferences.nox.avatar}
             </div>
             <div>
-              <h4 className="text-lg font-bold text-stone-100">Nox</h4>
-              <p className="text-sm text-stone-500">Voice AI Assistant</p>
+              <h4 className="text-lg font-bold text-[#9E8F75]">Nox</h4>
+              <p className="text-sm text-[#9E8F75]">Voice AI Assistant</p>
             </div>
           </div>
 
           {/* Avatar Selection */}
           <div className="mb-4">
-            <label className="block text-sm font-semibold text-stone-300 mb-2">
+            <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
               Avatar
             </label>
             <div className="grid grid-cols-8 gap-2">
@@ -160,7 +160,7 @@ export default function ChatbotCustomizer() {
                   className={`w-10 h-10 rounded-lg text-xl flex items-center justify-center transition-all ${
                     preferences.nox.avatar === avatar
                       ? 'bg-purple-200 border-2 border-amber-600/40 scale-110'
-                      : 'bg-stone-900 hover:bg-stone-800 border border-gray-300'
+                      : 'bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] border border-gray-300'
                   }`}
                 >
                   {avatar}
@@ -171,7 +171,7 @@ export default function ChatbotCustomizer() {
 
           {/* Color Selection */}
           <div>
-            <label className="block text-sm font-semibold text-stone-300 mb-2">
+            <label className="block text-sm font-semibold text-[#9E8F75] mb-2">
               Color Theme
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -185,8 +185,8 @@ export default function ChatbotCustomizer() {
                       : 'border-gray-300 hover:border-gray-400'
                   }`}
                 >
-                  <div className={`h-6 rounded bg-gradient-to-r ${color.value} mb-1`}></div>
-                  <p className="text-xs text-stone-300 text-center">{color.text}</p>
+                  <div className={`h-6 rounded `${color.value}` mb-1`}></div>
+                  <p className="text-xs text-[#9E8F75] text-center">{color.text}</p>
                   {preferences.nox.color === color.value && (
                     <Check className="absolute top-1 right-1 w-4 h-4 text-amber-600" />
                   )}
@@ -201,7 +201,7 @@ export default function ChatbotCustomizer() {
       <div className="mt-6 flex items-center justify-center gap-3">
         <button
           onClick={handleSave}
-          className="px-8 py-3 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-700 text-white rounded-lg font-bold transition-all shadow-lg flex items-center gap-2"
+          className="px-8 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-bold transition-all shadow-lg flex items-center gap-2"
         >
           {saved ? (
             <>

@@ -573,7 +573,7 @@ export default function IntegrationsPage() {
             >
               <span>{category.icon}</span>
               {category.name}
-              <span className="ml-1 px-2 py-0.5 bg-stone-950/20 rounded-full text-xs">
+              <span className="ml-1 px-2 py-0.5 bg-[#110F0B]/20 rounded-full text-xs">
                 {category.count}
               </span>
             </button>
@@ -622,7 +622,7 @@ export default function IntegrationsPage() {
                 <p className="text-xs opacity-70 mb-2 font-semibold">Key Features:</p>
                 <div className="flex flex-wrap gap-1">
                   {integration.features.slice(0, 3).map((feature, idx) => (
-                    <span key={idx} className="text-xs px-2 py-1 bg-stone-950/10 rounded">
+                    <span key={idx} className="text-xs px-2 py-1 bg-[#110F0B]/10 rounded">
                       {feature}
                     </span>
                   ))}

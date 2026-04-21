@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -120,14 +120,14 @@ export default function IdeaBoard() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900">
+    <div className="min-h-screen bg-[#070604]">
       {/* Top Navigation */}
-      <nav className="bg-stone-950/80 backdrop-blur-xl border-b-2 border-emerald-500/30 sticky top-0 z-50">
+      <nav className="bg-[#110F0B]/80 backdrop-blur-xl border-b-2 border-[rgba(201,168,76,0.22)] sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/basecamp" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <Mountain className="w-8 h-8 text-emerald-400" />
-              <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-teal-200">
+              <Mountain className="w-8 h-8 text-[#9E8F75]" />
+              <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#E8C060] to-[#C9A84C]">
                 Your Basecamp
               </span>
             </Link>
@@ -138,12 +138,12 @@ export default function IdeaBoard() {
       <div className="max-w-7xl mx-auto p-6">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/basecamp" className="inline-flex items-center gap-2 text-emerald-300 hover:text-emerald-100 mb-4 transition-colors">
+          <Link href="/basecamp" className="inline-flex items-center gap-2 text-[#9E8F75] hover:text-[#9E8F75] mb-4 transition-colors">
             ← Back to Basecamp
           </Link>
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-orange-200 to-yellow-200 mb-2"
+              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#E8C060] to-[#C9A84C] mb-2"
                   style={{
                     textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(251,191,36,0.6)',
                     WebkitTextStroke: '1px rgba(251,191,36,0.3)',
@@ -151,9 +151,9 @@ export default function IdeaBoard() {
                   }}>
                 💡 Idea Board
               </h1>
-              <p className="text-emerald-200 text-lg">Share your brilliant ideas and help shape our future!</p>
+              <p className="text-[#9E8F75] text-lg">Share your brilliant ideas and help shape our future!</p>
             </div>
-            <button className="px-6 py-3 bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-500 hover:to-orange-500 text-white rounded-lg font-bold transition-all shadow-lg shadow-yellow-500/30 flex items-center gap-2">
+            <button className="px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-bold transition-all shadow-lg shadow-yellow-500/30 flex items-center gap-2">
               <Plus className="w-5 h-5" />
               Submit Idea
             </button>
@@ -162,7 +162,7 @@ export default function IdeaBoard() {
 
         {/* Stats Banner */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded p-5 border-2 border-yellow-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-yellow-500/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-yellow-200 text-sm mb-1">Total Ideas</div>
@@ -180,10 +180,10 @@ export default function IdeaBoard() {
               <Rocket className="w-12 h-12 text-[#C9A84C] was-green-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-5 border-2 border-amber-500/40/30">
+          <div className="bg-[rgba(201,168,76,0.04)] rounded p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-amber-100/70 text-sm mb-1">This Month</div>
+                <div className="text-[#F0EBE0]/70 text-sm mb-1">This Month</div>
                 <div className="text-3xl font-bold text-white">18</div>
               </div>
               <TrendingUp className="w-12 h-12 text-amber-400 opacity-50" />
@@ -201,27 +201,27 @@ export default function IdeaBoard() {
         </div>
 
         {/* Filters & Sort */}
-        <div className="bg-stone-900/50 rounded p-4 border-2 border-emerald-500/30 mb-6">
+        <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-4 border-2 border-[rgba(201,168,76,0.22)] mb-6">
           <div className="flex flex-wrap items-center gap-4">
             {/* Search */}
             <div className="flex-1 min-w-[300px]">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-emerald-400" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#9E8F75]" />
                 <input
                   type="text"
                   placeholder="Search ideas..."
-                  className="w-full bg-stone-950 border-2 border-emerald-500/30 rounded-lg pl-10 pr-4 py-2 text-white focus:border-emerald-400 focus:outline-none"
+                  className="w-full bg-[#110F0B] border-2 border-[rgba(201,168,76,0.22)] rounded-lg pl-10 pr-4 py-2 text-white focus:border-[rgba(201,168,76,0.22)] focus:outline-none"
                 />
               </div>
             </div>
 
             {/* Category Filter */}
             <div className="flex items-center gap-2">
-              <Filter className="w-5 h-5 text-emerald-400" />
+              <Filter className="w-5 h-5 text-[#9E8F75]" />
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="bg-stone-950 border-2 border-emerald-500/30 rounded-lg px-4 py-2 text-white focus:border-emerald-400 focus:outline-none"
+                className="bg-[#110F0B] border-2 border-[rgba(201,168,76,0.22)] rounded-lg px-4 py-2 text-white focus:border-[rgba(201,168,76,0.22)] focus:outline-none"
               >
                 {categories.map(cat => (
                   <option key={cat} value={cat}>{cat === 'all' ? 'All Categories' : cat}</option>
@@ -231,11 +231,11 @@ export default function IdeaBoard() {
 
             {/* Sort */}
             <div className="flex items-center gap-2">
-              <span className="text-emerald-200 text-sm">Sort by:</span>
+              <span className="text-[#9E8F75] text-sm">Sort by:</span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="bg-stone-950 border-2 border-emerald-500/30 rounded-lg px-4 py-2 text-white focus:border-emerald-400 focus:outline-none"
+                className="bg-[#110F0B] border-2 border-[rgba(201,168,76,0.22)] rounded-lg px-4 py-2 text-white focus:border-[rgba(201,168,76,0.22)] focus:outline-none"
               >
                 <option value="votes">Most Votes</option>
                 <option value="comments">Most Comments</option>
@@ -248,27 +248,27 @@ export default function IdeaBoard() {
         {/* Ideas List */}
         <div className="space-y-4">
           {sortedIdeas.map(idea => (
-            <div key={idea.id} className="bg-gradient-to-r from-slate-800/80 to-slate-900/80 rounded p-6 border-2 border-emerald-500/30 hover:border-emerald-400/50 transition-all">
+            <div key={idea.id} className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all">
               <div className="flex gap-6">
                 {/* Vote Section */}
                 <div className="flex flex-col items-center gap-2">
-                  <button className="p-3 bg-gradient-to-br from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 rounded-lg transition-all">
+                  <button className="p-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg transition-all">
                     <Star className="w-6 h-6 text-white" />
                   </button>
                   <div className="text-2xl font-bold text-white">{idea.votes}</div>
-                  <div className="text-xs text-stone-400">votes</div>
+                  <div className="text-xs text-[#9E8F75]">votes</div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-stone-900 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                      <div className="w-10 h-10 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-full flex items-center justify-center text-white font-bold text-sm">
                         {idea.avatar}
                       </div>
                       <div>
                         <div className="text-white font-semibold">{idea.author}</div>
-                        <div className="text-stone-400 text-sm">{idea.timeAgo}</div>
+                        <div className="text-[#9E8F75] text-sm">{idea.timeAgo}</div>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
@@ -278,25 +278,25 @@ export default function IdeaBoard() {
                         </span>
                       )}
                       {idea.status === 'trending' && (
-                        <span className="px-3 py-1 bg-gradient-to-r from-amber-700 to-amber-600 text-white rounded-full text-xs font-bold flex items-center gap-1">
+                        <span className="px-3 py-1 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-full text-xs font-bold flex items-center gap-1">
                           <TrendingUp className="w-3 h-3" /> TRENDING
                         </span>
                       )}
-                      <span className="px-3 py-1 bg-emerald-900/50 border border-emerald-500/30 text-emerald-300 rounded-full text-xs font-semibold">
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] text-[#9E8F75] rounded-full text-xs font-semibold">
                         {idea.category}
                       </span>
                     </div>
                   </div>
 
                   <h3 className="text-xl font-bold text-white mb-2">{idea.title}</h3>
-                  <p className="text-stone-300 mb-4">{idea.description}</p>
+                  <p className="text-[#9E8F75] mb-4">{idea.description}</p>
 
                   <div className="flex items-center gap-4">
-                    <button className="flex items-center gap-2 px-4 py-2 bg-stone-900 hover:bg-stone-600 rounded-lg text-white transition-all">
+                    <button className="flex items-center gap-2 px-4 py-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] rounded-lg text-white transition-all">
                       <MessageSquare className="w-4 h-4" />
                       <span>{idea.comments} Comments</span>
                     </button>
-                    <button className="flex items-center gap-2 px-4 py-2 bg-emerald-900/30 hover:bg-emerald-900/50 border border-emerald-500/30 rounded-lg text-emerald-300 transition-all">
+                    <button className="flex items-center gap-2 px-4 py-2 bg-[rgba(201,168,76,0.06)] hover:bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg text-[#9E8F75] transition-all">
                       <Zap className="w-4 h-4" />
                       <span>Share</span>
                     </button>
@@ -308,7 +308,7 @@ export default function IdeaBoard() {
         </div>
 
         {/* Motivation Footer */}
-        <div className="mt-8 bg-gradient-to-r from-yellow-900/30 to-orange-900/30 rounded p-6 border-2 border-yellow-500/30 text-center">
+        <div className="mt-8 bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-yellow-500/30 text-center">
           <h3 className="text-2xl font-bold text-yellow-200 mb-2">💡 Your Voice Matters!</h3>
           <p className="text-yellow-100 text-lg">Every idea has the power to make our workplace better. Keep them coming!</p>
         </div>
