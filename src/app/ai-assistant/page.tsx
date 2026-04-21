@@ -61,7 +61,7 @@ export default function AIAssistantPage() {
       icon: <TrendingUp className="w-8 h-8" />,
       title: 'Smart Schedule Optimization',
       description: 'Reduce costs, improve efficiency',
-      color: 'from-green-500 to-emerald-600',
+      color: 'border-[rgba(201,168,76,0.3)]',
       details: 'AI analyzes your scheduling patterns and suggests optimizations to reduce labor costs while maintaining service quality.',
       capabilities: [
         'Identifies overtime patterns before they happen',

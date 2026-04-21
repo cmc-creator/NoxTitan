@@ -35,12 +35,12 @@ export default function HRDashboard() {
             <div className="flex gap-3">
               <button 
                 onClick={() => setShowThemeStudio(true)}
-                className="px-6 py-3 bg-[#110F0B] from-REMOVED-600 to-amber-900 hover:from-pink-500 hover:to-amber-900 text-white rounded-lg font-semibold transition-all shadow-lg shadow-pink-500/30 flex items-center gap-2"
+                className="px-6 py-3 font-semibold transition-colors flex items-center gap-2"
               >
                 <Palette className="w-5 h-5" />
                 Theme Studio
               </button>
-              <button className="px-6 py-3 bg-gradient-to-r from-violet-600 to-amber-900 hover:from-violet-500 hover:to-amber-900 text-white rounded-lg font-semibold transition-all shadow-lg shadow-violet-500/30 flex items-center gap-2">
+              <button className="px-6 py-3 font-semibold transition-colors flex items-center gap-2">
                 <Settings className="w-5 h-5" />
                 Settings
               </button>
