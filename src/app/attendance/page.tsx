@@ -254,7 +254,7 @@ export default function AttendancePage() {
                       <td className="px-6 py-4">
                         {entry.status === 'CLOCKED_IN' && (
                           <span className="inline-flex items-center gap-1 px-3 py-1 bg-green-500/20 text-green-400 text-xs font-semibold rounded-full">
-                            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                             Active
                           </span>
                         )}

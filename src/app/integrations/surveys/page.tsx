@@ -64,7 +64,7 @@ export default function SurveyIntegrationsPage() {
         'Enable webhook notifications for real-time updates',
       ],
       webhookSetup: true,
-      color: 'from-green-500 to-teal-500',
+      color: 'from-[#110F0B] 500 to-teal-500',
     },
     MICROSOFT_FORMS: {
       name: 'Microsoft Forms',
@@ -137,7 +137,7 @@ export default function SurveyIntegrationsPage() {
           <div className="bg-stone-950 rounded shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
               <span className="text-stone-500">Connected</span>
-              <CheckCircle className="w-5 h-5 text-green-600" />
+              <CheckCircle className="w-5 h-5 text-[#C9A84C] 600" />
             </div>
             <div className="text-4xl font-bold text-stone-200">
               {integrations.filter(i => i.isConnected).length}
@@ -167,7 +167,7 @@ export default function SurveyIntegrationsPage() {
           <div className="bg-stone-950 rounded shadow-lg p-6">
             <div className="flex items-center justify-between mb-2">
               <span className="text-stone-500">Last Sync</span>
-              <Clock className="w-5 h-5 text-pink-600" />
+              <Clock className="w-5 h-5 text-[#C9A84C] 600" />
             </div>
             <div className="text-2xl font-bold text-stone-200">2 min</div>
             <div className="text-sm text-stone-500 mt-1">ago</div>
@@ -194,7 +194,7 @@ export default function SurveyIntegrationsPage() {
                     </div>
                   </div>
                   {integration.isConnected ? (
-                    <div className="flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-full">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-[#110F0B] 100 text-[#C9A84C] 700 rounded-full">
                       <CheckCircle className="w-4 h-4" />
                       <span className="text-sm font-medium">Connected</span>
                     </div>
@@ -245,7 +245,7 @@ export default function SurveyIntegrationsPage() {
                       </button>
                       <button
                         onClick={() => handleDisconnect(integration.id)}
-                        className="px-4 py-3 bg-red-100 text-red-700 rounded-lg hover:bg-red-200"
+                        className="px-4 py-3 bg-[#110F0B] 100 text-[#9E8F75] 700 rounded-lg hover:bg-[#110F0B] 200"
                       >
                         <X className="w-5 h-5" />
                       </button>

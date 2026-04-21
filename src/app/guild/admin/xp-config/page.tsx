@@ -115,7 +115,7 @@ export default function XPConfigPage() {
 
         {/* Save Success Message */}
         {saved && (
-          <div className="bg-green-600 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2">
+          <div className="bg-[#110F0B] 600 text-white px-6 py-3 rounded-lg mb-6 flex items-center gap-2">
             <Zap className="w-5 h-5" />
             Settings saved successfully!
           </div>
@@ -172,7 +172,7 @@ export default function XPConfigPage() {
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-green-400 mb-2">Uncommon</label>
+              <label className="block text-sm font-semibold text-[#C9A84C] 400 mb-2">Uncommon</label>
               <input
                 type="number"
                 value={settings.achievementUncommon}
@@ -316,7 +316,7 @@ export default function XPConfigPage() {
         <div className="flex gap-4">
           <button
             onClick={handleSave}
-            className="flex items-center gap-2 px-6 py-3 bg-[#110F0B] from-REMOVED-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all"
+            className="flex items-center gap-2 px-6 py-3 bg-[#110F0B] from-REMOVED-600 to-emerald-600 hover:from-[#110F0B] 700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all"
           >
             <Save className="w-5 h-5" />
             Save Changes

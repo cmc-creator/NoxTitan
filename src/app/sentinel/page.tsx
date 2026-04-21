@@ -134,7 +134,7 @@ export default function SentinelPage() {
               <span className="text-4xl font-bold text-[#C9A84C] 400">{stats.currentlyInBuilding}</span>
             </div>
             <p className="text-[#C9A84C] 300 font-semibold flex items-center gap-2">
-              <span className="w-2 h-2 bg-[#110F0B] 400 rounded-full animate-pulse"></span>
+              <span className="w-2 h-2 bg-[#110F0B] 400 rounded-full"></span>
               In Building Now
             </p>
           </div>

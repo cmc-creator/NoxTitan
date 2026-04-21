@@ -427,7 +427,7 @@ export default function ProfilePage() {
                         Status
                       </label>
                       <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#C9A84C]/20 text-[#C9A84C] 400 rounded-full text-sm font-semibold">
-                        <div className="w-2 h-2 bg-[#110F0B] 400 rounded-full animate-pulse"></div>
+                        <div className="w-2 h-2 bg-[#110F0B] 400 rounded-full"></div>
                         Active
                       </span>
                     </div>

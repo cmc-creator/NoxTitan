@@ -307,7 +307,7 @@ export default function CompensationManagement() {
                       className="absolute top-0 h-full flex items-center"
                       style={{left: `${((role.internal - role.market25) / (role.market75 - role.market25)) * 100}%`}}
                     >
-                      <div className="w-3 h-3 bg-amber-600 rounded-full border-4 border-white animate-pulse"></div>
+                      <div className="w-3 h-3 bg-amber-600 rounded-full border-4 border-white"></div>
                     </div>
                   </div>
                   

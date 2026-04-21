@@ -478,7 +478,7 @@ export default function ImportPage() {
               </button>
               <button
                 onClick={() => setActiveStep('complete')}
-                className="flex-1 py-4 bg-[#110F0B] from-REMOVED-600 to-amber-800 hover:from-green-700 hover:to-amber-800 text-white rounded font-bold text-lg transition-all flex items-center justify-center gap-2"
+                className="flex-1 py-4 bg-[#110F0B] from-REMOVED-600 to-amber-800 hover:from-[#110F0B] 700 hover:to-amber-800 text-white rounded font-bold text-lg transition-all flex items-center justify-center gap-2"
               >
                 Import Data Now
                 <CheckCircle className="w-5 h-5" />

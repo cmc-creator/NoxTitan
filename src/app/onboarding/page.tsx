@@ -134,7 +134,7 @@ export default function OnboardingPage() {
               
               <button
                 onClick={() => { updateData('role', 'admin'); setStep(2); }}
-                className="p-6 bg-[#110F0B] from-REMOVED-600 to-pink-800 hover:from-pink-700 hover:to-pink-900 rounded text-white transition-all"
+                className="p-6 bg-[#110F0B] from-REMOVED-600 to-pink-800 hover:from-[#110F0B] 700 hover:to-pink-900 rounded text-white transition-all"
               >
                 <Target className="w-12 h-12 mx-auto mb-3" />
                 <div className="font-bold text-lg">Admin</div>
@@ -434,7 +434,7 @@ export default function OnboardingPage() {
                   }
                 }}
                 disabled={!data.department || !data.position || !data.startDate}
-                className="px-6 py-3 bg-[#110F0B] from-REMOVED-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                className="px-6 py-3 bg-[#110F0B] from-REMOVED-600 to-emerald-600 hover:from-[#110F0B] 700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 {data.role === 'manager' ? 'Next' : 'Complete'} 
                 {data.role === 'manager' ? <ChevronRight className="w-5 h-5" /> : <CheckCircle2 className="w-5 h-5" />}
@@ -493,7 +493,7 @@ export default function OnboardingPage() {
               </button>
               <button
                 onClick={handleComplete}
-                className="px-6 py-3 bg-[#110F0B] from-REMOVED-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all flex items-center gap-2"
+                className="px-6 py-3 bg-[#110F0B] from-REMOVED-600 to-emerald-600 hover:from-[#110F0B] 700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all flex items-center gap-2"
               >
                 Complete Onboarding <CheckCircle2 className="w-5 h-5" />
               </button>

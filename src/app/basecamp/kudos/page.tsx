@@ -13,9 +13,9 @@ export default function Kudos() {
     { id: 'rockstar', emoji: '🌟', name: 'Rockstar', color: 'from-yellow-600 to-orange-600' },
     { id: 'hero', emoji: '🦸', name: 'Team Hero', color: 'from-amber-700 to-cyan-600' },
     { id: 'genius', emoji: '🧠', name: 'Big Brain', color: 'from-amber-700 to-amber-600' },
-    { id: 'helper', emoji: '🤝', name: 'Super Helper', color: 'from-green-600 to-emerald-600' },
+    { id: 'helper', emoji: '🤝', name: 'Super Helper', color: 'from-[#110F0B] 600 to-emerald-600' },
     { id: 'innovator', emoji: '💡', name: 'Innovator', color: 'from-orange-600 to-red-600' },
-    { id: 'positive', emoji: '😊', name: 'Positivity King/Queen', color: 'from-pink-600 to-red-600' },
+    { id: 'positive', emoji: '😊', name: 'Positivity King/Queen', color: 'from-[#110F0B] 600 to-red-600' },
     { id: 'mentor', emoji: '🎓', name: 'Amazing Mentor', color: 'from-amber-700 to-amber-600' },
     { id: 'clutch', emoji: '⚡', name: 'Clutch Player', color: 'from-yellow-600 to-yellow-600' }
   ];
@@ -145,7 +145,7 @@ export default function Kudos() {
               <Star className="w-12 h-12 text-amber-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-green-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-[rgba(201,168,76,0.22)] 500/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-[#C9A84C] was-green-200 text-sm mb-1">This Month</div>

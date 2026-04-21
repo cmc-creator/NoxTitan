@@ -73,7 +73,7 @@ export default function Games() {
                       <div className="text-stone-400 text-sm">{player.points} points</div>
                     </div>
                   </div>
-                  {player.rank === 1 && <Crown className="w-8 h-8 text-yellow-400 animate-bounce" />}
+                  {player.rank === 1 && <Crown className="w-8 h-8 text-yellow-400" />}
                 </div>
               </div>
             ))}

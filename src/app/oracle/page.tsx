@@ -120,8 +120,8 @@ export default function OraclePage() {
         {/* Mystical Header */}
         <div className="text-center mb-12">
           <div className="inline-block relative mb-6">
-            <div className="absolute inset-0 bg-amber-500 blur-3xl opacity-50 animate-pulse"></div>
-            <Sparkles className="w-20 h-20 text-amber-200 relative animate-pulse" />
+            <div className="absolute inset-0 bg-amber-500 blur-3xl opacity-50"></div>
+            <Sparkles className="w-20 h-20 text-amber-200 relative" />
           </div>
           <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-900 via-pink-300 to-amber-900 mb-4">
             The Oracle
@@ -150,7 +150,7 @@ export default function OraclePage() {
                 className={`relative rounded p-6 border-2 bg-gradient-to-br ${getSeverityColor(prophecy.severity)} transform transition-all hover:shadow-2xl cursor-pointer`}
               >
                 {/* Mystical glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-10 animate-pulse rounded"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-10 rounded"></div>
                 
                 <div className="relative">
                   <div className="flex items-start justify-between mb-4">
@@ -257,7 +257,7 @@ export default function OraclePage() {
                 <div className="bg-black/30 rounded-lg p-3 mb-3">
                   <div className="flex items-center gap-2 mb-2">
                     <div className={`w-3 h-3 rounded-full ${
-                      risk.trend === 'INCREASING' ? 'bg-red-500 animate-pulse' :
+                      risk.trend === 'INCREASING' ? 'bg-red-500' :
                       risk.trend === 'DECREASING' ? 'bg-green-500' :
                       'bg-yellow-500'
                     }`}></div>

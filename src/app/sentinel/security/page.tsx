@@ -92,7 +92,7 @@ export default function SecurityPage() {
       case 'ERROR': return 'text-[#9E8F75] 400 bg-[#110F0B] 500/20 border-[rgba(201,168,76,0.22)] 500';
       case 'OPEN': return 'text-orange-400 bg-orange-500/20 border-orange-500';
       case 'CLOSED': return 'text-[#C9A84C] 400 bg-[#C9A84C]/20 border-[rgba(201,168,76,0.22)] 500';
-      case 'ALARM': return 'text-[#9E8F75] 400 bg-[#110F0B] 500/20 border-[rgba(201,168,76,0.22)] 500 animate-pulse';
+      case 'ALARM': return 'text-[#9E8F75] 400 bg-[#110F0B] 500/20 border-[rgba(201,168,76,0.22)] 500';
       default: return 'text-stone-400 bg-stone-500/20 border-stone-500';
     }
   }
@@ -149,7 +149,7 @@ export default function SecurityPage() {
               </div>
             </div>
             <p className="text-[#C9A84C] 300 font-semibold flex items-center gap-2">
-              <Radio className="w-3 h-3 animate-pulse" />
+              <Radio className="w-3 h-3" />
               Cameras Online
             </p>
           </div>
@@ -190,7 +190,7 @@ export default function SecurityPage() {
                   <p className="text-sm text-stone-400">All systems operational</p>
                 </div>
               </div>
-              <div className="w-4 h-4 bg-[#110F0B] 400 rounded-full animate-pulse"></div>
+              <div className="w-4 h-4 bg-[#110F0B] 400 rounded-full"></div>
             </div>
           </div>
         </div>

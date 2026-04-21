@@ -206,7 +206,7 @@ export default function FormsPage() {
                   className={`px-4 py-2 rounded-lg flex items-center gap-2 whitespace-nowrap ${
                     selectedCategory === value
                       ? 'text-[#C9A84C]'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      : 'bg-[rgba(201,168,76,0.06)] text-[#C9A84C] hover:bg-gray-200'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -263,7 +263,7 @@ export default function FormsPage() {
               <div className="flex gap-2 mt-4 pt-4 border-t">
                 <button
                   onClick={(e) => { e.stopPropagation(); router.push(`/forms/${template.id}/edit`); }}
-                  className="flex-1 px-3 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 flex items-center justify-center gap-2"
+                  className="flex-1 px-3 py-2 bg-[rgba(201,168,76,0.06)] text-[#C9A84C] rounded-lg hover:bg-gray-200 flex items-center justify-center gap-2"
                 >
                   <Edit className="w-4 h-4" />
                   Edit

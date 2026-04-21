@@ -768,7 +768,7 @@ export default function PayrollPage() {
                       period.status === 'paid' ? 'bg-green-500/20 text-green-400' :
                       period.status === 'approved' ? 'bg-amber-600/20 text-amber-400' :
                       period.status === 'processing' ? 'bg-yellow-500/20 text-yellow-400' :
-                      'bg-gray-500/20 text-stone-400'
+                      'bg-[rgba(201,168,76,0.04)]0/20 text-stone-400'
                     }`}>
                       {period.status.toUpperCase()}
                     </span>
@@ -862,7 +862,7 @@ export default function PayrollPage() {
                           <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
                             employee.healthInsurance.plan === 'premium' ? 'bg-amber-500/20 text-amber-400' :
                             employee.healthInsurance.plan === 'basic' ? 'bg-amber-600/20 text-amber-400' :
-                            'bg-gray-500/20 text-stone-400'
+                            'bg-[rgba(201,168,76,0.04)]0/20 text-stone-400'
                           }`}>
                             {employee.healthInsurance.plan === 'none' ? 'Not Enrolled' : 
                              employee.healthInsurance.plan.charAt(0).toUpperCase() + employee.healthInsurance.plan.slice(1)}

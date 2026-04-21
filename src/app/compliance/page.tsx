@@ -845,7 +845,7 @@ export default function CompliancePage() {
           <div className="p-6 rounded shadow-lg relative" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Regulatory Alerts</div>
-              <Bell className="h-5 w-5 text-orange-500 animate-pulse" />
+              <Bell className="h-5 w-5 text-orange-500" />
             </div>
             <div className="text-3xl font-bold mb-1" style={{ color: 'var(--header-text)' }}>
               {regulatoryAlerts.filter(a => a.status === 'action-required').length}

@@ -103,7 +103,7 @@ export default function HRDashboard() {
                 <div className="text-3xl font-bold text-white">23</div>
                 <div className="text-[#9E8F75] 400 text-xs mt-1">5 urgent</div>
               </div>
-              <AlertCircle className="w-12 h-12 text-yellow-400 opacity-50 animate-pulse" />
+              <AlertCircle className="w-12 h-12 text-yellow-400 opacity-50" />
             </div>
           </div>
 
@@ -235,7 +235,7 @@ export default function HRDashboard() {
               <h3 className="text-xl font-bold text-white mb-2">Time-Off & PTO</h3>
               <p className="text-teal-200 text-sm mb-4">Approve requests, track balances, PTO donations & accrual management</p>
               <div className="flex items-center gap-2 text-teal-300 text-sm">
-                <span className="bg-[#110F0B] 500 px-2 py-1 rounded-full text-white font-bold animate-pulse">23 Pending</span>
+                <span className="bg-[#110F0B] 500 px-2 py-1 rounded-full text-white font-bold">23 Pending</span>
                 <span>→</span>
               </div>
             </div>
@@ -297,7 +297,7 @@ export default function HRDashboard() {
         {/* Pending Actions Alert */}
         <div className="mt-8 bg-gradient-to-r from-yellow-900/40 to-orange-900/40 border-2 border-yellow-500/50 rounded p-6">
           <div className="flex items-start gap-4">
-            <AlertCircle className="w-8 h-8 text-yellow-400 animate-pulse flex-shrink-0" />
+            <AlertCircle className="w-8 h-8 text-yellow-400 flex-shrink-0" />
             <div className="flex-1">
               <h3 className="text-xl font-bold text-yellow-200 mb-2">Pending HR Actions</h3>
               <div className="space-y-2">

@@ -213,7 +213,7 @@ export default function ManagerBasecamp() {
 
           <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-4 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
-              <Target className="w-8 h-8 text-cyan-400" />
+              <Target className="w-8 h-8 text-[#C9A84C] 400" />
               <span className="text-2xl font-bold text-white">$127K</span>
             </div>
             <div className="text-[#C9A84C] 200 font-semibold">Labor Cost (Week)</div>
@@ -262,7 +262,7 @@ export default function ManagerBasecamp() {
                   <Calendar className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <div className="text-white font-semibold text-sm">Schedule</div>
                 </Link>
-                <Link href="/qapi" className="bg-[#110F0B] from-REMOVED-600 to-orange-600 hover:from-red-500 hover:to-orange-500 rounded-lg p-4 text-center transition-all shadow-lg group">
+                <Link href="/qapi" className="bg-[#110F0B] from-REMOVED-600 to-orange-600 hover:from-[#110F0B] 500 hover:to-orange-500 rounded-lg p-4 text-center transition-all shadow-lg group">
                   <Shield className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <div className="text-white font-semibold text-sm">QAPI</div>
                 </Link>
@@ -272,7 +272,7 @@ export default function ManagerBasecamp() {
             {/* Your Reports (You have a boss too!) */}
             <div className="bg-gradient-to-br from-cyan-900/30 to-amber-800/30 rounded p-6 border-2 border-cyan-500/30">
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <TrendingUp className="w-6 h-6 text-cyan-400" />
+                <TrendingUp className="w-6 h-6 text-[#C9A84C] 400" />
                 Report to Leadership
               </h2>
               <div className="space-y-3">
@@ -284,10 +284,10 @@ export default function ManagerBasecamp() {
                       </div>
                       <div>
                         <p className="font-semibold text-white">Jennifer Davis</p>
-                        <p className="text-sm text-cyan-300">Chief Nursing Officer</p>
+                        <p className="text-sm text-[#C9A84C] 300">Chief Nursing Officer</p>
                       </div>
                     </div>
-                    <Link href="/messages" className="px-3 py-1 bg-cyan-500/20 border border-cyan-400/30 rounded-lg text-sm text-cyan-300 hover:bg-cyan-500/30 transition-all">
+                    <Link href="/messages" className="px-3 py-1 bg-[#110F0B] 500/20 border border-cyan-400/30 rounded-lg text-sm text-[#C9A84C] 300 hover:bg-[#110F0B] 500/30 transition-all">
                       Message
                     </Link>
                   </div>

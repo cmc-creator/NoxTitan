@@ -287,7 +287,7 @@ export default function Basecamp() {
                           'text-stone-400'
                         }`}>
                           <div className={`w-2 h-2 rounded-full ${
-                            coworker.status === 'clocked-in' ? 'bg-[#110F0B] was-green-400 animate-pulse' :
+                            coworker.status === 'clocked-in' ? 'bg-[#110F0B] was-green-400' :
                             coworker.status === 'on-break' ? 'bg-yellow-400' :
                             'bg-stone-400'
                           }`}></div>
@@ -330,7 +330,7 @@ export default function Basecamp() {
                         coworker.status === 'clocked-in' ? 'text-[#C9A84C] was-green-300' : 'text-stone-400'
                       }`}>
                         <div className={`w-1.5 h-1.5 rounded-full ${
-                          coworker.status === 'clocked-in' ? 'bg-[#110F0B] was-green-400 animate-pulse' : 'bg-stone-400'
+                          coworker.status === 'clocked-in' ? 'bg-[#110F0B] was-green-400' : 'bg-stone-400'
                         }`}></div>
                         {coworker.shift}
                       </div>
@@ -356,7 +356,7 @@ export default function Basecamp() {
               {clockedIn ? (
                 <CheckCircle className="w-8 h-8 text-[#C9A84C] was-green-400" />
               ) : (
-                <AlertCircle className="w-8 h-8 text-red-400 animate-pulse" />
+                <AlertCircle className="w-8 h-8 text-red-400" />
               )}
               <button 
                 onClick={() => {
@@ -423,9 +423,9 @@ export default function Basecamp() {
             {/* Schedule Change Notifications */}
             <div className="bg-gradient-to-br from-orange-900/30 to-red-900/30 rounded p-6 border-2 border-orange-500/50 shadow-xl">
               <div className="flex items-center gap-2 mb-4">
-                <Bell className="w-6 h-6 text-orange-400 animate-pulse" />
+                <Bell className="w-6 h-6 text-orange-400" />
                 <h2 className="text-2xl font-bold text-white">Schedule Changes</h2>
-                <span className="px-3 py-1 bg-red-500 text-white text-xs font-bold rounded-full animate-pulse">NEW</span>
+                <span className="px-3 py-1 bg-red-500 text-white text-xs font-bold rounded-full">NEW</span>
               </div>
               <div className="space-y-3">
                 <div className="bg-red-500/10 backdrop-blur-sm rounded-lg p-4 border border-red-400/30">
@@ -663,7 +663,7 @@ export default function Basecamp() {
                   <div className="text-white font-semibold text-sm">Request Time Off</div>
                 </Link>
                 <Link href="/basecamp/games" className="bg-gradient-to-br from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-500 rounded-lg p-4 text-center transition-all shadow-lg group relative">
-                  <div className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">FUN!</div>
+                  <div className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">FUN!</div>
                   <Gamepad2 className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <div className="text-white font-semibold text-sm">Play Games</div>
                 </Link>

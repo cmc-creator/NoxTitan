@@ -188,19 +188,19 @@ export default function SupportPage() {
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
-      case 'urgent': return 'bg-red-100 text-red-700 border-red-300';
+      case 'urgent': return 'bg-[#110F0B] 100 text-[#9E8F75] 700 border-[rgba(201,168,76,0.22)] 300';
       case 'high': return 'bg-orange-100 text-orange-700 border-orange-300';
       case 'medium': return 'bg-yellow-100 text-yellow-700 border-yellow-300';
-      default: return 'bg-blue-100 text-amber-300 border-blue-300';
+      default: return 'bg-[#110F0B] 100 text-amber-300 border-[rgba(201,168,76,0.22)] 300';
     }
   };
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'resolved': return 'bg-green-100 text-green-700';
-      case 'in-progress': return 'bg-blue-100 text-amber-300';
+      case 'resolved': return 'bg-[#110F0B] 100 text-[#C9A84C] 700';
+      case 'in-progress': return 'bg-[#110F0B] 100 text-amber-300';
       case 'closed': return 'bg-[rgba(201,168,76,0.06)] text-[#C9A84C]';
-      default: return 'bg-purple-100 text-amber-700';
+      default: return 'bg-[#110F0B] 100 text-amber-700';
     }
   };
 
@@ -234,16 +234,16 @@ export default function SupportPage() {
               <Ticket className="w-8 h-8 opacity-80" />
               <span className="text-3xl font-bold">12</span>
             </div>
-            <p className="text-blue-100">Open Tickets</p>
-            <p className="text-sm text-blue-200 mt-1">3 urgent, 5 high priority</p>
+            <p className="text-[#C9A84C] 100">Open Tickets</p>
+            <p className="text-sm text-[#C9A84C] 200 mt-1">3 urgent, 5 high priority</p>
           </div>
           <div className="bg-[#110F0B] from-REMOVED-500 to-emerald-600 rounded shadow-lg p-6 text-white">
             <div className="flex items-center justify-between mb-2">
               <CheckCircle className="w-8 h-8 opacity-80" />
               <span className="text-3xl font-bold">89%</span>
             </div>
-            <p className="text-green-100">AI Resolution Rate</p>
-            <p className="text-sm text-green-200 mt-1">↑ 12% from last month</p>
+            <p className="text-[#C9A84C] 100">AI Resolution Rate</p>
+            <p className="text-sm text-[#C9A84C] 200 mt-1">↑ 12% from last month</p>
           </div>
           <div className="bg-gradient-to-br from-amber-700 to-amber-500 rounded shadow-lg p-6 text-white">
             <div className="flex items-center justify-between mb-2">
@@ -395,7 +395,7 @@ export default function SupportPage() {
                         View Details
                       </button>
                       {(ticket.tier === 'gold' || ticket.tier === 'platinum') && (
-                        <button className="px-4 py-2 bg-[#110F0B] from-REMOVED-600 to-emerald-600 text-white rounded-lg hover:from-green-700 hover:to-emerald-700 transition-all font-semibold flex items-center justify-center gap-2">
+                        <button className="px-4 py-2 bg-[#110F0B] from-REMOVED-600 to-emerald-600 text-white rounded-lg hover:from-[#110F0B] 700 hover:to-emerald-700 transition-all font-semibold flex items-center justify-center gap-2">
                           <Monitor className="w-4 h-4" />
                           Remote Connect
                         </button>
@@ -405,42 +405,42 @@ export default function SupportPage() {
 
                   {/* Remote Support Options */}
                   {(ticket.tier === 'gold' || ticket.tier === 'platinum') && ticket.status === 'in-progress' && (
-                    <div className="bg-[#110F0B] from-REMOVED-50 to-emerald-50 border-2 border-green-200 rounded-lg p-4 mt-4">
+                    <div className="bg-[#110F0B] from-REMOVED-50 to-emerald-50 border-2 border-[rgba(201,168,76,0.22)] 200 rounded-lg p-4 mt-4">
                       <div className="flex items-center gap-2 mb-3">
-                        <Monitor className="w-5 h-5 text-green-600" />
-                        <h4 className="font-bold text-green-900">Remote Support Available</h4>
-                        <span className="px-2 py-1 bg-green-600 text-white text-xs rounded-full">Premium Feature</span>
+                        <Monitor className="w-5 h-5 text-[#C9A84C] 600" />
+                        <h4 className="font-bold text-[#C9A84C] 900">Remote Support Available</h4>
+                        <span className="px-2 py-1 bg-[#110F0B] 600 text-white text-xs rounded-full">Premium Feature</span>
                       </div>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        <button className="p-3 bg-stone-950 border-2 border-green-300 rounded-lg hover:border-green-500 hover:shadow-md transition-all">
-                          <Video className="w-5 h-5 text-green-600 mx-auto mb-2" />
+                        <button className="p-3 bg-stone-950 border-2 border-[rgba(201,168,76,0.22)] 300 rounded-lg hover:border-[rgba(201,168,76,0.22)] 500 hover:shadow-md transition-all">
+                          <Video className="w-5 h-5 text-[#C9A84C] 600 mx-auto mb-2" />
                           <p className="text-xs font-semibold text-stone-100">Video Call</p>
                           <p className="text-xs text-stone-500">Face-to-face</p>
                         </button>
-                        <button className="p-3 bg-stone-950 border-2 border-green-300 rounded-lg hover:border-green-500 hover:shadow-md transition-all">
-                          <ScreenShare className="w-5 h-5 text-green-600 mx-auto mb-2" />
+                        <button className="p-3 bg-stone-950 border-2 border-[rgba(201,168,76,0.22)] 300 rounded-lg hover:border-[rgba(201,168,76,0.22)] 500 hover:shadow-md transition-all">
+                          <ScreenShare className="w-5 h-5 text-[#C9A84C] 600 mx-auto mb-2" />
                           <p className="text-xs font-semibold text-stone-100">Screen Share</p>
                           <p className="text-xs text-stone-500">View only</p>
                         </button>
-                        <button className="p-3 bg-stone-950 border-2 border-green-300 rounded-lg hover:border-green-500 hover:shadow-md transition-all">
-                          <Mouse className="w-5 h-5 text-green-600 mx-auto mb-2" />
+                        <button className="p-3 bg-stone-950 border-2 border-[rgba(201,168,76,0.22)] 300 rounded-lg hover:border-[rgba(201,168,76,0.22)] 500 hover:shadow-md transition-all">
+                          <Mouse className="w-5 h-5 text-[#C9A84C] 600 mx-auto mb-2" />
                           <p className="text-xs font-semibold text-stone-100">Remote Control</p>
                           <p className="text-xs text-stone-500">Full access</p>
                         </button>
-                        <button className="p-3 bg-stone-950 border-2 border-green-300 rounded-lg hover:border-green-500 hover:shadow-md transition-all">
-                          <Eye className="w-5 h-5 text-green-600 mx-auto mb-2" />
+                        <button className="p-3 bg-stone-950 border-2 border-[rgba(201,168,76,0.22)] 300 rounded-lg hover:border-[rgba(201,168,76,0.22)] 500 hover:shadow-md transition-all">
+                          <Eye className="w-5 h-5 text-[#C9A84C] 600 mx-auto mb-2" />
                           <p className="text-xs font-semibold text-stone-100">Co-Browse</p>
                           <p className="text-xs text-stone-500">Guide them</p>
                         </button>
                       </div>
                       <div className="mt-3 flex items-center gap-3 text-sm text-stone-500">
                         <span className="flex items-center gap-1">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
+                          <CheckCircle className="w-4 h-4 text-[#C9A84C] 600" />
                           End-to-end encrypted
                         </span>
                         <span>•</span>
                         <span className="flex items-center gap-1">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
+                          <CheckCircle className="w-4 h-4 text-[#C9A84C] 600" />
                           Session recorded for quality
                         </span>
                       </div>
@@ -449,10 +449,10 @@ export default function SupportPage() {
 
                   {/* AI Suggestion */}
                   {ticket.aiSuggestion && (
-                    <div className="bg-purple-50 border-2 border-purple-200 rounded-lg p-4 flex items-start gap-3">
+                    <div className="bg-[#110F0B] 50 border-2 border-[rgba(201,168,76,0.22)] 200 rounded-lg p-4 flex items-start gap-3">
                       <Bot className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                       <div className="flex-1">
-                        <p className="text-sm font-semibold text-purple-900 mb-1">AI Suggestion:</p>
+                        <p className="text-sm font-semibold text-[#C9A84C] 900 mb-1">AI Suggestion:</p>
                         <p className="text-sm text-amber-700">{ticket.aiSuggestion}</p>
                       </div>
                       <button className="px-3 py-1 bg-amber-600 text-white rounded-lg text-sm hover:bg-amber-700 transition-all">
@@ -480,9 +480,9 @@ export default function SupportPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {articles.map((article) => (
-                  <div key={article.id} className="p-6 border-2 border-stone-800 rounded hover:border-blue-400 hover:shadow-lg transition-all">
+                  <div key={article.id} className="p-6 border-2 border-stone-800 rounded hover:border-[rgba(201,168,76,0.22)] 400 hover:shadow-lg transition-all">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="p-3 bg-blue-100 text-amber-400 rounded">
+                      <div className="p-3 bg-[#110F0B] 100 text-amber-400 rounded">
                         {article.icon}
                       </div>
                       <span className="px-3 py-1 bg-[rgba(201,168,76,0.06)] text-[#C9A84C] rounded-full text-xs font-semibold">
@@ -525,7 +525,7 @@ export default function SupportPage() {
               <h2 className="text-2xl font-bold text-stone-100 mb-6">Support Analytics</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-6 bg-gradient-to-br from-amber-700 to-cyan-50 rounded border border-blue-200">
+                <div className="p-6 bg-gradient-to-br from-amber-700 to-cyan-50 rounded border border-[rgba(201,168,76,0.22)] 200">
                   <h3 className="text-sm font-semibold text-amber-400 mb-2">Most Common Issues</h3>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
@@ -543,8 +543,8 @@ export default function SupportPage() {
                   </div>
                 </div>
 
-                <div className="p-6 bg-[#110F0B] from-REMOVED-50 to-emerald-50 rounded border border-green-200">
-                  <h3 className="text-sm font-semibold text-green-600 mb-2">Resolution Times</h3>
+                <div className="p-6 bg-[#110F0B] from-REMOVED-50 to-emerald-50 rounded border border-[rgba(201,168,76,0.22)] 200">
+                  <h3 className="text-sm font-semibold text-[#C9A84C] 600 mb-2">Resolution Times</h3>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="text-[#C9A84C]">AI Auto-Resolved</span>
@@ -644,10 +644,10 @@ export default function SupportPage() {
                 </div>
 
                 {/* Remote Support Tools */}
-                <div className="p-6 border-2 border-green-200 rounded bg-[#110F0B] from-REMOVED-50 to-emerald-50">
+                <div className="p-6 border-2 border-[rgba(201,168,76,0.22)] 200 rounded bg-[#110F0B] from-REMOVED-50 to-emerald-50">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <Monitor className="w-6 h-6 text-green-600" />
+                      <Monitor className="w-6 h-6 text-[#C9A84C] 600" />
                       <div>
                         <h3 className="font-bold text-stone-100">Remote Support Tools</h3>
                         <p className="text-sm text-stone-500">Connect remotely to customer screens (Gold & Platinum only)</p>
@@ -655,39 +655,39 @@ export default function SupportPage() {
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" defaultChecked />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:border-stone-700 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
+                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-stone-950 after:border-stone-700 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#110F0B] 600"></div>
                     </label>
                   </div>
                   
                   <div className="space-y-4">
-                    <div className="bg-stone-950 rounded-lg p-4 border border-green-200">
+                    <div className="bg-stone-950 rounded-lg p-4 border border-[rgba(201,168,76,0.22)] 200">
                       <h4 className="font-semibold text-stone-100 mb-3">Available Connection Methods:</h4>
                       <div className="grid grid-cols-2 gap-3">
                         <div className="flex items-center gap-2 text-sm">
-                          <Video className="w-4 h-4 text-green-600" />
+                          <Video className="w-4 h-4 text-[#C9A84C] 600" />
                           <span>Video Call (WebRTC)</span>
                         </div>
                         <div className="flex items-center gap-2 text-sm">
-                          <ScreenShare className="w-4 h-4 text-green-600" />
+                          <ScreenShare className="w-4 h-4 text-[#C9A84C] 600" />
                           <span>Screen Share (View Only)</span>
                         </div>
                         <div className="flex items-center gap-2 text-sm">
-                          <Mouse className="w-4 h-4 text-green-600" />
+                          <Mouse className="w-4 h-4 text-[#C9A84C] 600" />
                           <span>Remote Control (Full Access)</span>
                         </div>
                         <div className="flex items-center gap-2 text-sm">
-                          <Eye className="w-4 h-4 text-green-600" />
+                          <Eye className="w-4 h-4 text-[#C9A84C] 600" />
                           <span>Co-Browsing (Guided)</span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="bg-stone-950 rounded-lg p-4 border border-green-200">
+                    <div className="bg-stone-950 rounded-lg p-4 border border-[rgba(201,168,76,0.22)] 200">
                       <h4 className="font-semibold text-stone-100 mb-2">Integrated Tools:</h4>
                       <div className="space-y-2 text-sm">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 bg-blue-100 rounded flex items-center justify-center">
+                            <div className="w-8 h-8 bg-[#110F0B] 100 rounded flex items-center justify-center">
                               <Monitor className="w-4 h-4 text-amber-400" />
                             </div>
                             <div>
@@ -695,11 +695,11 @@ export default function SupportPage() {
                               <p className="text-xs text-stone-500">WebRTC-based, no install needed</p>
                             </div>
                           </div>
-                          <span className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-semibold">Active</span>
+                          <span className="px-2 py-1 bg-[#110F0B] 100 text-[#C9A84C] 700 rounded text-xs font-semibold">Active</span>
                         </div>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 bg-purple-100 rounded flex items-center justify-center">
+                            <div className="w-8 h-8 bg-[#110F0B] 100 rounded flex items-center justify-center">
                               <ExternalLink className="w-4 h-4 text-amber-600" />
                             </div>
                             <div>
@@ -728,11 +728,11 @@ export default function SupportPage() {
                       </div>
                     </div>
 
-                    <div className="bg-amber-900/20 border border-blue-200 rounded-lg p-3 flex items-start gap-2">
+                    <div className="bg-amber-900/20 border border-[rgba(201,168,76,0.22)] 200 rounded-lg p-3 flex items-start gap-2">
                       <AlertCircle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
-                      <div className="text-sm text-blue-900">
+                      <div className="text-sm text-[#C9A84C] 900">
                         <p className="font-semibold mb-1">Security & Privacy:</p>
-                        <ul className="space-y-1 text-blue-800">
+                        <ul className="space-y-1 text-[#C9A84C] 800">
                           <li>• All sessions are end-to-end encrypted</li>
                           <li>• Customer must approve each connection request</li>
                           <li>• Sessions auto-recorded for quality & training</li>
@@ -742,11 +742,11 @@ export default function SupportPage() {
                     </div>
 
                     <div className="flex gap-3">
-                      <button className="flex-1 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-all flex items-center justify-center gap-2">
+                      <button className="flex-1 py-3 bg-[#110F0B] 600 text-white rounded-lg font-semibold hover:bg-[#110F0B] 700 transition-all flex items-center justify-center gap-2">
                         <Monitor className="w-5 h-5" />
                         Test Remote Connection
                       </button>
-                      <button className="flex-1 py-3 bg-stone-950 border-2 border-green-600 text-green-700 rounded-lg font-semibold hover:bg-green-50 transition-all">
+                      <button className="flex-1 py-3 bg-stone-950 border-2 border-[rgba(201,168,76,0.22)] 600 text-[#C9A84C] 700 rounded-lg font-semibold hover:bg-[#110F0B] 50 transition-all">
                         View Documentation
                       </button>
                     </div>

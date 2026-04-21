@@ -13,7 +13,7 @@ export default function ManagerAcademyPage() {
       title: 'Servant Leadership Fundamentals',
       icon: <Heart className="w-8 h-8" />,
       duration: '45 min',
-      color: 'from-pink-600 to-rose-600',
+      color: 'from-[#110F0B] 600 to-rose-600',
       lessons: [
         'What is Servant Leadership?',
         'Put People First - Always',
@@ -58,7 +58,7 @@ export default function ManagerAcademyPage() {
       title: 'Legal & Compliance',
       icon: <Shield className="w-8 h-8" />,
       duration: '60 min',
-      color: 'from-red-600 to-orange-600',
+      color: 'from-[#110F0B] 600 to-orange-600',
       lessons: [
         'Fair Labor Standards Act (FLSA)',
         'Harassment Prevention',
@@ -73,7 +73,7 @@ export default function ManagerAcademyPage() {
       title: 'Performance Management',
       icon: <TrendingUp className="w-8 h-8" />,
       duration: '55 min',
-      color: 'from-green-600 to-emerald-600',
+      color: 'from-[#110F0B] 600 to-emerald-600',
       lessons: [
         'Setting Expectations & Standards',
         'Performance Reviews That Work',

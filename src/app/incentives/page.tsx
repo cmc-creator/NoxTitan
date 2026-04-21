@@ -254,7 +254,7 @@ export default function IncentivesPage() {
                 <div className="absolute top-4 right-4">
                   <div
                     className={`px-3 py-1 rounded-full text-xs font-bold text-white flex items-center gap-1 ${
-                      shift.urgency === 'high' ? 'bg-[#110F0B] 500 animate-pulse' :
+                      shift.urgency === 'high' ? 'bg-[#110F0B] 500' :
                       shift.urgency === 'medium' ? 'bg-yellow-500' : 'bg-[#C9A84C]'
                     }`}
                   >

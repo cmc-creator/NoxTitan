@@ -256,7 +256,7 @@ export default function AIAssistantPage() {
               Recent Knowledge Updates
             </h2>
             <span className="px-3 py-1 bg-[rgba(201,168,76,0.1)] border border-[rgba(201,168,76,0.45)] text-[#C9A84C] rounded text-sm font-semibold flex items-center gap-1">
-              <div className="w-2 h-2 bg-[#C9A84C] rounded animate-pulse"></div>
+              <div className="w-2 h-2 bg-[#C9A84C] rounded"></div>
               Live
             </span>
           </div>

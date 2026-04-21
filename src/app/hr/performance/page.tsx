@@ -76,7 +76,7 @@ export default function PerformanceReviews() {
           <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-4 border-2 border-[rgba(201,168,76,0.22)] 500/30">
             <div className="text-stone-300 text-sm mb-1">Overdue</div>
             <div className="text-3xl font-bold text-white">12</div>
-            <div className="text-[#9E8F75] 400 text-xs mt-1 animate-pulse">Action needed</div>
+            <div className="text-[#9E8F75] 400 text-xs mt-1">Action needed</div>
           </div>
           <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-4 border-2 border-amber-500/40/30">
             <div className="text-stone-300 text-sm mb-1">Avg Rating</div>
@@ -127,7 +127,7 @@ export default function PerformanceReviews() {
                         <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                           review.status === 'completed' ? 'bg-emerald-600 text-white' :
                           review.status === 'in-progress' ? 'bg-orange-600 text-white' :
-                          review.status === 'overdue' ? 'bg-[#110F0B] 600 text-white animate-pulse' :
+                          review.status === 'overdue' ? 'bg-[#110F0B] 600 text-white' :
                           'bg-stone-600 text-white'
                         }`}>
                           {review.status.toUpperCase().replace('-', ' ')}

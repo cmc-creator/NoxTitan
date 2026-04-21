@@ -169,7 +169,7 @@ export default function MerchStorePage() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-block relative mb-6">
-            <div className="absolute inset-0 bg-[#110F0B] 500 blur-3xl opacity-50 animate-pulse"></div>
+            <div className="absolute inset-0 bg-[#110F0B] 500 blur-3xl opacity-50"></div>
             <ShoppingBag className="w-20 h-20 text-[#C9A84C] 300 relative" />
           </div>
           <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-[#110F0B] from-REMOVED-300 via-stone-900 to-amber-800 mb-4">
@@ -309,7 +309,7 @@ export default function MerchStorePage() {
             <button
               onClick={checkout}
               disabled={!selectedEmployee}
-              className="w-full px-6 py-4 bg-[#110F0B] from-REMOVED-600 to-amber-900 hover:from-pink-700 hover:to-amber-900 text-white font-bold rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+              className="w-full px-6 py-4 bg-[#110F0B] from-REMOVED-600 to-amber-900 hover:from-[#110F0B] 700 hover:to-amber-900 text-white font-bold rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
             >
               <CreditCard className="w-6 h-6" />
               Complete Order
@@ -354,7 +354,7 @@ export default function MerchStorePage() {
                 <button
                   onClick={() => addToCart(item)}
                   disabled={item.stockQuantity !== null && item.stockQuantity !== undefined && item.stockQuantity <= 0}
-                  className="w-full px-4 py-2 bg-[#110F0B] from-REMOVED-600 to-amber-900 hover:from-pink-700 hover:to-amber-900 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full px-4 py-2 bg-[#110F0B] from-REMOVED-600 to-amber-900 hover:from-[#110F0B] 700 hover:to-amber-900 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   <ShoppingBag className="w-4 h-4" />
                   Add to Cart

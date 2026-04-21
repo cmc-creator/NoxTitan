@@ -152,7 +152,7 @@ export default function HRPlanner() {
               <div className="relative">
                 <button className="px-4 py-2 bg-stone-900/50 border-2 border-violet-500/30 hover:border-violet-400 text-white rounded-lg font-semibold flex items-center gap-2 transition-all">
                   <Bell className="w-5 h-5" />
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#110F0B] 500 rounded-full flex items-center justify-center text-xs font-bold animate-pulse">
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#110F0B] 500 rounded-full flex items-center justify-center text-xs font-bold">
                     3
                   </span>
                 </button>
@@ -192,7 +192,7 @@ export default function HRPlanner() {
             <div className="text-orange-400 text-xs mt-1">1 overdue</div>
           </div>
           <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-4 border-2 border-[rgba(201,168,76,0.22)] 500/30">
-            <AlertTriangle className="w-8 h-8 text-[#9E8F75] 400 mb-2 animate-pulse" />
+            <AlertTriangle className="w-8 h-8 text-[#9E8F75] 400 mb-2" />
             <div className="text-stone-300 text-sm mb-1">High Priority</div>
             <div className="text-3xl font-bold text-white">4</div>
             <div className="text-[#9E8F75] 400 text-xs mt-1">Needs attention</div>
@@ -559,7 +559,7 @@ export default function HRPlanner() {
                   key={reminder.id}
                   className={`rounded-lg p-5 border-2 ${
                     reminder.overdue
-                      ? 'bg-[#110F0B] from-REMOVED-900/40 to-orange-900/40 border-[rgba(201,168,76,0.22)] 500/50 animate-pulse'
+                      ? 'bg-[#110F0B] from-REMOVED-900/40 to-orange-900/40 border-[rgba(201,168,76,0.22)] 500/50'
                       : 'bg-stone-950/50 border-stone-700 hover:border-orange-500'
                   } transition-all`}
                 >
@@ -568,7 +568,7 @@ export default function HRPlanner() {
                       <div className="flex items-center gap-3 mb-2">
                         <h3 className="text-xl font-bold text-white">{reminder.manager}</h3>
                         <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                          reminder.overdue ? 'bg-[#110F0B] 600 text-white animate-pulse' :
+                          reminder.overdue ? 'bg-[#110F0B] 600 text-white' :
                           reminder.priority === 'high' ? 'bg-orange-600 text-white' :
                           'bg-amber-600 text-white'
                         }`}>

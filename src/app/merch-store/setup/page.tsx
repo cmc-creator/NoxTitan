@@ -201,7 +201,7 @@ export default function MerchSetupPage() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-block relative mb-6">
-            <div className="absolute inset-0 bg-amber-600 blur-3xl opacity-50 animate-pulse"></div>
+            <div className="absolute inset-0 bg-amber-600 blur-3xl opacity-50"></div>
             <Store className="w-20 h-20 text-amber-400 relative" />
           </div>
           <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-700 via-stone-900 to-pink-300 mb-4">

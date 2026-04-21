@@ -236,7 +236,7 @@ export default function HRAnalytics() {
         {/* Flight Risk Prediction */}
         <div className="bg-stone-900/50 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] 500/30">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <AlertTriangle className="w-7 h-7 text-[#9E8F75] 400 animate-pulse" />
+            <AlertTriangle className="w-7 h-7 text-[#9E8F75] 400" />
             Predictive Flight Risk Analysis
             <span className="ml-auto text-sm font-normal text-[#9E8F75] 300">AI-Powered • High Priority</span>
           </h2>

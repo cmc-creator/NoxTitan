@@ -129,7 +129,7 @@ export default function GuildAdminPage() {
     if (levelName === 'Grandmaster') return <Crown className="w-5 h-5 text-yellow-400" />;
     if (levelName === 'Master') return <Star className="w-5 h-5 text-amber-400" />;
     if (levelName === 'Expert') return <Trophy className="w-5 h-5 text-amber-400" />;
-    if (levelName === 'Journeyman') return <Shield className="w-5 h-5 text-green-400" />;
+    if (levelName === 'Journeyman') return <Shield className="w-5 h-5 text-[#C9A84C] 400" />;
     if (levelName === 'Apprentice') return <Target className="w-5 h-5 text-orange-400" />;
     return <Zap className="w-5 h-5 text-stone-400" />;
   };
@@ -188,10 +188,10 @@ export default function GuildAdminPage() {
             </div>
             <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
               <div className="flex items-center gap-2 mb-2">
-                <TrendingUp className="w-5 h-5 text-green-400" />
+                <TrendingUp className="w-5 h-5 text-[#C9A84C] 400" />
                 <span className="text-sm text-stone-400">Avg Level</span>
               </div>
-              <div className="text-3xl font-bold text-green-400">{stats.averageLevel.toFixed(1)}</div>
+              <div className="text-3xl font-bold text-[#C9A84C] 400">{stats.averageLevel.toFixed(1)}</div>
             </div>
             <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
               <div className="flex items-center gap-2 mb-2">
@@ -209,10 +209,10 @@ export default function GuildAdminPage() {
             </div>
             <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
               <div className="flex items-center gap-2 mb-2">
-                <Gift className="w-5 h-5 text-pink-400" />
+                <Gift className="w-5 h-5 text-[#C9A84C] 400" />
                 <span className="text-sm text-stone-400">Rewards</span>
               </div>
-              <div className="text-3xl font-bold text-pink-400">{stats.rewardsPurchased}</div>
+              <div className="text-3xl font-bold text-[#C9A84C] 400">{stats.rewardsPurchased}</div>
             </div>
           </div>
         )}
@@ -383,7 +383,7 @@ export default function GuildAdminPage() {
                             grantXP(member.employeeId, parseInt(amount), source);
                           }
                         }}
-                        className="px-4 py-2 bg-[#110F0B] from-REMOVED-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all"
+                        className="px-4 py-2 bg-[#110F0B] from-REMOVED-600 to-emerald-600 hover:from-[#110F0B] 700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all"
                       >
                         Grant XP
                       </button>
@@ -462,7 +462,7 @@ export default function GuildAdminPage() {
                       achievement.rarity === 'LEGENDARY' ? 'bg-yellow-600' :
                       achievement.rarity === 'EPIC' ? 'bg-amber-600' :
                       achievement.rarity === 'RARE' ? 'bg-amber-600' :
-                      achievement.rarity === 'UNCOMMON' ? 'bg-green-600' :
+                      achievement.rarity === 'UNCOMMON' ? 'bg-[#110F0B] 600' :
                       'bg-stone-600'
                     } text-white`}>
                       {achievement.rarity}
@@ -481,7 +481,7 @@ export default function GuildAdminPage() {
                       <Edit className="w-4 h-4" />
                       Edit
                     </button>
-                    <button className="px-3 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all">
+                    <button className="px-3 py-2 bg-[#110F0B] 600 hover:bg-[#110F0B] 700 text-white rounded-lg transition-all">
                       <Trash2 className="w-4 h-4" />
                     </button>
                   </div>
