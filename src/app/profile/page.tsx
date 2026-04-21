@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useRef } from 'react';
 import { useAuth } from '@/lib/auth-context';
@@ -234,7 +234,7 @@ export default function ProfilePage() {
         </div>
 
         {/* Profile Card */}
-        <div className="lux-card rounded-2xl shadow-2xl border border-stone-700 overflow-hidden">
+        <div className="lux-card rounded shadow-2xl border border-stone-700 overflow-hidden">
           {/* Header Section */}
           <div className="bg-gradient-to-r from-amber-700 to-amber-500 p-8 text-center relative">
             <div className="relative inline-block">
@@ -442,7 +442,7 @@ export default function ProfilePage() {
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Health Insurance */}
-                    <div className="bg-gradient-to-br from-amber-700/20 to-cyan-600/20 rounded-xl p-6 border border-amber-500/40/30">
+                    <div className="bg-gradient-to-br from-amber-700/20 to-cyan-600/20 rounded p-6 border border-amber-500/40/30">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-3 bg-amber-600/20 rounded-lg">
                           <Heart className="w-6 h-6 text-amber-400" />
@@ -477,7 +477,7 @@ export default function ProfilePage() {
                     </div>
 
                     {/* 401(k) Retirement */}
-                    <div className="bg-gradient-to-br from-stone-900/20 to-pink-600/20 rounded-xl p-6 border border-amber-500/40/30">
+                    <div className="bg-gradient-to-br from-stone-900/20 to-pink-600/20 rounded p-6 border border-amber-500/40/30">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-3 bg-amber-500/20 rounded-lg">
                           <TrendingUp className="w-6 h-6 text-amber-400" />
@@ -512,7 +512,7 @@ export default function ProfilePage() {
                     </div>
 
                     {/* FSA/HSA */}
-                    <div className="bg-gradient-to-br from-green-600/20 to-emerald-600/20 rounded-xl p-6 border border-green-500/30">
+                    <div className="bg-[#110F0B] from-REMOVED-600/20 to-emerald-600/20 rounded p-6 border border-green-500/30">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-3 bg-green-500/20 rounded-lg">
                           <DollarSign className="w-6 h-6 text-green-400" />
@@ -546,7 +546,7 @@ export default function ProfilePage() {
                     </div>
 
                     {/* Life Insurance */}
-                    <div className="bg-gradient-to-br from-amber-600/20 to-orange-600/20 rounded-xl p-6 border border-amber-500/30">
+                    <div className="bg-gradient-to-br from-amber-600/20 to-orange-600/20 rounded p-6 border border-amber-500/30">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-3 bg-amber-500/20 rounded-lg">
                           <Umbrella className="w-6 h-6 text-amber-400" />
@@ -581,7 +581,7 @@ export default function ProfilePage() {
                     </div>
 
                     {/* PTO/Vacation */}
-                    <div className="bg-gradient-to-br from-cyan-600/20 to-amber-800/20 rounded-xl p-6 border border-cyan-500/30 md:col-span-2">
+                    <div className="bg-gradient-to-br from-cyan-600/20 to-amber-800/20 rounded p-6 border border-cyan-500/30 md:col-span-2">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-3 bg-cyan-500/20 rounded-lg">
                           <Gift className="w-6 h-6 text-cyan-400" />
@@ -628,7 +628,7 @@ export default function ProfilePage() {
                   </div>
 
                   {/* Benefits Summary */}
-                  <div className="mt-6 p-6 bg-gradient-to-r from-amber-700/10 to-amber-900/10 rounded-xl border border-amber-500/40/20">
+                  <div className="mt-6 p-6 bg-gradient-to-r from-amber-700/10 to-amber-900/10 rounded border border-amber-500/40/20">
                     <h4 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
                       <Gift className="w-5 h-5 text-amber-400" />
                       Total Benefits Value

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -40,17 +40,17 @@ export default function Benefits() {
 
         {/* Benefits Summary Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-6 border-2 border-amber-500/40/30">
             <Shield className="w-12 h-12 text-amber-400 mb-3" />
             <div className="text-2xl font-bold text-white mb-1">Full Coverage</div>
             <div className="text-blue-200">Medical, Dental, Vision</div>
           </div>
-          <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 rounded-xl p-6 border-2 border-green-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-6 border-2 border-green-500/30">
             <PiggyBank className="w-12 h-12 text-green-400 mb-3" />
             <div className="text-2xl font-bold text-white mb-1">401(k) Match</div>
             <div className="text-green-200">Up to 6% company match</div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-6 border-2 border-amber-500/40/30">
             <Heart className="w-12 h-12 text-pink-400 mb-3" />
             <div className="text-2xl font-bold text-white mb-1">Wellness</div>
             <div className="text-amber-100/70">Gym membership & EAP</div>
@@ -61,7 +61,7 @@ export default function Benefits() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left Sidebar - Categories */}
           <div className="lg:col-span-1">
-            <div className="bg-stone-900/50 rounded-xl p-4 border-2 border-emerald-500/30 sticky top-24">
+            <div className="bg-stone-900/50 rounded p-4 border-2 border-emerald-500/30 sticky top-24">
               <h3 className="text-white font-bold mb-4">Categories</h3>
               <div className="space-y-2">
                 <button
@@ -127,7 +127,7 @@ export default function Benefits() {
           <div className="lg:col-span-2">
             {selectedPlan === 'medical' && (
               <div className="space-y-6">
-                <div className="lux-card/80 rounded-xl p-6 border-2 border-amber-500/40/30">
+                <div className="lux-card/80 rounded p-6 border-2 border-amber-500/40/30">
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h2 className="text-2xl font-bold text-white mb-2">Medical Insurance</h2>
@@ -208,11 +208,11 @@ export default function Benefits() {
             )}
 
             {selectedPlan === 'retirement' && (
-              <div className="lux-card/80 rounded-xl p-6 border-2 border-green-500/30">
+              <div className="lux-card/80 rounded p-6 border-2 border-green-500/30">
                 <h2 className="text-2xl font-bold text-white mb-4">401(k) Retirement Plan</h2>
                 <p className="text-stone-300 mb-6">Build your future with our generous company match!</p>
 
-                <div className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 rounded-lg p-6 border border-green-500/30 mb-6">
+                <div className="bg-[#110F0B] from-REMOVED-900/40 to-emerald-900/40 rounded-lg p-6 border border-green-500/30 mb-6">
                   <div className="grid grid-cols-2 gap-6 mb-6">
                     <div>
                       <div className="text-stone-400 text-sm mb-1">Your Balance</div>
@@ -276,7 +276,7 @@ export default function Benefits() {
         </div>
 
         {/* Quick Links */}
-        <div className="mt-8 bg-gradient-to-br from-stone-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-amber-500/40/30">
+        <div className="mt-8 bg-gradient-to-br from-stone-900/30 to-pink-900/30 rounded p-6 border-2 border-amber-500/40/30">
           <h3 className="text-xl font-bold text-white mb-4">Quick Actions</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <button className="bg-stone-950/50 hover:bg-stone-950 p-4 rounded-lg transition-all text-left border border-amber-500/40/20">

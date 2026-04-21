@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -137,7 +137,7 @@ export default function TeamDirectory() {
           <Link href="/basecamp" className="inline-flex items-center gap-2 text-emerald-300 hover:text-emerald-100 mb-4 transition-colors">
             ← Back to Basecamp
           </Link>
-          <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-stone-900 to-pink-200 mb-2"
+          <h1 className="text-4xl font-black text-transparent bg-clip-text bg-[#110F0B] from-REMOVED-200 via-stone-900 to-pink-200 mb-2"
               style={{
                 textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(236,72,153,0.6)',
                 WebkitTextStroke: '1px rgba(236,72,153,0.3)',
@@ -150,26 +150,26 @@ export default function TeamDirectory() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-5 border-2 border-amber-500/40/30">
             <div className="text-blue-200 text-sm mb-1">Total Team Members</div>
             <div className="text-3xl font-bold text-white">{team.length}</div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-5 border-2 border-amber-500/40/30">
             <div className="text-amber-100/70 text-sm mb-1">Departments</div>
             <div className="text-3xl font-bold text-white">6</div>
           </div>
-          <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 rounded-xl p-5 border-2 border-green-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-green-500/30">
             <div className="text-green-200 text-sm mb-1">Remote Workers</div>
             <div className="text-3xl font-bold text-white">1</div>
           </div>
-          <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 rounded-xl p-5 border-2 border-orange-500/30">
+          <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 rounded p-5 border-2 border-orange-500/30">
             <div className="text-orange-200 text-sm mb-1">Open Positions</div>
             <div className="text-3xl font-bold text-white">3</div>
           </div>
         </div>
 
         {/* Search & Filter */}
-        <div className="bg-stone-900/50 rounded-xl p-4 border-2 border-emerald-500/30 mb-6">
+        <div className="bg-stone-900/50 rounded p-4 border-2 border-emerald-500/30 mb-6">
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex-1 min-w-[300px]">
               <div className="relative">
@@ -203,7 +203,7 @@ export default function TeamDirectory() {
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredTeam.map(member => (
-            <div key={member.id} className="lux-card/80 rounded-xl p-6 border-2 border-emerald-500/30 hover:border-emerald-400/50 transition-all group">
+            <div key={member.id} className="lux-card/80 rounded p-6 border-2 border-emerald-500/30 hover:border-emerald-400/50 transition-all group">
               {/* Avatar & Basic Info */}
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-16 h-16 bg-gradient-to-br from-stone-900 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
@@ -267,7 +267,7 @@ export default function TeamDirectory() {
         </div>
 
         {filteredTeam.length === 0 && (
-          <div className="bg-stone-900/50 rounded-xl p-12 border-2 border-emerald-500/30 text-center">
+          <div className="bg-stone-900/50 rounded p-12 border-2 border-emerald-500/30 text-center">
             <Users className="w-16 h-16 text-stone-600 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-white mb-2">No team members found</h3>
             <p className="text-stone-400">Try adjusting your search or filters</p>
@@ -275,7 +275,7 @@ export default function TeamDirectory() {
         )}
 
         {/* Encouragement Footer */}
-        <div className="mt-8 bg-gradient-to-r from-pink-900/30 to-amber-900/30 rounded-xl p-6 border-2 border-pink-500/30 text-center">
+        <div className="mt-8 bg-[#110F0B] from-REMOVED-900/30 to-amber-900/30 rounded p-6 border-2 border-pink-500/30 text-center">
           <h3 className="text-2xl font-bold text-pink-200 mb-2">💜 You're part of something special!</h3>
           <p className="text-pink-100 text-lg">Every person here makes our team amazing. Don't be shy - say hi!</p>
         </div>

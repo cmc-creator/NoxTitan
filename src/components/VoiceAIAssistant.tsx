@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect, useRef } from 'react';
 import { MessageSquare, Mic, MicOff, Volume2, VolumeX, Send, X, Sparkles, Loader2 } from 'lucide-react';
@@ -270,7 +270,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
 
       {/* Voice Assistant Window */}
       {isOpen && (
-        <div className={`fixed bottom-6 left-6 w-[420px] h-[600px] bg-stone-950 border-2 rounded-2xl shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom-8`} style={{borderColor: customColor.includes('purple') ? '#a855f7' : '#8b5cf6'}}>
+        <div className={`fixed bottom-6 left-6 w-[420px] h-[600px] bg-stone-950 border-2 rounded shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom-8`} style={{borderColor: customColor.includes('purple') ? '#a855f7' : '#8b5cf6'}}>
       {/* Header */}
       <div className={`flex items-center justify-between p-4 border-b border-stone-700 bg-gradient-to-r ${customColor}`}>
         <div className="flex items-center gap-3">
@@ -314,7 +314,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
             className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             <div
-              className={`max-w-[80%] rounded-2xl px-4 py-3 ${
+              className={`max-w-[80%] rounded px-4 py-3 ${
                 msg.role === 'user'
                   ? 'bg-gradient-to-r from-amber-800 to-amber-600 text-white'
                   : 'bg-stone-900 text-stone-100 border border-stone-700'
@@ -332,7 +332,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
         
         {isLoading && (
           <div className="flex justify-start">
-            <div className="bg-stone-900 border border-stone-700 rounded-2xl px-4 py-3">
+            <div className="bg-stone-900 border border-stone-700 rounded px-4 py-3">
               <Loader2 className="w-5 h-5 text-amber-400 animate-spin" />
             </div>
           </div>
@@ -351,13 +351,13 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
               onKeyPress={handleKeyPress}
               placeholder="Ask me anything or click the mic..."
               rows={1}
-              className="w-full px-4 py-3 bg-stone-900 border border-stone-700 rounded-xl text-white placeholder-stone-500 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20 resize-none"
+              className="w-full px-4 py-3 bg-stone-900 border border-stone-700 rounded text-white placeholder-stone-500 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20 resize-none"
             />
           </div>
           <button
             onClick={toggleListening}
             disabled={isLoading}
-            className={`p-3 rounded-xl transition-all disabled:opacity-50 ${
+            className={`p-3 rounded transition-all disabled:opacity-50 ${
               isListening
                 ? 'bg-red-600 hover:bg-red-700 animate-pulse'
                 : 'bg-stone-900 hover:bg-stone-900 border border-stone-700'
@@ -373,7 +373,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
           <button
             onClick={() => handleSendMessage()}
             disabled={!inputText.trim() || isLoading}
-            className="p-3 bg-gradient-to-r from-amber-800 to-amber-600 hover:from-amber-800 hover:to-amber-600 rounded-xl transition-all disabled:opacity-50"
+            className="p-3 bg-gradient-to-r from-amber-800 to-amber-600 hover:from-amber-800 hover:to-amber-600 rounded transition-all disabled:opacity-50"
             title="Send message"
           >
             <Send className="w-5 h-5 text-white" />

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -36,7 +36,7 @@ export default function BasecampLogin() {
         </div>
 
         {/* Login Card */}
-        <div className="bg-gradient-to-br from-slate-800/80 to-emerald-900/30 backdrop-blur-xl rounded-2xl p-8 border-2 border-emerald-500/30 shadow-2xl">
+        <div className="bg-gradient-to-br from-slate-800/80 to-emerald-900/30 backdrop-blur-xl rounded p-8 border-2 border-emerald-500/30 shadow-2xl">
           <form onSubmit={handleLogin} className="space-y-6">
             {/* Email Input */}
             <div>

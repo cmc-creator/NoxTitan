@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { Shield, UserCheck, UserX, Clock, AlertTriangle, Bell, TrendingUp, Users, Upload, Eye } from 'lucide-react';
@@ -128,7 +128,7 @@ export default function SentinelPage() {
 
         {/* Live Stats */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
-          <div className="bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-500/50 rounded-xl p-6">
+          <div className="bg-[#110F0B] from-REMOVED-500/20 to-green-600/20 border border-green-500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <Users className="w-8 h-8 text-green-400" />
               <span className="text-4xl font-bold text-green-400">{stats.currentlyInBuilding}</span>
@@ -139,7 +139,7 @@ export default function SentinelPage() {
             </p>
           </div>
 
-          <div className="bg-amber-600/10 border border-amber-500/40/50 rounded-xl p-6">
+          <div className="bg-amber-600/10 border border-amber-500/40/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <TrendingUp className="w-8 h-8 text-amber-400" />
               <span className="text-4xl font-bold text-amber-400">{stats.todayTotal}</span>
@@ -147,7 +147,7 @@ export default function SentinelPage() {
             <p className="text-amber-400 font-semibold">Today's Total</p>
           </div>
 
-          <div className="bg-orange-500/10 border border-orange-500/50 rounded-xl p-6">
+          <div className="bg-orange-500/10 border border-orange-500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <Clock className="w-8 h-8 text-orange-400" />
               <span className="text-4xl font-bold text-orange-400">{stats.overdue}</span>
@@ -155,7 +155,7 @@ export default function SentinelPage() {
             <p className="text-orange-300 font-semibold">Overdue Checkouts</p>
           </div>
 
-          <div className="bg-red-500/10 border border-red-500/50 rounded-xl p-6">
+          <div className="bg-red-500/10 border border-red-500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <AlertTriangle className="w-8 h-8 text-red-400" />
               <span className="text-4xl font-bold text-red-400">{stats.watchlistAlerts}</span>
@@ -163,7 +163,7 @@ export default function SentinelPage() {
             <p className="text-red-300 font-semibold">Watchlist Alerts</p>
           </div>
 
-          <div className="bg-amber-500/10 border border-amber-500/40/50 rounded-xl p-6">
+          <div className="bg-amber-500/10 border border-amber-500/40/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <Clock className="w-8 h-8 text-amber-400" />
               <span className="text-4xl font-bold text-amber-400">{stats.avgDuration}</span>
@@ -173,7 +173,7 @@ export default function SentinelPage() {
         </div>
 
         {/* Active Visitors Table */}
-        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl overflow-hidden">
+        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded overflow-hidden">
           <div className="bg-stone-900/80 px-6 py-4 border-b border-stone-700">
             <h2 className="text-xl font-bold text-white flex items-center gap-2">
               <Eye className="w-6 h-6 text-amber-400" />

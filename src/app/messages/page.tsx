@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { MessageCircle, Send, Search, Plus, Users, User, Phone, Video, MoreVertical, Paperclip, Smile, Check, CheckCheck, Circle } from 'lucide-react';
@@ -283,7 +283,7 @@ export default function MessagesPage() {
                         <div className="text-xs font-semibold mb-1 opacity-70">{msg.senderName}</div>
                       )}
                       <div
-                        className="px-4 py-2 rounded-2xl"
+                        className="px-4 py-2 rounded"
                         style={{
                           background: msg.senderId === 'me' ? 'var(--primary-btn)' : 'var(--card-bg)',
                           color: msg.senderId === 'me' ? '#ffffff' : 'var(--body-text)',
@@ -321,7 +321,7 @@ export default function MessagesPage() {
                     value={messageInput}
                     onChange={(e) => setMessageInput(e.target.value)}
                     onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                    className="flex-1 px-4 py-3 rounded-xl"
+                    className="flex-1 px-4 py-3 rounded"
                     style={{ background: 'var(--calendar-bg)', border: '1px solid var(--border-color)', color: 'var(--body-text)' }}
                   />
                   <button className="p-2 rounded-lg hover:bg-opacity-70 transition-all" style={{ background: 'var(--calendar-bg)' }}>
@@ -329,7 +329,7 @@ export default function MessagesPage() {
                   </button>
                   <button
                     onClick={handleSendMessage}
-                    className="p-3 rounded-xl text-white font-semibold hover:scale-105 transition-all"
+                    className="p-3 rounded text-white font-semibold transition-all"
                     style={{ background: 'var(--primary-btn)' }}
                   >
                     <Send className="h-5 w-5" />
@@ -351,7 +351,7 @@ export default function MessagesPage() {
       {/* New Chat Modal */}
       {showNewChatModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="w-full max-w-2xl rounded-2xl shadow-2xl" style={{ background: 'var(--card-bg)' }}>
+          <div className="w-full max-w-2xl rounded shadow-2xl" style={{ background: 'var(--card-bg)' }}>
             <div className="p-6 border-b" style={{ borderColor: 'var(--border-color)' }}>
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-bold" style={{ color: 'var(--header-text)' }}>
@@ -384,7 +384,7 @@ export default function MessagesPage() {
                       setShowNewChatModal(false);
                       // Add logic to start new conversation
                     }}
-                    className="w-full p-4 rounded-xl flex items-center gap-3 hover:bg-opacity-70 transition-all"
+                    className="w-full p-4 rounded flex items-center gap-3 hover:bg-opacity-70 transition-all"
                     style={{ background: 'var(--calendar-bg)' }}
                   >
                     <div className="relative">
@@ -399,7 +399,7 @@ export default function MessagesPage() {
                       </div>
                       <div className="text-sm opacity-60">{employee.department}</div>
                     </div>
-                    <div className={`text-xs px-2 py-1 rounded-full ${employee.online ? 'bg-green-500' : 'bg-gray-500'} text-white`}>
+                    <div className={`text-xs px-2 py-1 rounded-full ${employee.online ? 'bg-green-500' : 'bg-[rgba(201,168,76,0.04)]0'} text-white`}>
                       {employee.online ? 'Online' : 'Offline'}
                     </div>
                   </button>

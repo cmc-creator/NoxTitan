@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -61,22 +61,22 @@ export default function CompensationManagement() {
 
         {/* Budget Overview */}
         <div className="grid grid-cols-4 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded-xl p-6 border-2 border-emerald-500/30">
+          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded p-6 border-2 border-emerald-500/30">
             <div className="text-stone-300 text-sm mb-1">Total Budget</div>
             <div className="text-3xl font-bold text-white">${(totalBudget.allocated / 1000).toFixed(0)}K</div>
             <div className="text-emerald-400 text-xs mt-1">FY 2026 allocation</div>
           </div>
-          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-6 border-2 border-amber-500/40/30">
             <div className="text-stone-300 text-sm mb-1">Proposed</div>
             <div className="text-3xl font-bold text-white">${(totalBudget.proposed / 1000).toFixed(0)}K</div>
             <div className="text-amber-400 text-xs mt-1">{((totalBudget.proposed/totalBudget.allocated)*100).toFixed(1)}% utilized</div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-6 border-2 border-amber-500/40/30">
             <div className="text-stone-300 text-sm mb-1">Remaining</div>
             <div className="text-3xl font-bold text-white">${(totalBudget.remaining / 1000).toFixed(0)}K</div>
             <div className="text-amber-400 text-xs mt-1">{((totalBudget.remaining/totalBudget.allocated)*100).toFixed(1)}% available</div>
           </div>
-          <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded-xl p-6 border-2 border-orange-500/30">
+          <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded p-6 border-2 border-orange-500/30">
             <div className="text-stone-300 text-sm mb-1">Avg Increase</div>
             <div className="text-3xl font-bold text-white">{totalBudget.avgIncrease}%</div>
             <div className="text-orange-400 text-xs mt-1">Merit raises</div>
@@ -113,7 +113,7 @@ export default function CompensationManagement() {
 
         {/* Merit Planning Tab */}
         {activeTab === 'planning' && (
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-emerald-500/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-emerald-500/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Annual Merit Increase Planning</h2>
               <div className="flex gap-3">
@@ -189,7 +189,7 @@ export default function CompensationManagement() {
 
         {/* Bonuses Tab */}
         {activeTab === 'bonuses' && (
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Performance Bonuses</h2>
               <button className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-semibold">
@@ -266,7 +266,7 @@ export default function CompensationManagement() {
 
         {/* Market Benchmarking Tab */}
         {activeTab === 'market' && (
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
             <h2 className="text-2xl font-bold text-white mb-6">Market Compensation Data</h2>
             <div className="space-y-4">
               {marketData.map((role, idx) => (
@@ -283,7 +283,7 @@ export default function CompensationManagement() {
                   </div>
                   
                   {/* Market Range Visualization */}
-                  <div className="relative h-16 bg-gradient-to-r from-red-500/20 via-yellow-500/20 to-emerald-500/20 rounded-lg mb-2">
+                  <div className="relative h-16 bg-[#110F0B] from-REMOVED-500/20 via-yellow-500/20 to-emerald-500/20 rounded-lg mb-2">
                     <div className="absolute inset-0 flex items-center justify-between px-4">
                       <div className="text-center">
                         <div className="w-1 h-8 bg-red-500"></div>

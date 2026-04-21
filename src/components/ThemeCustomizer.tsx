@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { Palette, X, Sun, Moon, Sparkles, Flower2, Type } from 'lucide-react';
@@ -585,7 +585,7 @@ export default function ThemeCustomizer() {
       <div className="flex gap-2 flex-wrap">
         <button
           onClick={toggleTheme}
-          className="flex items-center gap-2 px-4 py-2 bg-stone-900 text-white rounded-lg hover:bg-stone-600 transition-all font-semibold shadow-lg hover:shadow-xl hover:scale-105 animate-fade-in"
+          className="flex items-center gap-2 px-4 py-2 bg-stone-900 text-white rounded-lg hover:bg-stone-600 transition-all font-semibold shadow-lg hover:shadow-xl animate-fade-in"
           title={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} Mode`}
         >
           {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
@@ -594,7 +594,7 @@ export default function ThemeCustomizer() {
         
         <button
           onClick={() => setShowCustomizer(true)}
-          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-stone-900 to-pink-500 text-white rounded-lg hover:from-stone-900 hover:to-pink-600 transition-all font-semibold shadow-lg hover:shadow-xl hover:scale-105 animate-fade-in"
+          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-stone-900 to-pink-500 text-white rounded-lg hover:from-stone-900 hover:to-pink-600 transition-all font-semibold shadow-lg hover:shadow-xl animate-fade-in"
         >
           <Palette className="w-5 h-5" />
           Customize Colors
@@ -628,7 +628,7 @@ export default function ThemeCustomizer() {
 
             <div className="p-6 overflow-y-auto max-h-[calc(95vh-220px)]">
               {/* Gradient Toggle */}
-              <div className="mb-6 p-4 bg-stone-900/50 rounded-xl border border-amber-500/40/30">
+              <div className="mb-6 p-4 bg-stone-900/50 rounded border border-amber-500/40/30">
                 <label className="flex items-center gap-3 cursor-pointer">
                   <input
                     type="checkbox"
@@ -644,7 +644,7 @@ export default function ThemeCustomizer() {
               </div>
 
               {/* Decorative Themes */}
-              <div className="mb-6 p-4 bg-stone-900/50 rounded-xl border border-amber-500/40/30">
+              <div className="mb-6 p-4 bg-stone-900/50 rounded border border-amber-500/40/30">
                 <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
                   <Flower2 className="w-6 h-6" />
                   Decorative Themes
@@ -654,7 +654,7 @@ export default function ThemeCustomizer() {
                     <button
                       key={dt.id}
                       onClick={() => setDecorativeTheme(dt.id)}
-                      className={`p-4 rounded-xl border-2 transition-all hover:scale-105 ${
+                      className={`p-4 rounded border-2 transition-all ${
                         decorativeTheme === dt.id
                           ? 'border-amber-500/40 bg-amber-500/20 shadow-lg shadow-purple-500/50'
                           : 'border-stone-700 hover:border-amber-400/40 bg-stone-900/50'
@@ -668,7 +668,7 @@ export default function ThemeCustomizer() {
               </div>
 
               {/* Font Selection */}
-              <div className="mb-6 p-4 bg-stone-900/50 rounded-xl border border-amber-500/40/30">
+              <div className="mb-6 p-4 bg-stone-900/50 rounded border border-amber-500/40/30">
                 <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
                   <Type className="w-6 h-6" />
                   Font Family
@@ -678,7 +678,7 @@ export default function ThemeCustomizer() {
                     <button
                       key={font.id}
                       onClick={() => handleFontChange(font.id)}
-                      className={`p-4 rounded-xl border-2 transition-all hover:scale-105 text-left ${
+                      className={`p-4 rounded border-2 transition-all text-left ${
                         selectedFont === font.id
                           ? 'border-amber-500/40 bg-amber-500/20 shadow-lg shadow-purple-500/50'
                           : 'border-stone-700 hover:border-amber-400/40 bg-stone-900/50'
@@ -712,7 +712,7 @@ export default function ThemeCustomizer() {
                       <button
                         type="button"
                         onClick={() => setActiveColorPicker(activeColorPicker === key ? null : key as keyof CustomColors)}
-                        className="w-full flex items-center gap-3 px-4 py-4 bg-stone-900/70 border-2 border-stone-700 rounded-xl hover:border-amber-500/40 transition-all group hover:scale-105"
+                        className="w-full flex items-center gap-3 px-4 py-4 bg-stone-900/70 border-2 border-stone-700 rounded hover:border-amber-500/40 transition-all group"
                       >
                         <div
                           className="w-16 h-16 rounded-lg border-4 border-white shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-transform animate-pulse-slow"
@@ -729,7 +729,7 @@ export default function ThemeCustomizer() {
                       </button>
                       
                       {activeColorPicker === key && (
-                        <div className="absolute top-full left-0 mt-3 z-50 bg-stone-900 p-6 rounded-xl shadow-2xl border-2 border-amber-500/40 animate-fade-in">
+                        <div className="absolute top-full left-0 mt-3 z-50 bg-stone-900 p-6 rounded shadow-2xl border-2 border-amber-500/40 animate-fade-in">
                           <div className="mb-3 text-white font-semibold text-sm flex items-center gap-2">
                             <Sparkles className="w-4 h-4" />
                             Pick your color:
@@ -754,7 +754,7 @@ export default function ThemeCustomizer() {
               </div>
 
               {/* Live Preview */}
-              <div className="mt-8 p-6 bg-stone-900/50 rounded-xl border border-amber-500/40/30 animate-fade-in">
+              <div className="mt-8 p-6 bg-stone-900/50 rounded border border-amber-500/40/30 animate-fade-in">
                 <h4 className="text-white font-bold mb-4 text-lg flex items-center gap-2">
                   <Sparkles className="w-5 h-5" />
                   Live Preview
@@ -782,7 +782,7 @@ export default function ThemeCustomizer() {
                   </p>
                   <div className="flex gap-3 flex-wrap">
                     <button
-                      className="px-6 py-3 rounded-lg font-semibold shadow-lg transition-transform hover:scale-105"
+                      className="px-6 py-3 rounded-lg font-semibold shadow-lg transition-transform"
                       style={{ 
                         background: useGradients 
                           ? `linear-gradient(to right, ${customColors.primaryButtons}, ${customColors.secondaryButtons})`
@@ -793,7 +793,7 @@ export default function ThemeCustomizer() {
                       Primary Button
                     </button>
                     <button
-                      className="px-6 py-3 rounded-lg font-semibold shadow-lg transition-transform hover:scale-105"
+                      className="px-6 py-3 rounded-lg font-semibold shadow-lg transition-transform"
                       style={{ 
                         background: useGradients
                           ? `linear-gradient(135deg, ${customColors.secondaryButtons}, ${customColors.primaryButtons})`
@@ -824,14 +824,14 @@ export default function ThemeCustomizer() {
                   setShowCustomizer(false);
                   setActiveColorPicker(null);
                 }}
-                className="flex-1 bg-stone-900 hover:bg-stone-600 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105"
+                className="flex-1 bg-stone-900 hover:bg-stone-600 text-white px-6 py-4 rounded font-bold text-lg transition-all"
               >
                 Cancel
               </button>
               <button
                 type="button"
                 onClick={handleApply}
-                className="flex-1 bg-gradient-to-r from-stone-900 to-pink-500 hover:from-stone-900 hover:to-pink-600 text-white px-6 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                className="flex-1 bg-gradient-to-r from-stone-900 to-pink-500 hover:from-stone-900 hover:to-pink-600 text-white px-6 py-4 rounded font-bold text-lg shadow-lg hover:shadow-xl transition-all"
               >
                 ✨ Apply Changes
               </button>

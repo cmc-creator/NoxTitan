@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { 
@@ -338,7 +338,7 @@ export default function TrainingPage() {
       case 'beginner': return 'bg-green-100 text-green-700';
       case 'intermediate': return 'bg-blue-100 text-amber-300';
       case 'advanced': return 'bg-purple-100 text-amber-700';
-      default: return 'bg-gray-100 text-gray-700';
+      default: return 'bg-[rgba(201,168,76,0.06)] text-[#C9A84C]';
     }
   };
 
@@ -356,7 +356,7 @@ export default function TrainingPage() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+          <div className="bg-stone-950 p-6 rounded shadow-md">
             <div className="flex items-center justify-between mb-2">
               <BookOpen className="w-8 h-8 text-amber-400" />
               <span className="text-3xl font-bold text-stone-100">{courses.length}</span>
@@ -364,7 +364,7 @@ export default function TrainingPage() {
             <p className="text-stone-500">Available Courses</p>
             <p className="text-sm text-stone-500">Across all categories</p>
           </div>
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+          <div className="bg-stone-950 p-6 rounded shadow-md">
             <div className="flex items-center justify-between mb-2">
               <PlayCircle className="w-8 h-8 text-green-600" />
               <span className="text-3xl font-bold text-stone-100">
@@ -374,7 +374,7 @@ export default function TrainingPage() {
             <p className="text-stone-500">In Progress</p>
             <p className="text-sm text-stone-500">Your active courses</p>
           </div>
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+          <div className="bg-stone-950 p-6 rounded shadow-md">
             <div className="flex items-center justify-between mb-2">
               <CheckCircle className="w-8 h-8 text-amber-600" />
               <span className="text-3xl font-bold text-stone-100">
@@ -384,7 +384,7 @@ export default function TrainingPage() {
             <p className="text-stone-500">Completed</p>
             <p className="text-sm text-stone-500">Certificates earned</p>
           </div>
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+          <div className="bg-stone-950 p-6 rounded shadow-md">
             <div className="flex items-center justify-between mb-2">
               <Clock className="w-8 h-8 text-amber-600" />
               <span className="text-3xl font-bold text-stone-100">
@@ -397,7 +397,7 @@ export default function TrainingPage() {
         </div>
 
         {/* Search and Filters */}
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md mb-8">
+        <div className="bg-stone-950 p-6 rounded shadow-md mb-8">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-stone-400" />
@@ -428,32 +428,32 @@ export default function TrainingPage() {
         <div className="flex gap-4 mb-8 flex-wrap">
           <button
             onClick={() => setActiveTab('leadership')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all ${
-              activeTab === 'leadership' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-gray-700 hover:bg-stone-950'
+            className={`px-6 py-3 rounded font-semibold transition-all ${
+              activeTab === 'leadership' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-[#C9A84C] hover:bg-stone-950'
             }`}
           >
             🚀 Leadership Development
           </button>
           <button
             onClick={() => setActiveTab('my-courses')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all ${
-              activeTab === 'my-courses' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-gray-700 hover:bg-stone-950'
+            className={`px-6 py-3 rounded font-semibold transition-all ${
+              activeTab === 'my-courses' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-[#C9A84C] hover:bg-stone-950'
             }`}
           >
             📚 My Courses
           </button>
           <button
             onClick={() => setActiveTab('paths')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all ${
-              activeTab === 'paths' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-gray-700 hover:bg-stone-950'
+            className={`px-6 py-3 rounded font-semibold transition-all ${
+              activeTab === 'paths' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-[#C9A84C] hover:bg-stone-950'
             }`}
           >
             🛤️ Learning Paths
           </button>
           <button
             onClick={() => setActiveTab('all')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all ${
-              activeTab === 'all' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-gray-700 hover:bg-stone-950'
+            className={`px-6 py-3 rounded font-semibold transition-all ${
+              activeTab === 'all' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-[#C9A84C] hover:bg-stone-950'
             }`}
           >
             📖 All Courses
@@ -463,30 +463,30 @@ export default function TrainingPage() {
         {/* Learning Paths */}
         {activeTab === 'paths' && (
           <div className="space-y-6">
-            <div className="bg-gradient-to-r from-amber-700 to-amber-800 p-6 rounded-xl border border-blue-200 mb-6">
+            <div className="bg-gradient-to-r from-amber-700 to-amber-800 p-6 rounded border border-blue-200 mb-6">
               <h2 className="text-2xl font-bold text-stone-100 mb-2">📚 Structured Learning Paths</h2>
-              <p className="text-gray-700">
+              <p className="text-[#C9A84C]">
                 Follow curated learning paths designed to develop specific skills systematically. 
                 Complete all courses in a path to earn a completion certificate.
               </p>
             </div>
 
             {learningPaths.map((path) => (
-              <div key={path.id} className="bg-stone-950 rounded-xl shadow-md p-8">
+              <div key={path.id} className="bg-stone-950 rounded shadow-md p-8">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-stone-100 mb-2">{path.title}</h3>
                     <p className="text-stone-500 mb-4">{path.description}</p>
                     <div className="flex flex-wrap gap-4 text-sm">
-                      <span className="flex items-center gap-2 text-gray-700">
+                      <span className="flex items-center gap-2 text-[#C9A84C]">
                         <BookOpen className="w-4 h-4" />
                         {path.courses.length} courses
                       </span>
-                      <span className="flex items-center gap-2 text-gray-700">
+                      <span className="flex items-center gap-2 text-[#C9A84C]">
                         <Clock className="w-4 h-4" />
                         {path.totalHours} hours
                       </span>
-                      <span className="flex items-center gap-2 text-gray-700">
+                      <span className="flex items-center gap-2 text-[#C9A84C]">
                         <Users className="w-4 h-4" />
                         {path.enrolledUsers} enrolled
                       </span>
@@ -533,16 +533,16 @@ export default function TrainingPage() {
         {activeTab !== 'paths' && (
           <>
             {activeTab === 'leadership' && (
-              <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-xl border border-amber-200 mb-6">
+              <div className="bg-[rgba(201,168,76,0.06)] p-6 rounded border border-amber-200 mb-6">
                 <div className="flex items-start gap-4">
                   <Award className="w-12 h-12 text-amber-600 flex-shrink-0" />
                   <div>
                     <h2 className="text-2xl font-bold text-stone-100 mb-2">� New Manager? Start Here!</h2>
-                    <p className="text-gray-700 mb-3">
+                    <p className="text-[#C9A84C] mb-3">
                       Congratulations on your promotion! Being promoted to manager is exciting, but it can also feel overwhelming. 
                       These courses are specifically designed to help you make a successful transition from individual contributor to leader.
                     </p>
-                    <p className="text-gray-700 font-semibold">
+                    <p className="text-[#C9A84C] font-semibold">
                       💡 Recommended: Start with "From Colleague to Manager" and "Essential Communication Skills for Managers"
                     </p>
                   </div>
@@ -552,7 +552,7 @@ export default function TrainingPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {filteredCourses.map((course) => (
-                <div key={course.id} className={`bg-stone-950 rounded-xl shadow-md p-6 hover:shadow-lg transition-all ${
+                <div key={course.id} className={`bg-stone-950 rounded shadow-md p-6 hover:shadow-lg transition-all ${
                   course.featured ? 'ring-2 ring-blue-400' : ''
                 }`}>
                   {course.featured && (
@@ -568,10 +568,10 @@ export default function TrainingPage() {
                     <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getLevelColor(course.level)}`}>
                       {course.level.charAt(0).toUpperCase() + course.level.slice(1)}
                     </span>
-                    <span className="px-3 py-1 rounded-full text-sm font-semibold bg-gray-100 text-gray-700">
+                    <span className="px-3 py-1 rounded-full text-sm font-semibold bg-[rgba(201,168,76,0.06)] text-[#C9A84C]">
                       {course.modules} modules
                     </span>
-                    <span className="px-3 py-1 rounded-full text-sm font-semibold bg-gray-100 text-gray-700">
+                    <span className="px-3 py-1 rounded-full text-sm font-semibold bg-[rgba(201,168,76,0.06)] text-[#C9A84C]">
                       {course.duration} min
                     </span>
                   </div>
@@ -587,7 +587,7 @@ export default function TrainingPage() {
                     </span>
                   </div>
 
-                  <p className="text-sm text-gray-700 mb-4">
+                  <p className="text-sm text-[#C9A84C] mb-4">
                     <strong>Instructor:</strong> {course.instructor}
                   </p>
 
@@ -632,7 +632,7 @@ export default function TrainingPage() {
                     </summary>
                     <ul className="mt-3 space-y-2">
                       {course.objectives.map((obj, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                        <li key={i} className="flex items-start gap-2 text-sm text-[#C9A84C]">
                           <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
                           {obj}
                         </li>

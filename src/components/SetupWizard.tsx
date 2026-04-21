@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { ChevronRight, ChevronLeft, Check, Building2, Briefcase, Shield, Users, Settings as SettingsIcon, Palette, Rocket } from 'lucide-react';
@@ -135,7 +135,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                 {steps[currentStep].description}
               </p>
             </div>
-            <div className="bg-gradient-to-r from-stone-900 to-pink-50 rounded-xl p-6 max-w-2xl mx-auto">
+            <div className="bg-gradient-to-r from-stone-900 to-pink-50 rounded p-6 max-w-2xl mx-auto">
               <h3 className="text-xl font-bold text-stone-100 mb-3">What we'll set up:</h3>
               <ul className="space-y-2 text-left">
                 <li className="flex items-start gap-3">
@@ -236,7 +236,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                       featureFlags: industry.features,
                     });
                   }}
-                  className={`p-6 rounded-xl border-2 transition-all text-left hover:shadow-lg ${
+                  className={`p-6 rounded border-2 transition-all text-left hover:shadow-lg ${
                     setupData.industry === industry.id
                       ? 'border-amber-600/40 bg-purple-50 shadow-md'
                       : 'border-gray-300 hover:border-amber-400/40'
@@ -336,7 +336,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                 </div>
               </div>
 
-              <div className="bg-stone-950 rounded-xl p-6 border-2 border-gray-300">
+              <div className="bg-stone-950 rounded p-6 border-2 border-gray-300">
                 <h3 className="text-lg font-bold text-stone-100 mb-4">Preview</h3>
                 <div className="space-y-3">
                   <div
@@ -386,7 +386,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
 
             {selectedIndustry && (
               <div className="max-w-3xl mx-auto space-y-6">
-                <div className="bg-purple-50 rounded-xl p-4 border-2 border-purple-200">
+                <div className="bg-purple-50 rounded p-4 border-2 border-purple-200">
                   <p className="text-sm text-purple-900">
                     <strong>✨ Pre-configured for {selectedIndustry.name}!</strong> These departments and positions are based on industry standards. You can customize them now or later.
                   </p>
@@ -461,7 +461,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
 
             {selectedIndustry && (
               <div className="max-w-4xl mx-auto">
-                <div className="bg-purple-50 rounded-xl p-4 border-2 border-purple-200 mb-6">
+                <div className="bg-purple-50 rounded p-4 border-2 border-purple-200 mb-6">
                   <p className="text-sm text-purple-900">
                     <strong>✨ Recommended for {selectedIndustry.name}!</strong> These features are pre-selected based on your industry needs.
                   </p>
@@ -518,13 +518,13 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
 
             {selectedIndustry && setupData.complianceSettings && (
               <div className="max-w-4xl mx-auto space-y-6">
-                <div className="bg-purple-50 rounded-xl p-4 border-2 border-purple-200">
+                <div className="bg-purple-50 rounded p-4 border-2 border-purple-200">
                   <p className="text-sm text-purple-900">
                     <strong>✨ Auto-configured for {selectedIndustry.name}!</strong> These compliance rules match {selectedIndustry.name} industry standards and federal/state labor laws.
                   </p>
                 </div>
 
-                <div className="bg-stone-950 rounded-xl p-6 border-2 border-gray-300 space-y-6">
+                <div className="bg-stone-950 rounded p-6 border-2 border-gray-300 space-y-6">
                   <div>
                     <h3 className="text-lg font-bold text-stone-100 mb-4">Break Rules</h3>
                     <div className="grid grid-cols-2 gap-6">
@@ -758,7 +758,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
 
         {/* Main Content */}
         <div className="max-w-6xl mx-auto">
-          <div className="bg-stone-950 rounded-2xl shadow-2xl p-10 min-h-[700px]">
+          <div className="bg-stone-950 rounded shadow-2xl p-10 min-h-[700px]">
             {renderStepContent()}
           </div>
 

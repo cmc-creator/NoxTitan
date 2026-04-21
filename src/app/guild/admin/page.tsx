@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -172,42 +172,42 @@ export default function GuildAdminPage() {
         {/* Stats Dashboard */}
         {stats && (
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
-            <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
+            <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
               <div className="flex items-center gap-2 mb-2">
                 <Users className="w-5 h-5 text-amber-400" />
                 <span className="text-sm text-stone-400">Members</span>
               </div>
               <div className="text-3xl font-bold text-white">{stats.totalMembers}</div>
             </div>
-            <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
+            <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
               <div className="flex items-center gap-2 mb-2">
                 <Zap className="w-5 h-5 text-yellow-400" />
                 <span className="text-sm text-stone-400">Total XP</span>
               </div>
               <div className="text-3xl font-bold text-yellow-400">{stats.totalXPAwarded.toLocaleString()}</div>
             </div>
-            <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
+            <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
               <div className="flex items-center gap-2 mb-2">
                 <TrendingUp className="w-5 h-5 text-green-400" />
                 <span className="text-sm text-stone-400">Avg Level</span>
               </div>
               <div className="text-3xl font-bold text-green-400">{stats.averageLevel.toFixed(1)}</div>
             </div>
-            <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
+            <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
               <div className="flex items-center gap-2 mb-2">
                 <Clock className="w-5 h-5 text-orange-400" />
                 <span className="text-sm text-stone-400">Active Streaks</span>
               </div>
               <div className="text-3xl font-bold text-orange-400">{stats.activeStreaks}</div>
             </div>
-            <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
+            <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
               <div className="flex items-center gap-2 mb-2">
                 <Award className="w-5 h-5 text-amber-400" />
                 <span className="text-sm text-stone-400">Achievements</span>
               </div>
               <div className="text-3xl font-bold text-amber-400">{stats.achievementsUnlocked}</div>
             </div>
-            <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
+            <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
               <div className="flex items-center gap-2 mb-2">
                 <Gift className="w-5 h-5 text-pink-400" />
                 <span className="text-sm text-stone-400">Rewards</span>
@@ -244,7 +244,7 @@ export default function GuildAdminPage() {
         {/* Overview Tab */}
         {activeTab === 'overview' && (
           <div className="space-y-6">
-            <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
+            <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
               <h2 className="text-2xl font-bold text-white mb-4">Top Performers</h2>
               <div className="space-y-3">
                 {members.slice(0, 10).map((member, idx) => (
@@ -273,7 +273,7 @@ export default function GuildAdminPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
+              <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
                 <h3 className="text-xl font-bold text-white mb-4">Recent Activity</h3>
                 <div className="space-y-2">
                   {activityLogs.slice(0, 5).map(log => (
@@ -291,7 +291,7 @@ export default function GuildAdminPage() {
                 </div>
               </div>
 
-              <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
+              <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
                 <h3 className="text-xl font-bold text-white mb-4">Popular Achievements</h3>
                 <div className="space-y-2">
                   {achievements.slice(0, 5).map(achievement => (
@@ -315,7 +315,7 @@ export default function GuildAdminPage() {
         {/* Members Tab */}
         {activeTab === 'members' && (
           <div>
-            <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 mb-6">
+            <div className="bg-stone-900/50 border border-stone-700 rounded p-6 mb-6">
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="flex-1 relative">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
@@ -345,7 +345,7 @@ export default function GuildAdminPage() {
 
             <div className="space-y-3">
               {filteredMembers.map(member => (
-                <div key={member.id} className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
+                <div key={member.id} className="bg-stone-900/50 border border-stone-700 rounded p-6">
                   <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
                       <div className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-700 to-amber-600 flex items-center justify-center">
@@ -383,7 +383,7 @@ export default function GuildAdminPage() {
                             grantXP(member.employeeId, parseInt(amount), source);
                           }
                         }}
-                        className="px-4 py-2 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all"
+                        className="px-4 py-2 bg-[#110F0B] from-REMOVED-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all"
                       >
                         Grant XP
                       </button>
@@ -411,7 +411,7 @@ export default function GuildAdminPage() {
 
         {/* Activity Log Tab */}
         {activeTab === 'activity' && (
-          <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
+          <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Activity Log</h2>
               <button className="flex items-center gap-2 px-4 py-2 bg-stone-900 hover:bg-stone-600 text-white rounded-lg transition-all">
@@ -454,7 +454,7 @@ export default function GuildAdminPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {achievements.map(achievement => (
-                <div key={achievement.id} className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
+                <div key={achievement.id} className="bg-stone-900/50 border border-stone-700 rounded p-6">
                   <div className="text-center mb-4">
                     <div className="text-5xl mb-2">{achievement.icon}</div>
                     <h3 className="text-xl font-bold text-white mb-1">{achievement.name}</h3>
@@ -501,7 +501,7 @@ export default function GuildAdminPage() {
                 Add Reward
               </button>
             </div>
-            <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
+            <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
               <p className="text-stone-300 text-center py-12">
                 Reward management interface coming soon. You'll be able to create, edit, and manage XP-based rewards here.
               </p>

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -162,7 +162,7 @@ export default function IdeaBoard() {
 
         {/* Stats Banner */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded-xl p-5 border-2 border-yellow-500/30">
+          <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded p-5 border-2 border-yellow-500/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-yellow-200 text-sm mb-1">Total Ideas</div>
@@ -171,7 +171,7 @@ export default function IdeaBoard() {
               <Lightbulb className="w-12 h-12 text-yellow-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 rounded-xl p-5 border-2 border-green-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-green-500/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-green-200 text-sm mb-1">Implemented</div>
@@ -180,7 +180,7 @@ export default function IdeaBoard() {
               <Rocket className="w-12 h-12 text-green-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-amber-100/70 text-sm mb-1">This Month</div>
@@ -189,7 +189,7 @@ export default function IdeaBoard() {
               <TrendingUp className="w-12 h-12 text-amber-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-red-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-red-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-pink-900/50 rounded p-5 border-2 border-red-500/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-red-200 text-sm mb-1">Your Ideas</div>
@@ -201,7 +201,7 @@ export default function IdeaBoard() {
         </div>
 
         {/* Filters & Sort */}
-        <div className="bg-stone-900/50 rounded-xl p-4 border-2 border-emerald-500/30 mb-6">
+        <div className="bg-stone-900/50 rounded p-4 border-2 border-emerald-500/30 mb-6">
           <div className="flex flex-wrap items-center gap-4">
             {/* Search */}
             <div className="flex-1 min-w-[300px]">
@@ -248,7 +248,7 @@ export default function IdeaBoard() {
         {/* Ideas List */}
         <div className="space-y-4">
           {sortedIdeas.map(idea => (
-            <div key={idea.id} className="bg-gradient-to-r from-slate-800/80 to-slate-900/80 rounded-xl p-6 border-2 border-emerald-500/30 hover:border-emerald-400/50 transition-all">
+            <div key={idea.id} className="bg-gradient-to-r from-slate-800/80 to-slate-900/80 rounded p-6 border-2 border-emerald-500/30 hover:border-emerald-400/50 transition-all">
               <div className="flex gap-6">
                 {/* Vote Section */}
                 <div className="flex flex-col items-center gap-2">
@@ -273,7 +273,7 @@ export default function IdeaBoard() {
                     </div>
                     <div className="flex items-center gap-2">
                       {idea.status === 'hot' && (
-                        <span className="px-3 py-1 bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-full text-xs font-bold flex items-center gap-1">
+                        <span className="px-3 py-1 bg-[#110F0B] from-REMOVED-600 to-orange-600 text-white rounded-full text-xs font-bold flex items-center gap-1">
                           🔥 HOT
                         </span>
                       )}
@@ -308,7 +308,7 @@ export default function IdeaBoard() {
         </div>
 
         {/* Motivation Footer */}
-        <div className="mt-8 bg-gradient-to-r from-yellow-900/30 to-orange-900/30 rounded-xl p-6 border-2 border-yellow-500/30 text-center">
+        <div className="mt-8 bg-gradient-to-r from-yellow-900/30 to-orange-900/30 rounded p-6 border-2 border-yellow-500/30 text-center">
           <h3 className="text-2xl font-bold text-yellow-200 mb-2">💡 Your Voice Matters!</h3>
           <p className="text-yellow-100 text-lg">Every idea has the power to make our workplace better. Keep them coming!</p>
         </div>

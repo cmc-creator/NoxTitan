@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -75,28 +75,28 @@ export default function EmployeeSelfService() {
 
         {/* Quick Actions */}
         <div className="grid grid-cols-4 gap-4 mb-8">
-          <button className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 hover:from-amber-700/50 hover:to-cyan-800/50 rounded-xl p-4 border-2 border-amber-500/40/30 transition-all flex items-center gap-3 group">
+          <button className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 hover:from-amber-700/50 hover:to-cyan-800/50 rounded p-4 border-2 border-amber-500/40/30 transition-all flex items-center gap-3 group">
             <Calendar className="w-8 h-8 text-amber-400 group-hover:scale-110 transition-transform" />
             <div className="text-left">
               <div className="text-white font-bold">Request Time Off</div>
               <div className="text-xs text-stone-400">120 hrs PTO available</div>
             </div>
           </button>
-          <button className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 hover:from-emerald-800/50 hover:to-teal-800/50 rounded-xl p-4 border-2 border-emerald-500/30 transition-all flex items-center gap-3 group">
+          <button className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 hover:from-emerald-800/50 hover:to-teal-800/50 rounded p-4 border-2 border-emerald-500/30 transition-all flex items-center gap-3 group">
             <Download className="w-8 h-8 text-emerald-400 group-hover:scale-110 transition-transform" />
             <div className="text-left">
               <div className="text-white font-bold">Get Pay Stub</div>
               <div className="text-xs text-stone-400">Latest: Jan 1, 2026</div>
             </div>
           </button>
-          <button className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 hover:from-stone-900/50 hover:to-pink-800/50 rounded-xl p-4 border-2 border-amber-500/40/30 transition-all flex items-center gap-3 group">
+          <button className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 hover:from-stone-900/50 hover:to-pink-800/50 rounded p-4 border-2 border-amber-500/40/30 transition-all flex items-center gap-3 group">
             <Heart className="w-8 h-8 text-pink-400 group-hover:scale-110 transition-transform" />
             <div className="text-left">
               <div className="text-white font-bold">Update Benefits</div>
               <div className="text-xs text-stone-400">Open enrollment</div>
             </div>
           </button>
-          <button className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 hover:from-orange-800/50 hover:to-amber-800/50 rounded-xl p-4 border-2 border-orange-500/30 transition-all flex items-center gap-3 group">
+          <button className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 hover:from-orange-800/50 hover:to-amber-800/50 rounded p-4 border-2 border-orange-500/30 transition-all flex items-center gap-3 group">
             <Edit className="w-8 h-8 text-orange-400 group-hover:scale-110 transition-transform" />
             <div className="text-left">
               <div className="text-white font-bold">Update Profile</div>
@@ -129,7 +129,7 @@ export default function EmployeeSelfService() {
         {/* Profile Tab */}
         {activeTab === 'profile' && (
           <div className="space-y-6">
-            <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold text-white">Personal Information</h2>
                 <button className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-semibold flex items-center gap-2">
@@ -165,7 +165,7 @@ export default function EmployeeSelfService() {
               </div>
             </div>
 
-            <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
               <h2 className="text-2xl font-bold text-white mb-6">Contact Information</h2>
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-start gap-3">
@@ -204,7 +204,7 @@ export default function EmployeeSelfService() {
         {/* Pay & Taxes Tab */}
         {activeTab === 'pay' && (
           <div className="space-y-6">
-            <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-emerald-500/30">
+            <div className="bg-stone-900/50 rounded p-6 border-2 border-emerald-500/30">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold text-white">Pay Stubs</h2>
                 <button className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold flex items-center gap-2">
@@ -241,7 +241,7 @@ export default function EmployeeSelfService() {
             </div>
 
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+              <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
                 <h3 className="text-xl font-bold text-white mb-4">Direct Deposit</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
@@ -258,7 +258,7 @@ export default function EmployeeSelfService() {
                 </div>
               </div>
 
-              <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+              <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
                 <h3 className="text-xl font-bold text-white mb-4">Tax Documents</h3>
                 <div className="space-y-3">
                   {taxDocs.map(doc => (
@@ -280,7 +280,7 @@ export default function EmployeeSelfService() {
 
         {/* Benefits Tab */}
         {activeTab === 'benefits' && (
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-pink-500/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-pink-500/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">My Benefits</h2>
               <button className="px-4 py-2 bg-pink-600 hover:bg-pink-500 text-white rounded-lg font-semibold">
@@ -334,7 +334,7 @@ export default function EmployeeSelfService() {
 
         {/* Documents Tab */}
         {activeTab === 'documents' && (
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-orange-500/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-orange-500/30">
             <h2 className="text-2xl font-bold text-white mb-6">My Documents</h2>
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-stone-950/50 rounded-lg p-5 border border-stone-700">

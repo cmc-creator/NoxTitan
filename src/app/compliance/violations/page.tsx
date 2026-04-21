@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { AlertTriangle, AlertCircle, CheckCircle, XCircle, Clock, Filter, Calendar } from 'lucide-react';
@@ -117,11 +117,11 @@ export default function ComplianceViolationsPage() {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
-          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-4">
+          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-4">
             <div className="text-3xl font-bold text-white mb-1">{stats.total}</div>
             <div className="text-sm text-stone-400">Total Violations</div>
           </div>
-          <div className="bg-red-500/10 border border-red-500/50 rounded-xl p-4">
+          <div className="bg-red-500/10 border border-red-500/50 rounded p-4">
             <div className="text-3xl font-bold text-red-400 mb-1">{stats.critical}</div>
             <div className="text-sm text-red-300">Critical Open</div>
           </div>
@@ -129,18 +129,18 @@ export default function ComplianceViolationsPage() {
             <div className="text-3xl font-bold mb-1" style={{ color: 'rgba(195,95,95,0.9)' }}>{stats.high}</div>
             <div className="text-sm" style={{ color: '#9E8F75' }}>High Priority</div>
           </div>
-          <div className="bg-yellow-500/10 border border-yellow-500/50 rounded-xl p-4">
+          <div className="bg-yellow-500/10 border border-yellow-500/50 rounded p-4">
             <div className="text-3xl font-bold text-yellow-400 mb-1">{stats.open}</div>
             <div className="text-sm text-yellow-300">Open Cases</div>
           </div>
-          <div className="bg-green-500/10 border border-green-500/50 rounded-xl p-4">
+          <div className="bg-green-500/10 border border-green-500/50 rounded p-4">
             <div className="text-3xl font-bold text-green-400 mb-1">{stats.resolved}</div>
             <div className="text-sm text-green-300">Resolved</div>
           </div>
         </div>
 
         {/* Filters */}
-        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-4 mb-6">
+        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-4 mb-6">
           <div className="flex items-center gap-4">
             <Filter className="w-5 h-5 text-stone-400" />
             <div className="flex gap-2">
@@ -176,12 +176,12 @@ export default function ComplianceViolationsPage() {
         {/* Violations List */}
         <div className="space-y-4">
           {loading ? (
-            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-12 text-center">
+            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-12 text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto mb-4"></div>
               <p className="text-stone-400">Loading violations...</p>
             </div>
           ) : filteredViolations.length === 0 ? (
-            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-12 text-center">
+            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-12 text-center">
               <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">No Violations Found</h3>
               <p className="text-stone-400">All employees are in compliance!</p>
@@ -190,7 +190,7 @@ export default function ComplianceViolationsPage() {
             filteredViolations.map((violation) => (
               <div
                 key={violation.id}
-                className={`bg-stone-900/50 backdrop-blur border rounded-xl p-6 hover:border-amber-500/40/50 transition-colors ${
+                className={`bg-stone-900/50 backdrop-blur border rounded p-6 hover:border-amber-500/40/50 transition-colors ${
                   violation.status === 'OPEN' ? 'border-red-500/50' : 'border-stone-700'
                 }`}
               >
@@ -283,7 +283,7 @@ export default function ComplianceViolationsPage() {
         {/* Resolution Modal */}
         {selectedViolation && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-            <div className="bg-stone-900 border border-stone-700 rounded-2xl p-8 max-w-2xl w-full">
+            <div className="bg-stone-900 border border-stone-700 rounded p-8 max-w-2xl w-full">
               <h2 className="text-2xl font-bold text-white mb-6">Resolve Violation</h2>
 
               <div className="mb-6">

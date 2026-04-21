@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import Confetti from './Confetti';
@@ -202,7 +202,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <Confetti />
-      <div className="lux-app-bg rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col border border-purple-700">
+      <div className="lux-app-bg rounded shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col border border-purple-700">
         {/* Header */}
         <div className="p-4 border-b border-stone-800">
           <div className="flex items-center justify-between mb-0">
@@ -247,7 +247,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
                   index === currentStep
                     ? 'bg-gradient-to-br from-pink-400 via-stone-900 to-amber-800 text-white scale-110 border-pink-300 ring-4 ring-purple-300'
                     : completedSteps.has(index) || index <= currentStep
-                    ? 'bg-gradient-to-br from-green-400 to-amber-800 text-white border-green-300 hover:scale-105 hover:ring-2 hover:ring-purple-400'
+                    ? 'bg-gradient-to-br from-green-400 to-amber-800 text-white border-green-300 hover:ring-2 hover:ring-purple-400'
                     : 'bg-gradient-to-br from-slate-700 to-slate-900 text-gray-200 border-stone-500 hover:bg-stone-900 opacity-60 cursor-not-allowed'
                 }`}
                 style={{ boxShadow: index === currentStep ? '0 0 16px #a78bfa' : undefined }}
@@ -279,7 +279,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
               {currentStepData.description}
             </p>
             {/* Features List */}
-            <div className="bg-gradient-to-br from-amber-700 to-amber-900 rounded-xl p-6 mb-6">
+            <div className="bg-gradient-to-br from-amber-700 to-amber-900 rounded p-6 mb-6">
               <h4 className="font-bold text-stone-100 mb-2 flex items-center gap-2 text-lg">
                 <Sparkles className="w-5 h-5 text-amber-400" />
                 Key Features:

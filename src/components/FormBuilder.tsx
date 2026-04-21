@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import { 
@@ -103,7 +103,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
     <div className="min-h-screen bg-gradient-to-br from-stone-900 to-pink-50 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="bg-stone-950 rounded-xl shadow-lg p-8 mb-6">
+        <div className="bg-stone-950 rounded shadow-lg p-8 mb-6">
           <div className="flex justify-between items-start mb-6">
             <div className="flex-1 mr-8">
               <input
@@ -194,7 +194,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
         <div className="grid grid-cols-4 gap-6">
           {/* Field Types Palette */}
           {!previewMode && (
-            <div className="bg-stone-950 rounded-xl shadow-lg p-6">
+            <div className="bg-stone-950 rounded shadow-lg p-6">
               <h3 className="text-xl font-bold text-stone-200 mb-4">Add Fields</h3>
               <div className="space-y-2">
                 {fieldTypes.map(({ type, label, icon: Icon }) => (
@@ -212,7 +212,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
           )}
 
           {/* Form Canvas */}
-          <div className={`${previewMode ? 'col-span-4' : 'col-span-2'} bg-stone-950 rounded-xl shadow-lg p-8`}>
+          <div className={`${previewMode ? 'col-span-4' : 'col-span-2'} bg-stone-950 rounded shadow-lg p-8`}>
             <h3 className="text-2xl font-bold text-stone-200 mb-6">
               {previewMode ? 'Form Preview' : 'Form Builder'}
             </h3>
@@ -281,7 +281,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
 
           {/* Field Properties Panel */}
           {!previewMode && selectedFieldData && (
-            <div className="bg-stone-950 rounded-xl shadow-lg p-6">
+            <div className="bg-stone-950 rounded shadow-lg p-6">
               <h3 className="text-xl font-bold text-stone-200 mb-4">Field Properties</h3>
               <div className="space-y-4">
                 <div>

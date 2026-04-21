@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Star, Heart, Award, ThumbsUp, CheckCircle, Clock, AlertCircle, Gift, Sparkles } from 'lucide-react';
@@ -150,7 +150,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-gradient-to-r from-yellow-900/40 to-orange-900/40 backdrop-blur-xl rounded-xl p-6 border-2 border-yellow-500/30">
+      <div className="bg-gradient-to-r from-yellow-900/40 to-orange-900/40 backdrop-blur-xl rounded p-6 border-2 border-yellow-500/30">
         <div className="flex items-center gap-3 mb-3">
           <Award className="w-8 h-8 text-yellow-400" />
           <div>
@@ -221,7 +221,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           {pendingKudos.map(kudos => (
             <div
               key={kudos.id}
-              className={`lux-card/80 backdrop-blur-xl rounded-xl p-6 border-2 ${
+              className={`lux-card/80 backdrop-blur-xl rounded p-6 border-2 ${
                 kudos.priority === 'high' 
                   ? 'border-yellow-500/50' 
                   : 'border-cyan-500/30'
@@ -329,7 +329,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           ))}
 
           {pendingKudos.length === 0 && (
-            <div className="bg-stone-900/50 rounded-xl p-12 text-center border-2 border-stone-700">
+            <div className="bg-stone-900/50 rounded p-12 text-center border-2 border-stone-700">
               <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-white mb-2">All Caught Up!</h3>
               <p className="text-stone-300">No pending customer recognition to review.</p>
@@ -344,7 +344,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           {approvedKudos.map(kudos => (
             <div
               key={kudos.id}
-              className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 backdrop-blur-xl rounded-xl p-4 border-2 border-green-500/30"
+              className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 backdrop-blur-xl rounded p-4 border-2 border-green-500/30"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -368,7 +368,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
 
       {/* Standalone Recognition Form */}
       {activeTab === 'standalone' && (
-        <div className="bg-gradient-to-br from-stone-900/40 to-pink-900/40 backdrop-blur-xl rounded-xl p-6 border-2 border-amber-500/40/30">
+        <div className="bg-gradient-to-br from-stone-900/40 to-pink-900/40 backdrop-blur-xl rounded p-6 border-2 border-amber-500/40/30">
           <h3 className="text-2xl font-bold text-white mb-4">Give Recognition</h3>
           <p className="text-amber-100/70 mb-6">Managers and admins can give instant recognition, or recommend employees for customer feedback.</p>
           

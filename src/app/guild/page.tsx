@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { Trophy, Zap, Gift, Award, Target, TrendingUp, Star, Crown, Shield, Flame, Users, Clock } from 'lucide-react';
@@ -170,7 +170,7 @@ export default function GuildPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition-all ${
+              className={`px-6 py-3 rounded font-bold flex items-center gap-2 transition-all ${
                 activeTab === tab.id
                   ? 'bg-gradient-to-r from-amber-700 to-amber-600 text-white scale-105'
                   : 'bg-stone-900/50 text-stone-300 hover:bg-stone-900/50'
@@ -186,10 +186,10 @@ export default function GuildPage() {
         {activeTab === 'profile' && profile && (
           <div className="space-y-6">
             {/* Level Card */}
-            <div className="lux-card border-2 border-amber-500/40/50 rounded-2xl p-8">
+            <div className="lux-card border-2 border-amber-500/40/50 rounded p-8">
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center gap-4">
-                  <div className="p-4 bg-gradient-to-br from-amber-700 to-amber-600 rounded-xl">
+                  <div className="p-4 bg-gradient-to-br from-amber-700 to-amber-600 rounded">
                     {getLevelIcon(profile.levelName)}
                   </div>
                   <div>
@@ -228,21 +228,21 @@ export default function GuildPage() {
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4">
-                <div className="bg-stone-900/50 rounded-xl p-4 text-center">
+                <div className="bg-stone-900/50 rounded p-4 text-center">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <Flame className="w-5 h-5 text-orange-400" />
                     <span className="text-2xl font-bold text-white">{profile.streak}</span>
                   </div>
                   <div className="text-sm text-stone-400">Day Streak</div>
                 </div>
-                <div className="bg-stone-900/50 rounded-xl p-4 text-center">
+                <div className="bg-stone-900/50 rounded p-4 text-center">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <Trophy className="w-5 h-5 text-yellow-400" />
                     <span className="text-2xl font-bold text-white">#{profile.rank || '-'}</span>
                   </div>
                   <div className="text-sm text-stone-400">Rank</div>
                 </div>
-                <div className="bg-stone-900/50 rounded-xl p-4 text-center">
+                <div className="bg-stone-900/50 rounded p-4 text-center">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <Award className="w-5 h-5 text-amber-400" />
                     <span className="text-2xl font-bold text-white">{profile.badges.length}</span>
@@ -253,7 +253,7 @@ export default function GuildPage() {
             </div>
 
             {/* Recent Activity */}
-            <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6">
+            <div className="bg-stone-900/50 border border-stone-700 rounded p-6">
               <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-yellow-400" />
                 Recent XP Activity
@@ -304,8 +304,8 @@ export default function GuildPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {rewards.map(reward => (
-                <div key={reward.id} className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 hover:border-amber-500/40/50 transition-all">
-                  <div className="aspect-square bg-gradient-to-br from-amber-700 to-amber-600 rounded-xl mb-4 flex items-center justify-center">
+                <div key={reward.id} className="bg-stone-900/50 border border-stone-700 rounded p-6 hover:border-amber-500/40/50 transition-all">
+                  <div className="aspect-square bg-gradient-to-br from-amber-700 to-amber-600 rounded mb-4 flex items-center justify-center">
                     <Gift className="w-16 h-16 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">{reward.name}</h3>
@@ -343,7 +343,7 @@ export default function GuildPage() {
               {achievements.map(achievement => (
                 <div
                   key={achievement.id}
-                  className={`rounded-xl p-6 border-2 ${
+                  className={`rounded p-6 border-2 ${
                     achievement.unlocked
                       ? `bg-gradient-to-br ${getRarityColor(achievement.rarity)}`
                       : 'bg-stone-900/30 border-stone-700 grayscale opacity-50'
@@ -389,7 +389,7 @@ export default function GuildPage() {
               {leaderboard.map((entry, idx) => (
                 <div
                   key={idx}
-                  className={`flex items-center justify-between p-6 rounded-xl ${
+                  className={`flex items-center justify-between p-6 rounded ${
                     idx < 3
                       ? 'bg-gradient-to-r from-yellow-600/20 to-orange-600/20 border-2 border-yellow-500/50'
                       : 'bg-stone-900/50 border border-stone-700'

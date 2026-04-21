@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -116,7 +116,7 @@ export default function Kudos() {
 
         {/* Stats Banner */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded-xl p-5 border-2 border-yellow-500/30">
+          <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded p-5 border-2 border-yellow-500/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-yellow-200 text-sm mb-1">Kudos Given</div>
@@ -125,7 +125,7 @@ export default function Kudos() {
               <ThumbsUp className="w-12 h-12 text-yellow-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-pink-900/50 to-red-900/50 rounded-xl p-5 border-2 border-pink-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-red-900/50 rounded p-5 border-2 border-pink-500/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-pink-200 text-sm mb-1">You Received</div>
@@ -135,7 +135,7 @@ export default function Kudos() {
               <Heart className="w-12 h-12 text-pink-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-amber-100/70 text-sm mb-1">You Gave</div>
@@ -145,7 +145,7 @@ export default function Kudos() {
               <Star className="w-12 h-12 text-amber-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 rounded-xl p-5 border-2 border-green-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-green-500/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-green-200 text-sm mb-1">This Month</div>
@@ -160,7 +160,7 @@ export default function Kudos() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left - Give Kudos */}
           <div className="lg:col-span-1">
-            <div className="lux-card/80 rounded-xl p-6 border-2 border-emerald-500/30 sticky top-24">
+            <div className="lux-card/80 rounded p-6 border-2 border-emerald-500/30 sticky top-24">
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <Sparkles className="w-6 h-6 text-emerald-400" />
                 Give Kudos!
@@ -248,7 +248,7 @@ export default function Kudos() {
 
             <div className="space-y-4">
               {recentKudos.map(kudos => (
-                <div key={kudos.id} className={`rounded-xl p-6 border-2 transition-all hover:scale-[1.02] ${
+                <div key={kudos.id} className={`rounded p-6 border-2 transition-all hover:scale-[1.02] ${
                   kudos.to.includes('You')
                     ? 'bg-gradient-to-r from-emerald-900/60 to-teal-900/60 border-emerald-500/50 ring-2 ring-emerald-400'
                     : 'bg-gradient-to-r from-slate-800/80 to-slate-900/80 border-yellow-500/30'
@@ -297,7 +297,7 @@ export default function Kudos() {
         </div>
 
         {/* Fun Footer */}
-        <div className="mt-8 bg-gradient-to-r from-yellow-900/30 to-orange-900/30 rounded-xl p-6 border-2 border-yellow-500/30 text-center">
+        <div className="mt-8 bg-gradient-to-r from-yellow-900/30 to-orange-900/30 rounded p-6 border-2 border-yellow-500/30 text-center">
           <h3 className="text-2xl font-bold text-yellow-200 mb-2">🌟 Fun Fact!</h3>
           <p className="text-yellow-100 text-lg mb-2">
             Teams that recognize each other are 5x happier at work!

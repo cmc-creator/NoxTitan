@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Upload, Database, FileSpreadsheet, Download, CheckCircle, AlertCircle, ArrowRight, Zap, Package, DollarSign, Users, Calendar, TrendingUp, ShoppingCart, Boxes, FileText, RefreshCw, Eye, Check } from 'lucide-react';
@@ -137,7 +137,7 @@ export default function ImportPage() {
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-3 bg-gradient-to-br from-green-600 to-amber-800 rounded-xl">
+            <div className="p-3 bg-[#110F0B] from-REMOVED-600 to-amber-800 rounded">
               <Upload className="h-8 w-8 text-white" />
             </div>
             <div>
@@ -152,7 +152,7 @@ export default function ImportPage() {
         </div>
 
         {/* Progress Steps */}
-        <div className="mb-8 p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+        <div className="mb-8 p-6 rounded" style={{ background: 'var(--card-bg)' }}>
           <div className="flex items-center justify-between">
             {[
               { id: 'select', label: 'Select Data Type', icon: Database },
@@ -192,7 +192,7 @@ export default function ImportPage() {
         {activeStep === 'select' && (
           <div className="space-y-6">
             {/* Quick Start Banner */}
-            <div className="p-6 rounded-xl bg-gradient-to-r from-green-600/20 to-amber-800/20 border-2 border-green-500/30">
+            <div className="p-6 rounded bg-[#110F0B] from-REMOVED-600/20 to-amber-800/20 border-2 border-green-500/30">
               <div className="flex items-start gap-4">
                 <Zap className="w-8 h-8 text-green-400 mt-1" />
                 <div>
@@ -227,7 +227,7 @@ export default function ImportPage() {
             <div className="grid grid-cols-2 gap-4">
               <button
                 onClick={() => setImportMethod('file')}
-                className={`p-6 rounded-xl border-2 transition-all ${
+                className={`p-6 rounded border-2 transition-all ${
                   importMethod === 'file' 
                     ? 'border-amber-500/40 bg-amber-600/10' 
                     : 'border-stone-700 bg-stone-900/30 hover:border-stone-500'
@@ -239,7 +239,7 @@ export default function ImportPage() {
               </button>
               <button
                 onClick={() => setImportMethod('integration')}
-                className={`p-6 rounded-xl border-2 transition-all ${
+                className={`p-6 rounded border-2 transition-all ${
                   importMethod === 'integration' 
                     ? 'border-amber-500/40 bg-amber-600/10' 
                     : 'border-stone-700 bg-stone-900/30 hover:border-stone-500'
@@ -261,7 +261,7 @@ export default function ImportPage() {
                     <button
                       key={template.id}
                       onClick={() => setSelectedTemplate(template.id)}
-                      className={`p-6 rounded-xl border-2 text-left transition-all ${
+                      className={`p-6 rounded border-2 text-left transition-all ${
                         selectedTemplate === template.id
                           ? 'border-amber-500/40 bg-amber-600/10'
                           : 'border-stone-700 bg-stone-900/30 hover:border-stone-500'
@@ -282,7 +282,7 @@ export default function ImportPage() {
 
             {/* Compatible Integrations */}
             {selectedTemplateData && (
-              <div className="p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+              <div className="p-6 rounded" style={{ background: 'var(--card-bg)' }}>
                 <h3 className="text-lg font-bold mb-4 text-white">Compatible Systems for {selectedTemplateData.name}</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
                   {selectedTemplateData.compatibleWith.map((system) => (
@@ -300,7 +300,7 @@ export default function ImportPage() {
             {selectedTemplate && (
               <button
                 onClick={() => setActiveStep('upload')}
-                className="w-full py-4 bg-gradient-to-r from-amber-700 to-green-600 hover:from-amber-700 hover:to-green-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2"
+                className="w-full py-4 bg-gradient-to-r from-amber-700 to-green-600 hover:from-amber-700 hover:to-green-700 text-white rounded font-bold text-lg transition-all flex items-center justify-center gap-2"
               >
                 Continue to Upload
                 <ArrowRight className="w-5 h-5" />
@@ -312,7 +312,7 @@ export default function ImportPage() {
         {/* Step 2: Upload (Simplified for demo) */}
         {activeStep === 'upload' && (
           <div className="space-y-6">
-            <div className="p-12 border-2 border-dashed border-stone-700 rounded-xl text-center hover:border-amber-500/40 transition-all cursor-pointer" style={{ background: 'var(--card-bg)' }}>
+            <div className="p-12 border-2 border-dashed border-stone-700 rounded text-center hover:border-amber-500/40 transition-all cursor-pointer" style={{ background: 'var(--card-bg)' }}>
               <Upload className="w-16 h-16 mx-auto mb-4 text-amber-400" />
               <h3 className="text-2xl font-bold text-white mb-2">Drop your file here or click to browse</h3>
               <p className="text-stone-400 mb-4">Supports CSV, Excel (.xlsx, .xls), and JSON files up to 50MB</p>
@@ -324,7 +324,7 @@ export default function ImportPage() {
               </div>
             </div>
 
-            <div className="p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+            <div className="p-6 rounded" style={{ background: 'var(--card-bg)' }}>
               <h3 className="text-lg font-bold mb-4 text-white flex items-center gap-2">
                 <Download className="w-5 h-5 text-amber-400" />
                 Download Template Files
@@ -350,7 +350,7 @@ export default function ImportPage() {
 
             <button
               onClick={() => setActiveStep('map')}
-              className="w-full py-4 bg-gradient-to-r from-amber-700 to-green-600 hover:from-amber-700 hover:to-green-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2"
+              className="w-full py-4 bg-gradient-to-r from-amber-700 to-green-600 hover:from-amber-700 hover:to-green-700 text-white rounded font-bold text-lg transition-all flex items-center justify-center gap-2"
             >
               Continue to Field Mapping
               <ArrowRight className="w-5 h-5" />
@@ -361,7 +361,7 @@ export default function ImportPage() {
         {/* Step 3: Field Mapping */}
         {activeStep === 'map' && (
           <div className="space-y-6">
-            <div className="p-6 rounded-xl bg-amber-600/10 border border-amber-500/40/30">
+            <div className="p-6 rounded bg-amber-600/10 border border-amber-500/40/30">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
                 <Zap className="w-5 h-5 text-amber-400" />
                 Smart Auto-Mapping Detected
@@ -371,7 +371,7 @@ export default function ImportPage() {
               </p>
             </div>
 
-            <div className="p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+            <div className="p-6 rounded" style={{ background: 'var(--card-bg)' }}>
               <h3 className="text-xl font-bold mb-4 text-white">Map Your Fields to NyxTitan</h3>
               <div className="space-y-3">
                 {sampleMapping.map((map, index) => (
@@ -410,7 +410,7 @@ export default function ImportPage() {
 
             <button
               onClick={() => setActiveStep('preview')}
-              className="w-full py-4 bg-gradient-to-r from-amber-700 to-green-600 hover:from-amber-700 hover:to-green-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2"
+              className="w-full py-4 bg-gradient-to-r from-amber-700 to-green-600 hover:from-amber-700 hover:to-green-700 text-white rounded font-bold text-lg transition-all flex items-center justify-center gap-2"
             >
               Preview Import
               <ArrowRight className="w-5 h-5" />
@@ -422,21 +422,21 @@ export default function ImportPage() {
         {activeStep === 'preview' && (
           <div className="space-y-6">
             <div className="grid grid-cols-3 gap-4">
-              <div className="p-4 rounded-xl bg-green-500/20 border border-green-500/50">
+              <div className="p-4 rounded bg-green-500/20 border border-green-500/50">
                 <div className="text-3xl font-bold text-green-400">122</div>
                 <div className="text-sm text-stone-300">Valid Records</div>
               </div>
-              <div className="p-4 rounded-xl bg-yellow-500/20 border border-yellow-500/50">
+              <div className="p-4 rounded bg-yellow-500/20 border border-yellow-500/50">
                 <div className="text-3xl font-bold text-yellow-400">3</div>
                 <div className="text-sm text-stone-300">Warnings</div>
               </div>
-              <div className="p-4 rounded-xl bg-red-500/20 border border-red-500/50">
+              <div className="p-4 rounded bg-red-500/20 border border-red-500/50">
                 <div className="text-3xl font-bold text-red-400">2</div>
                 <div className="text-sm text-stone-300">Errors</div>
               </div>
             </div>
 
-            <div className="p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+            <div className="p-6 rounded" style={{ background: 'var(--card-bg)' }}>
               <h3 className="text-xl font-bold mb-4 text-white">Data Preview (First 5 Rows)</h3>
               <div className="overflow-x-auto">
                 <table className="w-full">
@@ -473,12 +473,12 @@ export default function ImportPage() {
             </div>
 
             <div className="flex gap-4">
-              <button className="flex-1 py-4 bg-stone-900 hover:bg-stone-600 text-white rounded-xl font-bold text-lg transition-all">
+              <button className="flex-1 py-4 bg-stone-900 hover:bg-stone-600 text-white rounded font-bold text-lg transition-all">
                 Fix Errors First
               </button>
               <button
                 onClick={() => setActiveStep('complete')}
-                className="flex-1 py-4 bg-gradient-to-r from-green-600 to-amber-800 hover:from-green-700 hover:to-amber-800 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2"
+                className="flex-1 py-4 bg-[#110F0B] from-REMOVED-600 to-amber-800 hover:from-green-700 hover:to-amber-800 text-white rounded font-bold text-lg transition-all flex items-center justify-center gap-2"
               >
                 Import Data Now
                 <CheckCircle className="w-5 h-5" />
@@ -497,15 +497,15 @@ export default function ImportPage() {
             <p className="text-xl text-stone-300 mb-8">Successfully imported 122 employee records</p>
             
             <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-8">
-              <div className="p-6 rounded-xl bg-green-500/20 border border-green-500/50">
+              <div className="p-6 rounded bg-green-500/20 border border-green-500/50">
                 <div className="text-4xl font-bold text-green-400">122</div>
                 <div className="text-sm text-stone-300">Records Imported</div>
               </div>
-              <div className="p-6 rounded-xl bg-amber-600/20 border border-amber-500/40/50">
+              <div className="p-6 rounded bg-amber-600/20 border border-amber-500/40/50">
                 <div className="text-4xl font-bold text-amber-400">2:37</div>
                 <div className="text-sm text-stone-300">Time Taken</div>
               </div>
-              <div className="p-6 rounded-xl bg-amber-500/20 border border-amber-500/40/50">
+              <div className="p-6 rounded bg-amber-500/20 border border-amber-500/40/50">
                 <div className="text-4xl font-bold text-amber-400">0</div>
                 <div className="text-sm text-stone-300">Errors</div>
               </div>
@@ -514,11 +514,11 @@ export default function ImportPage() {
             <div className="flex gap-4 justify-center">
               <button
                 onClick={() => setActiveStep('select')}
-                className="px-8 py-3 bg-stone-900 hover:bg-stone-600 text-white rounded-xl font-semibold transition-all"
+                className="px-8 py-3 bg-stone-900 hover:bg-stone-600 text-white rounded font-semibold transition-all"
               >
                 Import More Data
               </button>
-              <button className="px-8 py-3 bg-gradient-to-r from-amber-700 to-green-600 hover:from-amber-700 hover:to-green-700 text-white rounded-xl font-semibold transition-all">
+              <button className="px-8 py-3 bg-gradient-to-r from-amber-700 to-green-600 hover:from-amber-700 hover:to-green-700 text-white rounded font-semibold transition-all">
                 View Imported Data
               </button>
             </div>

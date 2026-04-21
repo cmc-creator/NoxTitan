@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { 
@@ -394,7 +394,7 @@ export default function ReportsPage() {
       </div>
 
       {/* Filters Section */}
-      <div className="bg-stone-950 rounded-xl shadow-md border border-stone-800 p-6 mb-8">
+      <div className="bg-stone-950 rounded shadow-md border border-stone-800 p-6 mb-8">
         <div className="flex items-center gap-2 mb-4">
           <Filter className="w-5 h-5 text-amber-400" />
           <h2 className="text-lg font-bold text-stone-100">Filters</h2>
@@ -517,7 +517,7 @@ export default function ReportsPage() {
 
       {/* Key Metrics Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+        <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-amber-900/30 rounded-lg">
               <FileText className="w-6 h-6 text-amber-400" />
@@ -529,7 +529,7 @@ export default function ReportsPage() {
           <p className="text-xs text-stone-500 mt-1">{totalHours} total hours</p>
         </div>
 
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+        <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-yellow-100 rounded-lg">
               <Clock className="w-6 h-6 text-yellow-600" />
@@ -541,7 +541,7 @@ export default function ReportsPage() {
           <p className="text-xs text-stone-500 mt-1">Awaiting response</p>
         </div>
 
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+        <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-orange-100 rounded-lg">
               <Timer className="w-6 h-6 text-orange-600" />
@@ -553,7 +553,7 @@ export default function ReportsPage() {
           <p className="text-xs text-stone-500 mt-1">Overdue requests</p>
         </div>
 
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+        <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-purple-100 rounded-lg">
               <Activity className="w-6 h-6 text-amber-600" />
@@ -568,7 +568,7 @@ export default function ReportsPage() {
 
       {/* Approval Status Breakdown */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+        <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
           <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
             <PieChart className="w-5 h-5 text-amber-400" />
             Approval Status Breakdown
@@ -648,7 +648,7 @@ export default function ReportsPage() {
           </div>
         </div>
 
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+        <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
           <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
             <BarChart3 className="w-5 h-5 text-amber-600" />
             Time-Off Type Distribution
@@ -731,7 +731,7 @@ export default function ReportsPage() {
 
       {/* Employee Absenteeism Patterns */}
       {reportType === 'absenteeism' && (
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800 mb-8">
+        <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800 mb-8">
           <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
             <Users className="w-5 h-5 text-amber-400" />
             Employee Absenteeism Patterns
@@ -789,7 +789,7 @@ export default function ReportsPage() {
       )}
 
       {/* Detailed Records Table */}
-      <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+      <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
         <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
           <FileText className="w-5 h-5 text-stone-500" />
           Detailed Records ({filteredData.length})

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Trophy, Star, Gem, Map, Sword, Shield, Crown, Target, TrendingUp, Users, Zap, Award, Flame, ChevronRight, Lock, Unlock } from 'lucide-react';
@@ -198,7 +198,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
   return (
     <div className="space-y-6">
       {/* Player Stats Header */}
-      <div className={`bg-gradient-to-r ${themes[selectedTheme].colors} backdrop-blur-xl rounded-2xl p-6 border-2 border-white/20 shadow-2xl`}>
+      <div className={`bg-gradient-to-r ${themes[selectedTheme].colors} backdrop-blur-xl rounded p-6 border-2 border-white/20 shadow-2xl`}>
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-4">
             <div className="text-6xl">{themes[selectedTheme].icon}</div>
@@ -325,7 +325,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
         <div className="space-y-6">
           {/* Completed Today */}
           {completedToday.length > 0 && (
-            <div className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 backdrop-blur-xl rounded-xl p-6 border-2 border-green-500/30">
+            <div className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 backdrop-blur-xl rounded p-6 border-2 border-green-500/30">
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-yellow-400" />
                 Quests Completed Today! 🎉
@@ -350,7 +350,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
           )}
 
           {/* Manager Challenge */}
-          <div className={`bg-gradient-to-r ${managerChallenge.status === 'winning' ? 'from-stone-900/40 to-pink-900/40 border-amber-500/40/30' : 'from-red-900/40 to-orange-900/40 border-red-500/30'} backdrop-blur-xl rounded-xl p-6 border-2`}>
+          <div className={`bg-gradient-to-r ${managerChallenge.status === 'winning' ? 'from-stone-900/40 to-pink-900/40 border-amber-500/40/30' : 'from-red-900/40 to-orange-900/40 border-red-500/30'} backdrop-blur-xl rounded p-6 border-2`}>
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
                 <Users className="w-6 h-6 text-amber-400" />
@@ -382,7 +382,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
           {/* Quest List */}
           <div className="grid grid-cols-1 gap-4">
             {activeQuests.map(quest => (
-              <div key={quest.id} className="lux-card/80 backdrop-blur-xl rounded-xl p-6 border-2 border-cyan-500/30 hover:border-cyan-400/50 transition-all">
+              <div key={quest.id} className="lux-card/80 backdrop-blur-xl rounded p-6 border-2 border-cyan-500/30 hover:border-cyan-400/50 transition-all">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-start gap-4 flex-1">
                     <div className="text-5xl">{quest.icon}</div>
@@ -430,7 +430,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
           {recentAchievements.map(achievement => (
             <div
               key={achievement.id}
-              className={`rounded-xl p-6 border-2 transition-all ${
+              className={`rounded p-6 border-2 transition-all ${
                 achievement.unlocked
                   ? 'bg-gradient-to-br from-yellow-900/40 to-orange-900/40 border-yellow-500/30'
                   : 'bg-stone-900/50 border-stone-700 opacity-60'
@@ -462,7 +462,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
           {leaderboard.map(player => (
             <div
               key={player.rank}
-              className={`rounded-xl p-4 border-2 transition-all ${
+              className={`rounded p-4 border-2 transition-all ${
                 player.isCurrentUser
                   ? 'bg-gradient-to-r from-stone-900/60 to-pink-900/60 border-amber-500/40/50 ring-4 ring-purple-500/30'
                   : 'bg-stone-900/50 border-stone-700 hover:border-cyan-500/30'
@@ -504,7 +504,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
       {/* Treasure Chest Tab */}
       {activeTab === 'treasure' && (
         <div>
-          <div className="bg-gradient-to-r from-yellow-900/40 to-amber-900/40 backdrop-blur-xl rounded-xl p-6 border-2 border-yellow-500/30 mb-6">
+          <div className="bg-gradient-to-r from-yellow-900/40 to-amber-900/40 backdrop-blur-xl rounded p-6 border-2 border-yellow-500/30 mb-6">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-1">Your Treasure</h3>
@@ -521,7 +521,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
             {treasureChest.map((item, index) => (
               <div
                 key={index}
-                className={`rounded-xl p-6 border-2 transition-all ${
+                className={`rounded p-6 border-2 transition-all ${
                   item.available && playerStats.gems >= item.cost
                     ? 'bg-gradient-to-br from-stone-900/40 to-pink-900/40 border-amber-500/40/30 hover:border-amber-400/40/50'
                     : 'bg-stone-900/50 border-stone-700 opacity-60'

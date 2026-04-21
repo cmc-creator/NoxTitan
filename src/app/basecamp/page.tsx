@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -164,7 +164,7 @@ export default function Basecamp() {
 
       <div className="max-w-7xl mx-auto p-6">
         {/* Welcome Banner */}
-        <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 rounded-2xl p-8 mb-6 border-2 border-emerald-400/50 shadow-2xl relative overflow-hidden">
+        <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 rounded p-8 mb-6 border-2 border-emerald-400/50 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-10">
             <Mountain className="w-64 h-64 text-white" />
           </div>
@@ -195,7 +195,7 @@ export default function Basecamp() {
         {/* Mood Check-In Modal */}
         {showMoodCheckIn && (
           <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="lux-card rounded-2xl p-8 max-w-2xl w-full border-2 border-emerald-500/30 shadow-2xl">
+            <div className="lux-card rounded p-8 max-w-2xl w-full border-2 border-emerald-500/30 shadow-2xl">
               <h2 className="text-3xl font-bold text-white mb-2 text-center">How are you feeling today, {userName}?</h2>
               <p className="text-emerald-200 text-center mb-6">Your wellbeing matters to us 💚</p>
               
@@ -204,7 +204,7 @@ export default function Basecamp() {
                   <button
                     key={mood.value}
                     onClick={() => handleMoodSelection(mood)}
-                    className={`p-4 rounded-xl border-2 transition-all hover:scale-105 ${
+                    className={`p-4 rounded border-2 transition-all ${
                       mood.color === 'green' ? 'bg-green-500/10 border-green-500/30 hover:border-green-500/60' :
                       mood.color === 'blue' ? 'bg-amber-600/10 border-amber-500/40/30 hover:border-amber-500/40/60' :
                       mood.color === 'yellow' ? 'bg-yellow-500/10 border-yellow-500/30 hover:border-yellow-500/60' :
@@ -243,7 +243,7 @@ export default function Basecamp() {
 
         {/* Today's Coworkers - Critical for Medical/Mental Health */}
         {showCoworkers && (
-          <div className="bg-gradient-to-br from-emerald-900/30 to-teal-900/30 rounded-2xl p-6 mb-6 border-2 border-emerald-500/30 shadow-xl">
+          <div className="bg-gradient-to-br from-emerald-900/30 to-teal-900/30 rounded p-6 mb-6 border-2 border-emerald-500/30 shadow-xl">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <Users className="w-6 h-6 text-emerald-400" />
@@ -269,7 +269,7 @@ export default function Basecamp() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm ${
-                          coworker.status === 'clocked-in' ? 'bg-gradient-to-br from-green-500 to-emerald-500' :
+                          coworker.status === 'clocked-in' ? 'bg-[#110F0B] from-REMOVED-500 to-emerald-500' :
                           coworker.status === 'on-break' ? 'bg-gradient-to-br from-yellow-500 to-orange-500' :
                           'bg-gradient-to-br from-slate-500 to-slate-600'
                         }`}>
@@ -351,7 +351,7 @@ export default function Basecamp() {
         {/* Quick Stats Row */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
           {/* Clock-In Status - CRITICAL */}
-          <div className={`${clockedIn ? 'bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-green-500/30' : 'bg-gradient-to-br from-red-900/50 to-orange-900/50 border-red-500/30'} rounded-xl p-4 border-2`}>
+          <div className={`${clockedIn ? 'bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 border-green-500/30' : 'bg-[#110F0B] from-REMOVED-900/50 to-orange-900/50 border-red-500/30'} rounded p-4 border-2`}>
             <div className="flex items-center justify-between mb-2">
               {clockedIn ? (
                 <CheckCircle className="w-8 h-8 text-green-400" />
@@ -379,7 +379,7 @@ export default function Basecamp() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-4 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
               <Flame className="w-8 h-8 text-orange-400" />
               <span className="text-2xl font-bold text-white">12</span>
@@ -388,7 +388,7 @@ export default function Basecamp() {
             <div className="text-xs text-amber-200 mt-1">You're on fire! 🔥</div>
           </div>
 
-          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-4 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
               <Star className="w-8 h-8 text-yellow-400" />
               <span className="text-2xl font-bold text-white">847</span>
@@ -397,7 +397,7 @@ export default function Basecamp() {
             <div className="text-xs text-amber-400 mt-1">Top 10%! ⭐</div>
           </div>
 
-          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded-xl p-4 border-2 border-emerald-500/30">
+          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded p-4 border-2 border-emerald-500/30">
             <div className="flex items-center justify-between mb-2">
               <Target className="w-8 h-8 text-emerald-400" />
               <span className="text-2xl font-bold text-white">8/10</span>
@@ -406,7 +406,7 @@ export default function Basecamp() {
             <div className="text-xs text-emerald-300 mt-1">Almost there! 💪</div>
           </div>
 
-          <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 rounded-xl p-4 border-2 border-orange-500/30">
+          <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 rounded p-4 border-2 border-orange-500/30">
             <div className="flex items-center justify-between mb-2">
               <Gift className="w-8 h-8 text-pink-400" />
               <span className="text-2xl font-bold text-white">3</span>
@@ -421,7 +421,7 @@ export default function Basecamp() {
           {/* Left Column - Quick Actions */}
           <div className="lg:col-span-2 space-y-6">
             {/* Schedule Change Notifications */}
-            <div className="bg-gradient-to-br from-orange-900/30 to-red-900/30 rounded-xl p-6 border-2 border-orange-500/50 shadow-xl">
+            <div className="bg-gradient-to-br from-orange-900/30 to-red-900/30 rounded p-6 border-2 border-orange-500/50 shadow-xl">
               <div className="flex items-center gap-2 mb-4">
                 <Bell className="w-6 h-6 text-orange-400 animate-pulse" />
                 <h2 className="text-2xl font-bold text-white">Schedule Changes</h2>
@@ -464,7 +464,7 @@ export default function Basecamp() {
             </div>
 
             {/* Running Late Notification */}
-            <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/30 rounded-xl p-6 border-2 border-yellow-500/30">
+            <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/30 rounded p-6 border-2 border-yellow-500/30">
               <div className="flex items-center gap-2 mb-4">
                 <Clock className="w-6 h-6 text-yellow-400" />
                 <h2 className="text-2xl font-bold text-white">Running Late?</h2>
@@ -503,7 +503,7 @@ export default function Basecamp() {
             </div>
 
             {/* Team Messaging */}
-            <div className="bg-gradient-to-br from-amber-700/30 to-amber-900/30 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="bg-gradient-to-br from-amber-700/30 to-amber-900/30 rounded p-6 border-2 border-amber-500/40/30">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <MessageSquare className="w-6 h-6 text-amber-400" />
@@ -596,7 +596,7 @@ export default function Basecamp() {
             </div>
 
             {/* Personal Calendar Integration */}
-            <div className="bg-gradient-to-br from-stone-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="bg-gradient-to-br from-stone-900/30 to-pink-900/30 rounded p-6 border-2 border-amber-500/40/30">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-6 h-6 text-amber-400" />
@@ -648,7 +648,7 @@ export default function Basecamp() {
             </div>
 
             {/* Quick Actions Hub */}
-            <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-emerald-500/30">
+            <div className="bg-stone-900/50 rounded p-6 border-2 border-emerald-500/30">
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-yellow-400" />
                 Quick Actions
@@ -675,7 +675,7 @@ export default function Basecamp() {
             </div>
 
             {/* Today's Schedule */}
-            <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-emerald-500/30">
+            <div className="bg-stone-900/50 rounded p-6 border-2 border-emerald-500/30">
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <Calendar className="w-6 h-6 text-emerald-400" />
                 Today's Schedule
@@ -706,7 +706,7 @@ export default function Basecamp() {
             </div>
 
             {/* Idea Board Preview */}
-            <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-emerald-500/30">
+            <div className="bg-stone-900/50 rounded p-6 border-2 border-emerald-500/30">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-2">
                   <Lightbulb className="w-6 h-6 text-yellow-400" />
@@ -744,7 +744,7 @@ export default function Basecamp() {
           {/* Right Column - Everything Else */}
           <div className="space-y-6">
             {/* Titan Employee Assistant Chatbot */}
-            <div className="bg-gradient-to-br from-amber-700/30 to-cyan-900/30 rounded-xl p-6 border-2 border-amber-500/40/30 shadow-xl">
+            <div className="bg-gradient-to-br from-amber-700/30 to-cyan-900/30 rounded p-6 border-2 border-amber-500/40/30 shadow-xl">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <Bot className="w-6 h-6 text-cyan-400" />
@@ -889,7 +889,7 @@ export default function Basecamp() {
             </div>
 
             {/* Recognition Wall */}
-            <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/30 rounded-xl p-6 border-2 border-yellow-500/30">
+            <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/30 rounded p-6 border-2 border-yellow-500/30">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Award className="w-5 h-5 text-yellow-400" />
                 Kudos Wall
@@ -907,7 +907,7 @@ export default function Basecamp() {
             </div>
 
             {/* All Features Hub */}
-            <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-emerald-500/30">
+            <div className="bg-stone-900/50 rounded p-6 border-2 border-emerald-500/30">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Mountain className="w-5 h-5 text-emerald-400" />
                 Basecamp Features
@@ -966,7 +966,7 @@ export default function Basecamp() {
             </div>
 
             {/* Company Announcements */}
-            <div className="bg-gradient-to-br from-amber-700/30 to-cyan-900/30 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="bg-gradient-to-br from-amber-700/30 to-cyan-900/30 rounded p-6 border-2 border-amber-500/40/30">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Bell className="w-5 h-5 text-amber-400" />
                 Announcements

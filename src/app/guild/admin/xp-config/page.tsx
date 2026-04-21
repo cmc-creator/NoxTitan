@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { Settings, Zap, Save } from 'lucide-react';
@@ -122,7 +122,7 @@ export default function XPConfigPage() {
         )}
 
         {/* Activities Section */}
-        <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 mb-6">
+        <div className="bg-stone-900/50 border border-stone-700 rounded p-6 mb-6">
           <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
             <Zap className="w-6 h-6 text-yellow-400" />
             Team Activities
@@ -159,7 +159,7 @@ export default function XPConfigPage() {
         </div>
 
         {/* Achievements Section */}
-        <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 mb-6">
+        <div className="bg-stone-900/50 border border-stone-700 rounded p-6 mb-6">
           <h2 className="text-2xl font-bold text-white mb-4">Achievements by Rarity</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div>
@@ -211,7 +211,7 @@ export default function XPConfigPage() {
         </div>
 
         {/* Daily Actions Section */}
-        <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 mb-6">
+        <div className="bg-stone-900/50 border border-stone-700 rounded p-6 mb-6">
           <h2 className="text-2xl font-bold text-white mb-4">Daily Actions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div>
@@ -263,7 +263,7 @@ export default function XPConfigPage() {
         </div>
 
         {/* Recognition Section */}
-        <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 mb-6">
+        <div className="bg-stone-900/50 border border-stone-700 rounded p-6 mb-6">
           <h2 className="text-2xl font-bold text-white mb-4">Recognition</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -288,7 +288,7 @@ export default function XPConfigPage() {
         </div>
 
         {/* Guild Bonuses Section */}
-        <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 mb-6">
+        <div className="bg-stone-900/50 border border-stone-700 rounded p-6 mb-6">
           <h2 className="text-2xl font-bold text-white mb-4">Guild Bonuses</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -316,7 +316,7 @@ export default function XPConfigPage() {
         <div className="flex gap-4">
           <button
             onClick={handleSave}
-            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all"
+            className="flex items-center gap-2 px-6 py-3 bg-[#110F0B] from-REMOVED-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all"
           >
             <Save className="w-5 h-5" />
             Save Changes

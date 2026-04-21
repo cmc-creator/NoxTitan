@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { BookOpen, Plus, Filter, Search, AlertTriangle, CheckCircle, Clock, Users, Package, Wrench, MessageSquare, Flag, TrendingUp, Shield } from 'lucide-react';
@@ -381,7 +381,7 @@ export default function ShiftLogsPage() {
       case 'high': return 'bg-orange-500';
       case 'medium': return 'bg-yellow-500';
       case 'low': return 'bg-amber-600';
-      default: return 'bg-gray-500';
+      default: return 'bg-[rgba(201,168,76,0.04)]0';
     }
   };
 
@@ -415,7 +415,7 @@ export default function ShiftLogsPage() {
                   setSelectedBusinessType(key);
                   setSelectedDepartment('all');
                 }}
-                className={`p-4 rounded-xl font-semibold transition-all ${
+                className={`p-4 rounded font-semibold transition-all ${
                   selectedBusinessType === key ? 'scale-105 shadow-lg' : 'opacity-60 hover:opacity-100'
                 }`}
                 style={{
@@ -432,7 +432,7 @@ export default function ShiftLogsPage() {
 
         {/* HIPAA Warning for Healthcare Settings */}
         {(selectedBusinessType === 'healthcare' || selectedBusinessType === 'hospital' || selectedBusinessType === 'behavioralHealth') && (
-          <div className="mb-6 p-5 rounded-xl border-2 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
+          <div className="mb-6 p-5 rounded border-2 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-start gap-3">
               <Shield className="h-6 w-6 text-amber-400 flex-shrink-0 mt-1" />
               <div>
@@ -452,19 +452,19 @@ export default function ShiftLogsPage() {
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Total Logs</div>
             <div className="text-3xl font-bold" style={{ color: 'var(--header-text)' }}>{stats.total}</div>
           </div>
-          <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Urgent</div>
             <div className="text-3xl font-bold text-red-500">{stats.urgent}</div>
           </div>
-          <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Action Required</div>
             <div className="text-3xl font-bold text-orange-500">{stats.actionRequired}</div>
           </div>
-          <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Resolved Today</div>
             <div className="text-3xl font-bold text-green-500">{stats.resolved}</div>
           </div>
@@ -474,7 +474,7 @@ export default function ShiftLogsPage() {
         <div className="flex gap-4 mb-8 flex-wrap">
           <button
             onClick={() => setActiveView('logs')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeView === 'logs' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -487,7 +487,7 @@ export default function ShiftLogsPage() {
           </button>
           <button
             onClick={() => setActiveView('handover')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeView === 'handover' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -500,7 +500,7 @@ export default function ShiftLogsPage() {
           </button>
           <button
             onClick={() => setActiveView('add')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeView === 'add' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -517,7 +517,7 @@ export default function ShiftLogsPage() {
         {activeView === 'logs' && (
           <div>
             {/* Filters */}
-            <div className="mb-6 p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+            <div className="mb-6 p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
               <div className="flex items-center gap-3 mb-4">
                 <Filter className="h-5 w-5" style={{ color: 'var(--primary-color)' }} />
                 <h3 className="text-lg font-bold" style={{ color: 'var(--header-text)' }}>Filters</h3>
@@ -602,7 +602,7 @@ export default function ShiftLogsPage() {
                 return (
                   <div
                     key={log.id}
-                    className="p-6 rounded-xl shadow-lg hover:shadow-xl transition-all"
+                    className="p-6 rounded shadow-lg hover:shadow-xl transition-all"
                     style={{ background: 'var(--card-bg)' }}
                   >
                     <div className="flex items-start gap-4">
@@ -700,7 +700,7 @@ export default function ShiftLogsPage() {
         {/* Handover View */}
         {activeView === 'handover' && (
           <div>
-            <div className="mb-6 p-6 rounded-xl shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
+            <div className="mb-6 p-6 rounded shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
               <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
                 Shift Handover Summary
               </h2>
@@ -719,7 +719,7 @@ export default function ShiftLogsPage() {
                   return (
                     <div
                       key={log.id}
-                      className="p-6 rounded-xl shadow-lg border-l-4 border-red-500"
+                      className="p-6 rounded shadow-lg border-l-4 border-red-500"
                       style={{ background: 'var(--card-bg)' }}
                     >
                       <div className="flex items-center gap-3 mb-2">
@@ -775,7 +775,7 @@ export default function ShiftLogsPage() {
         {/* Add Log View */}
         {activeView === 'add' && (
           <div className="max-w-3xl mx-auto">
-            <div className="p-8 rounded-2xl shadow-xl" style={{ background: 'var(--card-bg)' }}>
+            <div className="p-8 rounded shadow-xl" style={{ background: 'var(--card-bg)' }}>
               <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--header-text)' }}>
                 New Log Entry
               </h2>
@@ -798,7 +798,7 @@ export default function ShiftLogsPage() {
                   <div>
                     <label className="block text-sm font-semibold mb-2">Department</label>
                     <select 
-                      className="w-full p-4 rounded-xl"
+                      className="w-full p-4 rounded"
                       style={{ background: 'var(--calendar-bg)', border: '2px solid var(--border-color)' }}
                     >
                       {currentBusiness.departments.map(dept => (
@@ -810,7 +810,7 @@ export default function ShiftLogsPage() {
                   <div>
                     <label className="block text-sm font-semibold mb-2">Shift</label>
                     <select 
-                      className="w-full p-4 rounded-xl"
+                      className="w-full p-4 rounded"
                       style={{ background: 'var(--calendar-bg)', border: '2px solid var(--border-color)' }}
                     >
                       <option>Morning Shift</option>
@@ -826,7 +826,7 @@ export default function ShiftLogsPage() {
                   <div>
                     <label className="block text-sm font-semibold mb-2">Category</label>
                     <select 
-                      className="w-full p-4 rounded-xl"
+                      className="w-full p-4 rounded"
                       style={{ background: 'var(--calendar-bg)', border: '2px solid var(--border-color)' }}
                     >
                       {currentBusiness.categories.map(cat => (
@@ -838,7 +838,7 @@ export default function ShiftLogsPage() {
                   <div>
                     <label className="block text-sm font-semibold mb-2">Priority</label>
                     <select 
-                      className="w-full p-4 rounded-xl"
+                      className="w-full p-4 rounded"
                       style={{ background: 'var(--calendar-bg)', border: '2px solid var(--border-color)' }}
                     >
                       <option value="low">🟢 Low</option>
@@ -858,7 +858,7 @@ export default function ShiftLogsPage() {
                     <input
                       type="text"
                       placeholder="e.g., 'Room 305', 'Pt. Initials: J.D.', 'MRN: ****1234'"
-                      className="w-full p-4 rounded-xl"
+                      className="w-full p-4 rounded"
                       style={{ background: 'var(--calendar-bg)', border: '2px solid var(--border-color)' }}
                     />
                     <div className="text-xs opacity-60 mt-2">
@@ -872,7 +872,7 @@ export default function ShiftLogsPage() {
                   <input
                     type="text"
                     placeholder="Brief summary of the event..."
-                    className="w-full p-4 rounded-xl"
+                    className="w-full p-4 rounded"
                     style={{ background: 'var(--calendar-bg)', border: '2px solid var(--border-color)' }}
                   />
                 </div>
@@ -882,7 +882,7 @@ export default function ShiftLogsPage() {
                   <textarea
                     rows={6}
                     placeholder="Detailed description of what happened, actions taken, and any follow-up needed..."
-                    className="w-full p-4 rounded-xl"
+                    className="w-full p-4 rounded"
                     style={{ background: 'var(--calendar-bg)', border: '2px solid var(--border-color)' }}
                   ></textarea>
                 </div>
@@ -892,7 +892,7 @@ export default function ShiftLogsPage() {
                   <div>
                     <label className="block text-sm font-semibold mb-2">Privacy Level</label>
                     <select 
-                      className="w-full p-4 rounded-xl"
+                      className="w-full p-4 rounded"
                       style={{ background: 'var(--calendar-bg)', border: '2px solid var(--border-color)' }}
                     >
                       <option value="standard">🔓 Standard - Routine care information</option>
@@ -902,7 +902,7 @@ export default function ShiftLogsPage() {
                   </div>
                 )}
 
-                <div className="flex items-center gap-3 p-4 rounded-xl" style={{ background: 'var(--calendar-bg)' }}>
+                <div className="flex items-center gap-3 p-4 rounded" style={{ background: 'var(--calendar-bg)' }}>
                   <input
                     type="checkbox"
                     id="actionRequired"
@@ -920,7 +920,7 @@ export default function ShiftLogsPage() {
                 </div>
 
                 {(selectedBusinessType === 'healthcare' || selectedBusinessType === 'hospital' || selectedBusinessType === 'behavioralHealth') && (
-                  <div className="flex items-center gap-3 p-4 rounded-xl" style={{ background: 'var(--calendar-bg)' }}>
+                  <div className="flex items-center gap-3 p-4 rounded" style={{ background: 'var(--calendar-bg)' }}>
                     <input
                       type="checkbox"
                       id="containsPHI"
@@ -939,7 +939,7 @@ export default function ShiftLogsPage() {
                 )}
 
                 <button
-                  className="w-full py-4 px-6 rounded-xl font-bold text-white text-lg shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2"
+                  className="w-full py-4 px-6 rounded font-bold text-white text-lg shadow-lg transition-all flex items-center justify-center gap-2"
                   style={{ background: 'var(--primary-btn)' }}
                 >
                   <Plus className="h-5 w-5" />

@@ -1,7 +1,7 @@
-export default function TermsPage() {
+﻿export default function TermsPage() {
   return (
     <div className="min-h-screen lux-app-bg p-8">
-      <div className="max-w-4xl mx-auto bg-stone-900/80 rounded-2xl shadow-2xl p-12 border border-stone-700">
+      <div className="max-w-4xl mx-auto bg-stone-900/80 rounded shadow-2xl p-12 border border-stone-700">
         <h1 className="text-4xl font-extrabold text-amber-200 mb-6">Terms of Service</h1>
         <p className="text-stone-300 mb-4">Effective Date: January 1, 2026</p>
         

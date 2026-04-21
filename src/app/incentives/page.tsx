@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { DollarSign, Clock, Users, TrendingUp, Zap, Gift, Trophy, Plus, AlertCircle, CheckCircle } from 'lucide-react';
@@ -144,7 +144,7 @@ export default function IncentivesPage() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Available Now</div>
               <Zap className="h-5 w-5 text-yellow-500" />
@@ -153,7 +153,7 @@ export default function IncentivesPage() {
             <div className="text-xs text-yellow-500">Grab them fast!</div>
           </div>
 
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Total Bonuses</div>
               <DollarSign className="h-5 w-5 text-green-500" />
@@ -164,7 +164,7 @@ export default function IncentivesPage() {
             <div className="text-xs text-green-500">Up for grabs</div>
           </div>
 
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Your Earnings</div>
               <Trophy className="h-5 w-5 text-amber-500" />
@@ -173,7 +173,7 @@ export default function IncentivesPage() {
             <div className="text-xs text-amber-500">This month</div>
           </div>
 
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Your Rank</div>
               <TrendingUp className="h-5 w-5 text-amber-400" />
@@ -187,7 +187,7 @@ export default function IncentivesPage() {
         <div className="mb-6">
           <button
             onClick={() => setShowCreateModal(true)}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white shadow-lg hover:scale-105 transition-all"
+            className="flex items-center gap-2 px-6 py-3 rounded font-bold text-white shadow-lg transition-all"
             style={{ background: 'var(--primary-btn)' }}
           >
             <Plus className="h-5 w-5" />
@@ -199,7 +199,7 @@ export default function IncentivesPage() {
         <div className="flex gap-4 mb-8 flex-wrap">
           <button
             onClick={() => setActiveTab('available')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'available' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -212,7 +212,7 @@ export default function IncentivesPage() {
           </button>
           <button
             onClick={() => setActiveTab('claimed')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'claimed' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -225,7 +225,7 @@ export default function IncentivesPage() {
           </button>
           <button
             onClick={() => setActiveTab('leaderboard')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'leaderboard' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -244,7 +244,7 @@ export default function IncentivesPage() {
             {availableShifts.map((shift) => (
               <div
                 key={shift.id}
-                className="p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border-l-4 relative overflow-hidden"
+                className="p-6 rounded shadow-lg hover:shadow-2xl transition-all border-l-4 relative overflow-hidden"
                 style={{
                   background: 'var(--card-bg)',
                   borderLeftColor: shift.urgency === 'high' ? '#ef4444' : shift.urgency === 'medium' ? '#f59e0b' : '#10b981',
@@ -314,7 +314,7 @@ export default function IncentivesPage() {
 
                 {/* Claim Button */}
                 <button
-                  className="w-full py-3 px-6 rounded-xl font-bold text-white text-lg shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3 px-6 rounded font-bold text-white text-lg shadow-lg transition-all flex items-center justify-center gap-2"
                   style={{ background: 'var(--primary-btn)' }}
                 >
                   <Zap className="h-5 w-5" />
@@ -330,7 +330,7 @@ export default function IncentivesPage() {
             {claimedShifts.map((shift) => (
               <div
                 key={shift.id}
-                className="p-6 rounded-xl shadow-lg"
+                className="p-6 rounded shadow-lg"
                 style={{ background: 'var(--card-bg)' }}
               >
                 <div className="flex items-start justify-between">
@@ -372,7 +372,7 @@ export default function IncentivesPage() {
         {activeTab === 'leaderboard' && (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Top 3 Podium */}
-            <div className="lg:col-span-2 p-8 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+            <div className="lg:col-span-2 p-8 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
               <h2 className="text-2xl font-bold mb-6 text-center" style={{ color: 'var(--header-text)' }}>
                 🏆 Top Performers This Month 🏆
               </h2>
@@ -407,7 +407,7 @@ export default function IncentivesPage() {
             </div>
 
             {/* Full Leaderboard */}
-            <div className="lg:col-span-2 p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+            <div className="lg:col-span-2 p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
               <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
                 Complete Leaderboard
               </h3>
@@ -415,7 +415,7 @@ export default function IncentivesPage() {
                 {leaderboard.map((person) => (
                   <div
                     key={person.rank}
-                    className="p-4 rounded-xl flex items-center gap-4 hover:scale-102 transition-all"
+                    className="p-4 rounded flex items-center gap-4 hover:scale-102 transition-all"
                     style={{ background: 'var(--calendar-bg)' }}
                   >
                     <div className="text-2xl font-bold w-8">{person.badge}</div>
@@ -440,7 +440,7 @@ export default function IncentivesPage() {
         {/* Create Modal */}
         {showCreateModal && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-            <div className="w-full max-w-3xl rounded-2xl shadow-2xl" style={{ background: 'var(--card-bg)' }}>
+            <div className="w-full max-w-3xl rounded shadow-2xl" style={{ background: 'var(--card-bg)' }}>
               <div className="p-6 border-b" style={{ borderColor: 'var(--border-color)' }}>
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-bold" style={{ color: 'var(--header-text)' }}>
@@ -534,7 +534,7 @@ export default function IncentivesPage() {
               </div>
               <div className="p-6 border-t" style={{ borderColor: 'var(--border-color)' }}>
                 <button
-                  className="w-full py-3 px-6 rounded-xl font-bold text-white text-lg shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3 px-6 rounded font-bold text-white text-lg shadow-lg transition-all flex items-center justify-center gap-2"
                   style={{ background: 'var(--primary-btn)' }}
                 >
                   <Zap className="h-5 w-5" />

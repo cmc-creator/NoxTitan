@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { BookOpen, Award, Video, FileText, CheckCircle, Clock, Star, Download, PlayCircle, TrendingUp } from 'lucide-react';
@@ -21,7 +21,7 @@ export default function LearningHubPage() {
 
         {/* Stats Bar */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'var(--today-highlight)' }}>
                 <BookOpen className="h-6 w-6 text-white" />
@@ -32,7 +32,7 @@ export default function LearningHubPage() {
               </div>
             </div>
           </div>
-          <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full flex items-center justify-center bg-green-500">
                 <CheckCircle className="h-6 w-6 text-white" />
@@ -43,7 +43,7 @@ export default function LearningHubPage() {
               </div>
             </div>
           </div>
-          <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full flex items-center justify-center bg-yellow-500">
                 <Award className="h-6 w-6 text-white" />
@@ -54,7 +54,7 @@ export default function LearningHubPage() {
               </div>
             </div>
           </div>
-          <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full flex items-center justify-center bg-amber-500">
                 <TrendingUp className="h-6 w-6 text-white" />
@@ -71,7 +71,7 @@ export default function LearningHubPage() {
         <div className="flex gap-4 mb-8 flex-wrap">
           <button
             onClick={() => setActiveTab('courses')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'courses' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -84,7 +84,7 @@ export default function LearningHubPage() {
           </button>
           <button
             onClick={() => setActiveTab('certifications')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'certifications' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -97,7 +97,7 @@ export default function LearningHubPage() {
           </button>
           <button
             onClick={() => setActiveTab('resources')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'resources' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -211,7 +211,7 @@ function CoursesSection() {
 
   return (
     <div>
-      <div className="mb-6 p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+      <div className="mb-6 p-6 rounded" style={{ background: 'var(--card-bg)' }}>
         <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
           📖 Professional Development Courses
         </h2>
@@ -224,7 +224,7 @@ function CoursesSection() {
         {courses.map((course) => (
           <div
             key={course.id}
-            className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:scale-105 cursor-pointer"
+            className="rounded shadow-lg overflow-hidden hover:shadow-2xl transition-all cursor-pointer"
             style={{ background: 'var(--card-bg)' }}
           >
             {/* Thumbnail */}
@@ -370,7 +370,7 @@ function CertificationsSection() {
     <div>
       {/* Earned Certificates */}
       <div className="mb-8">
-        <div className="mb-6 p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+        <div className="mb-6 p-6 rounded" style={{ background: 'var(--card-bg)' }}>
           <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
             🏆 Your Certifications
           </h2>
@@ -383,7 +383,7 @@ function CertificationsSection() {
           {earnedCertificates.map((cert, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-xl shadow-lg border-2"
+              className="p-6 rounded shadow-lg border-2"
               style={{ background: 'var(--card-bg)', borderColor: 'var(--today-highlight)' }}
             >
               <div className="flex items-start justify-between mb-4">
@@ -442,7 +442,7 @@ function CertificationsSection() {
       </div>
 
       {/* Available Certifications */}
-      <div className="mb-6 p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+      <div className="mb-6 p-6 rounded" style={{ background: 'var(--card-bg)' }}>
         <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
           🎯 Professional Certifications
         </h2>
@@ -455,7 +455,7 @@ function CertificationsSection() {
         {availableCertifications.map((cert, idx) => (
           <div
             key={idx}
-            className="p-6 rounded-xl shadow-lg hover:shadow-xl transition-all"
+            className="p-6 rounded shadow-lg hover:shadow-xl transition-all"
             style={{ background: 'var(--card-bg)' }}
           >
             <div className="text-6xl mb-4 text-center">{cert.icon}</div>
@@ -528,7 +528,7 @@ function ResourcesSection() {
 
   return (
     <div>
-      <div className="mb-6 p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+      <div className="mb-6 p-6 rounded" style={{ background: 'var(--card-bg)' }}>
         <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
           📚 Learning Resources
         </h2>
@@ -541,7 +541,7 @@ function ResourcesSection() {
         {resourceCategories.map((category, idx) => (
           <div
             key={idx}
-            className="p-6 rounded-xl shadow-lg"
+            className="p-6 rounded shadow-lg"
             style={{ background: 'var(--card-bg)' }}
           >
             <div className="flex items-center gap-3 mb-4">
@@ -578,7 +578,7 @@ function ResourcesSection() {
       </div>
 
       {/* Knowledge Base */}
-      <div className="p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
           💡 Knowledge Base
         </h3>

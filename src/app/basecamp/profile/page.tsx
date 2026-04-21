@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -68,7 +68,7 @@ export default function Profile() {
         </div>
 
         {/* Profile Card */}
-        <div className="lux-card/80 rounded-2xl p-8 border-2 border-emerald-500/30 mb-6">
+        <div className="lux-card/80 rounded p-8 border-2 border-emerald-500/30 mb-6">
           {/* Avatar Section */}
           <div className="flex items-start gap-8 mb-8 pb-8 border-b border-stone-700">
             <div className="relative">
@@ -211,7 +211,7 @@ export default function Profile() {
         </div>
 
         {/* Achievements */}
-        <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/30 rounded-2xl p-6 border-2 border-yellow-500/30">
+        <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/30 rounded p-6 border-2 border-yellow-500/30">
           <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
             <Award className="w-6 h-6 text-yellow-400" />
             Your Achievements

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -213,22 +213,22 @@ export default function OrgChart() {
 
         {/* Stats */}
         <div className="grid grid-cols-4 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-4 border-2 border-amber-500/40/30">
             <Users className="w-8 h-8 text-amber-400 mb-2" />
             <div className="text-stone-300 text-sm mb-1">Total Employees</div>
             <div className="text-3xl font-bold text-white">247</div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-4 border-2 border-amber-500/40/30">
             <Users className="w-8 h-8 text-amber-400 mb-2" />
             <div className="text-stone-300 text-sm mb-1">Departments</div>
             <div className="text-3xl font-bold text-white">12</div>
           </div>
-          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded-xl p-4 border-2 border-emerald-500/30">
+          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded p-4 border-2 border-emerald-500/30">
             <Users className="w-8 h-8 text-emerald-400 mb-2" />
             <div className="text-stone-300 text-sm mb-1">Managers</div>
             <div className="text-3xl font-bold text-white">34</div>
           </div>
-          <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded-xl p-4 border-2 border-orange-500/30">
+          <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded p-4 border-2 border-orange-500/30">
             <Users className="w-8 h-8 text-orange-400 mb-2" />
             <div className="text-stone-300 text-sm mb-1">Avg Team Size</div>
             <div className="text-3xl font-bold text-white">7.3</div>
@@ -237,7 +237,7 @@ export default function OrgChart() {
 
         <div className="grid grid-cols-3 gap-6">
           {/* Org Chart Tree */}
-          <div className="col-span-2 bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="col-span-2 bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
             <h2 className="text-2xl font-bold text-white mb-6">Organization Hierarchy</h2>
             <div className="space-y-2 max-h-[800px] overflow-y-auto pr-4">
               {renderNode(orgData)}
@@ -245,7 +245,7 @@ export default function OrgChart() {
           </div>
 
           {/* Employee Detail Panel */}
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
             {selectedEmployee ? (
               <div>
                 <h2 className="text-2xl font-bold text-white mb-6">Employee Details</h2>

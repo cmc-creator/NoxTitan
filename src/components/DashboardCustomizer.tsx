@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Settings, Sparkles, X, Plus, Eye, EyeOff, Move, CheckCircle } from 'lucide-react';
@@ -78,7 +78,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="lux-card rounded-2xl p-6 max-w-6xl w-full border-2 border-amber-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div className="lux-card rounded p-6 max-w-6xl w-full border-2 border-amber-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <Settings className="w-8 h-8 text-amber-400" />
@@ -137,7 +137,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                   {tiles.filter(t => t.category === category).map(tile => (
                     <div
                       key={tile.id}
-                      className={`p-4 rounded-xl border-2 transition-all ${
+                      className={`p-4 rounded border-2 transition-all ${
                         tile.enabled
                           ? 'bg-stone-900/50 border-amber-500/30'
                           : 'bg-stone-900/30 border-stone-700'
@@ -197,7 +197,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                 return (
                   <div
                     key={idx}
-                    className={`p-5 rounded-xl border-2 ${
+                    className={`p-5 rounded border-2 ${
                       suggestion.priority === 'high'
                         ? 'bg-red-500/10 border-red-400/30'
                         : suggestion.priority === 'medium'

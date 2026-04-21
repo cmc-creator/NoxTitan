@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { Package, Plus, Search, Filter, Barcode, MapPin, User, Calendar, TrendingUp, AlertCircle, CheckCircle, DollarSign, FileSignature } from 'lucide-react';
@@ -152,7 +152,7 @@ export default function AssetVaultPage() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
-          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6">
+          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <Package className="w-8 h-8 text-amber-400" />
               <span className="text-3xl font-bold text-white">{stats.total}</span>
@@ -160,7 +160,7 @@ export default function AssetVaultPage() {
             <p className="text-stone-300 font-semibold">Total Assets</p>
           </div>
 
-          <div className="bg-green-500/10 border border-green-500/50 rounded-xl p-6">
+          <div className="bg-green-500/10 border border-green-500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <CheckCircle className="w-8 h-8 text-green-400" />
               <span className="text-3xl font-bold text-green-400">{stats.available}</span>
@@ -168,7 +168,7 @@ export default function AssetVaultPage() {
             <p className="text-green-300 font-semibold">Available</p>
           </div>
 
-          <div className="bg-amber-600/10 border border-amber-500/40/50 rounded-xl p-6">
+          <div className="bg-amber-600/10 border border-amber-500/40/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <User className="w-8 h-8 text-amber-400" />
               <span className="text-3xl font-bold text-amber-400">{stats.assigned}</span>
@@ -176,7 +176,7 @@ export default function AssetVaultPage() {
             <p className="text-amber-400 font-semibold">Assigned</p>
           </div>
 
-          <div className="bg-orange-500/10 border border-orange-500/50 rounded-xl p-6">
+          <div className="bg-orange-500/10 border border-orange-500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <AlertCircle className="w-8 h-8 text-orange-400" />
               <span className="text-3xl font-bold text-orange-400">{stats.maintenance}</span>
@@ -184,7 +184,7 @@ export default function AssetVaultPage() {
             <p className="text-orange-300 font-semibold">Maintenance</p>
           </div>
 
-          <div className="bg-amber-500/10 border border-amber-500/40/50 rounded-xl p-6">
+          <div className="bg-amber-500/10 border border-amber-500/40/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <DollarSign className="w-8 h-8 text-amber-400" />
               <span className="text-3xl font-bold text-amber-400">
@@ -196,7 +196,7 @@ export default function AssetVaultPage() {
         </div>
 
         {/* Search & Filters */}
-        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-4 mb-6">
+        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-4 mb-6">
           <div className="flex items-center gap-4">
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400" />
@@ -236,12 +236,12 @@ export default function AssetVaultPage() {
         {/* Assets Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {loading ? (
-            <div className="col-span-full bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-12 text-center">
+            <div className="col-span-full bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-12 text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto mb-4"></div>
               <p className="text-stone-400">Loading assets...</p>
             </div>
           ) : filteredAssets.length === 0 ? (
-            <div className="col-span-full bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-12 text-center">
+            <div className="col-span-full bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-12 text-center">
               <Package className="w-16 h-16 text-stone-600 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">No Assets Found</h3>
               <p className="text-stone-400 mb-6">Add your first asset to get started!</p>
@@ -257,7 +257,7 @@ export default function AssetVaultPage() {
               <div
                 key={asset.id}
                 onClick={() => window.location.href = `/vault/assets/${asset.id}`}
-                className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6 hover:border-amber-500/40/50 transition-all cursor-pointer group"
+                className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6 hover:border-amber-500/40/50 transition-all cursor-pointer group"
               >
                 {/* Category Badge */}
                 <div className="flex items-center justify-between mb-4">

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Gamepad2, Brain, Heart, Trophy, Smile, Users, Sparkles, Target, MessageCircle, Star, BarChart2 } from 'lucide-react';
@@ -23,7 +23,7 @@ export default function TeamCulturePage() {
         <div className="flex gap-4 mb-8 flex-wrap">
           <button
             onClick={() => setActiveTab('games')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'games'
                 ? 'shadow-lg scale-105'
                 : 'opacity-60 hover:opacity-100'
@@ -38,7 +38,7 @@ export default function TeamCulturePage() {
           </button>
           <button
             onClick={() => setActiveTab('personality')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'personality'
                 ? 'shadow-lg scale-105'
                 : 'opacity-60 hover:opacity-100'
@@ -53,7 +53,7 @@ export default function TeamCulturePage() {
           </button>
           <button
             onClick={() => setActiveTab('recognition')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'recognition'
                 ? 'shadow-lg scale-105'
                 : 'opacity-60 hover:opacity-100'
@@ -68,7 +68,7 @@ export default function TeamCulturePage() {
           </button>
           <button
             onClick={() => setActiveTab('wellness')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'wellness'
                 ? 'shadow-lg scale-105'
                 : 'opacity-60 hover:opacity-100'
@@ -149,7 +149,7 @@ function TeamGamesSection() {
 
   return (
     <div>
-      <div className="mb-6 p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+      <div className="mb-6 p-6 rounded" style={{ background: 'var(--card-bg)' }}>
         <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
           🎮 Team Building Games
         </h2>
@@ -162,7 +162,7 @@ function TeamGamesSection() {
         {games.map((game) => (
           <div
             key={game.id}
-            className="p-6 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer"
+            className="p-6 rounded shadow-lg hover:shadow-xl transition-all cursor-pointer"
             style={{ background: 'var(--card-bg)' }}
           >
             <div className="text-5xl mb-4">{game.icon}</div>
@@ -221,7 +221,7 @@ function PersonalitySection() {
 
   return (
     <div>
-      <div className="mb-6 p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+      <div className="mb-6 p-6 rounded" style={{ background: 'var(--card-bg)' }}>
         <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
           🧠 Personality & Work Style Assessments
         </h2>
@@ -234,7 +234,7 @@ function PersonalitySection() {
         {assessments.map((assessment, idx) => (
           <div
             key={idx}
-            className="p-6 rounded-xl shadow-lg"
+            className="p-6 rounded shadow-lg"
             style={{ background: 'var(--card-bg)' }}
           >
             <h3 className="text-2xl font-bold mb-3" style={{ color: 'var(--header-text)' }}>
@@ -271,7 +271,7 @@ function PersonalitySection() {
       </div>
 
       {/* Team Chemistry Dashboard */}
-      <div className="mt-8 p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+      <div className="mt-8 p-6 rounded" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
           🔬 Team Chemistry Dashboard
         </h3>
@@ -312,7 +312,7 @@ function RecognitionSection() {
 
   return (
     <div>
-      <div className="mb-6 p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+      <div className="mb-6 p-6 rounded" style={{ background: 'var(--card-bg)' }}>
         <h2 className="text-2xl font-bold mb-2 flex items-center gap-2" style={{ color: 'var(--header-text)' }}>
           <Trophy className="w-7 h-7 text-amber-400" />
           Employee Recognition System
@@ -324,7 +324,7 @@ function RecognitionSection() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Give Recognition */}
-        <div className="lg:col-span-2 p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="lg:col-span-2 p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
             ✨ Give Recognition
           </h3>
@@ -375,7 +375,7 @@ function RecognitionSection() {
         </div>
 
         {/* Leaderboard */}
-        <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
             🏅 This Month's Leaders
           </h3>
@@ -406,7 +406,7 @@ function RecognitionSection() {
       </div>
 
       {/* Recent Recognition */}
-      <div className="mt-6 p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+      <div className="mt-6 p-6 rounded" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
           💬 Recent Recognition
         </h3>
@@ -432,7 +432,7 @@ function RecognitionSection() {
 function WellnessSection() {
   return (
     <div>
-      <div className="mb-6 p-6 rounded-xl" style={{ background: 'var(--card-bg)' }}>
+      <div className="mb-6 p-6 rounded" style={{ background: 'var(--card-bg)' }}>
         <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
           ❤️ Wellness & Mood Tracking
         </h2>
@@ -443,7 +443,7 @@ function WellnessSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Daily Mood Check-in */}
-        <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
             😊 Daily Mood Check
           </h3>
@@ -468,7 +468,7 @@ function WellnessSection() {
         </div>
 
         {/* Team Wellness Score */}
-        <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{ color: 'var(--header-text)' }}>
             <BarChart2 className="w-6 h-6 text-amber-400" />
             Team Wellness Score
@@ -500,7 +500,7 @@ function WellnessSection() {
         </div>
 
         {/* Wellness Challenges */}
-        <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
             🎯 Wellness Challenges
           </h3>
@@ -530,7 +530,7 @@ function WellnessSection() {
         </div>
 
         {/* Anonymous Feedback */}
-        <div className="md:col-span-2 p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="md:col-span-2 p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
             📮 Anonymous Feedback Box
           </h3>
@@ -549,7 +549,7 @@ function WellnessSection() {
         </div>
 
         {/* Burnout Prevention */}
-        <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
             🔥 Burnout Alert
           </h3>

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { Coffee, Clock, Play, Pause, XCircle } from 'lucide-react';
@@ -55,7 +55,7 @@ export default function BreakTimer({ activeBreak, onEndBreak }: BreakTimerProps)
       isOverdue 
         ? 'bg-gradient-to-br from-red-600 to-orange-600' 
         : 'bg-gradient-to-br from-amber-800 to-amber-600'
-    } text-white rounded-2xl shadow-2xl p-6 min-w-[320px] z-50 animate-in slide-in-from-bottom-8`}>
+    } text-white rounded shadow-2xl p-6 min-w-[320px] z-50 animate-in slide-in-from-bottom-8`}>
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { X, Palette, Layout, Bell, Shield, Database, Zap, Settings as SettingsIcon, Sliders } from 'lucide-react';
@@ -18,7 +18,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="lux-app-bg border-2 border-amber-500/40 rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="lux-app-bg border-2 border-amber-500/40 rounded shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-amber-500/40/30">
           <div>
@@ -39,7 +39,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
         {/* Settings Content */}
         <div className="p-6 space-y-6">
           {/* Customization Section */}
-          <div className="bg-gradient-to-r from-stone-900/10 to-pink-500/10 backdrop-blur-xl rounded-xl p-5 border-2 border-amber-400/40/30">
+          <div className="bg-gradient-to-r from-stone-900/10 to-pink-500/10 backdrop-blur-xl rounded p-5 border-2 border-amber-400/40/30">
             <div className="flex items-center gap-3 mb-4">
               <Sliders className="w-5 h-5 text-pink-300" />
               <h3 className="font-bold text-white">Customization</h3>
@@ -99,7 +99,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
           </div>
 
           {/* Theme Settings */}
-          <div className="bg-stone-950/5 backdrop-blur-xl rounded-xl p-5 border border-white/10">
+          <div className="bg-stone-950/5 backdrop-blur-xl rounded p-5 border border-white/10">
             <div className="flex items-center gap-3 mb-4">
               <Palette className="w-5 h-5 text-amber-200" />
               <h3 className="font-bold text-white">Appearance</h3>
@@ -138,7 +138,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
           </div>
 
           {/* Layout Settings */}
-          <div className="bg-stone-950/5 backdrop-blur-xl rounded-xl p-5 border border-white/10">
+          <div className="bg-stone-950/5 backdrop-blur-xl rounded p-5 border border-white/10">
             <div className="flex items-center gap-3 mb-4">
               <Layout className="w-5 h-5 text-amber-400" />
               <h3 className="font-bold text-white">Layout</h3>
@@ -173,7 +173,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
           </div>
 
           {/* Notifications */}
-          <div className="bg-stone-950/5 backdrop-blur-xl rounded-xl p-5 border border-white/10">
+          <div className="bg-stone-950/5 backdrop-blur-xl rounded p-5 border border-white/10">
             <div className="flex items-center gap-3 mb-4">
               <Bell className="w-5 h-5 text-yellow-300" />
               <h3 className="font-bold text-white">Notifications</h3>
@@ -202,7 +202,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
           </div>
 
           {/* Data & Performance */}
-          <div className="bg-stone-950/5 backdrop-blur-xl rounded-xl p-5 border border-white/10">
+          <div className="bg-stone-950/5 backdrop-blur-xl rounded p-5 border border-white/10">
             <div className="flex items-center gap-3 mb-4">
               <Database className="w-5 h-5 text-green-300" />
               <h3 className="font-bold text-white">Data & Performance</h3>
@@ -232,7 +232,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
           </div>
 
           {/* Advanced */}
-          <div className="bg-stone-950/5 backdrop-blur-xl rounded-xl p-5 border border-white/10">
+          <div className="bg-stone-950/5 backdrop-blur-xl rounded p-5 border border-white/10">
             <div className="flex items-center gap-3 mb-4">
               <Zap className="w-5 h-5 text-orange-300" />
               <h3 className="font-bold text-white">Advanced</h3>

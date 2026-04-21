@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -27,7 +27,7 @@ export default function WellnessHub() {
           <Link href="/basecamp" className="inline-flex items-center gap-2 text-emerald-300 hover:text-emerald-100 mb-4 transition-colors">
             ← Back to Basecamp
           </Link>
-          <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-red-200 to-pink-200 mb-2"
+          <h1 className="text-4xl font-black text-transparent bg-clip-text bg-[#110F0B] from-REMOVED-200 via-red-200 to-pink-200 mb-2"
               style={{
                 textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(244,63,94,0.6)',
                 WebkitTextStroke: '1px rgba(244,63,94,0.3)',
@@ -39,7 +39,7 @@ export default function WellnessHub() {
         </div>
 
         {/* Wellness Score Card */}
-        <div className="bg-gradient-to-br from-pink-900/50 to-red-900/50 rounded-2xl p-8 border-2 border-pink-500/30 mb-6 relative overflow-hidden">
+        <div className="bg-[#110F0B] from-REMOVED-900/50 to-red-900/50 rounded p-8 border-2 border-pink-500/30 mb-6 relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-10">
             <Heart className="w-64 h-64 text-white" />
           </div>
@@ -56,7 +56,7 @@ export default function WellnessHub() {
             </div>
             <div className="w-full bg-stone-900 rounded-full h-4">
               <div
-                className="bg-gradient-to-r from-pink-500 to-red-500 h-4 rounded-full transition-all"
+                className="bg-[#110F0B] from-REMOVED-500 to-red-500 h-4 rounded-full transition-all"
                 style={{ width: `${wellnessScore}%` }}
               />
             </div>
@@ -65,7 +65,7 @@ export default function WellnessHub() {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 rounded-xl p-5 border-2 border-orange-500/30">
+          <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 rounded p-5 border-2 border-orange-500/30">
             <div className="flex items-center justify-between mb-2">
               <Activity className="w-8 h-8 text-orange-400" />
               <span className="text-green-400 text-sm font-bold">↑ 12%</span>
@@ -73,7 +73,7 @@ export default function WellnessHub() {
             <div className="text-2xl font-bold text-white mb-1">8,547</div>
             <div className="text-orange-200 text-sm">Steps Today</div>
           </div>
-          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
               <Brain className="w-8 h-8 text-amber-400" />
               <span className="text-green-400 text-sm font-bold">Great!</span>
@@ -81,7 +81,7 @@ export default function WellnessHub() {
             <div className="text-2xl font-bold text-white mb-1">7.5 hrs</div>
             <div className="text-blue-200 text-sm">Sleep Last Night</div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
               <Smile className="w-8 h-8 text-amber-400" />
               <span className="text-green-400 text-sm font-bold">Positive</span>
@@ -89,7 +89,7 @@ export default function WellnessHub() {
             <div className="text-2xl font-bold text-white mb-1">85%</div>
             <div className="text-amber-100/70 text-sm">Mood Score</div>
           </div>
-          <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 rounded-xl p-5 border-2 border-green-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-green-500/30">
             <div className="flex items-center justify-between mb-2">
               <Coffee className="w-8 h-8 text-green-400" />
               <span className="text-yellow-400 text-sm font-bold">Perfect</span>
@@ -103,7 +103,7 @@ export default function WellnessHub() {
           {/* Left Column */}
           <div className="lg:col-span-2 space-y-6">
             {/* EAP - Employee Assistance Program */}
-            <div className="lux-card/80 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="lux-card/80 rounded p-6 border-2 border-amber-500/40/30">
               <div className="flex items-center gap-3 mb-4">
                 <Heart className="w-8 h-8 text-amber-400" />
                 <div>
@@ -123,7 +123,7 @@ export default function WellnessHub() {
                   <p className="text-stone-300 text-sm mb-3">Get expert advice on budgeting, debt, and planning</p>
                   <div className="text-amber-400 text-sm font-bold">Available 24/7</div>
                 </div>
-                <div className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 rounded-lg p-4 border border-green-500/30">
+                <div className="bg-[#110F0B] from-REMOVED-900/40 to-emerald-900/40 rounded-lg p-4 border border-green-500/30">
                   <div className="text-green-300 font-semibold mb-2">Legal Support</div>
                   <p className="text-stone-300 text-sm mb-3">Free consultations on legal matters</p>
                   <div className="text-green-400 text-sm font-bold">30 mins free</div>
@@ -148,7 +148,7 @@ export default function WellnessHub() {
             </div>
 
             {/* Wellness Challenges */}
-            <div className="lux-card/80 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="lux-card/80 rounded p-6 border-2 border-amber-500/40/30">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-2">
                   <Trophy className="w-6 h-6 text-yellow-400" />
@@ -160,7 +160,7 @@ export default function WellnessHub() {
               </div>
 
               <div className="space-y-4">
-                <div className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 rounded-lg p-4 border border-green-500/30">
+                <div className="bg-[#110F0B] from-REMOVED-900/40 to-emerald-900/40 rounded-lg p-4 border border-green-500/30">
                   <div className="flex items-start justify-between mb-3">
                     <div>
                       <div className="text-lg font-bold text-white mb-1">🚶 10,000 Steps Challenge</div>
@@ -172,7 +172,7 @@ export default function WellnessHub() {
                     </div>
                   </div>
                   <div className="w-full bg-stone-900 rounded-full h-2 mb-2">
-                    <div className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full" style={{ width: '71%' }} />
+                    <div className="bg-[#110F0B] from-REMOVED-500 to-emerald-500 h-2 rounded-full" style={{ width: '71%' }} />
                   </div>
                   <div className="text-emerald-400 text-sm">🎁 Reward: $25 Amazon Gift Card</div>
                 </div>
@@ -217,7 +217,7 @@ export default function WellnessHub() {
           {/* Right Column */}
           <div className="space-y-6">
             {/* Gym Membership */}
-            <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 rounded-xl p-6 border-2 border-orange-500/30">
+            <div className="bg-gradient-to-br from-orange-900/50 to-red-900/50 rounded p-6 border-2 border-orange-500/30">
               <div className="text-3xl mb-3">💪</div>
               <h3 className="text-xl font-bold text-white mb-2">Gym Membership</h3>
               <p className="text-orange-200 text-sm mb-4">Company-paid membership at any major gym!</p>
@@ -231,7 +231,7 @@ export default function WellnessHub() {
             </div>
 
             {/* Wellness Resources */}
-            <div className="lux-card/80 rounded-xl p-6 border-2 border-emerald-500/30">
+            <div className="lux-card/80 rounded p-6 border-2 border-emerald-500/30">
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-emerald-400" />
                 Quick Resources
@@ -265,7 +265,7 @@ export default function WellnessHub() {
             </div>
 
             {/* Upcoming Wellness Events */}
-            <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-6 border-2 border-amber-500/40/30">
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Calendar className="w-5 h-5 text-amber-400" />
                 Upcoming Events
@@ -289,7 +289,7 @@ export default function WellnessHub() {
         </div>
 
         {/* Encouragement Banner */}
-        <div className="mt-8 bg-gradient-to-r from-pink-900/30 to-red-900/30 rounded-xl p-6 border-2 border-pink-500/30 text-center">
+        <div className="mt-8 bg-[#110F0B] from-REMOVED-900/30 to-red-900/30 rounded p-6 border-2 border-pink-500/30 text-center">
           <h3 className="text-2xl font-bold text-pink-200 mb-2">💖 You Matter!</h3>
           <p className="text-pink-100 text-lg">Taking care of yourself isn't selfish - it's essential. We're proud of you for being here!</p>
         </div>

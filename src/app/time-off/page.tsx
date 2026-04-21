@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Check, X, Clock } from 'lucide-react';
@@ -53,7 +53,7 @@ export default function TimeOffPage() {
       case 'REJECTED':
         return 'bg-red-100 text-red-800';
       default:
-        return 'bg-gray-100 text-stone-200';
+        return 'bg-[rgba(201,168,76,0.06)] text-stone-200';
     }
   };
 

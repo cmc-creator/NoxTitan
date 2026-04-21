@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -50,7 +50,7 @@ export default function Games() {
         </div>
 
         {/* Leaderboard */}
-        <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded-2xl p-6 border-2 border-yellow-500/30 mb-6">
+        <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded p-6 border-2 border-yellow-500/30 mb-6">
           <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
             <Trophy className="w-6 h-6 text-yellow-400" />
             This Month's Champions
@@ -82,7 +82,7 @@ export default function Games() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Trivia Challenge */}
-          <div className="lux-card/80 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="lux-card/80 rounded p-6 border-2 border-amber-500/40/30">
             <div className="flex items-center gap-3 mb-4">
               <Brain className="w-8 h-8 text-amber-400" />
               <div>
@@ -137,7 +137,7 @@ export default function Games() {
           </div>
 
           {/* Emoji Puzzle */}
-          <div className="lux-card/80 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="lux-card/80 rounded p-6 border-2 border-amber-500/40/30">
             <div className="flex items-center gap-3 mb-4">
               <Smile className="w-8 h-8 text-amber-400" />
               <div>
@@ -174,7 +174,7 @@ export default function Games() {
           </div>
 
           {/* Two Truths and a Lie */}
-          <div className="lux-card/80 rounded-xl p-6 border-2 border-green-500/30">
+          <div className="lux-card/80 rounded p-6 border-2 border-green-500/30">
             <div className="flex items-center gap-3 mb-4">
               <Target className="w-8 h-8 text-green-400" />
               <div>
@@ -203,7 +203,7 @@ export default function Games() {
           </div>
 
           {/* Would You Rather */}
-          <div className="lux-card/80 rounded-xl p-6 border-2 border-pink-500/30">
+          <div className="lux-card/80 rounded p-6 border-2 border-pink-500/30">
             <div className="flex items-center gap-3 mb-4">
               <Dice1 className="w-8 h-8 text-pink-400" />
               <div>
@@ -231,7 +231,7 @@ export default function Games() {
           </div>
 
           {/* Quick Draw */}
-          <div className="lux-card/80 rounded-xl p-6 border-2 border-orange-500/30">
+          <div className="lux-card/80 rounded p-6 border-2 border-orange-500/30">
             <div className="flex items-center gap-3 mb-4">
               <Zap className="w-8 h-8 text-orange-400" />
               <div>
@@ -260,7 +260,7 @@ export default function Games() {
           </div>
 
           {/* Team Challenges */}
-          <div className="lux-card/80 rounded-xl p-6 border-2 border-yellow-500/30">
+          <div className="lux-card/80 rounded p-6 border-2 border-yellow-500/30">
             <div className="flex items-center gap-3 mb-4">
               <Users className="w-8 h-8 text-yellow-400" />
               <div>
@@ -295,7 +295,7 @@ export default function Games() {
         </div>
 
         {/* Fun Footer */}
-        <div className="mt-8 bg-gradient-to-r from-stone-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-amber-500/40/30 text-center">
+        <div className="mt-8 bg-gradient-to-r from-stone-900/30 to-pink-900/30 rounded p-6 border-2 border-amber-500/40/30 text-center">
           <h3 className="text-2xl font-bold text-amber-100/70 mb-2">🎮 Why so serious?</h3>
           <p className="text-amber-50 text-lg">Remember: All work and no play makes Jack a dull boy. Now go have some fun! 🎉</p>
         </div>

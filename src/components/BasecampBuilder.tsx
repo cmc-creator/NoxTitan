@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Sparkles, Check, Home, Bot } from 'lucide-react';
@@ -64,7 +64,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
             </p>
           </div>
 
-          <div className="bg-stone-950 rounded-2xl shadow-2xl p-10 space-y-8">
+          <div className="bg-stone-950 rounded shadow-2xl p-10 space-y-8">
             {/* Theme Selection */}
             <div>
               <h2 className="text-2xl font-bold text-stone-100 mb-4 flex items-center gap-2">
@@ -76,7 +76,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                   <button
                     key={theme.id}
                     onClick={() => setSettings({ ...settings, theme: theme.id })}
-                    className={`p-4 rounded-xl border-2 transition-all ${
+                    className={`p-4 rounded border-2 transition-all ${
                       settings.theme === theme.id
                         ? 'border-amber-600/40 bg-purple-50'
                         : 'border-gray-300 hover:border-amber-400/40'
@@ -97,7 +97,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                   <button
                     key={adventure.id}
                     onClick={() => setSettings({ ...settings, adventureMode: adventure.id })}
-                    className={`p-4 rounded-xl border-2 transition-all text-left ${
+                    className={`p-4 rounded border-2 transition-all text-left ${
                       settings.adventureMode === adventure.id
                         ? 'border-amber-600/40 bg-purple-50'
                         : 'border-gray-300 hover:border-amber-400/40'
@@ -191,7 +191,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
             </div>
 
             {/* Preview */}
-            <div className={`bg-gradient-to-r ${themes.find(t => t.id === settings.theme)?.colors} rounded-xl p-6 text-white`}>
+            <div className={`bg-gradient-to-r ${themes.find(t => t.id === settings.theme)?.colors} rounded p-6 text-white`}>
               <h3 className="text-xl font-bold mb-3">Preview Your Basecamp</h3>
               <div className="bg-stone-950/20 backdrop-blur-sm rounded-lg p-4 flex items-center gap-4">
                 <div className="text-4xl">{settings.basebotAvatar}</div>

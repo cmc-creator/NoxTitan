@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useRef, useEffect } from 'react';
 import { Package, User, DollarSign, FileSignature, Clock, AlertTriangle, CheckCircle, X } from 'lucide-react';
@@ -124,7 +124,7 @@ export default function TreasuryPage() {
         </div>
 
         {/* Progress Steps */}
-        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6 mb-8">
+        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6 mb-8">
           <div className="flex items-center justify-between">
             <div className={`flex items-center gap-3 ${step === 'select-asset' ? 'text-amber-400' : 'text-stone-400'}`}>
               <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${step === 'select-asset' ? 'border-amber-400/40 bg-amber-500/20' : 'border-stone-700'}`}>
@@ -161,7 +161,7 @@ export default function TreasuryPage() {
                     setSelectedAsset(asset);
                     setStep('select-employee');
                   }}
-                  className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6 hover:border-amber-500/40 cursor-pointer transition-all"
+                  className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6 hover:border-amber-500/40 cursor-pointer transition-all"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-3xl">{asset.category.icon || '📦'}</span>
@@ -185,7 +185,7 @@ export default function TreasuryPage() {
         {/* Step 2: Select Employee */}
         {step === 'select-employee' && selectedAsset && (
           <div>
-            <div className="bg-stone-900/50 backdrop-blur border border-amber-500/40 rounded-xl p-4 mb-6">
+            <div className="bg-stone-900/50 backdrop-blur border border-amber-500/40 rounded p-4 mb-6">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="font-bold text-white">Selected Asset: {selectedAsset.name}</h3>
@@ -209,7 +209,7 @@ export default function TreasuryPage() {
                     setSelectedEmployee(emp);
                     setStep('sign');
                   }}
-                  className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6 hover:border-amber-500/40 cursor-pointer transition-all"
+                  className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6 hover:border-amber-500/40 cursor-pointer transition-all"
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center">
@@ -229,7 +229,7 @@ export default function TreasuryPage() {
         {/* Step 3: Digital Signature */}
         {step === 'sign' && selectedAsset && selectedEmployee && (
           <div>
-            <div className="bg-stone-900/50 backdrop-blur border border-amber-500/40 rounded-xl p-6 mb-6">
+            <div className="bg-stone-900/50 backdrop-blur border border-amber-500/40 rounded p-6 mb-6">
               <div className="grid grid-cols-2 gap-6">
                 <div>
                   <h4 className="text-sm text-stone-400 mb-1">Asset</h4>
@@ -244,7 +244,7 @@ export default function TreasuryPage() {
               </div>
             </div>
 
-            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6 mb-6">
+            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6 mb-6">
               <div className="mb-4">
                 <label className="block text-sm font-semibold text-stone-300 mb-2">
                   Expected Return Date

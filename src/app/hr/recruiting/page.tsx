@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -53,27 +53,27 @@ export default function RecruitingATS() {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-4 border-2 border-amber-500/40/30">
             <div className="text-stone-300 text-sm mb-1">Open Positions</div>
             <div className="text-3xl font-bold text-white">7</div>
             <div className="text-emerald-400 text-xs mt-1">12 openings total</div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-4 border-2 border-amber-500/40/30">
             <div className="text-stone-300 text-sm mb-1">Active Candidates</div>
             <div className="text-3xl font-bold text-white">85</div>
             <div className="text-amber-400 text-xs mt-1">↑ 23 this week</div>
           </div>
-          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded-xl p-4 border-2 border-emerald-500/30">
+          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded p-4 border-2 border-emerald-500/30">
             <div className="text-stone-300 text-sm mb-1">Interviews Scheduled</div>
             <div className="text-3xl font-bold text-white">12</div>
             <div className="text-orange-400 text-xs mt-1">3 today</div>
           </div>
-          <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded-xl p-4 border-2 border-orange-500/30">
+          <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded p-4 border-2 border-orange-500/30">
             <div className="text-stone-300 text-sm mb-1">Avg Time-to-Hire</div>
             <div className="text-3xl font-bold text-white">18d</div>
             <div className="text-emerald-400 text-xs mt-1">↓ 4 days vs Q4</div>
           </div>
-          <div className="bg-gradient-to-br from-rose-900/50 to-red-900/50 rounded-xl p-4 border-2 border-rose-500/30">
+          <div className="bg-gradient-to-br from-rose-900/50 to-red-900/50 rounded p-4 border-2 border-rose-500/30">
             <div className="text-stone-300 text-sm mb-1">Cost-per-Hire</div>
             <div className="text-3xl font-bold text-white">$3.2K</div>
             <div className="text-emerald-400 text-xs mt-1">↓ $800 vs Q4</div>
@@ -110,7 +110,7 @@ export default function RecruitingATS() {
 
         {/* Candidate Pipeline View */}
         {activeTab === 'pipeline' && (
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Candidate Pipeline</h2>
               <div className="flex gap-3">
@@ -164,7 +164,7 @@ export default function RecruitingATS() {
 
         {/* Open Positions View */}
         {activeTab === 'positions' && (
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
             <h2 className="text-2xl font-bold text-white mb-6">Open Positions</h2>
             <div className="space-y-4">
               {openPositions.map(position => (
@@ -220,7 +220,7 @@ export default function RecruitingATS() {
         {activeTab === 'analytics' && (
           <div className="space-y-6">
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+              <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
                 <h3 className="text-xl font-bold text-white mb-4">Source Effectiveness</h3>
                 <div className="space-y-3">
                   {[
@@ -240,7 +240,7 @@ export default function RecruitingATS() {
                 </div>
               </div>
 
-              <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+              <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
                 <h3 className="text-xl font-bold text-white mb-4">Hiring Funnel</h3>
                 <div className="space-y-4">
                   {[

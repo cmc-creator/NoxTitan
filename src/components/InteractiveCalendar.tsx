@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import { Calendar, dateFnsLocalizer, Event as CalendarEvent } from "react-big-calendar";
@@ -631,7 +631,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
   return (
     <div className="p-4">
       {/* Advanced Features Toolbar */}
-      <div className="mb-4 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-xl p-4 border-2 border-amber-500/30 shadow-xl">
+      <div className="mb-4 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded p-4 border-2 border-amber-500/30 shadow-xl">
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setShowAIScheduler(true)}
@@ -791,7 +791,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* Conflict Alerts */}
       {conflicts.length > 0 && (
-        <div className="mb-4 bg-red-900/20 border-2 border-red-500 rounded-xl p-4">
+        <div className="mb-4 bg-red-900/20 border-2 border-red-500 rounded p-4">
           <div className="flex items-start gap-3">
             <AlertTriangle className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
             <div className="flex-1">
@@ -1033,7 +1033,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* Oracle AI Insight Panel */}
       {showOraclePanel && (
-        <div className="mb-4 bg-gradient-to-br from-amber-900/40 via-stone-900/40 to-amber-900/40 border-2 border-amber-500/50 rounded-xl p-4 shadow-2xl">
+        <div className="mb-4 bg-gradient-to-br from-amber-900/40 via-stone-900/40 to-amber-900/40 border-2 border-amber-500/50 rounded p-4 shadow-2xl">
           <div className="flex items-start justify-between mb-3">
             <div className="flex items-center gap-3">
               <div className="relative">
@@ -1120,7 +1120,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {/* Settings Modal */}
       {showSettings && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowSettings(false)}>
-          <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded-2xl shadow-2xl border-2 border-amber-500/50 max-w-2xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded shadow-2xl border-2 border-amber-500/50 max-w-2xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             {/* Header */}
             <div className="sticky top-0 bg-gradient-to-r from-amber-900 via-amber-700 to-black p-6 border-b-2 border-amber-500 flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -1140,7 +1140,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             {/* Settings Content */}
             <div className="p-6 space-y-6">
               {/* Star Employee Animations Section */}
-              <div className="bg-stone-900/50 rounded-xl p-5 border border-amber-500/30">
+              <div className="bg-stone-900/50 rounded p-5 border border-amber-500/30">
                 <h3 className="text-lg font-bold text-amber-100/70 mb-4 flex items-center gap-2">
                   ⭐ Star Employee Animations
                 </h3>
@@ -1201,7 +1201,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
               </div>
 
               {/* Display Settings Section */}
-              <div className="bg-stone-900/50 rounded-xl p-5 border border-amber-500/30">
+              <div className="bg-stone-900/50 rounded p-5 border border-amber-500/30">
                 <h3 className="text-lg font-bold text-amber-100/70 mb-4 flex items-center gap-2">
                   🎨 Display Settings
                 </h3>
@@ -1237,7 +1237,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
               </div>
 
               {/* Notification Settings Section */}
-              <div className="bg-stone-900/50 rounded-xl p-5 border border-amber-500/30">
+              <div className="bg-stone-900/50 rounded p-5 border border-amber-500/30">
                 <h3 className="text-lg font-bold text-amber-100/70 mb-4 flex items-center gap-2">
                   🔔 Notifications
                 </h3>
@@ -1285,7 +1285,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* Conflict Detection Panel */}
       {showConflictPanel && detectedConflicts.length > 0 && (
-        <div className="mb-4 bg-gradient-to-r from-red-900/40 to-rose-900/40 border-2 border-red-500/50 rounded-xl p-4 shadow-xl">
+        <div className="mb-4 bg-gradient-to-r from-red-900/40 to-rose-900/40 border-2 border-red-500/50 rounded p-4 shadow-xl">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-red-400 animate-pulse" />
@@ -1339,7 +1339,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       )}
 
       {/* Weather Widget */}
-      <div className="mb-4 bg-gradient-to-r from-sky-900/40 to-amber-800/40 border-2 border-sky-500/50 rounded-xl p-4">
+      <div className="mb-4 bg-gradient-to-r from-sky-900/40 to-amber-800/40 border-2 border-sky-500/50 rounded p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="text-4xl">{weatherData.icon}</div>
@@ -1353,7 +1353,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       </div>
 
       {/* Coverage Heatmap */}
-      <div className="mb-4 bg-gradient-to-r from-slate-900 to-slate-800 border-2 border-stone-700 rounded-xl p-4">
+      <div className="mb-4 bg-gradient-to-r from-slate-900 to-slate-800 border-2 border-stone-700 rounded p-4">
         <h3 className="font-bold text-white mb-3 flex items-center gap-2">
           <TrendingUp className="w-5 h-5 text-amber-400" />
           Weekly Coverage Status
@@ -1396,7 +1396,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {/* AI Auto-Scheduler Modal */}
       {showAIScheduler && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowAIScheduler(false)}>
-          <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded-2xl shadow-2xl border-2 border-amber-500/50 max-w-3xl w-full" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded shadow-2xl border-2 border-amber-500/50 max-w-3xl w-full" onClick={(e) => e.stopPropagation()}>
             <div className="bg-gradient-to-r from-amber-900 via-stone-900 to-amber-900 p-6 border-b-2 border-amber-500">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -1494,7 +1494,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {/* Shift Marketplace Modal */}
       {showMarketplace && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowMarketplace(false)}>
-          <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded-2xl shadow-2xl border-2 border-emerald-500/50 max-w-4xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded shadow-2xl border-2 border-emerald-500/50 max-w-4xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             <div className="sticky top-0 bg-gradient-to-r from-emerald-900 via-teal-900 to-emerald-900 p-6 border-b-2 border-emerald-500">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -1514,7 +1514,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             <div className="p-6">
               {/* Posted Bonuses Section */}
               {marketplacePostedShifts.length > 0 && (
-                <div className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 rounded-xl p-4 mb-6 border-2 border-green-500/50">
+                <div className="bg-gradient-to-r from-green-900/40 to-emerald-900/40 rounded p-4 mb-6 border-2 border-green-500/50">
                   <div className="flex items-center gap-2 mb-3">
                     <CheckCircle className="w-5 h-5 text-green-400" />
                     <h3 className="font-bold text-green-200">Your Posted Bonus Shifts</h3>
@@ -1545,7 +1545,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
               )}
               
               {/* Bonus Leaderboard */}
-              <div className="bg-gradient-to-r from-yellow-900/30 to-amber-900/30 rounded-xl p-4 mb-6 border-2 border-yellow-500/50">
+              <div className="bg-gradient-to-r from-yellow-900/30 to-amber-900/30 rounded p-4 mb-6 border-2 border-yellow-500/50">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
                     <Trophy className="w-5 h-5 text-yellow-400" />
@@ -1639,7 +1639,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                           <div className="text-xs text-stone-400">Posted by {item.posted} • {item.timeAgo}</div>
                         </div>
                         <div className="flex flex-col gap-2 ml-4">
-                          <button className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold rounded-lg transition shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center gap-2">
+                          <button className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold rounded-lg transition shadow-lg hover:shadow-xl transform flex items-center gap-2">
                             <Zap className="w-5 h-5" />
                             Claim Now
                           </button>
@@ -1666,7 +1666,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {/* Quick Bonus Offer Modal */}
       {showBonusOffer && selectedShiftForBonus && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowBonusOffer(false)}>
-          <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded-2xl shadow-2xl border-2 border-green-500/50 max-w-md w-full" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded shadow-2xl border-2 border-green-500/50 max-w-md w-full" onClick={(e) => e.stopPropagation()}>
             <div className="bg-gradient-to-r from-green-900 via-emerald-900 to-green-900 p-6 border-b-2 border-green-500">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -1919,7 +1919,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       
       {/* Staff Grid View - Shows ALL employees clearly */}
       {viewMode === 'grid' && (
-        <div className="bg-stone-950 rounded-2xl shadow-xl overflow-hidden border border-stone-700">
+        <div className="bg-stone-950 rounded shadow-xl overflow-hidden border border-stone-700">
           {/* Week Header */}
           <div className="grid grid-cols-8 bg-gradient-to-r from-amber-900 via-amber-700 to-black text-white font-bold border-b-2 border-amber-500">
             <div className="p-3 border-r border-white/20">Time</div>
@@ -2018,7 +2018,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                                   setSelectedShiftForBonus(shift);
                                   setShowBonusOffer(true);
                                 }}
-                                className="w-full p-3 rounded-lg bg-gradient-to-br from-red-900 to-rose-900 border-2 border-red-500 text-white font-bold shadow-lg hover:from-red-800 hover:to-rose-800 transition-all hover:scale-105 cursor-pointer animate-pulse"
+                                className="w-full p-3 rounded-lg bg-gradient-to-br from-red-900 to-rose-900 border-2 border-red-500 text-white font-bold shadow-lg hover:from-red-800 hover:to-rose-800 transition-all cursor-pointer animate-pulse"
                               >
                                 <div className="flex flex-col items-center gap-1">
                                   <div className="flex items-center gap-1 text-yellow-300">
@@ -2052,7 +2052,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                               <div 
                                 draggable
                                 onDragStart={(e) => handleDragStart(e, shift)}
-                                className={`flex items-center gap-2 p-2 rounded-lg bg-stone-900 text-stone-100 text-xs font-semibold shadow-sm border-l-4 cursor-move hover:bg-stone-900 hover:scale-105 transition-all active:opacity-50 relative ${isStar && showStarAnimation ? 'star-employee-card' : ''}`}
+                                className={`flex items-center gap-2 p-2 rounded-lg bg-stone-900 text-stone-100 text-xs font-semibold shadow-sm border-l-4 cursor-move hover:bg-stone-900 transition-all active:opacity-50 relative ${isStar && showStarAnimation ? 'star-employee-card' : ''}`}
                                 style={{ 
                                   borderLeftColor: shift.color,
                                   ...(isStar && showStarAnimation ? {
@@ -2212,7 +2212,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {/* Shift Swap Requests Modal */}
       {showSwapRequests && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowSwapRequests(false)}>
-          <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded-2xl shadow-2xl border-2 border-amber-500/40/50 max-w-3xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded shadow-2xl border-2 border-amber-500/40/50 max-w-3xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             <div className="sticky top-0 bg-gradient-to-r from-amber-700 via-cyan-900 to-amber-800 p-6 border-b-2 border-amber-500/40">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -2283,7 +2283,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {/* Time-Off Approval Modal */}
       {showTimeOffApproval && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowTimeOffApproval(false)}>
-          <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded-2xl shadow-2xl border-2 border-yellow-500/50 max-w-3xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded shadow-2xl border-2 border-yellow-500/50 max-w-3xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             <div className="sticky top-0 bg-gradient-to-r from-yellow-900 via-orange-900 to-yellow-900 p-6 border-b-2 border-yellow-500">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -2350,7 +2350,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {/* PTO Donation Modal */}
       {showPTODonations && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowPTODonations(false)}>
-          <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded-2xl shadow-2xl border-2 border-pink-500/50 max-w-5xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 rounded shadow-2xl border-2 border-pink-500/50 max-w-5xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             <div className="sticky top-0 bg-gradient-to-r from-pink-900 via-amber-900 to-pink-900 p-6 border-b-2 border-pink-500">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -2604,7 +2604,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {/* Marketplace Confirmation Toast */}
       {showMarketplaceConfirmation && (
         <div className="fixed top-20 right-6 z-[100] animate-in slide-in-from-right">
-          <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-xl shadow-2xl p-4 border-2 border-green-400 max-w-sm">
+          <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded shadow-2xl p-4 border-2 border-green-400 max-w-sm">
             <div className="flex items-start gap-3">
               <div className="bg-stone-950/20 rounded-full p-2">
                 <CheckCircle className="w-6 h-6" />

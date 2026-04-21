@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useRef } from 'react';
 import { Plus, Search, Edit, Trash2, Mail, Phone, Upload, User as UserIcon, UserX, UserCheck, AlertCircle, X } from 'lucide-react';
@@ -451,7 +451,7 @@ export default function EmployeesPage() {
       {/* Add/Edit Employee Modal */}
       {showAddModal && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-stone-950 rounded-2xl shadow-2xl max-w-md w-full my-8">
+          <div className="bg-stone-950 rounded shadow-2xl max-w-md w-full my-8">
             <form onSubmit={handleSaveEmployee} className="p-6">
               <div className="flex justify-between items-start mb-6">
                 <h3 className="text-2xl font-bold text-stone-100">Add New Employee</h3>
@@ -687,7 +687,7 @@ export default function EmployeesPage() {
       {/* Deactivate Employee Modal */}
       {showDeactivateModal && employeeToDeactivate && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-stone-950 rounded-2xl shadow-2xl max-w-md w-full">
+          <div className="bg-stone-950 rounded shadow-2xl max-w-md w-full">
             <div className="p-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
@@ -764,7 +764,7 @@ export default function EmployeesPage() {
                 <button
                   onClick={handleDeactivateEmployee}
                   disabled={!deactivationReason}
-                  className="flex-1 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed text-white px-4 py-2.5 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
+                  className="flex-1 bg-[#110F0B] from-REMOVED-500 to-red-600 hover:from-red-600 hover:to-red-700 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed text-white px-4 py-2.5 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
                 >
                   <UserX className="w-5 h-5" />
                   Deactivate

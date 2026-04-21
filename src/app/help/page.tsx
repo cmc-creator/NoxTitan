@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { 
@@ -122,10 +122,10 @@ export default function CustomerSupportPage() {
         </div>
 
         {/* Quick Help Banner */}
-        <div className="bg-gradient-to-r from-amber-700 to-amber-800 rounded-2xl shadow-lg p-8 text-white mb-8">
+        <div className="bg-gradient-to-r from-amber-700 to-amber-800 rounded shadow-lg p-8 text-white mb-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center gap-4">
-              <div className="p-4 bg-stone-950/20 rounded-xl backdrop-blur-sm">
+              <div className="p-4 bg-stone-950/20 rounded backdrop-blur-sm">
                 <MessageSquare className="w-8 h-8" />
               </div>
               <div>
@@ -134,7 +134,7 @@ export default function CustomerSupportPage() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="p-4 bg-stone-950/20 rounded-xl backdrop-blur-sm">
+              <div className="p-4 bg-stone-950/20 rounded backdrop-blur-sm">
                 <Clock className="w-8 h-8" />
               </div>
               <div>
@@ -143,7 +143,7 @@ export default function CustomerSupportPage() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="p-4 bg-stone-950/20 rounded-xl backdrop-blur-sm">
+              <div className="p-4 bg-stone-950/20 rounded backdrop-blur-sm">
                 <BookOpen className="w-8 h-8" />
               </div>
               <div>
@@ -155,7 +155,7 @@ export default function CustomerSupportPage() {
         </div>
 
         {/* Search Bar */}
-        <div className="bg-stone-950 rounded-xl shadow-md p-6 mb-8">
+        <div className="bg-stone-950 rounded shadow-md p-6 mb-8">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-stone-400 w-6 h-6" />
             <input
@@ -163,7 +163,7 @@ export default function CustomerSupportPage() {
               placeholder="Search for help... (e.g., 'How do I export payroll?' or 'California break laws')"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-14 pr-4 py-4 border-2 border-stone-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-lg"
+              className="w-full pl-14 pr-4 py-4 border-2 border-stone-700 rounded focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-lg"
             />
           </div>
           <div className="flex gap-2 mt-4 flex-wrap">
@@ -187,8 +187,8 @@ export default function CustomerSupportPage() {
         <div className="flex gap-4 mb-8 flex-wrap">
           <button
             onClick={() => setActiveTab('help')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-              activeTab === 'help' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-gray-700 hover:bg-stone-950'
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
+              activeTab === 'help' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-[#C9A84C] hover:bg-stone-950'
             }`}
           >
             <BookOpen className="w-5 h-5" />
@@ -196,8 +196,8 @@ export default function CustomerSupportPage() {
           </button>
           <button
             onClick={() => setActiveTab('tickets')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-              activeTab === 'tickets' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-gray-700 hover:bg-stone-950'
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
+              activeTab === 'tickets' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-[#C9A84C] hover:bg-stone-950'
             }`}
           >
             <MessageSquare className="w-5 h-5" />
@@ -205,8 +205,8 @@ export default function CustomerSupportPage() {
           </button>
           <button
             onClick={() => setActiveTab('new-ticket')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-              activeTab === 'new-ticket' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-gray-700 hover:bg-stone-950'
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
+              activeTab === 'new-ticket' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-[#C9A84C] hover:bg-stone-950'
             }`}
           >
             <Plus className="w-5 h-5" />
@@ -217,16 +217,16 @@ export default function CustomerSupportPage() {
         {/* Help Articles Tab */}
         {activeTab === 'help' && (
           <div className="space-y-6">
-            <div className="bg-stone-950 rounded-xl shadow-md p-6">
+            <div className="bg-stone-950 rounded shadow-md p-6">
               <h2 className="text-2xl font-bold text-stone-100 mb-6">Popular Help Articles</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {helpArticles.map((article) => (
-                  <div key={article.id} className="p-6 border-2 border-stone-800 rounded-xl hover:border-blue-400 hover:shadow-lg transition-all cursor-pointer">
+                  <div key={article.id} className="p-6 border-2 border-stone-800 rounded hover:border-blue-400 hover:shadow-lg transition-all cursor-pointer">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="p-3 bg-blue-100 text-amber-400 rounded-xl">
+                      <div className="p-3 bg-blue-100 text-amber-400 rounded">
                         {article.icon}
                       </div>
-                      <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold">
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.06)] text-[#C9A84C] rounded-full text-xs font-semibold">
                         {article.category}
                       </span>
                     </div>
@@ -251,7 +251,7 @@ export default function CustomerSupportPage() {
             </div>
 
             {/* Video Tutorials */}
-            <div className="bg-gradient-to-br from-amber-700 to-amber-500 rounded-xl border border-purple-200 p-6">
+            <div className="bg-gradient-to-br from-amber-700 to-amber-500 rounded border border-purple-200 p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Video className="w-6 h-6 text-amber-600" />
                 <h3 className="text-xl font-bold text-stone-100">Video Tutorials</h3>
@@ -267,11 +267,11 @@ export default function CustomerSupportPage() {
         {/* My Tickets Tab */}
         {activeTab === 'tickets' && (
           <div className="space-y-6">
-            <div className="bg-stone-950 rounded-xl shadow-md p-6">
+            <div className="bg-stone-950 rounded shadow-md p-6">
               <h2 className="text-2xl font-bold text-stone-100 mb-6">My Support Tickets</h2>
               <div className="space-y-4">
                 {myTickets.map((ticket) => (
-                  <div key={ticket.id} className="p-6 border-2 border-stone-800 rounded-xl hover:shadow-lg transition-all">
+                  <div key={ticket.id} className="p-6 border-2 border-stone-800 rounded hover:shadow-lg transition-all">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
@@ -313,12 +313,12 @@ export default function CustomerSupportPage() {
         {/* New Ticket Tab */}
         {activeTab === 'new-ticket' && (
           <div className="space-y-6">
-            <div className="bg-stone-950 rounded-xl shadow-md p-6">
+            <div className="bg-stone-950 rounded shadow-md p-6">
               <h2 className="text-2xl font-bold text-stone-100 mb-6">Contact Support</h2>
               
               <form className="space-y-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-[#C9A84C] mb-2">
                     What do you need help with?
                   </label>
                   <select className="w-full px-4 py-3 border-2 border-stone-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
@@ -336,7 +336,7 @@ export default function CustomerSupportPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-[#C9A84C] mb-2">
                     Subject
                   </label>
                   <input
@@ -347,7 +347,7 @@ export default function CustomerSupportPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-[#C9A84C] mb-2">
                     Description
                   </label>
                   <textarea
@@ -358,7 +358,7 @@ export default function CustomerSupportPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-[#C9A84C] mb-2">
                     Priority
                   </label>
                   <div className="grid grid-cols-3 gap-4">
@@ -378,7 +378,7 @@ export default function CustomerSupportPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-sm font-semibold text-[#C9A84C] mb-2">
                     Attachments (Optional)
                   </label>
                   <div className="border-2 border-dashed border-stone-700 rounded-lg p-8 text-center hover:border-amber-500/40 transition-all cursor-pointer">
@@ -390,7 +390,7 @@ export default function CustomerSupportPage() {
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-gradient-to-r from-amber-700 to-amber-800 text-white rounded-xl font-bold text-lg hover:from-amber-700 hover:to-amber-800 transition-all shadow-lg flex items-center justify-center gap-2"
+                  className="w-full py-4 bg-gradient-to-r from-amber-700 to-amber-800 text-white rounded font-bold text-lg hover:from-amber-700 hover:to-amber-800 transition-all shadow-lg flex items-center justify-center gap-2"
                 >
                   <Send className="w-5 h-5" />
                   Submit Ticket
@@ -400,7 +400,7 @@ export default function CustomerSupportPage() {
 
             {/* Alternative Contact Methods */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-stone-950 rounded-xl shadow-md p-6 text-center">
+              <div className="bg-stone-950 rounded shadow-md p-6 text-center">
                 <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Phone className="w-6 h-6" />
                 </div>
@@ -409,7 +409,7 @@ export default function CustomerSupportPage() {
                 <p className="text-amber-400 font-semibold">(555) 123-4567</p>
               </div>
 
-              <div className="bg-stone-950 rounded-xl shadow-md p-6 text-center">
+              <div className="bg-stone-950 rounded shadow-md p-6 text-center">
                 <div className="w-12 h-12 bg-blue-100 text-amber-400 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Mail className="w-6 h-6" />
                 </div>
@@ -418,7 +418,7 @@ export default function CustomerSupportPage() {
                 <p className="text-amber-400 font-semibold">support@nyxtitan.com</p>
               </div>
 
-              <div className="bg-stone-950 rounded-xl shadow-md p-6 text-center">
+              <div className="bg-stone-950 rounded shadow-md p-6 text-center">
                 <div className="w-12 h-12 bg-purple-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Video className="w-6 h-6" />
                 </div>

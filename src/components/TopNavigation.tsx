@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
@@ -53,7 +53,7 @@ export default function TopNavigation() {
       <div className="flex items-center gap-3">
         {/* Logo and placeholder removed as requested */}
         <Link href="/" className="flex items-center gap-2 text-4xl md:text-5xl font-black text-white tracking-tight text-pop-strong">
-          <span className="relative inline-block transform hover:scale-105 transition-transform duration-300">
+          <span className="relative inline-block transform transition-transform duration-300">
             {/* Base metallic text with lighter purple-tinted chrome */}
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 via-stone-900 to-yellow-400"
                   style={{

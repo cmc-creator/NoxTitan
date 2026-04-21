@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Bot, Edit, Save, Sparkles, Smile, Zap } from 'lucide-react';
@@ -129,7 +129,7 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
 
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="lux-card rounded-2xl p-6 max-w-5xl w-full border-2 border-cyan-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div className="lux-card rounded p-6 max-w-5xl w-full border-2 border-cyan-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <Bot className="w-8 h-8 text-cyan-400" />
@@ -264,7 +264,7 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
                 <h3 className="text-lg font-bold text-white">Live Preview</h3>
               </div>
 
-              <div className={`bg-gradient-to-br ${config.color} rounded-2xl p-6 border-2 border-white/20 shadow-2xl`}>
+              <div className={`bg-gradient-to-br ${config.color} rounded p-6 border-2 border-white/20 shadow-2xl`}>
                 {/* Avatar */}
                 <div className="text-center mb-6">
                   <div className="text-8xl mb-3 animate-bounce">{config.avatar}</div>

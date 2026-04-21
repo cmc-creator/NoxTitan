@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { ShoppingBag, Zap, DollarSign, Package, Truck, CreditCard, Award, ShoppingCart } from 'lucide-react';
@@ -172,7 +172,7 @@ export default function MerchStorePage() {
             <div className="absolute inset-0 bg-pink-500 blur-3xl opacity-50 animate-pulse"></div>
             <ShoppingBag className="w-20 h-20 text-pink-300 relative" />
           </div>
-          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-stone-900 to-amber-800 mb-4">
+          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-[#110F0B] from-REMOVED-300 via-stone-900 to-amber-800 mb-4">
             Merch Store
           </h1>
           <p className="text-xl text-amber-100/70 mb-6">
@@ -181,7 +181,7 @@ export default function MerchStorePage() {
         </div>
 
         {/* Cart Summary & Payment Method */}
-        <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 mb-8">
+        <div className="bg-stone-900/50 border border-stone-700 rounded p-6 mb-8">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-4">
               <ShoppingCart className="w-6 h-6 text-pink-400" />
@@ -238,7 +238,7 @@ export default function MerchStorePage() {
 
         {/* Cart Checkout */}
         {checkoutOpen && cart.length > 0 && (
-          <div className="bg-stone-900 border-2 border-pink-500 rounded-xl p-6 mb-8">
+          <div className="bg-stone-900 border-2 border-pink-500 rounded p-6 mb-8">
             <h2 className="text-2xl font-bold text-white mb-4">Your Cart</h2>
             <div className="space-y-3 mb-6">
               {cart.map(cartItem => (
@@ -309,7 +309,7 @@ export default function MerchStorePage() {
             <button
               onClick={checkout}
               disabled={!selectedEmployee}
-              className="w-full px-6 py-4 bg-gradient-to-r from-pink-600 to-amber-900 hover:from-pink-700 hover:to-amber-900 text-white font-bold rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+              className="w-full px-6 py-4 bg-[#110F0B] from-REMOVED-600 to-amber-900 hover:from-pink-700 hover:to-amber-900 text-white font-bold rounded transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
             >
               <CreditCard className="w-6 h-6" />
               Complete Order
@@ -320,7 +320,7 @@ export default function MerchStorePage() {
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {items.map(item => (
-            <div key={item.id} className="bg-stone-900/50 border border-stone-700 rounded-xl overflow-hidden hover:border-pink-500/50 transition-all">
+            <div key={item.id} className="bg-stone-900/50 border border-stone-700 rounded overflow-hidden hover:border-pink-500/50 transition-all">
               <div className="aspect-square bg-stone-900 flex items-center justify-center">
                 {item.imageUrl ? (
                   <img src={item.imageUrl} alt={item.name} className="w-full h-full object-cover" />
@@ -354,7 +354,7 @@ export default function MerchStorePage() {
                 <button
                   onClick={() => addToCart(item)}
                   disabled={item.stockQuantity !== null && item.stockQuantity !== undefined && item.stockQuantity <= 0}
-                  className="w-full px-4 py-2 bg-gradient-to-r from-pink-600 to-amber-900 hover:from-pink-700 hover:to-amber-900 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full px-4 py-2 bg-[#110F0B] from-REMOVED-600 to-amber-900 hover:from-pink-700 hover:to-amber-900 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   <ShoppingBag className="w-4 h-4" />
                   Add to Cart

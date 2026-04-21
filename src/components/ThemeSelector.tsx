@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Moon, Sun, Palette, Type, Image, X, Search } from 'lucide-react';
@@ -105,7 +105,7 @@ export default function ThemeSelector() {
 
       {showPanel && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-stone-950 rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden border border-stone-700">
+          <div className="bg-stone-950 rounded shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden border border-stone-700">
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-stone-700">
               <div>
@@ -186,7 +186,7 @@ export default function ThemeSelector() {
                         <button
                           key={t.id}
                           onClick={() => setTheme(t.id as any)}
-                          className={`relative group p-4 rounded-xl border-2 transition-all hover:scale-105 ${
+                          className={`relative group p-4 rounded border-2 transition-all ${
                             theme === t.id 
                               ? 'border-amber-500/40 bg-stone-900 ring-4 ring-purple-500/30' 
                               : 'border-stone-700 bg-stone-900/50 hover:border-stone-700'
@@ -218,7 +218,7 @@ export default function ThemeSelector() {
                             <button
                               key={t.id}
                               onClick={() => setTheme(t.id as any)}
-                              className={`relative group p-4 rounded-xl border-2 transition-all hover:scale-105 ${
+                              className={`relative group p-4 rounded border-2 transition-all ${
                                 theme === t.id 
                                   ? 'border-amber-500/40 bg-stone-900' 
                                   : 'border-stone-700 bg-stone-900/50 hover:border-stone-700'
@@ -248,7 +248,7 @@ export default function ThemeSelector() {
                     <button
                       key={f.id}
                       onClick={() => setFont(f.id as any)}
-                      className={`relative p-6 rounded-xl border-2 transition-all hover:scale-105 text-left ${
+                      className={`relative p-6 rounded border-2 transition-all text-left ${
                         font === f.id 
                           ? 'border-amber-500/40 bg-stone-900' 
                           : 'border-stone-700 bg-stone-900/50 hover:border-stone-700'
@@ -291,7 +291,7 @@ export default function ThemeSelector() {
                     {/* None Option */}
                     <button
                       onClick={() => setBackgroundImage(null)}
-                      className={`relative p-4 rounded-xl border-2 transition-all hover:scale-105 ${
+                      className={`relative p-4 rounded border-2 transition-all ${
                         !backgroundImage 
                           ? 'border-amber-500/40 bg-stone-900' 
                           : 'border-stone-700 bg-stone-900/50 hover:border-stone-700'
@@ -334,7 +334,7 @@ export default function ThemeSelector() {
                       <button
                         key={bg.id}
                         onClick={() => setBackgroundImage(bg.path)}
-                        className={`relative p-4 rounded-xl border-2 transition-all hover:scale-105 ${
+                        className={`relative p-4 rounded border-2 transition-all ${
                           backgroundImage === bg.path 
                             ? 'border-amber-500/40 bg-stone-900' 
                             : 'border-stone-700 bg-stone-900/50 hover:border-stone-700'
@@ -356,7 +356,7 @@ export default function ThemeSelector() {
                     ))}
 
                     {/* Upload New */}
-                    <label className="relative p-4 rounded-xl border-2 border-dashed border-stone-700 bg-stone-900/50 hover:border-amber-500/40 hover:bg-stone-900 transition-all cursor-pointer group">
+                    <label className="relative p-4 rounded border-2 border-dashed border-stone-700 bg-stone-900/50 hover:border-amber-500/40 hover:bg-stone-900 transition-all cursor-pointer group">
                       <div className="w-full h-32 rounded-lg bg-stone-900/50 mb-3 flex items-center justify-center">
                         <div className="text-center">
                           <Image className="h-8 w-8 text-stone-400 mx-auto mb-2 group-hover:text-amber-400 transition-colors" />

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Star, TrendingUp, Award, Users, BookOpen, MessageSquare, CheckCircle, AlertCircle, ChevronRight, X } from 'lucide-react';
@@ -194,7 +194,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
     <div className="space-y-6">
       {/* Notifications Section */}
       {showNotifications && notifications.length > 0 && (
-        <div className="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 backdrop-blur-xl rounded-xl p-6 border-2 border-yellow-500/30">
+        <div className="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 backdrop-blur-xl rounded p-6 border-2 border-yellow-500/30">
           <div className="flex items-center gap-3 mb-4">
             <AlertCircle className="w-6 h-6 text-yellow-400" />
             <h3 className="text-xl font-bold text-white">Talent Action Items</h3>
@@ -256,7 +256,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
         {topTalent.map((employee) => (
           <div
             key={employee.id}
-            className="lux-card/80 backdrop-blur-xl rounded-xl p-6 border-2 border-cyan-500/30 hover:border-cyan-400/50 transition-all cursor-pointer"
+            className="lux-card/80 backdrop-blur-xl rounded p-6 border-2 border-cyan-500/30 hover:border-cyan-400/50 transition-all cursor-pointer"
             onClick={() => setSelectedEmployee(employee)}
           >
             {/* Header */}
@@ -330,7 +330,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
       {/* Detailed View Modal */}
       {selectedEmployee && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="lux-card rounded-2xl p-8 max-w-4xl w-full border-2 border-cyan-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
+          <div className="lux-card rounded p-8 max-w-4xl w-full border-2 border-cyan-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-4">
                 <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-amber-800 rounded-full flex items-center justify-center text-white font-bold text-2xl">

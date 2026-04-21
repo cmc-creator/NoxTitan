@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -35,7 +35,7 @@ export default function HRDashboard() {
             <div className="flex gap-3">
               <button 
                 onClick={() => setShowThemeStudio(true)}
-                className="px-6 py-3 bg-gradient-to-r from-pink-600 to-amber-900 hover:from-pink-500 hover:to-amber-900 text-white rounded-lg font-semibold transition-all shadow-lg shadow-pink-500/30 flex items-center gap-2"
+                className="px-6 py-3 bg-[#110F0B] from-REMOVED-600 to-amber-900 hover:from-pink-500 hover:to-amber-900 text-white rounded-lg font-semibold transition-all shadow-lg shadow-pink-500/30 flex items-center gap-2"
               >
                 <Palette className="w-5 h-5" />
                 Theme Studio
@@ -49,7 +49,7 @@ export default function HRDashboard() {
         </div>
 
         {/* FEATURED: Talent Identification System */}
-        <div className="mb-8 bg-gradient-to-br from-yellow-900/40 to-orange-900/40 backdrop-blur-xl rounded-2xl p-6 border-2 border-yellow-500/50">
+        <div className="mb-8 bg-gradient-to-br from-yellow-900/40 to-orange-900/40 backdrop-blur-xl rounded p-6 border-2 border-yellow-500/50">
           <div className="flex items-center gap-3 mb-4">
             <Star className="w-8 h-8 text-yellow-400 fill-yellow-400" />
             <div>
@@ -61,7 +61,7 @@ export default function HRDashboard() {
         </div>
 
         {/* FEATURED: Onboarding & Retention Hub */}
-        <div className="mb-8 bg-gradient-to-br from-cyan-900/40 to-amber-800/40 backdrop-blur-xl rounded-2xl p-6 border-2 border-cyan-500/50">
+        <div className="mb-8 bg-gradient-to-br from-cyan-900/40 to-amber-800/40 backdrop-blur-xl rounded p-6 border-2 border-cyan-500/50">
           <div className="flex items-center gap-3 mb-4">
             <Target className="w-8 h-8 text-cyan-400" />
             <div>
@@ -74,7 +74,7 @@ export default function HRDashboard() {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-stone-900/50 to-amber-800/50 rounded-xl p-5 border-2 border-amber-500/40/30 shadow-xl">
+          <div className="bg-gradient-to-br from-stone-900/50 to-amber-800/50 rounded p-5 border-2 border-amber-500/40/30 shadow-xl">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-stone-300 text-sm mb-1">Total Employees</div>
@@ -85,7 +85,7 @@ export default function HRDashboard() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded-xl p-5 border-2 border-emerald-500/30 shadow-xl">
+          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded p-5 border-2 border-emerald-500/30 shadow-xl">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-stone-300 text-sm mb-1">Open Positions</div>
@@ -96,7 +96,7 @@ export default function HRDashboard() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded-xl p-5 border-2 border-yellow-500/30 shadow-xl">
+          <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded p-5 border-2 border-yellow-500/30 shadow-xl">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-stone-300 text-sm mb-1">Pending Actions</div>
@@ -107,7 +107,7 @@ export default function HRDashboard() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-pink-900/50 to-rose-900/50 rounded-xl p-5 border-2 border-pink-500/30 shadow-xl">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-5 border-2 border-pink-500/30 shadow-xl">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-stone-300 text-sm mb-1">Avg Satisfaction</div>
@@ -123,7 +123,7 @@ export default function HRDashboard() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* HR Daily Planner - FEATURED */}
           <Link href="/hr/planner" className="group">
-            <div className="bg-gradient-to-br from-violet-900/60 to-amber-900/60 rounded-2xl p-6 border-2 border-violet-500/40 shadow-xl hover:shadow-2xl hover:border-violet-400 transition-all hover:scale-105 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-violet-900/60 to-amber-900/60 rounded p-6 border-2 border-violet-500/40 shadow-xl hover:shadow-2xl hover:border-violet-400 transition-all relative overflow-hidden">
               <div className="absolute top-0 right-0 bg-yellow-500 text-black px-3 py-1 text-xs font-black transform rotate-12 translate-x-2 -translate-y-1">
                 ⭐ NEW
               </div>
@@ -139,7 +139,7 @@ export default function HRDashboard() {
 
           {/* Recruiting/ATS */}
           <Link href="/hr/recruiting" className="group">
-            <div className="bg-gradient-to-br from-amber-700/60 to-cyan-900/60 rounded-2xl p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-blue-400 transition-all hover:scale-105">
+            <div className="bg-gradient-to-br from-amber-700/60 to-cyan-900/60 rounded p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-blue-400 transition-all">
               <Users className="w-12 h-12 text-amber-400 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Applicant Tracking (ATS)</h3>
               <p className="text-blue-200 text-sm mb-4">Full-cycle recruiting from job posting to offer acceptance with candidate pipeline</p>
@@ -152,7 +152,7 @@ export default function HRDashboard() {
 
           {/* Employee Self-Service */}
           <Link href="/hr/self-service" className="group">
-            <div className="bg-gradient-to-br from-stone-900/60 to-pink-900/60 rounded-2xl p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-amber-400/40 transition-all hover:scale-105">
+            <div className="bg-gradient-to-br from-stone-900/60 to-pink-900/60 rounded p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-amber-400/40 transition-all">
               <Users className="w-12 h-12 text-amber-200 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Employee Self-Service</h3>
               <p className="text-amber-100/70 text-sm mb-4">Portal for pay stubs, tax docs, benefits, profile updates & more</p>
@@ -165,7 +165,7 @@ export default function HRDashboard() {
 
           {/* HR Analytics */}
           <Link href="/hr/analytics" className="group">
-            <div className="bg-gradient-to-br from-amber-700/60 to-amber-800/60 rounded-2xl p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-indigo-400 transition-all hover:scale-105">
+            <div className="bg-gradient-to-br from-amber-700/60 to-amber-800/60 rounded p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-indigo-400 transition-all">
               <TrendingUp className="w-12 h-12 text-amber-400 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">HR Analytics & Insights</h3>
               <p className="text-indigo-200 text-sm mb-4">Turnover prediction, diversity metrics, compensation equity & flight risk</p>
@@ -178,7 +178,7 @@ export default function HRDashboard() {
 
           {/* Performance Reviews */}
           <Link href="/hr/performance" className="group">
-            <div className="bg-gradient-to-br from-orange-900/60 to-amber-900/60 rounded-2xl p-6 border-2 border-orange-500/40 shadow-xl hover:shadow-2xl hover:border-orange-400 transition-all hover:scale-105">
+            <div className="bg-gradient-to-br from-orange-900/60 to-amber-900/60 rounded p-6 border-2 border-orange-500/40 shadow-xl hover:shadow-2xl hover:border-orange-400 transition-all">
               <Award className="w-12 h-12 text-orange-300 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Performance Management</h3>
               <p className="text-orange-200 text-sm mb-4">360° feedback, goal tracking (OKRs), continuous reviews & development plans</p>
@@ -191,7 +191,7 @@ export default function HRDashboard() {
 
           {/* Compensation Management */}
           <Link href="/hr/compensation" className="group">
-            <div className="bg-gradient-to-br from-emerald-900/60 to-teal-900/60 rounded-2xl p-6 border-2 border-emerald-500/40 shadow-xl hover:shadow-2xl hover:border-emerald-400 transition-all hover:scale-105">
+            <div className="bg-gradient-to-br from-emerald-900/60 to-teal-900/60 rounded p-6 border-2 border-emerald-500/40 shadow-xl hover:shadow-2xl hover:border-emerald-400 transition-all">
               <DollarSign className="w-12 h-12 text-emerald-300 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Compensation Management</h3>
               <p className="text-emerald-200 text-sm mb-4">Merit planning, market benchmarking, bonuses & total rewards strategy</p>
@@ -204,7 +204,7 @@ export default function HRDashboard() {
 
           {/* Wellness Hub */}
           <Link href="/hr/wellness" className="group">
-            <div className="bg-gradient-to-br from-pink-900/60 to-rose-900/60 rounded-2xl p-6 border-2 border-pink-500/40 shadow-xl hover:shadow-2xl hover:border-pink-400 transition-all hover:scale-105">
+            <div className="bg-[#110F0B] from-REMOVED-900/60 to-rose-900/60 rounded p-6 border-2 border-pink-500/40 shadow-xl hover:shadow-2xl hover:border-pink-400 transition-all">
               <Heart className="w-12 h-12 text-pink-300 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Wellness Hub</h3>
               <p className="text-pink-200 text-sm mb-4">EAP, wellness challenges, telemedicine, mental health & fitness tracking</p>
@@ -217,7 +217,7 @@ export default function HRDashboard() {
 
           {/* Org Chart */}
           <Link href="/hr/org-chart" className="group">
-            <div className="bg-gradient-to-br from-cyan-900/60 to-amber-800/60 rounded-2xl p-6 border-2 border-cyan-500/40 shadow-xl hover:shadow-2xl hover:border-cyan-400 transition-all hover:scale-105">
+            <div className="bg-gradient-to-br from-cyan-900/60 to-amber-800/60 rounded p-6 border-2 border-cyan-500/40 shadow-xl hover:shadow-2xl hover:border-cyan-400 transition-all">
               <Users className="w-12 h-12 text-cyan-300 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Organizational Chart</h3>
               <p className="text-cyan-200 text-sm mb-4">Interactive hierarchy, reporting structure & headcount planning</p>
@@ -230,7 +230,7 @@ export default function HRDashboard() {
 
           {/* Time-Off Management */}
           <Link href="/time-off" className="group">
-            <div className="bg-gradient-to-br from-teal-900/60 to-emerald-900/60 rounded-2xl p-6 border-2 border-teal-500/40 shadow-xl hover:shadow-2xl hover:border-teal-400 transition-all hover:scale-105">
+            <div className="bg-gradient-to-br from-teal-900/60 to-emerald-900/60 rounded p-6 border-2 border-teal-500/40 shadow-xl hover:shadow-2xl hover:border-teal-400 transition-all">
               <Calendar className="w-12 h-12 text-teal-300 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Time-Off & PTO</h3>
               <p className="text-teal-200 text-sm mb-4">Approve requests, track balances, PTO donations & accrual management</p>
@@ -243,7 +243,7 @@ export default function HRDashboard() {
 
           {/* Compliance */}
           <Link href="/compliance" className="group">
-            <div className="bg-gradient-to-br from-red-900/60 to-rose-900/60 rounded-2xl p-6 border-2 border-red-500/40 shadow-xl hover:shadow-2xl hover:border-red-400 transition-all hover:scale-105">
+            <div className="bg-[#110F0B] from-REMOVED-900/60 to-rose-900/60 rounded p-6 border-2 border-red-500/40 shadow-xl hover:shadow-2xl hover:border-red-400 transition-all">
               <Shield className="w-12 h-12 text-red-300 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Compliance Tracking</h3>
               <p className="text-red-200 text-sm mb-4">OSHA, certifications, I-9, labor law, regulatory compliance & audits</p>
@@ -256,7 +256,7 @@ export default function HRDashboard() {
 
           {/* Document Management */}
           <div className="group cursor-pointer">
-            <div className="lux-card/60 rounded-2xl p-6 border-2 border-stone-500/40 shadow-xl hover:shadow-2xl hover:border-stone-400 transition-all hover:scale-105">
+            <div className="lux-card/60 rounded p-6 border-2 border-stone-500/40 shadow-xl hover:shadow-2xl hover:border-stone-400 transition-all">
               <FileText className="w-12 h-12 text-stone-300 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Documents & E-Signatures</h3>
               <p className="text-stone-200 text-sm mb-4">Digital document storage, e-signatures, policies & handbook management</p>
@@ -269,7 +269,7 @@ export default function HRDashboard() {
 
           {/* Onboarding */}
           <div className="group cursor-pointer">
-            <div className="bg-gradient-to-br from-amber-700/60 to-amber-800/60 rounded-2xl p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-blue-400 transition-all hover:scale-105">
+            <div className="bg-gradient-to-br from-amber-700/60 to-amber-800/60 rounded p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-blue-400 transition-all">
               <CheckCircle className="w-12 h-12 text-amber-400 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Advanced Onboarding</h3>
               <p className="text-blue-200 text-sm mb-4">Pre-boarding portal, equipment ordering, account provisioning & buddy system</p>
@@ -282,7 +282,7 @@ export default function HRDashboard() {
 
           {/* HR Automation */}
           <Link href="/hr/automation" className="group">
-            <div className="bg-gradient-to-br from-violet-900/60 to-amber-900/60 rounded-2xl p-6 border-2 border-violet-500/40 shadow-xl hover:shadow-2xl hover:border-violet-400 transition-all hover:scale-105">
+            <div className="bg-gradient-to-br from-violet-900/60 to-amber-900/60 rounded p-6 border-2 border-violet-500/40 shadow-xl hover:shadow-2xl hover:border-violet-400 transition-all">
               <Clock className="w-12 h-12 text-violet-300 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">HR Automation</h3>
               <p className="text-violet-200 text-sm mb-4">Automate onboarding, reminders, surveys, and recurring HR workflows</p>
@@ -295,7 +295,7 @@ export default function HRDashboard() {
         </div>
 
         {/* Pending Actions Alert */}
-        <div className="mt-8 bg-gradient-to-r from-yellow-900/40 to-orange-900/40 border-2 border-yellow-500/50 rounded-xl p-6">
+        <div className="mt-8 bg-gradient-to-r from-yellow-900/40 to-orange-900/40 border-2 border-yellow-500/50 rounded p-6">
           <div className="flex items-start gap-4">
             <AlertCircle className="w-8 h-8 text-yellow-400 animate-pulse flex-shrink-0" />
             <div className="flex-1">

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Link2, CheckCircle, AlertCircle, XCircle, RefreshCw, ExternalLink, Search, Filter } from 'lucide-react';
@@ -510,7 +510,7 @@ export default function IntegrationsPage() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Connected Services</div>
               <CheckCircle className="h-5 w-5 text-green-500" />
@@ -519,7 +519,7 @@ export default function IntegrationsPage() {
             <div className="text-xs opacity-60">Active integrations</div>
           </div>
 
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Available</div>
               <Link2 className="h-5 w-5 text-amber-400" />
@@ -528,7 +528,7 @@ export default function IntegrationsPage() {
             <div className="text-xs opacity-60">Total integrations</div>
           </div>
 
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Categories</div>
               <Filter className="h-5 w-5 text-amber-500" />
@@ -655,7 +655,7 @@ export default function IntegrationsPage() {
                   </>
                 ) : (
                   <>
-                    <button className="flex-1 px-4 py-2 rounded-lg font-semibold transition-all hover:scale-105"
+                    <button className="flex-1 px-4 py-2 rounded-lg font-semibold transition-all"
                       style={{ background: 'var(--primary-btn)', color: '#ffffff' }}
                     >
                       Connect

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { 
@@ -183,7 +183,7 @@ export default function PoliciesPage() {
             {hasChanges && (
               <button
                 onClick={handleReset}
-                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg font-medium transition-all flex items-center gap-2"
+                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-[#C9A84C] rounded-lg font-medium transition-all flex items-center gap-2"
               >
                 <RefreshCw className="w-4 h-4" />
                 Reset
@@ -234,7 +234,7 @@ export default function PoliciesPage() {
           className={`px-6 py-3 rounded-lg font-medium transition-all whitespace-nowrap ${
             activeTab === 'pto'
               ? 'bg-amber-600 text-white shadow-lg'
-              : 'bg-stone-950 text-gray-700 border border-stone-700 hover:bg-stone-950'
+              : 'bg-stone-950 text-[#C9A84C] border border-stone-700 hover:bg-stone-950'
           }`}
         >
           <Calendar className="w-5 h-5 inline mr-2" />
@@ -245,7 +245,7 @@ export default function PoliciesPage() {
           className={`px-6 py-3 rounded-lg font-medium transition-all whitespace-nowrap ${
             activeTab === 'sick'
               ? 'bg-amber-600 text-white shadow-lg'
-              : 'bg-stone-950 text-gray-700 border border-stone-700 hover:bg-stone-950'
+              : 'bg-stone-950 text-[#C9A84C] border border-stone-700 hover:bg-stone-950'
           }`}
         >
           <Heart className="w-5 h-5 inline mr-2" />
@@ -256,7 +256,7 @@ export default function PoliciesPage() {
           className={`px-6 py-3 rounded-lg font-medium transition-all whitespace-nowrap ${
             activeTab === 'fmla'
               ? 'bg-amber-600 text-white shadow-lg'
-              : 'bg-stone-950 text-gray-700 border border-stone-700 hover:bg-stone-950'
+              : 'bg-stone-950 text-[#C9A84C] border border-stone-700 hover:bg-stone-950'
           }`}
         >
           <Shield className="w-5 h-5 inline mr-2" />
@@ -267,7 +267,7 @@ export default function PoliciesPage() {
           className={`px-6 py-3 rounded-lg font-medium transition-all whitespace-nowrap ${
             activeTab === 'bereavement'
               ? 'bg-amber-600 text-white shadow-lg'
-              : 'bg-stone-950 text-gray-700 border border-stone-700 hover:bg-stone-950'
+              : 'bg-stone-950 text-[#C9A84C] border border-stone-700 hover:bg-stone-950'
           }`}
         >
           <FileText className="w-5 h-5 inline mr-2" />
@@ -278,7 +278,7 @@ export default function PoliciesPage() {
           className={`px-6 py-3 rounded-lg font-medium transition-all whitespace-nowrap ${
             activeTab === 'holidays'
               ? 'bg-amber-600 text-white shadow-lg'
-              : 'bg-stone-950 text-gray-700 border border-stone-700 hover:bg-stone-950'
+              : 'bg-stone-950 text-[#C9A84C] border border-stone-700 hover:bg-stone-950'
           }`}
         >
           <Bell className="w-5 h-5 inline mr-2" />
@@ -290,7 +290,7 @@ export default function PoliciesPage() {
       {activeTab === 'pto' && (
         <div className="space-y-6">
           {/* Accrual Settings */}
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
             <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
               <Clock className="w-5 h-5 text-amber-400" />
               PTO Accrual Settings
@@ -298,7 +298,7 @@ export default function PoliciesPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Accrual Rate (hours per period)
                 </label>
                 <input
@@ -315,7 +315,7 @@ export default function PoliciesPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Accrual Frequency
                 </label>
                 <select
@@ -334,7 +334,7 @@ export default function PoliciesPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Maximum Accrual (hours)
                 </label>
                 <input
@@ -350,7 +350,7 @@ export default function PoliciesPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Annual Carryover Limit (hours)
                 </label>
                 <input
@@ -368,7 +368,7 @@ export default function PoliciesPage() {
           </div>
 
           {/* Eligibility & Usage Rules */}
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
             <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
               <Users className="w-5 h-5 text-amber-600" />
               Eligibility & Usage Rules
@@ -376,7 +376,7 @@ export default function PoliciesPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Probation Period (days)
                 </label>
                 <input
@@ -392,7 +392,7 @@ export default function PoliciesPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Minimum Request Increment (hours)
                 </label>
                 <input
@@ -409,7 +409,7 @@ export default function PoliciesPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Advance Notice Required (days)
                 </label>
                 <input
@@ -425,7 +425,7 @@ export default function PoliciesPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Approval Required
                 </label>
                 <div className="flex items-center gap-3">
@@ -460,7 +460,7 @@ export default function PoliciesPage() {
             {/* Approval Chain */}
             {ptoPolicy.approvalRequired && (
               <div className="mt-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Approval Chain
                 </label>
                 <div className="space-y-2">
@@ -500,7 +500,7 @@ export default function PoliciesPage() {
           </div>
 
           {/* Blackout Dates */}
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
             <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
               <AlertCircle className="w-5 h-5 text-red-600" />
               Blackout Dates
@@ -551,7 +551,7 @@ export default function PoliciesPage() {
       {/* Sick Leave Policy Configuration */}
       {activeTab === 'sick' && (
         <div className="space-y-6">
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
             <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
               <Clock className="w-5 h-5 text-red-600" />
               Sick Leave Accrual Settings
@@ -559,7 +559,7 @@ export default function PoliciesPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Accrual Rate (hours per period)
                 </label>
                 <input
@@ -576,7 +576,7 @@ export default function PoliciesPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Accrual Frequency
                 </label>
                 <select
@@ -595,7 +595,7 @@ export default function PoliciesPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Maximum Accrual (hours)
                 </label>
                 <input
@@ -610,7 +610,7 @@ export default function PoliciesPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Annual Carryover (hours)
                 </label>
                 <input
@@ -621,7 +621,7 @@ export default function PoliciesPage() {
                     setSickPolicy({ ...sickPolicy, carryoverMax: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent disabled:bg-gray-100"
+                  className="w-full px-4 py-2 border border-stone-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent disabled:bg-[rgba(201,168,76,0.06)]"
                 />
                 <label className="flex items-center mt-2">
                   <input
@@ -640,7 +640,7 @@ export default function PoliciesPage() {
           </div>
 
           {/* Documentation Requirements */}
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
             <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
               <FileText className="w-5 h-5 text-amber-600" />
               Documentation & Approval
@@ -648,7 +648,7 @@ export default function PoliciesPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Require Documentation (Doctor's Note)
                 </label>
                 <div className="flex items-center gap-3">
@@ -681,7 +681,7 @@ export default function PoliciesPage() {
 
               {sickPolicy.requireDocumentation && (
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                     Documentation After (consecutive days)
                   </label>
                   <input
@@ -698,7 +698,7 @@ export default function PoliciesPage() {
               )}
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Approval Required
                 </label>
                 <div className="flex items-center gap-3">
@@ -730,7 +730,7 @@ export default function PoliciesPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Allow Negative Balance
                 </label>
                 <div className="flex items-center gap-3">
@@ -763,7 +763,7 @@ export default function PoliciesPage() {
 
               {sickPolicy.allowNegativeBalance && (
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                     Negative Balance Limit (hours)
                   </label>
                   <input
@@ -786,7 +786,7 @@ export default function PoliciesPage() {
       {/* FMLA Policy Configuration */}
       {activeTab === 'fmla' && (
         <div className="space-y-6">
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
             <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
               <Shield className="w-5 h-5 text-amber-400" />
               FMLA Eligibility & Entitlement
@@ -794,7 +794,7 @@ export default function PoliciesPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Employment Duration Required (months)
                 </label>
                 <input
@@ -810,7 +810,7 @@ export default function PoliciesPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Hours Worked Required (last 12 months)
                 </label>
                 <input
@@ -826,7 +826,7 @@ export default function PoliciesPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Maximum Weeks Per Year
                 </label>
                 <input
@@ -853,7 +853,7 @@ export default function PoliciesPage() {
                   }}
                   className="mr-3"
                 />
-                <span className="text-sm font-medium text-gray-700">Require medical certification</span>
+                <span className="text-sm font-medium text-[#C9A84C]">Require medical certification</span>
               </label>
 
               <label className="flex items-center">
@@ -866,7 +866,7 @@ export default function PoliciesPage() {
                   }}
                   className="mr-3"
                 />
-                <span className="text-sm font-medium text-gray-700">Allow intermittent FMLA leave</span>
+                <span className="text-sm font-medium text-[#C9A84C]">Allow intermittent FMLA leave</span>
               </label>
 
               <label className="flex items-center">
@@ -879,7 +879,7 @@ export default function PoliciesPage() {
                   }}
                   className="mr-3"
                 />
-                <span className="text-sm font-medium text-gray-700">Job protection guaranteed (return to same/equivalent position)</span>
+                <span className="text-sm font-medium text-[#C9A84C]">Job protection guaranteed (return to same/equivalent position)</span>
               </label>
 
               <label className="flex items-center">
@@ -892,7 +892,7 @@ export default function PoliciesPage() {
                   }}
                   className="mr-3"
                 />
-                <span className="text-sm font-medium text-gray-700">Continue health benefits during leave</span>
+                <span className="text-sm font-medium text-[#C9A84C]">Continue health benefits during leave</span>
               </label>
             </div>
           </div>
@@ -915,7 +915,7 @@ export default function PoliciesPage() {
       {/* Bereavement Policy Configuration */}
       {activeTab === 'bereavement' && (
         <div className="space-y-6">
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
             <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
               <Heart className="w-5 h-5 text-stone-500" />
               Bereavement Leave Eligibility
@@ -989,7 +989,7 @@ export default function PoliciesPage() {
                   }}
                   className="mr-3"
                 />
-                <span className="text-sm font-medium text-gray-700">Require documentation (obituary, death certificate)</span>
+                <span className="text-sm font-medium text-[#C9A84C]">Require documentation (obituary, death certificate)</span>
               </label>
 
               <label className="flex items-center">
@@ -1002,7 +1002,7 @@ export default function PoliciesPage() {
                   }}
                   className="mr-3"
                 />
-                <span className="text-sm font-medium text-gray-700">Paid bereavement leave</span>
+                <span className="text-sm font-medium text-[#C9A84C]">Paid bereavement leave</span>
               </label>
             </div>
           </div>
@@ -1012,7 +1012,7 @@ export default function PoliciesPage() {
       {/* Holiday Calendar Configuration */}
       {activeTab === 'holidays' && (
         <div className="space-y-6">
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md border border-stone-800">
+          <div className="bg-stone-950 p-6 rounded shadow-md border border-stone-800">
             <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
               <Calendar className="w-5 h-5 text-green-600" />
               Company Holidays
@@ -1088,7 +1088,7 @@ export default function PoliciesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-stone-800">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Floating Holidays Per Year
                 </label>
                 <input
@@ -1104,7 +1104,7 @@ export default function PoliciesPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                   Eligibility Requirement
                 </label>
                 <input
@@ -1125,7 +1125,7 @@ export default function PoliciesPage() {
 
       {/* Policy Impact Preview */}
       {showPreview && (
-        <div className="bg-gradient-to-r from-amber-700 to-amber-500 p-6 rounded-xl shadow-md border-2 border-purple-200">
+        <div className="bg-gradient-to-r from-amber-700 to-amber-500 p-6 rounded shadow-md border-2 border-purple-200">
           <h2 className="text-xl font-bold text-stone-100 mb-4 flex items-center gap-2">
             <Eye className="w-5 h-5 text-amber-600" />
             Policy Impact Preview
@@ -1155,7 +1155,7 @@ export default function PoliciesPage() {
 
             <div className="bg-stone-950 p-4 rounded-lg">
               <h3 className="font-semibold text-stone-100 mb-2">System Impact</h3>
-              <ul className="space-y-2 text-sm text-gray-700">
+              <ul className="space-y-2 text-sm text-[#C9A84C]">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
                   Time-off accruals will recalculate

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Palette, Type, Layout, Eye, Save, RotateCcw, Sparkles, X } from 'lucide-react';
@@ -30,7 +30,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
     fontWeight: 'normal',
     
     // Layout
-    cardRadius: 'rounded-xl',
+    cardRadius: 'rounded',
     spacing: 'comfortable',
     borderWidth: '2',
     cardStyle: 'glassmorphism',
@@ -100,7 +100,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
 
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="lux-card rounded-2xl p-6 max-w-7xl w-full border-2 border-amber-500/40/30 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div className="lux-card rounded p-6 max-w-7xl w-full border-2 border-amber-500/40/30 shadow-2xl max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <Palette className="w-8 h-8 text-amber-400" />
@@ -302,8 +302,8 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
                     >
                       <option value="rounded-none">Square (No Radius)</option>
                       <option value="rounded-lg">Small</option>
-                      <option value="rounded-xl">Medium</option>
-                      <option value="rounded-2xl">Large</option>
+                      <option value="rounded">Medium</option>
+                      <option value="rounded">Large</option>
                       <option value="rounded-3xl">Extra Large</option>
                     </select>
                   </div>
@@ -379,7 +379,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
               </div>
               
               <div 
-                className="rounded-xl p-4 border-2"
+                className="rounded p-4 border-2"
                 style={{ 
                   backgroundColor: theme.cardBackground,
                   borderColor: theme.primaryColor,

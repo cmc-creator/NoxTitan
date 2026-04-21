@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -128,7 +128,7 @@ export default function LearningHub() {
 
         {/* Learning Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-blue-200 text-sm mb-1">Courses Enrolled</div>
@@ -137,7 +137,7 @@ export default function LearningHub() {
               <BookOpen className="w-12 h-12 text-amber-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 rounded-xl p-5 border-2 border-green-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-green-500/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-green-200 text-sm mb-1">Completed</div>
@@ -146,7 +146,7 @@ export default function LearningHub() {
               <CheckCircle className="w-12 h-12 text-green-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-5 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-amber-100/70 text-sm mb-1">Learning Hours</div>
@@ -155,7 +155,7 @@ export default function LearningHub() {
               <Clock className="w-12 h-12 text-amber-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded-xl p-5 border-2 border-yellow-500/30">
+          <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded p-5 border-2 border-yellow-500/30">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-yellow-200 text-sm mb-1">Certificates</div>
@@ -167,7 +167,7 @@ export default function LearningHub() {
         </div>
 
         {/* Tabs */}
-        <div className="bg-stone-900/50 rounded-xl p-2 border-2 border-emerald-500/30 mb-6 inline-flex gap-2">
+        <div className="bg-stone-900/50 rounded p-2 border-2 border-emerald-500/30 mb-6 inline-flex gap-2">
           <button
             onClick={() => setActiveTab('my-learning')}
             className={`px-6 py-3 rounded-lg font-semibold transition-all ${
@@ -204,7 +204,7 @@ export default function LearningHub() {
         {activeTab === 'my-learning' && (
           <div>
             {myLearning.length === 0 ? (
-              <div className="bg-stone-900/50 rounded-xl p-12 border-2 border-emerald-500/30 text-center">
+              <div className="bg-stone-900/50 rounded p-12 border-2 border-emerald-500/30 text-center">
                 <BookOpen className="w-16 h-16 text-stone-600 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-white mb-2">No courses yet!</h3>
                 <p className="text-stone-400 mb-4">Start learning something new today</p>
@@ -218,7 +218,7 @@ export default function LearningHub() {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {myLearning.map(course => (
-                  <div key={course.id} className="lux-card/80 rounded-xl p-6 border-2 border-emerald-500/30 hover:border-emerald-400/50 transition-all">
+                  <div key={course.id} className="lux-card/80 rounded p-6 border-2 border-emerald-500/30 hover:border-emerald-400/50 transition-all">
                     <div className="flex items-start gap-4 mb-4">
                       <div className="w-16 h-16 bg-gradient-to-br from-amber-700 to-amber-600 rounded-lg flex items-center justify-center text-3xl">
                         {course.image}
@@ -274,7 +274,7 @@ export default function LearningHub() {
         {activeTab === 'explore' && (
           <div>
             {/* Search & Filters */}
-            <div className="bg-stone-900/50 rounded-xl p-4 border-2 border-emerald-500/30 mb-6">
+            <div className="bg-stone-900/50 rounded p-4 border-2 border-emerald-500/30 mb-6">
               <div className="flex flex-wrap items-center gap-4">
                 <div className="flex-1 min-w-[300px]">
                   <div className="relative">
@@ -304,7 +304,7 @@ export default function LearningHub() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {availableCourses.map(course => (
-                <div key={course.id} className="lux-card/80 rounded-xl p-6 border-2 border-emerald-500/30 hover:border-emerald-400/50 transition-all group">
+                <div key={course.id} className="lux-card/80 rounded p-6 border-2 border-emerald-500/30 hover:border-emerald-400/50 transition-all group">
                   <div className="w-full h-32 bg-gradient-to-br from-amber-700 to-amber-600 rounded-lg flex items-center justify-center text-6xl mb-4">
                     {course.image}
                   </div>
@@ -343,22 +343,22 @@ export default function LearningHub() {
         {/* Achievements Tab */}
         {activeTab === 'achievements' && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded-xl p-6 border-2 border-yellow-500/30 text-center">
+            <div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 rounded p-6 border-2 border-yellow-500/30 text-center">
               <div className="text-6xl mb-3">🏆</div>
               <div className="text-yellow-300 font-bold mb-1">Time Master</div>
               <div className="text-stone-400 text-sm">Completed Time Management</div>
             </div>
-            <div className="bg-stone-900/30 rounded-xl p-6 border-2 border-stone-700 text-center opacity-50">
+            <div className="bg-stone-900/30 rounded p-6 border-2 border-stone-700 text-center opacity-50">
               <div className="text-6xl mb-3 grayscale">🎯</div>
               <div className="text-stone-500 font-bold mb-1">Goal Crusher</div>
               <div className="text-stone-600 text-sm">Complete 5 courses</div>
             </div>
-            <div className="bg-stone-900/30 rounded-xl p-6 border-2 border-stone-700 text-center opacity-50">
+            <div className="bg-stone-900/30 rounded p-6 border-2 border-stone-700 text-center opacity-50">
               <div className="text-6xl mb-3 grayscale">📚</div>
               <div className="text-stone-500 font-bold mb-1">Knowledge Seeker</div>
               <div className="text-stone-600 text-sm">20 hours of learning</div>
             </div>
-            <div className="bg-stone-900/30 rounded-xl p-6 border-2 border-stone-700 text-center opacity-50">
+            <div className="bg-stone-900/30 rounded p-6 border-2 border-stone-700 text-center opacity-50">
               <div className="text-6xl mb-3 grayscale">⭐</div>
               <div className="text-stone-500 font-bold mb-1">Rising Star</div>
               <div className="text-stone-600 text-sm">Top 10% learner</div>
@@ -367,7 +367,7 @@ export default function LearningHub() {
         )}
 
         {/* Encouragement Banner */}
-        <div className="mt-8 bg-gradient-to-r from-stone-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-amber-500/40/30 text-center">
+        <div className="mt-8 bg-gradient-to-r from-stone-900/30 to-pink-900/30 rounded p-6 border-2 border-amber-500/40/30 text-center">
           <h3 className="text-2xl font-bold text-amber-100/70 mb-2">🚀 You're doing amazing!</h3>
           <p className="text-amber-50 text-lg">Every course completed is a step toward your best self. Keep learning!</p>
         </div>

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { Sparkles, TrendingUp, TrendingDown, AlertTriangle, Users, Clock, Target, Award, Shield, Brain } from 'lucide-react';
@@ -94,10 +94,10 @@ export default function OraclePage() {
 
   function getSeverityColor(severity: string) {
     switch (severity) {
-      case 'CRITICAL': return 'from-red-600 to-pink-600 border-red-500';
-      case 'HIGH': return 'from-red-900 to-red-800 border-red-700/60';
-      case 'MEDIUM': return 'from-amber-900 to-stone-900 border-amber-700/40';
-      case 'LOW': return 'from-amber-800 to-amber-600 border-amber-500/40';
+      case 'CRITICAL': return 'border-[rgba(201,168,76,0.6)]';
+      case 'HIGH': return 'border-[rgba(201,168,76,0.45)]';
+      case 'MEDIUM': return 'border-[rgba(201,168,76,0.3)]';
+      case 'LOW': return 'border-[rgba(201,168,76,0.2)]';
       default: return 'from-slate-600 to-slate-700 border-stone-500';
     }
   }
@@ -130,7 +130,7 @@ export default function OraclePage() {
           <button
             onClick={runAnalysis}
             disabled={analyzing}
-            className="px-8 py-4 bg-gradient-to-r from-amber-700 to-amber-600 hover:from-stone-900 hover:to-pink-700 text-white font-bold rounded-xl transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-3 mx-auto"
+            className="px-8 py-4 font-bold rounded transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-3 mx-auto"
           >
             <Brain className="w-6 h-6" />
             {analyzing ? 'Consulting the Oracle...' : 'Run New Analysis'}
@@ -147,15 +147,15 @@ export default function OraclePage() {
             {prophecies.map((prophecy) => (
               <div
                 key={prophecy.id}
-                className={`relative rounded-2xl p-6 border-2 bg-gradient-to-br ${getSeverityColor(prophecy.severity)} transform transition-all hover:scale-105 hover:shadow-2xl cursor-pointer`}
+                className={`relative rounded p-6 border-2 bg-gradient-to-br ${getSeverityColor(prophecy.severity)} transform transition-all hover:shadow-2xl cursor-pointer`}
               >
                 {/* Mystical glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-10 animate-pulse rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-10 animate-pulse rounded"></div>
                 
                 <div className="relative">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="p-3 bg-stone-950/20 rounded-xl backdrop-blur">
+                      <div className="p-3 bg-stone-950/20 rounded backdrop-blur">
                         {getProphecyIcon(prophecy.prophecyType)}
                       </div>
                       <div>
@@ -171,7 +171,7 @@ export default function OraclePage() {
                     </div>
                   </div>
 
-                  <div className="bg-black/30 rounded-xl p-4 mb-4 backdrop-blur">
+                  <div className="bg-black/30 rounded p-4 mb-4 backdrop-blur">
                     <p className="text-lg text-white font-medium italic">
                       "{prophecy.prediction}"
                     </p>
@@ -218,7 +218,7 @@ export default function OraclePage() {
             ))}
 
             {prophecies.length === 0 && !loading && (
-              <div className="col-span-2 text-center py-12 bg-stone-900/50 rounded-2xl border border-stone-700">
+              <div className="col-span-2 text-center py-12 bg-stone-900/50 rounded border border-stone-700">
                 <Sparkles className="w-16 h-16 text-amber-400 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-white mb-2">The Oracle Awaits</h3>
                 <p className="text-stone-400 mb-6">Run an analysis to reveal prophecies</p>
@@ -288,7 +288,7 @@ export default function OraclePage() {
             {insights.map((insight) => (
               <div
                 key={insight.id}
-                className="bg-stone-900/50 border border-stone-700 rounded-xl p-6 hover:border-amber-500/40/50 transition-all"
+                className="bg-stone-900/50 border border-stone-700 rounded p-6 hover:border-amber-500/40/50 transition-all"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">

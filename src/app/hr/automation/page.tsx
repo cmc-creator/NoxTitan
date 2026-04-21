@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { Zap, Plus, Power, Clock, TrendingUp, Calendar as CalendarIcon } from 'lucide-react';
@@ -181,7 +181,7 @@ export default function AutomationPage() {
                   });
                   setShowModal(true);
                 }}
-                className="lux-card border border-stone-700 rounded-xl p-6 hover:border-amber-500/40/50 cursor-pointer transition-all hover:scale-105"
+                className="lux-card border border-stone-700 rounded p-6 hover:border-amber-500/40/50 cursor-pointer transition-all"
               >
                 <div className="text-4xl mb-3">{template.icon}</div>
                 <h3 className="text-white font-bold mb-2">{template.name}</h3>
@@ -199,12 +199,12 @@ export default function AutomationPage() {
         {/* Rules List */}
         <div className="space-y-4">
           {loading ? (
-            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-12 text-center">
+            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-12 text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto mb-4"></div>
               <p className="text-stone-400">Loading automation rules...</p>
             </div>
           ) : rules.length === 0 ? (
-            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-12 text-center">
+            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-12 text-center">
               <Zap className="w-16 h-16 text-stone-600 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">No Automation Rules</h3>
               <p className="text-stone-400 mb-6">Create your first automation to save time!</p>
@@ -219,7 +219,7 @@ export default function AutomationPage() {
             rules.map((rule) => (
               <div
                 key={rule.id}
-                className={`bg-stone-900/50 backdrop-blur border rounded-xl p-6 transition-colors ${
+                className={`bg-stone-900/50 backdrop-blur border rounded p-6 transition-colors ${
                   rule.isActive ? 'border-amber-500/40/50' : 'border-stone-700'
                 }`}
               >
@@ -286,7 +286,7 @@ export default function AutomationPage() {
         {/* Create Modal */}
         {showModal && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-            <div className="bg-stone-900 border border-stone-700 rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-stone-900 border border-stone-700 rounded p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               <h2 className="text-2xl font-bold text-white mb-6">Create Automation Rule</h2>
 
               <form onSubmit={handleCreateRule} className="space-y-6">

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { Mic, MicOff, Volume2, VolumeX, Settings, Sparkles } from 'lucide-react';
@@ -149,7 +149,7 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
 
       {/* Voice Settings Modal */}
       {showSettings && (
-        <div className="absolute top-full mt-2 right-0 w-96 bg-stone-900 rounded-xl p-6 border-2 border-amber-500/40/30 shadow-2xl z-50">
+        <div className="absolute top-full mt-2 right-0 w-96 bg-stone-900 rounded p-6 border-2 border-amber-500/40/30 shadow-2xl z-50">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-bold text-white">Voice Settings</h3>
             <button onClick={() => setShowSettings(false)} className="text-stone-400 hover:text-white">

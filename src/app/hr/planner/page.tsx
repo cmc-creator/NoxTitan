@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -179,31 +179,31 @@ export default function HRPlanner() {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-5 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-4 border-2 border-amber-500/40/30">
             <CheckCircle className="w-8 h-8 text-amber-400 mb-2" />
             <div className="text-stone-300 text-sm mb-1">My Tasks Today</div>
             <div className="text-3xl font-bold text-white">{myTasks.length}</div>
             <div className="text-amber-400 text-xs mt-1">{completedTasks.length} completed</div>
           </div>
-          <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded-xl p-4 border-2 border-orange-500/30">
+          <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded p-4 border-2 border-orange-500/30">
             <Bell className="w-8 h-8 text-orange-400 mb-2" />
             <div className="text-stone-300 text-sm mb-1">Manager Reminders</div>
             <div className="text-3xl font-bold text-white">{managerReminders.length}</div>
             <div className="text-orange-400 text-xs mt-1">1 overdue</div>
           </div>
-          <div className="bg-gradient-to-br from-red-900/50 to-rose-900/50 rounded-xl p-4 border-2 border-red-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-4 border-2 border-red-500/30">
             <AlertTriangle className="w-8 h-8 text-red-400 mb-2 animate-pulse" />
             <div className="text-stone-300 text-sm mb-1">High Priority</div>
             <div className="text-3xl font-bold text-white">4</div>
             <div className="text-red-400 text-xs mt-1">Needs attention</div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-4 border-2 border-amber-500/40/30">
             <Calendar className="w-8 h-8 text-amber-400 mb-2" />
             <div className="text-stone-300 text-sm mb-1">Upcoming Deadlines</div>
             <div className="text-3xl font-bold text-white">{upcomingDeadlines.length}</div>
             <div className="text-amber-400 text-xs mt-1">Next 30 days</div>
           </div>
-          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded-xl p-4 border-2 border-emerald-500/30">
+          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded p-4 border-2 border-emerald-500/30">
             <Clock className="w-8 h-8 text-emerald-400 mb-2" />
             <div className="text-stone-300 text-sm mb-1">Recurring Tasks</div>
             <div className="text-3xl font-bold text-white">{recurringTasks.length}</div>
@@ -212,7 +212,7 @@ export default function HRPlanner() {
         </div>
 
         {/* Advanced Toolbar */}
-        <div className="bg-stone-900/50 rounded-xl p-4 border-2 border-violet-500/30 mb-6">
+        <div className="bg-stone-900/50 rounded p-4 border-2 border-violet-500/30 mb-6">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3 flex-1">
               {/* Search */}
@@ -329,7 +329,7 @@ export default function HRPlanner() {
         </div>
 
         {/* Task Templates Quick Access */}
-        <div className="bg-gradient-to-r from-violet-900/30 to-amber-900/30 rounded-xl p-4 border-2 border-violet-500/30 mb-6">
+        <div className="bg-gradient-to-r from-violet-900/30 to-amber-900/30 rounded p-4 border-2 border-violet-500/30 mb-6">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
               <Zap className="w-5 h-5 text-yellow-400" />
@@ -373,7 +373,7 @@ export default function HRPlanner() {
         {/* Today's Tasks View */}
         {activeView === 'today' && (
           <div className="space-y-6">
-            <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-violet-500/30">
+            <div className="bg-stone-900/50 rounded p-6 border-2 border-violet-500/30">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold text-white">My Tasks for Today</h2>
                 <button className="px-4 py-2 bg-violet-600 hover:bg-violet-500 text-white rounded-lg font-semibold flex items-center gap-2">
@@ -394,7 +394,7 @@ export default function HRPlanner() {
                         isCompleted
                           ? 'bg-emerald-900/20 border-emerald-500/30'
                           : task.priority === 'high'
-                          ? 'bg-gradient-to-r from-red-900/30 to-orange-900/30 border-red-500/30'
+                          ? 'bg-[#110F0B] from-REMOVED-900/30 to-orange-900/30 border-red-500/30'
                           : task.priority === 'medium'
                           ? 'bg-gradient-to-r from-orange-900/30 to-yellow-900/30 border-orange-500/30'
                           : 'bg-stone-950/50 border-stone-700'
@@ -524,17 +524,17 @@ export default function HRPlanner() {
 
             {/* Quick Actions */}
             <div className="grid grid-cols-3 gap-4">
-              <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-5 border-2 border-amber-500/40/30 hover:border-blue-400 cursor-pointer transition-all group">
+              <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-5 border-2 border-amber-500/40/30 hover:border-blue-400 cursor-pointer transition-all group">
                 <FileText className="w-10 h-10 text-amber-400 mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-bold text-white mb-2">Review Applications</h3>
                 <p className="text-sm text-blue-200">12 new applications awaiting review</p>
               </div>
-              <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded-xl p-5 border-2 border-orange-500/30 hover:border-orange-400 cursor-pointer transition-all group">
+              <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded p-5 border-2 border-orange-500/30 hover:border-orange-400 cursor-pointer transition-all group">
                 <Award className="w-10 h-10 text-orange-400 mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-bold text-white mb-2">Performance Reviews</h3>
                 <p className="text-sm text-orange-200">23 reviews pending completion</p>
               </div>
-              <div className="bg-gradient-to-br from-red-900/50 to-rose-900/50 rounded-xl p-5 border-2 border-red-500/30 hover:border-red-400 cursor-pointer transition-all group">
+              <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-5 border-2 border-red-500/30 hover:border-red-400 cursor-pointer transition-all group">
                 <Shield className="w-10 h-10 text-red-400 mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-bold text-white mb-2">Compliance Check</h3>
                 <p className="text-sm text-red-200">8 certifications expiring soon</p>
@@ -545,7 +545,7 @@ export default function HRPlanner() {
 
         {/* Manager Reminders View */}
         {activeView === 'reminders' && (
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-orange-500/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-orange-500/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Manager Action Reminders</h2>
               <button className="px-4 py-2 bg-orange-600 hover:bg-orange-500 text-white rounded-lg font-semibold flex items-center gap-2">
@@ -559,7 +559,7 @@ export default function HRPlanner() {
                   key={reminder.id}
                   className={`rounded-lg p-5 border-2 ${
                     reminder.overdue
-                      ? 'bg-gradient-to-r from-red-900/40 to-orange-900/40 border-red-500/50 animate-pulse'
+                      ? 'bg-[#110F0B] from-REMOVED-900/40 to-orange-900/40 border-red-500/50 animate-pulse'
                       : 'bg-stone-950/50 border-stone-700 hover:border-orange-500'
                   } transition-all`}
                 >
@@ -615,7 +615,7 @@ export default function HRPlanner() {
 
         {/* Upcoming Deadlines View */}
         {activeView === 'deadlines' && (
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
             <h2 className="text-2xl font-bold text-white mb-6">Upcoming Deadlines (Next 30 Days)</h2>
             <div className="space-y-4">
               {upcomingDeadlines.map(deadline => (
@@ -662,7 +662,7 @@ export default function HRPlanner() {
 
         {/* Recurring Tasks View */}
         {activeView === 'recurring' && (
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-emerald-500/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-emerald-500/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Recurring Tasks & Automation</h2>
               <button className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold flex items-center gap-2">
@@ -707,7 +707,7 @@ export default function HRPlanner() {
       {/* Comprehensive Settings Modal */}
       {showSettings && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="bg-gradient-to-br from-slate-900 via-stone-900/20 to-slate-900 border-2 border-violet-500/30 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+          <div className="bg-gradient-to-br from-slate-900 via-stone-900/20 to-slate-900 border-2 border-violet-500/30 rounded w-full max-w-4xl max-h-[90vh] overflow-y-auto">
             <div className="p-6 border-b border-violet-500/30 sticky top-0 bg-stone-950/95 backdrop-blur-sm z-10">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-900 via-violet-300 to-amber-900">
@@ -724,7 +724,7 @@ export default function HRPlanner() {
 
             <div className="p-6 space-y-6">
               {/* Notifications Section */}
-              <div className="bg-stone-950/50 rounded-xl p-5 border border-violet-500/20">
+              <div className="bg-stone-950/50 rounded p-5 border border-violet-500/20">
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                   <Bell className="w-5 h-5 text-violet-400" />
                   Notifications & Alerts
@@ -795,7 +795,7 @@ export default function HRPlanner() {
               </div>
 
               {/* View Preferences */}
-              <div className="bg-stone-950/50 rounded-xl p-5 border border-violet-500/20">
+              <div className="bg-stone-950/50 rounded p-5 border border-violet-500/20">
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                   <Eye className="w-5 h-5 text-amber-400" />
                   View Preferences
@@ -885,7 +885,7 @@ export default function HRPlanner() {
               </div>
 
               {/* Work Hours */}
-              <div className="bg-stone-950/50 rounded-xl p-5 border border-violet-500/20">
+              <div className="bg-stone-950/50 rounded p-5 border border-violet-500/20">
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                   <Clock className="w-5 h-5 text-emerald-400" />
                   Work Hours
@@ -913,7 +913,7 @@ export default function HRPlanner() {
               </div>
 
               {/* Automation */}
-              <div className="bg-stone-950/50 rounded-xl p-5 border border-violet-500/20">
+              <div className="bg-stone-950/50 rounded p-5 border border-violet-500/20">
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                   <Zap className="w-5 h-5 text-yellow-400" />
                   Automation

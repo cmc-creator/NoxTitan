@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Lightbulb, Send, ThumbsUp, MessageSquare, Filter, AlertTriangle, CheckCircle, Clock, Eye, EyeOff, Flag } from 'lucide-react';
@@ -166,23 +166,23 @@ export default function SuggestionBoxPage() {
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-          <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Total</div>
             <div className="text-3xl font-bold" style={{ color: 'var(--header-text)' }}>{stats.total}</div>
           </div>
-          <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Pending</div>
             <div className="text-3xl font-bold text-yellow-500">{stats.pending}</div>
           </div>
-          <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Under Review</div>
             <div className="text-3xl font-bold text-amber-400">{stats.underReview}</div>
           </div>
-          <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Implemented</div>
             <div className="text-3xl font-bold text-green-500">{stats.implemented}</div>
           </div>
-          <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Flagged</div>
             <div className="text-3xl font-bold text-red-500">{stats.flagged}</div>
           </div>
@@ -192,7 +192,7 @@ export default function SuggestionBoxPage() {
         <div className="flex gap-4 mb-8 flex-wrap">
           <button
             onClick={() => setActiveView('submit')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeView === 'submit' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -205,7 +205,7 @@ export default function SuggestionBoxPage() {
           </button>
           <button
             onClick={() => setActiveView('browse')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeView === 'browse' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -218,7 +218,7 @@ export default function SuggestionBoxPage() {
           </button>
           <button
             onClick={() => setActiveView('manage')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeView === 'manage' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -234,7 +234,7 @@ export default function SuggestionBoxPage() {
         {/* Submit View */}
         {activeView === 'submit' && (
           <div className="max-w-3xl mx-auto">
-            <div className="p-8 rounded-2xl shadow-xl" style={{ background: 'var(--card-bg)' }}>
+            <div className="p-8 rounded shadow-xl" style={{ background: 'var(--card-bg)' }}>
               <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--header-text)' }}>
                 Share Your Idea 💡
               </h2>
@@ -245,7 +245,7 @@ export default function SuggestionBoxPage() {
                   <input
                     type="text"
                     placeholder="Brief, descriptive title for your suggestion..."
-                    className="w-full p-4 rounded-xl text-lg"
+                    className="w-full p-4 rounded text-lg"
                     style={{ background: 'var(--calendar-bg)', border: '2px solid var(--border-color)' }}
                   />
                 </div>
@@ -253,7 +253,7 @@ export default function SuggestionBoxPage() {
                 <div>
                   <label className="block text-sm font-semibold mb-2">Category</label>
                   <select 
-                    className="w-full p-4 rounded-xl text-lg"
+                    className="w-full p-4 rounded text-lg"
                     style={{ background: 'var(--calendar-bg)', border: '2px solid var(--border-color)' }}
                   >
                     {categories.slice(1).map(cat => (
@@ -269,7 +269,7 @@ export default function SuggestionBoxPage() {
                   <textarea
                     rows={6}
                     placeholder="Describe your idea in detail. What problem does it solve? How would it improve our workplace?"
-                    className="w-full p-4 rounded-xl text-lg"
+                    className="w-full p-4 rounded text-lg"
                     style={{ background: 'var(--calendar-bg)', border: '2px solid var(--border-color)' }}
                   ></textarea>
                   <div className="text-xs opacity-60 mt-2">
@@ -277,7 +277,7 @@ export default function SuggestionBoxPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 p-4 rounded-xl" style={{ background: 'var(--calendar-bg)' }}>
+                <div className="flex items-center gap-3 p-4 rounded" style={{ background: 'var(--calendar-bg)' }}>
                   <input
                     type="checkbox"
                     id="anonymous"
@@ -297,7 +297,7 @@ export default function SuggestionBoxPage() {
                 </div>
 
                 <button
-                  className="w-full py-4 px-6 rounded-xl font-bold text-white text-lg shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2"
+                  className="w-full py-4 px-6 rounded font-bold text-white text-lg shadow-lg transition-all flex items-center justify-center gap-2"
                   style={{ background: 'var(--primary-btn)' }}
                 >
                   <Send className="h-5 w-5" />
@@ -317,7 +317,7 @@ export default function SuggestionBoxPage() {
                 <button
                   key={cat.id}
                   onClick={() => setFilterCategory(cat.id)}
-                  className={`px-4 py-2 rounded-xl font-semibold whitespace-nowrap transition-all ${
+                  className={`px-4 py-2 rounded font-semibold whitespace-nowrap transition-all ${
                     filterCategory === cat.id ? 'scale-105 shadow-lg' : 'opacity-60 hover:opacity-100'
                   }`}
                   style={{
@@ -335,7 +335,7 @@ export default function SuggestionBoxPage() {
               {filteredSuggestions.map(suggestion => (
                 <div
                   key={suggestion.id}
-                  className="p-6 rounded-xl shadow-lg hover:shadow-xl transition-all"
+                  className="p-6 rounded shadow-lg hover:shadow-xl transition-all"
                   style={{ background: 'var(--card-bg)' }}
                 >
                   <div className="flex items-start gap-4">
@@ -375,7 +375,7 @@ export default function SuggestionBoxPage() {
                               suggestion.status === 'approved' ? 'bg-amber-600' :
                               suggestion.status === 'under-review' ? 'bg-yellow-500' :
                               suggestion.status === 'declined' ? 'bg-red-500' :
-                              'bg-gray-500'
+                              'bg-[rgba(201,168,76,0.04)]0'
                             }`}
                           >
                             {suggestion.status === 'implemented' ? '✓ Implemented' :
@@ -420,7 +420,7 @@ export default function SuggestionBoxPage() {
         {activeView === 'manage' && (
           <div>
             {/* Filters */}
-            <div className="mb-6 p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+            <div className="mb-6 p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
               <h3 className="text-lg font-bold mb-4" style={{ color: 'var(--header-text)' }}>
                 Filters & Moderation
               </h3>
@@ -475,7 +475,7 @@ export default function SuggestionBoxPage() {
               {filteredSuggestions.map(suggestion => (
                 <div
                   key={suggestion.id}
-                  className={`p-6 rounded-xl shadow-lg ${suggestion.flagged ? 'border-2 border-red-500' : ''}`}
+                  className={`p-6 rounded shadow-lg ${suggestion.flagged ? 'border-2 border-red-500' : ''}`}
                   style={{ background: 'var(--card-bg)' }}
                 >
                   {suggestion.flagged && (
@@ -495,7 +495,7 @@ export default function SuggestionBoxPage() {
                       </h3>
                       <div className="flex items-center gap-3 text-sm opacity-70 mb-3">
                         <span>👤 {suggestion.submittedBy}</span>
-                        {suggestion.isAnonymous && <span className="px-2 py-0.5 rounded-full bg-gray-500 text-white text-xs">Anonymous to staff</span>}
+                        {suggestion.isAnonymous && <span className="px-2 py-0.5 rounded-full bg-[rgba(201,168,76,0.04)]0 text-white text-xs">Anonymous to staff</span>}
                         <span>•</span>
                         <span>{suggestion.timestamp}</span>
                       </div>
@@ -505,25 +505,25 @@ export default function SuggestionBoxPage() {
 
                   <div className="flex items-center gap-3">
                     <button
-                      className="px-4 py-2 rounded-lg font-semibold bg-green-500 text-white hover:scale-105 transition-all flex items-center gap-2"
+                      className="px-4 py-2 rounded-lg font-semibold bg-green-500 text-white transition-all flex items-center gap-2"
                     >
                       <CheckCircle className="h-4 w-4" />
                       Approve
                     </button>
                     <button
-                      className="px-4 py-2 rounded-lg font-semibold bg-amber-600 text-white hover:scale-105 transition-all flex items-center gap-2"
+                      className="px-4 py-2 rounded-lg font-semibold bg-amber-600 text-white transition-all flex items-center gap-2"
                     >
                       <Clock className="h-4 w-4" />
                       Under Review
                     </button>
                     <button
-                      className="px-4 py-2 rounded-lg font-semibold bg-yellow-500 text-white hover:scale-105 transition-all flex items-center gap-2"
+                      className="px-4 py-2 rounded-lg font-semibold bg-yellow-500 text-white transition-all flex items-center gap-2"
                     >
                       <MessageSquare className="h-4 w-4" />
                       Respond
                     </button>
                     <button
-                      className="px-4 py-2 rounded-lg font-semibold bg-red-500 text-white hover:scale-105 transition-all flex items-center gap-2"
+                      className="px-4 py-2 rounded-lg font-semibold bg-red-500 text-white transition-all flex items-center gap-2"
                     >
                       <Flag className="h-4 w-4" />
                       {suggestion.flagged ? 'Unflag' : 'Flag'}

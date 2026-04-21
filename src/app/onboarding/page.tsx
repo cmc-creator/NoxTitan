@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -106,7 +106,7 @@ export default function OnboardingPage() {
 
         {/* Step 1: Role Selection */}
         {step === 1 && (
-          <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-8">
+          <div className="bg-stone-900/50 border border-stone-700 rounded p-8">
             <h1 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
               <Sparkles className="w-8 h-8 text-yellow-400" />
               Welcome to NyxTitan!
@@ -116,7 +116,7 @@ export default function OnboardingPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <button
                 onClick={() => { updateData('role', 'employee'); setStep(2); }}
-                className="p-6 bg-gradient-to-br from-amber-700 to-amber-500 hover:from-amber-800 hover:to-amber-600 rounded-xl text-white transition-all"
+                className="p-6 bg-gradient-to-br from-amber-700 to-amber-500 hover:from-amber-800 hover:to-amber-600 rounded text-white transition-all"
               >
                 <User className="w-12 h-12 mx-auto mb-3" />
                 <div className="font-bold text-lg">Employee</div>
@@ -125,7 +125,7 @@ export default function OnboardingPage() {
               
               <button
                 onClick={() => { updateData('role', 'manager'); setStep(2); }}
-                className="p-6 bg-gradient-to-br from-stone-900 to-amber-900 hover:from-stone-900 hover:to-amber-900 rounded-xl text-white transition-all"
+                className="p-6 bg-gradient-to-br from-stone-900 to-amber-900 hover:from-stone-900 hover:to-amber-900 rounded text-white transition-all"
               >
                 <Briefcase className="w-12 h-12 mx-auto mb-3" />
                 <div className="font-bold text-lg">Manager</div>
@@ -134,7 +134,7 @@ export default function OnboardingPage() {
               
               <button
                 onClick={() => { updateData('role', 'admin'); setStep(2); }}
-                className="p-6 bg-gradient-to-br from-pink-600 to-pink-800 hover:from-pink-700 hover:to-pink-900 rounded-xl text-white transition-all"
+                className="p-6 bg-[#110F0B] from-REMOVED-600 to-pink-800 hover:from-pink-700 hover:to-pink-900 rounded text-white transition-all"
               >
                 <Target className="w-12 h-12 mx-auto mb-3" />
                 <div className="font-bold text-lg">Admin</div>
@@ -146,7 +146,7 @@ export default function OnboardingPage() {
 
         {/* Step 2: Basic Info */}
         {step === 2 && (
-          <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-8">
+          <div className="bg-stone-900/50 border border-stone-700 rounded p-8">
             <h2 className="text-2xl font-bold text-white mb-6">Basic Information</h2>
             
             <div className="space-y-4">
@@ -234,7 +234,7 @@ export default function OnboardingPage() {
 
         {/* Step 3: Personal Info for Basecamp */}
         {step === 3 && (
-          <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-8">
+          <div className="bg-stone-900/50 border border-stone-700 rounded p-8">
             <h2 className="text-2xl font-bold text-white mb-2">About You</h2>
             <p className="text-stone-400 mb-6">This info will appear in your Basecamp profile so teammates can get to know you!</p>
             
@@ -361,7 +361,7 @@ export default function OnboardingPage() {
 
         {/* Step 4: Work Info */}
         {step === 4 && (
-          <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-8">
+          <div className="bg-stone-900/50 border border-stone-700 rounded p-8">
             <h2 className="text-2xl font-bold text-white mb-6">Work Information</h2>
             
             <div className="space-y-4">
@@ -434,7 +434,7 @@ export default function OnboardingPage() {
                   }
                 }}
                 disabled={!data.department || !data.position || !data.startDate}
-                className="px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                className="px-6 py-3 bg-[#110F0B] from-REMOVED-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 {data.role === 'manager' ? 'Next' : 'Complete'} 
                 {data.role === 'manager' ? <ChevronRight className="w-5 h-5" /> : <CheckCircle2 className="w-5 h-5" />}
@@ -445,7 +445,7 @@ export default function OnboardingPage() {
 
         {/* Step 5: Manager-Specific */}
         {step === 5 && data.role === 'manager' && (
-          <div className="bg-stone-900/50 border border-stone-700 rounded-xl p-8">
+          <div className="bg-stone-900/50 border border-stone-700 rounded p-8">
             <h2 className="text-2xl font-bold text-white mb-2">Leadership Info</h2>
             <p className="text-stone-400 mb-6">Help us understand your management approach</p>
             
@@ -493,7 +493,7 @@ export default function OnboardingPage() {
               </button>
               <button
                 onClick={handleComplete}
-                className="px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all flex items-center gap-2"
+                className="px-6 py-3 bg-[#110F0B] from-REMOVED-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold rounded-lg transition-all flex items-center gap-2"
               >
                 Complete Onboarding <CheckCircle2 className="w-5 h-5" />
               </button>

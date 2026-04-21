@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -82,7 +82,7 @@ export default function HRAnalytics() {
         {/* Key Metrics */}
         <div className="grid grid-cols-4 gap-4 mb-8">
           {metrics.map((metric, idx) => (
-            <div key={idx} className={`bg-gradient-to-br ${metric.color} rounded-xl p-6 border-2 border-white/10`}>
+            <div key={idx} className={`bg-gradient-to-br ${metric.color} rounded p-6 border-2 border-white/10`}>
               <div className="text-white/80 text-sm mb-1">{metric.label}</div>
               <div className="text-4xl font-bold text-white mb-2">{metric.value}</div>
               <div className={`flex items-center gap-1 text-sm ${
@@ -96,7 +96,7 @@ export default function HRAnalytics() {
         </div>
 
         {/* Department Analytics */}
-        <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30 mb-8">
+        <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
             <BarChart3 className="w-7 h-7 text-amber-400" />
             Department Performance
@@ -145,7 +145,7 @@ export default function HRAnalytics() {
 
         <div className="grid grid-cols-2 gap-8 mb-8">
           {/* Diversity Metrics */}
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
               <PieChart className="w-7 h-7 text-amber-400" />
               Diversity & Inclusion
@@ -157,7 +157,7 @@ export default function HRAnalytics() {
                   <div className="flex items-center gap-3">
                     <div className="w-24 text-stone-300">Female</div>
                     <div className="flex-1 bg-stone-900 rounded-full h-6">
-                      <div className="bg-gradient-to-r from-pink-500 to-amber-900 h-6 rounded-full flex items-center justify-end pr-2" style={{width: '68%'}}>
+                      <div className="bg-[#110F0B] from-REMOVED-500 to-amber-900 h-6 rounded-full flex items-center justify-end pr-2" style={{width: '68%'}}>
                         <span className="text-xs font-bold text-white">68%</span>
                       </div>
                     </div>
@@ -195,7 +195,7 @@ export default function HRAnalytics() {
           </div>
 
           {/* Compensation Equity */}
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-emerald-500/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-emerald-500/30">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
               <DollarSign className="w-7 h-7 text-emerald-400" />
               Compensation Equity Analysis
@@ -234,7 +234,7 @@ export default function HRAnalytics() {
         </div>
 
         {/* Flight Risk Prediction */}
-        <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-red-500/30">
+        <div className="bg-stone-900/50 rounded p-6 border-2 border-red-500/30">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
             <AlertTriangle className="w-7 h-7 text-red-400 animate-pulse" />
             Predictive Flight Risk Analysis
@@ -242,7 +242,7 @@ export default function HRAnalytics() {
           </h2>
           <div className="space-y-4">
             {flightRisk.map((employee, idx) => (
-              <div key={idx} className="bg-gradient-to-r from-red-900/30 to-orange-900/30 rounded-lg p-5 border-2 border-red-500/30">
+              <div key={idx} className="bg-[#110F0B] from-REMOVED-900/30 to-orange-900/30 rounded-lg p-5 border-2 border-red-500/30">
                 <div className="flex items-start justify-between mb-3">
                   <div>
                     <h3 className="text-xl font-bold text-white mb-1">{employee.name}</h3>

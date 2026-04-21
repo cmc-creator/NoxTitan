@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { 
@@ -199,7 +199,7 @@ export default function SupportPage() {
     switch (status) {
       case 'resolved': return 'bg-green-100 text-green-700';
       case 'in-progress': return 'bg-blue-100 text-amber-300';
-      case 'closed': return 'bg-gray-100 text-gray-700';
+      case 'closed': return 'bg-[rgba(201,168,76,0.06)] text-[#C9A84C]';
       default: return 'bg-purple-100 text-amber-700';
     }
   };
@@ -229,7 +229,7 @@ export default function SupportPage() {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-gradient-to-br from-amber-700 to-cyan-600 rounded-xl shadow-lg p-6 text-white">
+          <div className="bg-gradient-to-br from-amber-700 to-cyan-600 rounded shadow-lg p-6 text-white">
             <div className="flex items-center justify-between mb-2">
               <Ticket className="w-8 h-8 opacity-80" />
               <span className="text-3xl font-bold">12</span>
@@ -237,7 +237,7 @@ export default function SupportPage() {
             <p className="text-blue-100">Open Tickets</p>
             <p className="text-sm text-blue-200 mt-1">3 urgent, 5 high priority</p>
           </div>
-          <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl shadow-lg p-6 text-white">
+          <div className="bg-[#110F0B] from-REMOVED-500 to-emerald-600 rounded shadow-lg p-6 text-white">
             <div className="flex items-center justify-between mb-2">
               <CheckCircle className="w-8 h-8 opacity-80" />
               <span className="text-3xl font-bold">89%</span>
@@ -245,7 +245,7 @@ export default function SupportPage() {
             <p className="text-green-100">AI Resolution Rate</p>
             <p className="text-sm text-green-200 mt-1">↑ 12% from last month</p>
           </div>
-          <div className="bg-gradient-to-br from-amber-700 to-amber-500 rounded-xl shadow-lg p-6 text-white">
+          <div className="bg-gradient-to-br from-amber-700 to-amber-500 rounded shadow-lg p-6 text-white">
             <div className="flex items-center justify-between mb-2">
               <Clock className="w-8 h-8 opacity-80" />
               <span className="text-3xl font-bold">2.3h</span>
@@ -253,7 +253,7 @@ export default function SupportPage() {
             <p className="text-amber-50">Avg Response Time</p>
             <p className="text-sm text-amber-100/70 mt-1">Target: &lt;4 hours</p>
           </div>
-          <div className="bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl shadow-lg p-6 text-white">
+          <div className="bg-gradient-to-br from-amber-500 to-orange-600 rounded shadow-lg p-6 text-white">
             <div className="flex items-center justify-between mb-2">
               <ThumbsUp className="w-8 h-8 opacity-80" />
               <span className="text-3xl font-bold">4.8</span>
@@ -264,7 +264,7 @@ export default function SupportPage() {
         </div>
 
         {/* AI Assistant Banner */}
-        <div className="bg-gradient-to-r from-amber-700 to-amber-600 rounded-xl shadow-lg p-6 text-white mb-8">
+        <div className="bg-gradient-to-r from-amber-700 to-amber-600 rounded shadow-lg p-6 text-white mb-8">
           <div className="flex items-start gap-4">
             <Bot className="w-12 h-12 flex-shrink-0" />
             <div className="flex-1">
@@ -295,8 +295,8 @@ export default function SupportPage() {
         <div className="flex gap-4 mb-8 flex-wrap">
           <button
             onClick={() => setActiveTab('tickets')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-              activeTab === 'tickets' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-gray-700 hover:bg-stone-950'
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
+              activeTab === 'tickets' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-[#C9A84C] hover:bg-stone-950'
             }`}
           >
             <Ticket className="w-5 h-5" />
@@ -304,8 +304,8 @@ export default function SupportPage() {
           </button>
           <button
             onClick={() => setActiveTab('knowledge')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-              activeTab === 'knowledge' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-gray-700 hover:bg-stone-950'
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
+              activeTab === 'knowledge' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-[#C9A84C] hover:bg-stone-950'
             }`}
           >
             <BookOpen className="w-5 h-5" />
@@ -313,8 +313,8 @@ export default function SupportPage() {
           </button>
           <button
             onClick={() => setActiveTab('analytics')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-              activeTab === 'analytics' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-gray-700 hover:bg-stone-950'
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
+              activeTab === 'analytics' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-[#C9A84C] hover:bg-stone-950'
             }`}
           >
             <TrendingUp className="w-5 h-5" />
@@ -322,8 +322,8 @@ export default function SupportPage() {
           </button>
           <button
             onClick={() => setActiveTab('settings')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
-              activeTab === 'settings' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-gray-700 hover:bg-stone-950'
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
+              activeTab === 'settings' ? 'bg-amber-600 text-white shadow-lg' : 'bg-stone-950 text-[#C9A84C] hover:bg-stone-950'
             }`}
           >
             <Zap className="w-5 h-5" />
@@ -335,7 +335,7 @@ export default function SupportPage() {
         {activeTab === 'tickets' && (
           <div className="space-y-6">
             {/* Toolbar */}
-            <div className="bg-stone-950 rounded-xl shadow-md p-4">
+            <div className="bg-stone-950 rounded shadow-md p-4">
               <div className="flex gap-4 items-center flex-wrap">
                 <div className="flex-1 relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-stone-400 w-5 h-5" />
@@ -364,7 +364,7 @@ export default function SupportPage() {
             {/* Tickets List */}
             <div className="space-y-4">
               {tickets.map((ticket) => (
-                <div key={ticket.id} className="bg-stone-950 rounded-xl shadow-md p-6 hover:shadow-lg transition-all border-l-4 border-amber-600/40">
+                <div key={ticket.id} className="bg-stone-950 rounded shadow-md p-6 hover:shadow-lg transition-all border-l-4 border-amber-600/40">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
@@ -395,7 +395,7 @@ export default function SupportPage() {
                         View Details
                       </button>
                       {(ticket.tier === 'gold' || ticket.tier === 'platinum') && (
-                        <button className="px-4 py-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg hover:from-green-700 hover:to-emerald-700 transition-all font-semibold flex items-center justify-center gap-2">
+                        <button className="px-4 py-2 bg-[#110F0B] from-REMOVED-600 to-emerald-600 text-white rounded-lg hover:from-green-700 hover:to-emerald-700 transition-all font-semibold flex items-center justify-center gap-2">
                           <Monitor className="w-4 h-4" />
                           Remote Connect
                         </button>
@@ -405,7 +405,7 @@ export default function SupportPage() {
 
                   {/* Remote Support Options */}
                   {(ticket.tier === 'gold' || ticket.tier === 'platinum') && ticket.status === 'in-progress' && (
-                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-lg p-4 mt-4">
+                    <div className="bg-[#110F0B] from-REMOVED-50 to-emerald-50 border-2 border-green-200 rounded-lg p-4 mt-4">
                       <div className="flex items-center gap-2 mb-3">
                         <Monitor className="w-5 h-5 text-green-600" />
                         <h4 className="font-bold text-green-900">Remote Support Available</h4>
@@ -469,7 +469,7 @@ export default function SupportPage() {
         {/* Knowledge Base Tab */}
         {activeTab === 'knowledge' && (
           <div className="space-y-6">
-            <div className="bg-stone-950 rounded-xl shadow-md p-6">
+            <div className="bg-stone-950 rounded shadow-md p-6">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold text-stone-100">Self-Service Knowledge Base</h2>
                 <button className="px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all flex items-center gap-2">
@@ -480,12 +480,12 @@ export default function SupportPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {articles.map((article) => (
-                  <div key={article.id} className="p-6 border-2 border-stone-800 rounded-xl hover:border-blue-400 hover:shadow-lg transition-all">
+                  <div key={article.id} className="p-6 border-2 border-stone-800 rounded hover:border-blue-400 hover:shadow-lg transition-all">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="p-3 bg-blue-100 text-amber-400 rounded-xl">
+                      <div className="p-3 bg-blue-100 text-amber-400 rounded">
                         {article.icon}
                       </div>
-                      <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold">
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.06)] text-[#C9A84C] rounded-full text-xs font-semibold">
                         {article.category}
                       </span>
                     </div>
@@ -521,41 +521,41 @@ export default function SupportPage() {
         {/* Analytics Tab */}
         {activeTab === 'analytics' && (
           <div className="space-y-6">
-            <div className="bg-stone-950 rounded-xl shadow-md p-6">
+            <div className="bg-stone-950 rounded shadow-md p-6">
               <h2 className="text-2xl font-bold text-stone-100 mb-6">Support Analytics</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-6 bg-gradient-to-br from-amber-700 to-cyan-50 rounded-xl border border-blue-200">
+                <div className="p-6 bg-gradient-to-br from-amber-700 to-cyan-50 rounded border border-blue-200">
                   <h3 className="text-sm font-semibold text-amber-400 mb-2">Most Common Issues</h3>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-700">Payroll export errors</span>
+                      <span className="text-[#C9A84C]">Payroll export errors</span>
                       <span className="font-bold text-stone-100">24</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-700">Schedule sync problems</span>
+                      <span className="text-[#C9A84C]">Schedule sync problems</span>
                       <span className="font-bold text-stone-100">18</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-700">Compliance questions</span>
+                      <span className="text-[#C9A84C]">Compliance questions</span>
                       <span className="font-bold text-stone-100">15</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200">
+                <div className="p-6 bg-[#110F0B] from-REMOVED-50 to-emerald-50 rounded border border-green-200">
                   <h3 className="text-sm font-semibold text-green-600 mb-2">Resolution Times</h3>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-700">AI Auto-Resolved</span>
+                      <span className="text-[#C9A84C]">AI Auto-Resolved</span>
                       <span className="font-bold text-stone-100">&lt;5 min</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-700">Simple Issues</span>
+                      <span className="text-[#C9A84C]">Simple Issues</span>
                       <span className="font-bold text-stone-100">2.3 hrs</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-700">Complex Issues</span>
+                      <span className="text-[#C9A84C]">Complex Issues</span>
                       <span className="font-bold text-stone-100">8.7 hrs</span>
                     </div>
                   </div>
@@ -568,12 +568,12 @@ export default function SupportPage() {
         {/* Automation Settings Tab */}
         {activeTab === 'settings' && (
           <div className="space-y-6">
-            <div className="bg-stone-950 rounded-xl shadow-md p-6">
+            <div className="bg-stone-950 rounded shadow-md p-6">
               <h2 className="text-2xl font-bold text-stone-100 mb-6">AI Automation Settings</h2>
               
               <div className="space-y-6">
                 {/* Auto-Response */}
-                <div className="p-6 border-2 border-stone-800 rounded-xl">
+                <div className="p-6 border-2 border-stone-800 rounded">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <Bot className="w-6 h-6 text-amber-600" />
@@ -591,7 +591,7 @@ export default function SupportPage() {
                 </div>
 
                 {/* Priority Routing */}
-                <div className="p-6 border-2 border-stone-800 rounded-xl">
+                <div className="p-6 border-2 border-stone-800 rounded">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <Crown className="w-6 h-6 text-amber-600" />
@@ -622,7 +622,7 @@ export default function SupportPage() {
                 </div>
 
                 {/* Email Notifications */}
-                <div className="p-6 border-2 border-stone-800 rounded-xl">
+                <div className="p-6 border-2 border-stone-800 rounded">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <Mail className="w-6 h-6 text-amber-400" />
@@ -644,7 +644,7 @@ export default function SupportPage() {
                 </div>
 
                 {/* Remote Support Tools */}
-                <div className="p-6 border-2 border-green-200 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50">
+                <div className="p-6 border-2 border-green-200 rounded bg-[#110F0B] from-REMOVED-50 to-emerald-50">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <Monitor className="w-6 h-6 text-green-600" />
@@ -707,7 +707,7 @@ export default function SupportPage() {
                               <p className="text-xs text-stone-500">For advanced remote control</p>
                             </div>
                           </div>
-                          <button className="px-3 py-1 bg-gray-200 text-gray-700 rounded text-xs font-semibold hover:bg-gray-300 transition-all">
+                          <button className="px-3 py-1 bg-gray-200 text-[#C9A84C] rounded text-xs font-semibold hover:bg-gray-300 transition-all">
                             Configure
                           </button>
                         </div>
@@ -721,7 +721,7 @@ export default function SupportPage() {
                               <p className="text-xs text-stone-500">Alternative remote desktop</p>
                             </div>
                           </div>
-                          <button className="px-3 py-1 bg-gray-200 text-gray-700 rounded text-xs font-semibold hover:bg-gray-300 transition-all">
+                          <button className="px-3 py-1 bg-gray-200 text-[#C9A84C] rounded text-xs font-semibold hover:bg-gray-300 transition-all">
                             Configure
                           </button>
                         </div>

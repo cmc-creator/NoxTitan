@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
@@ -245,7 +245,7 @@ export default function TimeClockPage() {
         </div>
 
         {/* Digital Clock Display */}
-        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-2xl p-8 mb-6 text-center">
+        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-8 mb-6 text-center">
           <div className="text-6xl font-bold text-white mb-2">
             {currentTime.toLocaleTimeString('en-US', { 
               hour: '2-digit', 
@@ -280,7 +280,7 @@ export default function TimeClockPage() {
 
         {/* Active Session */}
         {activeEntry && (
-          <div className="bg-gradient-to-r from-amber-700/20 to-amber-900/20 border border-amber-500/40/50 rounded-2xl p-6 mb-6">
+          <div className="bg-gradient-to-r from-amber-700/20 to-amber-900/20 border border-amber-500/40/50 rounded p-6 mb-6">
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="text-xl font-bold text-white">Currently Clocked In</h3>
@@ -334,7 +334,7 @@ export default function TimeClockPage() {
 
         {/* Clock In Form */}
         {!activeEntry && (
-          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-2xl p-8">
+          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-8">
             <h3 className="text-2xl font-bold text-white mb-6">Clock In</h3>
 
             {/* Employee Selection */}

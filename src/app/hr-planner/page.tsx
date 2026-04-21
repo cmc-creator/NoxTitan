@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { Calendar, CheckSquare, Plus, Filter, Clock, AlertCircle, TrendingUp, Users, Bell } from 'lucide-react';
@@ -171,7 +171,7 @@ export default function HRPlannerPage() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6">
+          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <CheckSquare className="w-8 h-8 text-amber-400" />
               <span className="text-3xl font-bold text-white">{stats.total}</span>
@@ -179,7 +179,7 @@ export default function HRPlannerPage() {
             <p className="text-stone-300 font-semibold">Total Tasks</p>
           </div>
 
-          <div className="bg-yellow-500/10 border border-yellow-500/50 rounded-xl p-6">
+          <div className="bg-yellow-500/10 border border-yellow-500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <Clock className="w-8 h-8 text-yellow-400" />
               <span className="text-3xl font-bold text-yellow-400">{stats.pending}</span>
@@ -187,7 +187,7 @@ export default function HRPlannerPage() {
             <p className="text-yellow-300 font-semibold">Pending</p>
           </div>
 
-          <div className="bg-red-500/10 border border-red-500/50 rounded-xl p-6">
+          <div className="bg-red-500/10 border border-red-500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <AlertCircle className="w-8 h-8 text-red-400" />
               <span className="text-3xl font-bold text-red-400">{stats.overdue}</span>
@@ -195,7 +195,7 @@ export default function HRPlannerPage() {
             <p className="text-red-300 font-semibold">Overdue</p>
           </div>
 
-          <div className="bg-green-500/10 border border-green-500/50 rounded-xl p-6">
+          <div className="bg-green-500/10 border border-green-500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <TrendingUp className="w-8 h-8 text-green-400" />
               <span className="text-3xl font-bold text-green-400">{stats.completed}</span>
@@ -205,7 +205,7 @@ export default function HRPlannerPage() {
         </div>
 
         {/* Filters */}
-        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-4 mb-6">
+        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-4 mb-6">
           <div className="flex items-center gap-4">
             <Filter className="w-5 h-5 text-stone-400" />
             <select
@@ -238,12 +238,12 @@ export default function HRPlannerPage() {
         {/* Tasks List */}
         <div className="space-y-4">
           {loading ? (
-            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-12 text-center">
+            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-12 text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto mb-4"></div>
               <p className="text-stone-400">Loading tasks...</p>
             </div>
           ) : filteredTasks.length === 0 ? (
-            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-12 text-center">
+            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-12 text-center">
               <CheckSquare className="w-16 h-16 text-stone-600 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">No Tasks Found</h3>
               <p className="text-stone-400 mb-6">Create your first HR task to get started!</p>
@@ -258,7 +258,7 @@ export default function HRPlannerPage() {
             filteredTasks.map((task) => (
               <div
                 key={task.id}
-                className={`bg-stone-900/50 backdrop-blur border rounded-xl p-6 hover:border-amber-500/40/50 transition-colors ${
+                className={`bg-stone-900/50 backdrop-blur border rounded p-6 hover:border-amber-500/40/50 transition-colors ${
                   task.status === 'OVERDUE' ? 'border-red-500/50' : 'border-stone-700'
                 }`}
               >
@@ -313,7 +313,7 @@ export default function HRPlannerPage() {
         {/* Create Task Modal */}
         {showModal && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-            <div className="bg-stone-900 border border-stone-700 rounded-2xl p-8 max-w-2xl w-full">
+            <div className="bg-stone-900 border border-stone-700 rounded p-8 max-w-2xl w-full">
               <h2 className="text-2xl font-bold text-white mb-6">Create HR Task</h2>
 
               <form onSubmit={handleCreateTask} className="space-y-6">

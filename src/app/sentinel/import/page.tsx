@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Upload, FileText, Link2, CheckCircle, AlertCircle } from 'lucide-react';
@@ -94,11 +94,11 @@ export default function SentinelImportPage() {
         <p className="text-stone-400 mb-8">Import from Tally, Google Forms, or CSV files</p>
 
         {/* Import Type Selection */}
-        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6 mb-6">
+        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6 mb-6">
           <div className="grid grid-cols-3 gap-4">
             <button
               onClick={() => setImportType('tally')}
-              className={`p-6 rounded-xl border-2 transition-all ${
+              className={`p-6 rounded border-2 transition-all ${
                 importType === 'tally'
                   ? 'border-amber-500/40 bg-amber-500/20'
                   : 'border-stone-700 hover:border-stone-700'
@@ -111,7 +111,7 @@ export default function SentinelImportPage() {
 
             <button
               onClick={() => setImportType('googleforms')}
-              className={`p-6 rounded-xl border-2 transition-all ${
+              className={`p-6 rounded border-2 transition-all ${
                 importType === 'googleforms'
                   ? 'border-amber-500/40 bg-amber-600/20'
                   : 'border-stone-700 hover:border-stone-700'
@@ -124,7 +124,7 @@ export default function SentinelImportPage() {
 
             <button
               onClick={() => setImportType('csv')}
-              className={`p-6 rounded-xl border-2 transition-all ${
+              className={`p-6 rounded border-2 transition-all ${
                 importType === 'csv'
                   ? 'border-green-500 bg-green-500/20'
                   : 'border-stone-700 hover:border-stone-700'
@@ -139,7 +139,7 @@ export default function SentinelImportPage() {
 
         {/* Tally Import */}
         {importType === 'tally' && (
-          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6">
+          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6">
             <h2 className="text-xl font-bold text-white mb-4">Import from Tally</h2>
             <div className="mb-4">
               <label className="block text-sm font-semibold text-stone-300 mb-2">
@@ -165,7 +165,7 @@ export default function SentinelImportPage() {
 
         {/* Google Forms Import */}
         {importType === 'googleforms' && (
-          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6">
+          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6">
             <h2 className="text-xl font-bold text-white mb-4">Import from Google Forms</h2>
             <div className="mb-4">
               <label className="block text-sm font-semibold text-stone-300 mb-2">
@@ -191,7 +191,7 @@ export default function SentinelImportPage() {
 
         {/* CSV Upload */}
         {importType === 'csv' && (
-          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6">
+          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6">
             <h2 className="text-xl font-bold text-white mb-4">Upload CSV File</h2>
             <div className="mb-4">
               <label className="block text-sm font-semibold text-stone-300 mb-2">
@@ -216,7 +216,7 @@ export default function SentinelImportPage() {
 
         {/* Import Result */}
         {result && (
-          <div className="mt-6 bg-green-500/10 border border-green-500/50 rounded-xl p-6">
+          <div className="mt-6 bg-green-500/10 border border-green-500/50 rounded p-6">
             <div className="flex items-center gap-3 mb-4">
               <CheckCircle className="w-8 h-8 text-green-400" />
               <h3 className="text-xl font-bold text-white">Import Successful!</h3>

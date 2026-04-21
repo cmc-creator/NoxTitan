@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { AlertTriangle, DollarSign, User, Package, Calendar, CheckCircle, XCircle, Clock } from 'lucide-react';
@@ -124,7 +124,7 @@ export default function PayrollFlagsPage() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
-          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6">
+          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <AlertTriangle className="w-8 h-8 text-orange-400" />
               <span className="text-3xl font-bold text-white">{stats.total}</span>
@@ -132,7 +132,7 @@ export default function PayrollFlagsPage() {
             <p className="text-stone-300 font-semibold">Total Flags</p>
           </div>
 
-          <div className="bg-yellow-500/10 border border-yellow-500/50 rounded-xl p-6">
+          <div className="bg-yellow-500/10 border border-yellow-500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <Clock className="w-8 h-8 text-yellow-400" />
               <span className="text-3xl font-bold text-yellow-400">{stats.pending}</span>
@@ -140,7 +140,7 @@ export default function PayrollFlagsPage() {
             <p className="text-yellow-300 font-semibold">Pending</p>
           </div>
 
-          <div className="bg-amber-600/10 border border-amber-500/40/50 rounded-xl p-6">
+          <div className="bg-amber-600/10 border border-amber-500/40/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <CheckCircle className="w-8 h-8 text-amber-400" />
               <span className="text-3xl font-bold text-amber-400">{stats.approved}</span>
@@ -148,7 +148,7 @@ export default function PayrollFlagsPage() {
             <p className="text-amber-400 font-semibold">Approved</p>
           </div>
 
-          <div className="bg-green-500/10 border border-green-500/50 rounded-xl p-6">
+          <div className="bg-green-500/10 border border-green-500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <DollarSign className="w-8 h-8 text-green-400" />
               <span className="text-3xl font-bold text-green-400">{stats.applied}</span>
@@ -156,7 +156,7 @@ export default function PayrollFlagsPage() {
             <p className="text-green-300 font-semibold">Applied</p>
           </div>
 
-          <div className="bg-amber-500/10 border border-amber-500/40/50 rounded-xl p-6">
+          <div className="bg-amber-500/10 border border-amber-500/40/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <DollarSign className="w-8 h-8 text-amber-400" />
               <span className="text-3xl font-bold text-amber-400">
@@ -168,7 +168,7 @@ export default function PayrollFlagsPage() {
         </div>
 
         {/* Filter */}
-        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-4 mb-6">
+        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-4 mb-6">
           <select
             value={filterStatus}
             onChange={(e) => setFilterStatus(e.target.value)}
@@ -186,7 +186,7 @@ export default function PayrollFlagsPage() {
         {/* Deductions List */}
         <div className="space-y-4">
           {filteredDeductions.map((deduction) => (
-            <div key={deduction.id} className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-6">
+            <div key={deduction.id} className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-start gap-4 flex-1">
                   <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center flex-shrink-0">
@@ -272,7 +272,7 @@ export default function PayrollFlagsPage() {
           ))}
 
           {filteredDeductions.length === 0 && (
-            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl p-12 text-center">
+            <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-12 text-center">
               <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">All Clear!</h3>
               <p className="text-stone-400">No payroll deductions at this time.</p>

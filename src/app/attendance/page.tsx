@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { Calendar, Clock, Users, TrendingUp, AlertCircle, CheckCircle, XCircle, MapPin, Camera } from 'lucide-react';
@@ -166,7 +166,7 @@ export default function AttendancePage() {
         )}
 
         {/* Attendance List */}
-        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-2xl overflow-hidden">
+        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead className="bg-stone-900">

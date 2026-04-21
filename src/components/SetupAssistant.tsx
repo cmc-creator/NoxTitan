@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Bot, ChevronRight, ExternalLink, Copy, CheckCircle, Volume2, VolumeX } from 'lucide-react';
@@ -305,11 +305,11 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
   const currentStepData = guide.steps[currentStep];
 
   return (
-    <div className="bg-gradient-to-br from-amber-700 to-amber-900 rounded-xl p-6 border-2 border-amber-500/40">
+    <div className="bg-gradient-to-br from-amber-700 to-amber-900 rounded p-6 border-2 border-amber-500/40">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
-          <div className="p-3 bg-amber-600 rounded-xl">
+          <div className="p-3 bg-amber-600 rounded">
             <Bot className="w-6 h-6 text-white" />
           </div>
           <div>
@@ -366,7 +366,7 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
 
         {/* Main Content */}
         <div className="lg:col-span-2">
-          <div className="bg-stone-900/50 rounded-xl p-6">
+          <div className="bg-stone-900/50 rounded p-6">
             {/* Step Header */}
             <div className="flex items-start justify-between mb-4">
               <div>

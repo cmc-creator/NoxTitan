@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { Plus, Edit2, Trash2, Wifi, WifiOff, MapPin, Settings, CheckCircle, XCircle } from 'lucide-react';
@@ -165,7 +165,7 @@ export default function TimeClockDevicesPage() {
             <p className="text-stone-400 mt-4">Loading devices...</p>
           </div>
         ) : devices.length === 0 ? (
-          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-2xl p-12 text-center">
+          <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-12 text-center">
             <Wifi className="w-16 h-16 text-stone-600 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-white mb-2">No Devices Registered</h3>
             <p className="text-stone-400 mb-6">Add your first time clock to get started</p>
@@ -181,7 +181,7 @@ export default function TimeClockDevicesPage() {
             {devices.map((device) => (
               <div
                 key={device.id}
-                className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-2xl p-6 hover:border-amber-500/40/50 transition-colors"
+                className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded p-6 hover:border-amber-500/40/50 transition-colors"
               >
                 {/* Device Header */}
                 <div className="flex items-start justify-between mb-4">
@@ -264,7 +264,7 @@ export default function TimeClockDevicesPage() {
         {/* Add/Edit Modal */}
         {showModal && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-            <div className="bg-stone-900 border border-stone-700 rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-stone-900 border border-stone-700 rounded p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               <h2 className="text-2xl font-bold text-white mb-6">
                 {editingDevice ? 'Edit Device' : 'Add New Device'}
               </h2>

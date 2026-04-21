@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Shield, AlertTriangle, CheckCircle, Clock, FileText, Users, TrendingUp, Download, Upload, ExternalLink, Search, XCircle, Bell, RefreshCw, MapPin, AlertCircle, Eye, Calendar, Zap, Lock, Key, Database, Activity, FileCheck, UserCheck } from 'lucide-react';
@@ -12,7 +12,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
         <button
           onClick={() => setHipaaView('overview')}
           className={`px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap ${
-            hipaaView === 'overview' ? 'bg-amber-600 text-white' : 'bg-stone-950 text-gray-700 hover:bg-gray-100'
+            hipaaView === 'overview' ? 'bg-amber-600 text-white' : 'bg-stone-950 text-[#C9A84C] hover:bg-[rgba(201,168,76,0.06)]'
           }`}
         >
           Overview
@@ -20,7 +20,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
         <button
           onClick={() => setHipaaView('privacy')}
           className={`px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap ${
-            hipaaView === 'privacy' ? 'bg-amber-600 text-white' : 'bg-stone-950 text-gray-700 hover:bg-gray-100'
+            hipaaView === 'privacy' ? 'bg-amber-600 text-white' : 'bg-stone-950 text-[#C9A84C] hover:bg-[rgba(201,168,76,0.06)]'
           }`}
         >
           Privacy Rule
@@ -28,7 +28,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
         <button
           onClick={() => setHipaaView('security')}
           className={`px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap ${
-            hipaaView === 'security' ? 'bg-amber-600 text-white' : 'bg-stone-950 text-gray-700 hover:bg-gray-100'
+            hipaaView === 'security' ? 'bg-amber-600 text-white' : 'bg-stone-950 text-[#C9A84C] hover:bg-[rgba(201,168,76,0.06)]'
           }`}
         >
           Security Rule
@@ -36,7 +36,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
         <button
           onClick={() => setHipaaView('breach')}
           className={`px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap ${
-            hipaaView === 'breach' ? 'bg-amber-600 text-white' : 'bg-stone-950 text-gray-700 hover:bg-gray-100'
+            hipaaView === 'breach' ? 'bg-amber-600 text-white' : 'bg-stone-950 text-[#C9A84C] hover:bg-[rgba(201,168,76,0.06)]'
           }`}
         >
           Breach Prevention
@@ -44,7 +44,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
         <button
           onClick={() => setHipaaView('audit-log')}
           className={`px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap ${
-            hipaaView === 'audit-log' ? 'bg-amber-600 text-white' : 'bg-stone-950 text-gray-700 hover:bg-gray-100'
+            hipaaView === 'audit-log' ? 'bg-amber-600 text-white' : 'bg-stone-950 text-[#C9A84C] hover:bg-[rgba(201,168,76,0.06)]'
           }`}
         >
           Audit Logs
@@ -55,7 +55,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
       {hipaaView === 'overview' && (
         <div className="space-y-6">
           {/* Compliance Score */}
-          <div className="bg-gradient-to-r from-green-50 to-amber-800 p-6 rounded-xl border-2 border-green-200">
+          <div className="p-6 rounded border border-[rgba(201,168,76,0.45)]">
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h2 className="text-2xl font-bold text-stone-100">HIPAA Compliance Status</h2>
@@ -69,29 +69,29 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
               <div className="bg-stone-950 p-4 rounded-lg border border-green-200">
                 <CheckCircle className="w-6 h-6 text-green-600 mb-2" />
-                <p className="text-sm font-semibold text-gray-700">Privacy Rule</p>
+                <p className="text-sm font-semibold text-[#C9A84C]">Privacy Rule</p>
                 <p className="text-2xl font-bold text-green-600">100%</p>
               </div>
               <div className="bg-stone-950 p-4 rounded-lg border border-green-200">
                 <CheckCircle className="w-6 h-6 text-green-600 mb-2" />
-                <p className="text-sm font-semibold text-gray-700">Security Rule</p>
+                <p className="text-sm font-semibold text-[#C9A84C]">Security Rule</p>
                 <p className="text-2xl font-bold text-green-600">97%</p>
               </div>
               <div className="bg-stone-950 p-4 rounded-lg border border-yellow-200">
                 <AlertTriangle className="w-6 h-6 text-yellow-600 mb-2" />
-                <p className="text-sm font-semibold text-gray-700">Breach Notification</p>
+                <p className="text-sm font-semibold text-[#C9A84C]">Breach Notification</p>
                 <p className="text-2xl font-bold text-yellow-600">95%</p>
               </div>
               <div className="bg-stone-950 p-4 rounded-lg border border-green-200">
                 <CheckCircle className="w-6 h-6 text-green-600 mb-2" />
-                <p className="text-sm font-semibold text-gray-700">Training</p>
+                <p className="text-sm font-semibold text-[#C9A84C]">Training</p>
                 <p className="text-2xl font-bold text-green-600">100%</p>
               </div>
             </div>
           </div>
 
           {/* Critical Safeguards */}
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+          <div className="bg-stone-950 p-6 rounded shadow-md">
             <h3 className="text-xl font-bold text-stone-100 mb-4">Active HIPAA Safeguards</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="p-4 border-l-4 border-green-500 bg-green-50 rounded">
@@ -99,9 +99,9 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                   <Lock className="w-5 h-5 text-green-600" />
                   <h4 className="font-semibold text-stone-100">Data Encryption</h4>
                 </div>
-                <p className="text-sm text-gray-700">✓ AES-256 encryption at rest</p>
-                <p className="text-sm text-gray-700">✓ TLS 1.3 encryption in transit</p>
-                <p className="text-sm text-gray-700">✓ Encrypted database backups</p>
+                <p className="text-sm text-[#C9A84C]">✓ AES-256 encryption at rest</p>
+                <p className="text-sm text-[#C9A84C]">✓ TLS 1.3 encryption in transit</p>
+                <p className="text-sm text-[#C9A84C]">✓ Encrypted database backups</p>
               </div>
 
               <div className="p-4 border-l-4 border-green-500 bg-green-50 rounded">
@@ -109,9 +109,9 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                   <Key className="w-5 h-5 text-green-600" />
                   <h4 className="font-semibold text-stone-100">Access Controls</h4>
                 </div>
-                <p className="text-sm text-gray-700">✓ Role-based access (RBAC)</p>
-                <p className="text-sm text-gray-700">✓ Multi-factor authentication</p>
-                <p className="text-sm text-gray-700">✓ Automatic session timeout (15 min)</p>
+                <p className="text-sm text-[#C9A84C]">✓ Role-based access (RBAC)</p>
+                <p className="text-sm text-[#C9A84C]">✓ Multi-factor authentication</p>
+                <p className="text-sm text-[#C9A84C]">✓ Automatic session timeout (15 min)</p>
               </div>
 
               <div className="p-4 border-l-4 border-green-500 bg-green-50 rounded">
@@ -119,9 +119,9 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                   <Activity className="w-5 h-5 text-green-600" />
                   <h4 className="font-semibold text-stone-100">Audit Logging</h4>
                 </div>
-                <p className="text-sm text-gray-700">✓ All PHI access logged</p>
-                <p className="text-sm text-gray-700">✓ Tamper-proof audit trails</p>
-                <p className="text-sm text-gray-700">✓ 7-year retention policy</p>
+                <p className="text-sm text-[#C9A84C]">✓ All PHI access logged</p>
+                <p className="text-sm text-[#C9A84C]">✓ Tamper-proof audit trails</p>
+                <p className="text-sm text-[#C9A84C]">✓ 7-year retention policy</p>
               </div>
 
               <div className="p-4 border-l-4 border-yellow-500 bg-yellow-50 rounded">
@@ -129,30 +129,30 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                   <AlertTriangle className="w-5 h-5 text-yellow-600" />
                   <h4 className="font-semibold text-stone-100">Breach Detection</h4>
                 </div>
-                <p className="text-sm text-gray-700">✓ Real-time monitoring</p>
-                <p className="text-sm text-gray-700">⚠ Update IDS signatures</p>
-                <p className="text-sm text-gray-700">✓ 60-day notification protocol</p>
+                <p className="text-sm text-[#C9A84C]">✓ Real-time monitoring</p>
+                <p className="text-sm text-[#C9A84C]">⚠ Update IDS signatures</p>
+                <p className="text-sm text-[#C9A84C]">✓ 60-day notification protocol</p>
               </div>
             </div>
           </div>
 
           {/* Legal Compliance Matrix */}
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+          <div className="bg-stone-950 p-6 rounded shadow-md">
             <h3 className="text-xl font-bold text-stone-100 mb-4">Legal & Regulatory Compliance</h3>
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-gray-100">
+                <thead className="bg-[rgba(201,168,76,0.06)]">
                   <tr>
-                    <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Regulation</th>
-                    <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Requirement</th>
-                    <th className="text-center py-3 px-4 text-sm font-semibold text-gray-700">Status</th>
-                    <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Last Audit</th>
+                    <th className="text-left py-3 px-4 text-sm font-semibold text-[#C9A84C]">Regulation</th>
+                    <th className="text-left py-3 px-4 text-sm font-semibold text-[#C9A84C]">Requirement</th>
+                    <th className="text-center py-3 px-4 text-sm font-semibold text-[#C9A84C]">Status</th>
+                    <th className="text-left py-3 px-4 text-sm font-semibold text-[#C9A84C]">Last Audit</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-stone-800">
                     <td className="py-3 px-4 font-medium text-stone-100">HIPAA Privacy Rule</td>
-                    <td className="py-3 px-4 text-sm text-gray-700">Protect PHI, patient rights, consent management</td>
+                    <td className="py-3 px-4 text-sm text-[#C9A84C]">Protect PHI, patient rights, consent management</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
@@ -160,7 +160,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                   </tr>
                   <tr className="border-b border-stone-800">
                     <td className="py-3 px-4 font-medium text-stone-100">HIPAA Security Rule</td>
-                    <td className="py-3 px-4 text-sm text-gray-700">Technical, physical, administrative safeguards</td>
+                    <td className="py-3 px-4 text-sm text-[#C9A84C]">Technical, physical, administrative safeguards</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
@@ -168,7 +168,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                   </tr>
                   <tr className="border-b border-stone-800">
                     <td className="py-3 px-4 font-medium text-stone-100">HITECH Act</td>
-                    <td className="py-3 px-4 text-sm text-gray-700">Breach notification, BAA requirements</td>
+                    <td className="py-3 px-4 text-sm text-[#C9A84C]">Breach notification, BAA requirements</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
@@ -176,7 +176,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                   </tr>
                   <tr className="border-b border-stone-800">
                     <td className="py-3 px-4 font-medium text-stone-100">FLSA (Labor)</td>
-                    <td className="py-3 px-4 text-sm text-gray-700">Overtime, break requirements, minor restrictions</td>
+                    <td className="py-3 px-4 text-sm text-[#C9A84C]">Overtime, break requirements, minor restrictions</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
@@ -184,7 +184,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                   </tr>
                   <tr className="border-b border-stone-800">
                     <td className="py-3 px-4 font-medium text-stone-100">FMLA</td>
-                    <td className="py-3 px-4 text-sm text-gray-700">Job-protected leave, eligibility tracking</td>
+                    <td className="py-3 px-4 text-sm text-[#C9A84C]">Job-protected leave, eligibility tracking</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
@@ -192,7 +192,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                   </tr>
                   <tr className="border-b border-stone-800">
                     <td className="py-3 px-4 font-medium text-stone-100">ADA</td>
-                    <td className="py-3 px-4 text-sm text-gray-700">Reasonable accommodations, anti-discrimination</td>
+                    <td className="py-3 px-4 text-sm text-[#C9A84C]">Reasonable accommodations, anti-discrimination</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
@@ -200,7 +200,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                   </tr>
                   <tr className="border-b border-stone-800">
                     <td className="py-3 px-4 font-medium text-stone-100">OSHA</td>
-                    <td className="py-3 px-4 text-sm text-gray-700">Workplace safety, bloodborne pathogens, ergonomics</td>
+                    <td className="py-3 px-4 text-sm text-[#C9A84C]">Workplace safety, bloodborne pathogens, ergonomics</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
@@ -208,7 +208,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                   </tr>
                   <tr className="border-b border-stone-800">
                     <td className="py-3 px-4 font-medium text-stone-100">State Privacy Laws</td>
-                    <td className="py-3 px-4 text-sm text-gray-700">CCPA, CDPA, state-specific requirements</td>
+                    <td className="py-3 px-4 text-sm text-[#C9A84C]">CCPA, CDPA, state-specific requirements</td>
                     <td className="text-center py-3 px-4">
                       <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">REVIEW</span>
                     </td>
@@ -220,7 +220,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
           </div>
 
           {/* Business Associate Agreements */}
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+          <div className="bg-stone-950 p-6 rounded shadow-md">
             <h3 className="text-xl font-bold text-stone-100 mb-4">Business Associate Agreements (BAA)</h3>
             <div className="space-y-3">
               {[
@@ -254,24 +254,24 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
 
       {/* Privacy Rule */}
       {hipaaView === 'privacy' && (
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+        <div className="bg-stone-950 p-6 rounded shadow-md">
           <h3 className="text-xl font-bold text-stone-100 mb-4">HIPAA Privacy Rule Compliance</h3>
           <div className="space-y-4">
             <div className="p-4 bg-green-50 border-l-4 border-green-500 rounded">
               <h4 className="font-semibold text-stone-100 mb-2">✓ Minimum Necessary Standard</h4>
-              <p className="text-sm text-gray-700">System enforces role-based access. Staff only see PHI required for job duties.</p>
+              <p className="text-sm text-[#C9A84C]">System enforces role-based access. Staff only see PHI required for job duties.</p>
             </div>
             <div className="p-4 bg-green-50 border-l-4 border-green-500 rounded">
               <h4 className="font-semibold text-stone-100 mb-2">✓ Patient Rights</h4>
-              <p className="text-sm text-gray-700">Portal provides: access to records, amendment requests, accounting of disclosures, opt-out forms.</p>
+              <p className="text-sm text-[#C9A84C]">Portal provides: access to records, amendment requests, accounting of disclosures, opt-out forms.</p>
             </div>
             <div className="p-4 bg-green-50 border-l-4 border-green-500 rounded">
               <h4 className="font-semibold text-stone-100 mb-2">✓ De-identification for Reports</h4>
-              <p className="text-sm text-gray-700">Analytics and reports automatically remove 18 HIPAA identifiers. Safe Harbor method applied.</p>
+              <p className="text-sm text-[#C9A84C]">Analytics and reports automatically remove 18 HIPAA identifiers. Safe Harbor method applied.</p>
             </div>
             <div className="p-4 bg-green-50 border-l-4 border-green-500 rounded">
               <h4 className="font-semibold text-stone-100 mb-2">✓ Notice of Privacy Practices</h4>
-              <p className="text-sm text-gray-700">NPP distributed at onboarding. Acknowledgment forms stored electronically. Last updated: Jan 2025.</p>
+              <p className="text-sm text-[#C9A84C]">NPP distributed at onboarding. Acknowledgment forms stored electronically. Last updated: Jan 2025.</p>
             </div>
           </div>
         </div>
@@ -280,41 +280,41 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
       {/* Security Rule */}
       {hipaaView === 'security' && (
         <div className="space-y-6">
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+          <div className="bg-stone-950 p-6 rounded shadow-md">
             <h3 className="text-xl font-bold text-stone-100 mb-4">Technical Safeguards</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="p-4 border border-stone-800 rounded-lg">
                 <Database className="w-6 h-6 text-amber-400 mb-2" />
                 <h4 className="font-semibold text-stone-100 mb-2">Encryption</h4>
-                <p className="text-sm text-gray-700">• AES-256 for stored data</p>
-                <p className="text-sm text-gray-700">• TLS 1.3 for data in transit</p>
-                <p className="text-sm text-gray-700">• End-to-end message encryption</p>
+                <p className="text-sm text-[#C9A84C]">• AES-256 for stored data</p>
+                <p className="text-sm text-[#C9A84C]">• TLS 1.3 for data in transit</p>
+                <p className="text-sm text-[#C9A84C]">• End-to-end message encryption</p>
               </div>
               <div className="p-4 border border-stone-800 rounded-lg">
                 <Key className="w-6 h-6 text-amber-400 mb-2" />
                 <h4 className="font-semibold text-stone-100 mb-2">Authentication</h4>
-                <p className="text-sm text-gray-700">• MFA required for all users</p>
-                <p className="text-sm text-gray-700">• Biometric options available</p>
-                <p className="text-sm text-gray-700">• Password complexity enforced</p>
+                <p className="text-sm text-[#C9A84C]">• MFA required for all users</p>
+                <p className="text-sm text-[#C9A84C]">• Biometric options available</p>
+                <p className="text-sm text-[#C9A84C]">• Password complexity enforced</p>
               </div>
               <div className="p-4 border border-stone-800 rounded-lg">
                 <Activity className="w-6 h-6 text-amber-400 mb-2" />
                 <h4 className="font-semibold text-stone-100 mb-2">Audit Controls</h4>
-                <p className="text-sm text-gray-700">• All access logged with timestamp</p>
-                <p className="text-sm text-gray-700">• Immutable audit trails</p>
-                <p className="text-sm text-gray-700">• Automated anomaly detection</p>
+                <p className="text-sm text-[#C9A84C]">• All access logged with timestamp</p>
+                <p className="text-sm text-[#C9A84C]">• Immutable audit trails</p>
+                <p className="text-sm text-[#C9A84C]">• Automated anomaly detection</p>
               </div>
               <div className="p-4 border border-stone-800 rounded-lg">
                 <UserCheck className="w-6 h-6 text-amber-400 mb-2" />
                 <h4 className="font-semibold text-stone-100 mb-2">Integrity Controls</h4>
-                <p className="text-sm text-gray-700">• Digital signatures for documents</p>
-                <p className="text-sm text-gray-700">• Version control tracking</p>
-                <p className="text-sm text-gray-700">• Checksum validation</p>
+                <p className="text-sm text-[#C9A84C]">• Digital signatures for documents</p>
+                <p className="text-sm text-[#C9A84C]">• Version control tracking</p>
+                <p className="text-sm text-[#C9A84C]">• Checksum validation</p>
               </div>
             </div>
           </div>
 
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+          <div className="bg-stone-950 p-6 rounded shadow-md">
             <h3 className="text-xl font-bold text-stone-100 mb-4">Physical & Administrative Safeguards</h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3 p-3 bg-stone-950 rounded-lg">
@@ -353,7 +353,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
       {/* Breach Prevention */}
       {hipaaView === 'breach' && (
         <div className="space-y-6">
-          <div className="bg-red-50 border-2 border-red-200 p-6 rounded-xl">
+          <div className="bg-red-50 border-2 border-red-200 p-6 rounded">
             <div className="flex items-center gap-3 mb-4">
               <AlertTriangle className="w-8 h-8 text-red-600" />
               <div>
@@ -364,20 +364,20 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="bg-stone-950 p-4 rounded-lg">
                 <p className="font-semibold text-stone-100 mb-1">Day 1-5</p>
-                <p className="text-sm text-gray-700">Contain breach, assess scope, notify Privacy Officer</p>
+                <p className="text-sm text-[#C9A84C]">Contain breach, assess scope, notify Privacy Officer</p>
               </div>
               <div className="bg-stone-950 p-4 rounded-lg">
                 <p className="font-semibold text-stone-100 mb-1">Day 6-30</p>
-                <p className="text-sm text-gray-700">Investigate cause, document findings, mitigate risks</p>
+                <p className="text-sm text-[#C9A84C]">Investigate cause, document findings, mitigate risks</p>
               </div>
               <div className="bg-stone-950 p-4 rounded-lg">
                 <p className="font-semibold text-stone-100 mb-1">Day 31-60</p>
-                <p className="text-sm text-gray-700">Notify affected individuals, HHS (if 500+ affected), media (if required)</p>
+                <p className="text-sm text-[#C9A84C]">Notify affected individuals, HHS (if 500+ affected), media (if required)</p>
               </div>
             </div>
           </div>
 
-          <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+          <div className="bg-stone-950 p-6 rounded shadow-md">
             <h3 className="text-xl font-bold text-stone-100 mb-4">Breach Prevention Measures</h3>
             <div className="space-y-3">
               <div className="p-4 border-l-4 border-green-500 bg-green-50 rounded">
@@ -385,16 +385,16 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
               </div>
               <div className="p-4 border border-stone-800 rounded-lg">
                 <h4 className="font-semibold text-stone-100 mb-2">Active Monitoring</h4>
-                <p className="text-sm text-gray-700">• Real-time intrusion detection (IDS/IPS)</p>
-                <p className="text-sm text-gray-700">• Security information and event management (SIEM)</p>
-                <p className="text-sm text-gray-700">• Quarterly penetration testing</p>
-                <p className="text-sm text-gray-700">• Vulnerability scanning (weekly)</p>
+                <p className="text-sm text-[#C9A84C]">• Real-time intrusion detection (IDS/IPS)</p>
+                <p className="text-sm text-[#C9A84C]">• Security information and event management (SIEM)</p>
+                <p className="text-sm text-[#C9A84C]">• Quarterly penetration testing</p>
+                <p className="text-sm text-[#C9A84C]">• Vulnerability scanning (weekly)</p>
               </div>
               <div className="p-4 border border-stone-800 rounded-lg">
                 <h4 className="font-semibold text-stone-100 mb-2">Employee Training</h4>
-                <p className="text-sm text-gray-700">• Annual security awareness training (100% completion)</p>
-                <p className="text-sm text-gray-700">• Monthly phishing simulations (95% pass rate)</p>
-                <p className="text-sm text-gray-700">• Incident reporting hotline</p>
+                <p className="text-sm text-[#C9A84C]">• Annual security awareness training (100% completion)</p>
+                <p className="text-sm text-[#C9A84C]">• Monthly phishing simulations (95% pass rate)</p>
+                <p className="text-sm text-[#C9A84C]">• Incident reporting hotline</p>
               </div>
             </div>
           </div>
@@ -403,7 +403,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
 
       {/* Audit Log */}
       {hipaaView === 'audit-log' && (
-        <div className="bg-stone-950 p-6 rounded-xl shadow-md">
+        <div className="bg-stone-950 p-6 rounded shadow-md">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-xl font-bold text-stone-100">PHI Access Audit Log</h3>
             <button className="px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all flex items-center gap-2">
@@ -413,13 +413,13 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
           </div>
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-gray-100">
+              <thead className="bg-[rgba(201,168,76,0.06)]">
                 <tr>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Timestamp</th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">User</th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Action</th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Resource</th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">IP Address</th>
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-[#C9A84C]">Timestamp</th>
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-[#C9A84C]">User</th>
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-[#C9A84C]">Action</th>
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-[#C9A84C]">Resource</th>
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-[#C9A84C]">IP Address</th>
                 </tr>
               </thead>
               <tbody>
@@ -431,7 +431,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                   { time: '2026-01-06 13:55:18', user: 'Pharmacy Tech', action: 'VIEW', resource: 'Prescription #3456', ip: '192.168.1.67' },
                 ].map((log, index) => (
                   <tr key={index} className="border-b border-stone-800 hover:bg-stone-950">
-                    <td className="py-3 px-4 text-sm text-gray-700">{log.time}</td>
+                    <td className="py-3 px-4 text-sm text-[#C9A84C]">{log.time}</td>
                     <td className="py-3 px-4 text-sm font-medium text-stone-100">{log.user}</td>
                     <td className="py-3 px-4">
                       <span className={`px-2 py-1 rounded text-xs font-semibold ${
@@ -442,7 +442,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                         {log.action}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-sm text-gray-700">{log.resource}</td>
+                    <td className="py-3 px-4 text-sm text-[#C9A84C]">{log.resource}</td>
                     <td className="py-3 px-4 text-sm text-stone-500">{log.ip}</td>
                   </tr>
                 ))}
@@ -460,15 +460,15 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
 
 // Placeholder sections for industry-specific compliance
 function ConstructionSection() {
-  return <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}><h3 className="text-2xl font-bold mb-4">🏗️ Construction Industry (29 CFR 1926) - Coming Soon</h3><p>Focus Four hazards: Falls, Electrocution, Struck-By, Caught-In/Between. Excavation safety, scaffolding, ladder safety, PPE requirements.</p></div>;
+  return <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}><h3 className="text-2xl font-bold mb-4">🏗️ Construction Industry (29 CFR 1926) - Coming Soon</h3><p>Focus Four hazards: Falls, Electrocution, Struck-By, Caught-In/Between. Excavation safety, scaffolding, ladder safety, PPE requirements.</p></div>;
 }
 
 function FoodServiceSection() {
-  return <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}><h3 className="text-2xl font-bold mb-4">🍽️ Food Service Compliance - Coming Soon</h3><p>FDA Food Code, food handler certifications, health inspections, allergen management, temperature control, and sanitation standards.</p></div>;
+  return <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}><h3 className="text-2xl font-bold mb-4">🍽️ Food Service Compliance - Coming Soon</h3><p>FDA Food Code, food handler certifications, health inspections, allergen management, temperature control, and sanitation standards.</p></div>;
 }
 
 function RetailSection() {
-  return <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}><h3 className="text-2xl font-bold mb-4">🛒 Retail Industry Compliance - Coming Soon</h3><p>FLSA wage/hour laws, ADA accessibility, PCI DSS payment security, OSHA slip/trip/fall prevention, and workplace violence prevention.</p></div>;
+  return <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}><h3 className="text-2xl font-bold mb-4">🛒 Retail Industry Compliance - Coming Soon</h3><p>FLSA wage/hour laws, ADA accessibility, PCI DSS payment security, OSHA slip/trip/fall prevention, and workplace violence prevention.</p></div>;
 }
 
 export default function CompliancePage() {
@@ -768,7 +768,7 @@ export default function CompliancePage() {
       case 'high': return 'text-orange-500 bg-orange-500/20 border-orange-500';
       case 'medium': return 'text-yellow-500 bg-yellow-500/20 border-yellow-500';
       case 'low': return 'text-amber-400 bg-amber-600/20 border-amber-500/40';
-      default: return 'text-stone-500 bg-gray-500/20 border-gray-500';
+      default: return 'text-stone-500 bg-[rgba(201,168,76,0.04)]0/20 border-gray-500';
     }
   };
 
@@ -777,7 +777,7 @@ export default function CompliancePage() {
       case 'action-required': return 'text-red-400 bg-red-500/20';
       case 'monitoring': return 'text-yellow-400 bg-yellow-500/20';
       case 'informational': return 'text-amber-400 bg-amber-600/20';
-      default: return 'text-stone-400 bg-gray-500/20';
+      default: return 'text-stone-400 bg-[rgba(201,168,76,0.04)]0/20';
     }
   };
 
@@ -806,7 +806,7 @@ export default function CompliancePage() {
 
         {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Overall Compliance</div>
               <TrendingUp className="h-5 w-5 text-green-500" />
@@ -815,7 +815,7 @@ export default function CompliancePage() {
             <div className="text-xs text-green-500">+3% from last month</div>
           </div>
 
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Fully Compliant</div>
               <CheckCircle className="h-5 w-5 text-green-500" />
@@ -824,7 +824,7 @@ export default function CompliancePage() {
             <div className="text-xs opacity-60">of 45 employees</div>
           </div>
 
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Expiring Soon</div>
               <Clock className="h-5 w-5 text-yellow-500" />
@@ -833,7 +833,7 @@ export default function CompliancePage() {
             <div className="text-xs text-yellow-500">Within 30 days</div>
           </div>
 
-          <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Overdue</div>
               <AlertTriangle className="h-5 w-5 text-red-500" />
@@ -842,7 +842,7 @@ export default function CompliancePage() {
             <div className="text-xs text-red-500">Requires immediate action</div>
           </div>
 
-          <div className="p-6 rounded-xl shadow-lg relative" style={{ background: 'var(--card-bg)' }}>
+          <div className="p-6 rounded shadow-lg relative" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Regulatory Alerts</div>
               <Bell className="h-5 w-5 text-orange-500 animate-pulse" />
@@ -865,14 +865,14 @@ export default function CompliancePage() {
         {/* Action Buttons */}
         <div className="flex gap-3 mb-6 flex-wrap">
           <button
-            className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-white shadow-lg hover:scale-105 transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-white shadow-lg transition-all"
             style={{ background: 'var(--primary-btn)' }}
           >
             <Upload className="h-4 w-4" />
             Upload Certificate
           </button>
           <button
-            className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-white shadow-lg hover:scale-105 transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-white shadow-lg transition-all"
             style={{ background: 'var(--secondary-btn)' }}
           >
             <Download className="h-4 w-4" />
@@ -884,7 +884,7 @@ export default function CompliancePage() {
         <div className="flex gap-4 mb-8 flex-wrap">
           <button
             onClick={() => setActiveTab('overview')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'overview' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -897,7 +897,7 @@ export default function CompliancePage() {
           </button>
           <button
             onClick={() => setActiveTab('employees')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'employees' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -910,7 +910,7 @@ export default function CompliancePage() {
           </button>
           <button
             onClick={() => setActiveTab('requirements')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'requirements' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -923,7 +923,7 @@ export default function CompliancePage() {
           </button>
           <button
             onClick={() => setActiveTab('reports')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'reports' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -936,7 +936,7 @@ export default function CompliancePage() {
           </button>
           <button
             onClick={() => setActiveTab('healthcare')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'healthcare' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -949,7 +949,7 @@ export default function CompliancePage() {
           </button>
           <button
             onClick={() => setActiveTab('osha')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'osha' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -962,7 +962,7 @@ export default function CompliancePage() {
           </button>
           <button
             onClick={() => setActiveTab('construction')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'construction' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -975,7 +975,7 @@ export default function CompliancePage() {
           </button>
           <button
             onClick={() => setActiveTab('food-service')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'food-service' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -988,7 +988,7 @@ export default function CompliancePage() {
           </button>
           <button
             onClick={() => setActiveTab('retail')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'retail' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -1001,7 +1001,7 @@ export default function CompliancePage() {
           </button>
           <button
             onClick={() => setActiveTab('alerts')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 relative ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 relative ${
               activeTab === 'alerts' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -1019,7 +1019,7 @@ export default function CompliancePage() {
           </button>
           <button
             onClick={() => setActiveTab('hipaa')}
-            className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+            className={`px-6 py-3 rounded font-semibold transition-all flex items-center gap-2 ${
               activeTab === 'hipaa' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
             }`}
             style={{
@@ -1063,7 +1063,7 @@ export default function CompliancePage() {
               </div>
 
               {/* Monitoring Sources Banner */}
-              <div className="p-6 rounded-xl shadow-lg" style={{ background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%)', border: '2px solid rgba(59, 130, 246, 0.3)' }}>
+              <div className="p-6 rounded shadow-lg" style={{ background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%)', border: '2px solid rgba(59, 130, 246, 0.3)' }}>
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-amber-600/20 rounded-lg">
                     <Zap className="w-8 h-8 text-amber-400" />
@@ -1138,7 +1138,7 @@ export default function CompliancePage() {
                 {filteredAlerts.map((alert) => (
                   <div
                     key={alert.id}
-                    className="p-6 rounded-xl shadow-lg border-l-4 hover:shadow-2xl transition-all"
+                    className="p-6 rounded shadow-lg border-l-4 hover:shadow-2xl transition-all"
                     style={{ 
                       background: 'var(--card-bg)',
                       borderLeftColor: alert.severity === 'critical' ? '#ef4444' : alert.severity === 'high' ? '#f97316' : alert.severity === 'medium' ? '#eab308' : '#3b82f6'
@@ -1228,7 +1228,7 @@ export default function CompliancePage() {
               </div>
 
               {/* Monitoring Settings */}
-              <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+              <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
                 <h3 className="text-xl font-bold mb-4 text-white flex items-center gap-2">
                   <Bell className="w-5 h-5 text-amber-400" />
                   Alert Settings
@@ -1291,7 +1291,7 @@ function OverviewSection() {
   return (
     <div className="space-y-6">
       {/* Compliance by Category */}
-      <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
           Compliance by Category
         </h3>
@@ -1327,7 +1327,7 @@ function OverviewSection() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Upcoming Expirations */}
-        <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{ color: 'var(--header-text)' }}>
             <Clock className="h-5 w-5 text-yellow-500" />
             Upcoming Expirations
@@ -1362,7 +1362,7 @@ function OverviewSection() {
         </div>
 
         {/* Overdue Items */}
-        <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{ color: 'var(--header-text)' }}>
             <AlertTriangle className="h-5 w-5 text-red-500" />
             Overdue Items
@@ -1411,7 +1411,7 @@ function EmployeesSection() {
   ];
 
   return (
-    <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+    <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
       <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
         Employee Compliance Status
       </h3>
@@ -1461,7 +1461,7 @@ function EmployeesSection() {
                   </span>
                 </td>
                 <td className="py-4 px-4 text-center">
-                  <button className="text-sm px-3 py-1 rounded-lg hover:scale-105 transition-all" style={{ background: 'var(--secondary-btn)', color: '#fff' }}>
+                  <button className="text-sm px-3 py-1 rounded-lg transition-all" style={{ background: 'var(--secondary-btn)', color: '#fff' }}>
                     View Details
                   </button>
                 </td>
@@ -1534,7 +1534,7 @@ function RequirementsSection() {
 
   return (
     <div className="space-y-6">
-      <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-xl font-bold" style={{ color: 'var(--header-text)' }}>
             Compliance Requirements
@@ -1551,7 +1551,7 @@ function RequirementsSection() {
           {requirements.map((req, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-xl shadow-md hover:shadow-lg transition-all"
+              className="p-5 rounded shadow-md hover:shadow-lg transition-all"
               style={{ background: 'var(--calendar-bg)' }}
             >
               <div className="flex justify-between items-start mb-3">
@@ -1609,7 +1609,7 @@ function ReportsSection() {
         ].map((report, idx) => (
           <div
             key={idx}
-            className="p-6 rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer"
+            className="p-6 rounded shadow-lg hover:shadow-xl transition-all cursor-pointer"
             style={{ background: 'var(--card-bg)' }}
           >
             <div className="text-5xl mb-3">{report.icon}</div>
@@ -1629,7 +1629,7 @@ function ReportsSection() {
       </div>
 
       {/* Custom Report Builder */}
-      <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
           Custom Report Builder
         </h3>
@@ -1692,7 +1692,7 @@ function HealthcareStandardsSection({ healthcareView, setHealthcareView }: { hea
       <div className="flex gap-4 mb-8 flex-wrap">
         <button
           onClick={() => setHealthcareView('cms')}
-          className={`px-6 py-3 rounded-xl font-semibold transition-all ${
+          className={`px-6 py-3 rounded font-semibold transition-all ${
             healthcareView === 'cms' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
           }`}
           style={{
@@ -1704,7 +1704,7 @@ function HealthcareStandardsSection({ healthcareView, setHealthcareView }: { hea
         </button>
         <button
           onClick={() => setHealthcareView('joint-commission')}
-          className={`px-6 py-3 rounded-xl font-semibold transition-all ${
+          className={`px-6 py-3 rounded font-semibold transition-all ${
             healthcareView === 'joint-commission' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
           }`}
           style={{
@@ -1716,7 +1716,7 @@ function HealthcareStandardsSection({ healthcareView, setHealthcareView }: { hea
         </button>
         <button
           onClick={() => setHealthcareView('survey-readiness')}
-          className={`px-6 py-3 rounded-xl font-semibold transition-all ${
+          className={`px-6 py-3 rounded font-semibold transition-all ${
             healthcareView === 'survey-readiness' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
           }`}
           style={{
@@ -1728,7 +1728,7 @@ function HealthcareStandardsSection({ healthcareView, setHealthcareView }: { hea
         </button>
         <button
           onClick={() => setHealthcareView('price-transparency')}
-          className={`px-6 py-3 rounded-xl font-semibold transition-all ${
+          className={`px-6 py-3 rounded font-semibold transition-all ${
             healthcareView === 'price-transparency' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
           }`}
           style={{
@@ -1789,7 +1789,7 @@ function CMSSection() {
   return (
     <div className="space-y-6">
       {/* CMS Header */}
-      <div className="p-6 rounded-xl shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
         <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
           CMS Core Measures Compliance
         </h2>
@@ -1800,22 +1800,22 @@ function CMSSection() {
 
       {/* Overall CMS Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Overall CMS Score</div>
           <div className="text-3xl font-bold text-green-500">4.2/5</div>
           <div className="text-xs opacity-60">Above national avg</div>
         </div>
-        <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Compliant Measures</div>
           <div className="text-3xl font-bold" style={{ color: 'var(--header-text)' }}>12/15</div>
           <div className="text-xs text-green-500">80% compliance</div>
         </div>
-        <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Needs Attention</div>
           <div className="text-3xl font-bold text-yellow-500">2</div>
           <div className="text-xs opacity-60">Action required</div>
         </div>
-        <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Non-Compliant</div>
           <div className="text-3xl font-bold text-red-500">1</div>
           <div className="text-xs text-red-500">Immediate action</div>
@@ -1824,7 +1824,7 @@ function CMSSection() {
 
       {/* CMS Measures by Category */}
       {cmsCoreMeasures.map(category => (
-        <div key={category.category} className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div key={category.category} className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
             {category.category}
           </h3>
@@ -1938,7 +1938,7 @@ function JointCommissionSection() {
   return (
     <div className="space-y-6">
       {/* Joint Commission Header */}
-      <div className="p-6 rounded-xl shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
         <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
           Joint Commission Standards Compliance
         </h2>
@@ -1949,22 +1949,22 @@ function JointCommissionSection() {
 
       {/* Overall Joint Commission Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Overall Compliance</div>
           <div className="text-3xl font-bold text-green-500">{overallCompliance}%</div>
           <div className="text-xs text-green-500">Accreditation maintained</div>
         </div>
-        <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Compliant Standards</div>
           <div className="text-3xl font-bold" style={{ color: 'var(--header-text)' }}>{compliantCount}/{totalCount}</div>
           <div className="text-xs opacity-60">Meeting requirements</div>
         </div>
-        <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Needs Improvement</div>
           <div className="text-3xl font-bold text-yellow-500">{warningCount}</div>
           <div className="text-xs opacity-60">Monitor closely</div>
         </div>
-        <div className="p-4 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Non-Compliant</div>
           <div className="text-3xl font-bold text-red-500">{nonCompliantCount}</div>
           <div className="text-xs text-red-500">Immediate action</div>
@@ -1973,7 +1973,7 @@ function JointCommissionSection() {
 
       {/* Joint Commission Standards by Category */}
       {jointCommissionStandards.map(category => (
-        <div key={category.category} className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div key={category.category} className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{ color: 'var(--header-text)' }}>
             <span className="text-3xl">{category.icon}</span>
             {category.category}
@@ -2015,7 +2015,7 @@ function JointCommissionSection() {
       ))}
 
       {/* Action Items */}
-      <div className="p-6 rounded-xl shadow-lg border-l-4 border-red-500" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg border-l-4 border-red-500" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-xl font-bold mb-4 text-red-500">Priority Action Items</h3>
         <div className="space-y-3">
           <div className="p-4 rounded-lg bg-red-500/10 border border-red-500">
@@ -2082,7 +2082,7 @@ function SurveyReadinessSection() {
   return (
     <div className="space-y-6">
       {/* Survey Readiness Header */}
-      <div className="p-6 rounded-xl shadow-lg border-l-4 border-green-500" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg border-l-4 border-green-500" style={{ background: 'var(--card-bg)' }}>
         <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
           Survey Readiness Assessment
         </h2>
@@ -2093,17 +2093,17 @@ function SurveyReadinessSection() {
 
       {/* Overall Readiness */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Overall Readiness</div>
           <div className="text-4xl font-bold text-green-500 mb-2">{overallReadiness}%</div>
           <div className="text-xs text-green-500">Survey ready</div>
         </div>
-        <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Next Expected Survey</div>
           <div className="text-xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>{nextSurvey}</div>
           <div className="text-xs opacity-60">Maintain readiness</div>
         </div>
-        <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Items Needing Attention</div>
           <div className="text-4xl font-bold text-yellow-500 mb-2">4</div>
           <div className="text-xs opacity-60">Review required</div>
@@ -2112,7 +2112,7 @@ function SurveyReadinessSection() {
 
       {/* Survey Categories */}
       {surveyCategories.map(category => (
-        <div key={category.name} className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div key={category.name} className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-xl font-bold" style={{ color: 'var(--header-text)' }}>
               {category.name}
@@ -2148,7 +2148,7 @@ function SurveyReadinessSection() {
       ))}
 
       {/* Mock Survey Schedule */}
-      <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
           📅 Mock Survey Schedule
         </h3>
@@ -2169,7 +2169,7 @@ function SurveyReadinessSection() {
       </div>
 
       {/* Quick Action Items */}
-      <div className="p-6 rounded-xl shadow-lg border-l-4 border-yellow-500" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg border-l-4 border-yellow-500" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-xl font-bold mb-4 text-yellow-500">⚡ Priority Actions Before Next Survey</h3>
         <div className="space-y-2">
           <div className="p-3 rounded-lg" style={{ background: 'var(--calendar-bg)' }}>
@@ -2292,7 +2292,7 @@ function PriceTransparencySection() {
   return (
     <div className="space-y-6">
       {/* Overview Banner */}
-      <div className="p-6 rounded-xl shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg border-l-4 border-amber-500/40" style={{ background: 'var(--card-bg)' }}>
         <div className="flex items-start gap-4">
           <Shield className="h-8 w-8 text-amber-400 flex-shrink-0 mt-1" />
           <div>
@@ -2315,7 +2315,7 @@ function PriceTransparencySection() {
       </div>
 
       {/* URL Checker Tool */}
-      <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{ color: 'var(--header-text)' }}>
           <Search className="h-6 w-6" style={{ color: 'var(--today-highlight)' }} />
           Check Hospital Website Compliance
@@ -2363,7 +2363,7 @@ function PriceTransparencySection() {
 
       {/* Check Results */}
       {checkResults?.checked && (
-        <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+        <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-2xl font-bold" style={{ color: 'var(--header-text)' }}>
               Compliance Check Results
@@ -2451,7 +2451,7 @@ function PriceTransparencySection() {
       )}
 
       {/* CMS Requirements Reference */}
-      <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
           📋 CMS Price Transparency Requirements
         </h3>
@@ -2473,7 +2473,7 @@ function PriceTransparencySection() {
       </div>
 
       {/* Resources */}
-      <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
         <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
           🔗 Official CMS Resources
         </h3>
@@ -2482,7 +2482,7 @@ function PriceTransparencySection() {
             href="https://www.cms.gov/hospital-price-transparency"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 p-4 rounded-lg hover:scale-105 transition-all"
+            className="flex items-center gap-3 p-4 rounded-lg transition-all"
             style={{ background: 'var(--calendar-bg)' }}
           >
             <ExternalLink className="h-5 w-5" style={{ color: 'var(--today-highlight)' }} />
@@ -2495,7 +2495,7 @@ function PriceTransparencySection() {
             href="https://www.cms.gov/files/document/hospital-price-transparency-frequently-asked-questions.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 p-4 rounded-lg hover:scale-105 transition-all"
+            className="flex items-center gap-3 p-4 rounded-lg transition-all"
             style={{ background: 'var(--calendar-bg)' }}
           >
             <ExternalLink className="h-5 w-5" style={{ color: 'var(--today-highlight)' }} />
@@ -2508,7 +2508,7 @@ function PriceTransparencySection() {
             href="https://www.cms.gov/files/document/steps-making-public-standard-charges-hospital-services.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 p-4 rounded-lg hover:scale-105 transition-all"
+            className="flex items-center gap-3 p-4 rounded-lg transition-all"
             style={{ background: 'var(--calendar-bg)' }}
           >
             <ExternalLink className="h-5 w-5" style={{ color: 'var(--today-highlight)' }} />
@@ -2524,7 +2524,7 @@ function PriceTransparencySection() {
 }
 function OSHAGeneralSection() {
   return (
-    <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+    <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
       <h3 className="text-2xl font-bold mb-4">⚠️ OSHA General Requirements</h3>
       <p className="mb-4">Workplace safety standards, hazard communication, PPE requirements, and general duty clause compliance.</p>
       <div className="text-sm opacity-70">Full OSHA general requirements module coming soon.</div>
@@ -2534,7 +2534,7 @@ function OSHAGeneralSection() {
 
 function OSHARecordkeepingSection() {
   return (
-    <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+    <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
       <h3 className="text-2xl font-bold mb-4">📋 OSHA Recordkeeping (300, 300A, 301 Forms)</h3>
       <p className="mb-4">Track and record work-related injuries and illnesses. Annual summary (300A) must be posted February 1 - April 30.</p>
       <div className="text-sm opacity-70">Full OSHA recordkeeping module coming soon.</div>
@@ -2544,7 +2544,7 @@ function OSHARecordkeepingSection() {
 
 function OSHATrainingSection() {
   return (
-    <div className="p-6 rounded-xl shadow-lg" style={{ background: 'var(--card-bg)' }}>
+    <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
       <h3 className="text-2xl font-bold mb-4">🎓 OSHA Training Requirements</h3>
       <p className="mb-4">Mandatory safety training programs, certifications, and documentation requirements.</p>
       <div className="text-sm opacity-70">Full OSHA training module coming soon.</div>
@@ -2559,7 +2559,7 @@ function OSHASection({ oshaView, setOshaView }: { oshaView: 'general' | 'recordk
       <div className="flex gap-4 mb-8 flex-wrap">
         <button
           onClick={() => setOshaView('general')}
-          className={`px-6 py-3 rounded-xl font-semibold transition-all ${
+          className={`px-6 py-3 rounded font-semibold transition-all ${
             oshaView === 'general' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
           }`}
           style={{
@@ -2571,7 +2571,7 @@ function OSHASection({ oshaView, setOshaView }: { oshaView: 'general' | 'recordk
         </button>
         <button
           onClick={() => setOshaView('recordkeeping')}
-          className={`px-6 py-3 rounded-xl font-semibold transition-all ${
+          className={`px-6 py-3 rounded font-semibold transition-all ${
             oshaView === 'recordkeeping' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
           }`}
           style={{
@@ -2583,7 +2583,7 @@ function OSHASection({ oshaView, setOshaView }: { oshaView: 'general' | 'recordk
         </button>
         <button
           onClick={() => setOshaView('training')}
-          className={`px-6 py-3 rounded-xl font-semibold transition-all ${
+          className={`px-6 py-3 rounded font-semibold transition-all ${
             oshaView === 'training' ? 'shadow-lg scale-105' : 'opacity-60 hover:opacity-100'
           }`}
           style={{

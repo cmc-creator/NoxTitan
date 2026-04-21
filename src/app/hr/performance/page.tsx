@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -58,27 +58,27 @@ export default function PerformanceReviews() {
 
         {/* Stats */}
         <div className="grid grid-cols-5 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-4 border-2 border-amber-500/40/30">
             <div className="text-stone-300 text-sm mb-1">Total Reviews</div>
             <div className="text-3xl font-bold text-white">87</div>
             <div className="text-amber-400 text-xs mt-1">Q1 2026 cycle</div>
           </div>
-          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded-xl p-4 border-2 border-emerald-500/30">
+          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded p-4 border-2 border-emerald-500/30">
             <div className="text-stone-300 text-sm mb-1">Completed</div>
             <div className="text-3xl font-bold text-white">52</div>
             <div className="text-emerald-400 text-xs mt-1">60% complete</div>
           </div>
-          <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded-xl p-4 border-2 border-orange-500/30">
+          <div className="bg-gradient-to-br from-orange-900/50 to-amber-900/50 rounded p-4 border-2 border-orange-500/30">
             <div className="text-stone-300 text-sm mb-1">In Progress</div>
             <div className="text-3xl font-bold text-white">23</div>
             <div className="text-orange-400 text-xs mt-1">26% in progress</div>
           </div>
-          <div className="bg-gradient-to-br from-red-900/50 to-rose-900/50 rounded-xl p-4 border-2 border-red-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-4 border-2 border-red-500/30">
             <div className="text-stone-300 text-sm mb-1">Overdue</div>
             <div className="text-3xl font-bold text-white">12</div>
             <div className="text-red-400 text-xs mt-1 animate-pulse">Action needed</div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-pink-900/50 rounded p-4 border-2 border-amber-500/40/30">
             <div className="text-stone-300 text-sm mb-1">Avg Rating</div>
             <div className="text-3xl font-bold text-white">4.6</div>
             <div className="text-amber-400 text-xs mt-1">★★★★★</div>
@@ -115,7 +115,7 @@ export default function PerformanceReviews() {
 
         {/* Reviews Tab */}
         {activeTab === 'reviews' && (
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-orange-500/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-orange-500/30">
             <h2 className="text-2xl font-bold text-white mb-6">Performance Reviews</h2>
             <div className="space-y-4">
               {reviews.map(review => (
@@ -180,7 +180,7 @@ export default function PerformanceReviews() {
 
         {/* Goals Tab */}
         {activeTab === 'goals' && (
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Goals & Objectives</h2>
               <button className="px-4 py-2 bg-amber-600 hover:bg-amber-600 text-white rounded-lg font-semibold flex items-center gap-2">
@@ -234,7 +234,7 @@ export default function PerformanceReviews() {
 
         {/* 360 Feedback Tab */}
         {activeTab === '360' && (
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">360-Degree Feedback</h2>
               <div className="flex items-center gap-4">

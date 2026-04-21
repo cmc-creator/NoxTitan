@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -38,7 +38,7 @@ export default function WellnessHub() {
           </Link>
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-rose-200 to-pink-200 mb-2"
+              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-[#110F0B] from-REMOVED-200 via-rose-200 to-pink-200 mb-2"
                   style={{
                     textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(236,72,153,0.6)',
                     WebkitTextStroke: '1px rgba(236,72,153,0.3)',
@@ -65,31 +65,31 @@ export default function WellnessHub() {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-5 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-amber-700/50 to-cyan-900/50 rounded p-4 border-2 border-amber-500/40/30">
             <Activity className="w-8 h-8 text-amber-400 mb-2" />
             <div className="text-stone-300 text-sm mb-1">Activity Points</div>
             <div className="text-3xl font-bold text-white">1,250</div>
             <div className="text-amber-400 text-xs mt-1">+205 this week</div>
           </div>
-          <div className="bg-gradient-to-br from-pink-900/50 to-rose-900/50 rounded-xl p-4 border-2 border-pink-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-4 border-2 border-pink-500/30">
             <Heart className="w-8 h-8 text-pink-400 mb-2" />
             <div className="text-stone-300 text-sm mb-1">Health Score</div>
             <div className="text-3xl font-bold text-white">82</div>
             <div className="text-pink-400 text-xs mt-1">Excellent</div>
           </div>
-          <div className="bg-gradient-to-br from-stone-900/50 to-amber-800/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-stone-900/50 to-amber-800/50 rounded p-4 border-2 border-amber-500/40/30">
             <Brain className="w-8 h-8 text-amber-400 mb-2" />
             <div className="text-stone-300 text-sm mb-1">Mental Wellness</div>
             <div className="text-3xl font-bold text-white">75</div>
             <div className="text-amber-400 text-xs mt-1">Good</div>
           </div>
-          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded-xl p-4 border-2 border-emerald-500/30">
+          <div className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 rounded p-4 border-2 border-emerald-500/30">
             <Apple className="w-8 h-8 text-emerald-400 mb-2" />
             <div className="text-stone-300 text-sm mb-1">Nutrition</div>
             <div className="text-3xl font-bold text-white">68</div>
             <div className="text-emerald-400 text-xs mt-1">Improving</div>
           </div>
-          <div className="bg-gradient-to-br from-amber-700/50 to-amber-800/50 rounded-xl p-4 border-2 border-amber-500/40/30">
+          <div className="bg-gradient-to-br from-amber-700/50 to-amber-800/50 rounded p-4 border-2 border-amber-500/40/30">
             <Moon className="w-8 h-8 text-amber-400 mb-2" />
             <div className="text-stone-300 text-sm mb-1">Sleep Quality</div>
             <div className="text-3xl font-bold text-white">7.2h</div>
@@ -121,11 +121,11 @@ export default function WellnessHub() {
         {activeTab === 'dashboard' && (
           <div className="space-y-6">
             {/* Activity Log */}
-            <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-pink-500/30">
+            <div className="bg-stone-900/50 rounded p-6 border-2 border-pink-500/30">
               <h2 className="text-2xl font-bold text-white mb-6">Recent Activity</h2>
               <div className="space-y-3">
                 {activityLog.map((log, idx) => (
-                  <div key={idx} className="bg-gradient-to-r from-pink-900/30 to-amber-900/30 rounded-lg p-4 border border-pink-500/30 flex items-center justify-between">
+                  <div key={idx} className="bg-[#110F0B] from-REMOVED-900/30 to-amber-900/30 rounded-lg p-4 border border-pink-500/30 flex items-center justify-between">
                     <div className="flex items-center gap-4">
                       <Zap className="w-6 h-6 text-yellow-400" />
                       <div>
@@ -144,7 +144,7 @@ export default function WellnessHub() {
 
             <div className="grid grid-cols-2 gap-6">
               {/* HSA Info */}
-              <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-emerald-500/30">
+              <div className="bg-stone-900/50 rounded p-6 border-2 border-emerald-500/30">
                 <h3 className="text-xl font-bold text-white mb-4">Health Savings Account</h3>
                 <div className="space-y-4">
                   <div>
@@ -166,7 +166,7 @@ export default function WellnessHub() {
               </div>
 
               {/* Fitness Tracking */}
-              <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-amber-500/40/30">
+              <div className="bg-stone-900/50 rounded p-6 border-2 border-amber-500/40/30">
                 <h3 className="text-xl font-bold text-white mb-4">This Week's Activity</h3>
                 <div className="space-y-4">
                   <div>
@@ -204,7 +204,7 @@ export default function WellnessHub() {
 
         {/* Challenges Tab */}
         {activeTab === 'challenges' && (
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-orange-500/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-orange-500/30">
             <h2 className="text-2xl font-bold text-white mb-6">Active Wellness Challenges</h2>
             <div className="space-y-4">
               {challenges.map(challenge => (
@@ -257,7 +257,7 @@ export default function WellnessHub() {
         {/* EAP Resources Tab */}
         {activeTab === 'eap' && (
           <div className="space-y-6">
-            <div className="bg-gradient-to-r from-stone-900/30 to-pink-900/30 rounded-xl p-6 border-2 border-amber-500/40/30">
+            <div className="bg-gradient-to-r from-stone-900/30 to-pink-900/30 rounded p-6 border-2 border-amber-500/40/30">
               <h2 className="text-2xl font-bold text-white mb-3">Employee Assistance Program (EAP)</h2>
               <p className="text-amber-100/70 mb-4">
                 Confidential support for you and your family. All services are free and available 24/7.
@@ -274,7 +274,7 @@ export default function WellnessHub() {
 
             <div className="grid grid-cols-2 gap-6">
               {eapResources.map((resource, idx) => (
-                <div key={idx} className="bg-stone-900/50 rounded-xl p-6 border-2 border-pink-500/30 hover:border-pink-400 transition-all group">
+                <div key={idx} className="bg-stone-900/50 rounded p-6 border-2 border-pink-500/30 hover:border-pink-400 transition-all group">
                   <resource.icon className="w-12 h-12 text-pink-400 mb-4 group-hover:scale-110 transition-transform" />
                   <h3 className="text-xl font-bold text-white mb-2">{resource.title}</h3>
                   <p className="text-stone-300 mb-4">{resource.description}</p>
@@ -292,7 +292,7 @@ export default function WellnessHub() {
 
         {/* Telemedicine Tab */}
         {activeTab === 'telemedicine' && (
-          <div className="bg-stone-900/50 rounded-xl p-6 border-2 border-cyan-500/30">
+          <div className="bg-stone-900/50 rounded p-6 border-2 border-cyan-500/30">
             <h2 className="text-2xl font-bold text-white mb-6">Telemedicine Services</h2>
             <div className="grid grid-cols-3 gap-6 mb-8">
               {[

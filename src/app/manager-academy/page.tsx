@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { BookOpen, Heart, Users, TrendingUp, Shield, MessageCircle, Award, CheckCircle, Lock, Play } from 'lucide-react';
@@ -133,7 +133,7 @@ export default function ManagerAcademyPage() {
         </div>
 
         {/* Progress Card */}
-        <div className="bg-gradient-to-r from-amber-700 to-amber-600 rounded-2xl p-8 mb-8 shadow-2xl">
+        <div className="bg-gradient-to-r from-amber-700 to-amber-600 rounded p-8 mb-8 shadow-2xl">
           <div className="flex items-center justify-between gap-6">
             <div className="text-white">
               <h2 className="text-3xl font-bold mb-2">Your Progress</h2>
@@ -170,7 +170,7 @@ export default function ManagerAcademyPage() {
           </div>
 
           {progressPercent === 100 && (
-            <div className="mt-6 bg-stone-950/20 backdrop-blur-sm rounded-xl p-4 text-center">
+            <div className="mt-6 bg-stone-950/20 backdrop-blur-sm rounded p-4 text-center">
               <Award className="w-8 h-8 text-yellow-300 mx-auto mb-2" />
               <p className="text-white font-bold text-lg">🎉 Congratulations! You've completed Manager Academy!</p>
               <p className="text-amber-50 text-sm mt-1">Certificate available in your profile</p>
@@ -188,7 +188,7 @@ export default function ManagerAcademyPage() {
               <div key={module.id} className="relative">
                 <button
                   onClick={() => handleModuleClick(module.id)}
-                  className={`w-full bg-stone-900 border-2 rounded-xl p-6 transition-all hover:scale-105 ${
+                  className={`w-full bg-stone-900 border-2 rounded p-6 transition-all ${
                     isCompleted
                       ? 'border-green-500'
                       : isActive
@@ -240,7 +240,7 @@ export default function ManagerAcademyPage() {
         </div>
 
         {/* Leadership Tips */}
-        <div className="mt-12 bg-stone-900 border-2 border-stone-700 rounded-xl p-8">
+        <div className="mt-12 bg-stone-900 border-2 border-stone-700 rounded p-8">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <Heart className="w-8 h-8 text-pink-500" />
             Servant Leadership Core Principles

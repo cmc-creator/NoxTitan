@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { User, LogOut, Crown, Zap, TrendingUp, Sparkles, Settings, Menu, X } from 'lucide-react';
 import Link from 'next/link';
@@ -104,7 +104,7 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
             {/* Oracle Quick Access */}
             <Link
               href="/oracle"
-              className="hidden sm:flex items-center justify-center transition-all hover:scale-105"
+              className="hidden sm:flex items-center justify-center transition-all"
               title="Oracle AI"
             >
               <img src="/oracle-logo.png" alt="Oracle AI" className="h-14 sm:h-16 md:h-20 w-14 sm:w-16 md:w-20 object-contain" />

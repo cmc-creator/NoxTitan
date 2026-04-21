@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
@@ -81,7 +81,7 @@ export default function DepartmentsPortalPage() {
     <div className="min-h-screen bg-gradient-to-br from-stone-900 to-pink-50 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="bg-stone-950 rounded-xl shadow-lg p-8 mb-8">
+        <div className="bg-stone-950 rounded shadow-lg p-8 mb-8">
           <h1 className="text-5xl font-bold text-stone-200 mb-2">Department Forms Portals</h1>
           <p className="text-xl text-stone-500">
             Each department has their own magic forms portal to create, share, and manage templates
@@ -96,10 +96,10 @@ export default function DepartmentsPortalPage() {
               <div
                 key={dept.id}
                 onClick={() => router.push(dept.path)}
-                className="bg-stone-950 rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all cursor-pointer group"
+                className="bg-stone-950 rounded shadow-lg p-8 hover:shadow-2xl transition-all cursor-pointer group"
               >
                 <div className="flex items-start justify-between mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${dept.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${dept.color} rounded flex items-center justify-center group-hover:scale-110 transition-transform`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-right">
@@ -124,7 +124,7 @@ export default function DepartmentsPortalPage() {
         </div>
 
         {/* Info Section */}
-        <div className="mt-8 bg-gradient-to-r from-amber-700 to-amber-600 rounded-xl shadow-lg p-8 text-white">
+        <div className="mt-8 bg-gradient-to-r from-amber-700 to-amber-600 rounded shadow-lg p-8 text-white">
           <h2 className="text-3xl font-bold mb-4">How Department Portals Work</h2>
           <div className="grid grid-cols-3 gap-6">
             <div>

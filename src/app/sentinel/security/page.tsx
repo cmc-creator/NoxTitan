@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import { Camera, Lock, AlertTriangle, Activity, Video, DoorOpen, DoorClosed, Shield, Eye, Radio } from 'lucide-react';
@@ -140,7 +140,7 @@ export default function SecurityPage() {
 
         {/* Live Stats */}
         <div className="grid grid-cols-1 md:grid-cols-6 gap-6 mb-8">
-          <div className="bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-500/50 rounded-xl p-6">
+          <div className="bg-[#110F0B] from-REMOVED-500/20 to-green-600/20 border border-green-500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <Camera className="w-8 h-8 text-green-400" />
               <div className="text-right">
@@ -154,7 +154,7 @@ export default function SecurityPage() {
             </p>
           </div>
 
-          <div className="bg-amber-600/10 border border-amber-500/40/50 rounded-xl p-6">
+          <div className="bg-amber-600/10 border border-amber-500/40/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <Lock className="w-8 h-8 text-amber-400" />
               <div className="text-right">
@@ -165,7 +165,7 @@ export default function SecurityPage() {
             <p className="text-amber-400 font-semibold">Doors Online</p>
           </div>
 
-          <div className="bg-red-500/10 border border-red-500/50 rounded-xl p-6">
+          <div className="bg-red-500/10 border border-red-500/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <AlertTriangle className="w-8 h-8 text-red-400" />
               <span className="text-4xl font-bold text-red-400">{stats.activeAlerts}</span>
@@ -173,7 +173,7 @@ export default function SecurityPage() {
             <p className="text-red-300 font-semibold">Active Alerts</p>
           </div>
 
-          <div className="bg-amber-500/10 border border-amber-500/40/50 rounded-xl p-6">
+          <div className="bg-amber-500/10 border border-amber-500/40/50 rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <Activity className="w-8 h-8 text-amber-400" />
               <span className="text-4xl font-bold text-amber-400">{stats.todayEvents}</span>
@@ -181,7 +181,7 @@ export default function SecurityPage() {
             <p className="text-amber-200 font-semibold">Today's Events</p>
           </div>
 
-          <div className="col-span-2 bg-gradient-to-br from-amber-700/20 to-amber-900/20 border border-amber-500/40/50 rounded-xl p-6">
+          <div className="col-span-2 bg-gradient-to-br from-amber-700/20 to-amber-900/20 border border-amber-500/40/50 rounded p-6">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
                 <Eye className="w-8 h-8 text-amber-400" />
@@ -196,7 +196,7 @@ export default function SecurityPage() {
         </div>
 
         {/* Tabs */}
-        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded-xl overflow-hidden mb-6">
+        <div className="bg-stone-900/50 backdrop-blur border border-stone-700 rounded overflow-hidden mb-6">
           <div className="flex border-b border-stone-700">
             <button
               onClick={() => setActiveTab('cameras')}
@@ -240,7 +240,7 @@ export default function SecurityPage() {
                 {cameras.map((camera) => (
                   <div
                     key={camera.id}
-                    className="bg-stone-900/50 border border-stone-700 rounded-xl p-4 hover:border-amber-500/40/50 transition-all cursor-pointer"
+                    className="bg-stone-900/50 border border-stone-700 rounded p-4 hover:border-amber-500/40/50 transition-all cursor-pointer"
                     onClick={() => window.location.href = `/sentinel/security/cameras/${camera.id}`}
                   >
                     <div className="flex items-start justify-between mb-3">
@@ -280,7 +280,7 @@ export default function SecurityPage() {
                 {doors.map((door) => (
                   <div
                     key={door.id}
-                    className="bg-stone-900/50 border border-stone-700 rounded-xl p-4 hover:border-green-500/50 transition-all"
+                    className="bg-stone-900/50 border border-stone-700 rounded p-4 hover:border-green-500/50 transition-all"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-3">
@@ -324,7 +324,7 @@ export default function SecurityPage() {
                 {alerts.map((alert) => (
                   <div
                     key={alert.id}
-                    className="bg-stone-900/50 border border-stone-700 rounded-xl p-4 hover:border-red-500/50 transition-all"
+                    className="bg-stone-900/50 border border-stone-700 rounded p-4 hover:border-red-500/50 transition-all"
                   >
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
