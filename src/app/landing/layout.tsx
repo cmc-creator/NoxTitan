@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import LandingThemeReset from "./LandingThemeReset";
 
 export const metadata: Metadata = {
   title: "NyxTitan – Business Management. Forged for Titans.",
@@ -10,8 +11,13 @@ export default function LandingLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Just return children without any wrapper - no TopNavigation for landing page
-  return <>{children}</>;
+  // Reset any decorative themes that may have been set on other pages
+  return (
+    <>
+      <LandingThemeReset />
+      {children}
+    </>
+  );
 }
 
 

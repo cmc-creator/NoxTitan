@@ -74,6 +74,13 @@ export default function ThemeCustomizer() {
       setSelectedFont(savedFont);
       applyFont(savedFont);
     }
+
+    // Cleanup: remove decorative theme body classes when component unmounts
+    return () => {
+      document.body.classList.remove('theme-classic', 'theme-corporate', 'theme-elegant', 'theme-minimalist', 'theme-executive', 'theme-professional', 'theme-spring-flowers', 'theme-winter-sparkle', 'theme-autumn-leaves', 'theme-ocean-waves', 'theme-thunderstorm', 'theme-galaxy', 'theme-northern-lights', 'theme-cherry-blossom', 'theme-sunset', 'theme-desert', 'theme-foggy-morning', 'theme-volcanic', 'theme-meteor-shower', 'theme-solar-eclipse', 'theme-cosmic-nebula', 'theme-coral-reef', 'theme-deep-ocean', 'theme-tropical-waters', 'theme-fireflies', 'theme-rainbow-prism', 'theme-enchanted-forest');
+      document.body.style.backgroundColor = '';
+      document.body.style.color = '';
+    };
   }, []);
 
   const applyTheme = (newTheme: 'light' | 'dark') => {
