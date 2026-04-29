@@ -116,7 +116,7 @@ a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
     margin-left: 20px;
     display: inline-block;
 }
-.text-link:hover { text-decoration: underline; color: #9e7aff; }
+.text-link:hover { text-decoration: underline; color: var(--accent-gold-bright); }
 
 
 /* =========================================
@@ -277,10 +277,7 @@ a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
 
 .hero-headline {
     margin-bottom: 20px;
-    /* Subtle silver gradient text */
-    background: linear-gradient(to right, #ffffff, var(--accent-silver));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-primary);
 }
 
 .hero-subhead {
