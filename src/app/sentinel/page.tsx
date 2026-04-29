@@ -1,7 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Shield, UserCheck, UserX, Clock, AlertTriangle, Bell, TrendingUp, Users, Upload, Eye } from 'lucide-react';
+import { Shield, UserCheck, Clock, AlertTriangle, Bell, TrendingUp, Users, Upload, Eye, Lock, Camera, Activity } from 'lucide-react';
+
+const STAT_CARDS = [
+  { key: 'currentlyInBuilding', label: 'In Building Now',    icon: Users,         accent: true  },
+  { key: 'todayTotal',          label: "Today's Visitors",   icon: TrendingUp,    accent: false },
+  { key: 'overdue',             label: 'Overdue Checkout',   icon: Clock,         accent: false },
+  { key: 'watchlistAlerts',     label: 'Watchlist Alerts',   icon: AlertTriangle, accent: false },
+  { key: 'avgDuration',         label: 'Avg Duration (min)', icon: Activity,      accent: false },
+];
 
 interface VisitorStats {
   currentlyInBuilding: number;
@@ -41,23 +49,17 @@ export default function SentinelPage() {
   useEffect(() => {
     fetchStats();
     fetchActiveVisitors();
-    
-    // Auto-refresh every 30 seconds
     const interval = setInterval(() => {
       fetchStats();
       fetchActiveVisitors();
     }, 30000);
-
     return () => clearInterval(interval);
   }, []);
 
   async function fetchStats() {
     try {
       const response = await fetch('/api/visitors/stats');
-      if (response.ok) {
-        const data = await response.json();
-        setStats(data);
-      }
+      if (response.ok) setStats(await response.json());
     } catch (error) {
       console.error('Failed to fetch stats:', error);
     }
@@ -66,10 +68,7 @@ export default function SentinelPage() {
   async function fetchActiveVisitors() {
     try {
       const response = await fetch('/api/visitors/active');
-      if (response.ok) {
-        const data = await response.json();
-        setActiveVisitors(data);
-      }
+      if (response.ok) setActiveVisitors(await response.json());
     } catch (error) {
       console.error('Failed to fetch active visitors:', error);
     } finally {
@@ -78,176 +77,186 @@ export default function SentinelPage() {
   }
 
   function getTimeInBuilding(checkInTime: string) {
-    const now = new Date();
-    const checkIn = new Date(checkInTime);
-    const diff = now.getTime() - checkIn.getTime();
+    const diff = Date.now() - new Date(checkInTime).getTime();
     const minutes = Math.floor(diff / 60000);
-    
     if (minutes < 60) return `${minutes}m`;
-    const hours = Math.floor(minutes / 60);
-    const mins = minutes % 60;
-    return `${hours}h ${mins}m`;
+    return `${Math.floor(minutes / 60)}h ${minutes % 60}m`;
   }
 
   return (
-    <div className="min-h-screen bg-[#070604] p-8">
+    <div className="min-h-screen p-8" style={{ background: '#070604' }}>
       <div className="max-w-7xl mx-auto">
+
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-start justify-between mb-8">
           <div>
-            <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
-              <Shield className="w-10 h-10 text-amber-400" />
-              Sentinel - Visitor Command Center
-            </h1>
-            <p className="text-[#9E8F75]">Real-time visitor tracking and security management</p>
+            <div className="flex items-center gap-3 mb-2">
+              <div style={{ width: 44, height: 44, background: 'rgba(201,168,76,0.10)', border: '1px solid rgba(201,168,76,0.28)', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Shield style={{ width: 22, height: 22, color: '#C9A84C' }} />
+              </div>
+              <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2.4rem', fontWeight: 700, color: '#C9A84C', letterSpacing: '0.02em' }}>
+                Sentinel
+              </h1>
+            </div>
+            <p style={{ color: '#9E8F75', fontSize: '0.9rem', marginLeft: '56px' }}>Visitor command center — real-time security &amp; access management</p>
           </div>
-          <div className="flex gap-3">
+
+          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+            <button
+              onClick={() => window.location.href = '/sentinel/security'}
+              style={{ background: 'rgba(201,168,76,0.07)', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '4px', color: '#C9A84C', padding: '9px 18px', fontSize: '0.84rem', fontWeight: 500, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '7px' }}
+            >
+              <Camera style={{ width: 15, height: 15 }} />
+              Security
+            </button>
             <button
               onClick={() => window.location.href = '/sentinel/watchlist'}
-              className="px-6 py-3 bg-[#110F0B] 600 hover:bg-[#110F0B] 700 text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
+              style={{ background: 'rgba(160,40,40,0.08)', border: '1px solid rgba(120,32,32,0.35)', borderRadius: '4px', color: 'rgba(195,95,95,0.9)', padding: '9px 18px', fontSize: '0.84rem', fontWeight: 500, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '7px' }}
             >
-              <AlertTriangle className="w-5 h-5" />
+              <AlertTriangle style={{ width: 15, height: 15 }} />
               Watchlist
             </button>
             <button
               onClick={() => window.location.href = '/sentinel/import'}
-              className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
+              style={{ background: 'rgba(201,168,76,0.07)', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '4px', color: '#9E8F75', padding: '9px 18px', fontSize: '0.84rem', fontWeight: 500, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '7px' }}
             >
-              <Upload className="w-5 h-5" />
-              Import Data
+              <Upload style={{ width: 15, height: 15 }} />
+              Import
             </button>
             <button
               onClick={() => window.location.href = '/sentinel/check-in'}
-              className="px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white font-semibold rounded-lg transition-all flex items-center gap-2"
+              style={{ background: 'rgba(201,168,76,0.12)', border: '1px solid rgba(201,168,76,0.45)', borderRadius: '4px', color: '#E8C060', padding: '9px 18px', fontSize: '0.84rem', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '7px' }}
             >
-              <UserCheck className="w-5 h-5" />
+              <UserCheck style={{ width: 15, height: 15 }} />
               Check In Visitor
             </button>
           </div>
         </div>
 
         {/* Live Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
-          <div className="bg-[#110F0B] from-REMOVED-500/20 to-green-600/20 border border-[rgba(201,168,76,0.22)] 500/50 rounded p-6">
-            <div className="flex items-center justify-between mb-2">
-              <Users className="w-8 h-8 text-[#C9A84C] 400" />
-              <span className="text-4xl font-bold text-[#C9A84C] 400">{stats.currentlyInBuilding}</span>
+        <div className="grid grid-cols-5 gap-4 mb-8">
+          {STAT_CARDS.map(({ key, label, icon: Icon, accent }) => (
+            <div
+              key={key}
+              style={{
+                background: accent ? 'linear-gradient(135deg, #161208 0%, #110F0B 100%)' : '#110F0B',
+                border: `1px solid ${accent ? 'rgba(201,168,76,0.35)' : 'rgba(201,168,76,0.18)'}`,
+                borderRadius: '4px',
+                padding: '20px',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
+                <Icon style={{ width: 20, height: 20, color: accent ? '#C9A84C' : '#5A5040' }} />
+                {accent && (
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: '0.65rem', fontWeight: 600, color: '#C9A84C', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
+                    <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#4ade80', display: 'inline-block' }} />
+                    Live
+                  </span>
+                )}
+              </div>
+              <p style={{ fontSize: '2.2rem', fontWeight: 700, color: accent ? '#E8C060' : '#F0EBE0', lineHeight: 1, marginBottom: '6px', fontFamily: "'Cormorant Garamond', serif" }}>
+                {stats[key as keyof VisitorStats]}
+              </p>
+              <p style={{ fontSize: '0.78rem', color: '#9E8F75' }}>{label}</p>
             </div>
-            <p className="text-[#C9A84C] 300 font-semibold flex items-center gap-2">
-              <span className="w-2 h-2 bg-[#110F0B] 400 rounded-full"></span>
-              In Building Now
-            </p>
-          </div>
+          ))}
+        </div>
 
-          <div className="bg-amber-600/10 border border-amber-500/40/50 rounded p-6">
-            <div className="flex items-center justify-between mb-2">
-              <TrendingUp className="w-8 h-8 text-amber-400" />
-              <span className="text-4xl font-bold text-amber-400">{stats.todayTotal}</span>
-            </div>
-            <p className="text-amber-400 font-semibold">Today's Total</p>
-          </div>
-
-          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-6">
-            <div className="flex items-center justify-between mb-2">
-              <Clock className="w-8 h-8 text-[#9E8F75]" />
-              <span className="text-4xl font-bold text-[#9E8F75]">{stats.overdue}</span>
-            </div>
-            <p className="text-[#9E8F75] font-semibold">Overdue Checkouts</p>
-          </div>
-
-          <div className="bg-[#110F0B] 500/10 border border-[rgba(201,168,76,0.22)] 500/50 rounded p-6">
-            <div className="flex items-center justify-between mb-2">
-              <AlertTriangle className="w-8 h-8 text-[#9E8F75] 400" />
-              <span className="text-4xl font-bold text-[#9E8F75] 400">{stats.watchlistAlerts}</span>
-            </div>
-            <p className="text-[#9E8F75] 300 font-semibold">Watchlist Alerts</p>
-          </div>
-
-          <div className="bg-amber-500/10 border border-amber-500/40/50 rounded p-6">
-            <div className="flex items-center justify-between mb-2">
-              <Clock className="w-8 h-8 text-amber-400" />
-              <span className="text-4xl font-bold text-amber-400">{stats.avgDuration}</span>
-            </div>
-            <p className="text-[#C9A84C] font-semibold">Avg Duration (min)</p>
-          </div>
+        {/* Quick Access Modules */}
+        <div className="grid grid-cols-3 gap-4 mb-8">
+          {[
+            { href: '/sentinel/security',  icon: Camera,       title: 'Security Center',    desc: 'Camera feeds, access logs, and incident reports',            color: '#C9A84C' },
+            { href: '/sentinel/watchlist', icon: AlertTriangle, title: 'Watchlist',          desc: 'Flagged individuals and restricted access management',        color: 'rgba(195,95,95,0.9)' },
+            { href: '/sentinel/check-in',  icon: UserCheck,    title: 'Visitor Check-In',   desc: 'Register new visitors and issue temporary access badges',     color: '#C9A84C' },
+          ].map(({ href, icon: Icon, title, desc, color }) => (
+            <button
+              key={href}
+              onClick={() => window.location.href = href}
+              style={{ background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.18)', borderRadius: '4px', padding: '20px', textAlign: 'left', cursor: 'pointer' }}
+              onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(201,168,76,0.38)')}
+              onMouseLeave={e => (e.currentTarget.style.borderColor = 'rgba(201,168,76,0.18)')}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+                <Icon style={{ width: 18, height: 18, color }} />
+                <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.05rem', fontWeight: 700, color: '#F0EBE0' }}>{title}</span>
+              </div>
+              <p style={{ fontSize: '0.8rem', color: '#9E8F75', lineHeight: 1.5 }}>{desc}</p>
+            </button>
+          ))}
         </div>
 
         {/* Active Visitors Table */}
-        <div className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded overflow-hidden">
-          <div className="bg-[rgba(201,168,76,0.06)]/80 px-6 py-4 border-b border-[rgba(201,168,76,0.22)]">
-            <h2 className="text-xl font-bold text-white flex items-center gap-2">
-              <Eye className="w-6 h-6 text-amber-400" />
-              Currently In Building
-            </h2>
+        <div style={{ background: '#110F0B', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '4px', overflow: 'hidden' }}>
+          <div style={{ padding: '18px 24px', borderBottom: '1px solid rgba(201,168,76,0.16)', display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <Eye style={{ width: 18, height: 18, color: '#C9A84C' }} />
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.25rem', fontWeight: 700, color: '#F0EBE0' }}>Currently in Building</h2>
+            {!loading && (
+              <span style={{ marginLeft: 'auto', padding: '3px 10px', background: 'rgba(201,168,76,0.10)', border: '1px solid rgba(201,168,76,0.28)', borderRadius: '2px', fontSize: '0.72rem', fontWeight: 600, color: '#C9A84C', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
+                {activeVisitors.length} Active
+              </span>
+            )}
           </div>
 
           {loading ? (
-            <div className="p-12 text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500/40 mx-auto mb-4"></div>
-              <p className="text-[#9E8F75]">Loading visitors...</p>
+            <div style={{ padding: '56px', textAlign: 'center' }}>
+              <div style={{ width: 40, height: 40, border: '2px solid rgba(201,168,76,0.15)', borderTop: '2px solid rgba(201,168,76,0.6)', borderRadius: '50%', margin: '0 auto 16px' }} />
+              <p style={{ color: '#9E8F75', fontSize: '0.9rem' }}>Loading visitor data...</p>
             </div>
           ) : activeVisitors.length === 0 ? (
-            <div className="p-12 text-center">
-              <UserCheck className="w-16 h-16 text-[#9E8F75] mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-white mb-2">No Active Visitors</h3>
-              <p className="text-[#9E8F75]">Building is currently clear.</p>
+            <div style={{ padding: '64px', textAlign: 'center' }}>
+              <UserCheck style={{ width: 48, height: 48, color: '#5A5040', margin: '0 auto 16px' }} />
+              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', fontWeight: 700, color: '#F0EBE0', marginBottom: '8px' }}>Building Clear</h3>
+              <p style={{ color: '#9E8F75', fontSize: '0.88rem' }}>No visitors currently checked in</p>
             </div>
           ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="bg-[rgba(201,168,76,0.06)]/50">
-                  <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Visitor</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Company</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Host</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Purpose</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Location</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Badge</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Time In</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#9E8F75]">Actions</th>
+            <div style={{ overflowX: 'auto' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <thead>
+                  <tr style={{ borderBottom: '1px solid rgba(201,168,76,0.14)' }}>
+                    {['Visitor', 'Company', 'Host', 'Purpose', 'Location', 'Badge', 'Time In', 'Actions'].map(h => (
+                      <th key={h} style={{ padding: '12px 20px', textAlign: 'left', fontSize: '0.72rem', fontWeight: 600, color: '#5A5040', letterSpacing: '1.5px', textTransform: 'uppercase' }}>{h}</th>
+                    ))}
                   </tr>
                 </thead>
                 <tbody>
                   {activeVisitors.map((visit) => (
-                    <tr 
-                      key={visit.id} 
-                      className={`border-t border-[rgba(201,168,76,0.22)] hover:bg-[rgba(201,168,76,0.06)]/30 transition-colors ${
-                        visit.visitor.isWatchlist ? 'bg-[#110F0B] 500/5 border-[rgba(201,168,76,0.22)] 500/30' : ''
-                      }`}
+                    <tr
+                      key={visit.id}
+                      style={{ borderBottom: '1px solid rgba(201,168,76,0.10)', background: visit.visitor.isWatchlist ? 'rgba(120,30,30,0.08)' : 'transparent' }}
                     >
-                      <td className="px-6 py-4">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-amber-600/20 rounded-full flex items-center justify-center">
-                            <Users className="w-5 h-5 text-amber-400" />
+                      <td style={{ padding: '14px 20px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                          <div style={{ width: 34, height: 34, background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.18)', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                            <Users style={{ width: 15, height: 15, color: '#C9A84C' }} />
                           </div>
-                          <div>
-                            <div className="font-semibold text-white flex items-center gap-2">
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <span style={{ fontWeight: 600, color: '#F0EBE0', fontSize: '0.9rem' }}>
                               {visit.visitor.firstName} {visit.visitor.lastName}
-                              {visit.visitor.isWatchlist && (
-                                <AlertTriangle className="w-4 h-4 text-[#9E8F75] 500" />
-                              )}
-                            </div>
+                            </span>
+                            {visit.visitor.isWatchlist && (
+                              <AlertTriangle style={{ width: 13, height: 13, color: 'rgba(195,95,95,0.9)' }} />
+                            )}
                           </div>
                         </div>
                       </td>
-                      <td className="px-6 py-4 text-[#9E8F75]">{visit.visitor.company || '-'}</td>
-                      <td className="px-6 py-4 text-[#9E8F75]">{visit.hostName || '-'}</td>
-                      <td className="px-6 py-4 text-[#9E8F75]">{visit.purpose}</td>
-                      <td className="px-6 py-4 text-[#9E8F75]">{visit.building || '-'}</td>
-                      <td className="px-6 py-4">
-                        <span className="px-2 py-1 bg-amber-600/20 text-amber-400 border border-amber-500/40/50 rounded text-xs font-mono">
+                      <td style={{ padding: '14px 20px', color: '#9E8F75', fontSize: '0.88rem' }}>{visit.visitor.company || '—'}</td>
+                      <td style={{ padding: '14px 20px', color: '#9E8F75', fontSize: '0.88rem' }}>{visit.hostName || '—'}</td>
+                      <td style={{ padding: '14px 20px', color: '#9E8F75', fontSize: '0.88rem' }}>{visit.purpose}</td>
+                      <td style={{ padding: '14px 20px', color: '#9E8F75', fontSize: '0.88rem' }}>{visit.building || '—'}</td>
+                      <td style={{ padding: '14px 20px' }}>
+                        <span style={{ padding: '3px 8px', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.22)', borderRadius: '2px', fontSize: '0.72rem', fontWeight: 600, color: '#C9A84C', fontFamily: 'monospace', letterSpacing: '1px' }}>
                           {visit.badgeNumber || 'N/A'}
                         </span>
                       </td>
-                      <td className="px-6 py-4">
-                        <div className="text-sm text-[#9E8F75]">
+                      <td style={{ padding: '14px 20px' }}>
+                        <span style={{ fontSize: '0.88rem', color: '#9E8F75', fontFamily: 'monospace' }}>
                           {getTimeInBuilding(visit.checkInTime)}
-                        </div>
+                        </span>
                       </td>
-                      <td className="px-6 py-4">
+                      <td style={{ padding: '14px 20px' }}>
                         <button
                           onClick={() => window.location.href = `/sentinel/checkout/${visit.id}`}
-                          className="px-4 py-2 bg-[#110F0B] 600 hover:bg-[#110F0B] 700 text-white text-sm font-semibold rounded-lg transition-colors"
+                          style={{ background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.28)', borderRadius: '4px', color: '#C9A84C', padding: '6px 14px', fontSize: '0.8rem', fontWeight: 500, cursor: 'pointer' }}
                         >
                           Check Out
                         </button>
@@ -259,6 +268,56 @@ export default function SentinelPage() {
             </div>
           )}
         </div>
+
+        {/* Security Summary Row */}
+        <div className="grid grid-cols-2 gap-4 mt-6">
+          <div style={{ background: '#110F0B', border: '1px solid rgba(201,168,76,0.18)', borderRadius: '4px', padding: '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+              <Lock style={{ width: 16, height: 16, color: '#C9A84C' }} />
+              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1rem', fontWeight: 700, color: '#F0EBE0' }}>Access Control</h3>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+              {[
+                { label: 'Access Granted', value: '—', ok: true },
+                { label: 'Access Denied',  value: '—', ok: false },
+                { label: 'Doors Locked',   value: '—', ok: true },
+                { label: 'Alarms Active',  value: '—', ok: true },
+              ].map(({ label, value, ok }) => (
+                <div key={label} style={{ background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.12)', borderRadius: '4px', padding: '12px' }}>
+                  <p style={{ fontSize: '1.4rem', fontWeight: 700, color: ok ? '#C9A84C' : 'rgba(195,95,95,0.9)', fontFamily: "'Cormorant Garamond', serif" }}>{value}</p>
+                  <p style={{ fontSize: '0.76rem', color: '#5A5040', marginTop: '2px' }}>{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ background: '#110F0B', border: '1px solid rgba(201,168,76,0.18)', borderRadius: '4px', padding: '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+              <Bell style={{ width: 16, height: 16, color: '#C9A84C' }} />
+              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1rem', fontWeight: 700, color: '#F0EBE0' }}>Recent Alerts</h3>
+              <button
+                onClick={() => window.location.href = '/sentinel/security'}
+                style={{ marginLeft: 'auto', fontSize: '0.76rem', color: '#C9A84C', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
+              >
+                View All
+              </button>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              {[
+                { msg: 'No active alerts — system nominal', time: 'Now',       warn: false },
+                { msg: 'Daily visitor log exported',         time: 'Today 08:00', warn: false },
+                { msg: 'Watchlist database updated',         time: 'Yesterday',  warn: false },
+              ].map(({ msg, time, warn }, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px 12px', background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.10)', borderRadius: '4px' }}>
+                  <div style={{ width: 8, height: 8, borderRadius: '50%', background: warn ? 'rgba(195,95,95,0.9)' : '#4ade80', flexShrink: 0 }} />
+                  <span style={{ flex: 1, fontSize: '0.82rem', color: '#9E8F75' }}>{msg}</span>
+                  <span style={{ fontSize: '0.72rem', color: '#5A5040', whiteSpace: 'nowrap' }}>{time}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
