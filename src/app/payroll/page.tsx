@@ -384,7 +384,7 @@ export default function PayrollPage() {
           <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Current Period Total</div>
-              <TrendingUp className="h-5 w-5 text-green-500" />
+              <TrendingUp className="h-5 w-5 text-green-400" />
             </div>
             <div className="text-3xl font-bold mb-1" style={{ color: 'var(--header-text)' }}>
               {formatCurrency(currentPeriod.totalPay)}
@@ -417,12 +417,12 @@ export default function PayrollPage() {
           <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Integration Status</div>
-              <CheckCircle className="h-5 w-5 text-green-500" />
+              <CheckCircle className="h-5 w-5 text-green-400" />
             </div>
             <div className="text-3xl font-bold mb-1" style={{ color: 'var(--header-text)' }}>
               Connected
             </div>
-            <div className="text-xs text-green-500">QuickBooks synced</div>
+            <div className="text-xs text-green-400">QuickBooks synced</div>
           </div>
         </div>
 
@@ -559,7 +559,7 @@ export default function PayrollPage() {
                 </div>
                 <div>
                   <p className="text-sm opacity-70 mb-1">Total Pay</p>
-                  <p className="font-semibold text-green-500">{formatCurrency(currentPeriod.totalPay)}</p>
+                  <p className="font-semibold text-green-400">{formatCurrency(currentPeriod.totalPay)}</p>
                 </div>
               </div>
               <div className="flex gap-3">
@@ -672,7 +672,7 @@ export default function PayrollPage() {
                         </td>
                         <td className="py-3 px-2 text-right font-semibold">{formatCurrency(emp.grossPay)}</td>
                         <td className="py-3 px-2 text-right text-red-400">-{formatCurrency(emp.deductions)}</td>
-                        <td className="py-3 px-2 text-right font-bold text-green-500">{formatCurrency(emp.netPay)}</td>
+                        <td className="py-3 px-2 text-right font-bold text-green-400">{formatCurrency(emp.netPay)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -685,7 +685,7 @@ export default function PayrollPage() {
                       <td className="py-3 px-2 text-right font-bold text-red-400">
                         -{formatCurrency(employeePayroll.reduce((sum, emp) => sum + emp.deductions, 0))}
                       </td>
-                      <td className="py-3 px-2 text-right font-bold text-green-500">
+                      <td className="py-3 px-2 text-right font-bold text-green-400">
                         {formatCurrency(employeePayroll.reduce((sum, emp) => sum + emp.netPay, 0))}
                       </td>
                     </tr>
@@ -765,9 +765,9 @@ export default function PayrollPage() {
                       <p className="text-sm opacity-70">{period.employeeCount} employees</p>
                     </div>
                     <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                      period.status === 'paid' ? 'bg-green-500/20 text-green-400' :
+                      period.status === 'paid' ? 'bg-[rgba(201,168,76,0.06)] text-green-400' :
                       period.status === 'approved' ? 'bg-amber-600/20 text-amber-400' :
-                      period.status === 'processing' ? 'bg-yellow-500/20 text-yellow-400' :
+                      period.status === 'processing' ? 'bg-[rgba(201,168,76,0.06)] text-[#C9A84C]' :
                       'bg-[rgba(201,168,76,0.04)]0/20 text-[#9E8F75]'
                     }`}>
                       {period.status.toUpperCase()}
@@ -780,7 +780,7 @@ export default function PayrollPage() {
                     </div>
                     <div>
                       <p className="text-sm opacity-70">Total Pay</p>
-                      <p className="font-semibold text-green-500">{formatCurrency(period.totalPay)}</p>
+                      <p className="font-semibold text-green-400">{formatCurrency(period.totalPay)}</p>
                     </div>
                   </div>
                 </div>
@@ -1007,9 +1007,9 @@ export default function PayrollPage() {
                         </div>
                       </div>
                       {integration.status === 'connected' ? (
-                        <CheckCircle className="h-5 w-5 text-green-500" />
+                        <CheckCircle className="h-5 w-5 text-green-400" />
                       ) : integration.status === 'error' ? (
-                        <AlertCircle className="h-5 w-5 text-red-500" />
+                        <AlertCircle className="h-5 w-5 text-red-400" />
                       ) : null}
                     </div>
 
@@ -1026,7 +1026,7 @@ export default function PayrollPage() {
                             <RefreshCw className="h-4 w-4" />
                             Sync Now
                           </button>
-                          <button className="px-4 py-2 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg font-semibold transition-all">
+                          <button className="px-4 py-2 bg-[rgba(201,168,76,0.06)] hover:bg-[rgba(201,168,76,0.06)] text-red-400 rounded-lg font-semibold transition-all">
                             Disconnect
                           </button>
                         </>

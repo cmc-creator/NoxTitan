@@ -188,7 +188,7 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
                   <button
                     key={avatar.emoji}
                     onClick={() => setConfig({ ...config, avatar: avatar.emoji })}
-                    className={`text-4xl p-3 rounded-lg transition-all hover:scale-110 ${
+                    className={`text-4xl p-3 rounded-lg transition-all ${
                       config.avatar === avatar.emoji
                         ? 'bg-[rgba(201,168,76,0.06)] border-2 border-[rgba(201,168,76,0.22)]'
                         : 'bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)]'
@@ -215,7 +215,7 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
                     className={`h-16 rounded-lg transition-all ${
                       config.color === color.gradient
                         ? 'ring-4 ring-[rgba(201,168,76,0.45)] scale-105'
-                        : 'hover:scale-105'
+                        : ''
                     }`}
                   >
                     <div className={`h-full rounded-lg `${color.gradient}` flex items-center justify-center`}>
@@ -267,7 +267,7 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
               <div className={${config.color}` rounded p-6 border-2 border-white/20 shadow-2xl`}>
                 {/* Avatar */}
                 <div className="text-center mb-6">
-                  <div className="text-8xl mb-3 animate-bounce">{config.avatar}</div>
+                  <div className="text-8xl mb-3">{config.avatar}</div>
                   <h3 className="text-2xl font-bold text-white mb-1">{config.name}</h3>
                   <p className="text-sm text-white/80">{selectedPersonality?.name}</p>
                 </div>
@@ -292,8 +292,8 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
               </div>
 
               {/* Note */}
-              <div className="mt-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3">
-                <p className="text-xs text-yellow-200">
+              <div className="mt-4 bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg p-3">
+                <p className="text-xs text-[#F0EBE0]">
                   💡 <strong>Tip:</strong> You can change these settings anytime! Your {config.name} will remember your preferences.
                 </p>
               </div>

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { BookOpen, Award, Video, FileText, CheckCircle, Clock, Star, Download, PlayCircle, TrendingUp } from 'lucide-react';
@@ -45,7 +45,7 @@ export default function LearningHubPage() {
           </div>
           <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-yellow-500">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-[rgba(201,168,76,0.12)]">
                 <Award className="h-6 w-6 text-white" />
               </div>
               <div>
@@ -260,7 +260,7 @@ function CoursesSection() {
               </div>
 
               <div className="flex items-center gap-2 mb-3">
-                <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
+                <Star className="h-4 w-4 fill-yellow-500 text-[#C9A84C]" />
                 <span className="font-semibold">{course.rating}</span>
                 <span className="text-xs opacity-60">({course.students} students)</span>
               </div>

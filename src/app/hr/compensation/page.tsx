@@ -76,10 +76,10 @@ export default function CompensationManagement() {
             <div className="text-3xl font-bold text-white">${(totalBudget.remaining / 1000).toFixed(0)}K</div>
             <div className="text-amber-400 text-xs mt-1">{((totalBudget.remaining/totalBudget.allocated)*100).toFixed(1)}% available</div>
           </div>
-          <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-orange-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="text-[#9E8F75] text-sm mb-1">Avg Increase</div>
             <div className="text-3xl font-bold text-white">{totalBudget.avgIncrease}%</div>
-            <div className="text-orange-400 text-xs mt-1">Merit raises</div>
+            <div className="text-[#9E8F75] text-xs mt-1">Merit raises</div>
           </div>
         </div>
 
@@ -156,7 +156,7 @@ export default function CompensationManagement() {
                       <td className="py-4 px-4 text-center">
                         <span className={`font-bold ${
                           emp.compaRatio >= 0.98 ? 'text-[#9E8F75]' :
-                          emp.compaRatio >= 0.95 ? 'text-yellow-400' : 'text-[#9E8F75] 400'
+                          emp.compaRatio >= 0.95 ? 'text-[#C9A84C]' : 'text-[#9E8F75] 400'
                         }`}>
                           {emp.compaRatio.toFixed(2)}
                         </span>
@@ -174,7 +174,7 @@ export default function CompensationManagement() {
                       </td>
                       <td className="py-4 px-4 text-center">
                         <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                          emp.budget === 'approved' ? 'bg-[rgba(201,168,76,0.15)] text-white' : 'bg-orange-600 text-white'
+                          emp.budget === 'approved' ? 'bg-[rgba(201,168,76,0.15)] text-white' : 'bg-[rgba(201,168,76,0.12)] text-white'
                         }`}>
                           {emp.budget.toUpperCase()}
                         </span>
@@ -206,7 +206,7 @@ export default function CompensationManagement() {
                         <div>
                           <div className="text-xs text-[#9E8F75] mb-1">Q4 Performance</div>
                           <div className="flex items-center gap-1">
-                            <Award className="w-5 h-5 text-yellow-400" />
+                            <Award className="w-5 h-5 text-[#C9A84C]" />
                             <span className="text-white font-bold text-lg">{bonus.q4Performance}</span>
                           </div>
                         </div>
@@ -230,7 +230,7 @@ export default function CompensationManagement() {
                     </div>
                     <div className="ml-4">
                       <span className={`px-4 py-2 rounded-lg text-sm font-bold ${
-                        bonus.status === 'approved' ? 'bg-[rgba(201,168,76,0.15)] text-white' : 'bg-orange-600 text-white'
+                        bonus.status === 'approved' ? 'bg-[rgba(201,168,76,0.15)] text-white' : 'bg-[rgba(201,168,76,0.12)] text-white'
                       }`}>
                         {bonus.status.toUpperCase()}
                       </span>
@@ -291,7 +291,7 @@ export default function CompensationManagement() {
                         <div className="text-xs text-white font-bold">${(role.market25/1000).toFixed(0)}K</div>
                       </div>
                       <div className="text-center">
-                        <div className="w-1 h-12 bg-yellow-500"></div>
+                        <div className="w-1 h-12 bg-[rgba(201,168,76,0.12)]"></div>
                         <div className="text-xs text-[#9E8F75] mt-1">50th</div>
                         <div className="text-xs text-white font-bold">${(role.market50/1000).toFixed(0)}K</div>
                       </div>
@@ -314,7 +314,7 @@ export default function CompensationManagement() {
                   <div className="flex items-center justify-between text-sm">
                     <div className="text-[#9E8F75]">
                       {role.internal < role.market50 ? (
-                        <span className="text-yellow-400 flex items-center gap-1">
+                        <span className="text-[#C9A84C] flex items-center gap-1">
                           <AlertCircle className="w-4 h-4" />
                           Below market median
                         </span>

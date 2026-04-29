@@ -178,10 +178,10 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
     <div className="space-y-6">
       {/* Header with Key Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-4 border-2 border-green-500/30">
+        <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center justify-between mb-2">
             <Target className="w-6 h-6 text-green-400" />
-            <TrendingUp className="w-5 h-5 text-green-300" />
+            <TrendingUp className="w-5 h-5 text-[#F0EBE0]" />
           </div>
           <p className="text-3xl font-bold text-white">{successMetrics.current90DayRetention}%</p>
           <p className="text-sm text-[#9E8F75]">90-Day Retention</p>
@@ -207,9 +207,9 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
           <p className="text-xs text-[#9E8F75] mt-1">Target: {successMetrics.targetOnboardingTime} weeks</p>
         </div>
 
-        <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-4 border-2 border-yellow-500/30">
+        <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center justify-between mb-2">
-            <Users className="w-6 h-6 text-yellow-400" />
+            <Users className="w-6 h-6 text-[#C9A84C]" />
           </div>
           <p className="text-3xl font-bold text-white">{successMetrics.currentlyOnboarding}</p>
           <p className="text-sm text-[#9E8F75]">Currently Onboarding</p>
@@ -268,9 +268,9 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
               key={employee.id}
               className={`bg-gradient-to-br backdrop-blur-xl rounded p-6 border-2 ${
                 employee.status === 'excellent'
-                  ? 'from-green-500/20 to-emerald-500/20 border-green-500/30'
+                  ? 'from-green-500/20 to-emerald-500/20 border-[rgba(201,168,76,0.22)]'
                   : employee.status === 'needs-attention'
-                  ? 'from-red-500/20 to-orange-500/20 border-red-500/30'
+                  ? 'from-red-500/20 to-orange-500/20 border-[rgba(201,168,76,0.22)]'
                   : 'from-cyan-500/20 to-amber-800/20 border-[rgba(201,168,76,0.22)]'
               }`}
             >
@@ -380,8 +380,8 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
               key={employee.id}
               className={`bg-gradient-to-br backdrop-blur-xl rounded p-6 border-2 ${
                 employee.riskLevel === 'high'
-                  ? 'from-red-500/20 to-orange-500/20 border-red-500/30'
-                  : 'from-yellow-500/20 to-orange-500/20 border-yellow-500/30'
+                  ? 'from-red-500/20 to-orange-500/20 border-[rgba(201,168,76,0.22)]'
+                  : 'from-yellow-500/20 to-orange-500/20 border-[rgba(201,168,76,0.22)]'
               }`}
             >
               <div className="flex items-start justify-between mb-4">
@@ -393,8 +393,8 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
                 <div className="text-right">
                   <span className={`px-4 py-2 rounded-lg font-bold text-sm ${
                     employee.riskLevel === 'high'
-                      ? 'bg-red-500/30 text-red-300'
-                      : 'bg-yellow-500/30 text-yellow-300'
+                      ? 'bg-[rgba(201,168,76,0.06)] text-[#F0EBE0]'
+                      : 'bg-[rgba(201,168,76,0.06)] text-[#F0EBE0]'
                   }`}>
                     {employee.riskLevel.toUpperCase()} RISK
                   </span>
@@ -412,7 +412,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
                   </h4>
                   <div className="space-y-2">
                     {employee.concerns.map((concern, index) => (
-                      <div key={index} className="bg-[#110F0B]/50 rounded-lg p-3 border-l-4 border-red-500">
+                      <div key={index} className="bg-[#110F0B]/50 rounded-lg p-3 border-l-4 border-[rgba(201,168,76,0.22)]">
                         <p className="text-sm text-white">{concern}</p>
                       </div>
                     ))}
@@ -454,7 +454,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
           ))}
 
           {retentionRisks.length === 0 && (
-            <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-12 border-2 border-green-500/30 text-center">
+            <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-12 border-2 border-[rgba(201,168,76,0.22)] text-center">
               <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-white mb-2">No High-Risk Employees!</h3>
               <p className="text-[#9E8F75]">Your team retention is looking excellent. Keep up the great work!</p>

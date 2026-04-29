@@ -62,30 +62,30 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                 <p className="text-[#9E8F75]">Health Insurance Portability and Accountability Act</p>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-bold text-green-600">98%</div>
+                <div className="text-5xl font-bold text-green-400">98%</div>
                 <p className="text-sm text-[#9E8F75]">Compliant</p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
-              <div className="bg-[#110F0B] p-4 rounded-lg border border-green-200">
-                <CheckCircle className="w-6 h-6 text-green-600 mb-2" />
+              <div className="bg-[#110F0B] p-4 rounded-lg border border-[rgba(201,168,76,0.22)]">
+                <CheckCircle className="w-6 h-6 text-green-400 mb-2" />
                 <p className="text-sm font-semibold text-[#C9A84C]">Privacy Rule</p>
-                <p className="text-2xl font-bold text-green-600">100%</p>
+                <p className="text-2xl font-bold text-green-400">100%</p>
               </div>
-              <div className="bg-[#110F0B] p-4 rounded-lg border border-green-200">
-                <CheckCircle className="w-6 h-6 text-green-600 mb-2" />
+              <div className="bg-[#110F0B] p-4 rounded-lg border border-[rgba(201,168,76,0.22)]">
+                <CheckCircle className="w-6 h-6 text-green-400 mb-2" />
                 <p className="text-sm font-semibold text-[#C9A84C]">Security Rule</p>
-                <p className="text-2xl font-bold text-green-600">97%</p>
+                <p className="text-2xl font-bold text-green-400">97%</p>
               </div>
-              <div className="bg-[#110F0B] p-4 rounded-lg border border-yellow-200">
-                <AlertTriangle className="w-6 h-6 text-yellow-600 mb-2" />
+              <div className="bg-[#110F0B] p-4 rounded-lg border border-[rgba(201,168,76,0.22)]">
+                <AlertTriangle className="w-6 h-6 text-[#5A5040] mb-2" />
                 <p className="text-sm font-semibold text-[#C9A84C]">Breach Notification</p>
-                <p className="text-2xl font-bold text-yellow-600">95%</p>
+                <p className="text-2xl font-bold text-[#5A5040]">95%</p>
               </div>
-              <div className="bg-[#110F0B] p-4 rounded-lg border border-green-200">
-                <CheckCircle className="w-6 h-6 text-green-600 mb-2" />
+              <div className="bg-[#110F0B] p-4 rounded-lg border border-[rgba(201,168,76,0.22)]">
+                <CheckCircle className="w-6 h-6 text-green-400 mb-2" />
                 <p className="text-sm font-semibold text-[#C9A84C]">Training</p>
-                <p className="text-2xl font-bold text-green-600">100%</p>
+                <p className="text-2xl font-bold text-green-400">100%</p>
               </div>
             </div>
           </div>
@@ -94,9 +94,9 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
           <div className="bg-[#110F0B] p-6 rounded shadow-md">
             <h3 className="text-xl font-bold text-[#9E8F75] mb-4">Active HIPAA Safeguards</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-4 border-l-4 border-green-500 bg-green-50 rounded">
+              <div className="p-4 border-l-4 border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.04)] rounded">
                 <div className="flex items-center gap-3 mb-2">
-                  <Lock className="w-5 h-5 text-green-600" />
+                  <Lock className="w-5 h-5 text-green-400" />
                   <h4 className="font-semibold text-[#9E8F75]">Data Encryption</h4>
                 </div>
                 <p className="text-sm text-[#C9A84C]">✓ AES-256 encryption at rest</p>
@@ -104,9 +104,9 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                 <p className="text-sm text-[#C9A84C]">✓ Encrypted database backups</p>
               </div>
 
-              <div className="p-4 border-l-4 border-green-500 bg-green-50 rounded">
+              <div className="p-4 border-l-4 border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.04)] rounded">
                 <div className="flex items-center gap-3 mb-2">
-                  <Key className="w-5 h-5 text-green-600" />
+                  <Key className="w-5 h-5 text-green-400" />
                   <h4 className="font-semibold text-[#9E8F75]">Access Controls</h4>
                 </div>
                 <p className="text-sm text-[#C9A84C]">✓ Role-based access (RBAC)</p>
@@ -114,9 +114,9 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                 <p className="text-sm text-[#C9A84C]">✓ Automatic session timeout (15 min)</p>
               </div>
 
-              <div className="p-4 border-l-4 border-green-500 bg-green-50 rounded">
+              <div className="p-4 border-l-4 border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.04)] rounded">
                 <div className="flex items-center gap-3 mb-2">
-                  <Activity className="w-5 h-5 text-green-600" />
+                  <Activity className="w-5 h-5 text-green-400" />
                   <h4 className="font-semibold text-[#9E8F75]">Audit Logging</h4>
                 </div>
                 <p className="text-sm text-[#C9A84C]">✓ All PHI access logged</p>
@@ -124,9 +124,9 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                 <p className="text-sm text-[#C9A84C]">✓ 7-year retention policy</p>
               </div>
 
-              <div className="p-4 border-l-4 border-yellow-500 bg-yellow-50 rounded">
+              <div className="p-4 border-l-4 border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.04)] rounded">
                 <div className="flex items-center gap-3 mb-2">
-                  <AlertTriangle className="w-5 h-5 text-yellow-600" />
+                  <AlertTriangle className="w-5 h-5 text-[#5A5040]" />
                   <h4 className="font-semibold text-[#9E8F75]">Breach Detection</h4>
                 </div>
                 <p className="text-sm text-[#C9A84C]">✓ Real-time monitoring</p>
@@ -154,7 +154,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                     <td className="py-3 px-4 font-medium text-[#9E8F75]">HIPAA Privacy Rule</td>
                     <td className="py-3 px-4 text-sm text-[#C9A84C]">Protect PHI, patient rights, consent management</td>
                     <td className="text-center py-3 px-4">
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-green-400 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
                     <td className="py-3 px-4 text-sm text-[#9E8F75]">Dec 15, 2025</td>
                   </tr>
@@ -162,7 +162,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                     <td className="py-3 px-4 font-medium text-[#9E8F75]">HIPAA Security Rule</td>
                     <td className="py-3 px-4 text-sm text-[#C9A84C]">Technical, physical, administrative safeguards</td>
                     <td className="text-center py-3 px-4">
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-green-400 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
                     <td className="py-3 px-4 text-sm text-[#9E8F75]">Dec 20, 2025</td>
                   </tr>
@@ -170,7 +170,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                     <td className="py-3 px-4 font-medium text-[#9E8F75]">HITECH Act</td>
                     <td className="py-3 px-4 text-sm text-[#C9A84C]">Breach notification, BAA requirements</td>
                     <td className="text-center py-3 px-4">
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-green-400 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
                     <td className="py-3 px-4 text-sm text-[#9E8F75]">Jan 5, 2026</td>
                   </tr>
@@ -178,7 +178,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                     <td className="py-3 px-4 font-medium text-[#9E8F75]">FLSA (Labor)</td>
                     <td className="py-3 px-4 text-sm text-[#C9A84C]">Overtime, break requirements, minor restrictions</td>
                     <td className="text-center py-3 px-4">
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-green-400 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
                     <td className="py-3 px-4 text-sm text-[#9E8F75]">Dec 1, 2025</td>
                   </tr>
@@ -186,7 +186,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                     <td className="py-3 px-4 font-medium text-[#9E8F75]">FMLA</td>
                     <td className="py-3 px-4 text-sm text-[#C9A84C]">Job-protected leave, eligibility tracking</td>
                     <td className="text-center py-3 px-4">
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-green-400 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
                     <td className="py-3 px-4 text-sm text-[#9E8F75]">Nov 28, 2025</td>
                   </tr>
@@ -194,7 +194,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                     <td className="py-3 px-4 font-medium text-[#9E8F75]">ADA</td>
                     <td className="py-3 px-4 text-sm text-[#C9A84C]">Reasonable accommodations, anti-discrimination</td>
                     <td className="text-center py-3 px-4">
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-green-400 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
                     <td className="py-3 px-4 text-sm text-[#9E8F75]">Dec 10, 2025</td>
                   </tr>
@@ -202,7 +202,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                     <td className="py-3 px-4 font-medium text-[#9E8F75]">OSHA</td>
                     <td className="py-3 px-4 text-sm text-[#C9A84C]">Workplace safety, bloodborne pathogens, ergonomics</td>
                     <td className="text-center py-3 px-4">
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">COMPLIANT</span>
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-green-400 rounded-full text-xs font-semibold">COMPLIANT</span>
                     </td>
                     <td className="py-3 px-4 text-sm text-[#9E8F75]">Dec 18, 2025</td>
                   </tr>
@@ -210,7 +210,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                     <td className="py-3 px-4 font-medium text-[#9E8F75]">State Privacy Laws</td>
                     <td className="py-3 px-4 text-sm text-[#C9A84C]">CCPA, CDPA, state-specific requirements</td>
                     <td className="text-center py-3 px-4">
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">REVIEW</span>
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-[#5A5040] rounded-full text-xs font-semibold">REVIEW</span>
                     </td>
                     <td className="py-3 px-4 text-sm text-[#9E8F75]">Dec 5, 2025</td>
                   </tr>
@@ -239,7 +239,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                   </div>
                   <div className="text-right">
                     <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      baa.status === 'Active' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
+                      baa.status === 'Active' ? 'bg-[rgba(201,168,76,0.04)] text-green-400' : 'bg-[rgba(201,168,76,0.04)] text-[#5A5040]'
                     }`}>
                       {baa.status}
                     </span>
@@ -257,19 +257,19 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
         <div className="bg-[#110F0B] p-6 rounded shadow-md">
           <h3 className="text-xl font-bold text-[#9E8F75] mb-4">HIPAA Privacy Rule Compliance</h3>
           <div className="space-y-4">
-            <div className="p-4 bg-green-50 border-l-4 border-green-500 rounded">
+            <div className="p-4 bg-[rgba(201,168,76,0.04)] border-l-4 border-[rgba(201,168,76,0.22)] rounded">
               <h4 className="font-semibold text-[#9E8F75] mb-2">✓ Minimum Necessary Standard</h4>
               <p className="text-sm text-[#C9A84C]">System enforces role-based access. Staff only see PHI required for job duties.</p>
             </div>
-            <div className="p-4 bg-green-50 border-l-4 border-green-500 rounded">
+            <div className="p-4 bg-[rgba(201,168,76,0.04)] border-l-4 border-[rgba(201,168,76,0.22)] rounded">
               <h4 className="font-semibold text-[#9E8F75] mb-2">✓ Patient Rights</h4>
               <p className="text-sm text-[#C9A84C]">Portal provides: access to records, amendment requests, accounting of disclosures, opt-out forms.</p>
             </div>
-            <div className="p-4 bg-green-50 border-l-4 border-green-500 rounded">
+            <div className="p-4 bg-[rgba(201,168,76,0.04)] border-l-4 border-[rgba(201,168,76,0.22)] rounded">
               <h4 className="font-semibold text-[#9E8F75] mb-2">✓ De-identification for Reports</h4>
               <p className="text-sm text-[#C9A84C]">Analytics and reports automatically remove 18 HIPAA identifiers. Safe Harbor method applied.</p>
             </div>
-            <div className="p-4 bg-green-50 border-l-4 border-green-500 rounded">
+            <div className="p-4 bg-[rgba(201,168,76,0.04)] border-l-4 border-[rgba(201,168,76,0.22)] rounded">
               <h4 className="font-semibold text-[#9E8F75] mb-2">✓ Notice of Privacy Practices</h4>
               <p className="text-sm text-[#C9A84C]">NPP distributed at onboarding. Acknowledgment forms stored electronically. Last updated: Jan 2025.</p>
             </div>
@@ -318,28 +318,28 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
             <h3 className="text-xl font-bold text-[#9E8F75] mb-4">Physical & Administrative Safeguards</h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3 p-3 bg-[#110F0B] rounded-lg">
-                <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                <CheckCircle className="w-5 h-5 text-green-400 mt-0.5" />
                 <div>
                   <p className="font-medium text-[#9E8F75]">Facility Access Controls</p>
                   <p className="text-sm text-[#9E8F75]">Badge access, visitor logs, secure server room, CCTV monitoring</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 p-3 bg-[#110F0B] rounded-lg">
-                <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                <CheckCircle className="w-5 h-5 text-green-400 mt-0.5" />
                 <div>
                   <p className="font-medium text-[#9E8F75]">Workstation Security</p>
                   <p className="text-sm text-[#9E8F75]">Screen timeouts, privacy filters, clean desk policy, locked cabinets</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 p-3 bg-[#110F0B] rounded-lg">
-                <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                <CheckCircle className="w-5 h-5 text-green-400 mt-0.5" />
                 <div>
                   <p className="font-medium text-[#9E8F75]">Workforce Training</p>
                   <p className="text-sm text-[#9E8F75]">Annual HIPAA training (100% completion), phishing simulations, incident response drills</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 p-3 bg-[#110F0B] rounded-lg">
-                <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                <CheckCircle className="w-5 h-5 text-green-400 mt-0.5" />
                 <div>
                   <p className="font-medium text-[#9E8F75]">Contingency Planning</p>
                   <p className="text-sm text-[#9E8F75]">Daily backups, disaster recovery plan, 4-hour RTO, offsite backup storage</p>
@@ -353,9 +353,9 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
       {/* Breach Prevention */}
       {hipaaView === 'breach' && (
         <div className="space-y-6">
-          <div className="bg-red-50 border-2 border-red-200 p-6 rounded">
+          <div className="bg-[rgba(201,168,76,0.04)] border-2 border-[rgba(201,168,76,0.22)] p-6 rounded">
             <div className="flex items-center gap-3 mb-4">
-              <AlertTriangle className="w-8 h-8 text-red-600" />
+              <AlertTriangle className="w-8 h-8 text-red-400" />
               <div>
                 <h3 className="text-xl font-bold text-[#9E8F75]">Breach Notification Protocol</h3>
                 <p className="text-sm text-[#9E8F75]">HITECH Act requires notification within 60 days of discovery</p>
@@ -380,7 +380,7 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
           <div className="bg-[#110F0B] p-6 rounded shadow-md">
             <h3 className="text-xl font-bold text-[#9E8F75] mb-4">Breach Prevention Measures</h3>
             <div className="space-y-3">
-              <div className="p-4 border-l-4 border-green-500 bg-green-50 rounded">
+              <div className="p-4 border-l-4 border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.04)] rounded">
                 <p className="font-semibold text-[#9E8F75]">✓ Zero reported breaches (last 12 months)</p>
               </div>
               <div className="p-4 border border-[rgba(201,168,76,0.22)] rounded-lg">
@@ -435,9 +435,9 @@ function HIPAAComplianceSection({ hipaaView, setHipaaView }: { hipaaView: string
                     <td className="py-3 px-4 text-sm font-medium text-[#9E8F75]">{log.user}</td>
                     <td className="py-3 px-4">
                       <span className={`px-2 py-1 rounded text-xs font-semibold ${
-                        log.action === 'VIEW' ? 'bg-blue-100 text-[#E8C060]' :
-                        log.action === 'UPDATE' ? 'bg-green-100 text-green-700' :
-                        'bg-purple-100 text-amber-700'
+                        log.action === 'VIEW' ? 'bg-[rgba(201,168,76,0.04)] text-[#E8C060]' :
+                        log.action === 'UPDATE' ? 'bg-[rgba(201,168,76,0.04)] text-green-400' :
+                        'bg-[rgba(201,168,76,0.04)] text-amber-700'
                       }`}>
                         {log.action}
                       </span>
@@ -764,9 +764,9 @@ export default function CompliancePage() {
 
   const getSeverityColor = (severity: string) => {
     switch (severity) {
-      case 'critical': return 'text-red-500 bg-red-500/20 border-red-500';
-      case 'high': return 'text-orange-500 bg-orange-500/20 border-orange-500';
-      case 'medium': return 'text-yellow-500 bg-yellow-500/20 border-yellow-500';
+      case 'critical': return 'text-red-400 bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]';
+      case 'high': return 'text-[#9E8F75] bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]';
+      case 'medium': return 'text-[#C9A84C] bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]';
       case 'low': return 'text-amber-400 bg-amber-600/20 border-amber-500/40';
       default: return 'text-[#9E8F75] bg-[rgba(201,168,76,0.04)]0/20 border-gray-500';
     }
@@ -774,8 +774,8 @@ export default function CompliancePage() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'action-required': return 'text-red-400 bg-red-500/20';
-      case 'monitoring': return 'text-yellow-400 bg-yellow-500/20';
+      case 'action-required': return 'text-red-400 bg-[rgba(201,168,76,0.06)]';
+      case 'monitoring': return 'text-[#C9A84C] bg-[rgba(201,168,76,0.06)]';
       case 'informational': return 'text-amber-400 bg-amber-600/20';
       default: return 'text-[#9E8F75] bg-[rgba(201,168,76,0.04)]0/20';
     }
@@ -809,16 +809,16 @@ export default function CompliancePage() {
           <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Overall Compliance</div>
-              <TrendingUp className="h-5 w-5 text-green-500" />
+              <TrendingUp className="h-5 w-5 text-green-400" />
             </div>
             <div className="text-3xl font-bold mb-1" style={{ color: 'var(--header-text)' }}>92%</div>
-            <div className="text-xs text-green-500">+3% from last month</div>
+            <div className="text-xs text-green-400">+3% from last month</div>
           </div>
 
           <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Fully Compliant</div>
-              <CheckCircle className="h-5 w-5 text-green-500" />
+              <CheckCircle className="h-5 w-5 text-green-400" />
             </div>
             <div className="text-3xl font-bold mb-1" style={{ color: 'var(--header-text)' }}>38</div>
             <div className="text-xs opacity-60">of 45 employees</div>
@@ -827,35 +827,35 @@ export default function CompliancePage() {
           <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Expiring Soon</div>
-              <Clock className="h-5 w-5 text-yellow-500" />
+              <Clock className="h-5 w-5 text-[#C9A84C]" />
             </div>
             <div className="text-3xl font-bold mb-1" style={{ color: 'var(--header-text)' }}>12</div>
-            <div className="text-xs text-yellow-500">Within 30 days</div>
+            <div className="text-xs text-[#C9A84C]">Within 30 days</div>
           </div>
 
           <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Overdue</div>
-              <AlertTriangle className="h-5 w-5 text-red-500" />
+              <AlertTriangle className="h-5 w-5 text-red-400" />
             </div>
             <div className="text-3xl font-bold mb-1" style={{ color: 'var(--header-text)' }}>5</div>
-            <div className="text-xs text-red-500">Requires immediate action</div>
+            <div className="text-xs text-red-400">Requires immediate action</div>
           </div>
 
           <div className="p-6 rounded shadow-lg relative" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Regulatory Alerts</div>
-              <Bell className="h-5 w-5 text-orange-500" />
+              <Bell className="h-5 w-5 text-[#9E8F75]" />
             </div>
             <div className="text-3xl font-bold mb-1" style={{ color: 'var(--header-text)' }}>
               {regulatoryAlerts.filter(a => a.status === 'action-required').length}
             </div>
-            <div className="text-xs text-orange-500">Action required</div>
+            <div className="text-xs text-[#9E8F75]">Action required</div>
             {regulatoryAlerts.filter(a => a.status === 'action-required').length > 0 && (
               <div className="absolute top-2 right-2">
                 <span className="flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[rgba(201,168,76,0.12)] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-[rgba(201,168,76,0.12)]"></span>
                 </span>
               </div>
             )}
@@ -1056,7 +1056,7 @@ export default function CompliancePage() {
                     Automated monitoring of federal, state, and industry-specific compliance changes
                   </p>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-green-500/20 text-green-400 rounded-lg">
+                <div className="flex items-center gap-2 px-4 py-2 bg-[rgba(201,168,76,0.06)] text-green-400 rounded-lg">
                   <RefreshCw className="w-4 h-4" />
                   <span className="text-sm font-semibold">Last checked: 2 hours ago</span>
                 </div>
@@ -1088,7 +1088,7 @@ export default function CompliancePage() {
                         <div className="text-xs text-[#9E8F75]">Coverage</div>
                       </div>
                       <div className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-3">
-                        <div className="text-2xl font-bold text-orange-400 mb-1">12</div>
+                        <div className="text-2xl font-bold text-[#9E8F75] mb-1">12</div>
                         <div className="text-xs text-[#9E8F75]">Industries</div>
                       </div>
                     </div>
@@ -1171,7 +1171,7 @@ export default function CompliancePage() {
                             Effective: {alert.effectiveDate}
                           </span>
                           {alert.daysUntilEffective <= 30 && (
-                            <span className="px-2 py-1 bg-red-500/20 text-red-400 rounded text-xs font-bold">
+                            <span className="px-2 py-1 bg-[rgba(201,168,76,0.06)] text-red-400 rounded text-xs font-bold">
                               {alert.daysUntilEffective === 0 ? 'EFFECTIVE TODAY' : `${alert.daysUntilEffective} days`}
                             </span>
                           )}
@@ -1214,7 +1214,7 @@ export default function CompliancePage() {
                               View Full Details
                             </button>
                             {alert.status === 'action-required' && (
-                              <button className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm font-semibold transition-all flex items-center gap-2">
+                              <button className="px-4 py-2 bg-green-500 hover:bg-green-500 text-white rounded-lg text-sm font-semibold transition-all flex items-center gap-2">
                                 <CheckCircle className="w-4 h-4" />
                                 Mark as Addressed
                               </button>
@@ -1329,7 +1329,7 @@ function OverviewSection() {
         {/* Upcoming Expirations */}
         <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{ color: 'var(--header-text)' }}>
-            <Clock className="h-5 w-5 text-yellow-500" />
+            <Clock className="h-5 w-5 text-[#C9A84C]" />
             Upcoming Expirations
           </h3>
           <div className="space-y-3">
@@ -1349,7 +1349,7 @@ function OverviewSection() {
                   </div>
                   <div className={`text-xs px-2 py-1 rounded-full font-semibold ${
                     item.status === 'urgent' ? 'bg-red-500 text-white' :
-                    item.status === 'warning' ? 'bg-yellow-500 text-black' :
+                    item.status === 'warning' ? 'bg-[rgba(201,168,76,0.12)] text-black' :
                     'bg-green-500 text-white'
                   }`}>
                     {item.daysLeft} days
@@ -1364,14 +1364,14 @@ function OverviewSection() {
         {/* Overdue Items */}
         <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{ color: 'var(--header-text)' }}>
-            <AlertTriangle className="h-5 w-5 text-red-500" />
+            <AlertTriangle className="h-5 w-5 text-red-400" />
             Overdue Items
           </h3>
           <div className="space-y-3">
             {overdueItems.map((item, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-lg border-l-4 border-red-500"
+                className="p-4 rounded-lg border-l-4 border-[rgba(201,168,76,0.22)]"
                 style={{ background: 'var(--calendar-bg)' }}
               >
                 <div className="flex justify-between items-start mb-1">
@@ -1451,7 +1451,7 @@ function EmployeesSection() {
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                     employee.status === 'excellent' ? 'bg-green-500 text-white' :
                     employee.status === 'good' ? 'bg-amber-600 text-white' :
-                    employee.status === 'warning' ? 'bg-yellow-500 text-black' :
+                    employee.status === 'warning' ? 'bg-[rgba(201,168,76,0.12)] text-black' :
                     'bg-red-500 text-white'
                   }`}>
                     {employee.status === 'excellent' ? '✓ Excellent' :
@@ -1802,23 +1802,23 @@ function CMSSection() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Overall CMS Score</div>
-          <div className="text-3xl font-bold text-green-500">4.2/5</div>
+          <div className="text-3xl font-bold text-green-400">4.2/5</div>
           <div className="text-xs opacity-60">Above national avg</div>
         </div>
         <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Compliant Measures</div>
           <div className="text-3xl font-bold" style={{ color: 'var(--header-text)' }}>12/15</div>
-          <div className="text-xs text-green-500">80% compliance</div>
+          <div className="text-xs text-green-400">80% compliance</div>
         </div>
         <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Needs Attention</div>
-          <div className="text-3xl font-bold text-yellow-500">2</div>
+          <div className="text-3xl font-bold text-[#C9A84C]">2</div>
           <div className="text-xs opacity-60">Action required</div>
         </div>
         <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Non-Compliant</div>
-          <div className="text-3xl font-bold text-red-500">1</div>
-          <div className="text-xs text-red-500">Immediate action</div>
+          <div className="text-3xl font-bold text-red-400">1</div>
+          <div className="text-xs text-red-400">Immediate action</div>
         </div>
       </div>
 
@@ -1839,7 +1839,7 @@ function CMSSection() {
                   <div className="flex items-center gap-3">
                     <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                       measure.status === 'compliant' ? 'bg-green-500 text-white' :
-                      measure.status === 'warning' ? 'bg-yellow-500 text-white' :
+                      measure.status === 'warning' ? 'bg-[rgba(201,168,76,0.12)] text-white' :
                       'bg-red-500 text-white'
                     }`}>
                       {measure.status === 'compliant' ? '✓ Compliant' :
@@ -1847,9 +1847,9 @@ function CMSSection() {
                        '✗ Non-Compliant'}
                     </span>
                     <span className={`text-sm font-semibold ${
-                      measure.trend === 'improving' ? 'text-green-500' :
+                      measure.trend === 'improving' ? 'text-green-400' :
                       measure.trend === 'stable' ? 'text-amber-400' :
-                      'text-yellow-500'
+                      'text-[#C9A84C]'
                     }`}>
                       {measure.trend === 'improving' ? '↑ Improving' :
                        measure.trend === 'stable' ? '→ Stable' :
@@ -1858,7 +1858,7 @@ function CMSSection() {
                   </div>
                 </div>
                 {measure.status !== 'compliant' && (
-                  <div className="mt-2 text-sm text-yellow-500">
+                  <div className="mt-2 text-sm text-[#C9A84C]">
                     💡 Action Plan: {measure.status === 'warning' ? 'Schedule review meeting' : 'Immediate intervention required'}
                   </div>
                 )}
@@ -1951,8 +1951,8 @@ function JointCommissionSection() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Overall Compliance</div>
-          <div className="text-3xl font-bold text-green-500">{overallCompliance}%</div>
-          <div className="text-xs text-green-500">Accreditation maintained</div>
+          <div className="text-3xl font-bold text-green-400">{overallCompliance}%</div>
+          <div className="text-xs text-green-400">Accreditation maintained</div>
         </div>
         <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Compliant Standards</div>
@@ -1961,13 +1961,13 @@ function JointCommissionSection() {
         </div>
         <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Needs Improvement</div>
-          <div className="text-3xl font-bold text-yellow-500">{warningCount}</div>
+          <div className="text-3xl font-bold text-[#C9A84C]">{warningCount}</div>
           <div className="text-xs opacity-60">Monitor closely</div>
         </div>
         <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Non-Compliant</div>
-          <div className="text-3xl font-bold text-red-500">{nonCompliantCount}</div>
-          <div className="text-xs text-red-500">Immediate action</div>
+          <div className="text-3xl font-bold text-red-400">{nonCompliantCount}</div>
+          <div className="text-xs text-red-400">Immediate action</div>
         </div>
       </div>
 
@@ -1999,7 +1999,7 @@ function JointCommissionSection() {
                     </div>
                     <span className={`px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap ${
                       standard.status === 'compliant' ? 'bg-green-500 text-white' :
-                      standard.status === 'warning' ? 'bg-yellow-500 text-white' :
+                      standard.status === 'warning' ? 'bg-[rgba(201,168,76,0.12)] text-white' :
                       'bg-red-500 text-white'
                     }`}>
                       {standard.status === 'compliant' ? '✓ Compliant' :
@@ -2015,11 +2015,11 @@ function JointCommissionSection() {
       ))}
 
       {/* Action Items */}
-      <div className="p-6 rounded shadow-lg border-l-4 border-red-500" style={{ background: 'var(--card-bg)' }}>
-        <h3 className="text-xl font-bold mb-4 text-red-500">Priority Action Items</h3>
+      <div className="p-6 rounded shadow-lg border-l-4 border-[rgba(201,168,76,0.22)]" style={{ background: 'var(--card-bg)' }}>
+        <h3 className="text-xl font-bold mb-4 text-red-400">Priority Action Items</h3>
         <div className="space-y-3">
-          <div className="p-4 rounded-lg bg-red-500/10 border border-red-500">
-            <div className="font-semibold text-red-500 mb-1">IC.01.01.01 - Hand Hygiene Compliance (87%)</div>
+          <div className="p-4 rounded-lg bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)]">
+            <div className="font-semibold text-red-400 mb-1">IC.01.01.01 - Hand Hygiene Compliance (87%)</div>
             <div className="text-sm mb-2">Target: 95% | Current: 87% | Gap: 8%</div>
             <div className="text-sm">
               <strong>Action Plan:</strong> Increase hand hygiene audits to daily, provide additional staff education, post visual reminders at all sinks
@@ -2082,7 +2082,7 @@ function SurveyReadinessSection() {
   return (
     <div className="space-y-6">
       {/* Survey Readiness Header */}
-      <div className="p-6 rounded shadow-lg border-l-4 border-green-500" style={{ background: 'var(--card-bg)' }}>
+      <div className="p-6 rounded shadow-lg border-l-4 border-[rgba(201,168,76,0.22)]" style={{ background: 'var(--card-bg)' }}>
         <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
           Survey Readiness Assessment
         </h2>
@@ -2095,8 +2095,8 @@ function SurveyReadinessSection() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Overall Readiness</div>
-          <div className="text-4xl font-bold text-green-500 mb-2">{overallReadiness}%</div>
-          <div className="text-xs text-green-500">Survey ready</div>
+          <div className="text-4xl font-bold text-green-400 mb-2">{overallReadiness}%</div>
+          <div className="text-xs text-green-400">Survey ready</div>
         </div>
         <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Next Expected Survey</div>
@@ -2105,7 +2105,7 @@ function SurveyReadinessSection() {
         </div>
         <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <div className="text-sm opacity-70 mb-1">Items Needing Attention</div>
-          <div className="text-4xl font-bold text-yellow-500 mb-2">4</div>
+          <div className="text-4xl font-bold text-[#C9A84C] mb-2">4</div>
           <div className="text-xs opacity-60">Review required</div>
         </div>
       </div>
@@ -2135,7 +2135,7 @@ function SurveyReadinessSection() {
                 <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                   item.status === 'complete' ? 'bg-green-500 text-white' :
                   item.status === 'in-progress' ? 'bg-amber-600 text-white' :
-                  'bg-yellow-500 text-white'
+                  'bg-[rgba(201,168,76,0.12)] text-white'
                 }`}>
                   {item.status === 'complete' ? '✓ Complete' :
                    item.status === 'in-progress' ? '⟳ In Progress' :
@@ -2169,8 +2169,8 @@ function SurveyReadinessSection() {
       </div>
 
       {/* Quick Action Items */}
-      <div className="p-6 rounded shadow-lg border-l-4 border-yellow-500" style={{ background: 'var(--card-bg)' }}>
-        <h3 className="text-xl font-bold mb-4 text-yellow-500">⚡ Priority Actions Before Next Survey</h3>
+      <div className="p-6 rounded shadow-lg border-l-4 border-[rgba(201,168,76,0.22)]" style={{ background: 'var(--card-bg)' }}>
+        <h3 className="text-xl font-bold mb-4 text-[#C9A84C]">⚡ Priority Actions Before Next Survey</h3>
         <div className="space-y-2">
           <div className="p-3 rounded-lg" style={{ background: 'var(--calendar-bg)' }}>
             <div className="font-semibold">1. Update Equipment Maintenance Logs</div>
@@ -2304,7 +2304,7 @@ function PriceTransparencySection() {
               As of January 1, 2021, hospitals must publish standard charges online in both machine-readable 
               and consumer-friendly formats.
             </p>
-            <div className="flex items-center gap-2 text-sm bg-red-500/10 text-red-500 p-3 rounded-lg">
+            <div className="flex items-center gap-2 text-sm bg-[rgba(201,168,76,0.06)] text-red-400 p-3 rounded-lg">
               <AlertTriangle className="h-4 w-4 flex-shrink-0" />
               <span className="font-semibold">
                 Non-compliance penalties: $300/day (small hospitals) up to $5,500/day (large hospitals, 550+ beds)
@@ -2383,29 +2383,29 @@ function PriceTransparencySection() {
                 key={index}
                 className={`p-4 rounded-lg border-l-4 ${
                   finding.status === 'pass' 
-                    ? 'border-green-500 bg-green-500/10' 
+                    ? 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]' 
                     : finding.status === 'warning'
-                    ? 'border-yellow-500 bg-yellow-500/10'
-                    : 'border-red-500 bg-red-500/10'
+                    ? 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]'
+                    : 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]'
                 }`}
               >
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 mt-1">
                     {finding.status === 'pass' ? (
-                      <CheckCircle className="h-6 w-6 text-green-500" />
+                      <CheckCircle className="h-6 w-6 text-green-400" />
                     ) : finding.status === 'warning' ? (
-                      <AlertTriangle className="h-6 w-6 text-yellow-500" />
+                      <AlertTriangle className="h-6 w-6 text-[#C9A84C]" />
                     ) : (
-                      <XCircle className="h-6 w-6 text-red-500" />
+                      <XCircle className="h-6 w-6 text-red-400" />
                     )}
                   </div>
                   <div className="flex-1">
                     <div className={`font-bold text-lg mb-2 ${
                       finding.status === 'pass' 
-                        ? 'text-green-500' 
+                        ? 'text-green-400' 
                         : finding.status === 'warning'
-                        ? 'text-yellow-500'
-                        : 'text-red-500'
+                        ? 'text-[#C9A84C]'
+                        : 'text-red-400'
                     }`}>
                       {finding.requirement}
                     </div>
@@ -2463,7 +2463,7 @@ function PriceTransparencySection() {
                 <h4 className="font-bold text-lg flex-1" style={{ color: 'var(--header-text)' }}>{req.title}</h4>
               </div>
               <p className="opacity-80 mb-3 whitespace-pre-line">{req.description}</p>
-              <div className="text-sm bg-red-500/10 text-red-500 p-3 rounded flex items-center gap-2">
+              <div className="text-sm bg-[rgba(201,168,76,0.06)] text-red-400 p-3 rounded flex items-center gap-2">
                 <AlertTriangle className="h-4 w-4 flex-shrink-0" />
                 <span className="font-semibold">{req.penalty}</span>
               </div>

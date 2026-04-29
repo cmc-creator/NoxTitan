@@ -95,7 +95,7 @@ export default function SOPPolicyHub() {
     <Card className="max-w-2xl mx-auto mt-8 p-6 shadow-lg border border-gray-200">
       <h2 className="text-2xl font-bold mb-4">SOP, Policy & Procedures Hub</h2>
       <p className="mb-2 text-sm text-[#9E8F75]">All documents are HIPAA & legally compliant. Versioning, access control, and audit logging are enforced.</p>
-      {error && <div className="text-red-500 mb-2">{error}</div>}
+      {error && <div className="text-red-400 mb-2">{error}</div>}
       <Input
         placeholder="Search documents..."
         value={searchTerm}

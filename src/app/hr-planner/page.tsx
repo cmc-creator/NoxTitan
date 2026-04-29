@@ -131,9 +131,9 @@ export default function HRPlannerPage() {
 
   function getPriorityColor(priority: string) {
     switch (priority) {
-      case 'URGENT': return 'text-red-400 bg-red-500/20 border-red-500';
-      case 'HIGH': return 'text-orange-400 bg-orange-500/20 border-orange-500';
-      case 'MEDIUM': return 'text-yellow-400 bg-yellow-500/20 border-yellow-500';
+      case 'URGENT': return 'text-red-400 bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]';
+      case 'HIGH': return 'text-[#9E8F75] bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]';
+      case 'MEDIUM': return 'text-[#C9A84C] bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]';
       case 'LOW': return 'text-amber-400 bg-amber-600/20 border-amber-500/40';
       default: return 'text-[#9E8F75] bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]';
     }
@@ -179,28 +179,28 @@ export default function HRPlannerPage() {
             <p className="text-[#9E8F75] font-semibold">Total Tasks</p>
           </div>
 
-          <div className="bg-yellow-500/10 border border-yellow-500/50 rounded p-6">
+          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-6">
             <div className="flex items-center justify-between mb-2">
-              <Clock className="w-8 h-8 text-yellow-400" />
-              <span className="text-3xl font-bold text-yellow-400">{stats.pending}</span>
+              <Clock className="w-8 h-8 text-[#C9A84C]" />
+              <span className="text-3xl font-bold text-[#C9A84C]">{stats.pending}</span>
             </div>
-            <p className="text-yellow-300 font-semibold">Pending</p>
+            <p className="text-[#F0EBE0] font-semibold">Pending</p>
           </div>
 
-          <div className="bg-red-500/10 border border-red-500/50 rounded p-6">
+          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <AlertCircle className="w-8 h-8 text-red-400" />
               <span className="text-3xl font-bold text-red-400">{stats.overdue}</span>
             </div>
-            <p className="text-red-300 font-semibold">Overdue</p>
+            <p className="text-[#F0EBE0] font-semibold">Overdue</p>
           </div>
 
-          <div className="bg-green-500/10 border border-green-500/50 rounded p-6">
+          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <TrendingUp className="w-8 h-8 text-green-400" />
               <span className="text-3xl font-bold text-green-400">{stats.completed}</span>
             </div>
-            <p className="text-green-300 font-semibold">Completed</p>
+            <p className="text-[#F0EBE0] font-semibold">Completed</p>
           </div>
         </div>
 
@@ -258,8 +258,8 @@ export default function HRPlannerPage() {
             filteredTasks.map((task) => (
               <div
                 key={task.id}
-                className={`bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border rounded p-6 hover:border-amber-500/40/50 transition-colors ${
-                  task.status === 'OVERDUE' ? 'border-red-500/50' : 'border-[rgba(201,168,76,0.22)]'
+                className={`bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border rounded p-6 hover:border-[rgba(201,168,76,0.45)]/50 transition-colors ${
+                  task.status === 'OVERDUE' ? 'border-[rgba(201,168,76,0.22)]' : 'border-[rgba(201,168,76,0.22)]'
                 }`}
               >
                 <div className="flex items-start justify-between">
@@ -287,9 +287,9 @@ export default function HRPlannerPage() {
                           <span>Due: {new Date(task.dueDate).toLocaleDateString()}</span>
                         </div>
                         <span className={`px-2 py-1 rounded text-xs font-semibold ${
-                          task.status === 'COMPLETED' ? 'bg-green-500/20 text-green-400' :
-                          task.status === 'OVERDUE' ? 'bg-red-500/20 text-red-400' :
-                          'bg-yellow-500/20 text-yellow-400'
+                          task.status === 'COMPLETED' ? 'bg-[rgba(201,168,76,0.06)] text-green-400' :
+                          task.status === 'OVERDUE' ? 'bg-[rgba(201,168,76,0.06)] text-red-400' :
+                          'bg-[rgba(201,168,76,0.06)] text-[#C9A84C]'
                         }`}>
                           {task.status}
                         </span>
@@ -299,7 +299,7 @@ export default function HRPlannerPage() {
                   {task.status !== 'COMPLETED' && (
                     <button
                       onClick={() => completeTask(task.id)}
-                      className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-lg transition-colors"
+                      className="px-4 py-2 bg-green-500 hover:bg-green-500 text-white text-sm font-semibold rounded-lg transition-colors"
                     >
                       Complete
                     </button>

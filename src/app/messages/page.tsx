@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { MessageCircle, Send, Search, Plus, Users, User, Phone, Video, MoreVertical, Paperclip, Smile, Check, CheckCheck, Circle } from 'lucide-react';
@@ -198,7 +198,7 @@ export default function MessagesPage() {
                   <div className="relative">
                     <div className="text-3xl">{conv.avatar}</div>
                     {conv.type === 'private' && conv.online && (
-                      <Circle className="absolute -bottom-1 -right-1 h-3 w-3 fill-green-500 text-green-500" />
+                      <Circle className="absolute -bottom-1 -right-1 h-3 w-3 fill-green-500 text-green-400" />
                     )}
                   </div>
                   <div className="flex-1 min-w-0">
@@ -240,7 +240,7 @@ export default function MessagesPage() {
                   <div className="relative">
                     <div className="text-4xl">{activeConv.avatar}</div>
                     {activeConv.type === 'private' && activeConv.online && (
-                      <Circle className="absolute -bottom-1 -right-1 h-3 w-3 fill-green-500 text-green-500" />
+                      <Circle className="absolute -bottom-1 -right-1 h-3 w-3 fill-green-500 text-green-400" />
                     )}
                   </div>
                   <div>
@@ -390,7 +390,7 @@ export default function MessagesPage() {
                     <div className="relative">
                       <div className="text-3xl">{employee.avatar}</div>
                       {employee.online && (
-                        <Circle className="absolute -bottom-1 -right-1 h-3 w-3 fill-green-500 text-green-500" />
+                        <Circle className="absolute -bottom-1 -right-1 h-3 w-3 fill-green-500 text-green-400" />
                       )}
                     </div>
                     <div className="flex-1 text-left">

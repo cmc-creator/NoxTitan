@@ -78,8 +78,8 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                     onClick={() => setSettings({ ...settings, theme: theme.id })}
                     className={`p-4 rounded border-2 transition-all ${
                       settings.theme === theme.id
-                        ? 'border-amber-600/40 bg-purple-50'
-                        : 'border-gray-300 hover:border-amber-400/40'
+                        ? 'border-amber-600/40 bg-[rgba(201,168,76,0.04)]'
+                        : 'border-gray-300 hover:border-[rgba(201,168,76,0.45)]'
                     }`}
                   >
                     <div className={`h-12 rounded-lg `${theme.colors}` mb-2`} />
@@ -99,8 +99,8 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                     onClick={() => setSettings({ ...settings, adventureMode: adventure.id })}
                     className={`p-4 rounded border-2 transition-all text-left ${
                       settings.adventureMode === adventure.id
-                        ? 'border-amber-600/40 bg-purple-50'
-                        : 'border-gray-300 hover:border-amber-400/40'
+                        ? 'border-amber-600/40 bg-[rgba(201,168,76,0.04)]'
+                        : 'border-gray-300 hover:border-[rgba(201,168,76,0.45)]'
                     }`}
                   >
                     <div className="flex items-center gap-3 mb-2">
@@ -139,7 +139,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                     value={settings.basebotName}
                     onChange={(e) => setSettings({ ...settings, basebotName: e.target.value })}
                     placeholder="Basebot"
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                   />
                 </div>
 
@@ -155,7 +155,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                         onClick={() => setSettings({ ...settings, basebotAvatar: avatar })}
                         className={`w-14 h-14 text-2xl rounded-lg transition-all ${
                           settings.basebotAvatar === avatar
-                            ? 'bg-purple-200 border-2 border-amber-600/40 scale-110'
+                            ? 'bg-[rgba(201,168,76,0.04)] border-2 border-amber-600/40 scale-110'
                             : 'bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] border border-gray-300'
                         }`}
                       >
@@ -177,8 +177,8 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                         onClick={() => setSettings({ ...settings, basebotPersonality: personality.id })}
                         className={`p-3 rounded-lg border-2 transition-all ${
                           settings.basebotPersonality === personality.id
-                            ? 'border-amber-600/40 bg-purple-50'
-                            : 'border-gray-300 hover:border-amber-400/40'
+                            ? 'border-amber-600/40 bg-[rgba(201,168,76,0.04)]'
+                            : 'border-gray-300 hover:border-[rgba(201,168,76,0.45)]'
                         }`}
                       >
                         <div className="text-2xl mb-1">{personality.icon}</div>

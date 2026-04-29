@@ -194,11 +194,11 @@ export default function TalentIdentificationSystem({ managerId, showNotification
     <div className="space-y-6">
       {/* Notifications Section */}
       {showNotifications && notifications.length > 0 && (
-        <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-yellow-500/30">
+        <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center gap-3 mb-4">
-            <AlertCircle className="w-6 h-6 text-yellow-400" />
+            <AlertCircle className="w-6 h-6 text-[#C9A84C]" />
             <h3 className="text-xl font-bold text-white">Talent Action Items</h3>
-            <span className="px-3 py-1 bg-yellow-500/20 rounded-full text-sm font-bold text-yellow-300">
+            <span className="px-3 py-1 bg-[rgba(201,168,76,0.06)] rounded-full text-sm font-bold text-[#F0EBE0]">
               {notifications.length} New
             </span>
           </div>
@@ -211,7 +211,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
               >
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex items-center gap-3">
-                    {notification.type === 'recognition' && <Award className="w-5 h-5 text-yellow-400" />}
+                    {notification.type === 'recognition' && <Award className="w-5 h-5 text-[#C9A84C]" />}
                     {notification.type === 'promotion' && <TrendingUp className="w-5 h-5 text-amber-400" />}
                     {notification.type === 'mentor' && <Users className="w-5 h-5 text-[#9E8F75]" />}
                     {notification.type === 'training' && <BookOpen className="w-5 h-5 text-amber-400" />}
@@ -231,8 +231,8 @@ export default function TalentIdentificationSystem({ managerId, showNotification
                 <div className="flex items-center justify-between mt-3">
                   <span className={`px-2 py-1 rounded text-xs font-bold ${
                     notification.priority === 'high' 
-                      ? 'bg-red-500/20 text-red-300' 
-                      : 'bg-yellow-500/20 text-yellow-300'
+                      ? 'bg-[rgba(201,168,76,0.06)] text-[#F0EBE0]' 
+                      : 'bg-[rgba(201,168,76,0.06)] text-[#F0EBE0]'
                   }`}>
                     {notification.priority.toUpperCase()} PRIORITY
                   </span>
@@ -269,7 +269,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
                 <p className="text-sm text-[#9E8F75]">{employee.role}</p>
                 <p className="text-xs text-[#9E8F75]">{employee.tenure}</p>
               </div>
-              <Star className="w-6 h-6 text-yellow-400 fill-yellow-400" />
+              <Star className="w-6 h-6 text-[#C9A84C] fill-yellow-400" />
             </div>
 
             {/* Performance Metrics */}
@@ -300,7 +300,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
 
             {/* Quick Actions */}
             <div className="grid grid-cols-2 gap-2">
-              <button className="px-3 py-2 bg-green-500/20 hover:bg-green-500/30 text-green-300 rounded-lg text-sm font-semibold transition-all flex items-center justify-center gap-1">
+              <button className="px-3 py-2 bg-[rgba(201,168,76,0.06)] hover:bg-[rgba(201,168,76,0.06)] text-[#F0EBE0] rounded-lg text-sm font-semibold transition-all flex items-center justify-center gap-1">
                 <Award className="w-4 h-4" />
                 Recognize
               </button>
@@ -376,7 +376,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
                 {Object.entries(selectedEmployee.recommendations).map(([key, value]) => (
                   <div key={key} className="bg-[rgba(201,168,76,0.04)] rounded-lg p-4 border border-amber-500/40/30">
                     <div className="flex items-center gap-2 mb-2">
-                      {key === 'recognize' && <Award className="w-5 h-5 text-yellow-400" />}
+                      {key === 'recognize' && <Award className="w-5 h-5 text-[#C9A84C]" />}
                       {key === 'promote' && <TrendingUp className="w-5 h-5 text-amber-400" />}
                       {key === 'mentor' && <Users className="w-5 h-5 text-[#9E8F75]" />}
                       {key === 'train' && <BookOpen className="w-5 h-5 text-amber-400" />}
@@ -407,7 +407,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
                 <div className="space-y-2">
                   {selectedEmployee.recentAchievements.map((achievement: string, index: number) => (
                     <div key={index} className="flex items-center gap-2 bg-[#110F0B]/50 rounded-lg p-3">
-                      <Star className="w-5 h-5 text-yellow-400" />
+                      <Star className="w-5 h-5 text-[#C9A84C]" />
                       <p className="text-white text-sm">{achievement}</p>
                     </div>
                   ))}
@@ -415,7 +415,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
               </div>
 
               {/* Onboarding Success */}
-              <div className="md:col-span-2 bg-[rgba(201,168,76,0.06)] rounded-lg p-6 border-2 border-green-500/30">
+              <div className="md:col-span-2 bg-[rgba(201,168,76,0.06)] rounded-lg p-6 border-2 border-[rgba(201,168,76,0.22)]">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                   <Users className="w-6 h-6 text-green-400" />
                   Onboarding & Mentorship Track Record

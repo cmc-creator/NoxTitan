@@ -123,7 +123,7 @@ export default function ManagerAcademyPage() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <Award className="w-16 h-16 text-yellow-400 mx-auto mb-4" />
+          <Award className="w-16 h-16 text-[#C9A84C] mx-auto mb-4" />
           <h1 className="text-5xl font-bold text-white mb-3">
             Manager Academy
           </h1>
@@ -171,7 +171,7 @@ export default function ManagerAcademyPage() {
 
           {progressPercent === 100 && (
             <div className="mt-6 bg-[#110F0B]/20 backdrop-blur-sm rounded p-4 text-center">
-              <Award className="w-8 h-8 text-yellow-300 mx-auto mb-2" />
+              <Award className="w-8 h-8 text-[#F0EBE0] mx-auto mb-2" />
               <p className="text-white font-bold text-lg">🎉 Congratulations! You've completed Manager Academy!</p>
               <p className="text-[#F0EBE0] text-sm mt-1">Certificate available in your profile</p>
             </div>
@@ -193,7 +193,7 @@ export default function ManagerAcademyPage() {
                       ? 'border-[rgba(201,168,76,0.22)] 500'
                       : isActive
                       ? 'border-amber-500/40'
-                      : 'border-[rgba(201,168,76,0.22)] hover:border-amber-400/40'
+                      : 'border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.45)]'
                   }`}
                 >
                   <div className="flex items-start justify-between mb-4">

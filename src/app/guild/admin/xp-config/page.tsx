@@ -124,7 +124,7 @@ export default function XPConfigPage() {
         {/* Activities Section */}
         <div className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-6 mb-6">
           <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-            <Zap className="w-6 h-6 text-yellow-400" />
+            <Zap className="w-6 h-6 text-[#C9A84C]" />
             Team Activities
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -199,7 +199,7 @@ export default function XPConfigPage() {
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-yellow-400 mb-2">Legendary</label>
+              <label className="block text-sm font-semibold text-[#C9A84C] mb-2">Legendary</label>
               <input
                 type="number"
                 value={settings.achievementLegendary}

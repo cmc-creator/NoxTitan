@@ -126,7 +126,7 @@ export default function SentinelImportPage() {
               onClick={() => setImportType('csv')}
               className={`p-6 rounded border-2 transition-all ${
                 importType === 'csv'
-                  ? 'border-green-500 bg-green-500/20'
+                  ? 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]'
                   : 'border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)]'
               }`}
             >
@@ -201,13 +201,13 @@ export default function SentinelImportPage() {
                 type="file"
                 accept=".csv"
                 onChange={(e) => setCsvFile(e.target.files?.[0] || null)}
-                className="w-full px-4 py-3 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg text-white focus:outline-none focus:border-green-500"
+                className="w-full px-4 py-3 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg text-white focus:outline-none focus:border-[rgba(201,168,76,0.22)]"
               />
             </div>
             <button
               onClick={handleCSVImport}
               disabled={!csvFile || importing}
-              className="w-full px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-6 py-3 bg-green-500 hover:bg-green-500 text-white font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {importing ? 'Importing...' : 'Import CSV'}
             </button>
@@ -216,7 +216,7 @@ export default function SentinelImportPage() {
 
         {/* Import Result */}
         {result && (
-          <div className="mt-6 bg-green-500/10 border border-green-500/50 rounded p-6">
+          <div className="mt-6 bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-6">
             <div className="flex items-center gap-3 mb-4">
               <CheckCircle className="w-8 h-8 text-green-400" />
               <h3 className="text-xl font-bold text-white">Import Successful!</h3>
@@ -227,7 +227,7 @@ export default function SentinelImportPage() {
                 <div className="text-sm text-[#9E8F75]">Records Imported</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-yellow-400">{result.skipped || 0}</div>
+                <div className="text-3xl font-bold text-[#C9A84C]">{result.skipped || 0}</div>
                 <div className="text-sm text-[#9E8F75]">Duplicates Skipped</div>
               </div>
               <div>

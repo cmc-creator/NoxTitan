@@ -86,12 +86,12 @@ export default function AssetVaultPage() {
 
   function getStatusColor(status: string) {
     switch (status) {
-      case 'AVAILABLE': return 'bg-green-500/20 text-green-400 border-green-500';
+      case 'AVAILABLE': return 'bg-[rgba(201,168,76,0.06)] text-green-400 border-[rgba(201,168,76,0.22)]';
       case 'ASSIGNED': return 'bg-amber-600/20 text-amber-400 border-amber-500/40';
-      case 'IN_MAINTENANCE': return 'bg-orange-500/20 text-orange-400 border-orange-500';
+      case 'IN_MAINTENANCE': return 'bg-[rgba(201,168,76,0.06)] text-[#9E8F75] border-[rgba(201,168,76,0.22)]';
       case 'RETIRED': return 'bg-[rgba(201,168,76,0.06)] text-[#9E8F75] border-[rgba(201,168,76,0.22)]';
-      case 'LOST': return 'bg-red-500/20 text-red-400 border-red-500';
-      case 'DAMAGED': return 'bg-red-500/20 text-red-400 border-red-500';
+      case 'LOST': return 'bg-[rgba(201,168,76,0.06)] text-red-400 border-[rgba(201,168,76,0.22)]';
+      case 'DAMAGED': return 'bg-[rgba(201,168,76,0.06)] text-red-400 border-[rgba(201,168,76,0.22)]';
       default: return 'bg-[rgba(201,168,76,0.06)] text-[#9E8F75] border-[rgba(201,168,76,0.22)]';
     }
   }
@@ -100,8 +100,8 @@ export default function AssetVaultPage() {
     switch (condition) {
       case 'EXCELLENT': return 'text-green-400';
       case 'GOOD': return 'text-amber-400';
-      case 'FAIR': return 'text-yellow-400';
-      case 'POOR': return 'text-orange-400';
+      case 'FAIR': return 'text-[#C9A84C]';
+      case 'POOR': return 'text-[#9E8F75]';
       case 'DAMAGED': return 'text-red-400';
       default: return 'text-[#9E8F75]';
     }
@@ -122,14 +122,14 @@ export default function AssetVaultPage() {
           <div className="flex gap-3">
             <button
               onClick={() => window.location.href = '/vault/payroll-flags'}
-              className="px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
+              className="px-6 py-3 bg-[rgba(201,168,76,0.12)] hover:bg-[rgba(201,168,76,0.12)] text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
             >
               <AlertCircle className="w-5 h-5" />
               Payroll Flags
             </button>
             <button
               onClick={() => window.location.href = '/vault/treasury'}
-              className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
+              className="px-6 py-3 bg-green-500 hover:bg-green-500 text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
             >
               <FileSignature className="w-5 h-5" />
               Treasury Checkout
@@ -160,12 +160,12 @@ export default function AssetVaultPage() {
             <p className="text-[#9E8F75] font-semibold">Total Assets</p>
           </div>
 
-          <div className="bg-green-500/10 border border-green-500/50 rounded p-6">
+          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <CheckCircle className="w-8 h-8 text-green-400" />
               <span className="text-3xl font-bold text-green-400">{stats.available}</span>
             </div>
-            <p className="text-green-300 font-semibold">Available</p>
+            <p className="text-[#F0EBE0] font-semibold">Available</p>
           </div>
 
           <div className="bg-amber-600/10 border border-amber-500/40/50 rounded p-6">
@@ -176,12 +176,12 @@ export default function AssetVaultPage() {
             <p className="text-amber-400 font-semibold">Assigned</p>
           </div>
 
-          <div className="bg-orange-500/10 border border-orange-500/50 rounded p-6">
+          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-6">
             <div className="flex items-center justify-between mb-2">
-              <AlertCircle className="w-8 h-8 text-orange-400" />
-              <span className="text-3xl font-bold text-orange-400">{stats.maintenance}</span>
+              <AlertCircle className="w-8 h-8 text-[#9E8F75]" />
+              <span className="text-3xl font-bold text-[#9E8F75]">{stats.maintenance}</span>
             </div>
-            <p className="text-orange-300 font-semibold">Maintenance</p>
+            <p className="text-[#9E8F75] font-semibold">Maintenance</p>
           </div>
 
           <div className="bg-amber-500/10 border border-amber-500/40/50 rounded p-6">
@@ -257,7 +257,7 @@ export default function AssetVaultPage() {
               <div
                 key={asset.id}
                 onClick={() => window.location.href = `/vault/assets/${asset.id}`}
-                className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-amber-500/40/50 transition-all cursor-pointer group"
+                className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-[rgba(201,168,76,0.45)]/50 transition-all cursor-pointer group"
               >
                 {/* Category Badge */}
                 <div className="flex items-center justify-between mb-4">

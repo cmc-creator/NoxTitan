@@ -137,7 +137,7 @@ export default function LearningHub() {
               <BookOpen className="w-12 h-12 text-amber-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-green-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-[#C9A84C] was-green-200 text-sm mb-1">Completed</div>
@@ -155,13 +155,13 @@ export default function LearningHub() {
               <Clock className="w-12 h-12 text-amber-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-yellow-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-yellow-200 text-sm mb-1">Certificates</div>
+                <div className="text-[#F0EBE0] text-sm mb-1">Certificates</div>
                 <div className="text-3xl font-bold text-white">1</div>
               </div>
-              <Award className="w-12 h-12 text-yellow-400 opacity-50" />
+              <Award className="w-12 h-12 text-[#C9A84C] opacity-50" />
             </div>
           </div>
         </div>
@@ -326,7 +326,7 @@ export default function LearningHub() {
                       <Clock className="w-4 h-4" /> {course.duration}
                     </span>
                     <span className="flex items-center gap-1">
-                      <Star className="w-4 h-4 text-yellow-400" /> {course.rating}
+                      <Star className="w-4 h-4 text-[#C9A84C]" /> {course.rating}
                     </span>
                   </div>
 
@@ -343,9 +343,9 @@ export default function LearningHub() {
         {/* Achievements Tab */}
         {activeTab === 'achievements' && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-yellow-500/30 text-center">
+            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)] text-center">
               <div className="text-6xl mb-3">🏆</div>
-              <div className="text-yellow-300 font-bold mb-1">Time Master</div>
+              <div className="text-[#F0EBE0] font-bold mb-1">Time Master</div>
               <div className="text-[#9E8F75] text-sm">Completed Time Management</div>
             </div>
             <div className="bg-[rgba(201,168,76,0.06)]/30 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] text-center opacity-50">

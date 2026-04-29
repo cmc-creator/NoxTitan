@@ -92,11 +92,11 @@ export default function PayrollFlagsPage() {
 
   function getStatusColor(status: string) {
     switch (status) {
-      case 'PENDING': return 'bg-yellow-500/20 text-yellow-400 border-yellow-500';
+      case 'PENDING': return 'bg-[rgba(201,168,76,0.06)] text-[#C9A84C] border-[rgba(201,168,76,0.22)]';
       case 'APPROVED': return 'bg-amber-600/20 text-amber-400 border-amber-500/40';
-      case 'APPLIED': return 'bg-green-500/20 text-green-400 border-green-500';
+      case 'APPLIED': return 'bg-[rgba(201,168,76,0.06)] text-green-400 border-[rgba(201,168,76,0.22)]';
       case 'CANCELLED': return 'bg-[rgba(201,168,76,0.06)] text-[#9E8F75] border-[rgba(201,168,76,0.22)]';
-      case 'DISPUTED': return 'bg-red-500/20 text-red-400 border-red-500';
+      case 'DISPUTED': return 'bg-[rgba(201,168,76,0.06)] text-red-400 border-[rgba(201,168,76,0.22)]';
       default: return 'bg-[rgba(201,168,76,0.06)] text-[#9E8F75] border-[rgba(201,168,76,0.22)]';
     }
   }
@@ -108,7 +108,7 @@ export default function PayrollFlagsPage() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
-              <AlertTriangle className="w-10 h-10 text-orange-400" />
+              <AlertTriangle className="w-10 h-10 text-[#9E8F75]" />
               Payroll Deduction Flags
             </h1>
             <p className="text-[#9E8F75]">Unreturned & damaged asset deductions</p>
@@ -126,18 +126,18 @@ export default function PayrollFlagsPage() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
           <div className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6">
             <div className="flex items-center justify-between mb-2">
-              <AlertTriangle className="w-8 h-8 text-orange-400" />
+              <AlertTriangle className="w-8 h-8 text-[#9E8F75]" />
               <span className="text-3xl font-bold text-white">{stats.total}</span>
             </div>
             <p className="text-[#9E8F75] font-semibold">Total Flags</p>
           </div>
 
-          <div className="bg-yellow-500/10 border border-yellow-500/50 rounded p-6">
+          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-6">
             <div className="flex items-center justify-between mb-2">
-              <Clock className="w-8 h-8 text-yellow-400" />
-              <span className="text-3xl font-bold text-yellow-400">{stats.pending}</span>
+              <Clock className="w-8 h-8 text-[#C9A84C]" />
+              <span className="text-3xl font-bold text-[#C9A84C]">{stats.pending}</span>
             </div>
-            <p className="text-yellow-300 font-semibold">Pending</p>
+            <p className="text-[#F0EBE0] font-semibold">Pending</p>
           </div>
 
           <div className="bg-amber-600/10 border border-amber-500/40/50 rounded p-6">
@@ -148,12 +148,12 @@ export default function PayrollFlagsPage() {
             <p className="text-amber-400 font-semibold">Approved</p>
           </div>
 
-          <div className="bg-green-500/10 border border-green-500/50 rounded p-6">
+          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <DollarSign className="w-8 h-8 text-green-400" />
               <span className="text-3xl font-bold text-green-400">{stats.applied}</span>
             </div>
-            <p className="text-green-300 font-semibold">Applied</p>
+            <p className="text-[#F0EBE0] font-semibold">Applied</p>
           </div>
 
           <div className="bg-amber-500/10 border border-amber-500/40/50 rounded p-6">
@@ -189,8 +189,8 @@ export default function PayrollFlagsPage() {
             <div key={deduction.id} className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-start gap-4 flex-1">
-                  <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center flex-shrink-0">
-                    <AlertTriangle className="w-6 h-6 text-orange-400" />
+                  <div className="w-12 h-12 bg-[rgba(201,168,76,0.06)] rounded-full flex items-center justify-center flex-shrink-0">
+                    <AlertTriangle className="w-6 h-6 text-[#9E8F75]" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
@@ -226,7 +226,7 @@ export default function PayrollFlagsPage() {
                       </div>
                       {deduction.appliedDate && (
                         <div className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-500" />
+                          <CheckCircle className="w-4 h-4 text-green-400" />
                           <span className="text-green-400">
                             Applied: {new Date(deduction.appliedDate).toLocaleDateString()}
                           </span>
@@ -261,7 +261,7 @@ export default function PayrollFlagsPage() {
                   {deduction.status === 'APPROVED' && (
                     <button
                       onClick={() => updateStatus(deduction.id, 'APPLIED')}
-                      className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-lg transition-colors"
+                      className="px-4 py-2 bg-green-500 hover:bg-green-500 text-white text-sm font-semibold rounded-lg transition-colors"
                     >
                       Mark Applied
                     </button>
@@ -273,7 +273,7 @@ export default function PayrollFlagsPage() {
 
           {filteredDeductions.length === 0 && (
             <div className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-12 text-center">
-              <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+              <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">All Clear!</h3>
               <p className="text-[#9E8F75]">No payroll deductions at this time.</p>
             </div>

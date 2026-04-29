@@ -181,7 +181,7 @@ export default function AutomationPage() {
                   });
                   setShowModal(true);
                 }}
-                className="lux-card border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-amber-500/40/50 cursor-pointer transition-all"
+                className="lux-card border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-[rgba(201,168,76,0.45)]/50 cursor-pointer transition-all"
               >
                 <div className="text-4xl mb-3">{template.icon}</div>
                 <h3 className="text-white font-bold mb-2">{template.name}</h3>

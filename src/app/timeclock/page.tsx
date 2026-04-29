@@ -265,14 +265,14 @@ export default function TimeClockPage() {
 
         {/* Status Messages */}
         {error && (
-          <div className="bg-red-500/10 border border-red-500 rounded-lg p-4 mb-6 flex items-center gap-3">
+          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg p-4 mb-6 flex items-center gap-3">
             <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
             <p className="text-red-400 text-sm">{error}</p>
           </div>
         )}
 
         {success && (
-          <div className="bg-green-500/10 border border-green-500 rounded-lg p-4 mb-6 flex items-center gap-3">
+          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg p-4 mb-6 flex items-center gap-3">
             <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
             <p className="text-green-400 text-sm">{success}</p>
           </div>
@@ -295,8 +295,8 @@ export default function TimeClockPage() {
             </div>
 
             {activeEntry.isLate && (
-              <div className="bg-orange-500/20 border border-orange-500/50 rounded-lg p-3 mb-4">
-                <p className="text-orange-300 text-sm">
+              <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg p-3 mb-4">
+                <p className="text-[#9E8F75] text-sm">
                   ⚠️ Clocked in {activeEntry.lateMinutes} minutes late
                 </p>
               </div>
@@ -323,7 +323,7 @@ export default function TimeClockPage() {
               <button
                 onClick={handleClockOut}
                 disabled={loading}
-                className="flex items-center justify-center gap-2 px-4 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition-colors disabled:opacity-50"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-red-500 hover:bg-red-500 text-white rounded-lg font-semibold transition-colors disabled:opacity-50"
               >
                 <LogOut className="w-5 h-5" />
                 <span>Clock Out</span>
@@ -350,7 +350,7 @@ export default function TimeClockPage() {
                     setSelectedEmployee(e.target.value);
                     checkActiveEntry(e.target.value);
                   }}
-                  className="w-full pl-11 pr-4 py-3 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                  className="w-full pl-11 pr-4 py-3 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                 >
                   <option value="">Choose an employee...</option>
                   {employees.map((emp) => (
@@ -365,7 +365,7 @@ export default function TimeClockPage() {
             {/* Location Status */}
             <div className="mb-6 p-4 bg-[rgba(201,168,76,0.06)]/30 rounded-lg">
               <div className="flex items-center gap-3">
-                <MapPin className={`w-5 h-5 ${location ? 'text-green-400' : 'text-orange-400'}`} />
+                <MapPin className={`w-5 h-5 ${location ? 'text-green-400' : 'text-[#9E8F75]'}`} />
                 <div>
                   <p className="text-sm font-semibold text-white">
                     {location ? 'Location Verified' : 'Getting Location...'}

@@ -181,7 +181,7 @@ export default function TimeClockDevicesPage() {
             {devices.map((device) => (
               <div
                 key={device.id}
-                className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-amber-500/40/50 transition-colors"
+                className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-[rgba(201,168,76,0.45)]/50 transition-colors"
               >
                 {/* Device Header */}
                 <div className="flex items-start justify-between mb-4">
@@ -234,7 +234,7 @@ export default function TimeClockDevicesPage() {
                     </span>
                   )}
                   {device.latitude && device.longitude && (
-                    <span className="px-2 py-1 bg-green-500/20 text-green-300 text-xs rounded-full">
+                    <span className="px-2 py-1 bg-[rgba(201,168,76,0.06)] text-[#F0EBE0] text-xs rounded-full">
                       📍 Geofence
                     </span>
                   )}
@@ -251,7 +251,7 @@ export default function TimeClockDevicesPage() {
                   </button>
                   <button
                     onClick={() => handleDelete(device.id)}
-                    className="flex items-center justify-center gap-2 px-4 py-2 bg-red-600/20 hover:bg-red-600/30 text-red-400 rounded-lg transition-colors"
+                    className="flex items-center justify-center gap-2 px-4 py-2 bg-[rgba(201,168,76,0.06)] hover:bg-[rgba(201,168,76,0.06)] text-red-400 rounded-lg transition-colors"
                   >
                     <Trash2 className="w-4 h-4" />
                   </button>

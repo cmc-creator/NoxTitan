@@ -130,7 +130,7 @@ export default function CustomerSupportPage() {
               </div>
               <div>
                 <p className="text-2xl font-bold">24/7 AI Help</p>
-                <p className="text-blue-100 text-sm">Instant answers to common questions</p>
+                <p className="text-[#9E8F75] text-sm">Instant answers to common questions</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -139,7 +139,7 @@ export default function CustomerSupportPage() {
               </div>
               <div>
                 <p className="text-2xl font-bold">&lt;4 Hour Response</p>
-                <p className="text-blue-100 text-sm">Fast human support when needed</p>
+                <p className="text-[#9E8F75] text-sm">Fast human support when needed</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -148,7 +148,7 @@ export default function CustomerSupportPage() {
               </div>
               <div>
                 <p className="text-2xl font-bold">200+ Articles</p>
-                <p className="text-blue-100 text-sm">Comprehensive help library</p>
+                <p className="text-[#9E8F75] text-sm">Comprehensive help library</p>
               </div>
             </div>
           </div>
@@ -163,21 +163,21 @@ export default function CustomerSupportPage() {
               placeholder="Search for help... (e.g., 'How do I export payroll?' or 'California break laws')"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-14 pr-4 py-4 border-2 border-[rgba(201,168,76,0.22)] rounded focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-lg"
+              className="w-full pl-14 pr-4 py-4 border-2 border-[rgba(201,168,76,0.22)] rounded focus:outline-none focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent text-lg"
             />
           </div>
           <div className="flex gap-2 mt-4 flex-wrap">
             <span className="text-sm text-[#9E8F75]">Popular searches:</span>
-            <button className="px-3 py-1 bg-blue-100 text-[#E8C060] rounded-full text-sm hover:bg-blue-200 transition-all">
+            <button className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-[#E8C060] rounded-full text-sm hover:bg-[rgba(201,168,76,0.04)] transition-all">
               overtime rules
             </button>
-            <button className="px-3 py-1 bg-blue-100 text-[#E8C060] rounded-full text-sm hover:bg-blue-200 transition-all">
+            <button className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-[#E8C060] rounded-full text-sm hover:bg-[rgba(201,168,76,0.04)] transition-all">
               export schedules
             </button>
-            <button className="px-3 py-1 bg-blue-100 text-[#E8C060] rounded-full text-sm hover:bg-blue-200 transition-all">
+            <button className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-[#E8C060] rounded-full text-sm hover:bg-[rgba(201,168,76,0.04)] transition-all">
               mobile app
             </button>
-            <button className="px-3 py-1 bg-blue-100 text-[#E8C060] rounded-full text-sm hover:bg-blue-200 transition-all">
+            <button className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-[#E8C060] rounded-full text-sm hover:bg-[rgba(201,168,76,0.04)] transition-all">
               payroll integration
             </button>
           </div>
@@ -221,9 +221,9 @@ export default function CustomerSupportPage() {
               <h2 className="text-2xl font-bold text-[#9E8F75] mb-6">Popular Help Articles</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {helpArticles.map((article) => (
-                  <div key={article.id} className="p-6 border-2 border-[rgba(201,168,76,0.22)] rounded hover:border-blue-400 hover:shadow-lg transition-all cursor-pointer">
+                  <div key={article.id} className="p-6 border-2 border-[rgba(201,168,76,0.22)] rounded hover:border-[rgba(201,168,76,0.22)] hover:shadow-lg transition-all cursor-pointer">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="p-3 bg-blue-100 text-amber-400 rounded">
+                      <div className="p-3 bg-[rgba(201,168,76,0.04)] text-amber-400 rounded">
                         {article.icon}
                       </div>
                       <span className="px-3 py-1 bg-[rgba(201,168,76,0.06)] text-[#C9A84C] rounded-full text-xs font-semibold">
@@ -251,7 +251,7 @@ export default function CustomerSupportPage() {
             </div>
 
             {/* Video Tutorials */}
-            <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded border border-purple-200 p-6">
+            <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded border border-[rgba(201,168,76,0.22)] p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Video className="w-6 h-6 text-amber-600" />
                 <h3 className="text-xl font-bold text-[#9E8F75]">Video Tutorials</h3>
@@ -277,16 +277,16 @@ export default function CustomerSupportPage() {
                         <div className="flex items-center gap-3 mb-2">
                           <span className="text-sm font-mono text-[#9E8F75]">{ticket.id}</span>
                           <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                            ticket.status === 'resolved' ? 'bg-green-100 text-green-700' :
-                            ticket.status === 'in-progress' ? 'bg-blue-100 text-[#E8C060]' :
-                            'bg-purple-100 text-amber-700'
+                            ticket.status === 'resolved' ? 'bg-[rgba(201,168,76,0.04)] text-green-400' :
+                            ticket.status === 'in-progress' ? 'bg-[rgba(201,168,76,0.04)] text-[#E8C060]' :
+                            'bg-[rgba(201,168,76,0.04)] text-amber-700'
                           }`}>
                             {ticket.status.replace('-', ' ')}
                           </span>
                           <span className={`px-3 py-1 rounded-full text-xs font-semibold border-2 ${
-                            ticket.priority === 'high' ? 'bg-orange-100 text-orange-700 border-orange-300' :
-                            ticket.priority === 'medium' ? 'bg-yellow-100 text-yellow-700 border-yellow-300' :
-                            'bg-blue-100 text-[#E8C060] border-blue-300'
+                            ticket.priority === 'high' ? 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] border-[rgba(201,168,76,0.22)]' :
+                            ticket.priority === 'medium' ? 'bg-[rgba(201,168,76,0.04)] text-[#5A5040] border-[rgba(201,168,76,0.22)]' :
+                            'bg-[rgba(201,168,76,0.04)] text-[#E8C060] border-[rgba(201,168,76,0.22)]'
                           }`}>
                             {ticket.priority.toUpperCase()}
                           </span>
@@ -321,7 +321,7 @@ export default function CustomerSupportPage() {
                   <label className="block text-sm font-semibold text-[#C9A84C] mb-2">
                     What do you need help with?
                   </label>
-                  <select className="w-full px-4 py-3 border-2 border-[rgba(201,168,76,0.22)] rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                  <select className="w-full px-4 py-3 border-2 border-[rgba(201,168,76,0.22)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]">
                     <option>Select a category...</option>
                     <option>📅 Scheduling & Calendar</option>
                     <option>💰 Payroll</option>
@@ -342,7 +342,7 @@ export default function CustomerSupportPage() {
                   <input
                     type="text"
                     placeholder="Brief description of your issue"
-                    className="w-full px-4 py-3 border-2 border-[rgba(201,168,76,0.22)] rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    className="w-full px-4 py-3 border-2 border-[rgba(201,168,76,0.22)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                   />
                 </div>
 
@@ -353,7 +353,7 @@ export default function CustomerSupportPage() {
                   <textarea
                     rows={6}
                     placeholder="Please provide as much detail as possible..."
-                    className="w-full px-4 py-3 border-2 border-[rgba(201,168,76,0.22)] rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    className="w-full px-4 py-3 border-2 border-[rgba(201,168,76,0.22)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                   ></textarea>
                 </div>
 
@@ -362,7 +362,7 @@ export default function CustomerSupportPage() {
                     Priority
                   </label>
                   <div className="grid grid-cols-3 gap-4">
-                    <button type="button" className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-amber-500/40 transition-all text-left">
+                    <button type="button" className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-[rgba(201,168,76,0.45)] transition-all text-left">
                       <p className="font-semibold text-[#9E8F75]">Low</p>
                       <p className="text-xs text-[#9E8F75]">Response in 24 hours</p>
                     </button>
@@ -370,7 +370,7 @@ export default function CustomerSupportPage() {
                       <p className="font-semibold text-[#9E8F75]">Medium</p>
                       <p className="text-xs text-[#9E8F75]">Response in 4 hours</p>
                     </button>
-                    <button type="button" className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-amber-500/40 transition-all text-left">
+                    <button type="button" className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-[rgba(201,168,76,0.45)] transition-all text-left">
                       <p className="font-semibold text-[#9E8F75]">High</p>
                       <p className="text-xs text-[#9E8F75]">Response in 1 hour</p>
                     </button>
@@ -381,7 +381,7 @@ export default function CustomerSupportPage() {
                   <label className="block text-sm font-semibold text-[#C9A84C] mb-2">
                     Attachments (Optional)
                   </label>
-                  <div className="border-2 border-dashed border-[rgba(201,168,76,0.22)] rounded-lg p-8 text-center hover:border-amber-500/40 transition-all cursor-pointer">
+                  <div className="border-2 border-dashed border-[rgba(201,168,76,0.22)] rounded-lg p-8 text-center hover:border-[rgba(201,168,76,0.45)] transition-all cursor-pointer">
                     <FileText className="w-12 h-12 text-[#9E8F75] mx-auto mb-2" />
                     <p className="text-[#9E8F75] mb-1">Drag & drop files or click to browse</p>
                     <p className="text-xs text-[#9E8F75]">Screenshots, error messages, or documents</p>
@@ -401,7 +401,7 @@ export default function CustomerSupportPage() {
             {/* Alternative Contact Methods */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-[#110F0B] rounded shadow-md p-6 text-center">
-                <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 bg-[rgba(201,168,76,0.04)] text-green-400 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Phone className="w-6 h-6" />
                 </div>
                 <h3 className="font-bold text-[#9E8F75] mb-1">Phone Support</h3>
@@ -410,7 +410,7 @@ export default function CustomerSupportPage() {
               </div>
 
               <div className="bg-[#110F0B] rounded shadow-md p-6 text-center">
-                <div className="w-12 h-12 bg-blue-100 text-amber-400 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 bg-[rgba(201,168,76,0.04)] text-amber-400 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Mail className="w-6 h-6" />
                 </div>
                 <h3 className="font-bold text-[#9E8F75] mb-1">Email Support</h3>
@@ -419,7 +419,7 @@ export default function CustomerSupportPage() {
               </div>
 
               <div className="bg-[#110F0B] rounded shadow-md p-6 text-center">
-                <div className="w-12 h-12 bg-purple-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 bg-[rgba(201,168,76,0.04)] text-amber-600 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Video className="w-6 h-6" />
                 </div>
                 <h3 className="font-bold text-[#9E8F75] mb-1">Video Call</h3>

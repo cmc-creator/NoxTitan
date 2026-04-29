@@ -222,9 +222,9 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
   const getLevelColor = (levelName: string) => {
     switch(levelName) {
       case "Grandmaster": return "text-[#C9A84C] bg-amber-950";
-      case "Master": return "text-yellow-300 bg-yellow-900/50";
-      case "Expert": return "text-amber-400 bg-blue-900/50";
-      case "Journeyman": return "text-green-300 bg-green-900/50";
+      case "Master": return "text-[#F0EBE0] bg-[rgba(201,168,76,0.06)]";
+      case "Expert": return "text-amber-400 bg-[rgba(201,168,76,0.06)]";
+      case "Journeyman": return "text-[#F0EBE0] bg-[rgba(201,168,76,0.06)]";
       case "Apprentice": return "text-[#9E8F75] bg-[rgba(201,168,76,0.08)]/50";
       default: return "text-[#9E8F75] bg-[rgba(201,168,76,0.06)]/50";
     }
@@ -674,7 +674,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             <User className="w-5 h-5" />
             Swap Requests
             {shiftSwapRequests.filter(r => r.status === 'pending').length > 0 && (
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center animate-pulse">
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                 {shiftSwapRequests.filter(r => r.status === 'pending').length}
               </span>
             )}
@@ -686,7 +686,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             <Clock className="w-5 h-5" />
             Time Off
             {timeOffRequests.filter(r => r.status === 'pending').length > 0 && (
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center animate-pulse">
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                 {timeOffRequests.filter(r => r.status === 'pending').length}
               </span>
             )}
@@ -700,7 +700,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             </svg>
             PTO Donations
             {ptoDonationRequests.filter(r => r.status === 'active').length > 0 && (
-              <span className="absolute -top-1 -right-1 bg-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center animate-pulse">
+              <span className="absolute -top-1 -right-1 bg-[rgba(201,168,76,0.12)] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                 {ptoDonationRequests.filter(r => r.status === 'active').length}
               </span>
             )}
@@ -736,7 +736,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             <AlertTriangle className="w-4 h-4" />
             Conflicts
             {detectedConflicts.length > 0 && (
-              <span className="absolute -top-1 -right-1 bg-yellow-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center animate-bounce">
+              <span className="absolute -top-1 -right-1 bg-[rgba(201,168,76,0.12)] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                 {detectedConflicts.length}
               </span>
             )}
@@ -791,23 +791,23 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* Conflict Alerts */}
       {conflicts.length > 0 && (
-        <div className="mb-4 bg-red-900/20 border-2 border-red-500 rounded p-4">
+        <div className="mb-4 bg-[rgba(201,168,76,0.06)] border-2 border-[rgba(201,168,76,0.22)] rounded p-4">
           <div className="flex items-start gap-3">
             <AlertTriangle className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
             <div className="flex-1">
-              <h3 className="font-bold text-red-300 mb-2">{conflicts.length} Schedule Conflict{conflicts.length > 1 ? 's' : ''} Detected</h3>
+              <h3 className="font-bold text-[#F0EBE0] mb-2">{conflicts.length} Schedule Conflict{conflicts.length > 1 ? 's' : ''} Detected</h3>
               <div className="space-y-1">
                 {conflicts.slice(0, 3).map((conflict, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-sm text-red-200">
-                    <span className={`w-2 h-2 rounded-full ${conflict.severity === 'error' ? 'bg-red-500' : 'bg-yellow-500'}`}></span>
+                  <div key={idx} className="flex items-center gap-2 text-sm text-[#F0EBE0]">
+                    <span className={`w-2 h-2 rounded-full ${conflict.severity === 'error' ? 'bg-red-500' : 'bg-[rgba(201,168,76,0.12)]'}`}></span>
                     {conflict.message}
                   </div>
                 ))}
                 {conflicts.length > 3 && (
-                  <div className="text-xs text-red-300 mt-2">+ {conflicts.length - 3} more conflicts</div>
+                  <div className="text-xs text-[#F0EBE0] mt-2">+ {conflicts.length - 3} more conflicts</div>
                 )}
               </div>
-              <button className="mt-3 px-3 py-1 bg-red-600 hover:bg-red-500 text-white text-sm font-semibold rounded-lg transition">
+              <button className="mt-3 px-3 py-1 bg-red-500 hover:bg-red-500 text-white text-sm font-semibold rounded-lg transition">
                 Fix All Issues
               </button>
             </div>
@@ -817,12 +817,12 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* HR Integration Alerts */}
       {showHRAlerts && hrAlerts.length > 0 && (
-        <div className="mb-4 bg-[rgba(201,168,76,0.08)] border border-amber-500/40/30 rounded-lg p-4">
+        <div className="mb-4 bg-[rgba(201,168,76,0.08)] border border-[rgba(201,168,76,0.22)] rounded-lg p-4">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <Shield className="w-5 h-5 text-amber-400" />
-              <h3 className="text-sm font-bold text-blue-200">HR Integration • Active Alerts</h3>
-              <div className="w-2 h-2 bg-amber-600 rounded-full animate-pulse" />
+              <h3 className="text-sm font-bold text-[#9E8F75]">HR Integration • Active Alerts</h3>
+              <div className="w-2 h-2 bg-amber-600 rounded-full" />
             </div>
             <button
               onClick={() => setShowHRAlerts(false)}
@@ -835,9 +835,9 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           <div className="grid gap-2">
             {hrAlerts.map((alert: any, idx: number) => {
               const severityColors: any = {
-                high: 'border-red-500/50 bg-red-950/30',
-                medium: 'border-yellow-500/50 bg-yellow-950/30',
-                info: 'border-amber-500/40/50 bg-blue-950/30'
+                high: 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]',
+                medium: 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]',
+                info: 'border-amber-500/40/50 bg-[rgba(201,168,76,0.06)]'
               };
               
               const severityIcons: any = {
@@ -854,8 +854,8 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                         <span className="text-lg">{severityIcons[alert.severity]}</span>
                         <div className="font-semibold text-white text-sm">{alert.employee}</div>
                         <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${
-                          alert.type === 'certification-expired' ? 'bg-red-600 text-white' :
-                          alert.type === 'certification-expiring' ? 'bg-yellow-600 text-black' :
+                          alert.type === 'certification-expired' ? 'bg-red-500 text-white' :
+                          alert.type === 'certification-expiring' ? 'bg-[rgba(201,168,76,0.12)] text-black' :
                           'bg-amber-600 text-white'
                         }`}>
                           {alert.type.replace('-', ' ')}
@@ -906,7 +906,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             {/* Scheduler → Payroll */}
             <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg p-3">
               <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 bg-[rgba(201,168,76,0.15)] rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-[rgba(201,168,76,0.15)] rounded-full" />
                 <div className="text-xs font-bold text-[#9E8F75]">Scheduler → Payroll</div>
               </div>
               <div className="text-[10px] text-[#9E8F75] mb-2">Shift hours, differentials, bonuses flowing to payroll in real-time</div>
@@ -923,22 +923,22 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             </div>
             
             {/* Timeclock → Scheduler */}
-            <div className="bg-blue-950/40 border border-amber-500/40/30 rounded-lg p-3">
+            <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg p-3">
               <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 bg-amber-600 rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-amber-600 rounded-full" />
                 <div className="text-xs font-bold text-amber-400">Timeclock → Scheduler</div>
               </div>
               <div className="text-[10px] text-[#9E8F75] mb-2">Live attendance tracking with late/no-show alerts</div>
               <div className="flex gap-2">
-                <div className="flex-1 bg-blue-900/30 rounded px-2 py-1">
+                <div className="flex-1 bg-[rgba(201,168,76,0.06)] rounded px-2 py-1">
                   <div className="text-[9px] text-green-400 font-semibold">✓ On Time</div>
                   <div className="text-xs text-white font-bold">3</div>
                 </div>
-                <div className="flex-1 bg-blue-900/30 rounded px-2 py-1">
-                  <div className="text-[9px] text-yellow-400 font-semibold">⚠ Late</div>
+                <div className="flex-1 bg-[rgba(201,168,76,0.06)] rounded px-2 py-1">
+                  <div className="text-[9px] text-[#C9A84C] font-semibold">⚠ Late</div>
                   <div className="text-xs text-white font-bold">1</div>
                 </div>
-                <div className="flex-1 bg-blue-900/30 rounded px-2 py-1">
+                <div className="flex-1 bg-[rgba(201,168,76,0.06)] rounded px-2 py-1">
                   <div className="text-[9px] text-red-400 font-semibold">✕ No Show</div>
                   <div className="text-xs text-white font-bold">1</div>
                 </div>
@@ -946,18 +946,18 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             </div>
             
             {/* HR → Scheduler */}
-            <div className="bg-indigo-950/40 border border-amber-500/40/30 rounded-lg p-3">
+            <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg p-3">
               <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-amber-500 rounded-full" />
                 <div className="text-xs font-bold text-amber-400">HR → Scheduler</div>
               </div>
               <div className="text-[10px] text-[#9E8F75] mb-2">Certifications, time-off, availability blocking shifts</div>
               <div className="flex gap-2">
-                <div className="flex-1 bg-indigo-900/30 rounded px-2 py-1">
+                <div className="flex-1 bg-[rgba(201,168,76,0.06)] rounded px-2 py-1">
                   <div className="text-[9px] text-amber-400 font-semibold">Alerts</div>
                   <div className="text-xs text-white font-bold">{hrAlerts.length}</div>
                 </div>
-                <div className="flex-1 bg-indigo-900/30 rounded px-2 py-1">
+                <div className="flex-1 bg-[rgba(201,168,76,0.06)] rounded px-2 py-1">
                   <div className="text-[9px] text-red-400 font-semibold">Expired</div>
                   <div className="text-xs text-white font-bold">{hrAlerts.filter((a: any) => a.type === 'certification-expired').length}</div>
                 </div>
@@ -967,7 +967,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             {/* Guild → Payroll */}
             <div className="bg-amber-950/40 border border-amber-500/30 rounded-lg p-3">
               <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-amber-500 rounded-full" />
                 <div className="text-xs font-bold text-[#C9A84C]">Guild → Payroll</div>
               </div>
               <div className="text-[10px] text-[#9E8F75] mb-2">Performance bonuses and achievement rewards</div>
@@ -986,7 +986,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             {/* Oracle → All Systems */}
             <div className="bg-[rgba(201,168,76,0.06)] border border-amber-500/40 rounded-lg p-3">
               <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-amber-400 rounded-full" />
                 <div className="text-xs font-bold text-[#C9A84C]">Oracle → All Systems</div>
               </div>
               <div className="text-[10px] text-[#9E8F75] mb-2">AI predictions influencing every decision</div>
@@ -1003,18 +1003,18 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             </div>
             
             {/* Marketplace → Scheduler */}
-            <div className="bg-rose-950/40 border border-rose-500/30 rounded-lg p-3">
+            <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg p-3">
               <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 bg-rose-500 rounded-full animate-pulse" />
-                <div className="text-xs font-bold text-rose-300">Marketplace → Scheduler</div>
+                <div className="w-2 h-2 bg-[rgba(201,168,76,0.12)] rounded-full" />
+                <div className="text-xs font-bold text-[#9E8F75]">Marketplace → Scheduler</div>
               </div>
               <div className="text-[10px] text-[#9E8F75] mb-2">Open shifts filled via gamified bonus system</div>
               <div className="flex gap-2">
-                <div className="flex-1 bg-rose-900/30 rounded px-2 py-1">
-                  <div className="text-[9px] text-rose-400 font-semibold">Open</div>
+                <div className="flex-1 bg-[rgba(201,168,76,0.06)] rounded px-2 py-1">
+                  <div className="text-[9px] text-[#9E8F75] font-semibold">Open</div>
                   <div className="text-xs text-white font-bold">1</div>
                 </div>
-                <div className="flex-1 bg-rose-900/30 rounded px-2 py-1">
+                <div className="flex-1 bg-[rgba(201,168,76,0.06)] rounded px-2 py-1">
                   <div className="text-[9px] text-green-400 font-semibold">Filled</div>
                   <div className="text-xs text-white font-bold">12</div>
                 </div>
@@ -1033,12 +1033,12 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* Oracle AI Insight Panel */}
       {showOraclePanel && (
-        <div className="mb-4 bg-gradient-to-br from-amber-900/40 via-stone-900/40 to-amber-900/40 border-2 border-amber-500/50 rounded p-4 shadow-2xl">
+        <div className="mb-4 bg-[#110F0B]/40 border-2 border-amber-500/50 rounded p-4 shadow-2xl">
           <div className="flex items-start justify-between mb-3">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <Sparkles className="w-6 h-6 text-[#C9A84C] animate-pulse" />
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <Sparkles className="w-6 h-6 text-[#C9A84C]" />
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full"></div>
               </div>
               <div>
                 <h3 className="font-bold text-white text-lg">Oracle AI • Live Insights</h3>
@@ -1058,9 +1058,9 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {oracleInsights.map((insight, idx) => {
               const severityColors = {
-                'high': 'border-red-500/50 bg-red-900/20',
-                'medium': 'border-yellow-500/50 bg-yellow-900/20',
-                'info': 'border-amber-500/40/50 bg-blue-900/20'
+                'high': 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]',
+                'medium': 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]',
+                'info': 'border-amber-500/40/50 bg-[rgba(201,168,76,0.06)]'
               };
               const severityIcons = {
                 'high': '🔴',
@@ -1068,7 +1068,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                 'info': '🔵'
               };
               return (
-                <div key={idx} className={`rounded-lg border-2 p-3 ${severityColors[insight.severity as keyof typeof severityColors]} hover:scale-[1.02] transition`}>
+                <div key={idx} className={`rounded-lg border-2 p-3 ${severityColors[insight.severity as keyof typeof severityColors]} transition`}>
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex items-center gap-2">
                       <span className="text-lg">{severityIcons[insight.severity as keyof typeof severityIcons]}</span>
@@ -1099,7 +1099,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           onClick={() => setViewMode('grid')}
           className={`px-4 py-2 rounded-lg font-semibold transition-all border-2 ${
             viewMode === 'grid' 
-              ? 'bg-[rgba(201,168,76,0.08)] text-white shadow-[0_0_15px_rgba(168,85,247,0.4)] border-amber-500' 
+              ? 'bg-[rgba(201,168,76,0.08)] text-white shadow-[rgba(201,168,76,0.2)] border-amber-500' 
               : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[rgba(201,168,76,0.04)] border-[rgba(201,168,76,0.22)]'
           }`}
         >
@@ -1109,7 +1109,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           onClick={() => setViewMode('calendar')}
           className={`px-4 py-2 rounded-lg font-semibold transition-all border-2 ${
             viewMode === 'calendar' 
-              ? 'bg-[rgba(201,168,76,0.08)] text-white shadow-[0_0_15px_rgba(168,85,247,0.4)] border-amber-500' 
+              ? 'bg-[rgba(201,168,76,0.08)] text-white shadow-[rgba(201,168,76,0.2)] border-amber-500' 
               : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[rgba(201,168,76,0.04)] border-[rgba(201,168,76,0.22)]'
           }`}
         >
@@ -1285,25 +1285,25 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* Conflict Detection Panel */}
       {showConflictPanel && detectedConflicts.length > 0 && (
-        <div className="mb-4 bg-[rgba(201,168,76,0.06)] border-2 border-red-500/50 rounded p-4 shadow-xl">
+        <div className="mb-4 bg-[rgba(201,168,76,0.06)] border-2 border-[rgba(201,168,76,0.22)] rounded p-4 shadow-xl">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
-              <AlertTriangle className="w-5 h-5 text-red-400 animate-pulse" />
-              <h3 className="font-bold text-red-200">Schedule Conflicts Detected</h3>
+              <AlertTriangle className="w-5 h-5 text-red-400" />
+              <h3 className="font-bold text-[#F0EBE0]">Schedule Conflicts Detected</h3>
             </div>
-            <button onClick={() => setShowConflictPanel(false)} className="text-red-300 hover:text-white">×</button>
+            <button onClick={() => setShowConflictPanel(false)} className="text-[#F0EBE0] hover:text-white">×</button>
           </div>
           <div className="space-y-2">
             {detectedConflicts.map((conflict, idx) => (
               <div key={idx} className={`p-3 rounded-lg border ${
-                conflict.severity === 'high' ? 'bg-red-900/30 border-red-500/50' :
-                conflict.severity === 'medium' ? 'bg-yellow-900/30 border-yellow-500/50' :
-                'bg-blue-900/30 border-amber-500/40/50'
+                conflict.severity === 'high' ? 'bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]' :
+                conflict.severity === 'medium' ? 'bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]' :
+                'bg-[rgba(201,168,76,0.06)] border-amber-500/40/50'
               }`}>
                 <div className="flex items-start gap-2">
                   <div className={`w-2 h-2 rounded-full mt-1.5 ${
-                    conflict.severity === 'high' ? 'bg-red-500 animate-pulse' :
-                    conflict.severity === 'medium' ? 'bg-yellow-500' :
+                    conflict.severity === 'high' ? 'bg-red-500' :
+                    conflict.severity === 'medium' ? 'bg-[rgba(201,168,76,0.12)]' :
                     'bg-amber-600'
                   }`} />
                   <div className="flex-1">
@@ -1339,16 +1339,16 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       )}
 
       {/* Weather Widget */}
-      <div className="mb-4 bg-[rgba(201,168,76,0.06)] border-2 border-sky-500/50 rounded p-4">
+      <div className="mb-4 bg-[rgba(201,168,76,0.06)] border-2 border-[rgba(201,168,76,0.22)] rounded p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="text-4xl">{weatherData.icon}</div>
             <div>
               <div className="text-2xl font-bold text-white">{weatherData.temp}°F</div>
-              <div className="text-sm text-sky-200">{weatherData.condition}</div>
+              <div className="text-sm text-[#9E8F75]">{weatherData.condition}</div>
             </div>
           </div>
-          <div className="text-xs text-sky-300">Next 3 days: Sunny</div>
+          <div className="text-xs text-[#9E8F75]">Next 3 days: Sunny</div>
         </div>
       </div>
 
@@ -1361,10 +1361,10 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
         <div className="grid grid-cols-5 gap-2">
           {Object.entries(coverageHeatmap).map(([day, data]) => (
             <div key={day} className={`p-3 rounded-lg text-center ${
-              data.percentage < 75 ? 'bg-red-900/40 border border-red-500/50' :
-              data.percentage < 90 ? 'bg-yellow-900/40 border border-yellow-500/50' :
-              data.percentage < 105 ? 'bg-green-900/40 border border-green-500/50' :
-              'bg-blue-900/40 border border-amber-500/40/50'
+              data.percentage < 75 ? 'bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)]' :
+              data.percentage < 90 ? 'bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)]' :
+              data.percentage < 105 ? 'bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)]' :
+              'bg-[rgba(201,168,76,0.06)] border border-amber-500/40/50'
             }`}>
               <div className="text-xs text-[#9E8F75]">{day}</div>
               <div className="text-lg font-bold text-white">{data.percentage}%</div>
@@ -1385,7 +1385,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   {notification.employeeName} clocked {notification.action}
                 </div>
               </div>
-              <div className="text-xs text-green-100 mt-1">
+              <div className="text-xs text-[#F0EBE0] mt-1">
                 {Math.floor((Date.now() - notification.timestamp.getTime()) / 60000)} min ago
               </div>
             </div>
@@ -1397,10 +1397,10 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {showAIScheduler && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowAIScheduler(false)}>
           <div className="bg-[rgba(201,168,76,0.08)] rounded shadow-2xl border-2 border-amber-500/50 max-w-3xl w-full" onClick={(e) => e.stopPropagation()}>
-            <div className="bg-gradient-to-r from-amber-900 via-[#070604] to-[#070604] p-6 border-b-2 border-amber-500">
+            <div className="bg-[#110F0B] p-6 border-b-2 border-amber-500">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <Sparkles className="w-7 h-7 text-yellow-300 animate-pulse" />
+                  <Sparkles className="w-7 h-7 text-[#F0EBE0]" />
                   <div>
                     <h2 className="text-2xl font-bold text-white text-pop-strong">Oracle AI Auto-Scheduler</h2>
                     <p className="text-[#F0EBE0]/70 text-sm">Intelligent scheduling powered by predictive analytics</p>
@@ -1417,7 +1417,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-4 border border-amber-500/30">
                   <div className="flex items-center gap-2 mb-2">
-                    <Zap className="w-5 h-5 text-yellow-400" />
+                    <Zap className="w-5 h-5 text-[#C9A84C]" />
                     <h3 className="font-bold text-[#F0EBE0]/70">Optimization Goals</h3>
                   </div>
                   <div className="space-y-2">
@@ -1454,7 +1454,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                       <span>Marcus Chen performs best on night shifts (data shows 15% higher efficiency)</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <XCircle className="w-4 h-4 text-yellow-400 mt-0.5" />
+                      <XCircle className="w-4 h-4 text-[#C9A84C] mt-0.5" />
                       <span>Wednesday understaffed - suggest adding 2 more employees</span>
                     </div>
                   </div>
@@ -1514,15 +1514,15 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             <div className="p-6">
               {/* Posted Bonuses Section */}
               {marketplacePostedShifts.length > 0 && (
-                <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 mb-6 border-2 border-green-500/50">
+                <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 mb-6 border-2 border-[rgba(201,168,76,0.22)]">
                   <div className="flex items-center gap-2 mb-3">
                     <CheckCircle className="w-5 h-5 text-green-400" />
-                    <h3 className="font-bold text-green-200">Your Posted Bonus Shifts</h3>
-                    <span className="ml-auto text-xs text-green-300">{marketplacePostedShifts.length} active</span>
+                    <h3 className="font-bold text-[#F0EBE0]">Your Posted Bonus Shifts</h3>
+                    <span className="ml-auto text-xs text-[#F0EBE0]">{marketplacePostedShifts.length} active</span>
                   </div>
                   <div className="space-y-2">
                     {marketplacePostedShifts.map((posting, index) => (
-                      <div key={index} className="bg-[rgba(201,168,76,0.06)]/60 rounded-lg p-3 border border-green-500/30">
+                      <div key={index} className="bg-[rgba(201,168,76,0.06)]/60 rounded-lg p-3 border border-[rgba(201,168,76,0.22)]">
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
                             <div className="font-bold text-white">{posting.shift.title}</div>
@@ -1535,7 +1535,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                           </div>
                           <div className="text-right">
                             <div className="font-bold text-green-400 text-lg">${posting.bonus}</div>
-                            <div className="text-xs text-green-300">bonus</div>
+                            <div className="text-xs text-[#F0EBE0]">bonus</div>
                           </div>
                         </div>
                       </div>
@@ -1545,20 +1545,20 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
               )}
               
               {/* Bonus Leaderboard */}
-              <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 mb-6 border-2 border-yellow-500/50">
+              <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 mb-6 border-2 border-[rgba(201,168,76,0.22)]">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
-                    <Trophy className="w-5 h-5 text-yellow-400" />
-                    <h3 className="font-bold text-yellow-200">This Week's Bonus Leaders</h3>
+                    <Trophy className="w-5 h-5 text-[#C9A84C]" />
+                    <h3 className="font-bold text-[#F0EBE0]">This Week's Bonus Leaders</h3>
                   </div>
-                  <span className="text-xs text-yellow-300">Resets Monday 12:00 AM</span>
+                  <span className="text-xs text-[#F0EBE0]">Resets Monday 12:00 AM</span>
                 </div>
                 <div className="grid grid-cols-3 gap-3">
-                  <div className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-3 border-2 border-yellow-500">
+                  <div className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-3 border-2 border-[rgba(201,168,76,0.22)]">
                     <div className="text-center">
                       <div className="text-2xl mb-1">🥇</div>
                       <div className="font-bold text-white text-sm">Jennifer T.</div>
-                      <div className="text-yellow-400 font-bold">$450</div>
+                      <div className="text-[#C9A84C] font-bold">$450</div>
                       <div className="text-xs text-[#9E8F75]">7 shifts claimed</div>
                     </div>
                   </div>
@@ -1601,13 +1601,13 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   { shift: 'Holiday Coverage - Nursing', date: 'Jan 20 (MLK Day)', time: '7:00 AM - 7:00 PM', hours: 12, bonus: 250, urgency: 'PREMIUM', xp: 300, posted: 'Management', timeAgo: '1 day ago', claims: 8 },
                 ].map((item, i) => {
                   const urgencyColors = {
-                    'URGENT': 'bg-red-600 animate-pulse',
-                    'HIGH': 'bg-red-900/60 border border-red-700/40',
-                    'MEDIUM': 'bg-yellow-600',
-                    'PREMIUM': 'bg-amber-600 animate-pulse'
+                    'URGENT': 'bg-red-500',
+                    'HIGH': 'bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)]',
+                    'MEDIUM': 'bg-[rgba(201,168,76,0.12)]',
+                    'PREMIUM': 'bg-amber-600'
                   };
                   return (
-                    <div key={i} className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-4 border-2 border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition hover:scale-[1.02]">
+                    <div key={i} className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-4 border-2 border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition">
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-2">
@@ -1622,9 +1622,9 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                             <span>⏱️ {item.hours} hours</span>
                           </div>
                           <div className="flex items-center gap-3 mb-2">
-                            <div className="flex items-center gap-1 bg-green-900/50 px-3 py-1 rounded-full border border-green-500">
+                            <div className="flex items-center gap-1 bg-[rgba(201,168,76,0.06)] px-3 py-1 rounded-full border border-[rgba(201,168,76,0.22)]">
                               <DollarSign className="w-4 h-4 text-green-400" />
-                              <span className="text-green-300 font-bold text-lg">${item.bonus}</span>
+                              <span className="text-[#F0EBE0] font-bold text-lg">${item.bonus}</span>
                               <span className="text-green-400 text-xs font-semibold">BONUS</span>
                             </div>
                             <div className="flex items-center gap-1 bg-amber-900/50 px-3 py-1 rounded-full border border-amber-500">
@@ -1649,9 +1649,9 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                         </div>
                       </div>
                       {item.urgency === 'URGENT' && (
-                        <div className="mt-3 bg-red-900/30 border border-red-500 rounded p-2 flex items-center gap-2">
-                          <Clock className="w-4 h-4 text-red-400 animate-pulse" />
-                          <span className="text-red-300 text-xs font-bold">⚡ STARTS IN 3 HOURS - Double XP if claimed within 1 hour!</span>
+                        <div className="mt-3 bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-2 flex items-center gap-2">
+                          <Clock className="w-4 h-4 text-red-400" />
+                          <span className="text-[#F0EBE0] text-xs font-bold">⚡ STARTS IN 3 HOURS - Double XP if claimed within 1 hour!</span>
                         </div>
                       )}
                     </div>
@@ -1666,17 +1666,17 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {/* Quick Bonus Offer Modal */}
       {showBonusOffer && selectedShiftForBonus && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowBonusOffer(false)}>
-          <div className="bg-[rgba(201,168,76,0.08)] rounded shadow-2xl border-2 border-green-500/50 max-w-md w-full" onClick={(e) => e.stopPropagation()}>
-            <div className="bg-[rgba(201,168,76,0.08)] p-6 border-b-2 border-green-500">
+          <div className="bg-[rgba(201,168,76,0.08)] rounded shadow-2xl border-2 border-[rgba(201,168,76,0.22)] max-w-md w-full" onClick={(e) => e.stopPropagation()}>
+            <div className="bg-[rgba(201,168,76,0.08)] p-6 border-b-2 border-[rgba(201,168,76,0.22)]">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <DollarSign className="w-7 h-7 text-green-300" />
+                  <DollarSign className="w-7 h-7 text-[#F0EBE0]" />
                   <div>
                     <h2 className="text-xl font-bold text-white">Offer Shift Bonus</h2>
-                    <p className="text-green-200 text-sm">Post to marketplace with bonus</p>
+                    <p className="text-[#F0EBE0] text-sm">Post to marketplace with bonus</p>
                   </div>
                 </div>
-                <button onClick={() => setShowBonusOffer(false)} className="text-white hover:text-green-200">
+                <button onClick={() => setShowBonusOffer(false)} className="text-white hover:text-[#F0EBE0]">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -1685,7 +1685,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             </div>
             <div className="p-6 space-y-4">
               {/* Shift Details */}
-              <div className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-4 border border-green-500/30">
+              <div className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-4 border border-[rgba(201,168,76,0.22)]">
                 <h3 className="font-bold text-white mb-2">{selectedShiftForBonus.title}</h3>
                 <div className="space-y-1 text-sm text-[#9E8F75]">
                   <div>👤 {selectedShiftForBonus.employeeName}</div>
@@ -1697,7 +1697,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
               {/* Quick Bonus Presets */}
               <div>
-                <label className="block text-sm font-bold text-green-200 mb-2">Select Bonus Amount</label>
+                <label className="block text-sm font-bold text-[#F0EBE0] mb-2">Select Bonus Amount</label>
                 <div className="grid grid-cols-2 gap-3">
                   {[
                     { amount: 50, label: 'Standard', urgency: 'MEDIUM' },
@@ -1707,7 +1707,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   ].map((preset) => (
                     <button
                       key={preset.amount}
-                      className="bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] border-2 border-green-500/30 hover:border-green-500 rounded-lg p-3 transition group"
+                      className="bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] border-2 border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] rounded-lg p-3 transition group"
                     >
                       <div className="text-2xl font-bold text-green-400">${preset.amount}</div>
                       <div className="text-xs text-[#9E8F75]">{preset.label}</div>
@@ -1721,7 +1721,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                     <input 
                       type="number" 
                       placeholder="Enter amount"
-                      className="flex-1 bg-[rgba(201,168,76,0.04)] border border-green-500/30 rounded-lg px-3 py-2 text-white focus:ring-2 focus:ring-green-500 outline-none"
+                      className="flex-1 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg px-3 py-2 text-white focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] outline-none"
                     />
                   </div>
                 </div>
@@ -1740,10 +1740,10 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
               {/* Notes */}
               <div>
-                <label className="block text-sm font-bold text-green-200 mb-1">Notes (Optional)</label>
+                <label className="block text-sm font-bold text-[#F0EBE0] mb-1">Notes (Optional)</label>
                 <textarea 
                   placeholder="Add details about why this shift is available..."
-                  className="w-full bg-[rgba(201,168,76,0.04)] border border-green-500/30 rounded-lg px-3 py-2 text-white text-sm focus:ring-2 focus:ring-green-500 outline-none h-20"
+                  className="w-full bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg px-3 py-2 text-white text-sm focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] outline-none h-20"
                 />
               </div>
 
@@ -1847,7 +1847,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           <div>
             <label className="block text-sm font-semibold text-[#F0EBE0]/70 mb-1">Department</label>
             <select
-              className="border border-amber-500/50 rounded px-3 py-2 bg-[rgba(201,168,76,0.04)] text-white focus:ring-2 focus:ring-amber-500 outline-none"
+              className="border border-amber-500/50 rounded px-3 py-2 bg-[rgba(201,168,76,0.04)] text-white focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] outline-none"
               value={selectedDepartment}
               onChange={e => { setSelectedDepartment(e.target.value); setCurrentPage(1); }}
             >
@@ -1859,7 +1859,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           <div>
             <label className="block text-sm font-semibold text-[#F0EBE0]/70 mb-1">Shift</label>
             <select
-              className="border border-amber-500/50 rounded px-3 py-2 bg-[rgba(201,168,76,0.04)] text-white focus:ring-2 focus:ring-amber-500 outline-none"
+              className="border border-amber-500/50 rounded px-3 py-2 bg-[rgba(201,168,76,0.04)] text-white focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] outline-none"
               value={selectedShift}
               onChange={e => { setSelectedShift(e.target.value); setCurrentPage(1); }}
             >
@@ -1872,7 +1872,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             <label className="block text-sm font-semibold text-[#F0EBE0]/70 mb-1">Search Employee</label>
             <input
               type="text"
-              className="border border-amber-500/50 rounded px-3 py-2 bg-[rgba(201,168,76,0.04)] text-white placeholder-stone-600 focus:ring-2 focus:ring-amber-500 outline-none"
+              className="border border-amber-500/50 rounded px-3 py-2 bg-[rgba(201,168,76,0.04)] text-white placeholder-stone-600 focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] outline-none"
               placeholder="Type a name..."
               value={employeeSearch}
               onChange={e => { setEmployeeSearch(e.target.value); setCurrentPage(1); }}
@@ -1881,7 +1881,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
           <div>
             <label className="block text-sm font-semibold text-[#F0EBE0]/70 mb-1">Show Per Page</label>
             <select
-              className="border border-amber-500/50 rounded px-3 py-2 bg-[rgba(201,168,76,0.04)] text-white focus:ring-2 focus:ring-amber-500 outline-none"
+              className="border border-amber-500/50 rounded px-3 py-2 bg-[rgba(201,168,76,0.04)] text-white focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] outline-none"
               value={employeesPerPage}
               onChange={e => { setEmployeesPerPage(Number(e.target.value)); setCurrentPage(1); }}
             >
@@ -1973,12 +1973,12 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                               return (
                                 <div
                                   key={idx}
-                                  className="w-full p-3 text-white font-bold animate-pulse"
+                                  className="w-full p-3 text-white font-bold"
                                   style={{ background: 'rgba(48,10,10,0.72)', border: '2px solid rgba(170,140,40,0.55)', borderRadius: '4px', boxShadow: '0 0 16px rgba(201,168,76,0.12)' }}
                                 >
                                   <div className="flex flex-col items-center gap-1">
                                     <div className="flex items-center gap-1" style={{ color: '#C9A84C' }}>
-                                      <ShoppingBag className="w-4 h-4 animate-bounce" />
+                                      <ShoppingBag className="w-4 h-4" />
                                       <span className="text-xs uppercase">BONUS POSTED</span>
                                     </div>
                                     <div className="flex items-center gap-1 text-lg">
@@ -2001,7 +2001,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                                         // Remove from marketplace postings
                                         setMarketplacePostedShifts(prev => prev.filter(p => p.shift.id !== shift.id));
                                       }}
-                                      className="mt-2 px-3 py-1 bg-green-600 hover:bg-green-500 rounded text-xs transition-all"
+                                      className="mt-2 px-3 py-1 bg-green-500 hover:bg-green-500 rounded text-xs transition-all"
                                     >
                                       ✓ Simulate Claim
                                     </button>
@@ -2018,10 +2018,10 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                                   setSelectedShiftForBonus(shift);
                                   setShowBonusOffer(true);
                                 }}
-                                className="w-full p-3 rounded-lg bg-[rgba(201,168,76,0.08)] border-2 border-red-500 text-white font-bold shadow-lg transition-all cursor-pointer animate-pulse"
+                                className="w-full p-3 rounded-lg bg-[rgba(201,168,76,0.08)] border-2 border-[rgba(201,168,76,0.22)] text-white font-bold shadow-lg transition-all cursor-pointer"
                               >
                                 <div className="flex flex-col items-center gap-1">
-                                  <div className="flex items-center gap-1 text-yellow-300">
+                                  <div className="flex items-center gap-1 text-[#F0EBE0]">
                                     <AlertTriangle className="w-4 h-4" />
                                     <span className="text-xs uppercase">NEEDS COVERAGE</span>
                                   </div>
@@ -2029,7 +2029,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                                     <DollarSign className="w-5 h-5" />
                                     <span>OFFER BONUS?</span>
                                   </div>
-                                  <div className="text-[8px] text-red-200 opacity-75">(Optional)</div>
+                                  <div className="text-[8px] text-[#F0EBE0] opacity-75">(Optional)</div>
                                 </div>
                               </button>
                             );
@@ -2070,10 +2070,10 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                                       <div className="w-3 h-3 bg-green-500 rounded-full border-2 border-[rgba(201,168,76,0.22)]" title="Clocked in on time" />
                                     )}
                                     {timeclockData[shift.employeeId].status === 'late' && (
-                                      <div className="w-3 h-3 bg-yellow-500 rounded-full border-2 border-[rgba(201,168,76,0.22)] animate-pulse" title="Clocked in late" />
+                                      <div className="w-3 h-3 bg-[rgba(201,168,76,0.12)] rounded-full border-2 border-[rgba(201,168,76,0.22)]" title="Clocked in late" />
                                     )}
                                     {timeclockData[shift.employeeId].status === 'no-show' && (
-                                      <div className="w-3 h-3 bg-red-500 rounded-full border-2 border-[rgba(201,168,76,0.22)] animate-pulse" title="No show - not clocked in" />
+                                      <div className="w-3 h-3 bg-red-500 rounded-full border-2 border-[rgba(201,168,76,0.22)]" title="No show - not clocked in" />
                                     )}
                                   </div>
                                 )}
@@ -2086,7 +2086,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                                 )}
                                 <div className="flex-1 overflow-hidden">
                                   <div className="flex items-center gap-1">
-                                    {isStar && <span className="text-yellow-300 animate-pulse">⭐</span>}
+                                    {isStar && <span className="text-[#F0EBE0]">⭐</span>}
                                     <div className="truncate font-bold">{shift.employeeName}</div>
                                     {guildData && (
                                       <span className={`px-1.5 py-0.5 rounded text-[9px] font-black border ${getLevelColor(guildData.levelName)}`}
@@ -2182,17 +2182,17 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                     )}
                     {/* Show if still awaiting pickup in marketplace */}
                     {marketplacePosting && !shiftEvent.claimedViaMarketplace && (
-                      <div className="text-[10px] bg-orange-500 text-white px-1 py-0.5 rounded font-bold inline-flex items-center gap-0.5 mt-0.5">
+                      <div className="text-[10px] bg-[rgba(201,168,76,0.12)] text-white px-1 py-0.5 rounded font-bold inline-flex items-center gap-0.5 mt-0.5">
                         <ShoppingBag className="w-2.5 h-2.5" />
                         ${marketplacePosting.bonus} - Awaiting
                       </div>
                     )}
                   </div>
-                  {shiftEvent.isOvertime && <Clock size={12} className="text-red-300 animate-bounce" />}
-                  {shiftEvent.notes && <AlertTriangle size={12} className="text-yellow-300 animate-pulse" />}
+                  {shiftEvent.isOvertime && <Clock size={12} className="text-[#F0EBE0]" />}
+                  {shiftEvent.notes && <AlertTriangle size={12} className="text-[#F0EBE0]" />}
                   {/* Show pulsing icon if awaiting pickup */}
                   {marketplacePosting && !shiftEvent.claimedViaMarketplace && (
-                    <div className="absolute -top-1 -right-1 bg-orange-500 rounded-full p-0.5 animate-pulse">
+                    <div className="absolute -top-1 -right-1 bg-[rgba(201,168,76,0.12)] rounded-full p-0.5">
                       <ShoppingBag className="w-3 h-3 text-white" />
                     </div>
                   )}
@@ -2219,10 +2219,10 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   <User className="w-7 h-7 text-amber-400" />
                   <div>
                     <h2 className="text-2xl font-bold text-white">Shift Swap Requests</h2>
-                    <p className="text-blue-200 text-sm">Review and approve employee swap requests</p>
+                    <p className="text-[#9E8F75] text-sm">Review and approve employee swap requests</p>
                   </div>
                 </div>
-                <button onClick={() => setShowSwapRequests(false)} className="text-white hover:text-blue-200">
+                <button onClick={() => setShowSwapRequests(false)} className="text-white hover:text-[#9E8F75]">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -2231,7 +2231,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             </div>
             <div className="p-6 space-y-4">
               {shiftSwapRequests.filter(r => r.status === 'pending').map((request) => (
-                <div key={request.id} className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-4 border border-amber-500/40/30">
+                <div key={request.id} className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-4 border border-[rgba(201,168,76,0.22)]">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
@@ -2254,7 +2254,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                             r.id === request.id ? {...r, status: 'approved'} : r
                           ));
                         }}
-                        className="px-3 py-1 bg-green-600 hover:bg-green-500 text-white rounded font-semibold text-sm"
+                        className="px-3 py-1 bg-green-500 hover:bg-green-500 text-white rounded font-semibold text-sm"
                       >
                         ✓ Approve
                       </button>
@@ -2264,7 +2264,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                             r.id === request.id ? {...r, status: 'denied'} : r
                           ));
                         }}
-                        className="px-3 py-1 bg-red-600 hover:bg-red-500 text-white rounded font-semibold text-sm"
+                        className="px-3 py-1 bg-red-500 hover:bg-red-500 text-white rounded font-semibold text-sm"
                       >
                         ✗ Deny
                       </button>
@@ -2283,17 +2283,17 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {/* Time-Off Approval Modal */}
       {showTimeOffApproval && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowTimeOffApproval(false)}>
-          <div className="bg-[rgba(201,168,76,0.08)] rounded shadow-2xl border-2 border-yellow-500/50 max-w-3xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <div className="sticky top-0 bg-[rgba(201,168,76,0.08)] p-6 border-b-2 border-yellow-500">
+          <div className="bg-[rgba(201,168,76,0.08)] rounded shadow-2xl border-2 border-[rgba(201,168,76,0.22)] max-w-3xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+            <div className="sticky top-0 bg-[rgba(201,168,76,0.08)] p-6 border-b-2 border-[rgba(201,168,76,0.22)]">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-7 h-7 text-yellow-300" />
+                  <Clock className="w-7 h-7 text-[#F0EBE0]" />
                   <div>
                     <h2 className="text-2xl font-bold text-white">Time-Off Requests</h2>
-                    <p className="text-yellow-200 text-sm">Approve or deny employee time-off requests</p>
+                    <p className="text-[#F0EBE0] text-sm">Approve or deny employee time-off requests</p>
                   </div>
                 </div>
-                <button onClick={() => setShowTimeOffApproval(false)} className="text-white hover:text-yellow-200">
+                <button onClick={() => setShowTimeOffApproval(false)} className="text-white hover:text-[#F0EBE0]">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -2302,14 +2302,14 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             </div>
             <div className="p-6 space-y-4">
               {timeOffRequests.filter(r => r.status === 'pending').map((request) => (
-                <div key={request.id} className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-4 border border-yellow-500/30">
+                <div key={request.id} className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-4 border border-[rgba(201,168,76,0.22)]">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="font-bold text-white mb-2">{request.employeeName}</div>
                       <div className="text-sm text-[#9E8F75] mb-1">
                         {request.startDate.toLocaleDateString()} - {request.endDate.toLocaleDateString()}
                       </div>
-                      <div className="text-sm text-yellow-300 italic">{request.reason}</div>
+                      <div className="text-sm text-[#F0EBE0] italic">{request.reason}</div>
                       <div className="text-xs text-[#9E8F75] mt-2">
                         {Math.ceil((request.endDate.getTime() - request.startDate.getTime()) / (1000 * 60 * 60 * 24))} days requested
                       </div>
@@ -2321,7 +2321,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                             r.id === request.id ? {...r, status: 'approved'} : r
                           ));
                         }}
-                        className="px-3 py-1 bg-green-600 hover:bg-green-500 text-white rounded font-semibold text-sm"
+                        className="px-3 py-1 bg-green-500 hover:bg-green-500 text-white rounded font-semibold text-sm"
                       >
                         ✓ Approve
                       </button>
@@ -2331,7 +2331,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                             r.id === request.id ? {...r, status: 'denied'} : r
                           ));
                         }}
-                        className="px-3 py-1 bg-red-600 hover:bg-red-500 text-white rounded font-semibold text-sm"
+                        className="px-3 py-1 bg-red-500 hover:bg-red-500 text-white rounded font-semibold text-sm"
                       >
                         ✗ Deny
                       </button>
@@ -2350,19 +2350,19 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {/* PTO Donation Modal */}
       {showPTODonations && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowPTODonations(false)}>
-          <div className="bg-[rgba(201,168,76,0.08)] rounded shadow-2xl border-2 border-pink-500/50 max-w-5xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <div className="sticky top-0 bg-[rgba(201,168,76,0.08)] p-6 border-b-2 border-pink-500">
+          <div className="bg-[rgba(201,168,76,0.08)] rounded shadow-2xl border-2 border-[rgba(201,168,76,0.22)] max-w-5xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+            <div className="sticky top-0 bg-[rgba(201,168,76,0.08)] p-6 border-b-2 border-[rgba(201,168,76,0.22)]">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <svg className="w-7 h-7 text-pink-300" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-7 h-7 text-[#9E8F75]" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
                   <div>
                     <h2 className="text-2xl font-bold text-white">PTO/Sick Time Donations</h2>
-                    <p className="text-pink-200 text-sm">Support colleagues in need by sharing your time off</p>
+                    <p className="text-[#9E8F75] text-sm">Support colleagues in need by sharing your time off</p>
                   </div>
                 </div>
-                <button onClick={() => setShowPTODonations(false)} className="text-white hover:text-pink-200">
+                <button onClick={() => setShowPTODonations(false)} className="text-white hover:text-[#9E8F75]">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -2372,7 +2372,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             <div className="p-6 space-y-6">
               {/* Active Donation Requests */}
               <div>
-                <h3 className="text-lg font-bold text-pink-200 mb-4 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
                   <AlertTriangle className="w-5 h-5" />
                   Active Donation Requests
                 </h3>
@@ -2380,18 +2380,18 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   {ptoDonationRequests.filter(r => r.status === 'active').map((request) => {
                     const percentFunded = (request.hoursReceived / request.hoursNeeded) * 100;
                     return (
-                      <div key={request.id} className="bg-[rgba(201,168,76,0.06)] rounded-lg p-5 border-2 border-pink-500/30">
+                      <div key={request.id} className="bg-[rgba(201,168,76,0.06)] rounded-lg p-5 border-2 border-[rgba(201,168,76,0.22)]">
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-2">
                               <img 
                                 src={mockEmployees.find(e => e.id === request.recipientId)?.avatar} 
                                 alt={request.recipientName}
-                                className="w-10 h-10 rounded-full border-2 border-pink-400"
+                                className="w-10 h-10 rounded-full border-2 border-[rgba(201,168,76,0.22)]"
                               />
                               <div>
                                 <div className="font-bold text-white text-lg">{request.recipientName}</div>
-                                <div className="text-sm text-pink-200">{mockEmployees.find(e => e.id === request.recipientId)?.department}</div>
+                                <div className="text-sm text-[#9E8F75]">{mockEmployees.find(e => e.id === request.recipientId)?.department}</div>
                               </div>
                             </div>
                             <div className="text-sm text-[#9E8F75] italic mb-3 pl-12">"{request.reason}"</div>
@@ -2399,7 +2399,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                             {/* Progress Bar */}
                             <div className="mb-3">
                               <div className="flex items-center justify-between mb-1 text-sm">
-                                <span className="text-pink-300 font-semibold">{request.hoursReceived} hrs donated</span>
+                                <span className="text-[#9E8F75] font-semibold">{request.hoursReceived} hrs donated</span>
                                 <span className="text-[#9E8F75]">{request.hoursNeeded} hrs needed</span>
                               </div>
                               <div className="w-full bg-[rgba(201,168,76,0.04)] rounded-full h-3 overflow-hidden">
@@ -2407,10 +2407,10 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                                   className="h-full bg-[rgba(201,168,76,0.08)] transition-all duration-500 relative"
                                   style={{ width: `${Math.min(percentFunded, 100)}%` }}
                                 >
-                                  <div className="absolute inset-0 bg-[#110F0B]/20 animate-pulse"></div>
+                                  <div className="absolute inset-0 bg-[#110F0B]/20"></div>
                                 </div>
                               </div>
-                              <div className="text-xs text-pink-300 mt-1 font-bold">{percentFunded.toFixed(0)}% funded</div>
+                              <div className="text-xs text-[#9E8F75] mt-1 font-bold">{percentFunded.toFixed(0)}% funded</div>
                             </div>
                             
                             <div className="text-xs text-[#9E8F75]">
@@ -2420,29 +2420,29 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                         </div>
                         
                         {/* Donation Form */}
-                        <div className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-4 border border-pink-500/20 mt-3">
+                        <div className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-4 border border-[rgba(201,168,76,0.22)] mt-3">
                           <div className="grid grid-cols-3 gap-3">
                             <div>
-                              <label className="block text-xs font-semibold text-pink-200 mb-1">Your Balance</label>
+                              <label className="block text-xs font-semibold text-[#9E8F75] mb-1">Your Balance</label>
                               <div className="bg-[rgba(201,168,76,0.04)] rounded px-3 py-2 text-sm text-white">
                                 <div>PTO: {employeePTOBalances['1']?.pto || 0} hrs</div>
                                 <div>Sick: {employeePTOBalances['1']?.sick || 0} hrs</div>
                               </div>
                             </div>
                             <div>
-                              <label className="block text-xs font-semibold text-pink-200 mb-1">Donate Hours</label>
+                              <label className="block text-xs font-semibold text-[#9E8F75] mb-1">Donate Hours</label>
                               <input 
                                 type="number" 
                                 placeholder="8"
                                 min="4"
                                 max="40"
                                 step="4"
-                                className="w-full bg-[rgba(201,168,76,0.04)] border border-pink-500/30 rounded px-3 py-2 text-white text-sm focus:ring-2 focus:ring-pink-500 outline-none"
+                                className="w-full bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded px-3 py-2 text-white text-sm focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] outline-none"
                               />
                             </div>
                             <div>
-                              <label className="block text-xs font-semibold text-pink-200 mb-1">Type</label>
-                              <select className="w-full bg-[rgba(201,168,76,0.04)] border border-pink-500/30 rounded px-3 py-2 text-white text-sm focus:ring-2 focus:ring-pink-500 outline-none">
+                              <label className="block text-xs font-semibold text-[#9E8F75] mb-1">Type</label>
+                              <select className="w-full bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded px-3 py-2 text-white text-sm focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] outline-none">
                                 <option>PTO</option>
                                 <option>Sick</option>
                               </select>
@@ -2544,7 +2544,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-semibold text-[#9E8F75] mb-1">Employee</label>
-                    <select className="w-full bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded px-3 py-2 text-white focus:ring-2 focus:ring-pink-500 outline-none">
+                    <select className="w-full bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded px-3 py-2 text-white focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] outline-none">
                       {mockEmployees.map(emp => (
                         <option key={emp.id} value={emp.id}>{emp.name}</option>
                       ))}
@@ -2555,7 +2555,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                     <input 
                       type="number" 
                       placeholder="40"
-                      className="w-full bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded px-3 py-2 text-white focus:ring-2 focus:ring-pink-500 outline-none"
+                      className="w-full bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded px-3 py-2 text-white focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] outline-none"
                     />
                   </div>
                 </div>
@@ -2563,10 +2563,10 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                   <label className="block text-sm font-semibold text-[#9E8F75] mb-1">Reason</label>
                   <textarea 
                     placeholder="Brief description of the situation..."
-                    className="w-full bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded px-3 py-2 text-white focus:ring-2 focus:ring-pink-500 outline-none h-20"
+                    className="w-full bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded px-3 py-2 text-white focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] outline-none h-20"
                   />
                 </div>
-                <button className="mt-4 w-full px-4 py-2 bg-pink-600 hover:bg-pink-500 text-white rounded-lg font-bold transition-all">
+                <button className="mt-4 w-full px-4 py-2 bg-[rgba(201,168,76,0.12)] hover:bg-[rgba(201,168,76,0.12)] text-white rounded-lg font-bold transition-all">
                   Create Request
                 </button>
               </div>
@@ -2595,7 +2595,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
             <Coffee className="w-4 h-4" /> Add Break
           </button>
           <div className="border-t border-[rgba(201,168,76,0.22)] my-1"></div>
-          <button className="w-full px-4 py-2 text-left text-red-400 hover:bg-red-600 hover:text-white flex items-center gap-2">
+          <button className="w-full px-4 py-2 text-left text-red-400 hover:bg-red-500 hover:text-white flex items-center gap-2">
             <XCircle className="w-4 h-4" /> Delete Shift
           </button>
         </div>
@@ -2604,21 +2604,21 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       {/* Marketplace Confirmation Toast */}
       {showMarketplaceConfirmation && (
         <div className="fixed top-20 right-6 z-[100] animate-in slide-in-from-right">
-          <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded shadow-2xl p-4 border-2 border-green-400 max-w-sm">
+          <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded shadow-2xl p-4 border-2 border-[rgba(201,168,76,0.22)] max-w-sm">
             <div className="flex items-start gap-3">
               <div className="bg-[#110F0B]/20 rounded p-2">
                 <CheckCircle className="w-6 h-6" />
               </div>
               <div className="flex-1">
                 <div className="font-bold text-lg mb-1">Posted to Marketplace! 🎉</div>
-                <div className="text-sm text-green-100">
+                <div className="text-sm text-[#F0EBE0]">
                   {marketplacePostedShifts.length > 0 && (
                     <>
                       {marketplacePostedShifts[marketplacePostedShifts.length - 1].shift.title} with ${marketplacePostedShifts[marketplacePostedShifts.length - 1].bonus} bonus is now live!
                     </>
                   )}
                 </div>
-                <div className="text-xs text-green-200 mt-1 flex items-center gap-1">
+                <div className="text-xs text-[#F0EBE0] mt-1 flex items-center gap-1">
                   <Sparkles className="w-3 h-3" />
                   Employees will be notified
                 </div>

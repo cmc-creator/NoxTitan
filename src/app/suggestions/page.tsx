@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { Lightbulb, Send, ThumbsUp, MessageSquare, Filter, AlertTriangle, CheckCircle, Clock, Eye, EyeOff, Flag } from 'lucide-react';
@@ -156,7 +156,7 @@ export default function SuggestionBoxPage() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-2 flex items-center gap-3" style={{ color: 'var(--header-text)' }}>
-            <Lightbulb className="h-10 w-10 text-yellow-500" />
+            <Lightbulb className="h-10 w-10 text-[#C9A84C]" />
             Suggestion Box
           </h1>
           <p className="text-lg opacity-80">
@@ -172,7 +172,7 @@ export default function SuggestionBoxPage() {
           </div>
           <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Pending</div>
-            <div className="text-3xl font-bold text-yellow-500">{stats.pending}</div>
+            <div className="text-3xl font-bold text-[#C9A84C]">{stats.pending}</div>
           </div>
           <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Under Review</div>
@@ -180,11 +180,11 @@ export default function SuggestionBoxPage() {
           </div>
           <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Implemented</div>
-            <div className="text-3xl font-bold text-green-500">{stats.implemented}</div>
+            <div className="text-3xl font-bold text-green-400">{stats.implemented}</div>
           </div>
           <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Flagged</div>
-            <div className="text-3xl font-bold text-red-500">{stats.flagged}</div>
+            <div className="text-3xl font-bold text-red-400">{stats.flagged}</div>
           </div>
         </div>
 
@@ -343,7 +343,7 @@ export default function SuggestionBoxPage() {
                     <div className="flex flex-col items-center gap-1">
                       <button
                         className={`p-2 rounded-lg transition-all ${
-                          suggestion.hasVoted ? 'bg-amber-600 text-white' : 'hover:scale-110'
+                          suggestion.hasVoted ? 'bg-amber-600 text-white' : ''
                         }`}
                         style={{ background: suggestion.hasVoted ? undefined : 'var(--calendar-bg)' }}
                       >
@@ -373,7 +373,7 @@ export default function SuggestionBoxPage() {
                             className={`px-3 py-1 rounded-full text-xs font-bold text-white ${
                               suggestion.status === 'implemented' ? 'bg-green-500' :
                               suggestion.status === 'approved' ? 'bg-amber-600' :
-                              suggestion.status === 'under-review' ? 'bg-yellow-500' :
+                              suggestion.status === 'under-review' ? 'bg-[rgba(201,168,76,0.12)]' :
                               suggestion.status === 'declined' ? 'bg-red-500' :
                               'bg-[rgba(201,168,76,0.04)]0'
                             }`}
@@ -475,14 +475,14 @@ export default function SuggestionBoxPage() {
               {filteredSuggestions.map(suggestion => (
                 <div
                   key={suggestion.id}
-                  className={`p-6 rounded shadow-lg ${suggestion.flagged ? 'border-2 border-red-500' : ''}`}
+                  className={`p-6 rounded shadow-lg ${suggestion.flagged ? 'border-2 border-[rgba(201,168,76,0.22)]' : ''}`}
                   style={{ background: 'var(--card-bg)' }}
                 >
                   {suggestion.flagged && (
-                    <div className="mb-4 p-3 rounded-lg bg-red-500/20 border border-red-500 flex items-center gap-2">
-                      <AlertTriangle className="h-5 w-5 text-red-500" />
+                    <div className="mb-4 p-3 rounded-lg bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] flex items-center gap-2">
+                      <AlertTriangle className="h-5 w-5 text-red-400" />
                       <div>
-                        <div className="font-bold text-red-500">Content Flagged</div>
+                        <div className="font-bold text-red-400">Content Flagged</div>
                         <div className="text-sm">{suggestion.flagReason}</div>
                       </div>
                     </div>
@@ -517,7 +517,7 @@ export default function SuggestionBoxPage() {
                       Under Review
                     </button>
                     <button
-                      className="px-4 py-2 rounded-lg font-semibold bg-yellow-500 text-white transition-all flex items-center gap-2"
+                      className="px-4 py-2 rounded-lg font-semibold bg-[rgba(201,168,76,0.12)] text-white transition-all flex items-center gap-2"
                     >
                       <MessageSquare className="h-4 w-4" />
                       Respond

@@ -173,7 +173,7 @@ export default function ThemeSelector() {
                         placeholder="Search themes..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg text-white placeholder-stone-600 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        className="w-full pl-10 pr-4 py-2 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg text-white placeholder-stone-600 focus:outline-none focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                       />
                     </div>
                   </div>
@@ -188,7 +188,7 @@ export default function ThemeSelector() {
                           onClick={() => setTheme(t.id as any)}
                           className={`relative group p-4 rounded border-2 transition-all ${
                             theme === t.id 
-                              ? 'border-amber-500/40 bg-[rgba(201,168,76,0.04)] ring-4 ring-purple-500/30' 
+                              ? 'border-amber-500/40 bg-[rgba(201,168,76,0.04)] ring-4 ring-[rgba(201,168,76,0.45)]' 
                               : 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]/50 hover:border-[rgba(201,168,76,0.22)]'
                           }`}
                         >
@@ -280,7 +280,7 @@ export default function ThemeSelector() {
                       <Image className="h-5 w-5 text-amber-400 mt-0.5" />
                       <div>
                         <div className="text-amber-400 font-medium mb-1">Background Images</div>
-                        <div className="text-blue-200/70 text-sm">
+                        <div className="text-[#9E8F75] text-sm">
                           Choose from preset backgrounds or upload your own custom images.
                         </div>
                       </div>
@@ -356,7 +356,7 @@ export default function ThemeSelector() {
                     ))}
 
                     {/* Upload New */}
-                    <label className="relative p-4 rounded border-2 border-dashed border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]/50 hover:border-amber-500/40 hover:bg-[rgba(201,168,76,0.04)] transition-all cursor-pointer group">
+                    <label className="relative p-4 rounded border-2 border-dashed border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]/50 hover:border-[rgba(201,168,76,0.45)] hover:bg-[rgba(201,168,76,0.04)] transition-all cursor-pointer group">
                       <div className="w-full h-32 rounded-lg bg-[rgba(201,168,76,0.06)]/50 mb-3 flex items-center justify-center">
                         <div className="text-center">
                           <Image className="h-8 w-8 text-[#9E8F75] mx-auto mb-2 group-hover:text-amber-400 transition-colors" />

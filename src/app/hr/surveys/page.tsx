@@ -124,7 +124,7 @@ export default function EmployeeSurveysPage() {
 
   function getScoreColor(score: number) {
     if (score >= 8) return 'text-green-400';
-    if (score >= 6) return 'text-yellow-400';
+    if (score >= 6) return 'text-[#C9A84C]';
     return 'text-red-400';
   }
 
@@ -156,20 +156,20 @@ export default function EmployeeSurveysPage() {
             <p className="text-[#9E8F75] font-semibold">Total Surveys</p>
           </div>
 
-          <div className="bg-yellow-500/10 border border-yellow-500/50 rounded p-6">
+          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-6">
             <div className="flex items-center justify-between mb-2">
-              <Send className="w-8 h-8 text-yellow-400" />
-              <span className="text-3xl font-bold text-yellow-400">{stats.pending}</span>
+              <Send className="w-8 h-8 text-[#C9A84C]" />
+              <span className="text-3xl font-bold text-[#C9A84C]">{stats.pending}</span>
             </div>
-            <p className="text-yellow-300 font-semibold">Pending</p>
+            <p className="text-[#F0EBE0] font-semibold">Pending</p>
           </div>
 
-          <div className="bg-green-500/10 border border-green-500/50 rounded p-6">
+          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-6">
             <div className="flex items-center justify-between mb-2">
               <ClipboardCheck className="w-8 h-8 text-green-400" />
               <span className="text-3xl font-bold text-green-400">{stats.completed}</span>
             </div>
-            <p className="text-green-300 font-semibold">Completed</p>
+            <p className="text-[#F0EBE0] font-semibold">Completed</p>
           </div>
 
           <div className="bg-amber-500/10 border border-amber-500/40/50 rounded p-6">
@@ -231,7 +231,7 @@ export default function EmployeeSurveysPage() {
             filteredSurveys.map((survey) => (
               <div
                 key={survey.id}
-                className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-amber-500/40/50 transition-colors"
+                className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-[rgba(201,168,76,0.45)]/50 transition-colors"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">

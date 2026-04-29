@@ -49,12 +49,12 @@ export default function HRDashboard() {
         </div>
 
         {/* FEATURED: Talent Identification System */}
-        <div className="mb-8 bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-yellow-500/50">
+        <div className="mb-8 bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center gap-3 mb-4">
-            <Star className="w-8 h-8 text-yellow-400 fill-yellow-400" />
+            <Star className="w-8 h-8 text-[#C9A84C] fill-yellow-400" />
             <div>
               <h2 className="text-2xl font-bold text-white">High Performers & Talent Pipeline</h2>
-              <p className="text-yellow-200 text-sm">AI-identified strong employees ready for recognition, promotion, mentorship & onboarding roles</p>
+              <p className="text-[#F0EBE0] text-sm">AI-identified strong employees ready for recognition, promotion, mentorship & onboarding roles</p>
             </div>
           </div>
           <TalentIdentificationSystem managerId="current-manager" showNotifications={true} />
@@ -90,24 +90,24 @@ export default function HRDashboard() {
               <div>
                 <div className="text-[#9E8F75] text-sm mb-1">Open Positions</div>
                 <div className="text-3xl font-bold text-white">8</div>
-                <div className="text-yellow-400 text-xs mt-1">3 in review</div>
+                <div className="text-[#C9A84C] text-xs mt-1">3 in review</div>
               </div>
               <TrendingUp className="w-12 h-12 text-[#9E8F75] opacity-50" />
             </div>
           </div>
 
-          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-yellow-500/30 shadow-xl">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-[rgba(201,168,76,0.22)] shadow-xl">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-[#9E8F75] text-sm mb-1">Pending Actions</div>
                 <div className="text-3xl font-bold text-white">23</div>
                 <div className="text-[#9E8F75] 400 text-xs mt-1">5 urgent</div>
               </div>
-              <AlertCircle className="w-12 h-12 text-yellow-400 opacity-50" />
+              <AlertCircle className="w-12 h-12 text-[#C9A84C] opacity-50" />
             </div>
           </div>
 
-          <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-5 border-2 border-pink-500/30 shadow-xl">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-rose-900/50 rounded p-5 border-2 border-[rgba(201,168,76,0.22)] shadow-xl">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-[#9E8F75] text-sm mb-1">Avg Satisfaction</div>
@@ -123,11 +123,11 @@ export default function HRDashboard() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* HR Daily Planner - FEATURED */}
           <Link href="/hr/planner" className="group">
-            <div className="bg-gradient-to-br from-[#110F0B] 900/60 to-amber-900/60 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] 500/40 shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] 400 transition-all relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-yellow-500 text-black px-3 py-1 text-xs font-black transform rotate-12 translate-x-2 -translate-y-1">
+            <div className="bg-[#110F0B] rounded p-6 border-2 border-[rgba(201,168,76,0.22)] 500/40 shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] 400 transition-all relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-[rgba(201,168,76,0.12)] text-black px-3 py-1 text-xs font-black transform rotate-12 translate-x-2 -translate-y-1">
                 ⭐ NEW
               </div>
-              <Calendar className="w-12 h-12 text-[#C9A84C] 300 mb-4 group-hover:scale-110 transition-transform" />
+              <Calendar className="w-12 h-12 text-[#C9A84C] 300 mb-4 group- transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">HR Daily Planner</h3>
               <p className="text-[#C9A84C] 200 text-sm mb-4">Your personal task manager + manager reminder system for daily HR operations</p>
               <div className="flex items-center gap-2 text-[#C9A84C] 300 text-sm">
@@ -140,7 +140,7 @@ export default function HRDashboard() {
           {/* Recruiting/ATS */}
           <Link href="/hr/recruiting" className="group">
             <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] 400 transition-all">
-              <Users className="w-12 h-12 text-amber-400 mb-4 group-hover:scale-110 transition-transform" />
+              <Users className="w-12 h-12 text-amber-400 mb-4 group- transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Applicant Tracking (ATS)</h3>
               <p className="text-[#C9A84C] 200 text-sm mb-4">Full-cycle recruiting from job posting to offer acceptance with candidate pipeline</p>
               <div className="flex items-center gap-2 text-amber-400 text-sm">
@@ -152,8 +152,8 @@ export default function HRDashboard() {
 
           {/* Employee Self-Service */}
           <Link href="/hr/self-service" className="group">
-            <div className="bg-[rgba(201,168,76,0.04)] rounded p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-amber-400/40 transition-all">
-              <Users className="w-12 h-12 text-[#C9A84C] mb-4 group-hover:scale-110 transition-transform" />
+            <div className="bg-[rgba(201,168,76,0.04)] rounded p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.45)] transition-all">
+              <Users className="w-12 h-12 text-[#C9A84C] mb-4 group- transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Employee Self-Service</h3>
               <p className="text-[#F0EBE0]/70 text-sm mb-4">Portal for pay stubs, tax docs, benefits, profile updates & more</p>
               <div className="flex items-center gap-2 text-[#C9A84C] text-sm">
@@ -165,10 +165,10 @@ export default function HRDashboard() {
 
           {/* HR Analytics */}
           <Link href="/hr/analytics" className="group">
-            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-indigo-400 transition-all">
-              <TrendingUp className="w-12 h-12 text-amber-400 mb-4 group-hover:scale-110 transition-transform" />
+            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] transition-all">
+              <TrendingUp className="w-12 h-12 text-amber-400 mb-4 group- transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">HR Analytics & Insights</h3>
-              <p className="text-indigo-200 text-sm mb-4">Turnover prediction, diversity metrics, compensation equity & flight risk</p>
+              <p className="text-[#9E8F75] text-sm mb-4">Turnover prediction, diversity metrics, compensation equity & flight risk</p>
               <div className="flex items-center gap-2 text-amber-400 text-sm">
                 <span>View Dashboard</span>
                 <span>→</span>
@@ -178,11 +178,11 @@ export default function HRDashboard() {
 
           {/* Performance Reviews */}
           <Link href="/hr/performance" className="group">
-            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-orange-500/40 shadow-xl hover:shadow-2xl hover:border-orange-400 transition-all">
-              <Award className="w-12 h-12 text-orange-300 mb-4 group-hover:scale-110 transition-transform" />
+            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)] shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] transition-all">
+              <Award className="w-12 h-12 text-[#9E8F75] mb-4 group- transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Performance Management</h3>
-              <p className="text-orange-200 text-sm mb-4">360° feedback, goal tracking (OKRs), continuous reviews & development plans</p>
-              <div className="flex items-center gap-2 text-orange-300 text-sm">
+              <p className="text-[#9E8F75] text-sm mb-4">360° feedback, goal tracking (OKRs), continuous reviews & development plans</p>
+              <div className="flex items-center gap-2 text-[#9E8F75] text-sm">
                 <span className="bg-[#110F0B] 500 px-2 py-1 rounded-full text-white font-bold">12 Overdue</span>
                 <span>→</span>
               </div>
@@ -192,7 +192,7 @@ export default function HRDashboard() {
           {/* Compensation Management */}
           <Link href="/hr/compensation" className="group">
             <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)] shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] transition-all">
-              <DollarSign className="w-12 h-12 text-[#9E8F75] mb-4 group-hover:scale-110 transition-transform" />
+              <DollarSign className="w-12 h-12 text-[#9E8F75] mb-4 group- transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Compensation Management</h3>
               <p className="text-[#9E8F75] text-sm mb-4">Merit planning, market benchmarking, bonuses & total rewards strategy</p>
               <div className="flex items-center gap-2 text-[#9E8F75] text-sm">
@@ -204,8 +204,8 @@ export default function HRDashboard() {
 
           {/* Wellness Hub */}
           <Link href="/hr/wellness" className="group">
-            <div className="bg-[#110F0B] from-REMOVED-900/60 to-rose-900/60 rounded p-6 border-2 border-pink-500/40 shadow-xl hover:shadow-2xl hover:border-pink-400 transition-all">
-              <Heart className="w-12 h-12 text-[#C9A84C] 300 mb-4 group-hover:scale-110 transition-transform" />
+            <div className="bg-[#110F0B] from-REMOVED-900/60 to-rose-900/60 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] transition-all">
+              <Heart className="w-12 h-12 text-[#C9A84C] 300 mb-4 group- transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Wellness Hub</h3>
               <p className="text-[#C9A84C] 200 text-sm mb-4">EAP, wellness challenges, telemedicine, mental health & fitness tracking</p>
               <div className="flex items-center gap-2 text-[#C9A84C] 300 text-sm">
@@ -218,7 +218,7 @@ export default function HRDashboard() {
           {/* Org Chart */}
           <Link href="/hr/org-chart" className="group">
             <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)] shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] transition-all">
-              <Users className="w-12 h-12 text-[#9E8F75] mb-4 group-hover:scale-110 transition-transform" />
+              <Users className="w-12 h-12 text-[#9E8F75] mb-4 group- transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Organizational Chart</h3>
               <p className="text-[#9E8F75] text-sm mb-4">Interactive hierarchy, reporting structure & headcount planning</p>
               <div className="flex items-center gap-2 text-[#9E8F75] text-sm">
@@ -231,7 +231,7 @@ export default function HRDashboard() {
           {/* Time-Off Management */}
           <Link href="/time-off" className="group">
             <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)] shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] transition-all">
-              <Calendar className="w-12 h-12 text-[#9E8F75] mb-4 group-hover:scale-110 transition-transform" />
+              <Calendar className="w-12 h-12 text-[#9E8F75] mb-4 group- transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Time-Off & PTO</h3>
               <p className="text-[#9E8F75] text-sm mb-4">Approve requests, track balances, PTO donations & accrual management</p>
               <div className="flex items-center gap-2 text-[#9E8F75] text-sm">
@@ -244,11 +244,11 @@ export default function HRDashboard() {
           {/* Compliance */}
           <Link href="/compliance" className="group">
             <div className="bg-[#110F0B] from-REMOVED-900/60 to-rose-900/60 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] 500/40 shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] 400 transition-all">
-              <Shield className="w-12 h-12 text-[#9E8F75] 300 mb-4 group-hover:scale-110 transition-transform" />
+              <Shield className="w-12 h-12 text-[#9E8F75] 300 mb-4 group- transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Compliance Tracking</h3>
               <p className="text-[#9E8F75] 200 text-sm mb-4">OSHA, certifications, I-9, labor law, regulatory compliance & audits</p>
               <div className="flex items-center gap-2 text-[#9E8F75] 300 text-sm">
-                <span className="bg-orange-500 px-2 py-1 rounded-full text-white font-bold">8 Expiring</span>
+                <span className="bg-[rgba(201,168,76,0.12)] px-2 py-1 rounded-full text-white font-bold">8 Expiring</span>
                 <span>→</span>
               </div>
             </div>
@@ -257,7 +257,7 @@ export default function HRDashboard() {
           {/* Document Management */}
           <div className="group cursor-pointer">
             <div className="lux-card/60 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] transition-all">
-              <FileText className="w-12 h-12 text-[#9E8F75] mb-4 group-hover:scale-110 transition-transform" />
+              <FileText className="w-12 h-12 text-[#9E8F75] mb-4 group- transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Documents & E-Signatures</h3>
               <p className="text-[#9E8F75] text-sm mb-4">Digital document storage, e-signatures, policies & handbook management</p>
               <div className="flex items-center gap-2 text-[#9E8F75] text-sm">
@@ -270,7 +270,7 @@ export default function HRDashboard() {
           {/* Onboarding */}
           <div className="group cursor-pointer">
             <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-amber-500/40/40 shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] 400 transition-all">
-              <CheckCircle className="w-12 h-12 text-amber-400 mb-4 group-hover:scale-110 transition-transform" />
+              <CheckCircle className="w-12 h-12 text-amber-400 mb-4 group- transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Advanced Onboarding</h3>
               <p className="text-[#C9A84C] 200 text-sm mb-4">Pre-boarding portal, equipment ordering, account provisioning & buddy system</p>
               <div className="flex items-center gap-2 text-amber-400 text-sm">
@@ -282,8 +282,8 @@ export default function HRDashboard() {
 
           {/* HR Automation */}
           <Link href="/hr/automation" className="group">
-            <div className="bg-gradient-to-br from-[#110F0B] 900/60 to-amber-900/60 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] 500/40 shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] 400 transition-all">
-              <Clock className="w-12 h-12 text-[#C9A84C] 300 mb-4 group-hover:scale-110 transition-transform" />
+            <div className="bg-[#110F0B] rounded p-6 border-2 border-[rgba(201,168,76,0.22)] 500/40 shadow-xl hover:shadow-2xl hover:border-[rgba(201,168,76,0.22)] 400 transition-all">
+              <Clock className="w-12 h-12 text-[#C9A84C] 300 mb-4 group- transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">HR Automation</h3>
               <p className="text-[#C9A84C] 200 text-sm mb-4">Automate onboarding, reminders, surveys, and recurring HR workflows</p>
               <div className="flex items-center gap-2 text-[#C9A84C] 300 text-sm">
@@ -295,11 +295,11 @@ export default function HRDashboard() {
         </div>
 
         {/* Pending Actions Alert */}
-        <div className="mt-8 bg-[rgba(201,168,76,0.06)] border-2 border-yellow-500/50 rounded p-6">
+        <div className="mt-8 bg-[rgba(201,168,76,0.06)] border-2 border-[rgba(201,168,76,0.22)] rounded p-6">
           <div className="flex items-start gap-4">
-            <AlertCircle className="w-8 h-8 text-yellow-400 flex-shrink-0" />
+            <AlertCircle className="w-8 h-8 text-[#C9A84C] flex-shrink-0" />
             <div className="flex-1">
-              <h3 className="text-xl font-bold text-yellow-200 mb-2">Pending HR Actions</h3>
+              <h3 className="text-xl font-bold text-[#F0EBE0] mb-2">Pending HR Actions</h3>
               <div className="space-y-2">
                 <div className="flex items-center justify-between bg-[rgba(201,168,76,0.06)]/50 rounded p-3">
                   <span className="text-white">Time-off requests awaiting approval</span>
@@ -307,11 +307,11 @@ export default function HRDashboard() {
                 </div>
                 <div className="flex items-center justify-between bg-[rgba(201,168,76,0.06)]/50 rounded p-3">
                   <span className="text-white">Certifications expiring within 60 days</span>
-                  <span className="bg-orange-500 px-3 py-1 rounded-full text-white font-bold">8</span>
+                  <span className="bg-[rgba(201,168,76,0.12)] px-3 py-1 rounded-full text-white font-bold">8</span>
                 </div>
                 <div className="flex items-center justify-between bg-[rgba(201,168,76,0.06)]/50 rounded p-3">
                   <span className="text-white">Shift swap requests pending</span>
-                  <span className="bg-yellow-500 px-3 py-1 rounded-full text-white font-bold">2</span>
+                  <span className="bg-[rgba(201,168,76,0.12)] px-3 py-1 rounded-full text-white font-bold">2</span>
                 </div>
               </div>
             </div>

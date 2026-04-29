@@ -223,7 +223,7 @@ export default function MerchSetupPage() {
                   step === s.id
                     ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white'
                     : stores.length > 0 && idx < 2
-                    ? 'bg-green-600 text-white'
+                    ? 'bg-green-500 text-white'
                     : 'bg-[rgba(201,168,76,0.06)]/50 text-[#9E8F75]'
                 }`}
               >
@@ -248,7 +248,7 @@ export default function MerchSetupPage() {
                     setFormData({ ...formData, name: `${p.name} Store` });
                     setStep('configure');
                   }}
-                  className="bg-[rgba(201,168,76,0.06)]/50 border-2 border-[rgba(201,168,76,0.22)] hover:border-amber-500/40 rounded p-6 text-left transition-all group"
+                  className="bg-[rgba(201,168,76,0.06)]/50 border-2 border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.45)] rounded p-6 text-left transition-all group"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <h3 className="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
@@ -317,12 +317,12 @@ export default function MerchSetupPage() {
               </button>
             </div>
 
-            <div className="bg-blue-900/30 border border-amber-500/40/50 rounded-lg p-4 mb-6">
+            <div className="bg-[rgba(201,168,76,0.06)] border border-amber-500/40/50 rounded-lg p-4 mb-6">
               <div className="flex items-start gap-3">
                 <AlertCircle className="w-5 h-5 text-amber-400 mt-0.5" />
                 <div className="flex-1">
                   <h4 className="text-white font-bold mb-1">Setup Instructions</h4>
-                  <p className="text-sm text-blue-200 mb-2">{platform.setupInstructions}</p>
+                  <p className="text-sm text-[#9E8F75] mb-2">{platform.setupInstructions}</p>
                   <a
                     href={platform.docsUrl}
                     target="_blank"
@@ -389,8 +389,8 @@ export default function MerchSetupPage() {
               <div
                 className={`flex items-start gap-3 p-4 rounded-lg mb-6 ${
                   testResult.success
-                    ? 'bg-green-900/30 border border-green-500/50'
-                    : 'bg-red-900/30 border border-red-500/50'
+                    ? 'bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)]'
+                    : 'bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)]'
                 }`}
               >
                 {testResult.success ? (
@@ -402,7 +402,7 @@ export default function MerchSetupPage() {
                   <h4 className={`font-bold ${testResult.success ? 'text-green-400' : 'text-red-400'}`}>
                     {testResult.success ? 'Connection Successful!' : 'Connection Failed'}
                   </h4>
-                  <p className={`text-sm ${testResult.success ? 'text-green-200' : 'text-red-200'}`}>
+                  <p className={`text-sm ${testResult.success ? 'text-[#F0EBE0]' : 'text-[#F0EBE0]'}`}>
                     {testResult.message}
                   </p>
                 </div>
@@ -459,7 +459,7 @@ export default function MerchSetupPage() {
                     <div className="flex items-center gap-3">
                       <div
                         className={`px-3 py-1 rounded-full text-xs font-bold ${
-                          store.isActive ? 'bg-green-600 text-white' : 'bg-[rgba(201,168,76,0.08)] text-[#9E8F75]'
+                          store.isActive ? 'bg-green-500 text-white' : 'bg-[rgba(201,168,76,0.08)] text-[#9E8F75]'
                         }`}
                       >
                         {store.isActive ? 'Active' : 'Inactive'}
@@ -487,22 +487,22 @@ export default function MerchSetupPage() {
             </button>
 
             {stores.length > 0 && (
-              <div className="mt-8 bg-green-900/30 border border-green-500/50 rounded p-6">
+              <div className="mt-8 bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-6">
                 <div className="flex items-start gap-4">
                   <CheckCircle className="w-8 h-8 text-green-400" />
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-2">Setup Complete! 🎉</h3>
-                    <p className="text-green-200 mb-4">
+                    <p className="text-[#F0EBE0] mb-4">
                       Your store is connected. Products will appear in the Merch Store page.
                     </p>
-                    <div className="space-y-2 text-sm text-green-200">
+                    <div className="space-y-2 text-sm text-[#F0EBE0]">
                       <p>✅ Store connected and syncing</p>
                       <p>✅ Products available for employee purchase</p>
                       <p>✅ Dual payment (Payroll Deduction + Guild XP) enabled</p>
                     </div>
                     <a
                       href="/merch-store"
-                      className="inline-block mt-4 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg transition-colors"
+                      className="inline-block mt-4 px-6 py-3 bg-green-500 hover:bg-green-500 text-white font-bold rounded-lg transition-colors"
                     >
                       View Merch Store →
                     </a>

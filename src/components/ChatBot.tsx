@@ -201,12 +201,12 @@ export default function ChatBot() {
         <div className="fixed bottom-6 right-6 z-50 group">
           <button
             onClick={() => setIsOpen(true)}
-            className="relative w-28 h-28 rounded-full transition-all hover:scale-110 flex items-center justify-center overflow-hidden"
+            className="relative w-28 h-28 rounded-full transition-all flex items-center justify-center overflow-hidden"
             style={{ background: 'transparent', boxShadow: '0 0 24px rgba(201,168,76,0.35), 0 8px 32px rgba(0,0,0,0.5)' }}
             aria-label="Open NyxTitan AI Advisor"
           >
             <img src="/advisor-portrait.png" alt="NyxTitan" className="w-full h-full object-contain drop-shadow-xl" />
-            <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full animate-pulse" style={{ background: '#C9A84C', boxShadow: '0 0 8px rgba(201,168,76,0.8)' }} />
+            <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full" style={{ background: '#C9A84C', boxShadow: '0 0 8px rgba(201,168,76,0.8)' }} />
           </button>
           <div className="absolute bottom-28 right-0 w-56 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" style={{ background: '#0D0B08', border: '1px solid rgba(201,168,76,0.3)', borderRadius: '4px', padding: '10px 14px' }}>
             <div className="text-sm font-semibold mb-1" style={{ color: '#C9A84C', fontFamily: "'Cormorant Garamond', serif", letterSpacing: '0.05em' }}>NyxTitan AI Advisor</div>
@@ -368,7 +368,7 @@ export default function ChatBot() {
                       <div style={{ background: 'rgba(250,246,238,0.93)', borderRadius: '8px', padding: '14px 18px', boxShadow: '0 4px 20px rgba(0,0,0,0.4)' }}>
                         <div className="flex gap-1">
                           {[0, 150, 300].map((d) => (
-                            <div key={d} className="w-2 h-2 rounded-full animate-bounce" style={{ background: '#9E8F75', animationDelay: `${d}ms` }} />
+                            <div key={d} className="w-2 h-2 rounded-full" style={{ background: '#9E8F75', animationDelay: `${d}ms` }} />
                           ))}
                         </div>
                       </div>

@@ -317,10 +317,10 @@ export default function ReportsPage() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'APPROVED': return 'text-green-600 bg-green-100';
-      case 'DENIED': return 'text-red-600 bg-red-100';
-      case 'PENDING': return 'text-yellow-600 bg-yellow-100';
-      case 'NO_RESPONSE': return 'text-orange-600 bg-orange-100';
+      case 'APPROVED': return 'text-green-400 bg-[rgba(201,168,76,0.04)]';
+      case 'DENIED': return 'text-red-400 bg-[rgba(201,168,76,0.04)]';
+      case 'PENDING': return 'text-[#5A5040] bg-[rgba(201,168,76,0.04)]';
+      case 'NO_RESPONSE': return 'text-[#9E8F75] bg-[rgba(201,168,76,0.04)]';
       default: return 'text-[#9E8F75] bg-[#110F0B]';
     }
   };
@@ -328,11 +328,11 @@ export default function ReportsPage() {
   const getTypeColor = (type: string) => {
     switch (type) {
       case 'PTO': return 'text-amber-400 bg-amber-900/30';
-      case 'SICK': return 'text-red-600 bg-red-100';
-      case 'FMLA': return 'text-amber-600 bg-purple-100';
+      case 'SICK': return 'text-red-400 bg-[rgba(201,168,76,0.04)]';
+      case 'FMLA': return 'text-amber-600 bg-[rgba(201,168,76,0.04)]';
       case 'BEREAVEMENT': return 'text-[#9E8F75] bg-[#110F0B]';
-      case 'JURY_DUTY': return 'text-amber-400 bg-indigo-100';
-      case 'UNPAID': return 'text-orange-600 bg-orange-100';
+      case 'JURY_DUTY': return 'text-amber-400 bg-[rgba(201,168,76,0.04)]';
+      case 'UNPAID': return 'text-[#9E8F75] bg-[rgba(201,168,76,0.04)]';
       default: return 'text-[#9E8F75] bg-[#110F0B]';
     }
   };
@@ -408,7 +408,7 @@ export default function ReportsPage() {
               type="date"
               value={dateFrom}
               onChange={(e) => setDateFrom(e.target.value)}
-              className="w-full px-3 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
             />
           </div>
 
@@ -418,7 +418,7 @@ export default function ReportsPage() {
               type="date"
               value={dateTo}
               onChange={(e) => setDateTo(e.target.value)}
-              className="w-full px-3 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
             />
           </div>
 
@@ -428,7 +428,7 @@ export default function ReportsPage() {
             <select
               value={departmentFilter}
               onChange={(e) => setDepartmentFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
             >
               <option value="all">All Departments</option>
               <option value="Nursing">Nursing</option>
@@ -445,7 +445,7 @@ export default function ReportsPage() {
             <select
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
             >
               <option value="all">All Types</option>
               <option value="PTO">PTO</option>
@@ -463,7 +463,7 @@ export default function ReportsPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
             >
               <option value="all">All Statuses</option>
               <option value="PENDING">Pending</option>
@@ -484,7 +484,7 @@ export default function ReportsPage() {
               value={employeeSearch}
               onChange={(e) => setEmployeeSearch(e.target.value)}
               placeholder="Search by name or employee ID..."
-              className="w-full pl-10 pr-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
             />
           </div>
         </div>
@@ -493,14 +493,14 @@ export default function ReportsPage() {
         <div className="mt-6 flex gap-3">
           <button
             onClick={exportToPDF}
-            className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-all flex items-center gap-2"
+            className="px-4 py-2 bg-red-500 hover:bg-red-500 text-white rounded-lg font-medium transition-all flex items-center gap-2"
           >
             <FileDown className="w-4 h-4" />
             Export PDF
           </button>
           <button
             onClick={exportToExcel}
-            className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-all flex items-center gap-2"
+            className="px-4 py-2 bg-green-500 hover:bg-green-500 text-white rounded-lg font-medium transition-all flex items-center gap-2"
           >
             <FileSpreadsheet className="w-4 h-4" />
             Export Excel
@@ -531,10 +531,10 @@ export default function ReportsPage() {
 
         <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 bg-yellow-100 rounded-lg">
-              <Clock className="w-6 h-6 text-yellow-600" />
+            <div className="p-3 bg-[rgba(201,168,76,0.04)] rounded-lg">
+              <Clock className="w-6 h-6 text-[#5A5040]" />
             </div>
-            <AlertTriangle className="w-5 h-5 text-yellow-600" />
+            <AlertTriangle className="w-5 h-5 text-[#5A5040]" />
           </div>
           <h3 className="text-sm font-medium text-[#9E8F75] mb-1">Pending Approvals</h3>
           <p className="text-3xl font-bold text-[#9E8F75]">{pendingCount}</p>
@@ -543,10 +543,10 @@ export default function ReportsPage() {
 
         <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 bg-orange-100 rounded-lg">
-              <Timer className="w-6 h-6 text-orange-600" />
+            <div className="p-3 bg-[rgba(201,168,76,0.04)] rounded-lg">
+              <Timer className="w-6 h-6 text-[#9E8F75]" />
             </div>
-            <AlertTriangle className="w-5 h-5 text-orange-600" />
+            <AlertTriangle className="w-5 h-5 text-[#9E8F75]" />
           </div>
           <h3 className="text-sm font-medium text-[#9E8F75] mb-1">No Response</h3>
           <p className="text-3xl font-bold text-[#9E8F75]">{noResponseCount}</p>
@@ -555,7 +555,7 @@ export default function ReportsPage() {
 
         <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 bg-purple-100 rounded-lg">
+            <div className="p-3 bg-[rgba(201,168,76,0.04)] rounded-lg">
               <Activity className="w-6 h-6 text-amber-600" />
             </div>
             <TrendingUp className="w-5 h-5 text-amber-600" />
@@ -594,13 +594,13 @@ export default function ReportsPage() {
 
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-4 h-4 bg-yellow-500 rounded"></div>
+                <div className="w-4 h-4 bg-[rgba(201,168,76,0.12)] rounded"></div>
                 <span className="text-sm font-medium text-[#9E8F75]">Pending</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="flex-1 w-48 h-2 bg-[rgba(201,168,76,0.08)] rounded-full overflow-hidden">
                   <div 
-                    className="h-full bg-yellow-500"
+                    className="h-full bg-[rgba(201,168,76,0.12)]"
                     style={{ width: `${totalRecords > 0 ? (pendingCount / totalRecords) * 100 : 0}%` }}
                   />
                 </div>
@@ -630,13 +630,13 @@ export default function ReportsPage() {
 
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-4 h-4 bg-orange-500 rounded"></div>
+                <div className="w-4 h-4 bg-[rgba(201,168,76,0.12)] rounded"></div>
                 <span className="text-sm font-medium text-[#9E8F75]">No Response</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="flex-1 w-48 h-2 bg-[rgba(201,168,76,0.08)] rounded-full overflow-hidden">
                   <div 
-                    className="h-full bg-orange-500"
+                    className="h-full bg-[rgba(201,168,76,0.12)]"
                     style={{ width: `${totalRecords > 0 ? (noResponseCount / totalRecords) * 100 : 0}%` }}
                   />
                 </div>
@@ -710,13 +710,13 @@ export default function ReportsPage() {
 
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-4 h-4 bg-orange-500 rounded"></div>
+                <div className="w-4 h-4 bg-[rgba(201,168,76,0.12)] rounded"></div>
                 <span className="text-sm font-medium text-[#9E8F75]">Unpaid</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="flex-1 w-48 h-2 bg-[rgba(201,168,76,0.08)] rounded-full overflow-hidden">
                   <div 
-                    className="h-full bg-orange-500"
+                    className="h-full bg-[rgba(201,168,76,0.12)]"
                     style={{ width: `${totalHours > 0 ? (unpaidHours / totalHours) * 100 : 0}%` }}
                   />
                 </div>
@@ -763,9 +763,9 @@ export default function ReportsPage() {
                     <td className="text-right py-4 px-4 font-semibold text-[#9E8F75]">{emp.totalAbsences}h</td>
                     <td className="text-right py-4 px-4">
                       <span className={`font-medium ${
-                        emp.absenceRate > 5 ? 'text-red-600' :
-                        emp.absenceRate > 3 ? 'text-yellow-600' :
-                        'text-green-600'
+                        emp.absenceRate > 5 ? 'text-red-400' :
+                        emp.absenceRate > 3 ? 'text-[#5A5040]' :
+                        'text-green-400'
                       }`}>
                         {emp.absenceRate.toFixed(1)}%
                       </span>
@@ -773,9 +773,9 @@ export default function ReportsPage() {
                     <td className="text-right py-4 px-4 text-[#9E8F75]">{emp.averageRequestsPerMonth.toFixed(1)}</td>
                     <td className="text-center py-4 px-4">
                       <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        emp.pattern === 'frequent' ? 'bg-red-100 text-red-700' :
+                        emp.pattern === 'frequent' ? 'bg-[rgba(201,168,76,0.04)] text-red-400' :
                         emp.pattern === 'normal' ? 'bg-amber-900/30 text-[#E8C060]' :
-                        'bg-green-100 text-green-700'
+                        'bg-[rgba(201,168,76,0.04)] text-green-400'
                       }`}>
                         {emp.pattern?.toUpperCase()}
                       </span>
@@ -846,9 +846,9 @@ export default function ReportsPage() {
                   <td className="text-right py-4 px-4 text-sm">
                     {record.responseTime ? (
                       <span className={`font-medium ${
-                        record.responseTime > 48 ? 'text-red-600' :
-                        record.responseTime > 24 ? 'text-yellow-600' :
-                        'text-green-600'
+                        record.responseTime > 48 ? 'text-red-400' :
+                        record.responseTime > 24 ? 'text-[#5A5040]' :
+                        'text-green-400'
                       }`}>
                         {record.responseTime}h
                       </span>
@@ -876,16 +876,16 @@ export default function ReportsPage() {
 
       {/* Alerts for Action Required */}
       {noResponseCount > 0 && (
-        <div className="mt-8 bg-[rgba(201,168,76,0.08)] border-l-4 border-orange-500 p-6 rounded-lg">
+        <div className="mt-8 bg-[rgba(201,168,76,0.08)] border-l-4 border-[rgba(201,168,76,0.22)] p-6 rounded-lg">
           <div className="flex items-start gap-4">
-            <AlertTriangle className="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" />
+            <AlertTriangle className="w-6 h-6 text-[#9E8F75] flex-shrink-0 mt-1" />
             <div>
               <h3 className="text-lg font-bold text-[#9E8F75] mb-2">Action Required: Overdue Approvals</h3>
               <p className="text-sm text-[#9E8F75] mb-3">
                 There are <strong>{noResponseCount}</strong> time-off requests with no response. These requests may be
                 overdue and require immediate attention to avoid compliance issues and employee dissatisfaction.
               </p>
-              <button className="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-medium transition-all">
+              <button className="px-4 py-2 bg-[rgba(201,168,76,0.12)] hover:bg-[rgba(201,168,76,0.12)] text-white rounded-lg font-medium transition-all">
                 Review Overdue Requests
               </button>
             </div>

@@ -150,22 +150,22 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-yellow-500/30">
+      <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
         <div className="flex items-center gap-3 mb-3">
-          <Award className="w-8 h-8 text-yellow-400" />
+          <Award className="w-8 h-8 text-[#C9A84C]" />
           <div>
             <h2 className="text-2xl font-bold text-white">Customer Recognition System</h2>
-            <p className="text-yellow-200">Customers can award XP to employees who go above and beyond!</p>
+            <p className="text-[#F0EBE0]">Customers can award XP to employees who go above and beyond!</p>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
-          <div className="bg-yellow-500/20 rounded-lg p-3 text-center border border-yellow-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-3 text-center border border-[rgba(201,168,76,0.22)]">
             <p className="text-3xl font-bold text-white">{pendingKudos.length}</p>
-            <p className="text-sm text-yellow-200">Pending Approval</p>
+            <p className="text-sm text-[#F0EBE0]">Pending Approval</p>
           </div>
-          <div className="bg-green-500/20 rounded-lg p-3 text-center border border-green-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-3 text-center border border-[rgba(201,168,76,0.22)]">
             <p className="text-3xl font-bold text-white">{approvedKudos.length}</p>
-            <p className="text-sm text-green-200">Approved Today</p>
+            <p className="text-sm text-[#F0EBE0]">Approved Today</p>
           </div>
           <div className="bg-amber-500/20 rounded-lg p-3 text-center border border-amber-500/40/30">
             <p className="text-3xl font-bold text-white">1,247</p>
@@ -223,7 +223,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
               key={kudos.id}
               className={`lux-card/80 backdrop-blur-xl rounded p-6 border-2 ${
                 kudos.priority === 'high' 
-                  ? 'border-yellow-500/50' 
+                  ? 'border-[rgba(201,168,76,0.22)]' 
                   : 'border-[rgba(201,168,76,0.22)]'
               }`}
             >
@@ -236,7 +236,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
                     <div className="flex items-center gap-2 mb-1">
                       <h3 className="text-xl font-bold text-white">{kudos.employeeName}</h3>
                       {kudos.priority === 'high' && (
-                        <span className="px-2 py-1 bg-red-500/20 border border-red-500/30 rounded text-xs font-bold text-red-300">
+                        <span className="px-2 py-1 bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded text-xs font-bold text-[#F0EBE0]">
                           HIGH IMPACT
                         </span>
                       )}
@@ -253,12 +253,12 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
                 <div className="text-right">
                   <div className="flex items-center gap-1 mb-2">
                     {[...Array(kudos.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                      <Star key={i} className="w-5 h-5 text-[#C9A84C] fill-yellow-400" />
                     ))}
                   </div>
-                  <div className="bg-yellow-500/20 rounded-lg p-3 border border-yellow-500/30">
-                    <p className="text-3xl font-bold text-yellow-300">{kudos.xpAwarded}</p>
-                    <p className="text-xs text-yellow-200">XP to Award</p>
+                  <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-3 border border-[rgba(201,168,76,0.22)]">
+                    <p className="text-3xl font-bold text-[#F0EBE0]">{kudos.xpAwarded}</p>
+                    <p className="text-xs text-[#F0EBE0]">XP to Award</p>
                   </div>
                 </div>
               </div>
@@ -266,8 +266,8 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
               {/* Customer Feedback */}
               <div className="bg-[#110F0B]/50 rounded-lg p-4 mb-4">
                 <div className="flex items-center gap-2 mb-2">
-                  <Heart className="w-5 h-5 text-pink-400" />
-                  <p className="text-sm font-semibold text-pink-300">From: {kudos.customerName} ({kudos.recommendedBy})</p>
+                  <Heart className="w-5 h-5 text-[#9E8F75]" />
+                  <p className="text-sm font-semibold text-[#9E8F75]">From: {kudos.customerName} ({kudos.recommendedBy})</p>
                 </div>
                 <p className="text-white italic mb-3">&ldquo;{kudos.comment}&rdquo;</p>
                 
@@ -314,7 +314,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
                 </button>
                 <button
                   onClick={() => handleReject(kudos.id)}
-                  className="px-6 py-3 bg-red-500/20 hover:bg-red-500/30 border border-red-500/30 rounded-lg font-semibold text-red-300 transition-all"
+                  className="px-6 py-3 bg-[rgba(201,168,76,0.06)] hover:bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg font-semibold text-[#F0EBE0] transition-all"
                 >
                   Reject
                 </button>
@@ -344,7 +344,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           {approvedKudos.map(kudos => (
             <div
               key={kudos.id}
-              className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-4 border-2 border-green-500/30"
+              className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-4 border-2 border-[rgba(201,168,76,0.22)]"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">

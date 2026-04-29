@@ -88,9 +88,9 @@ export default function SecurityPage() {
     switch (status) {
       case 'ONLINE': return 'text-[#C9A84C] 400 bg-[#C9A84C]/20 border-[rgba(201,168,76,0.22)] 500';
       case 'OFFLINE': return 'text-[#9E8F75] 400 bg-[#110F0B] 500/20 border-[rgba(201,168,76,0.22)] 500';
-      case 'MAINTENANCE': return 'text-yellow-400 bg-yellow-500/20 border-yellow-500';
+      case 'MAINTENANCE': return 'text-[#C9A84C] bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]';
       case 'ERROR': return 'text-[#9E8F75] 400 bg-[#110F0B] 500/20 border-[rgba(201,168,76,0.22)] 500';
-      case 'OPEN': return 'text-orange-400 bg-orange-500/20 border-orange-500';
+      case 'OPEN': return 'text-[#9E8F75] bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]';
       case 'CLOSED': return 'text-[#C9A84C] 400 bg-[#C9A84C]/20 border-[rgba(201,168,76,0.22)] 500';
       case 'ALARM': return 'text-[#9E8F75] 400 bg-[#110F0B] 500/20 border-[rgba(201,168,76,0.22)] 500';
       default: return 'text-[#9E8F75] bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]';
@@ -100,8 +100,8 @@ export default function SecurityPage() {
   function getSeverityColor(severity: string) {
     switch (severity) {
       case 'CRITICAL': return 'bg-[#110F0B] 600 text-white';
-      case 'HIGH': return 'bg-orange-600 text-white';
-      case 'MEDIUM': return 'bg-yellow-600 text-white';
+      case 'HIGH': return 'bg-[rgba(201,168,76,0.12)] text-white';
+      case 'MEDIUM': return 'bg-[rgba(201,168,76,0.12)] text-white';
       case 'LOW': return 'bg-amber-600 text-white';
       case 'INFO': return 'bg-[rgba(201,168,76,0.08)] text-white';
       default: return 'bg-[rgba(201,168,76,0.08)] text-white';
@@ -240,7 +240,7 @@ export default function SecurityPage() {
                 {cameras.map((camera) => (
                   <div
                     key={camera.id}
-                    className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-4 hover:border-amber-500/40/50 transition-all cursor-pointer"
+                    className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-4 hover:border-[rgba(201,168,76,0.45)]/50 transition-all cursor-pointer"
                     onClick={() => window.location.href = `/sentinel/security/cameras/${camera.id}`}
                   >
                     <div className="flex items-start justify-between mb-3">
@@ -285,12 +285,12 @@ export default function SecurityPage() {
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-3">
                         <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${
-                          door.status === 'CLOSED' ? 'bg-[#C9A84C]/20' : 'bg-orange-500/20'
+                          door.status === 'CLOSED' ? 'bg-[#C9A84C]/20' : 'bg-[rgba(201,168,76,0.06)]'
                         }`}>
                           {door.status === 'CLOSED' ? (
                             <DoorClosed className="w-6 h-6 text-[#C9A84C] 400" />
                           ) : (
-                            <DoorOpen className="w-6 h-6 text-orange-400" />
+                            <DoorOpen className="w-6 h-6 text-[#9E8F75]" />
                           )}
                         </div>
                         <div>

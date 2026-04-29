@@ -106,7 +106,7 @@ export default function AutomationBuilder() {
     <Card className="max-w-xl mx-auto mt-8 p-6 shadow-lg border border-gray-200">
       <h2 className="text-2xl font-bold mb-4">Automation Builder</h2>
       <p className="mb-2 text-sm text-[#9E8F75]">All automations are HIPAA & legally compliant. Actions are logged and access-controlled.</p>
-      {error && <div className="text-red-500 mb-2">{error}</div>}
+      {error && <div className="text-red-400 mb-2">{error}</div>}
       <Input
         placeholder="Automation Name"
         value={automationName}

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { BookOpen, Plus, Filter, Search, AlertTriangle, CheckCircle, Clock, Users, Package, Wrench, MessageSquare, Flag, TrendingUp, Shield } from 'lucide-react';
@@ -378,8 +378,8 @@ export default function ShiftLogsPage() {
   const getPriorityColor = (priority: string) => {
     switch (priority) {
       case 'urgent': return 'bg-red-500';
-      case 'high': return 'bg-orange-500';
-      case 'medium': return 'bg-yellow-500';
+      case 'high': return 'bg-[rgba(201,168,76,0.12)]';
+      case 'medium': return 'bg-[rgba(201,168,76,0.12)]';
       case 'low': return 'bg-amber-600';
       default: return 'bg-[rgba(201,168,76,0.04)]0';
     }
@@ -443,7 +443,7 @@ export default function ShiftLogsPage() {
                   <p>✓ <strong>Minimum necessary:</strong> Include only information essential for care continuity</p>
                   <p>✓ <strong>Secure access:</strong> All logs are encrypted and access-controlled</p>
                   <p>✓ <strong>Audit trail:</strong> Every view and edit is logged for compliance</p>
-                  <p className="text-yellow-500 font-semibold mt-3">⚠️ Reminder: Shift logs are part of the medical record and subject to HIPAA regulations</p>
+                  <p className="text-[#C9A84C] font-semibold mt-3">⚠️ Reminder: Shift logs are part of the medical record and subject to HIPAA regulations</p>
                 </div>
               </div>
             </div>
@@ -458,15 +458,15 @@ export default function ShiftLogsPage() {
           </div>
           <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Urgent</div>
-            <div className="text-3xl font-bold text-red-500">{stats.urgent}</div>
+            <div className="text-3xl font-bold text-red-400">{stats.urgent}</div>
           </div>
           <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Action Required</div>
-            <div className="text-3xl font-bold text-orange-500">{stats.actionRequired}</div>
+            <div className="text-3xl font-bold text-[#9E8F75]">{stats.actionRequired}</div>
           </div>
           <div className="p-4 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="text-sm opacity-70 mb-1">Resolved Today</div>
-            <div className="text-3xl font-bold text-green-500">{stats.resolved}</div>
+            <div className="text-3xl font-bold text-green-400">{stats.resolved}</div>
           </div>
         </div>
 
@@ -639,7 +639,7 @@ export default function ShiftLogsPage() {
                                 </span>
                               )}
                               {log.actionRequired && !log.resolved && (
-                                <span className="px-3 py-1 rounded-full text-xs font-bold bg-orange-500 text-white flex items-center gap-1">
+                                <span className="px-3 py-1 rounded-full text-xs font-bold bg-[rgba(201,168,76,0.12)] text-white flex items-center gap-1">
                                   <Flag className="h-3 w-3" />
                                   Action Required
                                 </span>
@@ -676,7 +676,7 @@ export default function ShiftLogsPage() {
                         <p className="mb-3 opacity-90">{log.description}</p>
 
                         {log.resolved && log.resolvedBy && (
-                          <div className="p-3 rounded-lg border-l-4 border-green-500 text-sm" style={{ background: 'var(--calendar-bg)' }}>
+                          <div className="p-3 rounded-lg border-l-4 border-[rgba(201,168,76,0.22)] text-sm" style={{ background: 'var(--calendar-bg)' }}>
                             <span className="font-semibold">✓ Resolved by {log.resolvedBy}</span>
                             <span className="opacity-70"> at {log.resolvedTime}</span>
                           </div>
@@ -710,7 +710,7 @@ export default function ShiftLogsPage() {
             {/* Urgent & Action Required */}
             <div className="mb-6">
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{ color: 'var(--header-text)' }}>
-                <AlertTriangle className="h-6 w-6 text-red-500" />
+                <AlertTriangle className="h-6 w-6 text-red-400" />
                 Urgent & Action Required
               </h3>
               <div className="space-y-4">
@@ -719,11 +719,11 @@ export default function ShiftLogsPage() {
                   return (
                     <div
                       key={log.id}
-                      className="p-6 rounded shadow-lg border-l-4 border-red-500"
+                      className="p-6 rounded shadow-lg border-l-4 border-[rgba(201,168,76,0.22)]"
                       style={{ background: 'var(--card-bg)' }}
                     >
                       <div className="flex items-center gap-3 mb-2">
-                        <CategoryIcon className="h-5 w-5 text-red-500" />
+                        <CategoryIcon className="h-5 w-5 text-red-400" />
                         <h4 className="text-lg font-bold" style={{ color: 'var(--header-text)' }}>{log.title}</h4>
                         <span className="px-2 py-1 rounded text-xs font-bold bg-red-500 text-white">
                           {log.priority.toUpperCase()}
@@ -762,7 +762,7 @@ export default function ShiftLogsPage() {
                           <div className="text-sm opacity-70">{log.description}</div>
                           <div className="text-xs opacity-60 mt-1">{log.timestamp}</div>
                         </div>
-                        {log.resolved && <CheckCircle className="h-5 w-5 text-green-500" />}
+                        {log.resolved && <CheckCircle className="h-5 w-5 text-green-400" />}
                       </div>
                     ))}
                   </div>
@@ -782,8 +782,8 @@ export default function ShiftLogsPage() {
 
               {/* HIPAA Reminder for Healthcare */}
               {(selectedBusinessType === 'healthcare' || selectedBusinessType === 'hospital' || selectedBusinessType === 'behavioralHealth') && (
-                <div className="mb-6 p-4 rounded-lg border-2 border-yellow-500 bg-yellow-500/10">
-                  <div className="flex items-center gap-2 text-yellow-500 font-bold mb-2">
+                <div className="mb-6 p-4 rounded-lg border-2 border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]">
+                  <div className="flex items-center gap-2 text-[#C9A84C] font-bold mb-2">
                     <AlertTriangle className="h-5 w-5" />
                     HIPAA Reminder
                   </div>

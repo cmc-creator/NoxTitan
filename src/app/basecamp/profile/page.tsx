@@ -58,7 +58,7 @@ export default function Profile() {
             {!isEditing && (
               <button
                 onClick={() => setIsEditing(true)}
-                className="px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-bold transition-all shadow-lg shadow-blue-500/30 flex items-center gap-2"
+                className="px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-bold transition-all shadow-lg shadow-[rgba(201,168,76,0.2)] flex items-center gap-2"
               >
                 <Edit className="w-5 h-5" />
                 Edit Profile
@@ -92,7 +92,7 @@ export default function Profile() {
                   <div className="text-[#9E8F75] text-xs">Tenure</div>
                   <div className="text-white font-semibold">2 years 9 months</div>
                 </div>
-                <div className="px-4 py-2 bg-blue-900/50 border border-amber-500/40/30 rounded-lg">
+                <div className="px-4 py-2 bg-[rgba(201,168,76,0.06)] border border-amber-500/40/30 rounded-lg">
                   <div className="text-[#9E8F75] text-xs">Birthday</div>
                   <div className="text-white font-semibold">{profile.birthday}</div>
                 </div>
@@ -201,7 +201,7 @@ export default function Profile() {
                   setIsEditing(false);
                   alert('Profile updated successfully!');
                 }}
-                className="px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-semibold transition-all shadow-lg shadow-emerald-500/30 flex items-center gap-2"
+                className="px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-semibold transition-all shadow-lg shadow-[rgba(201,168,76,0.2)] flex items-center gap-2"
               >
                 <Save className="w-5 h-5" />
                 Save Changes
@@ -211,28 +211,28 @@ export default function Profile() {
         </div>
 
         {/* Achievements */}
-        <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-yellow-500/30">
+        <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
           <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-            <Award className="w-6 h-6 text-yellow-400" />
+            <Award className="w-6 h-6 text-[#C9A84C]" />
             Your Achievements
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="bg-[#110F0B]/50 rounded-lg p-4 text-center border border-yellow-500/20">
+            <div className="bg-[#110F0B]/50 rounded-lg p-4 text-center border border-[rgba(201,168,76,0.22)]">
               <div className="text-4xl mb-2">🏆</div>
-              <div className="text-yellow-300 font-bold">Team Player</div>
+              <div className="text-[#F0EBE0] font-bold">Team Player</div>
               <div className="text-[#9E8F75] text-xs mt-1">10+ Kudos received</div>
             </div>
-            <div className="bg-[#110F0B]/50 rounded-lg p-4 text-center border border-yellow-500/20">
+            <div className="bg-[#110F0B]/50 rounded-lg p-4 text-center border border-[rgba(201,168,76,0.22)]">
               <div className="text-4xl mb-2">🔥</div>
-              <div className="text-orange-300 font-bold">On Fire!</div>
+              <div className="text-[#9E8F75] font-bold">On Fire!</div>
               <div className="text-[#9E8F75] text-xs mt-1">12 day streak</div>
             </div>
-            <div className="bg-[#110F0B]/50 rounded-lg p-4 text-center border border-yellow-500/20">
+            <div className="bg-[#110F0B]/50 rounded-lg p-4 text-center border border-[rgba(201,168,76,0.22)]">
               <div className="text-4xl mb-2">💡</div>
               <div className="text-amber-400 font-bold">Innovator</div>
               <div className="text-[#9E8F75] text-xs mt-1">3 ideas submitted</div>
             </div>
-            <div className="bg-[#110F0B]/50 rounded-lg p-4 text-center border border-yellow-500/20">
+            <div className="bg-[#110F0B]/50 rounded-lg p-4 text-center border border-[rgba(201,168,76,0.22)]">
               <div className="text-4xl mb-2">⭐</div>
               <div className="text-[#C9A84C] font-bold">Star Performer</div>
               <div className="text-[#9E8F75] text-xs mt-1">Q4 2025</div>

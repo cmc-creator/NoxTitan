@@ -47,11 +47,11 @@ export default function TimeOffPage() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'PENDING':
-        return 'bg-yellow-100 text-yellow-800';
+        return 'bg-[rgba(201,168,76,0.04)] text-[#5A5040]';
       case 'APPROVED':
-        return 'bg-green-100 text-green-800';
+        return 'bg-[rgba(201,168,76,0.04)] text-green-400';
       case 'REJECTED':
-        return 'bg-red-100 text-red-800';
+        return 'bg-[rgba(201,168,76,0.04)] text-red-400';
       default:
         return 'bg-[rgba(201,168,76,0.06)] text-[#9E8F75]';
     }
@@ -83,10 +83,10 @@ export default function TimeOffPage() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-[#9E8F75]">Pending</p>
-              <p className="text-3xl font-bold text-yellow-600 mt-2">2</p>
+              <p className="text-3xl font-bold text-[#5A5040] mt-2">2</p>
             </div>
-            <div className="bg-yellow-100 p-3 rounded-lg">
-              <Clock className="h-6 w-6 text-yellow-600" />
+            <div className="bg-[rgba(201,168,76,0.04)] p-3 rounded-lg">
+              <Clock className="h-6 w-6 text-[#5A5040]" />
             </div>
           </div>
         </div>
@@ -95,10 +95,10 @@ export default function TimeOffPage() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-[#9E8F75]">Approved</p>
-              <p className="text-3xl font-bold text-green-600 mt-2">1</p>
+              <p className="text-3xl font-bold text-green-400 mt-2">1</p>
             </div>
-            <div className="bg-green-100 p-3 rounded-lg">
-              <Check className="h-6 w-6 text-green-600" />
+            <div className="bg-[rgba(201,168,76,0.04)] p-3 rounded-lg">
+              <Check className="h-6 w-6 text-green-400" />
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@ export default function TimeOffPage() {
               <p className="text-sm font-medium text-[#9E8F75]">This Month</p>
               <p className="text-3xl font-bold text-amber-400 mt-2">3</p>
             </div>
-            <div className="bg-blue-100 p-3 rounded-lg">
+            <div className="bg-[rgba(201,168,76,0.04)] p-3 rounded-lg">
               <Clock className="h-6 w-6 text-amber-400" />
             </div>
           </div>
@@ -185,10 +185,10 @@ export default function TimeOffPage() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                       {request.status === 'PENDING' && (
                         <div className="flex gap-2">
-                          <button className="text-green-600 hover:text-green-900">
+                          <button className="text-green-400 hover:text-green-400">
                             Approve
                           </button>
-                          <button className="text-red-600 hover:text-red-900">
+                          <button className="text-red-400 hover:text-red-400">
                             Reject
                           </button>
                         </div>
@@ -203,7 +203,7 @@ export default function TimeOffPage() {
       </div>
 
       {/* Upgrade Notice for Free Tier */}
-      <div className="bg-amber-900/20 border-l-4 border-blue-400 p-4 rounded-lg">
+      <div className="bg-amber-900/20 border-l-4 border-[rgba(201,168,76,0.22)] p-4 rounded-lg">
         <div className="flex">
           <div className="flex-shrink-0">
             <svg className="h-5 w-5 text-amber-400" viewBox="0 0 20 20" fill="currentColor">

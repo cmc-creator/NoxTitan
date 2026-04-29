@@ -107,7 +107,7 @@ export default function AttendancePage() {
               onClick={() => setFilter('clocked-in')}
               className={`px-4 py-2 rounded-lg transition-colors ${
                 filter === 'clocked-in'
-                  ? 'bg-green-600 text-white'
+                  ? 'bg-green-500 text-white'
                   : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[#110F0B]'
               }`}
             >
@@ -253,8 +253,8 @@ export default function AttendancePage() {
                       </td>
                       <td className="px-6 py-4">
                         {entry.status === 'CLOCKED_IN' && (
-                          <span className="inline-flex items-center gap-1 px-3 py-1 bg-green-500/20 text-green-400 text-xs font-semibold rounded-full">
-                            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                          <span className="inline-flex items-center gap-1 px-3 py-1 bg-[rgba(201,168,76,0.06)] text-green-400 text-xs font-semibold rounded-full">
+                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                             Active
                           </span>
                         )}
@@ -271,7 +271,7 @@ export default function AttendancePage() {
                           </span>
                         )}
                         {entry.missedMealBreak && (
-                          <span className="inline-flex items-center gap-1 px-3 py-1 bg-red-500/20 text-red-400 text-xs font-semibold rounded-full mt-1">
+                          <span className="inline-flex items-center gap-1 px-3 py-1 bg-[rgba(201,168,76,0.06)] text-red-400 text-xs font-semibold rounded-full mt-1">
                             <AlertCircle className="w-3 h-3" />
                             Missed Break
                           </span>

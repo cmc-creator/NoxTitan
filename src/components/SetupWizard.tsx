@@ -60,13 +60,13 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
     {
       id: 'industry',
       title: 'Industry Selection',
-      icon: <Briefcase className="w-12 h-12 text-green-600" />,
+      icon: <Briefcase className="w-12 h-12 text-green-400" />,
       description: "Choose your industry to automatically configure compliance rules, departments, and features.",
     },
     {
       id: 'branding',
       title: 'Brand Customization',
-      icon: <Palette className="w-12 h-12 text-pink-600" />,
+      icon: <Palette className="w-12 h-12 text-[#9E8F75]" />,
       description: "Customize colors to match your company's brand. These will appear throughout the platform.",
     },
     {
@@ -78,13 +78,13 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
     {
       id: 'features',
       title: 'Enable Features',
-      icon: <SettingsIcon className="w-12 h-12 text-orange-600" />,
+      icon: <SettingsIcon className="w-12 h-12 text-[#9E8F75]" />,
       description: "Choose which NyxTitan features your organization will use.",
     },
     {
       id: 'compliance',
       title: 'Compliance Settings',
-      icon: <Shield className="w-12 h-12 text-red-600" />,
+      icon: <Shield className="w-12 h-12 text-red-400" />,
       description: "Configure labor laws and compliance rules for your region and industry.",
     },
   ];
@@ -139,19 +139,19 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
               <h3 className="text-xl font-bold text-[#9E8F75] mb-3">What we'll set up:</h3>
               <ul className="space-y-2 text-left">
                 <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
                   <span className="text-[#9E8F75]">Company profile and branding</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
                   <span className="text-[#9E8F75]">Industry-specific compliance rules</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
                   <span className="text-[#9E8F75]">Departments and positions</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
                   <span className="text-[#9E8F75]">Feature selection and configuration</span>
                 </li>
               </ul>
@@ -183,7 +183,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                   value={setupData.name}
                   onChange={(e) => setSetupData({ ...setupData, name: e.target.value })}
                   placeholder="Enter your company name"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-lg"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent text-lg"
                 />
               </div>
 
@@ -194,7 +194,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                 <select
                   value={setupData.timezone}
                   onChange={(e) => setSetupData({ ...setupData, timezone: e.target.value })}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                 >
                   <option value="America/New_York">Eastern Time (ET)</option>
                   <option value="America/Chicago">Central Time (CT)</option>
@@ -238,8 +238,8 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                   }}
                   className={`p-6 rounded border-2 transition-all text-left hover:shadow-lg ${
                     setupData.industry === industry.id
-                      ? 'border-amber-600/40 bg-purple-50 shadow-md'
-                      : 'border-gray-300 hover:border-amber-400/40'
+                      ? 'border-amber-600/40 bg-[rgba(201,168,76,0.04)] shadow-md'
+                      : 'border-gray-300 hover:border-[rgba(201,168,76,0.45)]'
                   }`}
                 >
                   <div className="text-4xl mb-3">{industry.icon}</div>
@@ -287,7 +287,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                       type="text"
                       value={setupData.brandPrimaryColor}
                       onChange={(e) => setSetupData({ ...setupData, brandPrimaryColor: e.target.value })}
-                      className="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500"
+                      className="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                       placeholder="#9333ea"
                     />
                   </div>
@@ -308,7 +308,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                       type="text"
                       value={setupData.brandSecondaryColor}
                       onChange={(e) => setSetupData({ ...setupData, brandSecondaryColor: e.target.value })}
-                      className="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500"
+                      className="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                       placeholder="#ec4899"
                     />
                   </div>
@@ -329,7 +329,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                       type="text"
                       value={setupData.brandAccentColor}
                       onChange={(e) => setSetupData({ ...setupData, brandAccentColor: e.target.value })}
-                      className="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500"
+                      className="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                       placeholder="#06b6d4"
                     />
                   </div>
@@ -386,8 +386,8 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
 
             {selectedIndustry && (
               <div className="max-w-3xl mx-auto space-y-6">
-                <div className="bg-purple-50 rounded p-4 border-2 border-purple-200">
-                  <p className="text-sm text-purple-900">
+                <div className="bg-[rgba(201,168,76,0.04)] rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
+                  <p className="text-sm text-[#9E8F75]">
                     <strong>✨ Pre-configured for {selectedIndustry.name}!</strong> These departments and positions are based on industry standards. You can customize them now or later.
                   </p>
                 </div>
@@ -400,7 +400,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                     {setupData.departments.map((dept, index) => (
                       <div
                         key={index}
-                        className="px-4 py-2 bg-amber-900/30 text-blue-900 rounded-lg border border-blue-300 flex items-center gap-2"
+                        className="px-4 py-2 bg-amber-900/30 text-[#9E8F75] rounded-lg border border-[rgba(201,168,76,0.22)] flex items-center gap-2"
                       >
                         <span>{dept}</span>
                         <button
@@ -408,7 +408,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                             const newDepts = setupData.departments.filter((_, i) => i !== index);
                             setSetupData({ ...setupData, departments: newDepts });
                           }}
-                          className="text-amber-400 hover:text-blue-900"
+                          className="text-amber-400 hover:text-[#9E8F75]"
                         >
                           ×
                         </button>
@@ -425,7 +425,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                     {setupData.positions.map((pos, index) => (
                       <div
                         key={index}
-                        className="px-4 py-2 bg-green-100 text-green-900 rounded-lg border border-green-300 flex items-center gap-2"
+                        className="px-4 py-2 bg-[rgba(201,168,76,0.04)] text-green-400 rounded-lg border border-[rgba(201,168,76,0.22)] flex items-center gap-2"
                       >
                         <span>{pos}</span>
                         <button
@@ -433,7 +433,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                             const newPos = setupData.positions.filter((_, i) => i !== index);
                             setSetupData({ ...setupData, positions: newPos });
                           }}
-                          className="text-green-600 hover:text-green-900"
+                          className="text-green-400 hover:text-green-400"
                         >
                           ×
                         </button>
@@ -461,8 +461,8 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
 
             {selectedIndustry && (
               <div className="max-w-4xl mx-auto">
-                <div className="bg-purple-50 rounded p-4 border-2 border-purple-200 mb-6">
-                  <p className="text-sm text-purple-900">
+                <div className="bg-[rgba(201,168,76,0.04)] rounded p-4 border-2 border-[rgba(201,168,76,0.22)] mb-6">
+                  <p className="text-sm text-[#9E8F75]">
                     <strong>✨ Recommended for {selectedIndustry.name}!</strong> These features are pre-selected based on your industry needs.
                   </p>
                 </div>
@@ -471,7 +471,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                   {Object.entries(setupData.featureFlags).map(([feature, enabled]) => (
                     <label
                       key={feature}
-                      className="flex items-start gap-3 p-4 rounded-lg border-2 border-gray-300 cursor-pointer hover:border-amber-400/40 transition-all"
+                      className="flex items-start gap-3 p-4 rounded-lg border-2 border-gray-300 cursor-pointer hover:border-[rgba(201,168,76,0.45)] transition-all"
                     >
                       <input
                         type="checkbox"
@@ -485,7 +485,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                             },
                           });
                         }}
-                        className="w-5 h-5 text-amber-600 rounded focus:ring-2 focus:ring-amber-500 mt-0.5"
+                        className="w-5 h-5 text-amber-600 rounded focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] mt-0.5"
                       />
                       <div className="flex-1">
                         <div className="font-semibold text-[#9E8F75] capitalize">
@@ -518,8 +518,8 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
 
             {selectedIndustry && setupData.complianceSettings && (
               <div className="max-w-4xl mx-auto space-y-6">
-                <div className="bg-purple-50 rounded p-4 border-2 border-purple-200">
-                  <p className="text-sm text-purple-900">
+                <div className="bg-[rgba(201,168,76,0.04)] rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
+                  <p className="text-sm text-[#9E8F75]">
                     <strong>✨ Auto-configured for {selectedIndustry.name}!</strong> These compliance rules match {selectedIndustry.name} industry standards and federal/state labor laws.
                   </p>
                 </div>
@@ -547,7 +547,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                               },
                             });
                           }}
-                          className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500"
+                          className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                         />
                       </div>
 
@@ -570,7 +570,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                               },
                             });
                           }}
-                          className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500"
+                          className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                         />
                       </div>
 
@@ -593,7 +593,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                               },
                             });
                           }}
-                          className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500"
+                          className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                         />
                       </div>
 
@@ -616,7 +616,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                               },
                             });
                           }}
-                          className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500"
+                          className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                         />
                       </div>
                     </div>
@@ -645,7 +645,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                                 },
                               });
                             }}
-                            className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500"
+                            className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                           />
                         </div>
                       )}
@@ -669,7 +669,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                               },
                             });
                           }}
-                          className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500"
+                          className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                         />
                       </div>
 
@@ -693,7 +693,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                               },
                             });
                           }}
-                          className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500"
+                          className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                         />
                       </div>
                     </div>
@@ -705,7 +705,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
                       {setupData.complianceSettings.requiredCertifications?.map((cert: string, index: number) => (
                         <div
                           key={index}
-                          className="px-3 py-1 bg-red-100 text-red-900 rounded-lg border border-red-300 text-sm"
+                          className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-red-400 rounded-lg border border-[rgba(201,168,76,0.22)] text-sm"
                         >
                           {cert}
                         </div>

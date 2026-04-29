@@ -15,7 +15,7 @@ export default function SettingsPage() {
   return (
     <div className="space-y-6">
       {/* Theme Customization */}
-      <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg shadow p-6 border-2 border-purple-200">
+      <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg shadow p-6 border-2 border-[rgba(201,168,76,0.22)]">
         <div className="flex items-center gap-3 mb-2">
           <span className="text-2xl">🎨</span>
           <h3 className="text-xl font-bold text-[#9E8F75]">Theme & Appearance</h3>
@@ -27,7 +27,7 @@ export default function SettingsPage() {
       </div>
 
       {/* Onboarding Walkthrough Restart */}
-      <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg shadow p-6 border-2 border-purple-200">
+      <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg shadow p-6 border-2 border-[rgba(201,168,76,0.22)]">
         <div className="flex items-center gap-3 mb-2">
           <HelpCircle className="w-6 h-6 text-amber-600" />
           <h3 className="text-xl font-bold text-[#9E8F75]">Onboarding Walkthrough</h3>
@@ -50,7 +50,7 @@ export default function SettingsPage() {
       </div>
 
       {/* Merch Store Setup - NEW */}
-      <div className="bg-gradient-to-r from-[#070604] to-[#070604] rounded-lg shadow p-6 border-2 border-blue-200">
+      <div className="bg-[#110F0B] rounded-lg shadow p-6 border-2 border-[rgba(201,168,76,0.22)]">
         <div className="flex items-start justify-between">
           <div>
             <div className="flex items-center gap-3 mb-2">
@@ -103,28 +103,28 @@ export default function SettingsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Professional */}
-          <div className="border-2 border-blue-400 rounded-lg p-6">
+          <div className="border-2 border-[rgba(201,168,76,0.22)] rounded-lg p-6">
             <h4 className="text-lg font-bold text-[#9E8F75] mb-2">Professional</h4>
             <p className="text-3xl font-bold text-amber-400 mb-4">$499<span className="text-sm text-[#9E8F75]">/mo</span></p>
             <ul className="space-y-2 mb-6 text-sm">
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>Up to 50 employees</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>Advanced scheduling & calendar</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>Time & attendance tracking</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>Payroll calculations</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>10 core integrations</span>
               </li>
             </ul>
@@ -144,31 +144,31 @@ export default function SettingsPage() {
             <p className="text-3xl font-bold text-amber-600 mb-4">$1,499<span className="text-sm text-[#9E8F75]">/mo</span></p>
             <ul className="space-y-2 mb-6 text-sm">
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>Up to 250 employees</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>All Professional features</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>Oracle AI - Predictive analytics</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>Compliance Suite (OSHA, CMS, etc.)</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>Asset Vault & Sentinel</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>Guild gamification & LMS</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>All 60+ integrations</span>
               </li>
             </ul>
@@ -178,39 +178,39 @@ export default function SettingsPage() {
           </div>
 
           {/* Titan */}
-          <div className="border-2 border-pink-400 rounded-lg p-6">
+          <div className="border-2 border-[rgba(201,168,76,0.22)] rounded-lg p-6">
             <div className="flex items-center gap-2 mb-2">
               <h4 className="text-lg font-bold text-[#9E8F75]">Titan</h4>
-              <Crown className="h-5 w-5 text-pink-500" />
+              <Crown className="h-5 w-5 text-[#9E8F75]" />
             </div>
-            <p className="text-3xl font-bold text-pink-600 mb-4">$2,999<span className="text-sm text-[#9E8F75]">/mo</span></p>
+            <p className="text-3xl font-bold text-[#9E8F75] mb-4">$2,999<span className="text-sm text-[#9E8F75]">/mo</span></p>
             <ul className="space-y-2 mb-6 text-sm">
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>Unlimited employees</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>All Enterprise features</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>White-glove implementation</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>Dedicated account manager</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>24/7 priority support (2hr SLA)</span>
               </li>
               <li className="flex items-start">
-                <span className="text-green-500 mr-2">✓</span>
+                <span className="text-green-400 mr-2">✓</span>
                 <span>Custom integrations & white-labeling</span>
               </li>
             </ul>
-            <button className="w-full py-2 bg-pink-500 text-white rounded-lg font-medium hover:bg-pink-600 transition-colors">
+            <button className="w-full py-2 bg-[rgba(201,168,76,0.12)] text-white rounded-lg font-medium hover:bg-[rgba(201,168,76,0.12)] transition-colors">
               Upgrade to Titan
             </button>
           </div>
@@ -228,7 +228,7 @@ export default function SettingsPage() {
             <input
               type="text"
               defaultValue="My Company"
-              className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
             />
           </div>
           <div>
@@ -238,14 +238,14 @@ export default function SettingsPage() {
             <input
               type="email"
               defaultValue="admin@company.com"
-              className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Time Zone
             </label>
-            <select className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+            <select className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent">
               <option>Eastern Time (ET)</option>
               <option>Central Time (CT)</option>
               <option>Mountain Time (MT)</option>
@@ -269,7 +269,7 @@ export default function SettingsPage() {
             </div>
             <label className="relative inline-flex items-center cursor-pointer">
               <input type="checkbox" className="sr-only peer" defaultChecked />
-              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-[rgba(201,168,76,0.22)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
+              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[rgba(201,168,76,0.45)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-[rgba(201,168,76,0.22)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
             </label>
           </div>
           <div className="flex items-center justify-between">
@@ -279,7 +279,7 @@ export default function SettingsPage() {
             </div>
             <label className="relative inline-flex items-center cursor-pointer">
               <input type="checkbox" className="sr-only peer" defaultChecked />
-              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-[rgba(201,168,76,0.22)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
+              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[rgba(201,168,76,0.45)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-[rgba(201,168,76,0.22)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
             </label>
           </div>
         </div>
@@ -310,7 +310,7 @@ export default function SettingsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <a
               href="/training"
-              className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-blue-400 transition-all"
+              className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-[rgba(201,168,76,0.22)] transition-all"
             >
               <p className="font-medium text-[#9E8F75] mb-1">📚 Training Courses</p>
               <p className="text-sm text-[#9E8F75]">
@@ -319,7 +319,7 @@ export default function SettingsPage() {
             </a>
             <a
               href="mailto:support@nyxtitan.com"
-              className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-blue-400 transition-all"
+              className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-[rgba(201,168,76,0.22)] transition-all"
             >
               <p className="font-medium text-[#9E8F75] mb-1">📧 Contact Support</p>
               <p className="text-sm text-[#9E8F75]">
@@ -328,7 +328,7 @@ export default function SettingsPage() {
             </a>
             <a
               href="/analytics"
-              className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-blue-400 transition-all"
+              className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-[rgba(201,168,76,0.22)] transition-all"
             >
               <p className="font-medium text-[#9E8F75] mb-1">📊 Documentation</p>
               <p className="text-sm text-[#9E8F75]">

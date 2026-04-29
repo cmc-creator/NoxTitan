@@ -95,13 +95,13 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
           onClick={toggleListening}
           className={`relative px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 ${
             isListening
-              ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white animate-pulse'
+              ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white'
               : 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white'
           }`}
         >
           {isListening ? (
             <>
-              <Mic className="w-5 h-5 animate-pulse" />
+              <Mic className="w-5 h-5" />
               Listening...
             </>
           ) : (
@@ -119,7 +119,7 @@ export default function VoiceCommandSystem({ botName, botType, onCommand }: Voic
           onClick={() => setIsSpeaking(!isSpeaking)}
           className={`p-2 rounded-lg transition-all ${
             isSpeaking
-              ? 'bg-green-500/20 text-green-400 hover:bg-green-500/30'
+              ? 'bg-[rgba(201,168,76,0.06)] text-green-400 hover:bg-[rgba(201,168,76,0.06)]'
               : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] hover:bg-[rgba(201,168,76,0.08)]'
           }`}
           title={isSpeaking ? 'Voice Enabled' : 'Voice Muted'}

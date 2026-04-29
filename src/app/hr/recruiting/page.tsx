@@ -29,7 +29,7 @@ export default function RecruitingATS() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/hr" className="inline-flex items-center gap-2 text-amber-400 hover:text-blue-100 mb-4 transition-colors">
+          <Link href="/hr" className="inline-flex items-center gap-2 text-amber-400 hover:text-[#9E8F75] mb-4 transition-colors">
             ← Back to HR Center
           </Link>
           <div className="flex items-center justify-between">
@@ -42,7 +42,7 @@ export default function RecruitingATS() {
                   }}>
                 Applicant Tracking System
               </h1>
-              <p className="text-blue-200">Full-cycle recruiting from job posting to offer acceptance</p>
+              <p className="text-[#9E8F75]">Full-cycle recruiting from job posting to offer acceptance</p>
             </div>
             <button className="px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-bold transition-all shadow-lg flex items-center gap-2">
               <Plus className="w-5 h-5" />
@@ -66,14 +66,14 @@ export default function RecruitingATS() {
           <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="text-[#9E8F75] text-sm mb-1">Interviews Scheduled</div>
             <div className="text-3xl font-bold text-white">12</div>
-            <div className="text-orange-400 text-xs mt-1">3 today</div>
+            <div className="text-[#9E8F75] text-xs mt-1">3 today</div>
           </div>
-          <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-orange-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="text-[#9E8F75] text-sm mb-1">Avg Time-to-Hire</div>
             <div className="text-3xl font-bold text-white">18d</div>
             <div className="text-[#9E8F75] text-xs mt-1">↓ 4 days vs Q4</div>
           </div>
-          <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-rose-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="text-[#9E8F75] text-sm mb-1">Cost-per-Hire</div>
             <div className="text-3xl font-bold text-white">$3.2K</div>
             <div className="text-[#9E8F75] text-xs mt-1">↓ $800 vs Q4</div>
@@ -119,7 +119,7 @@ export default function RecruitingATS() {
                   <input
                     type="text"
                     placeholder="Search candidates..."
-                    className="pl-10 pr-4 py-2 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg text-white placeholder-stone-600 focus:ring-2 focus:ring-amber-500 outline-none"
+                    className="pl-10 pr-4 py-2 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg text-white placeholder-stone-600 focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] outline-none"
                   />
                 </div>
                 <button className="px-4 py-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] text-white rounded-lg flex items-center gap-2">
@@ -141,11 +141,11 @@ export default function RecruitingATS() {
                     </div>
                     <div className="space-y-3">
                       {stageCandidates.map(candidate => (
-                        <div key={candidate.id} className="bg-[rgba(201,168,76,0.04)] rounded-lg p-3 border border-[rgba(201,168,76,0.22)] hover:border-amber-500/40 cursor-pointer transition-all">
+                        <div key={candidate.id} className="bg-[rgba(201,168,76,0.04)] rounded-lg p-3 border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.45)] cursor-pointer transition-all">
                           <div className="font-semibold text-white text-sm mb-1">{candidate.name}</div>
                           <div className="text-xs text-[#9E8F75] mb-2">{candidate.position}</div>
                           <div className="flex items-center gap-1 mb-2">
-                            <span className="text-yellow-400">★</span>
+                            <span className="text-[#C9A84C]">★</span>
                             <span className="text-xs text-white">{candidate.rating}</span>
                           </div>
                           <div className="flex items-center gap-2 text-xs text-[#9E8F75]">
@@ -168,14 +168,14 @@ export default function RecruitingATS() {
             <h2 className="text-2xl font-bold text-white mb-6">Open Positions</h2>
             <div className="space-y-4">
               {openPositions.map(position => (
-                <div key={position.id} className="bg-[#110F0B]/50 rounded-lg p-5 border border-[rgba(201,168,76,0.22)] hover:border-amber-500/40 transition-all">
+                <div key={position.id} className="bg-[#110F0B]/50 rounded-lg p-5 border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.45)] transition-all">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
                         <h3 className="text-xl font-bold text-white">{position.title}</h3>
                         <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                          position.priority === 'high' ? 'bg-red-600 text-white' :
-                          position.priority === 'medium' ? 'bg-orange-600 text-white' :
+                          position.priority === 'high' ? 'bg-red-500 text-white' :
+                          position.priority === 'medium' ? 'bg-[rgba(201,168,76,0.12)] text-white' :
                           'bg-amber-600 text-white'
                         }`}>
                           {position.priority.toUpperCase()}
@@ -193,7 +193,7 @@ export default function RecruitingATS() {
                         </div>
                         <div>
                           <div className="text-xs text-[#9E8F75]">Days Open</div>
-                          <div className="text-lg font-bold text-orange-400">{position.daysOpen}</div>
+                          <div className="text-lg font-bold text-[#9E8F75]">{position.daysOpen}</div>
                         </div>
                         <div>
                           <div className="text-xs text-[#9E8F75]">Posted</div>
@@ -246,8 +246,8 @@ export default function RecruitingATS() {
                   {[
                     { stage: 'Applied', count: 85, color: 'bg-amber-600', width: '100%' },
                     { stage: 'Screened', count: 52, color: 'bg-amber-500', width: '61%' },
-                    { stage: 'Interviewed', count: 24, color: 'bg-pink-500', width: '28%' },
-                    { stage: 'Offered', count: 8, color: 'bg-orange-500', width: '9%' },
+                    { stage: 'Interviewed', count: 24, color: 'bg-[rgba(201,168,76,0.12)]', width: '28%' },
+                    { stage: 'Offered', count: 8, color: 'bg-[rgba(201,168,76,0.12)]', width: '9%' },
                     { stage: 'Hired', count: 6, color: 'bg-[rgba(201,168,76,0.15)]', width: '7%' },
                   ].map(item => (
                     <div key={item.stage}>

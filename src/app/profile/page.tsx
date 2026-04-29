@@ -247,7 +247,7 @@ export default function ProfilePage() {
               </div>
               <button
                 onClick={() => avatarInputRef.current?.click()}
-                className="absolute bottom-0 right-0 p-2 bg-amber-600 text-white rounded-full hover:bg-amber-700 transition-all transform hover:scale-110 shadow-lg"
+                className="absolute bottom-0 right-0 p-2 bg-amber-600 text-white rounded-full hover:bg-amber-700 transition-all transform shadow-lg"
                 title="Change photo"
               >
                 <Camera className="w-4 h-4" />
@@ -290,7 +290,7 @@ export default function ProfilePage() {
                       type="text"
                       value={formData.firstName}
                       onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                      className="w-full px-4 py-3 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                      className="w-full px-4 py-3 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                     />
                   </div>
 
@@ -302,7 +302,7 @@ export default function ProfilePage() {
                       type="text"
                       value={formData.lastName}
                       onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                      className="w-full px-4 py-3 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                      className="w-full px-4 py-3 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                     />
                   </div>
 
@@ -314,7 +314,7 @@ export default function ProfilePage() {
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                      className="w-full px-4 py-3 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                     />
                   </div>
 
@@ -326,7 +326,7 @@ export default function ProfilePage() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20"
+                      className="w-full px-4 py-3 bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded-lg text-white focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                       placeholder="(555) 123-4567"
                     />
                   </div>
@@ -705,7 +705,7 @@ export default function ProfilePage() {
                   <div className="mb-6">
                     <button
                       onClick={() => documentInputRef.current?.click()}
-                      className="w-full border-2 border-dashed border-[rgba(201,168,76,0.22)] hover:border-amber-500/40 bg-[rgba(201,168,76,0.06)]/30 hover:bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-8 transition-all group"
+                      className="w-full border-2 border-dashed border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.45)] bg-[rgba(201,168,76,0.06)]/30 hover:bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-8 transition-all group"
                     >
                       <div className="flex flex-col items-center gap-3">
                         <Upload className="w-10 h-10 text-[#9E8F75] group-hover:text-amber-400 transition-colors" />

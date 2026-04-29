@@ -85,9 +85,9 @@ export default function ManagerBasecamp() {
                   onClick={() => handleMoodSelection(mood)}
                   className={`p-4 rounded border-2 transition-all ${
                     mood.color === 'green' ? 'bg-[#C9A84C]/10 border-[rgba(201,168,76,0.22)] 500/30 hover:border-[rgba(201,168,76,0.22)] 500/60' :
-                    mood.color === 'blue' ? 'bg-amber-600/10 border-amber-500/40/30 hover:border-amber-500/40/60' :
-                    mood.color === 'yellow' ? 'bg-yellow-500/10 border-yellow-500/30 hover:border-yellow-500/60' :
-                    mood.color === 'orange' ? 'bg-orange-500/10 border-orange-500/30 hover:border-orange-500/60' :
+                    mood.color === 'blue' ? 'bg-amber-600/10 border-amber-500/40/30 hover:border-[rgba(201,168,76,0.45)]/60' :
+                    mood.color === 'yellow' ? 'bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)]' :
+                    mood.color === 'orange' ? 'bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)]' :
                     'bg-[#110F0B] 500/10 border-[rgba(201,168,76,0.22)] 500/30 hover:border-[rgba(201,168,76,0.22)] 500/60'
                   }`}
                 >
@@ -222,20 +222,20 @@ export default function ManagerBasecamp() {
 
           <div className="bg-[rgba(201,168,76,0.04)] rounded p-4 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
-              <Star className="w-8 h-8 text-yellow-400" />
+              <Star className="w-8 h-8 text-[#C9A84C]" />
               <span className="text-2xl font-bold text-white">4.6</span>
             </div>
             <div className="text-[#F0EBE0]/70 font-semibold">Patient Satisfaction</div>
             <div className="text-xs text-[#C9A84C] mt-1">+8% vs last month</div>
           </div>
 
-          <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-orange-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center justify-between mb-2">
-              <AlertCircle className="w-8 h-8 text-orange-400" />
+              <AlertCircle className="w-8 h-8 text-[#9E8F75]" />
               <span className="text-2xl font-bold text-white">12</span>
             </div>
-            <div className="text-orange-200 font-semibold">Needs Attention</div>
-            <div className="text-xs text-orange-300 mt-1">Action items pending</div>
+            <div className="text-[#9E8F75] font-semibold">Needs Attention</div>
+            <div className="text-xs text-[#9E8F75] mt-1">Action items pending</div>
           </div>
         </div>
 
@@ -246,24 +246,24 @@ export default function ManagerBasecamp() {
             {/* Quick access links to Command Center */}
             <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-amber-500/40/30">
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <Zap className="w-6 h-6 text-yellow-400" />
+                <Zap className="w-6 h-6 text-[#C9A84C]" />
                 Quick Actions
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <Link href="/dashboard" className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg p-4 text-center transition-all shadow-lg group">
-                  <BarChart3 className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                  <BarChart3 className="w-8 h-8 text-white mx-auto mb-2 group- transition-transform" />
                   <div className="text-white font-semibold text-sm">Command Center</div>
                 </Link>
                 <Link href="/employees" className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg p-4 text-center transition-all shadow-lg group">
-                  <Users className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                  <Users className="w-8 h-8 text-white mx-auto mb-2 group- transition-transform" />
                   <div className="text-white font-semibold text-sm">Manage Team</div>
                 </Link>
                 <Link href="/calendar" className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg p-4 text-center transition-all shadow-lg group">
-                  <Calendar className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                  <Calendar className="w-8 h-8 text-white mx-auto mb-2 group- transition-transform" />
                   <div className="text-white font-semibold text-sm">Schedule</div>
                 </Link>
                 <Link href="/qapi" className="bg-[#110F0B] from-REMOVED-600 to-orange-600 hover:from-[#110F0B] 500 rounded-lg p-4 text-center transition-all shadow-lg group">
-                  <Shield className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                  <Shield className="w-8 h-8 text-white mx-auto mb-2 group- transition-transform" />
                   <div className="text-white font-semibold text-sm">QAPI</div>
                 </Link>
               </div>
@@ -312,7 +312,7 @@ export default function ManagerBasecamp() {
                 <div className="flex gap-2">
                   <button
                     onClick={() => setShowChatCustomizer(true)}
-                    className="px-3 py-1 bg-[#110F0B] 500/20 border border-pink-400/30 rounded-lg text-xs font-semibold text-[#C9A84C] 300 hover:bg-[#110F0B] 500/30 transition-all"
+                    className="px-3 py-1 bg-[#110F0B] 500/20 border border-[rgba(201,168,76,0.22)] rounded-lg text-xs font-semibold text-[#C9A84C] 300 hover:bg-[#110F0B] 500/30 transition-all"
                   >
                     Avatar
                   </button>
@@ -355,7 +355,7 @@ export default function ManagerBasecamp() {
                 </Link>
                 <Link href="/time-off" className="flex items-center justify-between p-3 bg-[#110F0B]/50 hover:bg-[#110F0B] rounded-lg transition-all group">
                   <div className="flex items-center gap-3">
-                    <Clock className="w-5 h-5 text-yellow-400" />
+                    <Clock className="w-5 h-5 text-[#C9A84C]" />
                     <span className="text-white font-semibold">8 Time-Off Requests</span>
                   </div>
                   <ChevronRight className="w-5 h-5 text-[#9E8F75] group-hover:text-amber-400 transition-colors" />

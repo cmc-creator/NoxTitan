@@ -41,7 +41,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
           {/* Customization Section */}
           <div className="bg-[rgba(201,168,76,0.04)] backdrop-blur-xl rounded p-5 border-2 border-amber-400/40/30">
             <div className="flex items-center gap-3 mb-4">
-              <Sliders className="w-5 h-5 text-pink-300" />
+              <Sliders className="w-5 h-5 text-[#9E8F75]" />
               <h3 className="font-bold text-white">Customization</h3>
             </div>
             <div className="space-y-4">
@@ -54,7 +54,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                       onClick={() => setCardDensity(density)}
                       className={`px-3 py-2 rounded-lg font-medium transition-all text-sm ${
                         cardDensity === density
-                          ? 'bg-pink-600 text-white border-2 border-pink-400 shadow-lg'
+                          ? 'bg-[rgba(201,168,76,0.12)] text-white border-2 border-[rgba(201,168,76,0.22)] shadow-lg'
                           : 'bg-[#110F0B]/10 text-[#F0EBE0]/70 hover:bg-[#110F0B]/20 border-2 border-transparent'
                       }`}
                     >
@@ -72,7 +72,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                       onClick={() => setFontSize(size)}
                       className={`px-3 py-2 rounded-lg font-medium transition-all text-sm ${
                         fontSize === size
-                          ? 'bg-pink-600 text-white border-2 border-pink-400 shadow-lg'
+                          ? 'bg-[rgba(201,168,76,0.12)] text-white border-2 border-[rgba(201,168,76,0.22)] shadow-lg'
                           : 'bg-[#110F0B]/10 text-[#F0EBE0]/70 hover:bg-[#110F0B]/20 border-2 border-transparent'
                       }`}
                     >
@@ -85,14 +85,14 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                 <span className="text-sm text-[#F0EBE0]/70 font-medium">Show Card Icons</span>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="sr-only peer" defaultChecked />
-                  <div className="w-11 h-6 bg-[rgba(201,168,76,0.08)] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-pink-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-pink-600"></div>
+                  <div className="w-11 h-6 bg-[rgba(201,168,76,0.08)] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[rgba(201,168,76,0.45)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[rgba(201,168,76,0.12)]"></div>
                 </label>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-[#F0EBE0]/70 font-medium">Animate Hover Effects</span>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="sr-only peer" defaultChecked />
-                  <div className="w-11 h-6 bg-[rgba(201,168,76,0.08)] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-pink-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-pink-600"></div>
+                  <div className="w-11 h-6 bg-[rgba(201,168,76,0.08)] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[rgba(201,168,76,0.45)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[rgba(201,168,76,0.12)]"></div>
                 </label>
               </div>
             </div>
@@ -129,7 +129,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                   {['purple', 'blue', 'green', 'pink', 'orange'].map((color) => (
                     <button
                       key={color}
-                      className={`w-10 h-10 rounded-full border-2 border-white/30 hover:scale-110 transition-transform bg-${color}-600`}
+                      className={`w-10 h-10 rounded-full border-2 border-white/30 transition-transform bg-${color}-600`}
                     />
                   ))}
                 </div>
@@ -153,7 +153,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                       onClick={() => setLayout(mode)}
                       className={`px-4 py-2 rounded-lg font-medium transition-all ${
                         layout === mode
-                          ? 'bg-amber-600 text-white border-2 border-blue-400'
+                          ? 'bg-amber-600 text-white border-2 border-[rgba(201,168,76,0.22)]'
                           : 'bg-[#110F0B]/10 text-[#F0EBE0]/70 hover:bg-[#110F0B]/20 border-2 border-transparent'
                       }`}
                     >
@@ -166,7 +166,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                 <span className="text-sm text-[#F0EBE0]/70">Compact View</span>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="sr-only peer" />
-                  <div className="w-11 h-6 bg-[rgba(201,168,76,0.08)] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
+                  <div className="w-11 h-6 bg-[rgba(201,168,76,0.08)] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[rgba(201,168,76,0.45)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                 </label>
               </div>
             </div>
@@ -175,7 +175,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
           {/* Notifications */}
           <div className="bg-[#110F0B]/5 backdrop-blur-xl rounded p-5 border border-white/10">
             <div className="flex items-center gap-3 mb-4">
-              <Bell className="w-5 h-5 text-yellow-300" />
+              <Bell className="w-5 h-5 text-[#F0EBE0]" />
               <h3 className="font-bold text-white">Notifications</h3>
             </div>
             <div className="space-y-3">
@@ -188,14 +188,14 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                     onChange={() => setNotifications(!notifications)}
                     className="sr-only peer"
                   />
-                  <div className="w-11 h-6 bg-[rgba(201,168,76,0.08)] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
+                  <div className="w-11 h-6 bg-[rgba(201,168,76,0.08)] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[rgba(201,168,76,0.45)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                 </label>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-[#F0EBE0]/70">Sound Alerts</span>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="sr-only peer" defaultChecked />
-                  <div className="w-11 h-6 bg-[rgba(201,168,76,0.08)] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
+                  <div className="w-11 h-6 bg-[rgba(201,168,76,0.08)] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[rgba(201,168,76,0.45)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                 </label>
               </div>
             </div>
@@ -204,7 +204,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
           {/* Data & Performance */}
           <div className="bg-[#110F0B]/5 backdrop-blur-xl rounded p-5 border border-white/10">
             <div className="flex items-center gap-3 mb-4">
-              <Database className="w-5 h-5 text-green-300" />
+              <Database className="w-5 h-5 text-[#F0EBE0]" />
               <h3 className="font-bold text-white">Data & Performance</h3>
             </div>
             <div className="space-y-3">
@@ -225,7 +225,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
                 <span className="text-sm text-[#F0EBE0]/70">Cache Data</span>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="sr-only peer" defaultChecked />
-                  <div className="w-11 h-6 bg-[rgba(201,168,76,0.08)] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
+                  <div className="w-11 h-6 bg-[rgba(201,168,76,0.08)] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[rgba(201,168,76,0.45)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                 </label>
               </div>
             </div>
@@ -234,7 +234,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
           {/* Advanced */}
           <div className="bg-[#110F0B]/5 backdrop-blur-xl rounded p-5 border border-white/10">
             <div className="flex items-center gap-3 mb-4">
-              <Zap className="w-5 h-5 text-orange-300" />
+              <Zap className="w-5 h-5 text-[#9E8F75]" />
               <h3 className="font-bold text-white">Advanced</h3>
             </div>
             <div className="space-y-3">
@@ -244,7 +244,7 @@ export default function SettingsPanel({ componentName, onClose }: SettingsPanelP
               <button className="w-full px-4 py-2 bg-[#110F0B]/10 hover:bg-[#110F0B]/20 border border-white/20 rounded-lg text-[#F0EBE0]/70 hover:text-white font-medium transition-colors text-left">
                 Import Settings
               </button>
-              <button className="w-full px-4 py-2 bg-red-600/20 hover:bg-red-600/30 border border-red-500/30 rounded-lg text-red-300 hover:text-red-200 font-medium transition-colors text-left">
+              <button className="w-full px-4 py-2 bg-[rgba(201,168,76,0.06)] hover:bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg text-[#F0EBE0] hover:text-[#F0EBE0] font-medium transition-colors text-left">
                 Reset to Defaults
               </button>
             </div>

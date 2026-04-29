@@ -118,11 +118,11 @@ export default function GuildPage() {
 
   function getLevelIcon(levelName: string) {
     switch (levelName) {
-      case 'Grandmaster': return <Crown className="w-6 h-6 text-yellow-400" />;
+      case 'Grandmaster': return <Crown className="w-6 h-6 text-[#C9A84C]" />;
       case 'Master': return <Star className="w-6 h-6 text-amber-400" />;
       case 'Expert': return <Trophy className="w-6 h-6 text-amber-400" />;
       case 'Journeyman': return <Shield className="w-6 h-6 text-green-400" />;
-      case 'Apprentice': return <Target className="w-6 h-6 text-orange-400" />;
+      case 'Apprentice': return <Target className="w-6 h-6 text-[#9E8F75]" />;
       default: return <Zap className="w-6 h-6 text-[#9E8F75]" />;
     }
   }
@@ -203,7 +203,7 @@ export default function GuildPage() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-4xl font-bold text-yellow-400">{profile.totalXP.toLocaleString()}</div>
+                  <div className="text-4xl font-bold text-[#C9A84C]">{profile.totalXP.toLocaleString()}</div>
                   <div className="text-sm text-[#9E8F75]">Total XP</div>
                 </div>
               </div>
@@ -230,14 +230,14 @@ export default function GuildPage() {
               <div className="grid grid-cols-3 gap-4">
                 <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-4 text-center">
                   <div className="flex items-center justify-center gap-2 mb-2">
-                    <Flame className="w-5 h-5 text-orange-400" />
+                    <Flame className="w-5 h-5 text-[#9E8F75]" />
                     <span className="text-2xl font-bold text-white">{profile.streak}</span>
                   </div>
                   <div className="text-sm text-[#9E8F75]">Day Streak</div>
                 </div>
                 <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-4 text-center">
                   <div className="flex items-center justify-center gap-2 mb-2">
-                    <Trophy className="w-5 h-5 text-yellow-400" />
+                    <Trophy className="w-5 h-5 text-[#C9A84C]" />
                     <span className="text-2xl font-bold text-white">#{profile.rank || '-'}</span>
                   </div>
                   <div className="text-sm text-[#9E8F75]">Rank</div>
@@ -255,7 +255,7 @@ export default function GuildPage() {
             {/* Recent Activity */}
             <div className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-6">
               <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <Zap className="w-6 h-6 text-yellow-400" />
+                <Zap className="w-6 h-6 text-[#C9A84C]" />
                 Recent XP Activity
               </h3>
               <div className="space-y-3">
@@ -292,19 +292,19 @@ export default function GuildPage() {
           <div>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-3xl font-bold text-white flex items-center gap-3">
-                <Gift className="w-8 h-8 text-pink-400" />
+                <Gift className="w-8 h-8 text-[#9E8F75]" />
                 Reward Shop
               </h2>
               {profile && (
                 <div className="text-right">
-                  <div className="text-3xl font-bold text-yellow-400">{profile.totalXP.toLocaleString()}</div>
+                  <div className="text-3xl font-bold text-[#C9A84C]">{profile.totalXP.toLocaleString()}</div>
                   <div className="text-sm text-[#9E8F75]">Available XP</div>
                 </div>
               )}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {rewards.map(reward => (
-                <div key={reward.id} className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-amber-500/40/50 transition-all">
+                <div key={reward.id} className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-[rgba(201,168,76,0.45)]/50 transition-all">
                   <div className="aspect-square bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded mb-4 flex items-center justify-center">
                     <Gift className="w-16 h-16 text-white" />
                   </div>
@@ -312,8 +312,8 @@ export default function GuildPage() {
                   <p className="text-sm text-[#9E8F75] mb-4">{reward.description}</p>
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
-                      <Zap className="w-5 h-5 text-yellow-400" />
-                      <span className="text-2xl font-bold text-yellow-400">{reward.xpCost}</span>
+                      <Zap className="w-5 h-5 text-[#C9A84C]" />
+                      <span className="text-2xl font-bold text-[#C9A84C]">{reward.xpCost}</span>
                     </div>
                     {reward.stockQuantity !== null && (
                       <span className="text-sm text-[#9E8F75]">{reward.stockQuantity} left</span>
@@ -336,7 +336,7 @@ export default function GuildPage() {
         {activeTab === 'achievements' && (
           <div>
             <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-              <Award className="w-8 h-8 text-yellow-400" />
+              <Award className="w-8 h-8 text-[#C9A84C]" />
               Achievements
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -353,17 +353,17 @@ export default function GuildPage() {
                     <div className="text-6xl mb-2">{achievement.icon}</div>
                     <h3 className="text-xl font-bold text-white mb-1">{achievement.name}</h3>
                     <span className={`text-xs font-bold px-2 py-1 rounded ${
-                      achievement.rarity === 'LEGENDARY' ? 'bg-yellow-600' :
+                      achievement.rarity === 'LEGENDARY' ? 'bg-[rgba(201,168,76,0.12)]' :
                       achievement.rarity === 'EPIC' ? 'bg-amber-600' :
                       achievement.rarity === 'RARE' ? 'bg-amber-600' :
-                      achievement.rarity === 'UNCOMMON' ? 'bg-green-600' :
+                      achievement.rarity === 'UNCOMMON' ? 'bg-green-500' :
                       'bg-[rgba(201,168,76,0.08)]'
                     } text-white`}>
                       {achievement.rarity}
                     </span>
                   </div>
                   <p className="text-sm text-white/90 mb-4 text-center">{achievement.description}</p>
-                  <div className="flex items-center justify-center gap-2 text-yellow-400">
+                  <div className="flex items-center justify-center gap-2 text-[#C9A84C]">
                     <Zap className="w-4 h-4" />
                     <span className="font-bold">+{achievement.xpReward} XP</span>
                   </div>
@@ -391,15 +391,15 @@ export default function GuildPage() {
                   key={idx}
                   className={`flex items-center justify-between p-6 rounded ${
                     idx < 3
-                      ? 'bg-[rgba(201,168,76,0.06)] border-2 border-yellow-500/50'
+                      ? 'bg-[rgba(201,168,76,0.06)] border-2 border-[rgba(201,168,76,0.22)]'
                       : 'bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)]'
                   }`}
                 >
                   <div className="flex items-center gap-4">
                     <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-2xl ${
-                      idx === 0 ? 'bg-yellow-600 text-white' :
+                      idx === 0 ? 'bg-[rgba(201,168,76,0.12)] text-white' :
                       idx === 1 ? 'bg-[rgba(201,168,76,0.08)] text-white' :
-                      idx === 2 ? 'bg-orange-600 text-white' :
+                      idx === 2 ? 'bg-[rgba(201,168,76,0.12)] text-white' :
                       'bg-[rgba(201,168,76,0.04)] text-[#9E8F75]'
                     }`}>
                       {idx + 1}
@@ -415,7 +415,7 @@ export default function GuildPage() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-3xl font-bold text-yellow-400">{entry.totalXP.toLocaleString()}</div>
+                    <div className="text-3xl font-bold text-[#C9A84C]">{entry.totalXP.toLocaleString()}</div>
                     <div className="text-sm text-[#9E8F75]">Total XP</div>
                   </div>
                 </div>

@@ -116,16 +116,16 @@ export default function Kudos() {
 
         {/* Stats Banner */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-yellow-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-yellow-200 text-sm mb-1">Kudos Given</div>
+                <div className="text-[#F0EBE0] text-sm mb-1">Kudos Given</div>
                 <div className="text-3xl font-bold text-white">847</div>
               </div>
-              <ThumbsUp className="w-12 h-12 text-yellow-400 opacity-50" />
+              <ThumbsUp className="w-12 h-12 text-[#C9A84C] opacity-50" />
             </div>
           </div>
-          <div className="bg-[#110F0B] from-REMOVED-900/50 to-red-900/50 rounded p-5 border-2 border-pink-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-red-900/50 rounded p-5 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-[#C9A84C] was-pink-200 text-sm mb-1">You Received</div>
@@ -220,7 +220,7 @@ export default function Kudos() {
                 </div>
 
                 {/* Send Button */}
-                <button className="w-full px-6 py-4 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-bold transition-all shadow-lg shadow-yellow-500/30 flex items-center justify-center gap-2">
+                <button className="w-full px-6 py-4 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-bold transition-all shadow-lg shadow-[rgba(201,168,76,0.2)] flex items-center justify-center gap-2">
                   <Send className="w-5 h-5" />
                   Send Kudos! 🎉
                 </button>
@@ -236,7 +236,7 @@ export default function Kudos() {
           <div className="lg:col-span-2">
             <div className="mb-4 flex items-center justify-between">
               <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-                <Trophy className="w-6 h-6 text-yellow-400" />
+                <Trophy className="w-6 h-6 text-[#C9A84C]" />
                 Recent Kudos
               </h2>
               <select className="bg-[rgba(201,168,76,0.04)] border-2 border-[rgba(201,168,76,0.22)] rounded-lg px-4 py-2 text-white">
@@ -248,10 +248,10 @@ export default function Kudos() {
 
             <div className="space-y-4">
               {recentKudos.map(kudos => (
-                <div key={kudos.id} className={`rounded p-6 border-2 transition-all hover:scale-[1.02] ${
+                <div key={kudos.id} className={`rounded p-6 border-2 transition-all ${
                   kudos.to.includes('You')
                     ? 'bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)] ring-2 ring-[rgba(201,168,76,0.45)]'
-                    : 'bg-[rgba(201,168,76,0.06)] border-yellow-500/30'
+                    : 'bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]'
                 }`}>
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-16 h-16 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
@@ -271,8 +271,8 @@ export default function Kudos() {
                     <div className="text-5xl">{kudos.badge}</div>
                   </div>
 
-                  <div className="bg-[#110F0B]/50 rounded-lg p-4 mb-3 border border-yellow-500/20">
-                    <div className="text-yellow-400 text-xs font-bold mb-2">{kudos.badgeName.toUpperCase()}</div>
+                  <div className="bg-[#110F0B]/50 rounded-lg p-4 mb-3 border border-[rgba(201,168,76,0.22)]">
+                    <div className="text-[#C9A84C] text-xs font-bold mb-2">{kudos.badgeName.toUpperCase()}</div>
                     <div className="text-white text-lg">{kudos.message}</div>
                   </div>
 
@@ -297,12 +297,12 @@ export default function Kudos() {
         </div>
 
         {/* Fun Footer */}
-        <div className="mt-8 bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-yellow-500/30 text-center">
-          <h3 className="text-2xl font-bold text-yellow-200 mb-2">🌟 Fun Fact!</h3>
-          <p className="text-yellow-100 text-lg mb-2">
+        <div className="mt-8 bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)] text-center">
+          <h3 className="text-2xl font-bold text-[#F0EBE0] mb-2">🌟 Fun Fact!</h3>
+          <p className="text-[#F0EBE0] text-lg mb-2">
             Teams that recognize each other are 5x happier at work!
           </p>
-          <p className="text-yellow-200 text-sm">
+          <p className="text-[#F0EBE0] text-sm">
             (We made that stat up, but it sounds right, doesn't it? 😄)
           </p>
         </div>

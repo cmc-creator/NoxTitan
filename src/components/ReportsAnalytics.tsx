@@ -101,7 +101,7 @@ export default function ReportsAnalytics() {
     <Card className="max-w-2xl mx-auto mt-8 p-6 shadow-lg border border-gray-200">
       <h2 className="text-2xl font-bold mb-4">Reports & Analytics</h2>
       <p className="mb-2 text-sm text-[#9E8F75]">All reports are HIPAA & legally compliant. Data is encrypted, access-controlled, and audit-logged.</p>
-      {error && <div className="text-red-500 mb-2">{error}</div>}
+      {error && <div className="text-red-400 mb-2">{error}</div>}
       <Input
         placeholder="Search reports..."
         value={searchTerm}

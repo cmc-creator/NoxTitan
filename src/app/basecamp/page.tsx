@@ -137,7 +137,7 @@ export default function Basecamp() {
                   className="relative p-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.04)] rounded-lg transition-all"
                 >
                   <Bell className="w-6 h-6 text-[#9E8F75]" />
-                  <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                     3
                   </span>
                 </button>
@@ -205,12 +205,12 @@ export default function Basecamp() {
                     key={mood.value}
                     onClick={() => handleMoodSelection(mood)}
                     className={`p-4 rounded border-2 transition-all ${
-                      mood.color === 'green' ? 'bg-[#110F0B] was-green-500/10 border-green-500/30 hover:border-green-500/60' :
-                      mood.color === 'blue' ? 'bg-amber-600/10 border-amber-500/40/30 hover:border-amber-500/40/60' :
-                      mood.color === 'yellow' ? 'bg-yellow-500/10 border-yellow-500/30 hover:border-yellow-500/60' :
-                      mood.color === 'orange' ? 'bg-orange-500/10 border-orange-500/30 hover:border-orange-500/60' :
-                      mood.color === 'red' ? 'bg-red-500/10 border-red-500/30 hover:border-red-500/60' :
-                      'bg-amber-500/10 border-amber-500/40/30 hover:border-amber-500/40/60'
+                      mood.color === 'green' ? 'bg-[#110F0B] was-green-500/10 border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)]' :
+                      mood.color === 'blue' ? 'bg-amber-600/10 border-amber-500/40/30 hover:border-[rgba(201,168,76,0.45)]/60' :
+                      mood.color === 'yellow' ? 'bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)]' :
+                      mood.color === 'orange' ? 'bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)]' :
+                      mood.color === 'red' ? 'bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)]' :
+                      'bg-amber-500/10 border-amber-500/40/30 hover:border-[rgba(201,168,76,0.45)]/60'
                     }`}
                   >
                     <div className="text-4xl mb-2">{mood.emoji}</div>
@@ -220,7 +220,7 @@ export default function Basecamp() {
               </div>
 
               {moodAlertSent && (
-                <div className="p-4 bg-amber-600/20 border border-blue-400/30 rounded-lg mb-4">
+                <div className="p-4 bg-amber-600/20 border border-[rgba(201,168,76,0.22)] rounded-lg mb-4">
                   <div className="flex items-start gap-3">
                     <Bell className="w-5 h-5 text-amber-400 mt-0.5" />
                     <div>
@@ -283,12 +283,12 @@ export default function Basecamp() {
                       <div className="text-right">
                         <div className={`flex items-center gap-1 text-xs font-semibold mb-1 ${
                           coworker.status === 'clocked-in' ? 'text-[#C9A84C] was-green-300' :
-                          coworker.status === 'on-break' ? 'text-yellow-300' :
+                          coworker.status === 'on-break' ? 'text-[#F0EBE0]' :
                           'text-[#9E8F75]'
                         }`}>
                           <div className={`w-2 h-2 rounded-full ${
                             coworker.status === 'clocked-in' ? 'bg-[#110F0B] was-green-400' :
-                            coworker.status === 'on-break' ? 'bg-yellow-400' :
+                            coworker.status === 'on-break' ? 'bg-[rgba(201,168,76,0.12)]' :
                             'bg-[rgba(201,168,76,0.08)]'
                           }`}></div>
                           {coworker.status === 'clocked-in' ? 'Active' :
@@ -311,7 +311,7 @@ export default function Basecamp() {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                 {todaysCoworkers.filter(c => c.dept !== 'Emergency').map((coworker, idx) => (
-                  <div key={idx} className="bg-[#110F0B]/50 rounded-lg p-3 border border-amber-500/40/20 hover:border-amber-500/40/40 transition-all">
+                  <div key={idx} className="bg-[#110F0B]/50 rounded-lg p-3 border border-amber-500/40/20 hover:border-[rgba(201,168,76,0.45)]/40 transition-all">
                     <div className="flex items-center gap-2 mb-2">
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-xs ${
                         coworker.status === 'clocked-in' ? 'bg-[rgba(201,168,76,0.08)]' :
@@ -351,7 +351,7 @@ export default function Basecamp() {
         {/* Quick Stats Row */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
           {/* Clock-In Status - CRITICAL */}
-          <div className={`${clockedIn ? 'bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 border-green-500/30' : 'bg-[#110F0B] from-REMOVED-900/50 to-orange-900/50 border-red-500/30'} rounded p-4 border-2`}>
+          <div className={`${clockedIn ? 'bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 border-[rgba(201,168,76,0.22)]' : 'bg-[#110F0B] from-REMOVED-900/50 to-orange-900/50 border-[rgba(201,168,76,0.22)]'} rounded p-4 border-2`}>
             <div className="flex items-center justify-between mb-2">
               {clockedIn ? (
                 <CheckCircle className="w-8 h-8 text-[#C9A84C] was-green-400" />
@@ -363,25 +363,25 @@ export default function Basecamp() {
                   setClockedIn(!clockedIn);
                   setLastClockAction(new Date().toLocaleTimeString());
                 }}
-                className={`px-3 py-1 rounded-lg font-semibold text-sm ${clockedIn ? 'bg-red-500 hover:bg-red-600' : 'bg-[#110F0B] was-green-500 hover:bg-[#110F0B] was-green-600'} text-white transition-all`}
+                className={`px-3 py-1 rounded-lg font-semibold text-sm ${clockedIn ? 'bg-red-500 hover:bg-red-500' : 'bg-[#110F0B] was-green-500 hover:bg-[#110F0B] was-green-600'} text-white transition-all`}
               >
                 {clockedIn ? 'Clock Out' : 'Clock In'}
               </button>
             </div>
-            <div className={clockedIn ? 'text-[#C9A84C] was-green-200' : 'text-red-200'}>
+            <div className={clockedIn ? 'text-[#C9A84C] was-green-200' : 'text-[#F0EBE0]'}>
               <div className="font-bold text-lg">{clockedIn ? 'CLOCKED IN' : 'NOT CLOCKED IN'}</div>
               {lastClockAction && (
                 <div className="text-xs mt-1">Last action: {lastClockAction}</div>
               )}
               {!clockedIn && (
-                <div className="text-xs mt-2 font-semibold text-red-300">⚠️ Fix immediately!</div>
+                <div className="text-xs mt-2 font-semibold text-[#F0EBE0]">⚠️ Fix immediately!</div>
               )}
             </div>
           </div>
 
           <div className="bg-[rgba(201,168,76,0.04)] rounded p-4 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
-              <Flame className="w-8 h-8 text-orange-400" />
+              <Flame className="w-8 h-8 text-[#9E8F75]" />
               <span className="text-2xl font-bold text-white">12</span>
             </div>
             <div className="text-[#F0EBE0]/70 font-semibold">Day Streak!</div>
@@ -390,7 +390,7 @@ export default function Basecamp() {
 
           <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
-              <Star className="w-8 h-8 text-yellow-400" />
+              <Star className="w-8 h-8 text-[#C9A84C]" />
               <span className="text-2xl font-bold text-white">847</span>
             </div>
             <div className="text-[#C9A84C] was-blue-200 font-semibold">Kudos Points</div>
@@ -406,13 +406,13 @@ export default function Basecamp() {
             <div className="text-xs text-[#9E8F75] mt-1">Almost there! 💪</div>
           </div>
 
-          <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-orange-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center justify-between mb-2">
               <Gift className="w-8 h-8 text-[#C9A84C] was-pink-400" />
               <span className="text-2xl font-bold text-white">3</span>
             </div>
-            <div className="text-orange-200 font-semibold">Rewards Available</div>
-            <div className="text-xs text-orange-300 mt-1">Claim them! 🎁</div>
+            <div className="text-[#9E8F75] font-semibold">Rewards Available</div>
+            <div className="text-xs text-[#9E8F75] mt-1">Claim them! 🎁</div>
           </div>
         </div>
 
@@ -421,34 +421,34 @@ export default function Basecamp() {
           {/* Left Column - Quick Actions */}
           <div className="lg:col-span-2 space-y-6">
             {/* Schedule Change Notifications */}
-            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-orange-500/50 shadow-xl">
+            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)] shadow-xl">
               <div className="flex items-center gap-2 mb-4">
-                <Bell className="w-6 h-6 text-orange-400" />
+                <Bell className="w-6 h-6 text-[#9E8F75]" />
                 <h2 className="text-2xl font-bold text-white">Schedule Changes</h2>
                 <span className="px-3 py-1 bg-red-500 text-white text-xs font-bold rounded-full">NEW</span>
               </div>
               <div className="space-y-3">
-                <div className="bg-red-500/10 backdrop-blur-sm rounded-lg p-4 border border-red-400/30">
+                <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-sm rounded-lg p-4 border border-[rgba(201,168,76,0.22)]">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <AlertCircle className="w-5 h-5 text-red-300" />
+                        <AlertCircle className="w-5 h-5 text-[#F0EBE0]" />
                         <p className="font-bold text-white">Your shift was changed!</p>
                       </div>
-                      <p className="text-sm text-orange-100 mb-2">Tomorrow (Tue, Jan 13) • 3:00 PM - 11:00 PM</p>
-                      <p className="text-xs text-orange-200"><strong>Was:</strong> 8:00 AM - 4:00 PM</p>
-                      <p className="text-xs text-orange-200"><strong>Now:</strong> 3:00 PM - 11:00 PM (Evening Shift)</p>
-                      <p className="text-xs text-red-300 mt-2 font-semibold">Changed by: Manager Sarah • 30 minutes ago</p>
+                      <p className="text-sm text-[#9E8F75] mb-2">Tomorrow (Tue, Jan 13) • 3:00 PM - 11:00 PM</p>
+                      <p className="text-xs text-[#9E8F75]"><strong>Was:</strong> 8:00 AM - 4:00 PM</p>
+                      <p className="text-xs text-[#9E8F75]"><strong>Now:</strong> 3:00 PM - 11:00 PM (Evening Shift)</p>
+                      <p className="text-xs text-[#F0EBE0] mt-2 font-semibold">Changed by: Manager Sarah • 30 minutes ago</p>
                     </div>
                   </div>
                 </div>
-                <div className="bg-yellow-500/10 backdrop-blur-sm rounded-lg p-4 border border-yellow-400/30">
+                <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-sm rounded-lg p-4 border border-[rgba(201,168,76,0.22)]">
                   <div className="flex items-start gap-3">
-                    <AlertCircle className="w-5 h-5 text-yellow-300 mt-0.5" />
+                    <AlertCircle className="w-5 h-5 text-[#F0EBE0] mt-0.5" />
                     <div className="flex-1">
                       <p className="font-semibold text-white">Coverage needed: Friday</p>
-                      <p className="text-sm text-yellow-100 mt-1">Can you pick up an extra shift? 11:00 AM - 7:00 PM</p>
-                      <p className="text-xs text-yellow-300 mt-1">2 hours ago</p>
+                      <p className="text-sm text-[#F0EBE0] mt-1">Can you pick up an extra shift? 11:00 AM - 7:00 PM</p>
+                      <p className="text-xs text-[#F0EBE0] mt-1">2 hours ago</p>
                       <div className="flex gap-2 mt-3">
                         <button className="px-4 py-2 bg-[#110F0B] was-green-500 hover:bg-[#110F0B] was-green-600 rounded-lg text-sm font-semibold text-white transition-all">
                           I can help!
@@ -464,9 +464,9 @@ export default function Basecamp() {
             </div>
 
             {/* Running Late Notification */}
-            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-yellow-500/30">
+            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
               <div className="flex items-center gap-2 mb-4">
-                <Clock className="w-6 h-6 text-yellow-400" />
+                <Clock className="w-6 h-6 text-[#C9A84C]" />
                 <h2 className="text-2xl font-bold text-white">Running Late?</h2>
               </div>
               <div className="space-y-4">
@@ -476,7 +476,7 @@ export default function Basecamp() {
                     <input
                       type="number"
                       placeholder="Minutes late"
-                      className="w-32 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg px-3 py-2 text-white focus:border-yellow-400 focus:outline-none"
+                      className="w-32 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg px-3 py-2 text-white focus:border-[rgba(201,168,76,0.22)] focus:outline-none"
                     />
                     <button
                       onClick={() => setLateNotificationSent(true)}
@@ -487,7 +487,7 @@ export default function Basecamp() {
                     </button>
                   </div>
                   {lateNotificationSent && (
-                    <div className="mt-3 p-3 bg-[#110F0B] was-green-500/20 border border-green-400/30 rounded-lg flex items-center gap-2">
+                    <div className="mt-3 p-3 bg-[#110F0B] was-green-500/20 border border-[rgba(201,168,76,0.22)] rounded-lg flex items-center gap-2">
                       <CheckCircle className="w-5 h-5 text-[#C9A84C] was-green-400" />
                       <div>
                         <p className="text-[#C9A84C] was-green-300 font-semibold text-sm">Manager notified!</p>
@@ -575,7 +575,7 @@ export default function Basecamp() {
                         </div>
                         <button className="text-amber-400 hover:text-amber-400">View receipts</button>
                       </div>
-                      <div className="mt-2 p-2 bg-[#110F0B] was-green-500/10 border border-green-400/30 rounded text-xs">
+                      <div className="mt-2 p-2 bg-[#110F0B] was-green-500/10 border border-[rgba(201,168,76,0.22)] rounded text-xs">
                         <div className="flex items-center gap-1 text-[#C9A84C] was-green-300">
                           <CheckCircle className="w-3 h-3" />
                           ✓✓ Read by Manager Sarah at 8:15 AM
@@ -622,7 +622,7 @@ export default function Basecamp() {
                   <p className="text-sm text-[#9E8F75]">Tomorrow • 8:00 AM - 4:00 PM</p>
                   <p className="text-xs text-[#9E8F75] mt-1">Department: Emergency</p>
                 </div>
-                <div className="p-4 bg-amber-600/10 rounded-lg border border-blue-400/30">
+                <div className="p-4 bg-amber-600/10 rounded-lg border border-[rgba(201,168,76,0.22)]">
                   <div className="flex items-center gap-2 mb-2">
                     <div className="w-3 h-3 bg-[#110F0B] was-blue-400 rounded"></div>
                     <p className="font-semibold text-white">Personal: Dentist Appointment</p>
@@ -638,7 +638,7 @@ export default function Basecamp() {
                   <p className="text-sm text-[#9E8F75]">Sat, Jan 17 • All Day</p>
                   <p className="text-xs text-[#C9A84C] mt-1">Personal reminder</p>
                 </div>
-                <Link href="/calendar?view=personal" className="block p-3 bg-[rgba(201,168,76,0.04)] rounded-lg border border-amber-400/40/30 hover:border-amber-400/40/60 transition-all text-center">
+                <Link href="/calendar?view=personal" className="block p-3 bg-[rgba(201,168,76,0.04)] rounded-lg border border-amber-400/40/30 hover:border-[rgba(201,168,76,0.45)]/60 transition-all text-center">
                   <p className="text-sm font-semibold text-[#C9A84C] flex items-center justify-center gap-2">
                     <ExternalLink className="w-4 h-4" />
                     Manage All Events
@@ -650,25 +650,25 @@ export default function Basecamp() {
             {/* Quick Actions Hub */}
             <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
               <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <Zap className="w-6 h-6 text-yellow-400" />
+                <Zap className="w-6 h-6 text-[#C9A84C]" />
                 Quick Actions
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <Link href="/timeclock" className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg p-4 text-center transition-all shadow-lg group">
-                  <Calendar className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                  <Calendar className="w-8 h-8 text-white mx-auto mb-2 group- transition-transform" />
                   <div className="text-white font-semibold text-sm">Clock In/Out</div>
                 </Link>
                 <Link href="/time-off" className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg p-4 text-center transition-all shadow-lg group">
-                  <Coffee className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                  <Coffee className="w-8 h-8 text-white mx-auto mb-2 group- transition-transform" />
                   <div className="text-white font-semibold text-sm">Request Time Off</div>
                 </Link>
                 <Link href="/basecamp/games" className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg p-4 text-center transition-all shadow-lg group relative">
-                  <div className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">FUN!</div>
-                  <Gamepad2 className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                  <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">FUN!</div>
+                  <Gamepad2 className="w-8 h-8 text-white mx-auto mb-2 group- transition-transform" />
                   <div className="text-white font-semibold text-sm">Play Games</div>
                 </Link>
                 <Link href="/basecamp/kudos" className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg p-4 text-center transition-all shadow-lg group">
-                  <ThumbsUp className="w-8 h-8 text-white mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                  <ThumbsUp className="w-8 h-8 text-white mx-auto mb-2 group- transition-transform" />
                   <div className="text-white font-semibold text-sm">Give Kudos</div>
                 </Link>
               </div>
@@ -709,7 +709,7 @@ export default function Basecamp() {
             <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-                  <Lightbulb className="w-6 h-6 text-yellow-400" />
+                  <Lightbulb className="w-6 h-6 text-[#C9A84C]" />
                   Idea Board
                 </h2>
                 <Link href="/basecamp/ideas" className="text-[#9E8F75] hover:text-[#9E8F75] font-semibold flex items-center gap-1">
@@ -821,7 +821,7 @@ export default function Basecamp() {
                       </div>
                     </div>
                     <div className="flex gap-2 justify-end">
-                      <div className="bg-amber-600/20 rounded-lg p-3 border border-blue-400/30 max-w-xs">
+                      <div className="bg-amber-600/20 rounded-lg p-3 border border-[rgba(201,168,76,0.22)] max-w-xs">
                         <p className="text-white text-sm">
                           How do I request a shift swap?
                         </p>
@@ -889,18 +889,18 @@ export default function Basecamp() {
             </div>
 
             {/* Recognition Wall */}
-            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-yellow-500/30">
+            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Award className="w-5 h-5 text-yellow-400" />
+                <Award className="w-5 h-5 text-[#C9A84C]" />
                 Kudos Wall
               </h2>
               <div className="space-y-3">
-                <div className="bg-[#110F0B]/50 rounded-lg p-3 border border-yellow-500/20">
-                  <div className="text-yellow-300 text-sm mb-1">Sarah gave you kudos!</div>
+                <div className="bg-[#110F0B]/50 rounded-lg p-3 border border-[rgba(201,168,76,0.22)]">
+                  <div className="text-[#F0EBE0] text-sm mb-1">Sarah gave you kudos!</div>
                   <div className="text-[#9E8F75] text-xs">"Amazing teamwork on the project! 🌟"</div>
                 </div>
-                <div className="bg-[#110F0B]/50 rounded-lg p-3 border border-yellow-500/20">
-                  <div className="text-yellow-300 text-sm mb-1">Team achievement!</div>
+                <div className="bg-[#110F0B]/50 rounded-lg p-3 border border-[rgba(201,168,76,0.22)]">
+                  <div className="text-[#F0EBE0] text-sm mb-1">Team achievement!</div>
                   <div className="text-[#9E8F75] text-xs">"100% on-time delivery this month! 🎉"</div>
                 </div>
               </div>
@@ -929,7 +929,7 @@ export default function Basecamp() {
                 </Link>
                 <Link href="/basecamp/learning" className="flex items-center justify-between p-3 bg-[#110F0B]/50 hover:bg-[#110F0B] rounded-lg transition-all group">
                   <div className="flex items-center gap-3">
-                    <BookOpen className="w-5 h-5 text-yellow-400" />
+                    <BookOpen className="w-5 h-5 text-[#C9A84C]" />
                     <span className="text-white font-semibold">Learning Hub</span>
                   </div>
                   <ChevronRight className="w-5 h-5 text-[#9E8F75] group-hover:text-[#9E8F75] transition-colors" />
@@ -957,7 +957,7 @@ export default function Basecamp() {
                 </Link>
                 <Link href="/merch-store" className="flex items-center justify-between p-3 bg-[#110F0B]/50 hover:bg-[#110F0B] rounded-lg transition-all group">
                   <div className="flex items-center gap-3">
-                    <PartyPopper className="w-5 h-5 text-orange-400" />
+                    <PartyPopper className="w-5 h-5 text-[#9E8F75]" />
                     <span className="text-white font-semibold">Merch Store</span>
                   </div>
                   <ChevronRight className="w-5 h-5 text-[#9E8F75] group-hover:text-[#9E8F75] transition-colors" />

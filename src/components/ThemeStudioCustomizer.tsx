@@ -174,7 +174,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
                         className="group"
                       >
                         <div 
-                          className="h-20 rounded-lg mb-2 border-2 border-[rgba(201,168,76,0.22)] group-hover:border-amber-400/40 transition-all"
+                          className="h-20 rounded-lg mb-2 border-2 border-[rgba(201,168,76,0.22)] group-hover:border-[rgba(201,168,76,0.45)] transition-all"
                           style={{ background: preset.preview }}
                         ></div>
                         <p className="text-sm text-white font-semibold">{preset.name}</p>
@@ -304,7 +304,7 @@ export default function ThemeStudioCustomizer({ onClose }: ThemeStudioProps) {
                       <option value="rounded-lg">Small</option>
                       <option value="rounded">Medium</option>
                       <option value="rounded">Large</option>
-                      <option value="rounded-3xl">Extra Large</option>
+                      <option value="rounded">Extra Large</option>
                     </select>
                   </div>
 

@@ -128,7 +128,7 @@ export default function FormsPage() {
             </button>
             <button
               onClick={() => router.push('/forms/import')}
-              className="px-6 py-3 bg-[#110F0B] border-2 border-amber-600/40 text-amber-600 rounded-lg hover:bg-purple-50 flex items-center gap-2"
+              className="px-6 py-3 bg-[#110F0B] border-2 border-amber-600/40 text-amber-600 rounded-lg hover:bg-[rgba(201,168,76,0.04)] flex items-center gap-2"
             >
               <Upload className="w-5 h-5" />
               Import Templates
@@ -156,7 +156,7 @@ export default function FormsPage() {
           <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
               <span className="text-[#9E8F75]">Submissions</span>
-              <CheckCircle className="w-5 h-5 text-green-600" />
+              <CheckCircle className="w-5 h-5 text-green-400" />
             </div>
             <div className="text-4xl font-bold text-[#9E8F75]">
               {templates.reduce((sum, t) => sum + t.submissionCount, 0)}
@@ -176,7 +176,7 @@ export default function FormsPage() {
           <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
               <span className="text-[#9E8F75]">Shared</span>
-              <Share2 className="w-5 h-5 text-pink-600" />
+              <Share2 className="w-5 h-5 text-[#9E8F75]" />
             </div>
             <div className="text-4xl font-bold text-[#9E8F75]">
               {templates.filter(t => t.isPublic).length}
@@ -195,7 +195,7 @@ export default function FormsPage() {
                 placeholder="Search forms..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500"
+                className="w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
               />
             </div>
             <div className="flex gap-2 overflow-x-auto">
@@ -232,11 +232,11 @@ export default function FormsPage() {
                   </h3>
                   <p className="text-[#9E8F75] text-sm mb-3">{template.description}</p>
                   <div className="flex items-center gap-2">
-                    <span className="px-3 py-1 bg-purple-100 text-amber-700 rounded-full text-xs font-medium">
+                    <span className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-amber-700 rounded-full text-xs font-medium">
                       {template.category}
                     </span>
                     {template.isPublic && (
-                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-green-400 rounded-full text-xs font-medium">
                         Public
                       </span>
                     )}
@@ -270,14 +270,14 @@ export default function FormsPage() {
                 </button>
                 <button
                   onClick={(e) => { e.stopPropagation(); /* Handle view */ }}
-                  className="flex-1 px-3 py-2 bg-purple-100 text-amber-700 rounded-lg hover:bg-purple-200 flex items-center justify-center gap-2"
+                  className="flex-1 px-3 py-2 bg-[rgba(201,168,76,0.04)] text-amber-700 rounded-lg hover:bg-[rgba(201,168,76,0.04)] flex items-center justify-center gap-2"
                 >
                   <Eye className="w-4 h-4" />
                   View
                 </button>
                 <button
                   onClick={(e) => { e.stopPropagation(); /* Handle analytics */ }}
-                  className="px-3 py-2 bg-pink-100 text-pink-700 rounded-lg hover:bg-pink-200"
+                  className="px-3 py-2 bg-[rgba(201,168,76,0.04)] text-[#9E8F75] rounded-lg hover:bg-[rgba(201,168,76,0.04)]"
                 >
                   <BarChart className="w-4 h-4" />
                 </button>

@@ -335,9 +335,9 @@ export default function TrainingPage() {
 
   const getLevelColor = (level: string) => {
     switch (level) {
-      case 'beginner': return 'bg-green-100 text-green-700';
-      case 'intermediate': return 'bg-blue-100 text-[#E8C060]';
-      case 'advanced': return 'bg-purple-100 text-amber-700';
+      case 'beginner': return 'bg-[rgba(201,168,76,0.04)] text-green-400';
+      case 'intermediate': return 'bg-[rgba(201,168,76,0.04)] text-[#E8C060]';
+      case 'advanced': return 'bg-[rgba(201,168,76,0.04)] text-amber-700';
       default: return 'bg-[rgba(201,168,76,0.06)] text-[#C9A84C]';
     }
   };
@@ -366,7 +366,7 @@ export default function TrainingPage() {
           </div>
           <div className="bg-[#110F0B] p-6 rounded shadow-md">
             <div className="flex items-center justify-between mb-2">
-              <PlayCircle className="w-8 h-8 text-green-600" />
+              <PlayCircle className="w-8 h-8 text-green-400" />
               <span className="text-3xl font-bold text-[#9E8F75]">
                 {courses.filter(c => c.progress).length}
               </span>
@@ -406,14 +406,14 @@ export default function TrainingPage() {
                 placeholder="Search courses..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500/40"
+                className="w-full pl-10 pr-4 py-3 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-amber-500/40"
               />
             </div>
             <div className="flex gap-2">
               <select
                 value={selectedLevel}
                 onChange={(e) => setSelectedLevel(e.target.value as any)}
-                className="px-4 py-3 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500"
+                className="px-4 py-3 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
               >
                 <option value="all">All Levels</option>
                 <option value="beginner">Beginner</option>
@@ -463,7 +463,7 @@ export default function TrainingPage() {
         {/* Learning Paths */}
         {activeTab === 'paths' && (
           <div className="space-y-6">
-            <div className="bg-[rgba(201,168,76,0.08)] p-6 rounded border border-blue-200 mb-6">
+            <div className="bg-[rgba(201,168,76,0.08)] p-6 rounded border border-[rgba(201,168,76,0.22)] mb-6">
               <h2 className="text-2xl font-bold text-[#9E8F75] mb-2">📚 Structured Learning Paths</h2>
               <p className="text-[#C9A84C]">
                 Follow curated learning paths designed to develop specific skills systematically. 
@@ -490,7 +490,7 @@ export default function TrainingPage() {
                         <Users className="w-4 h-4" />
                         {path.enrolledUsers} enrolled
                       </span>
-                      <span className="flex items-center gap-2 text-green-600">
+                      <span className="flex items-center gap-2 text-green-400">
                         <TrendingUp className="w-4 h-4" />
                         {path.completionRate}% completion rate
                       </span>
@@ -510,7 +510,7 @@ export default function TrainingPage() {
                     if (!course) return null;
                     return (
                       <div key={courseId} className="flex items-center gap-3 p-3 bg-[#110F0B] rounded-lg">
-                        <span className="flex items-center justify-center w-8 h-8 bg-blue-100 text-amber-400 rounded-full font-bold text-sm">
+                        <span className="flex items-center justify-center w-8 h-8 bg-[rgba(201,168,76,0.04)] text-amber-400 rounded-full font-bold text-sm">
                           {index + 1}
                         </span>
                         <div className="flex-1">
@@ -553,10 +553,10 @@ export default function TrainingPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {filteredCourses.map((course) => (
                 <div key={course.id} className={`bg-[#110F0B] rounded shadow-md p-6 hover:shadow-lg transition-all ${
-                  course.featured ? 'ring-2 ring-blue-400' : ''
+                  course.featured ? 'ring-2 ring-[rgba(201,168,76,0.45)]' : ''
                 }`}>
                   {course.featured && (
-                    <span className="inline-block px-3 py-1 bg-blue-100 text-[#E8C060] text-sm font-semibold rounded-full mb-3">
+                    <span className="inline-block px-3 py-1 bg-[rgba(201,168,76,0.04)] text-[#E8C060] text-sm font-semibold rounded-full mb-3">
                       ⭐ Featured for New Managers
                     </span>
                   )}
@@ -633,7 +633,7 @@ export default function TrainingPage() {
                     <ul className="mt-3 space-y-2">
                       {course.objectives.map((obj, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm text-[#C9A84C]">
-                          <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
                           {obj}
                         </li>
                       ))}

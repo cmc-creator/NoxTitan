@@ -207,7 +207,7 @@ export default function OraclePage() {
                     <ul className="space-y-1">
                       {prophecy.recommendations.map((rec, idx) => (
                         <li key={idx} className="text-sm text-white/80 flex items-start gap-2">
-                          <span className="text-yellow-300">✦</span>
+                          <span className="text-[#F0EBE0]">✦</span>
                           <span>{rec}</span>
                         </li>
                       ))}
@@ -237,7 +237,7 @@ export default function OraclePage() {
             {topRisks.map((risk) => (
               <div
                 key={risk.id}
-                className="lux-card border border-red-700/40 rounded p-6 hover:border-red-600/60 transition-all"
+                className="lux-card border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-[rgba(201,168,76,0.22)] transition-all"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
@@ -259,7 +259,7 @@ export default function OraclePage() {
                     <div className={`w-3 h-3 rounded-full ${
                       risk.trend === 'INCREASING' ? 'bg-red-500' :
                       risk.trend === 'DECREASING' ? 'bg-green-500' :
-                      'bg-yellow-500'
+                      'bg-[rgba(201,168,76,0.12)]'
                     }`}></div>
                     <span className="text-sm text-white font-semibold">{risk.trend}</span>
                   </div>
@@ -288,16 +288,16 @@ export default function OraclePage() {
             {insights.map((insight) => (
               <div
                 key={insight.id}
-                className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-amber-500/40/50 transition-all"
+                className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-[rgba(201,168,76,0.45)]/50 transition-all"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
                       <h3 className="text-xl font-bold text-white">{insight.title}</h3>
                       <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                        insight.impact === 'CRITICAL' ? 'bg-red-600 text-white' :
-                        insight.impact === 'HIGH' ? 'bg-red-900/60 text-red-300 border border-red-700/40' :
-                        insight.impact === 'MEDIUM' ? 'bg-yellow-600 text-white' :
+                        insight.impact === 'CRITICAL' ? 'bg-red-500 text-white' :
+                        insight.impact === 'HIGH' ? 'bg-[rgba(201,168,76,0.06)] text-[#F0EBE0] border border-[rgba(201,168,76,0.22)]' :
+                        insight.impact === 'MEDIUM' ? 'bg-[rgba(201,168,76,0.12)] text-white' :
                         'bg-amber-600 text-white'
                       }`}>
                         {insight.impact}

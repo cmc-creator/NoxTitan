@@ -215,11 +215,11 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                       'flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all border text-pop-light min-h-[44px]',
                       isCommandCenter
                         ? isActive
-                          ? 'bg-gradient-to-r from-amber-900/60 to-transparent text-[#E8C060] shadow-[0_0_15px_rgba(201,168,76,0.2)] border-amber-500/60 font-bold'
-                          : 'text-amber-400 hover:bg-amber-900/30 border-amber-600/30 hover:border-amber-500/50 font-semibold'
+                          ? 'bg-[#110F0B] text-[#E8C060] shadow-[0_0_15px_rgba(201,168,76,0.2)] border-amber-500/60 font-bold'
+                          : 'text-amber-400 hover:bg-amber-900/30 border-amber-600/30 hover:border-[rgba(201,168,76,0.45)] font-semibold'
                         : isActive
                         ? 'lux-nav-active font-semibold'
-                        : 'text-[#9E8F75] hover:bg-amber-900/20 hover:text-[#C9A84C] border-transparent hover:border-amber-800/40'
+                        : 'text-[#9E8F75] hover:bg-amber-900/20 hover:text-[#C9A84C] border-transparent hover:border-[rgba(201,168,76,0.45)]'
                     )}
                   >
                     <Icon className={cn("mr-3 h-4 w-4", isCommandCenter && "drop-shadow-[0_0_8px_rgba(212,175,55,0.8)]")} />

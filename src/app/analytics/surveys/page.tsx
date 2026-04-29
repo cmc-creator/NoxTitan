@@ -67,7 +67,7 @@ export default function SurveyAnalyticsPage() {
             <select
               value={timeRange}
               onChange={(e) => setTimeRange(e.target.value)}
-              className="px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500"
+              className="px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
             >
               <option value="7">Last 7 days</option>
               <option value="30">Last 30 days</option>
@@ -91,7 +91,7 @@ export default function SurveyAnalyticsPage() {
             <div className="text-4xl font-bold text-[#9E8F75]">
               {surveys.reduce((sum, s) => sum + s.responses, 0)}
             </div>
-            <div className="flex items-center gap-1 text-sm text-green-600 mt-1">
+            <div className="flex items-center gap-1 text-sm text-green-400 mt-1">
               <TrendingUp className="w-4 h-4" />
               <span>+23% vs last month</span>
             </div>
@@ -100,14 +100,14 @@ export default function SurveyAnalyticsPage() {
           <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
               <span className="text-[#9E8F75]">Average Score</span>
-              <Star className="w-5 h-5 text-yellow-500" />
+              <Star className="w-5 h-5 text-[#C9A84C]" />
             </div>
             <div className="text-4xl font-bold text-[#9E8F75]">
               {(surveys.reduce((sum, s) => sum + s.avgScore, 0) / surveys.length).toFixed(1)}
             </div>
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                <Star key={i} className="w-4 h-4 fill-yellow-400 text-[#C9A84C]" />
               ))}
             </div>
           </div>
@@ -115,7 +115,7 @@ export default function SurveyAnalyticsPage() {
           <div className="p-6 rounded">
             <div className="flex items-center justify-between mb-2">
               <span className="text-[#9E8F75]">Positive Sentiment</span>
-              <ThumbsUp className="w-5 h-5 text-green-600" />
+              <ThumbsUp className="w-5 h-5 text-green-400" />
             </div>
             <div className="text-4xl font-bold text-[#9E8F75]">
               {Math.round(surveys.reduce((sum, s) => sum + s.sentiment.positive, 0) / surveys.length)}%
@@ -145,18 +145,18 @@ export default function SurveyAnalyticsPage() {
                       <Users className="w-4 h-4" />
                       {survey.responses} responses
                     </span>
-                    <span className="px-3 py-1 bg-purple-100 text-amber-700 rounded-full">
+                    <span className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-amber-700 rounded-full">
                       {survey.type.replace('_', ' ')}
                     </span>
                   </div>
                 </div>
                 <div className="text-right">
                   <div className="flex items-center gap-2 mb-2">
-                    <Star className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                    <Star className="w-6 h-6 fill-yellow-400 text-[#C9A84C]" />
                     <span className="text-3xl font-bold text-[#9E8F75]">{survey.avgScore}</span>
                   </div>
                   {survey.trend === 'up' && (
-                    <div className="flex items-center gap-1 text-green-600 text-sm">
+                    <div className="flex items-center gap-1 text-green-400 text-sm">
                       <TrendingUp className="w-4 h-4" />
                       <span>Improving</span>
                     </div>
@@ -176,7 +176,7 @@ export default function SurveyAnalyticsPage() {
                     style={{ width: `${survey.sentiment.positive}%` }}
                   />
                   <div
-                    className="bg-yellow-500"
+                    className="bg-[rgba(201,168,76,0.12)]"
                     style={{ width: `${survey.sentiment.neutral}%` }}
                   />
                   <div
@@ -186,14 +186,14 @@ export default function SurveyAnalyticsPage() {
                 </div>
                 <div className="flex justify-between mt-2 text-sm">
                   <div className="flex items-center gap-1">
-                    <ThumbsUp className="w-4 h-4 text-green-600" />
+                    <ThumbsUp className="w-4 h-4 text-green-400" />
                     <span className="text-[#9E8F75]">{survey.sentiment.positive}% Positive</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <span className="text-[#9E8F75]">{survey.sentiment.neutral}% Neutral</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <ThumbsDown className="w-4 h-4 text-red-600" />
+                    <ThumbsDown className="w-4 h-4 text-red-400" />
                     <span className="text-[#9E8F75]">{survey.sentiment.negative}% Negative</span>
                   </div>
                 </div>
@@ -207,13 +207,13 @@ export default function SurveyAnalyticsPage() {
                     <>
                       <span className="px-3 py-1 text-sm rounded">Wait times improved</span>
                       <span className="px-3 py-1 text-sm rounded">Staff friendliness</span>
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm">Parking issues</span>
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-[#5A5040] rounded-full text-sm">Parking issues</span>
                     </>
                   )}
                   {survey.type === 'EMPLOYEE_ENGAGEMENT' && (
                     <>
                       <span className="px-3 py-1 text-sm rounded">Work-life balance</span>
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm">Communication</span>
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-[#5A5040] rounded-full text-sm">Communication</span>
                       <span className="px-3 py-1 text-sm rounded">Benefits package</span>
                     </>
                   )}
@@ -228,7 +228,7 @@ export default function SurveyAnalyticsPage() {
                     <>
                       <span className="px-3 py-1 text-sm rounded">Content quality</span>
                       <span className="px-3 py-1 text-sm rounded">Trainer expertise</span>
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm">Duration too long</span>
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-[#5A5040] rounded-full text-sm">Duration too long</span>
                     </>
                   )}
                 </div>
@@ -241,40 +241,40 @@ export default function SurveyAnalyticsPage() {
         <div className="p-8 rounded">
           <h2 className="text-2xl font-bold text-[#9E8F75] mb-6">Recommended Actions</h2>
           <div className="space-y-4">
-            <div className="flex items-start gap-4 p-4 bg-red-50 border-l-4 border-red-500 rounded">
-              <AlertCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
+            <div className="flex items-start gap-4 p-4 bg-[rgba(201,168,76,0.04)] border-l-4 border-[rgba(201,168,76,0.22)] rounded">
+              <AlertCircle className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
               <div className="flex-1">
                 <h4 className="font-semibold text-[#9E8F75] mb-1">Parking Concerns Trending</h4>
                 <p className="text-[#9E8F75] text-sm mb-2">
                   Patient satisfaction surveys show increasing complaints about parking availability. Consider adding valet service or expanded lot.
                 </p>
-                <button className="text-sm text-red-600 font-medium hover:underline">
+                <button className="text-sm text-red-400 font-medium hover:underline">
                   View details →
                 </button>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded">
-              <Clock className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-1" />
+            <div className="flex items-start gap-4 p-4 bg-[rgba(201,168,76,0.04)] border-l-4 border-[rgba(201,168,76,0.22)] rounded">
+              <Clock className="w-6 h-6 text-[#5A5040] flex-shrink-0 mt-1" />
               <div className="flex-1">
                 <h4 className="font-semibold text-[#9E8F75] mb-1">Follow-up on Employee Communication</h4>
                 <p className="text-[#9E8F75] text-sm mb-2">
                   Employee engagement scores indicate communication could improve. Schedule town hall or implement weekly updates.
                 </p>
-                <button className="text-sm text-yellow-600 font-medium hover:underline">
+                <button className="text-sm text-[#5A5040] font-medium hover:underline">
                   Create action plan →
                 </button>
               </div>
             </div>
 
             <div className="flex items-start gap-4 p-4 rounded border-l-4 border-[#C9A84C]">
-              <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+              <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
               <div className="flex-1">
                 <h4 className="font-semibold text-[#9E8F75] mb-1">Safety Culture Exceeding Goals</h4>
                 <p className="text-[#9E8F75] text-sm mb-2">
                   Culture of Safety scores are 91% positive - well above industry benchmark of 75%. Consider sharing best practices with other departments.
                 </p>
-                <button className="text-sm text-green-600 font-medium hover:underline">
+                <button className="text-sm text-green-400 font-medium hover:underline">
                   Share success story →
                 </button>
               </div>

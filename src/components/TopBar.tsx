@@ -26,21 +26,21 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
           icon: <Crown className="h-4 w-4" />,
           text: 'Upgrade to Enterprise',
           link: '/upgrade',
-          color: 'text-amber-400 hover:text-[#E8C060] border-amber-600/40 hover:border-amber-400 hover:bg-amber-600/10'
+          color: 'text-amber-400 hover:text-[#E8C060] border-amber-600/40 hover:border-[rgba(201,168,76,0.45)] hover:bg-amber-600/10'
         };
       case 'ENTERPRISE':
         return {
           icon: <Zap className="h-4 w-4" />,
           text: 'Go Titan',
           link: '/upgrade',
-          color: 'text-[#E8C060] hover:text-[#C9A84C] border-amber-500/40 hover:border-amber-300 hover:bg-amber-500/10'
+          color: 'text-[#E8C060] hover:text-[#C9A84C] border-amber-500/40 hover:border-[rgba(201,168,76,0.45)] hover:bg-amber-500/10'
         };
       case 'TITAN':
         return {
           icon: <TrendingUp className="h-4 w-4" />,
           text: 'Request Custom Features',
           link: '/custom-features',
-          color: 'text-[#E8C060] border-amber-500/30 hover:bg-amber-500/10 hover:text-[#C9A84C] hover:border-amber-400'
+          color: 'text-[#E8C060] border-amber-500/30 hover:bg-amber-500/10 hover:text-[#C9A84C] hover:border-[rgba(201,168,76,0.45)]'
         };
       default:
         return null;

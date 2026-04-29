@@ -147,12 +147,12 @@ export default function SentinelPage() {
             <p className="text-amber-400 font-semibold">Today's Total</p>
           </div>
 
-          <div className="bg-orange-500/10 border border-orange-500/50 rounded p-6">
+          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-6">
             <div className="flex items-center justify-between mb-2">
-              <Clock className="w-8 h-8 text-orange-400" />
-              <span className="text-4xl font-bold text-orange-400">{stats.overdue}</span>
+              <Clock className="w-8 h-8 text-[#9E8F75]" />
+              <span className="text-4xl font-bold text-[#9E8F75]">{stats.overdue}</span>
             </div>
-            <p className="text-orange-300 font-semibold">Overdue Checkouts</p>
+            <p className="text-[#9E8F75] font-semibold">Overdue Checkouts</p>
           </div>
 
           <div className="bg-[#110F0B] 500/10 border border-[rgba(201,168,76,0.22)] 500/50 rounded p-6">

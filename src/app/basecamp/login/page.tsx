@@ -97,7 +97,7 @@ export default function BasecampLogin() {
             {/* Login Button */}
             <button
               type="submit"
-              className="w-full bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white font-bold py-4 rounded-lg transition-all shadow-lg shadow-emerald-500/30 flex items-center justify-center gap-2"
+              className="w-full bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white font-bold py-4 rounded-lg transition-all shadow-lg shadow-[rgba(201,168,76,0.2)] flex items-center justify-center gap-2"
             >
               <Zap className="w-5 h-5" />
               Launch Into Basecamp

@@ -45,7 +45,7 @@ export default function Benefits() {
             <div className="text-2xl font-bold text-white mb-1">Full Coverage</div>
             <div className="text-[#C9A84C] was-blue-200">Medical, Dental, Vision</div>
           </div>
-          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-6 border-2 border-green-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <PiggyBank className="w-12 h-12 text-[#C9A84C] was-green-400 mb-3" />
             <div className="text-2xl font-bold text-white mb-1">401(k) Match</div>
             <div className="text-[#C9A84C] was-green-200">Up to 6% company match</div>
@@ -208,11 +208,11 @@ export default function Benefits() {
             )}
 
             {selectedPlan === 'retirement' && (
-              <div className="lux-card/80 rounded p-6 border-2 border-green-500/30">
+              <div className="lux-card/80 rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
                 <h2 className="text-2xl font-bold text-white mb-4">401(k) Retirement Plan</h2>
                 <p className="text-[#9E8F75] mb-6">Build your future with our generous company match!</p>
 
-                <div className="bg-[#110F0B] from-REMOVED-900/40 to-emerald-900/40 rounded-lg p-6 border border-green-500/30 mb-6">
+                <div className="bg-[#110F0B] from-REMOVED-900/40 to-emerald-900/40 rounded-lg p-6 border border-[rgba(201,168,76,0.22)] mb-6">
                   <div className="grid grid-cols-2 gap-6 mb-6">
                     <div>
                       <div className="text-[#9E8F75] text-sm mb-1">Your Balance</div>
@@ -226,7 +226,7 @@ export default function Benefits() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-4 pt-6 border-t border-green-500/20">
+                  <div className="grid grid-cols-3 gap-4 pt-6 border-t border-[rgba(201,168,76,0.22)]">
                     <div className="text-center">
                       <div className="text-[#9E8F75] text-sm">Your Contribution</div>
                       <div className="text-white font-bold text-lg">$385/mo</div>

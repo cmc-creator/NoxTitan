@@ -195,7 +195,7 @@ export default function Analytics() {
             <div className="p-3 bg-amber-900/30 rounded-lg">
               <DollarSign className="w-6 h-6 text-amber-400" />
             </div>
-            <div className={`flex items-center gap-1 text-sm font-medium ${costChange >= 0 ? 'text-red-600' : 'text-green-600'}`}>
+            <div className={`flex items-center gap-1 text-sm font-medium ${costChange >= 0 ? 'text-red-400' : 'text-green-400'}`}>
               {costChange >= 0 ? <TrendingUp className="w-4 h-4" /> : <TrendingDown className="w-4 h-4" />}
               {Math.abs(costChange).toFixed(1)}%
             </div>
@@ -221,10 +221,10 @@ export default function Analytics() {
 
         <div className="p-6 rounded">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 bg-green-100 rounded-lg">
-              <Target className="w-6 h-6 text-green-600" />
+            <div className="p-3 bg-[rgba(201,168,76,0.04)] rounded-lg">
+              <Target className="w-6 h-6 text-green-400" />
             </div>
-            <div className={`text-sm font-medium ${avgCoverageRate >= 98 ? 'text-green-600' : 'text-amber-600'}`}>
+            <div className={`text-sm font-medium ${avgCoverageRate >= 98 ? 'text-green-400' : 'text-amber-600'}`}>
               {avgCoverageRate.toFixed(1)}%
             </div>
           </div>
@@ -235,10 +235,10 @@ export default function Analytics() {
 
         <div className="p-6 rounded">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 bg-purple-100 rounded-lg">
+            <div className="p-3 bg-[rgba(201,168,76,0.04)] rounded-lg">
               <Users className="w-6 h-6 text-amber-600" />
             </div>
-            <div className={`text-sm font-medium ${budgetVariance > 0 ? 'text-red-600' : 'text-green-600'}`}>
+            <div className={`text-sm font-medium ${budgetVariance > 0 ? 'text-red-400' : 'text-green-400'}`}>
               {budgetVariance > 0 ? '+' : ''}{budgetVariance.toFixed(1)}%
             </div>
           </div>
@@ -285,7 +285,7 @@ export default function Analytics() {
                     <span className="text-sm font-semibold text-[#9E8F75] w-24 text-right">
                       {formatCurrency(month.actualCost)}
                     </span>
-                    <span className={`text-xs font-medium w-16 text-right ${variance > 0 ? 'text-red-600' : 'text-green-600'}`}>
+                    <span className={`text-xs font-medium w-16 text-right ${variance > 0 ? 'text-red-400' : 'text-green-400'}`}>
                       {variance > 0 ? '+' : ''}{variance.toFixed(1)}%
                     </span>
                   </div>
@@ -349,7 +349,7 @@ export default function Analytics() {
                     {formatNumber(dept.totalHours)}
                   </td>
                   <td className="text-right py-4 px-4">
-                    <span className={`font-medium ${dept.overtimePercent > 5 ? 'text-amber-600' : 'text-green-600'}`}>
+                    <span className={`font-medium ${dept.overtimePercent > 5 ? 'text-amber-600' : 'text-green-400'}`}>
                       {dept.overtimePercent.toFixed(1)}%
                     </span>
                   </td>
@@ -401,7 +401,7 @@ export default function Analytics() {
         <div className="p-6 rounded">
           <div className="mb-6">
             <h2 className="text-xl font-bold text-[#9E8F75] flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-green-600" />
+              <Calendar className="w-5 h-5 text-green-400" />
               Scheduling Efficiency
             </h2>
             <p className="text-sm text-[#9E8F75] mt-1">Weekly schedule adherence and coverage</p>
@@ -413,7 +413,7 @@ export default function Analytics() {
                 <div className="flex items-center justify-between mb-3">
                   <span className="font-semibold text-[#9E8F75]">{week.week}</span>
                   <span className={`text-sm font-medium px-3 py-1 rounded-full ${
-                    week.coverageRate >= 99 ? 'bg-green-100 text-green-700' :
+                    week.coverageRate >= 99 ? 'bg-[rgba(201,168,76,0.04)] text-green-400' :
                     week.coverageRate >= 97 ? 'bg-amber-900/30 text-[#E8C060]' :
                     'bg-amber-100 text-amber-700'
                   }`}>
@@ -451,13 +451,13 @@ export default function Analytics() {
 
           <div className="space-y-4">
             {forecast.map((month, index) => (
-              <div key={index} className="p-4 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg border border-indigo-100">
+              <div key={index} className="p-4 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg border border-[rgba(201,168,76,0.22)]">
                 <div className="flex items-center justify-between mb-3">
                   <div>
                     <span className="font-semibold text-[#9E8F75]">{month.month}</span>
                     <div className="flex items-center gap-2 mt-1">
-                      {month.trend === 'increasing' && <TrendingUp className="w-4 h-4 text-red-600" />}
-                      {month.trend === 'decreasing' && <TrendingDown className="w-4 h-4 text-green-600" />}
+                      {month.trend === 'increasing' && <TrendingUp className="w-4 h-4 text-red-400" />}
+                      {month.trend === 'decreasing' && <TrendingDown className="w-4 h-4 text-green-400" />}
                       {month.trend === 'stable' && <div className="w-4 h-0.5 bg-amber-600" />}
                       <span className="text-xs text-[#9E8F75] capitalize">{month.trend}</span>
                     </div>
@@ -487,11 +487,11 @@ export default function Analytics() {
             ))}
           </div>
 
-          <div className="mt-6 p-4 bg-amber-900/20 border border-blue-200 rounded-lg">
+          <div className="mt-6 p-4 bg-amber-900/20 border border-[rgba(201,168,76,0.22)] rounded-lg">
             <div className="flex items-start gap-3">
               <Award className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" />
               <div>
-                <p className="text-sm font-medium text-blue-900">Forecast Insights</p>
+                <p className="text-sm font-medium text-[#9E8F75]">Forecast Insights</p>
                 <p className="text-xs text-[#E8C060] mt-1">
                   Projected Q1 2026 total: {formatCurrency(forecast.reduce((sum, m) => sum + m.projectedCost, 0))}
                   <br/>
@@ -521,7 +521,7 @@ export default function Analytics() {
                 <span><strong>Budget Alert:</strong> December spending exceeded budget by {formatCurrency(currentMonth.actualCost - currentMonth.budgetedCost)}. Review January scheduling.</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-green-600 mt-1">•</span>
+                <span className="text-green-400 mt-1">•</span>
                 <span><strong>Radiology:</strong> Excellent efficiency (96%) and low overtime (4.1%). Consider this model for other departments.</span>
               </li>
               <li className="flex items-start gap-2">

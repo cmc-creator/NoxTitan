@@ -233,7 +233,7 @@ export default function AIAssistantPage() {
                       <p className="font-semibold text-[#9E8F75] text-sm mb-2">Key Capabilities:</p>
                       {feature.capabilities.map((capability, idx) => (
                         <div key={idx} className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
                           <span className="text-sm text-[#9E8F75]">{capability}</span>
                         </div>
                       ))}

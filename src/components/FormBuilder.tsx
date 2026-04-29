@@ -110,13 +110,13 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
                 type="text"
                 value={formName}
                 onChange={(e) => setFormName(e.target.value)}
-                className="text-4xl font-bold text-[#9E8F75] mb-2 w-full border-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded px-2"
+                className="text-4xl font-bold text-[#9E8F75] mb-2 w-full border-none focus:outline-none focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] rounded px-2"
                 placeholder="Form Name"
               />
               <textarea
                 value={formDescription}
                 onChange={(e) => setFormDescription(e.target.value)}
-                className="text-lg text-[#9E8F75] w-full border-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded px-2"
+                className="text-lg text-[#9E8F75] w-full border-none focus:outline-none focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] rounded px-2"
                 placeholder="Form description..."
                 rows={2}
               />
@@ -146,7 +146,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500"
+                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
               >
                 <option value="HR">HR</option>
                 <option value="COMPLIANCE">Compliance</option>
@@ -201,7 +201,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
                   <button
                     key={type}
                     onClick={() => addField(type as FormField['type'])}
-                    className="w-full px-4 py-3 text-left bg-[#110F0B] hover:bg-purple-50 rounded-lg flex items-center gap-3 transition-colors"
+                    className="w-full px-4 py-3 text-left bg-[#110F0B] hover:bg-[rgba(201,168,76,0.04)] rounded-lg flex items-center gap-3 transition-colors"
                   >
                     <Icon className="w-5 h-5 text-amber-600" />
                     <span className="text-sm font-medium text-[#9E8F75]">{label}</span>
@@ -229,9 +229,9 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
                     key={field.id}
                     className={`border rounded-lg p-4 ${
                       selectedField === field.id && !previewMode
-                        ? 'border-amber-500/40 bg-purple-50'
+                        ? 'border-amber-500/40 bg-[rgba(201,168,76,0.04)]'
                         : 'border-[rgba(201,168,76,0.22)] bg-[#110F0B]'
-                    } ${previewMode ? '' : 'hover:border-purple-300 cursor-pointer'}`}
+                    } ${previewMode ? '' : 'hover:border-[rgba(201,168,76,0.22)] cursor-pointer'}`}
                     onClick={() => !previewMode && setSelectedField(field.id)}
                   >
                     <div className="flex items-start gap-3">
@@ -249,7 +249,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
                       <div className="flex-1">
                         <label className="block text-sm font-medium text-[#9E8F75] mb-2">
                           {field.label}
-                          {field.required && <span className="text-red-500 ml-1">*</span>}
+                          {field.required && <span className="text-red-400 ml-1">*</span>}
                         </label>
                         {field.helpText && (
                           <p className="text-sm text-[#9E8F75] mb-2">{field.helpText}</p>
@@ -259,7 +259,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
                       {!previewMode && (
                         <button
                           onClick={(e) => { e.stopPropagation(); deleteField(field.id); }}
-                          className="text-red-400 hover:text-red-600"
+                          className="text-red-400 hover:text-red-400"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
@@ -290,7 +290,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
                     type="text"
                     value={selectedFieldData.label}
                     onChange={(e) => updateField(selectedField!, { label: e.target.value })}
-                    className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500"
+                    className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                   />
                 </div>
 
@@ -300,7 +300,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
                     type="text"
                     value={selectedFieldData.placeholder || ''}
                     onChange={(e) => updateField(selectedField!, { placeholder: e.target.value })}
-                    className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500"
+                    className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                   />
                 </div>
 
@@ -309,7 +309,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
                   <textarea
                     value={selectedFieldData.helpText || ''}
                     onChange={(e) => updateField(selectedField!, { helpText: e.target.value })}
-                    className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500"
+                    className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                     rows={2}
                   />
                 </div>
@@ -320,7 +320,7 @@ export default function FormBuilder({ initialFields = [], onSave, templateName =
                     <textarea
                       value={selectedFieldData.options?.join('\n') || ''}
                       onChange={(e) => updateField(selectedField!, { options: e.target.value.split('\n').filter(o => o.trim()) })}
-                      className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500"
+                      className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                       rows={5}
                     />
                   </div>
@@ -388,7 +388,7 @@ function renderFieldInput(field: FormField) {
       return (
         <div className="flex gap-1">
           {[1, 2, 3, 4, 5].map(star => (
-            <Star key={star} className="w-6 h-6 text-[#9E8F75] hover:text-yellow-400 cursor-pointer" />
+            <Star key={star} className="w-6 h-6 text-[#9E8F75] hover:text-[#C9A84C] cursor-pointer" />
           ))}
         </div>
       );

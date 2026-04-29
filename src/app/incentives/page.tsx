@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { DollarSign, Clock, Users, TrendingUp, Zap, Gift, Trophy, Plus, AlertCircle, CheckCircle } from 'lucide-react';
@@ -134,7 +134,7 @@ export default function IncentivesPage() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-2 flex items-center gap-3" style={{ color: 'var(--header-text)' }}>
-            <Zap className="h-10 w-10 text-yellow-500" />
+            <Zap className="h-10 w-10 text-[#C9A84C]" />
             Bonus Shifts
           </h1>
           <p className="text-lg opacity-80">
@@ -147,10 +147,10 @@ export default function IncentivesPage() {
           <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
             <div className="flex items-center justify-between mb-2">
               <div className="text-sm opacity-70">Available Now</div>
-              <Zap className="h-5 w-5 text-yellow-500" />
+              <Zap className="h-5 w-5 text-[#C9A84C]" />
             </div>
             <div className="text-3xl font-bold" style={{ color: 'var(--header-text)' }}>{availableShifts.length}</div>
-            <div className="text-xs text-yellow-500">Grab them fast!</div>
+            <div className="text-xs text-[#C9A84C]">Grab them fast!</div>
           </div>
 
           <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
@@ -255,7 +255,7 @@ export default function IncentivesPage() {
                   <div
                     className={`px-3 py-1 rounded-full text-xs font-bold text-white flex items-center gap-1 ${
                       shift.urgency === 'high' ? 'bg-[#110F0B] 500' :
-                      shift.urgency === 'medium' ? 'bg-yellow-500' : 'bg-[#C9A84C]'
+                      shift.urgency === 'medium' ? 'bg-[rgba(201,168,76,0.12)]' : 'bg-[#C9A84C]'
                     }`}
                   >
                     <Zap className="h-3 w-3" />
@@ -300,7 +300,7 @@ export default function IncentivesPage() {
                 {/* Reason */}
                 <div className="mb-4 p-3 rounded-lg" style={{ background: 'var(--calendar-bg)' }}>
                   <div className="flex items-start gap-2">
-                    <AlertCircle className="h-4 w-4 flex-shrink-0 mt-0.5 text-yellow-500" />
+                    <AlertCircle className="h-4 w-4 flex-shrink-0 mt-0.5 text-[#C9A84C]" />
                     <div className="text-sm">{shift.reason}</div>
                   </div>
                 </div>
@@ -391,7 +391,7 @@ export default function IncentivesPage() {
                   <div className="text-7xl mb-2">{leaderboard[0].avatar}</div>
                   <div className="text-6xl mb-2">🏆</div>
                   <div className="font-bold text-xl" style={{ color: 'var(--header-text)' }}>{leaderboard[0].name}</div>
-                  <div className="text-4xl font-black text-yellow-500 mt-2">${leaderboard[0].bonusEarned}</div>
+                  <div className="text-4xl font-black text-[#C9A84C] mt-2">${leaderboard[0].bonusEarned}</div>
                   <div className="text-sm opacity-60">{leaderboard[0].shiftsPickedUp} shifts</div>
                 </div>
 
@@ -400,7 +400,7 @@ export default function IncentivesPage() {
                   <div className="text-6xl mb-2">{leaderboard[2].avatar}</div>
                   <div className="text-5xl mb-2">🥉</div>
                   <div className="font-bold text-lg" style={{ color: 'var(--header-text)' }}>{leaderboard[2].name}</div>
-                  <div className="text-3xl font-black text-orange-500 mt-2">${leaderboard[2].bonusEarned}</div>
+                  <div className="text-3xl font-black text-[#9E8F75] mt-2">${leaderboard[2].bonusEarned}</div>
                   <div className="text-sm opacity-60">{leaderboard[2].shiftsPickedUp} shifts</div>
                 </div>
               </div>
@@ -415,7 +415,7 @@ export default function IncentivesPage() {
                 {leaderboard.map((person) => (
                   <div
                     key={person.rank}
-                    className="p-4 rounded flex items-center gap-4 hover:scale-102 transition-all"
+                    className="p-4 rounded flex items-center gap-4 transition-all"
                     style={{ background: 'var(--calendar-bg)' }}
                   >
                     <div className="text-2xl font-bold w-8">{person.badge}</div>
@@ -514,7 +514,7 @@ export default function IncentivesPage() {
                     <button className="flex-1 p-3 rounded-lg border-2 border-[rgba(201,168,76,0.22)] 500 bg-[#C9A84C]/20 font-semibold">
                       🟢 Low
                     </button>
-                    <button className="flex-1 p-3 rounded-lg border-2 border-yellow-500 bg-yellow-500/20 font-semibold">
+                    <button className="flex-1 p-3 rounded-lg border-2 border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)] font-semibold">
                       🟡 Medium
                     </button>
                     <button className="flex-1 p-3 rounded-lg border-2 border-[rgba(201,168,76,0.22)] 500 bg-[#110F0B] 500/20 font-semibold">

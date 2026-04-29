@@ -458,15 +458,15 @@ export default function ActivitiesPage() {
   };
 
   const getDifficultyColor = (difficulty: string) => {
-    if (difficulty === 'easy') return 'text-green-400 bg-green-600/20';
-    if (difficulty === 'medium') return 'text-yellow-400 bg-yellow-600/20';
-    return 'text-red-400 bg-red-600/20';
+    if (difficulty === 'easy') return 'text-green-400 bg-[rgba(201,168,76,0.06)]';
+    if (difficulty === 'medium') return 'text-[#C9A84C] bg-[rgba(201,168,76,0.06)]';
+    return 'text-red-400 bg-[rgba(201,168,76,0.06)]';
   };
 
   const getFrequencyBadge = (frequency: string) => {
     if (frequency === 'daily') return { color: 'bg-amber-600', label: 'Daily' };
     if (frequency === 'weekly') return { color: 'bg-amber-600', label: 'Weekly' };
-    if (frequency === 'monthly') return { color: 'bg-pink-600', label: 'Monthly' };
+    if (frequency === 'monthly') return { color: 'bg-[rgba(201,168,76,0.12)]', label: 'Monthly' };
     return { color: 'bg-[rgba(201,168,76,0.08)]', label: 'Ongoing' };
   };
 
@@ -476,7 +476,7 @@ export default function ActivitiesPage() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
-            <Sparkles className="w-10 h-10 text-yellow-400" />
+            <Sparkles className="w-10 h-10 text-[#C9A84C]" />
             Team Engagement Activities
           </h1>
           <p className="text-[#9E8F75]">Connect, compete, and build relationships with your teammates</p>
@@ -485,7 +485,7 @@ export default function ActivitiesPage() {
         {/* Featured Activities */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-            <Star className="w-6 h-6 text-yellow-400" />
+            <Star className="w-6 h-6 text-[#C9A84C]" />
             Featured This Week
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -505,7 +505,7 @@ export default function ActivitiesPage() {
                 </div>
                 <p className="text-sm text-white/90 mb-4 text-center">{activity.description}</p>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2 text-yellow-300">
+                  <div className="flex items-center gap-2 text-[#F0EBE0]">
                     <Zap className="w-5 h-5" />
                     <span className="font-bold">+{activity.xpReward} XP</span>
                   </div>
@@ -586,7 +586,7 @@ export default function ActivitiesPage() {
                   </div>
                   <p className="text-sm text-[#9E8F75] mb-4 min-h-[60px]">{activity.description}</p>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-2 text-yellow-400">
+                    <div className="flex items-center gap-2 text-[#C9A84C]">
                       <Zap className="w-4 h-4" />
                       <span className="font-bold">+{activity.xpReward} XP</span>
                     </div>
@@ -623,7 +623,7 @@ export default function ActivitiesPage() {
                   <div key={idx} className="bg-[#110F0B]/50 rounded-lg p-4">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-lg font-bold text-white">{participation.activityName}</h3>
-                      <div className="flex items-center gap-2 text-yellow-400 font-bold">
+                      <div className="flex items-center gap-2 text-[#C9A84C] font-bold">
                         <Zap className="w-4 h-4" />
                         +{participation.xpEarned}
                       </div>

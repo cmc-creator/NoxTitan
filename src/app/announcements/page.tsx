@@ -205,7 +205,7 @@ export default function AnnouncementsPage() {
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case 'urgent': return 'bg-red-500/20 text-red-400 border-red-500';
+      case 'urgent': return 'bg-[rgba(201,168,76,0.06)] text-red-400 border-[rgba(201,168,76,0.22)]';
       case 'celebration': return 'bg-amber-500/10 text-[#E8C060] border-amber-500/25';
       case 'policy': return 'bg-amber-500/10 text-[#E8C060] border-amber-500/25';
       case 'event': return 'bg-amber-500/10 text-[#E8C060] border-amber-500/25';
@@ -357,7 +357,7 @@ export default function AnnouncementsPage() {
             >
               {announcement.isPinned && (
                 <div className="absolute top-4 right-4">
-                  <Pin className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  <Pin className="w-5 h-5 text-[#C9A84C] fill-yellow-400" />
                 </div>
               )}
 
@@ -370,7 +370,7 @@ export default function AnnouncementsPage() {
                       {announcement.category}
                     </span>
                     {announcement.priority === 'high' && (
-                      <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-xs font-bold uppercase">
+                      <span className="px-3 py-1 bg-[rgba(201,168,76,0.06)] text-red-400 rounded-full text-xs font-bold uppercase">
                         HIGH PRIORITY
                       </span>
                     )}

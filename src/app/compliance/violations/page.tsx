@@ -88,9 +88,9 @@ export default function ComplianceViolationsPage() {
 
   function getSeverityColor(severity: string) {
     switch (severity) {
-      case 'CRITICAL': return 'text-red-400 bg-red-500/20 border-red-500';
-      case 'HIGH': return 'text-red-300 bg-red-900/30 border-red-700/50';
-      case 'MEDIUM': return 'text-yellow-400 bg-yellow-500/20 border-yellow-500';
+      case 'CRITICAL': return 'text-red-400 bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]';
+      case 'HIGH': return 'text-[#F0EBE0] bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]';
+      case 'MEDIUM': return 'text-[#C9A84C] bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]';
       case 'LOW': return 'text-amber-400 bg-amber-600/20 border-amber-500/40';
       default: return 'text-[#9E8F75] bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]';
     }
@@ -99,7 +99,7 @@ export default function ComplianceViolationsPage() {
   function getStatusIcon(status: string) {
     switch (status) {
       case 'OPEN': return <AlertCircle className="w-5 h-5 text-red-400" />;
-      case 'ACKNOWLEDGED': return <Clock className="w-5 h-5 text-yellow-400" />;
+      case 'ACKNOWLEDGED': return <Clock className="w-5 h-5 text-[#C9A84C]" />;
       case 'RESOLVED': return <CheckCircle className="w-5 h-5 text-green-400" />;
       case 'DISMISSED': return <XCircle className="w-5 h-5 text-[#9E8F75]" />;
       default: return null;
@@ -121,21 +121,21 @@ export default function ComplianceViolationsPage() {
             <div className="text-3xl font-bold text-white mb-1">{stats.total}</div>
             <div className="text-sm text-[#9E8F75]">Total Violations</div>
           </div>
-          <div className="bg-red-500/10 border border-red-500/50 rounded p-4">
+          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-4">
             <div className="text-3xl font-bold text-red-400 mb-1">{stats.critical}</div>
-            <div className="text-sm text-red-300">Critical Open</div>
+            <div className="text-sm text-[#F0EBE0]">Critical Open</div>
           </div>
           <div style={{ background: 'rgba(48,10,10,0.4)', border: '1px solid rgba(120,32,32,0.35)', borderRadius: '4px', padding: '16px' }}>
             <div className="text-3xl font-bold mb-1" style={{ color: 'rgba(195,95,95,0.9)' }}>{stats.high}</div>
             <div className="text-sm" style={{ color: '#9E8F75' }}>High Priority</div>
           </div>
-          <div className="bg-yellow-500/10 border border-yellow-500/50 rounded p-4">
-            <div className="text-3xl font-bold text-yellow-400 mb-1">{stats.open}</div>
-            <div className="text-sm text-yellow-300">Open Cases</div>
+          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-4">
+            <div className="text-3xl font-bold text-[#C9A84C] mb-1">{stats.open}</div>
+            <div className="text-sm text-[#F0EBE0]">Open Cases</div>
           </div>
-          <div className="bg-green-500/10 border border-green-500/50 rounded p-4">
+          <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded p-4">
             <div className="text-3xl font-bold text-green-400 mb-1">{stats.resolved}</div>
-            <div className="text-sm text-green-300">Resolved</div>
+            <div className="text-sm text-[#F0EBE0]">Resolved</div>
           </div>
         </div>
 
@@ -190,8 +190,8 @@ export default function ComplianceViolationsPage() {
             filteredViolations.map((violation) => (
               <div
                 key={violation.id}
-                className={`bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border rounded p-6 hover:border-amber-500/40/50 transition-colors ${
-                  violation.status === 'OPEN' ? 'border-red-500/50' : 'border-[rgba(201,168,76,0.22)]'
+                className={`bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border rounded p-6 hover:border-[rgba(201,168,76,0.45)]/50 transition-colors ${
+                  violation.status === 'OPEN' ? 'border-[rgba(201,168,76,0.22)]' : 'border-[rgba(201,168,76,0.22)]'
                 }`}
               >
                 <div className="flex items-start gap-4">
@@ -253,9 +253,9 @@ export default function ComplianceViolationsPage() {
 
                     {/* Resolution */}
                     {violation.status === 'RESOLVED' && violation.resolution && (
-                      <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-3 mb-3">
+                      <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg p-3 mb-3">
                         <div className="text-xs font-semibold text-green-400 mb-1">Resolution:</div>
-                        <div className="text-sm text-green-300">{violation.resolution}</div>
+                        <div className="text-sm text-[#F0EBE0]">{violation.resolution}</div>
                       </div>
                     )}
 
@@ -320,7 +320,7 @@ export default function ComplianceViolationsPage() {
                 <button
                   onClick={() => resolveViolation(selectedViolation.id)}
                   disabled={!resolution.trim()}
-                  className="flex-1 px-4 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors disabled:opacity-50"
+                  className="flex-1 px-4 py-3 bg-green-500 hover:bg-green-500 text-white font-semibold rounded-lg transition-colors disabled:opacity-50"
                 >
                   Mark as Resolved
                 </button>

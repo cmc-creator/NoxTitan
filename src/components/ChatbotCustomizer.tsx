@@ -64,7 +64,7 @@ export default function ChatbotCustomizer() {
   };
 
   return (
-    <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg shadow p-6 border-2 border-purple-200">
+    <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded-lg shadow p-6 border-2 border-[rgba(201,168,76,0.22)]">
       <div className="flex items-center gap-3 mb-4">
         <Palette className="w-6 h-6 text-amber-600" />
         <h3 className="text-xl font-bold text-[#9E8F75]">🤖 Chatbot Customization</h3>
@@ -75,7 +75,7 @@ export default function ChatbotCustomizer() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Titan Customization */}
-        <div className="bg-[#110F0B] rounded-lg p-6 border-2 border-pink-200">
+        <div className="bg-[#110F0B] rounded-lg p-6 border-2 border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center gap-3 mb-4">
             <div className={`w-12 h-12 rounded-full `${preferences.titan.color}` flex items-center justify-center text-2xl`}>
               {preferences.titan.avatar}
@@ -98,7 +98,7 @@ export default function ChatbotCustomizer() {
                   onClick={() => setPreferences({ ...preferences, titan: { ...preferences.titan, avatar } })}
                   className={`w-10 h-10 rounded-lg text-xl flex items-center justify-center transition-all ${
                     preferences.titan.avatar === avatar
-                      ? 'bg-pink-200 border-2 border-pink-600 scale-110'
+                      ? 'bg-[rgba(201,168,76,0.04)] border-2 border-[rgba(201,168,76,0.22)] scale-110'
                       : 'bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] border border-gray-300'
                   }`}
                 >
@@ -120,14 +120,14 @@ export default function ChatbotCustomizer() {
                   onClick={() => setPreferences({ ...preferences, titan: { ...preferences.titan, color: color.value } })}
                   className={`relative p-3 rounded-lg border-2 transition-all ${
                     preferences.titan.color === color.value
-                      ? 'border-pink-600 bg-pink-50'
+                      ? 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.04)]'
                       : 'border-gray-300 hover:border-gray-400'
                   }`}
                 >
                   <div className={`h-6 rounded `${color.value}` mb-1`}></div>
                   <p className="text-xs text-[#9E8F75] text-center">{color.text}</p>
                   {preferences.titan.color === color.value && (
-                    <Check className="absolute top-1 right-1 w-4 h-4 text-pink-600" />
+                    <Check className="absolute top-1 right-1 w-4 h-4 text-[#9E8F75]" />
                   )}
                 </button>
               ))}
@@ -136,7 +136,7 @@ export default function ChatbotCustomizer() {
         </div>
 
         {/* Nox Customization */}
-        <div className="bg-[#110F0B] rounded-lg p-6 border-2 border-purple-200">
+        <div className="bg-[#110F0B] rounded-lg p-6 border-2 border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center gap-3 mb-4">
             <div className={`w-12 h-12 rounded-full `${preferences.nox.color}` flex items-center justify-center text-2xl`}>
               {preferences.nox.avatar}
@@ -159,7 +159,7 @@ export default function ChatbotCustomizer() {
                   onClick={() => setPreferences({ ...preferences, nox: { ...preferences.nox, avatar } })}
                   className={`w-10 h-10 rounded-lg text-xl flex items-center justify-center transition-all ${
                     preferences.nox.avatar === avatar
-                      ? 'bg-purple-200 border-2 border-amber-600/40 scale-110'
+                      ? 'bg-[rgba(201,168,76,0.04)] border-2 border-amber-600/40 scale-110'
                       : 'bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] border border-gray-300'
                   }`}
                 >
@@ -181,7 +181,7 @@ export default function ChatbotCustomizer() {
                   onClick={() => setPreferences({ ...preferences, nox: { ...preferences.nox, color: color.value } })}
                   className={`relative p-3 rounded-lg border-2 transition-all ${
                     preferences.nox.color === color.value
-                      ? 'border-amber-600/40 bg-purple-50'
+                      ? 'border-amber-600/40 bg-[rgba(201,168,76,0.04)]'
                       : 'border-gray-300 hover:border-gray-400'
                   }`}
                 >
@@ -218,7 +218,7 @@ export default function ChatbotCustomizer() {
       </div>
 
       {saved && (
-        <p className="text-center text-green-600 text-sm mt-3 font-semibold">
+        <p className="text-center text-green-400 text-sm mt-3 font-semibold">
           ✓ Your chatbot customizations have been saved! Refresh to see changes.
         </p>
       )}

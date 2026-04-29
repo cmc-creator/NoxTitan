@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { Gamepad2, Brain, Heart, Trophy, Smile, Users, Sparkles, Target, MessageCircle, Star, BarChart2 } from 'lucide-react';
@@ -346,7 +346,7 @@ function RecognitionSection() {
                 {badges.map((badge, idx) => (
                   <button
                     key={idx}
-                    className="p-3 rounded-lg hover:scale-110 transition-all text-center"
+                    className="p-3 rounded-lg transition-all text-center"
                     style={{ background: 'var(--calendar-bg)' }}
                   >
                     <div className="text-3xl mb-1">{badge.emoji}</div>
@@ -452,7 +452,7 @@ function WellnessSection() {
             {['😫', '😕', '😐', '🙂', '😄'].map((emoji, idx) => (
               <button
                 key={idx}
-                className="text-4xl p-3 rounded-lg hover:scale-125 transition-all"
+                className="text-4xl p-3 rounded-lg transition-all"
                 style={{ background: 'var(--calendar-bg)' }}
               >
                 {emoji}
@@ -494,7 +494,7 @@ function WellnessSection() {
             </div>
             <div className="flex justify-between">
               <span>😕 Stressed</span>
-              <span className="font-bold text-red-500">5%</span>
+              <span className="font-bold text-red-400">5%</span>
             </div>
           </div>
         </div>
@@ -554,11 +554,11 @@ function WellnessSection() {
             🔥 Burnout Alert
           </h3>
           <div className="space-y-3">
-            <div className="p-3 rounded-lg border-l-4 border-yellow-500" style={{ background: 'rgba(234, 179, 8, 0.1)' }}>
+            <div className="p-3 rounded-lg border-l-4 border-[rgba(201,168,76,0.22)]" style={{ background: 'rgba(234, 179, 8, 0.1)' }}>
               <div className="font-bold">⚠️ Sarah M.</div>
               <div className="text-sm opacity-70">Working 6 days straight</div>
             </div>
-            <div className="p-3 rounded-lg border-l-4 border-green-500" style={{ background: 'rgba(34, 197, 94, 0.1)' }}>
+            <div className="p-3 rounded-lg border-l-4 border-[rgba(201,168,76,0.22)]" style={{ background: 'rgba(34, 197, 94, 0.1)' }}>
               <div className="font-bold">✅ Team Average</div>
               <div className="text-sm opacity-70">Healthy work-life balance</div>
             </div>

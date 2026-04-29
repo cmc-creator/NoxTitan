@@ -158,12 +158,12 @@ export default function TeamDirectory() {
             <div className="text-[#F0EBE0]/70 text-sm mb-1">Departments</div>
             <div className="text-3xl font-bold text-white">6</div>
           </div>
-          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-green-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="text-[#C9A84C] was-green-200 text-sm mb-1">Remote Workers</div>
             <div className="text-3xl font-bold text-white">1</div>
           </div>
-          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-orange-500/30">
-            <div className="text-orange-200 text-sm mb-1">Open Positions</div>
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-[rgba(201,168,76,0.22)]">
+            <div className="text-[#9E8F75] text-sm mb-1">Open Positions</div>
             <div className="text-3xl font-bold text-white">3</div>
           </div>
         </div>
@@ -219,8 +219,8 @@ export default function TeamDirectory() {
               </div>
 
               {/* Fun Fact */}
-              <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-3 mb-4 border border-yellow-500/20">
-                <p className="text-yellow-200 text-sm">{member.funFact}</p>
+              <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-3 mb-4 border border-[rgba(201,168,76,0.22)]">
+                <p className="text-[#F0EBE0] text-sm">{member.funFact}</p>
               </div>
 
               {/* Skills */}
@@ -275,7 +275,7 @@ export default function TeamDirectory() {
         )}
 
         {/* Encouragement Footer */}
-        <div className="mt-8 bg-[#110F0B] from-REMOVED-900/30 to-amber-900/30 rounded p-6 border-2 border-pink-500/30 text-center">
+        <div className="mt-8 bg-[#110F0B] from-REMOVED-900/30 to-amber-900/30 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] text-center">
           <h3 className="text-2xl font-bold text-[#C9A84C] was-pink-200 mb-2">💜 You're part of something special!</h3>
           <p className="text-[#C9A84C] was-pink-100 text-lg">Every person here makes our team amazing. Don't be shy - say hi!</p>
         </div>

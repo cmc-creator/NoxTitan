@@ -71,33 +71,33 @@ export default function UnifiedDashboard() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 mb-4 relative z-10">
             <div className="flex items-center gap-2 sm:gap-3">
               <div className="p-2 rounded-sm flex-shrink-0" style={{ background: 'rgba(201,168,76,0.1)' }}>
-                <Bell className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse" style={{ color: '#C9A84C' }} />
+                <Bell className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: '#C9A84C' }} />
               </div>
               <h2 className="text-lg sm:text-xl font-bold text-white">2 Active Notifications</h2>
             </div>
-            <Link href="/notifications" className="text-yellow-300 hover:text-yellow-200 text-sm flex items-center gap-1 ml-auto sm:ml-0">
+            <Link href="/notifications" className="text-[#F0EBE0] hover:text-[#F0EBE0] text-sm flex items-center gap-1 ml-auto sm:ml-0">
               View All <ExternalLink className="w-4 h-4" />
             </Link>
           </div>
           <div className="space-y-3 relative z-10">
             {/* Open Incidents Notification */}
             <Link href="/qapi?filter=open" className="block">
-              <div className="p-3 sm:p-4 bg-red-500/10 backdrop-blur-sm rounded-lg border border-red-400/30 hover:border-red-400/60 transition-all cursor-pointer group min-h-[44px]">
+              <div className="p-3 sm:p-4 bg-[rgba(201,168,76,0.06)] backdrop-blur-sm rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all cursor-pointer group min-h-[44px]">
                 <div className="flex items-start justify-between gap-2">
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2 mb-2">
-                      <AlertOctagon className="w-5 h-5 text-red-300 flex-shrink-0" />
-                      <p className="font-bold text-white group-hover:text-red-200 transition-colors">Open Incidents</p>
-                      <span className="px-2 py-0.5 bg-red-500/30 rounded-full text-xs font-bold text-red-200 whitespace-nowrap">HIGH PRIORITY</span>
+                      <AlertOctagon className="w-5 h-5 text-[#F0EBE0] flex-shrink-0" />
+                      <p className="font-bold text-white group-hover:text-[#F0EBE0] transition-colors">Open Incidents</p>
+                      <span className="px-2 py-0.5 bg-[rgba(201,168,76,0.06)] rounded-full text-xs font-bold text-[#F0EBE0] whitespace-nowrap">HIGH PRIORITY</span>
                     </div>
-                    <p className="text-sm text-yellow-100 mb-2">2 incidents requiring immediate attention</p>
+                    <p className="text-sm text-[#F0EBE0] mb-2">2 incidents requiring immediate attention</p>
                     <div className="flex flex-col gap-1">
-                      <p className="text-xs text-yellow-200">• Patient Fall - Room 304 (2 hours ago)</p>
-                      <p className="text-xs text-yellow-200">• Medication Near Miss - ICU (5 hours ago)</p>
+                      <p className="text-xs text-[#F0EBE0]">• Patient Fall - Room 304 (2 hours ago)</p>
+                      <p className="text-xs text-[#F0EBE0]">• Medication Near Miss - ICU (5 hours ago)</p>
                     </div>
-                    <p className="text-xs text-red-300 mt-2 font-semibold">Action required: Investigation & documentation</p>
+                    <p className="text-xs text-[#F0EBE0] mt-2 font-semibold">Action required: Investigation & documentation</p>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-yellow-300 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 text-[#F0EBE0] group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </Link>
@@ -118,7 +118,7 @@ export default function UnifiedDashboard() {
                     </div>
                     <p className="text-xs mt-2 font-semibold" style={{ color: '#C9A84C' }}>Action required: Schedule renewal training</p>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-yellow-300 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 text-[#F0EBE0] group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </Link>
@@ -210,7 +210,7 @@ export default function UnifiedDashboard() {
             <div className="lg:col-span-2 space-y-4">
               <div className="p-4 bg-[#110F0B]/5 rounded-lg border border-white/10">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   <p className="font-semibold text-white">Submitted by: Sarah Johnson, RN (Night Supervisor)</p>
                   <span className="text-xs text-[#C9A84C]">6:45 AM</span>
                 </div>
@@ -227,12 +227,12 @@ export default function UnifiedDashboard() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-amber-400">Follow-up Needed:</p>
-                    <p className="text-sm text-yellow-200">• Room 208: Patient requires mental health eval (psychiatry consult requested)</p>
-                    <p className="text-sm text-yellow-200">• Pharmacy: 3 medication orders pending day shift verification</p>
+                    <p className="text-sm text-[#F0EBE0]">• Room 208: Patient requires mental health eval (psychiatry consult requested)</p>
+                    <p className="text-sm text-[#F0EBE0]">• Pharmacy: 3 medication orders pending day shift verification</p>
                   </div>
                 </div>
               </div>
-              <Link href="/shift-logs" className="block p-4 bg-[rgba(201,168,76,0.06)] rounded-lg border border-amber-600/30 hover:border-amber-400/60 transition-all">
+              <Link href="/shift-logs" className="block p-4 bg-[rgba(201,168,76,0.06)] rounded-lg border border-amber-600/30 hover:border-[rgba(201,168,76,0.45)] transition-all">
                 <div className="flex items-center justify-center gap-2 text-amber-400">
                   <FileText className="w-5 h-5" />
                   <span className="font-semibold">Write Day Shift Report</span>
@@ -245,31 +245,31 @@ export default function UnifiedDashboard() {
             <div className="space-y-3">
               <p className="font-semibold text-white text-sm">Department Status</p>
               <div className="space-y-2">
-                <div className="p-3 bg-green-500/10 rounded-lg border border-green-400/30">
+                <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)]">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-semibold text-white">Emergency</span>
-                    <CheckCircle className="w-4 h-4 text-green-300" />
+                    <CheckCircle className="w-4 h-4 text-[#F0EBE0]" />
                   </div>
                   <p className="text-xs text-gray-200 mt-1">Quiet night, all stable</p>
                 </div>
-                <div className="p-3 bg-yellow-500/10 rounded-lg border border-yellow-400/30">
+                <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)]">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-semibold text-white">ICU</span>
-                    <AlertCircle className="w-4 h-4 text-yellow-300" />
+                    <AlertCircle className="w-4 h-4 text-[#F0EBE0]" />
                   </div>
                   <p className="text-xs text-gray-200 mt-1">1 critical - needs monitoring</p>
                 </div>
-                <div className="p-3 bg-green-500/10 rounded-lg border border-green-400/30">
+                <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)]">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-semibold text-white">Med-Surg</span>
-                    <CheckCircle className="w-4 h-4 text-green-300" />
+                    <CheckCircle className="w-4 h-4 text-[#F0EBE0]" />
                   </div>
                   <p className="text-xs text-gray-200 mt-1">No issues to report</p>
                 </div>
-                <div className="p-3 bg-green-500/10 rounded-lg border border-green-400/30">
+                <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)]">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-semibold text-white">Psych Unit</span>
-                    <CheckCircle className="w-4 h-4 text-green-300" />
+                    <CheckCircle className="w-4 h-4 text-[#F0EBE0]" />
                   </div>
                   <p className="text-xs text-gray-200 mt-1">All calm, no incidents</p>
                 </div>
@@ -336,13 +336,13 @@ export default function UnifiedDashboard() {
             <div className="space-y-3 relative z-10">
               <div className="flex items-center justify-between p-3 bg-[#110F0B]/5 rounded-lg border border-white/10">
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                   <div>
                     <p className="font-semibold text-white">42 Clocked In</p>
                     <p className="text-xs text-gray-200">Current shift</p>
                   </div>
                 </div>
-                <UserCheck className="w-5 h-5 text-green-300" />
+                <UserCheck className="w-5 h-5 text-[#F0EBE0]" />
               </div>
               <div className="flex items-center justify-between p-3 bg-[#110F0B]/5 rounded-lg border border-white/10">
                 <div className="flex items-center gap-3">
@@ -356,38 +356,38 @@ export default function UnifiedDashboard() {
               </div>
               <div className="flex items-center justify-between p-3 bg-[#110F0B]/5 rounded-lg border border-white/10">
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                  <div className="w-2 h-2 bg-[rgba(201,168,76,0.12)] rounded-full"></div>
                   <div>
                     <p className="font-semibold text-white">5 On Break</p>
                     <p className="text-xs text-gray-200">Return in 15-30 min</p>
                   </div>
                 </div>
-                <Clock className="w-5 h-5 text-yellow-300" />
+                <Clock className="w-5 h-5 text-[#F0EBE0]" />
               </div>
             </div>
           </div>
 
           {/* Guild Leaderboard */}
           <Link href="/guild" className="block">
-            <div className="glass-tile glass-tile-gold p-6 cursor-pointer hover:scale-[1.02] transition-transform">
+            <div className="glass-tile glass-tile-gold p-6 cursor-pointer transition-transform">
               <div className="flex items-center justify-between mb-4 relative z-10">
                 <div className="flex items-center gap-2">
-                  <Trophy className="w-6 h-6 text-yellow-400" />
+                  <Trophy className="w-6 h-6 text-[#C9A84C]" />
                   <h2 className="text-xl font-bold text-white">Guild Leaderboard</h2>
                 </div>
                 <ArrowRight className="w-5 h-5 text-[#C9A84C]" />
               </div>
               <div className="space-y-3 relative z-10">
-                <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-yellow-500/20 to-transparent rounded-lg border border-yellow-400/30">
-                  <div className="flex items-center justify-center w-8 h-8 bg-yellow-500/30 rounded-full">
-                    <span className="text-lg font-bold text-yellow-200">1</span>
+                <div className="flex items-center gap-3 p-3 bg-[rgba(201,168,76,0.08)] rounded-lg border border-[rgba(201,168,76,0.22)]">
+                  <div className="flex items-center justify-center w-8 h-8 bg-[rgba(201,168,76,0.06)] rounded-full">
+                    <span className="text-lg font-bold text-[#F0EBE0]">1</span>
                   </div>
                   <div className="flex-1">
                     <p className="font-semibold text-white">Sarah Johnson</p>
                     <p className="text-xs text-gray-200">Emergency Dept</p>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    <Star className="w-4 h-4 text-[#C9A84C] fill-yellow-400" />
                     <span className="font-bold text-white">2,450</span>
                   </div>
                 </div>
@@ -462,7 +462,7 @@ export default function UnifiedDashboard() {
 
           {/* Basecamp Activity Feed */}
           <Link href="/guild?tab=basecamps" className="block">
-            <div className="glass-tile glass-tile-gold p-6 cursor-pointer hover:scale-[1.02] transition-transform">
+            <div className="glass-tile glass-tile-gold p-6 cursor-pointer transition-transform">
               <div className="flex items-center justify-between mb-4 relative z-10">
                 <div className="flex items-center gap-2">
                   <MessageSquare className="w-6 h-6 text-amber-400" />
@@ -471,7 +471,7 @@ export default function UnifiedDashboard() {
                 <ArrowRight className="w-5 h-5 text-[#E8C060]" />
               </div>
               <div className="space-y-3 relative z-10">
-                <div className="p-3 bg-[#110F0B]/5 rounded-lg border border-white/10 hover:border-amber-400/50 transition-all">
+                <div className="p-3 bg-[#110F0B]/5 rounded-lg border border-white/10 hover:border-[rgba(201,168,76,0.45)] transition-all">
                   <div className="flex items-start gap-3">
                     <Award className="w-5 h-5 text-[#E8C060] mt-0.5" />
                     <div className="flex-1">
@@ -481,9 +481,9 @@ export default function UnifiedDashboard() {
                     </div>
                   </div>
                 </div>
-                <div className="p-3 bg-[#110F0B]/5 rounded-lg border border-white/10 hover:border-amber-400/50 transition-all">
+                <div className="p-3 bg-[#110F0B]/5 rounded-lg border border-white/10 hover:border-[rgba(201,168,76,0.45)] transition-all">
                   <div className="flex items-start gap-3">
-                    <Trophy className="w-5 h-5 text-yellow-400 mt-0.5" />
+                    <Trophy className="w-5 h-5 text-[#C9A84C] mt-0.5" />
                     <div className="flex-1">
                       <p className="font-semibold text-white text-sm">ICU Basecamp leveled up!</p>
                       <p className="text-xs text-gray-200 mt-1">Now Level 8 - Unlocked custom badges</p>
@@ -491,7 +491,7 @@ export default function UnifiedDashboard() {
                     </div>
                   </div>
                 </div>
-                <div className="p-3 bg-[#110F0B]/5 rounded-lg border border-white/10 hover:border-amber-400/50 transition-all">
+                <div className="p-3 bg-[#110F0B]/5 rounded-lg border border-white/10 hover:border-[rgba(201,168,76,0.45)] transition-all">
                   <div className="flex items-start gap-3">
                     <Star className="w-5 h-5 text-amber-400 mt-0.5" />
                     <div className="flex-1">
@@ -515,12 +515,12 @@ export default function UnifiedDashboard() {
               <h2 className="text-lg font-bold text-white">Cert Expirations</h2>
             </div>
             <div className="space-y-2 relative z-10">
-              <div className="p-3 bg-red-500/10 rounded-lg border border-red-400/30">
+              <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)]">
                 <p className="font-semibold text-white text-sm">3 expire this week</p>
                 <p className="text-xs text-gray-200 mt-1">BLS, ACLS renewals needed</p>
               </div>
-              <Link href="/employees?filter=expiring-certs" className="block p-3 bg-[#110F0B]/5 rounded-lg border border-white/10 hover:border-red-400 transition-all text-center">
-                <p className="text-sm font-semibold text-red-300">View Details →</p>
+              <Link href="/employees?filter=expiring-certs" className="block p-3 bg-[#110F0B]/5 rounded-lg border border-white/10 hover:border-[rgba(201,168,76,0.22)] transition-all text-center">
+                <p className="text-sm font-semibold text-[#F0EBE0]">View Details →</p>
               </Link>
             </div>
           </div>
@@ -532,7 +532,7 @@ export default function UnifiedDashboard() {
               <h2 className="text-lg font-bold text-white">Budget Health</h2>
             </div>
             <div className="space-y-2 relative z-10">
-              <div className="p-3 bg-green-500/10 rounded-lg border border-green-400/30">
+              <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)]">
                 <p className="font-semibold text-white text-sm">94% of monthly budget</p>
                 <p className="text-xs text-gray-200 mt-1">$8.1K remaining this period</p>
               </div>
@@ -553,7 +553,7 @@ export default function UnifiedDashboard() {
                 <p className="font-semibold text-white text-sm">87% completion rate</p>
                 <p className="text-xs text-gray-200 mt-1">15 modules in progress</p>
               </div>
-              <Link href="/learning" className="block p-3 bg-[#110F0B]/5 rounded-lg border border-white/10 hover:border-amber-400 transition-all text-center">
+              <Link href="/learning" className="block p-3 bg-[#110F0B]/5 rounded-lg border border-white/10 hover:border-[rgba(201,168,76,0.45)] transition-all text-center">
                 <p className="text-sm font-semibold text-amber-400">View Training →</p>
               </Link>
             </div>
@@ -572,7 +572,7 @@ export default function UnifiedDashboard() {
             </div>
             <p className="text-[#F0EBE0] font-semibold mb-1 relative z-10">Call-Offs Today</p>
             <p className="text-xs text-gray-200 relative z-10">ER: 2, ICU: 1</p>
-            <Link href="/calendar?view=replacements" className="text-xs text-red-300 hover:text-red-200 mt-2 inline-block relative z-10">
+            <Link href="/calendar?view=replacements" className="text-xs text-[#F0EBE0] hover:text-[#F0EBE0] mt-2 inline-block relative z-10">
               Find coverage →
             </Link>
           </div>
@@ -589,7 +589,7 @@ export default function UnifiedDashboard() {
             <p className="text-xs text-gray-200 relative z-10">$4,826 additional cost</p>
             <div className="mt-2 relative z-10">
               <div className="w-full h-2 bg-[#110F0B]/10 rounded-full overflow-hidden">
-                <div className="h-full bg-yellow-500" style={{ width: '84%' }}></div>
+                <div className="h-full bg-[rgba(201,168,76,0.12)]" style={{ width: '84%' }}></div>
               </div>
             </div>
           </div>
@@ -629,7 +629,7 @@ export default function UnifiedDashboard() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           {/* Oracle AI Predictions */}
           <Link href="/oracle" className="block">
-            <div className="glass-tile glass-tile-gold p-6 cursor-pointer hover:scale-[1.02] transition-transform">
+            <div className="glass-tile glass-tile-gold p-6 cursor-pointer transition-transform">
               <div className="flex items-center justify-between mb-4 relative z-10">
                 <div className="flex items-center gap-2">
                   <Brain className="w-6 h-6 text-amber-400" />
@@ -648,9 +648,9 @@ export default function UnifiedDashboard() {
                     </div>
                   </div>
                 </div>
-                <div className="p-4 bg-red-500/10 rounded-lg border border-red-400/30">
+                <div className="p-4 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)]">
                   <div className="flex items-start gap-3">
-                    <AlertTriangle className="w-5 h-5 text-red-300 mt-0.5" />
+                    <AlertTriangle className="w-5 h-5 text-[#F0EBE0] mt-0.5" />
                     <div>
                       <p className="font-semibold text-white">Call-off risk: High</p>
                       <p className="text-sm text-gray-200 mt-1">Friday - Flu season peak expected</p>
@@ -658,9 +658,9 @@ export default function UnifiedDashboard() {
                     </div>
                   </div>
                 </div>
-                <div className="p-4 bg-green-500/10 rounded-lg border border-green-400/30">
+                <div className="p-4 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)]">
                   <div className="flex items-start gap-3">
-                    <Target className="w-5 h-5 text-green-300 mt-0.5" />
+                    <Target className="w-5 h-5 text-[#F0EBE0] mt-0.5" />
                     <div>
                       <p className="font-semibold text-white">Optimal staffing achieved</p>
                       <p className="text-sm text-gray-200 mt-1">This week - On track for budget goals</p>
@@ -678,39 +678,39 @@ export default function UnifiedDashboard() {
                 <Shield className="w-6 h-6 text-red-400" />
                 <h2 className="text-xl font-bold text-white">Recent Incidents</h2>
               </div>
-              <Link href="/qapi" className="text-red-300 hover:text-red-200 text-sm flex items-center gap-1">
+              <Link href="/qapi" className="text-[#F0EBE0] hover:text-[#F0EBE0] text-sm flex items-center gap-1">
                 View All <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
             <div className="space-y-3 relative z-10">
-              <div className="p-3 bg-red-500/10 rounded-lg border border-red-400/30">
+              <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)]">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <p className="font-semibold text-white text-sm">Patient Fall - Room 304</p>
                     <p className="text-xs text-gray-200 mt-1">Under investigation</p>
-                    <p className="text-xs text-red-300 mt-1">2 hours ago</p>
+                    <p className="text-xs text-[#F0EBE0] mt-1">2 hours ago</p>
                   </div>
-                  <span className="px-2 py-1 bg-red-500/20 rounded text-xs text-red-300 font-semibold">HIGH</span>
+                  <span className="px-2 py-1 bg-[rgba(201,168,76,0.06)] rounded text-xs text-[#F0EBE0] font-semibold">HIGH</span>
                 </div>
               </div>
-              <div className="p-3 bg-yellow-500/10 rounded-lg border border-yellow-400/30">
+              <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)]">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <p className="font-semibold text-white text-sm">Medication Near Miss</p>
                     <p className="text-xs text-gray-200 mt-1">Corrective action in progress</p>
-                    <p className="text-xs text-yellow-300 mt-1">5 hours ago</p>
+                    <p className="text-xs text-[#F0EBE0] mt-1">5 hours ago</p>
                   </div>
-                  <span className="px-2 py-1 bg-yellow-500/20 rounded text-xs text-yellow-300 font-semibold">MED</span>
+                  <span className="px-2 py-1 bg-[rgba(201,168,76,0.06)] rounded text-xs text-[#F0EBE0] font-semibold">MED</span>
                 </div>
               </div>
-              <div className="p-3 bg-green-500/10 rounded-lg border border-green-400/30">
+              <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)]">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <p className="font-semibold text-white text-sm">Equipment Maintenance</p>
                     <p className="text-xs text-gray-200 mt-1">Completed successfully</p>
-                    <p className="text-xs text-green-300 mt-1">1 day ago</p>
+                    <p className="text-xs text-[#F0EBE0] mt-1">1 day ago</p>
                   </div>
-                  <span className="px-2 py-1 bg-green-500/20 rounded text-xs text-green-300 font-semibold">LOW</span>
+                  <span className="px-2 py-1 bg-[rgba(201,168,76,0.06)] rounded text-xs text-[#F0EBE0] font-semibold">LOW</span>
                 </div>
               </div>
             </div>
@@ -726,7 +726,7 @@ export default function UnifiedDashboard() {
               <h2 className="text-xl font-bold text-white">This Week's Milestones</h2>
             </div>
             <div className="space-y-3 relative z-10">
-              <div className="p-3 bg-amber-500/10 rounded-lg border border-amber-600/30 hover:border-amber-500/60 transition-all">
+              <div className="p-3 bg-amber-500/10 rounded-lg border border-amber-600/30 hover:border-[rgba(201,168,76,0.45)] transition-all">
                 <div className="flex items-start gap-3">
                   <div className="text-2xl">🎂</div>
                   <div>
@@ -735,7 +735,7 @@ export default function UnifiedDashboard() {
                   </div>
                 </div>
               </div>
-              <div className="p-3 bg-amber-500/10 rounded-lg border border-amber-400/40/30 hover:border-amber-400/40/60 transition-all">
+              <div className="p-3 bg-amber-500/10 rounded-lg border border-amber-400/40/30 hover:border-[rgba(201,168,76,0.45)]/60 transition-all">
                 <div className="flex items-start gap-3">
                   <div className="text-2xl">🎉</div>
                   <div>
@@ -745,7 +745,7 @@ export default function UnifiedDashboard() {
                   </div>
                 </div>
               </div>
-              <button className="w-full p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-amber-600/30 hover:border-amber-500/60 transition-all text-center">
+              <button className="w-full p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-amber-600/30 hover:border-[rgba(201,168,76,0.45)] transition-all text-center">
                 <p className="text-sm font-semibold text-[#E8C060] flex items-center justify-center gap-2">
                   <Send className="w-4 h-4" />
                   Send Group Recognition
@@ -773,12 +773,12 @@ export default function UnifiedDashboard() {
                 </div>
                 <Briefcase className="w-5 h-5 text-amber-400" />
               </div>
-              <div className="flex items-center justify-between p-3 bg-green-500/10 rounded-lg border border-green-400/30">
+              <div className="flex items-center justify-between p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)]">
                 <div>
                   <p className="font-semibold text-white">8 Active Candidates</p>
                   <p className="text-xs text-gray-200 mt-1">3 interviews scheduled this week</p>
                 </div>
-                <Video className="w-5 h-5 text-green-300" />
+                <Video className="w-5 h-5 text-[#F0EBE0]" />
               </div>
               <div className="flex items-center justify-between p-3 bg-amber-500/10 rounded-lg border border-amber-400/40/30">
                 <div>
@@ -795,16 +795,16 @@ export default function UnifiedDashboard() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           {/* Asset Vault Status */}
           <Link href="/vault" className="block">
-            <div className="glass-tile glass-tile-yellow p-6 cursor-pointer hover:scale-[1.02] transition-transform">
+            <div className="glass-tile glass-tile-yellow p-6 cursor-pointer transition-transform">
               <div className="flex items-center justify-between mb-4 relative z-10">
                 <div className="flex items-center gap-2">
-                  <Package className="w-6 h-6 text-yellow-400" />
+                  <Package className="w-6 h-6 text-[#C9A84C]" />
                   <h2 className="text-xl font-bold text-white">Equipment Status</h2>
                 </div>
-                <ArrowRight className="w-5 h-5 text-yellow-300" />
+                <ArrowRight className="w-5 h-5 text-[#F0EBE0]" />
               </div>
               <div className="grid grid-cols-2 gap-4 relative z-10">
-                <div className="p-3 bg-green-500/10 rounded-lg border border-green-400/30 text-center">
+                <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)] text-center">
                   <p className="text-2xl font-bold text-white">147</p>
                   <p className="text-xs text-gray-200 mt-1">Available</p>
                 </div>
@@ -812,11 +812,11 @@ export default function UnifiedDashboard() {
                   <p className="text-2xl font-bold text-white">23</p>
                   <p className="text-xs text-gray-200 mt-1">In Use</p>
                 </div>
-                <div className="p-3 bg-yellow-500/10 rounded-lg border border-yellow-400/30 text-center">
+                <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)] text-center">
                   <p className="text-2xl font-bold text-white">5</p>
                   <p className="text-xs text-gray-200 mt-1">Maintenance</p>
                 </div>
-                <div className="p-3 bg-red-500/10 rounded-lg border border-red-400/30 text-center">
+                <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)] text-center">
                   <p className="text-2xl font-bold text-white">2</p>
                   <p className="text-xs text-gray-200 mt-1">Out of Service</p>
                 </div>
@@ -877,7 +877,7 @@ export default function UnifiedDashboard() {
                 <p className="font-semibold text-white text-sm">12 items need review</p>
                 <p className="text-xs text-gray-200 mt-1">Timesheets, expenses, requests</p>
               </div>
-              <Link href="/dashboard?tab=approvals" className="block p-3 bg-[#110F0B]/5 rounded-lg border border-white/10 hover:border-amber-400/40 transition-all text-center">
+              <Link href="/dashboard?tab=approvals" className="block p-3 bg-[#110F0B]/5 rounded-lg border border-white/10 hover:border-[rgba(201,168,76,0.45)] transition-all text-center">
                 <p className="text-sm font-semibold text-[#C9A84C]">Review All →</p>
               </Link>
             </div>
@@ -890,7 +890,7 @@ export default function UnifiedDashboard() {
               <h2 className="text-lg font-bold text-white">Payroll Preview</h2>
             </div>
             <div className="space-y-2 relative z-10">
-              <div className="p-3 bg-green-500/10 rounded-lg border border-green-400/30">
+              <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)]">
                 <p className="font-semibold text-white text-sm">$156,340</p>
                 <p className="text-xs text-gray-200 mt-1">Estimated this period</p>
               </div>
@@ -911,7 +911,7 @@ export default function UnifiedDashboard() {
                 <p className="font-semibold text-white text-sm">4.2 / 5.0</p>
                 <p className="text-xs text-gray-200 mt-1">This month's avg rating</p>
               </div>
-              <Link href="/team-culture" className="block p-3 bg-[#110F0B]/5 rounded-lg border border-white/10 hover:border-pink-400 transition-all text-center">
+              <Link href="/team-culture" className="block p-3 bg-[#110F0B]/5 rounded-lg border border-white/10 hover:border-[rgba(201,168,76,0.22)] transition-all text-center">
                 <p className="text-sm font-semibold text-[#E8C060]">View Insights →</p>
               </Link>
             </div>
@@ -927,7 +927,7 @@ export default function UnifiedDashboard() {
                 <BarChart2 className="w-6 h-6 text-green-400" />
                 <h2 className="text-xl font-bold text-white">Patient Satisfaction</h2>
               </div>
-              <Link href="/patient-surveys" className="text-green-300 hover:text-green-200 text-sm flex items-center gap-1">
+              <Link href="/patient-surveys" className="text-[#F0EBE0] hover:text-[#F0EBE0] text-sm flex items-center gap-1">
                 View All <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -938,7 +938,7 @@ export default function UnifiedDashboard() {
                   <p className="text-sm text-gray-200 mt-1">This month average</p>
                 </div>
                 <div className="text-right">
-                  <div className="flex items-center gap-1 text-green-300">
+                  <div className="flex items-center gap-1 text-[#F0EBE0]">
                     <TrendingUp className="w-5 h-5" />
                     <span className="text-2xl font-bold">+8%</span>
                   </div>
@@ -987,21 +987,21 @@ export default function UnifiedDashboard() {
                 <AlertOctagon className="w-6 h-6 text-red-400" />
                 <h2 className="text-xl font-bold text-white">Grievances & Complaints</h2>
               </div>
-              <Link href="/grievances" className="text-red-300 hover:text-red-200 text-sm flex items-center gap-1">
+              <Link href="/grievances" className="text-[#F0EBE0] hover:text-[#F0EBE0] text-sm flex items-center gap-1">
                 View All <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
             <div className="space-y-3 relative z-10">
               <div className="grid grid-cols-3 gap-3">
-                <div className="p-3 bg-red-500/10 rounded-lg border border-red-400/30 text-center">
+                <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)] text-center">
                   <p className="text-2xl font-bold text-white">2</p>
                   <p className="text-xs text-gray-200 mt-1">Open</p>
                 </div>
-                <div className="p-3 bg-yellow-500/10 rounded-lg border border-yellow-400/30 text-center">
+                <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)] text-center">
                   <p className="text-2xl font-bold text-white">5</p>
                   <p className="text-xs text-gray-200 mt-1">In Review</p>
                 </div>
-                <div className="p-3 bg-green-500/10 rounded-lg border border-green-400/30 text-center">
+                <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)] text-center">
                   <p className="text-2xl font-bold text-white">18</p>
                   <p className="text-xs text-gray-200 mt-1">Resolved</p>
                 </div>
@@ -1009,34 +1009,34 @@ export default function UnifiedDashboard() {
 
               {/* Recent Grievances */}
               <div className="space-y-2">
-                <div className="p-3 bg-red-500/10 rounded-lg border border-red-400/30 hover:border-red-400/60 transition-all cursor-pointer">
+                <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all cursor-pointer">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="px-2 py-0.5 bg-red-500/30 rounded text-xs font-bold text-red-200">NEW</span>
+                        <span className="px-2 py-0.5 bg-[rgba(201,168,76,0.06)] rounded text-xs font-bold text-[#F0EBE0]">NEW</span>
                         <p className="font-semibold text-white text-sm">Patient Family Complaint</p>
                       </div>
                       <p className="text-xs text-gray-200">Room 212 - Concerns about response time</p>
-                      <p className="text-xs text-red-300 mt-1">Filed: 1 hour ago • Response due: 24 hours</p>
+                      <p className="text-xs text-[#F0EBE0] mt-1">Filed: 1 hour ago • Response due: 24 hours</p>
                     </div>
                   </div>
                 </div>
-                <div className="p-3 bg-yellow-500/10 rounded-lg border border-yellow-400/30 hover:border-yellow-400/60 transition-all cursor-pointer">
+                <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all cursor-pointer">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="px-2 py-0.5 bg-yellow-500/30 rounded text-xs font-bold text-yellow-200">REVIEW</span>
+                        <span className="px-2 py-0.5 bg-[rgba(201,168,76,0.06)] rounded text-xs font-bold text-[#F0EBE0]">REVIEW</span>
                         <p className="font-semibold text-white text-sm">Staff Grievance</p>
                       </div>
                       <p className="text-xs text-gray-200">Anonymous - Scheduling concerns</p>
-                      <p className="text-xs text-yellow-300 mt-1">Filed: 3 days ago • HR reviewing</p>
+                      <p className="text-xs text-[#F0EBE0] mt-1">Filed: 3 days ago • HR reviewing</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <button className="w-full p-3 rounded-sm transition-all" style={{ background: 'rgba(48,10,10,0.4)', border: '1px solid rgba(105,32,32,0.38)' }}>
-                <p className="text-sm font-semibold text-red-300 flex items-center justify-center gap-2">
+                <p className="text-sm font-semibold text-[#F0EBE0] flex items-center justify-center gap-2">
                   <AlertOctagon className="w-4 h-4" />
                   File New Grievance
                 </p>
@@ -1060,7 +1060,7 @@ export default function UnifiedDashboard() {
             </div>
             <div className="space-y-3 relative z-10">
               <div className="grid grid-cols-2 gap-3">
-                <div className="p-3 bg-amber-600/10 rounded-lg border border-amber-600/30 hover:border-amber-400/60 transition-all cursor-pointer">
+                <div className="p-3 bg-amber-600/10 rounded-lg border border-amber-600/30 hover:border-[rgba(201,168,76,0.45)] transition-all cursor-pointer">
                   <div className="flex items-center gap-2 mb-2">
                     <Inbox className="w-5 h-5 text-amber-400" />
                     <p className="font-semibold text-white">Inbox</p>
@@ -1068,12 +1068,12 @@ export default function UnifiedDashboard() {
                   <p className="text-2xl font-bold text-white">12</p>
                   <p className="text-xs text-gray-200">unread messages</p>
                 </div>
-                <div className="p-3 bg-green-500/10 rounded-lg border border-green-400/30 hover:border-green-400/60 transition-all cursor-pointer">
+                <div className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all cursor-pointer">
                   <div className="flex items-center gap-2 mb-2">
-                    <Mail className="w-5 h-5 text-green-300" />
+                    <Mail className="w-5 h-5 text-[#F0EBE0]" />
                     <p className="font-semibold text-white">Outlook</p>
                   </div>
-                  <CheckCircle className="w-5 h-5 text-green-300" />
+                  <CheckCircle className="w-5 h-5 text-[#F0EBE0]" />
                   <p className="text-xs text-gray-200">Connected</p>
                 </div>
               </div>
@@ -1081,21 +1081,21 @@ export default function UnifiedDashboard() {
               <div className="p-4 bg-amber-500/10 rounded-lg border border-amber-400/40/30">
                 <p className="font-semibold text-white text-sm mb-3">Available Integrations</p>
                 <div className="space-y-2">
-                  <button className="w-full p-2 bg-[#110F0B]/5 rounded border border-white/10 hover:border-amber-400 transition-all flex items-center justify-between">
+                  <button className="w-full p-2 bg-[#110F0B]/5 rounded border border-white/10 hover:border-[rgba(201,168,76,0.45)] transition-all flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Mail className="w-4 h-4 text-amber-400" />
                       <span className="text-sm text-white">Microsoft Outlook</span>
                     </div>
                     <CheckCircle className="w-4 h-4 text-green-400" />
                   </button>
-                  <button className="w-full p-2 bg-[#110F0B]/5 rounded border border-white/10 hover:border-red-400 transition-all flex items-center justify-between">
+                  <button className="w-full p-2 bg-[#110F0B]/5 rounded border border-white/10 hover:border-[rgba(201,168,76,0.22)] transition-all flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <Mail className="w-4 h-4 text-red-300" />
+                      <Mail className="w-4 h-4 text-[#F0EBE0]" />
                       <span className="text-sm text-white">Gmail</span>
                     </div>
                     <span className="text-xs text-[#C9A84C]">Connect</span>
                   </button>
-                  <button className="w-full p-2 bg-[#110F0B]/5 rounded border border-white/10 hover:border-amber-400/40 transition-all flex items-center justify-between">
+                  <button className="w-full p-2 bg-[#110F0B]/5 rounded border border-white/10 hover:border-[rgba(201,168,76,0.45)] transition-all flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <MessageSquare className="w-4 h-4 text-[#C9A84C]" />
                       <span className="text-sm text-white">Slack</span>
@@ -1131,7 +1131,7 @@ export default function UnifiedDashboard() {
                       <p className="text-sm font-semibold text-white">Q1 Core Measures</p>
                       <p className="text-xs text-gray-200">IMM-2, STK-4, SEP-1</p>
                     </div>
-                    <span className="px-2 py-1 bg-yellow-500/20 rounded text-xs font-bold text-yellow-300">Due: Jan 31</span>
+                    <span className="px-2 py-1 bg-[rgba(201,168,76,0.06)] rounded text-xs font-bold text-[#F0EBE0]">Due: Jan 31</span>
                   </div>
                 </div>
               </div>
@@ -1163,18 +1163,18 @@ export default function UnifiedDashboard() {
                       <span className="text-sm font-bold text-white">78%</span>
                     </div>
                     <div className="w-full h-2 bg-[#110F0B]/10 rounded-full overflow-hidden">
-                      <div className="h-full bg-yellow-500" style={{ width: '78%' }}></div>
+                      <div className="h-full bg-[rgba(201,168,76,0.12)]" style={{ width: '78%' }}></div>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
-                <Link href="/qapi/oryx/enter-data" className="p-3 bg-green-500/10 rounded-lg border border-green-400/30 hover:border-green-400/60 transition-all text-center">
-                  <FileText className="w-5 h-5 text-green-300 mx-auto mb-1" />
-                  <p className="text-xs font-semibold text-green-300">Enter Data</p>
+                <Link href="/qapi/oryx/enter-data" className="p-3 bg-[rgba(201,168,76,0.06)] rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all text-center">
+                  <FileText className="w-5 h-5 text-[#F0EBE0] mx-auto mb-1" />
+                  <p className="text-xs font-semibold text-[#F0EBE0]">Enter Data</p>
                 </Link>
-                <Link href="/qapi/oryx/instructions" className="p-3 bg-amber-600/10 rounded-lg border border-amber-600/30 hover:border-amber-400/60 transition-all text-center">
+                <Link href="/qapi/oryx/instructions" className="p-3 bg-amber-600/10 rounded-lg border border-amber-600/30 hover:border-[rgba(201,168,76,0.45)] transition-all text-center">
                   <FileText className="w-5 h-5 text-amber-400 mx-auto mb-1" />
                   <p className="text-xs font-semibold text-amber-400">Instructions</p>
                 </Link>
@@ -1201,7 +1201,7 @@ export default function UnifiedDashboard() {
                     </div>
                     <div className="w-full h-3 bg-[#110F0B]/10 rounded-full overflow-hidden">
                       <div 
-                        className={`h-full ${score >= 90 ? 'bg-green-500' : score >= 75 ? 'bg-yellow-500' : 'bg-red-500'}`}
+                        className={`h-full ${score >= 90 ? 'bg-green-500' : score >= 75 ? 'bg-[rgba(201,168,76,0.12)]' : 'bg-red-500'}`}
                         style={{ width: `${score}%` }}
                       />
                     </div>
@@ -1215,7 +1215,7 @@ export default function UnifiedDashboard() {
           <div className="glass-tile glass-tile-yellow p-6">
             <h2 className="text-xl font-bold text-white mb-4 relative z-10">Quick Actions</h2>
             <div className="space-y-3 relative z-10">
-              <Link href="/qapi?tab=reports" className="block p-4 bg-[#110F0B]/5 backdrop-blur-sm rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-amber-400 transition-all">
+              <Link href="/qapi?tab=reports" className="block p-4 bg-[#110F0B]/5 backdrop-blur-sm rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-[rgba(201,168,76,0.45)] transition-all">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <BarChart3 className="w-5 h-5 text-amber-400" />
@@ -1228,7 +1228,7 @@ export default function UnifiedDashboard() {
                 </div>
               </Link>
 
-              <Link href="/time-off" className="block p-4 bg-[#110F0B]/5 backdrop-blur-sm rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-amber-400/40 transition-all">
+              <Link href="/time-off" className="block p-4 bg-[#110F0B]/5 backdrop-blur-sm rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-[rgba(201,168,76,0.45)] transition-all">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <Clock className="w-5 h-5 text-[#C9A84C]" />
@@ -1241,10 +1241,10 @@ export default function UnifiedDashboard() {
                 </div>
               </Link>
 
-              <Link href="/qapi?tab=incidents" className="block p-4 bg-[#110F0B]/5 backdrop-blur-sm rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-red-400 transition-all">
+              <Link href="/qapi?tab=incidents" className="block p-4 bg-[#110F0B]/5 backdrop-blur-sm rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-[rgba(201,168,76,0.22)] transition-all">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <AlertTriangle className="w-5 h-5 text-red-300" />
+                    <AlertTriangle className="w-5 h-5 text-[#F0EBE0]" />
                     <div>
                       <p className="font-semibold text-white">Review Open Incidents</p>
                       <p className="text-sm text-gray-200">{dashboardData.quality.openIncidents} requiring attention</p>
@@ -1254,10 +1254,10 @@ export default function UnifiedDashboard() {
                 </div>
               </Link>
 
-              <Link href="/compliance" className="block p-4 bg-[#110F0B]/5 backdrop-blur-sm rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-green-400 transition-all">
+              <Link href="/compliance" className="block p-4 bg-[#110F0B]/5 backdrop-blur-sm rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-[rgba(201,168,76,0.22)] transition-all">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-300" />
+                    <CheckCircle className="w-5 h-5 text-[#F0EBE0]" />
                     <div>
                       <p className="font-semibold text-white">Compliance Dashboard</p>
                       <p className="text-sm text-gray-200">{dashboardData.compliance.complianceRate}% current</p>
@@ -1274,9 +1274,9 @@ export default function UnifiedDashboard() {
         <div className="glass-tile glass-tile-gold p-6">
           <h2 className="text-xl font-bold text-white mb-4 relative z-10">Notifications & Alerts</h2>
           <div className="space-y-3 relative z-10">
-            <div className="p-4 bg-red-500/10 backdrop-blur-sm rounded-lg border border-red-400/30 hover:border-red-400/60 transition-all">
+            <div className="p-4 bg-[rgba(201,168,76,0.06)] backdrop-blur-sm rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all">
               <div className="flex items-start gap-3">
-                <AlertTriangle className="w-5 h-5 text-red-300 mt-0.5" />
+                <AlertTriangle className="w-5 h-5 text-[#F0EBE0] mt-0.5" />
                 <div>
                   <p className="font-semibold text-white">3 Shifts Need Coverage</p>
                   <p className="text-sm text-gray-200 mt-1">Emergency Dept - Today 3PM-11PM</p>
@@ -1285,9 +1285,9 @@ export default function UnifiedDashboard() {
               </div>
             </div>
 
-            <div className="p-4 bg-yellow-500/10 backdrop-blur-sm rounded-lg border border-yellow-400/30 hover:border-yellow-400/60 transition-all">
+            <div className="p-4 bg-[rgba(201,168,76,0.06)] backdrop-blur-sm rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all">
               <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-yellow-300 mt-0.5" />
+                <Clock className="w-5 h-5 text-[#F0EBE0] mt-0.5" />
                 <div>
                   <p className="font-semibold text-white">8 Time Off Requests Pending</p>
                   <p className="text-sm text-gray-200 mt-1">Approval needed for next week's schedule</p>
@@ -1296,7 +1296,7 @@ export default function UnifiedDashboard() {
               </div>
             </div>
 
-            <div className="p-4 bg-amber-600/10 backdrop-blur-sm rounded-lg border border-amber-600/30 hover:border-amber-400/60 transition-all">
+            <div className="p-4 bg-amber-600/10 backdrop-blur-sm rounded-lg border border-amber-600/30 hover:border-[rgba(201,168,76,0.45)] transition-all">
               <div className="flex items-start gap-3">
                 <Users className="w-5 h-5 text-amber-400 mt-0.5" />
                 <div>
@@ -1307,9 +1307,9 @@ export default function UnifiedDashboard() {
               </div>
             </div>
 
-            <div className="p-4 bg-green-500/10 backdrop-blur-sm rounded-lg border border-green-400/30 hover:border-green-400/60 transition-all">
+            <div className="p-4 bg-[rgba(201,168,76,0.06)] backdrop-blur-sm rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all">
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-300 mt-0.5" />
+                <CheckCircle className="w-5 h-5 text-[#F0EBE0] mt-0.5" />
                 <div>
                   <p className="font-semibold text-white">Weekly Schedule Published</p>
                   <p className="text-sm text-gray-200 mt-1">All departments confirmed</p>

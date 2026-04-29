@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect, useRef } from 'react';
 import { 
@@ -228,7 +228,7 @@ export default function AIAssistant() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="hover:scale-110 transition-all group"
+          className=" transition-all group"
           style={{ 
             position: 'fixed',
             bottom: '24px',
@@ -245,7 +245,7 @@ export default function AIAssistant() {
             alt="Titan AI" 
             className="w-20 h-20 object-contain drop-shadow-2xl"
           />
-          <span className="absolute top-0 right-0 w-4 h-4 bg-green-400 rounded-full animate-pulse"></span>
+          <span className="absolute top-0 right-0 w-4 h-4 bg-green-500 rounded-full"></span>
           
           {/* Tooltip */}
           <div className="absolute bottom-24 right-0 bg-[#110F0B] text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">

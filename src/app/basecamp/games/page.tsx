@@ -50,16 +50,16 @@ export default function Games() {
         </div>
 
         {/* Leaderboard */}
-        <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-yellow-500/30 mb-6">
+        <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)] mb-6">
           <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-            <Trophy className="w-6 h-6 text-yellow-400" />
+            <Trophy className="w-6 h-6 text-[#C9A84C]" />
             This Month's Champions
           </h2>
           <div className="space-y-3">
             {leaderboard.map((player) => (
               <div key={player.rank} className={`rounded-lg p-4 border-2 ${
                 player.rank === 3 ? 'bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)] ring-2 ring-[rgba(201,168,76,0.45)]' :
-                player.rank === 1 ? 'bg-[rgba(201,168,76,0.06)] border-yellow-500/30' :
+                player.rank === 1 ? 'bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]' :
                 'bg-[#110F0B]/50 border-[rgba(201,168,76,0.22)]'
               }`}>
                 <div className="flex items-center justify-between">
@@ -73,7 +73,7 @@ export default function Games() {
                       <div className="text-[#9E8F75] text-sm">{player.points} points</div>
                     </div>
                   </div>
-                  {player.rank === 1 && <Crown className="w-8 h-8 text-yellow-400" />}
+                  {player.rank === 1 && <Crown className="w-8 h-8 text-[#C9A84C]" />}
                 </div>
               </div>
             ))}
@@ -123,7 +123,7 @@ export default function Games() {
                 </button>
               </div>
               {showTriviaAnswer && (
-                <div className={`rounded-lg p-4 ${triviaScore > 0 ? 'bg-[#110F0B] was-green-900/50 border border-green-500' : 'bg-red-900/50 border border-red-500'}`}>
+                <div className={`rounded-lg p-4 ${triviaScore > 0 ? 'bg-[#110F0B] was-green-900/50 border border-[rgba(201,168,76,0.22)]' : 'bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)]'}`}>
                   <div className="text-white font-bold mb-1">
                     {triviaScore > 0 ? '🎉 Correct! You\'re a genius!' : '❌ Not quite! But you\'re still awesome!'}
                   </div>
@@ -156,7 +156,7 @@ export default function Games() {
                 {showEmojiAnswer ? 'Hide Answer' : 'Show Answer'}
               </button>
               {showEmojiAnswer && (
-                <div className="mt-4 bg-[#110F0B] was-green-900/50 border border-green-500 rounded-lg p-4">
+                <div className="mt-4 bg-[#110F0B] was-green-900/50 border border-[rgba(201,168,76,0.22)] rounded-lg p-4">
                   <div className="text-white text-2xl font-bold mb-2">BELIEVE! 💚</div>
                   <div className="text-[#9E8F75] text-sm">Bee + Leaf = Believe! Get it? 😄</div>
                 </div>
@@ -174,7 +174,7 @@ export default function Games() {
           </div>
 
           {/* Two Truths and a Lie */}
-          <div className="lux-card/80 rounded p-6 border-2 border-green-500/30">
+          <div className="lux-card/80 rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center gap-3 mb-4">
               <Target className="w-8 h-8 text-[#C9A84C] was-green-400" />
               <div>
@@ -183,7 +183,7 @@ export default function Games() {
               </div>
             </div>
 
-            <div className="bg-[#110F0B] was-green-900/30 rounded-lg p-5 mb-4 border border-green-500/30">
+            <div className="bg-[#110F0B] was-green-900/30 rounded-lg p-5 mb-4 border border-[rgba(201,168,76,0.22)]">
               <div className="text-[#C9A84C] was-green-300 text-sm font-semibold mb-3">Which one is the lie?</div>
               <div className="space-y-3">
                 <button className="w-full text-left p-4 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.08)] text-white rounded-lg transition-all">
@@ -203,7 +203,7 @@ export default function Games() {
           </div>
 
           {/* Would You Rather */}
-          <div className="lux-card/80 rounded p-6 border-2 border-pink-500/30">
+          <div className="lux-card/80 rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center gap-3 mb-4">
               <Dice1 className="w-8 h-8 text-[#C9A84C] was-pink-400" />
               <div>
@@ -212,7 +212,7 @@ export default function Games() {
               </div>
             </div>
 
-            <div className="bg-[#110F0B] was-pink-900/30 rounded-lg p-5 mb-4 border border-pink-500/30">
+            <div className="bg-[#110F0B] was-pink-900/30 rounded-lg p-5 mb-4 border border-[rgba(201,168,76,0.22)]">
               <div className="text-[#C9A84C] was-pink-300 text-sm font-semibold mb-3">Today's Question:</div>
               <div className="text-white text-lg font-medium mb-4">
                 Would you rather...
@@ -231,24 +231,24 @@ export default function Games() {
           </div>
 
           {/* Quick Draw */}
-          <div className="lux-card/80 rounded p-6 border-2 border-orange-500/30">
+          <div className="lux-card/80 rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center gap-3 mb-4">
-              <Zap className="w-8 h-8 text-orange-400" />
+              <Zap className="w-8 h-8 text-[#9E8F75]" />
               <div>
                 <h2 className="text-2xl font-bold text-white">Quick Draw</h2>
                 <p className="text-[#9E8F75] text-sm">Fastest typer wins!</p>
               </div>
             </div>
 
-            <div className="bg-orange-900/30 rounded-lg p-5 mb-4 border border-orange-500/30">
-              <div className="text-orange-300 text-sm font-semibold mb-3">Type this sentence as fast as you can:</div>
-              <div className="text-white text-lg font-mono mb-4 bg-[#110F0B] p-4 rounded border border-orange-500/30">
+            <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-5 mb-4 border border-[rgba(201,168,76,0.22)]">
+              <div className="text-[#9E8F75] text-sm font-semibold mb-3">Type this sentence as fast as you can:</div>
+              <div className="text-white text-lg font-mono mb-4 bg-[#110F0B] p-4 rounded border border-[rgba(201,168,76,0.22)]">
                 "The quick brown fox jumps over the lazy dog"
               </div>
               <input
                 type="text"
                 placeholder="Start typing here..."
-                className="w-full bg-[#110F0B] border-2 border-orange-500/30 rounded-lg px-4 py-3 text-white focus:border-orange-400 focus:outline-none mb-3"
+                className="w-full bg-[#110F0B] border-2 border-[rgba(201,168,76,0.22)] rounded-lg px-4 py-3 text-white focus:border-[rgba(201,168,76,0.22)] focus:outline-none mb-3"
               />
               <button className="w-full px-4 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-bold transition-all">
                 Check Speed!
@@ -260,9 +260,9 @@ export default function Games() {
           </div>
 
           {/* Team Challenges */}
-          <div className="lux-card/80 rounded p-6 border-2 border-yellow-500/30">
+          <div className="lux-card/80 rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center gap-3 mb-4">
-              <Users className="w-8 h-8 text-yellow-400" />
+              <Users className="w-8 h-8 text-[#C9A84C]" />
               <div>
                 <h2 className="text-2xl font-bold text-white">Team Challenges</h2>
                 <p className="text-[#9E8F75] text-sm">Compete together!</p>
@@ -270,13 +270,13 @@ export default function Games() {
             </div>
 
             <div className="space-y-3">
-              <div className="bg-yellow-900/30 rounded-lg p-4 border border-yellow-500/30">
+              <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-4 border border-[rgba(201,168,76,0.22)]">
                 <div className="flex items-center justify-between mb-2">
-                  <div className="text-yellow-300 font-bold">📸 Photo Scavenger Hunt</div>
+                  <div className="text-[#F0EBE0] font-bold">📸 Photo Scavenger Hunt</div>
                   <div className="px-3 py-1 bg-[#110F0B] was-green-600 text-white rounded-full text-xs font-bold">ACTIVE</div>
                 </div>
                 <div className="text-[#9E8F75] text-sm mb-2">Find and photograph: "Something purple"</div>
-                <div className="text-yellow-400 text-xs">12 teams participating • 3 days left</div>
+                <div className="text-[#C9A84C] text-xs">12 teams participating • 3 days left</div>
               </div>
 
               <div className="bg-[#110F0B]/50 rounded-lg p-4 border border-[rgba(201,168,76,0.22)]">

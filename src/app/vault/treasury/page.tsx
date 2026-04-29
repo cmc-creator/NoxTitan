@@ -161,7 +161,7 @@ export default function TreasuryPage() {
                     setSelectedAsset(asset);
                     setStep('select-employee');
                   }}
-                  className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-amber-500/40 cursor-pointer transition-all"
+                  className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-[rgba(201,168,76,0.45)] cursor-pointer transition-all"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-3xl">{asset.category.icon || '📦'}</span>
@@ -209,7 +209,7 @@ export default function TreasuryPage() {
                     setSelectedEmployee(emp);
                     setStep('sign');
                   }}
-                  className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-amber-500/40 cursor-pointer transition-all"
+                  className="bg-[rgba(201,168,76,0.06)]/50 backdrop-blur border border-[rgba(201,168,76,0.22)] rounded p-6 hover:border-[rgba(201,168,76,0.45)] cursor-pointer transition-all"
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center">
@@ -271,22 +271,22 @@ export default function TreasuryPage() {
               </div>
 
               {/* Acknowledgment */}
-              <div className="bg-orange-500/10 border border-orange-500/50 rounded-lg p-4 mb-6">
+              <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg p-4 mb-6">
                 <div className="flex items-start gap-3">
-                  <AlertTriangle className="w-6 h-6 text-orange-400 flex-shrink-0 mt-1" />
+                  <AlertTriangle className="w-6 h-6 text-[#9E8F75] flex-shrink-0 mt-1" />
                   <div className="flex-1">
-                    <h4 className="font-bold text-orange-300 mb-2">Asset Responsibility Agreement</h4>
-                    <p className="text-sm text-orange-200 mb-3">
+                    <h4 className="font-bold text-[#9E8F75] mb-2">Asset Responsibility Agreement</h4>
+                    <p className="text-sm text-[#9E8F75] mb-3">
                       I acknowledge that I am receiving <strong>{selectedAsset.name}</strong> (Asset Tag: {selectedAsset.assetTag}) 
                       with an estimated value of <strong>${selectedAsset.currentValue?.toLocaleString()}</strong>.
                     </p>
-                    <p className="text-sm text-orange-200 mb-3">
+                    <p className="text-sm text-[#9E8F75] mb-3">
                       I agree to:
                       • Use this asset responsibly and for work purposes only
                       • Return it by the expected return date in good condition
                       • Report any damage or loss immediately
                     </p>
-                    <p className="text-sm text-orange-200 mb-4">
+                    <p className="text-sm text-[#9E8F75] mb-4">
                       <strong>⚠️ IMPORTANT:</strong> If I fail to return this asset or return it damaged, 
                       I authorize automatic payroll deduction up to the full replacement value.
                     </p>

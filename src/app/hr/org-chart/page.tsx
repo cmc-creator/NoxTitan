@@ -195,7 +195,7 @@ export default function OrgChart() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/hr" className="inline-flex items-center gap-2 text-amber-400 hover:text-blue-100 mb-4 transition-colors">
+          <Link href="/hr" className="inline-flex items-center gap-2 text-amber-400 hover:text-[#9E8F75] mb-4 transition-colors">
             ← Back to HR Center
           </Link>
           <div>
@@ -207,7 +207,7 @@ export default function OrgChart() {
                 }}>
               Organizational Chart
             </h1>
-            <p className="text-blue-200">Interactive hierarchy and reporting structure</p>
+            <p className="text-[#9E8F75]">Interactive hierarchy and reporting structure</p>
           </div>
         </div>
 
@@ -228,8 +228,8 @@ export default function OrgChart() {
             <div className="text-[#9E8F75] text-sm mb-1">Managers</div>
             <div className="text-3xl font-bold text-white">34</div>
           </div>
-          <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-orange-500/30">
-            <Users className="w-8 h-8 text-orange-400 mb-2" />
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
+            <Users className="w-8 h-8 text-[#9E8F75] mb-2" />
             <div className="text-[#9E8F75] text-sm mb-1">Avg Team Size</div>
             <div className="text-3xl font-bold text-white">7.3</div>
           </div>
@@ -279,7 +279,7 @@ export default function OrgChart() {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-orange-400 mt-1" />
+                    <MapPin className="w-5 h-5 text-[#9E8F75] mt-1" />
                     <div>
                       <div className="text-xs text-[#9E8F75] mb-1">Location</div>
                       <div className="text-white">{selectedEmployee.location}</div>
@@ -295,7 +295,7 @@ export default function OrgChart() {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Users className="w-5 h-5 text-pink-400 mt-1" />
+                    <Users className="w-5 h-5 text-[#9E8F75] mt-1" />
                     <div>
                       <div className="text-xs text-[#9E8F75] mb-1">Direct Reports</div>
                       <div className="text-white font-bold text-xl">{selectedEmployee.reports}</div>

@@ -46,7 +46,7 @@ export default function HRAnalytics() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/hr" className="inline-flex items-center gap-2 text-amber-400 hover:text-indigo-100 mb-4 transition-colors">
+          <Link href="/hr" className="inline-flex items-center gap-2 text-amber-400 hover:text-[#9E8F75] mb-4 transition-colors">
             ← Back to HR Center
           </Link>
           <div className="flex items-center justify-between">
@@ -59,7 +59,7 @@ export default function HRAnalytics() {
                   }}>
                 HR Analytics & Insights
               </h1>
-              <p className="text-indigo-200">Data-driven workforce intelligence and predictive analytics</p>
+              <p className="text-[#9E8F75]">Data-driven workforce intelligence and predictive analytics</p>
             </div>
             <div className="flex gap-2">
               {['month', 'quarter', 'year'].map(range => (
@@ -122,7 +122,7 @@ export default function HRAnalytics() {
                     <td className="py-4 px-4 text-center">
                       <span className={`font-bold ${
                         dept.turnover < 8 ? 'text-[#9E8F75]' :
-                        dept.turnover < 10 ? 'text-yellow-400' : 'text-[#9E8F75] 400'
+                        dept.turnover < 10 ? 'text-[#C9A84C]' : 'text-[#9E8F75] 400'
                       }`}>
                         {dept.turnover}%
                       </span>
@@ -132,7 +132,7 @@ export default function HRAnalytics() {
                     </td>
                     <td className="py-4 px-4 text-center">
                       <div className="flex items-center justify-center gap-1">
-                        <span className="text-yellow-400">★</span>
+                        <span className="text-[#C9A84C]">★</span>
                         <span className="text-white font-bold">{dept.satisfaction}</span>
                       </div>
                     </td>
@@ -179,7 +179,7 @@ export default function HRAnalytics() {
                     {range: '18-25', pct: 12, color: 'bg-amber-600'},
                     {range: '26-35', pct: 34, color: 'bg-amber-500'},
                     {range: '36-45', pct: 28, color: 'bg-[#110F0B] 500'},
-                    {range: '46-55', pct: 18, color: 'bg-orange-500'},
+                    {range: '46-55', pct: 18, color: 'bg-[rgba(201,168,76,0.12)]'},
                     {range: '56+', pct: 8, color: 'bg-[#110F0B] 500'},
                   ].map(age => (
                     <div key={age.range} className="text-center">
@@ -206,7 +206,7 @@ export default function HRAnalytics() {
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="text-white font-semibold">{role.role}</h3>
                     <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                      role.status === 'good' ? 'bg-[rgba(201,168,76,0.15)] text-white' : 'bg-yellow-600 text-white'
+                      role.status === 'good' ? 'bg-[rgba(201,168,76,0.15)] text-white' : 'bg-[rgba(201,168,76,0.12)] text-white'
                     }`}>
                       {Math.abs(role.gap)}% gap
                     </span>
@@ -222,7 +222,7 @@ export default function HRAnalytics() {
                     </div>
                     <div>
                       <div className="text-[#9E8F75]">Status</div>
-                      <div className={role.status === 'good' ? 'text-[#9E8F75]' : 'text-yellow-400'}>
+                      <div className={role.status === 'good' ? 'text-[#9E8F75]' : 'text-[#C9A84C]'}>
                         {role.status === 'good' ? '✓ Equitable' : '⚠ Review'}
                       </div>
                     </div>
@@ -257,7 +257,7 @@ export default function HRAnalytics() {
                   <div className="w-full bg-[rgba(201,168,76,0.04)] rounded-full h-3">
                     <div className={`h-3 rounded-full ${
                       employee.riskScore >= 80 ? 'bg-[#110F0B] 500' :
-                      employee.riskScore >= 70 ? 'bg-orange-500' : 'bg-yellow-500'
+                      employee.riskScore >= 70 ? 'bg-[rgba(201,168,76,0.12)]' : 'bg-[rgba(201,168,76,0.12)]'
                     }`} style={{width: `${employee.riskScore}%`}}></div>
                   </div>
                 </div>

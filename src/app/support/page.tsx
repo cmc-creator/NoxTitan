@@ -189,8 +189,8 @@ export default function SupportPage() {
   const getPriorityColor = (priority: string) => {
     switch (priority) {
       case 'urgent': return 'bg-[#110F0B] 100 text-[#9E8F75] 700 border-[rgba(201,168,76,0.22)] 300';
-      case 'high': return 'bg-orange-100 text-orange-700 border-orange-300';
-      case 'medium': return 'bg-yellow-100 text-yellow-700 border-yellow-300';
+      case 'high': return 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75] border-[rgba(201,168,76,0.22)]';
+      case 'medium': return 'bg-[rgba(201,168,76,0.04)] text-[#5A5040] border-[rgba(201,168,76,0.22)]';
       default: return 'bg-[#110F0B] 100 text-[#E8C060] border-[rgba(201,168,76,0.22)] 300';
     }
   };
@@ -344,7 +344,7 @@ export default function SupportPage() {
                     placeholder="Search tickets..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    className="w-full pl-10 pr-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                   />
                 </div>
                 <button className="px-4 py-2 bg-[#110F0B] border border-[rgba(201,168,76,0.22)] rounded-lg hover:bg-[#110F0B] transition-all flex items-center gap-2">
@@ -584,7 +584,7 @@ export default function SupportPage() {
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" defaultChecked />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-[rgba(201,168,76,0.22)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
+                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[rgba(201,168,76,0.45)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-[rgba(201,168,76,0.22)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                     </label>
                   </div>
                   <p className="text-sm text-[#9E8F75]">Currently handling: Scheduling questions, Basic compliance, Troubleshooting, Account setup</p>
@@ -602,7 +602,7 @@ export default function SupportPage() {
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" defaultChecked />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-[rgba(201,168,76,0.22)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
+                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[rgba(201,168,76,0.45)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-[rgba(201,168,76,0.22)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                     </label>
                   </div>
                   <div className="grid grid-cols-3 gap-4 text-sm">
@@ -633,13 +633,13 @@ export default function SupportPage() {
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" defaultChecked />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-[rgba(201,168,76,0.22)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
+                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[rgba(201,168,76,0.45)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-[rgba(201,168,76,0.22)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
                     </label>
                   </div>
                   <input 
                     type="email" 
                     placeholder="support@nyxtitan.com" 
-                    className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                   />
                 </div>
 
@@ -655,7 +655,7 @@ export default function SupportPage() {
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" defaultChecked />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-[rgba(201,168,76,0.22)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#110F0B] 600"></div>
+                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[rgba(201,168,76,0.45)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#110F0B] after:border-[rgba(201,168,76,0.22)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#110F0B] 600"></div>
                     </label>
                   </div>
                   

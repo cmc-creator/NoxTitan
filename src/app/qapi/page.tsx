@@ -353,9 +353,9 @@ export default function QAPIPage() {
 
   const getSeverityColor = (severity: string) => {
     switch (severity) {
-      case 'CRITICAL': return 'bg-red-600 text-white';
-      case 'HIGH': return 'bg-orange-600 text-white';
-      case 'MODERATE': return 'bg-yellow-500 text-white';
+      case 'CRITICAL': return 'bg-red-500 text-white';
+      case 'HIGH': return 'bg-[rgba(201,168,76,0.12)] text-white';
+      case 'MODERATE': return 'bg-[rgba(201,168,76,0.12)] text-white';
       case 'LOW': return 'bg-amber-600 text-white';
       default: return 'bg-[rgba(201,168,76,0.04)]0 text-white';
     }
@@ -363,17 +363,17 @@ export default function QAPIPage() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'RESOLVED': case 'COMPLETED': case 'MITIGATED': return 'bg-green-100 text-green-700';
+      case 'RESOLVED': case 'COMPLETED': case 'MITIGATED': return 'bg-[rgba(201,168,76,0.04)] text-green-400';
       case 'ACTION_PLAN': case 'IMPLEMENTING': case 'MONITORING': return 'bg-amber-900/30 text-[#E8C060]';
-      case 'INVESTIGATING': case 'PLANNING': case 'ACTIVE': return 'bg-yellow-100 text-yellow-700';
-      case 'REPORTED': return 'bg-orange-100 text-orange-700';
+      case 'INVESTIGATING': case 'PLANNING': case 'ACTIVE': return 'bg-[rgba(201,168,76,0.04)] text-[#5A5040]';
+      case 'REPORTED': return 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75]';
       default: return 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75]';
     }
   };
 
   const getTrendIcon = (trend: string) => {
-    if (trend === 'up') return <TrendingUp className="w-4 h-4 text-green-600" />;
-    if (trend === 'down') return <TrendingUp className="w-4 h-4 text-red-600 rotate-180" />;
+    if (trend === 'up') return <TrendingUp className="w-4 h-4 text-green-400" />;
+    if (trend === 'down') return <TrendingUp className="w-4 h-4 text-red-400 rotate-180" />;
     return <ArrowRight className="w-4 h-4 text-[#9E8F75]" />;
   };
 
@@ -394,7 +394,7 @@ export default function QAPIPage() {
               <Plus className="w-4 h-4" />
               New Incident
             </button>
-            <button className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-all flex items-center gap-2">
+            <button className="px-4 py-2 bg-green-500 hover:bg-green-500 text-white rounded-lg font-medium transition-all flex items-center gap-2">
               <Download className="w-4 h-4" />
               Export Report
             </button>
@@ -501,10 +501,10 @@ export default function QAPIPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
               <div className="flex items-center justify-between mb-4">
-                <div className="p-3 bg-orange-100 rounded-lg">
-                  <AlertTriangle className="w-6 h-6 text-orange-600" />
+                <div className="p-3 bg-[rgba(201,168,76,0.04)] rounded-lg">
+                  <AlertTriangle className="w-6 h-6 text-[#9E8F75]" />
                 </div>
-                {openIncidents > 0 && <span className="text-xs font-semibold text-orange-600">ACTIVE</span>}
+                {openIncidents > 0 && <span className="text-xs font-semibold text-[#9E8F75]">ACTIVE</span>}
               </div>
               <h3 className="text-sm font-medium text-[#9E8F75] mb-1">Open Incidents</h3>
               <p className="text-3xl font-bold text-[#9E8F75]">{openIncidents}</p>
@@ -515,10 +515,10 @@ export default function QAPIPage() {
 
             <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
               <div className="flex items-center justify-between mb-4">
-                <div className="p-3 bg-green-100 rounded-lg">
-                  <Target className="w-6 h-6 text-green-600" />
+                <div className="p-3 bg-[rgba(201,168,76,0.04)] rounded-lg">
+                  <Target className="w-6 h-6 text-green-400" />
                 </div>
-                <TrendingUp className="w-5 h-5 text-green-600" />
+                <TrendingUp className="w-5 h-5 text-green-400" />
               </div>
               <h3 className="text-sm font-medium text-[#9E8F75] mb-1">Metrics On Target</h3>
               <p className="text-3xl font-bold text-[#9E8F75]">{metricsOnTarget}/{qualityMetrics.length}</p>
@@ -543,10 +543,10 @@ export default function QAPIPage() {
 
             <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
               <div className="flex items-center justify-between mb-4">
-                <div className="p-3 bg-red-100 rounded-lg">
-                  <Shield className="w-6 h-6 text-red-600" />
+                <div className="p-3 bg-[rgba(201,168,76,0.04)] rounded-lg">
+                  <Shield className="w-6 h-6 text-red-400" />
                 </div>
-                {highRisks > 0 && <AlertCircle className="w-5 h-5 text-red-600" />}
+                {highRisks > 0 && <AlertCircle className="w-5 h-5 text-red-400" />}
               </div>
               <h3 className="text-sm font-medium text-[#9E8F75] mb-1">High-Risk Items</h3>
               <p className="text-3xl font-bold text-[#9E8F75]">{highRisks}</p>
@@ -575,7 +575,7 @@ export default function QAPIPage() {
                         {getTrendIcon(metric.trend)}
                       </div>
                       <div className="text-right">
-                        <span className={`text-lg font-bold ${isOnTarget ? 'text-green-600' : 'text-red-600'}`}>
+                        <span className={`text-lg font-bold ${isOnTarget ? 'text-green-400' : 'text-red-400'}`}>
                           {metric.currentValue}{metric.unit === '%' ? '%' : ''}
                         </span>
                         <span className="text-sm text-[#9E8F75] ml-2">/ {metric.target} target</span>
@@ -602,7 +602,7 @@ export default function QAPIPage() {
             {/* Recent Incidents */}
             <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
               <h2 className="text-xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
-                <AlertTriangle className="w-5 h-5 text-orange-600" />
+                <AlertTriangle className="w-5 h-5 text-[#9E8F75]" />
                 Recent Incidents
               </h2>
               <div className="space-y-3">
@@ -648,8 +648,8 @@ export default function QAPIPage() {
                     <div key={project.id} className="p-4 bg-[#110F0B] rounded-lg hover:bg-[rgba(201,168,76,0.04)] transition-all cursor-pointer">
                       <div className="flex items-start justify-between mb-2">
                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          project.priority === 'HIGH' ? 'bg-red-100 text-red-700' :
-                          project.priority === 'MEDIUM' ? 'bg-yellow-100 text-yellow-700' :
+                          project.priority === 'HIGH' ? 'bg-[rgba(201,168,76,0.04)] text-red-400' :
+                          project.priority === 'MEDIUM' ? 'bg-[rgba(201,168,76,0.04)] text-[#5A5040]' :
                           'bg-amber-900/30 text-[#E8C060]'
                         }`}>
                           {project.priority}
@@ -686,7 +686,7 @@ export default function QAPIPage() {
           {/* Risk Heat Map */}
           <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
             <h2 className="text-xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
-              <Shield className="w-5 h-5 text-red-600" />
+              <Shield className="w-5 h-5 text-red-400" />
               Risk Heat Map
             </h2>
             <div className="overflow-x-auto">
@@ -710,27 +710,27 @@ export default function QAPIPage() {
                       </td>
                       <td className="text-center py-4 px-4">
                         <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                          risk.likelihood >= 4 ? 'bg-red-100 text-red-700' :
-                          risk.likelihood >= 3 ? 'bg-yellow-100 text-yellow-700' :
-                          'bg-green-100 text-green-700'
+                          risk.likelihood >= 4 ? 'bg-[rgba(201,168,76,0.04)] text-red-400' :
+                          risk.likelihood >= 3 ? 'bg-[rgba(201,168,76,0.04)] text-[#5A5040]' :
+                          'bg-[rgba(201,168,76,0.04)] text-green-400'
                         }`}>
                           {risk.likelihood}
                         </span>
                       </td>
                       <td className="text-center py-4 px-4">
                         <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                          risk.impact >= 4 ? 'bg-red-100 text-red-700' :
-                          risk.impact >= 3 ? 'bg-yellow-100 text-yellow-700' :
-                          'bg-green-100 text-green-700'
+                          risk.impact >= 4 ? 'bg-[rgba(201,168,76,0.04)] text-red-400' :
+                          risk.impact >= 3 ? 'bg-[rgba(201,168,76,0.04)] text-[#5A5040]' :
+                          'bg-[rgba(201,168,76,0.04)] text-green-400'
                         }`}>
                           {risk.impact}
                         </span>
                       </td>
                       <td className="text-center py-4 px-4">
                         <span className={`px-3 py-1 rounded-full text-lg font-bold ${
-                          risk.riskScore >= 15 ? 'bg-red-600 text-white' :
-                          risk.riskScore >= 10 ? 'bg-orange-500 text-white' :
-                          'bg-yellow-500 text-white'
+                          risk.riskScore >= 15 ? 'bg-red-500 text-white' :
+                          risk.riskScore >= 10 ? 'bg-[rgba(201,168,76,0.12)] text-white' :
+                          'bg-[rgba(201,168,76,0.12)] text-white'
                         }`}>
                           {risk.riskScore}
                         </span>
@@ -764,14 +764,14 @@ export default function QAPIPage() {
                     placeholder="Search incidents..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                   />
                 </div>
               </div>
               <select
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className="px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500"
+                className="px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
               >
                 <option value="all">All Status</option>
                 <option value="REPORTED">Reported</option>
@@ -829,15 +829,15 @@ export default function QAPIPage() {
                 </div>
 
                 {incident.rootCause && (
-                  <div className="bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded mb-3">
-                    <p className="text-xs font-semibold text-yellow-900 mb-1">Root Cause</p>
-                    <p className="text-sm text-yellow-800">{incident.rootCause}</p>
+                  <div className="bg-[rgba(201,168,76,0.04)] border-l-4 border-[rgba(201,168,76,0.22)] p-3 rounded mb-3">
+                    <p className="text-xs font-semibold text-[#5A5040] mb-1">Root Cause</p>
+                    <p className="text-sm text-[#5A5040]">{incident.rootCause}</p>
                   </div>
                 )}
 
                 {incident.correctiveAction && (
-                  <div className="bg-amber-900/20 border-l-4 border-blue-400 p-3 rounded mb-3">
-                    <p className="text-xs font-semibold text-blue-900 mb-1">Corrective Action</p>
+                  <div className="bg-amber-900/20 border-l-4 border-[rgba(201,168,76,0.22)] p-3 rounded mb-3">
+                    <p className="text-xs font-semibold text-[#9E8F75] mb-1">Corrective Action</p>
                     <p className="text-sm text-[#E8C060]">{incident.correctiveAction}</p>
                   </div>
                 )}
@@ -847,7 +847,7 @@ export default function QAPIPage() {
                     <Clock className="w-4 h-4 text-[#9E8F75]" />
                     <span className="text-[#9E8F75]">Due: {new Date(incident.dueDate).toLocaleDateString()}</span>
                     {new Date(incident.dueDate) < new Date() && (
-                      <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded-full text-xs font-medium">OVERDUE</span>
+                      <span className="px-2 py-0.5 bg-[rgba(201,168,76,0.04)] text-red-400 rounded-full text-xs font-medium">OVERDUE</span>
                     )}
                   </div>
                 )}
@@ -871,10 +871,10 @@ export default function QAPIPage() {
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        metric.category === 'SAFETY' ? 'bg-red-100 text-red-700' :
+                        metric.category === 'SAFETY' ? 'bg-[rgba(201,168,76,0.04)] text-red-400' :
                         metric.category === 'CLINICAL' ? 'bg-amber-900/30 text-[#E8C060]' :
-                        metric.category === 'SATISFACTION' ? 'bg-green-100 text-green-700' :
-                        'bg-purple-100 text-amber-700'
+                        metric.category === 'SATISFACTION' ? 'bg-[rgba(201,168,76,0.04)] text-green-400' :
+                        'bg-[rgba(201,168,76,0.04)] text-amber-700'
                       }`}>
                         {metric.category}
                       </span>
@@ -882,9 +882,9 @@ export default function QAPIPage() {
                     <div className="flex items-center gap-2">
                       {getTrendIcon(metric.trend)}
                       {isOnTarget ? (
-                        <ThumbsUp className="w-5 h-5 text-green-600" />
+                        <ThumbsUp className="w-5 h-5 text-green-400" />
                       ) : (
-                        <ThumbsDown className="w-5 h-5 text-red-600" />
+                        <ThumbsDown className="w-5 h-5 text-red-400" />
                       )}
                     </div>
                   </div>
@@ -893,7 +893,7 @@ export default function QAPIPage() {
                   
                   <div className="mb-4">
                     <div className="flex items-baseline gap-2">
-                      <span className={`text-4xl font-bold ${isOnTarget ? 'text-green-600' : 'text-red-600'}`}>
+                      <span className={`text-4xl font-bold ${isOnTarget ? 'text-green-400' : 'text-red-400'}`}>
                         {metric.currentValue}
                       </span>
                       <span className="text-[#9E8F75]">{metric.unit}</span>
@@ -914,7 +914,7 @@ export default function QAPIPage() {
                       <span className="font-medium text-[#9E8F75]">{metric.benchmark} {metric.unit}</span>
                     </div>
                     <div>
-                      <span className={`font-medium ${parseFloat(vsBenchmark) > 0 ? 'text-red-600' : 'text-green-600'}`}>
+                      <span className={`font-medium ${parseFloat(vsBenchmark) > 0 ? 'text-red-400' : 'text-green-400'}`}>
                         {parseFloat(vsBenchmark) > 0 ? '+' : ''}{vsBenchmark}%
                       </span>
                     </div>
@@ -943,8 +943,8 @@ export default function QAPIPage() {
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
                     <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                      project.priority === 'HIGH' ? 'bg-red-100 text-red-700' :
-                      project.priority === 'MEDIUM' ? 'bg-yellow-100 text-yellow-700' :
+                      project.priority === 'HIGH' ? 'bg-[rgba(201,168,76,0.04)] text-red-400' :
+                      project.priority === 'MEDIUM' ? 'bg-[rgba(201,168,76,0.04)] text-[#5A5040]' :
                       'bg-amber-900/30 text-[#E8C060]'
                     }`}>
                       {project.priority} PRIORITY
@@ -969,15 +969,15 @@ export default function QAPIPage() {
                   </div>
                   <div className="bg-amber-900/20 p-3 rounded-lg">
                     <span className="text-xs text-amber-400">Current</span>
-                    <p className="text-lg font-bold text-blue-900">{project.current}</p>
+                    <p className="text-lg font-bold text-[#9E8F75]">{project.current}</p>
                   </div>
-                  <div className="bg-green-50 p-3 rounded-lg">
-                    <span className="text-xs text-green-600">Target</span>
-                    <p className="text-lg font-bold text-green-900">{project.target}</p>
+                  <div className="bg-[rgba(201,168,76,0.04)] p-3 rounded-lg">
+                    <span className="text-xs text-green-400">Target</span>
+                    <p className="text-lg font-bold text-green-400">{project.target}</p>
                   </div>
-                  <div className="bg-purple-50 p-3 rounded-lg">
+                  <div className="bg-[rgba(201,168,76,0.04)] p-3 rounded-lg">
                     <span className="text-xs text-amber-600">Progress</span>
-                    <p className="text-lg font-bold text-purple-900">{progress.toFixed(0)}%</p>
+                    <p className="text-lg font-bold text-[#9E8F75]">{progress.toFixed(0)}%</p>
                   </div>
                 </div>
 
@@ -1034,11 +1034,11 @@ export default function QAPIPage() {
       {/* Risks Tab */}
       {activeTab === 'risks' && (
         <div className="space-y-6">
-          <div className="bg-amber-900/20 border-l-4 border-blue-400 p-4 rounded-lg mb-6">
+          <div className="bg-amber-900/20 border-l-4 border-[rgba(201,168,76,0.22)] p-4 rounded-lg mb-6">
             <div className="flex items-start gap-3">
               <Info className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
               <div>
-                <h3 className="font-semibold text-blue-900 mb-1">Risk Score Formula</h3>
+                <h3 className="font-semibold text-[#9E8F75] mb-1">Risk Score Formula</h3>
                 <p className="text-sm text-[#E8C060]">
                   Risk Score = Likelihood (1-5) × Impact (1-5). Scores ≥15 are critical, 10-14 are high, 5-9 are moderate, &lt;5 are low.
                 </p>
@@ -1051,9 +1051,9 @@ export default function QAPIPage() {
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <span className={`px-4 py-2 rounded-full text-xl font-bold ${
-                    risk.riskScore >= 15 ? 'bg-red-600 text-white' :
-                    risk.riskScore >= 10 ? 'bg-orange-500 text-white' :
-                    'bg-yellow-500 text-white'
+                    risk.riskScore >= 15 ? 'bg-red-500 text-white' :
+                    risk.riskScore >= 10 ? 'bg-[rgba(201,168,76,0.12)] text-white' :
+                    'bg-[rgba(201,168,76,0.12)] text-white'
                   }`}>
                     {risk.riskScore}
                   </span>
@@ -1074,9 +1074,9 @@ export default function QAPIPage() {
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-medium text-[#9E8F75]">Likelihood</span>
                     <span className={`px-2 py-1 rounded text-sm font-bold ${
-                      risk.likelihood >= 4 ? 'bg-red-100 text-red-700' :
-                      risk.likelihood >= 3 ? 'bg-yellow-100 text-yellow-700' :
-                      'bg-green-100 text-green-700'
+                      risk.likelihood >= 4 ? 'bg-[rgba(201,168,76,0.04)] text-red-400' :
+                      risk.likelihood >= 3 ? 'bg-[rgba(201,168,76,0.04)] text-[#5A5040]' :
+                      'bg-[rgba(201,168,76,0.04)] text-green-400'
                     }`}>
                       {risk.likelihood}/5
                     </span>
@@ -1085,7 +1085,7 @@ export default function QAPIPage() {
                     <div 
                       className={`h-full ${
                         risk.likelihood >= 4 ? 'bg-red-500' :
-                        risk.likelihood >= 3 ? 'bg-yellow-500' :
+                        risk.likelihood >= 3 ? 'bg-[rgba(201,168,76,0.12)]' :
                         'bg-green-500'
                       }`}
                       style={{ width: `${(risk.likelihood / 5) * 100}%` }}
@@ -1097,9 +1097,9 @@ export default function QAPIPage() {
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-medium text-[#9E8F75]">Impact</span>
                     <span className={`px-2 py-1 rounded text-sm font-bold ${
-                      risk.impact >= 4 ? 'bg-red-100 text-red-700' :
-                      risk.impact >= 3 ? 'bg-yellow-100 text-yellow-700' :
-                      'bg-green-100 text-green-700'
+                      risk.impact >= 4 ? 'bg-[rgba(201,168,76,0.04)] text-red-400' :
+                      risk.impact >= 3 ? 'bg-[rgba(201,168,76,0.04)] text-[#5A5040]' :
+                      'bg-[rgba(201,168,76,0.04)] text-green-400'
                     }`}>
                       {risk.impact}/5
                     </span>
@@ -1108,7 +1108,7 @@ export default function QAPIPage() {
                     <div 
                       className={`h-full ${
                         risk.impact >= 4 ? 'bg-red-500' :
-                        risk.impact >= 3 ? 'bg-yellow-500' :
+                        risk.impact >= 3 ? 'bg-[rgba(201,168,76,0.12)]' :
                         'bg-green-500'
                       }`}
                       style={{ width: `${(risk.impact / 5) * 100}%` }}
@@ -1117,8 +1117,8 @@ export default function QAPIPage() {
                 </div>
               </div>
 
-              <div className="bg-amber-900/20 border-l-4 border-blue-400 p-4 rounded mb-4">
-                <p className="text-xs font-semibold text-blue-900 mb-1">Mitigation Plan</p>
+              <div className="bg-amber-900/20 border-l-4 border-[rgba(201,168,76,0.22)] p-4 rounded mb-4">
+                <p className="text-xs font-semibold text-[#9E8F75] mb-1">Mitigation Plan</p>
                 <p className="text-sm text-[#E8C060]">{risk.mitigationPlan}</p>
               </div>
 
@@ -1145,30 +1145,30 @@ export default function QAPIPage() {
             <p className="text-[#9E8F75] mb-6">Comprehensive audit tracking, compliance monitoring, and regulatory readiness tools.</p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-green-50 p-6 rounded-lg border border-green-200">
-                <CheckCircle className="w-8 h-8 text-green-600 mb-3" />
+              <div className="bg-[rgba(201,168,76,0.04)] p-6 rounded-lg border border-[rgba(201,168,76,0.22)]">
+                <CheckCircle className="w-8 h-8 text-green-400 mb-3" />
                 <h3 className="font-bold text-[#9E8F75] mb-2">Compliance Score</h3>
-                <p className="text-4xl font-bold text-green-600 mb-2">94%</p>
+                <p className="text-4xl font-bold text-green-400 mb-2">94%</p>
                 <p className="text-sm text-[#9E8F75]">18 out of 19 standards met</p>
               </div>
 
-              <div className="bg-amber-900/20 p-6 rounded-lg border border-blue-200">
+              <div className="bg-amber-900/20 p-6 rounded-lg border border-[rgba(201,168,76,0.22)]">
                 <Calendar className="w-8 h-8 text-amber-400 mb-3" />
                 <h3 className="font-bold text-[#9E8F75] mb-2">Upcoming Audits</h3>
                 <p className="text-4xl font-bold text-amber-400 mb-2">3</p>
                 <p className="text-sm text-[#9E8F75]">Next audit in 12 days</p>
               </div>
 
-              <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
-                <AlertCircle className="w-8 h-8 text-yellow-600 mb-3" />
+              <div className="bg-[rgba(201,168,76,0.04)] p-6 rounded-lg border border-[rgba(201,168,76,0.22)]">
+                <AlertCircle className="w-8 h-8 text-[#5A5040] mb-3" />
                 <h3 className="font-bold text-[#9E8F75] mb-2">Open Findings</h3>
-                <p className="text-4xl font-bold text-yellow-600 mb-2">2</p>
+                <p className="text-4xl font-bold text-[#5A5040] mb-2">2</p>
                 <p className="text-sm text-[#9E8F75]">Require corrective action</p>
               </div>
             </div>
           </div>
 
-          <div className="bg-[rgba(201,168,76,0.08)] p-6 rounded border-2 border-purple-200">
+          <div className="bg-[rgba(201,168,76,0.08)] p-6 rounded border-2 border-[rgba(201,168,76,0.22)]">
             <Award className="w-8 h-8 text-amber-600 mb-3" />
             <h3 className="text-xl font-bold text-[#9E8F75] mb-2">Audit Readiness Dashboard</h3>
             <p className="text-[#9E8F75] mb-4">
@@ -1185,7 +1185,7 @@ export default function QAPIPage() {
       {activeTab === 'reports' && (
         <div className="space-y-6">
           {/* Data Integration Status */}
-          <div className="bg-gradient-to-r from-[#070604] to-[#070604] p-6 rounded border-2 border-blue-200">
+          <div className="bg-[#110F0B] p-6 rounded border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-start gap-4 mb-4">
               <div className="p-3 bg-amber-600 rounded-lg">
                 <RefreshCw className="w-6 h-6 text-white" />
@@ -1196,43 +1196,43 @@ export default function QAPIPage() {
                   This QAPI portal automatically pulls real-time data from all systems to generate comprehensive reports and charts.
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  <div className="bg-[#110F0B] p-3 rounded-lg border border-green-200">
-                    <CheckCircle className="w-5 h-5 text-green-600 mb-1" />
+                  <div className="bg-[#110F0B] p-3 rounded-lg border border-[rgba(201,168,76,0.22)]">
+                    <CheckCircle className="w-5 h-5 text-green-400 mb-1" />
                     <p className="text-xs font-semibold text-[#9E8F75]">HR Analytics</p>
                     <p className="text-xs text-[#9E8F75]">Connected</p>
                   </div>
-                  <div className="bg-[#110F0B] p-3 rounded-lg border border-green-200">
-                    <CheckCircle className="w-5 h-5 text-green-600 mb-1" />
+                  <div className="bg-[#110F0B] p-3 rounded-lg border border-[rgba(201,168,76,0.22)]">
+                    <CheckCircle className="w-5 h-5 text-green-400 mb-1" />
                     <p className="text-xs font-semibold text-[#9E8F75]">Time & Attendance</p>
                     <p className="text-xs text-[#9E8F75]">Connected</p>
                   </div>
-                  <div className="bg-[#110F0B] p-3 rounded-lg border border-green-200">
-                    <CheckCircle className="w-5 h-5 text-green-600 mb-1" />
+                  <div className="bg-[#110F0B] p-3 rounded-lg border border-[rgba(201,168,76,0.22)]">
+                    <CheckCircle className="w-5 h-5 text-green-400 mb-1" />
                     <p className="text-xs font-semibold text-[#9E8F75]">Incidents</p>
                     <p className="text-xs text-[#9E8F75]">Connected</p>
                   </div>
-                  <div className="bg-[#110F0B] p-3 rounded-lg border border-green-200">
-                    <CheckCircle className="w-5 h-5 text-green-600 mb-1" />
+                  <div className="bg-[#110F0B] p-3 rounded-lg border border-[rgba(201,168,76,0.22)]">
+                    <CheckCircle className="w-5 h-5 text-green-400 mb-1" />
                     <p className="text-xs font-semibold text-[#9E8F75]">Compliance</p>
                     <p className="text-xs text-[#9E8F75]">Connected</p>
                   </div>
-                  <div className="bg-[#110F0B] p-3 rounded-lg border border-green-200">
-                    <CheckCircle className="w-5 h-5 text-green-600 mb-1" />
+                  <div className="bg-[#110F0B] p-3 rounded-lg border border-[rgba(201,168,76,0.22)]">
+                    <CheckCircle className="w-5 h-5 text-green-400 mb-1" />
                     <p className="text-xs font-semibold text-[#9E8F75]">Scheduling</p>
                     <p className="text-xs text-[#9E8F75]">Connected</p>
                   </div>
-                  <div className="bg-[#110F0B] p-3 rounded-lg border border-green-200">
-                    <CheckCircle className="w-5 h-5 text-green-600 mb-1" />
+                  <div className="bg-[#110F0B] p-3 rounded-lg border border-[rgba(201,168,76,0.22)]">
+                    <CheckCircle className="w-5 h-5 text-green-400 mb-1" />
                     <p className="text-xs font-semibold text-[#9E8F75]">Patient Satisfaction</p>
                     <p className="text-xs text-[#9E8F75]">Connected</p>
                   </div>
-                  <div className="bg-[#110F0B] p-3 rounded-lg border border-green-200">
-                    <CheckCircle className="w-5 h-5 text-green-600 mb-1" />
+                  <div className="bg-[#110F0B] p-3 rounded-lg border border-[rgba(201,168,76,0.22)]">
+                    <CheckCircle className="w-5 h-5 text-green-400 mb-1" />
                     <p className="text-xs font-semibold text-[#9E8F75]">Financial Data</p>
                     <p className="text-xs text-[#9E8F75]">Connected</p>
                   </div>
-                  <div className="bg-[#110F0B] p-3 rounded-lg border border-green-200">
-                    <CheckCircle className="w-5 h-5 text-green-600 mb-1" />
+                  <div className="bg-[#110F0B] p-3 rounded-lg border border-[rgba(201,168,76,0.22)]">
+                    <CheckCircle className="w-5 h-5 text-green-400 mb-1" />
                     <p className="text-xs font-semibold text-[#9E8F75]">Clinical Metrics</p>
                     <p className="text-xs text-[#9E8F75]">Connected</p>
                   </div>
@@ -1258,7 +1258,7 @@ export default function QAPIPage() {
                 <select
                   value={selectedReportType}
                   onChange={(e) => setSelectedReportType(e.target.value)}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                 >
                   <option value="executive">Executive Summary (Board Meeting)</option>
                   <option value="quality-committee">Quality Committee Report</option>
@@ -1275,7 +1275,7 @@ export default function QAPIPage() {
                 <select
                   value={reportDateRange}
                   onChange={(e) => setReportDateRange(e.target.value)}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                 >
                   <option value="today">Today</option>
                   <option value="last-7-days">Last 7 Days</option>
@@ -1292,11 +1292,11 @@ export default function QAPIPage() {
                 <Eye className="w-5 h-5" />
                 Preview Report
               </button>
-              <button className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-all flex items-center gap-2">
+              <button className="px-6 py-3 bg-green-500 hover:bg-green-500 text-white rounded-lg font-medium transition-all flex items-center gap-2">
                 <Download className="w-5 h-5" />
                 Export PowerPoint
               </button>
-              <button className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-all flex items-center gap-2">
+              <button className="px-6 py-3 bg-red-500 hover:bg-red-500 text-white rounded-lg font-medium transition-all flex items-center gap-2">
                 <Download className="w-5 h-5" />
                 Export PDF
               </button>
@@ -1313,7 +1313,7 @@ export default function QAPIPage() {
               <div className="text-center mb-8">
                 <h1 className="text-3xl font-bold text-[#9E8F75] mb-2">Executive Quality & Safety Summary</h1>
                 <p className="text-[#9E8F75]">December 2025 • Board of Directors Meeting</p>
-                <div className="inline-flex items-center gap-2 mt-2 px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">
+                <div className="inline-flex items-center gap-2 mt-2 px-4 py-2 bg-[rgba(201,168,76,0.04)] text-green-400 rounded-full text-sm font-medium">
                   <CheckCircle className="w-4 h-4" />
                   Overall Performance: EXCEEDING TARGETS
                 </div>
@@ -1323,40 +1323,40 @@ export default function QAPIPage() {
               <div className="mb-8">
                 <h2 className="text-xl font-bold text-[#9E8F75] mb-4 border-b-2 border-[rgba(201,168,76,0.22)] pb-2">Key Performance Indicators</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="bg-[#110F0B] from-REMOVED-50 to-green-100 p-4 rounded-lg border border-green-200">
+                  <div className="bg-[#110F0B] from-REMOVED-50 to-green-100 p-4 rounded-lg border border-[rgba(201,168,76,0.22)]">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-green-800">Patient Safety</span>
-                      <TrendingUp className="w-4 h-4 text-green-600" />
+                      <span className="text-sm font-medium text-green-400">Patient Safety</span>
+                      <TrendingUp className="w-4 h-4 text-green-400" />
                     </div>
-                    <p className="text-3xl font-bold text-green-900">98.2%</p>
-                    <p className="text-xs text-green-700 mt-1">+2.5% vs. last month</p>
+                    <p className="text-3xl font-bold text-green-400">98.2%</p>
+                    <p className="text-xs text-green-400 mt-1">+2.5% vs. last month</p>
                   </div>
 
-                  <div className="bg-[rgba(201,168,76,0.08)] p-4 rounded-lg border border-blue-200">
+                  <div className="bg-[rgba(201,168,76,0.08)] p-4 rounded-lg border border-[rgba(201,168,76,0.22)]">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm font-medium text-[#E8C060]">Patient Satisfaction</span>
                       <TrendingUp className="w-4 h-4 text-amber-400" />
                     </div>
-                    <p className="text-3xl font-bold text-blue-900">87%</p>
+                    <p className="text-3xl font-bold text-[#9E8F75]">87%</p>
                     <p className="text-xs text-[#E8C060] mt-1">+5% vs. target</p>
                   </div>
 
-                  <div className="bg-[rgba(201,168,76,0.08)] p-4 rounded-lg border border-purple-200">
+                  <div className="bg-[rgba(201,168,76,0.08)] p-4 rounded-lg border border-[rgba(201,168,76,0.22)]">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-purple-800">Staff Compliance</span>
+                      <span className="text-sm font-medium text-[#9E8F75]">Staff Compliance</span>
                       <TrendingUp className="w-4 h-4 text-amber-600" />
                     </div>
-                    <p className="text-3xl font-bold text-purple-900">94%</p>
+                    <p className="text-3xl font-bold text-[#9E8F75]">94%</p>
                     <p className="text-xs text-amber-700 mt-1">Within target range</p>
                   </div>
 
-                  <div className="bg-[rgba(201,168,76,0.08)] p-4 rounded-lg border border-orange-200">
+                  <div className="bg-[rgba(201,168,76,0.08)] p-4 rounded-lg border border-[rgba(201,168,76,0.22)]">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-orange-800">Quality Metrics</span>
-                      <TrendingUp className="w-4 h-4 text-orange-600" />
+                      <span className="text-sm font-medium text-[#9E8F75]">Quality Metrics</span>
+                      <TrendingUp className="w-4 h-4 text-[#9E8F75]" />
                     </div>
-                    <p className="text-3xl font-bold text-orange-900">6/6</p>
-                    <p className="text-xs text-orange-700 mt-1">All targets met</p>
+                    <p className="text-3xl font-bold text-[#9E8F75]">6/6</p>
+                    <p className="text-xs text-[#9E8F75] mt-1">All targets met</p>
                   </div>
                 </div>
               </div>
@@ -1395,7 +1395,7 @@ export default function QAPIPage() {
                         );
                       })}
                     </div>
-                    <p className="text-xs text-green-600 font-medium mt-3 flex items-center gap-1">
+                    <p className="text-xs text-green-400 font-medium mt-3 flex items-center gap-1">
                       <TrendingUp className="w-4 h-4 rotate-180" />
                       58% reduction from peak in July
                     </p>
@@ -1404,7 +1404,7 @@ export default function QAPIPage() {
                   {/* Quality Metrics Performance */}
                   <div className="bg-[#110F0B] p-6 rounded-lg border border-[rgba(201,168,76,0.22)]">
                     <h3 className="font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
-                      <Target className="w-5 h-5 text-green-600" />
+                      <Target className="w-5 h-5 text-green-400" />
                       Quality Metrics vs. Target
                     </h3>
                     <div className="space-y-4">
@@ -1421,9 +1421,9 @@ export default function QAPIPage() {
                             <div className="flex items-center gap-2">
                               <span className="text-xs text-[#9E8F75]">{metric.current} / {metric.target}</span>
                               {metric.percentage >= 100 ? (
-                                <CheckCircle className="w-4 h-4 text-green-600" />
+                                <CheckCircle className="w-4 h-4 text-green-400" />
                               ) : (
-                                <CheckCircle className="w-4 h-4 text-green-600" />
+                                <CheckCircle className="w-4 h-4 text-green-400" />
                               )}
                             </div>
                           </div>
@@ -1436,7 +1436,7 @@ export default function QAPIPage() {
                         </div>
                       ))}
                     </div>
-                    <p className="text-xs text-green-600 font-medium mt-3 flex items-center gap-1">
+                    <p className="text-xs text-green-400 font-medium mt-3 flex items-center gap-1">
                       <CheckCircle className="w-4 h-4" />
                       All metrics meeting or exceeding targets
                     </p>
@@ -1471,14 +1471,14 @@ export default function QAPIPage() {
                           <td className="py-3 px-4 font-medium text-[#9E8F75]">{dept.dept}</td>
                           <td className="text-center py-3 px-4">
                             <span className={`px-2 py-1 rounded text-sm font-medium ${
-                              dept.safety >= 95 ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
+                              dept.safety >= 95 ? 'bg-[rgba(201,168,76,0.04)] text-green-400' : 'bg-[rgba(201,168,76,0.04)] text-[#5A5040]'
                             }`}>
                               {dept.safety}%
                             </span>
                           </td>
                           <td className="text-center py-3 px-4">
                             <span className={`px-2 py-1 rounded text-sm font-medium ${
-                              dept.quality >= 95 ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
+                              dept.quality >= 95 ? 'bg-[rgba(201,168,76,0.04)] text-green-400' : 'bg-[rgba(201,168,76,0.04)] text-[#5A5040]'
                             }`}>
                               {dept.quality}%
                             </span>
@@ -1486,16 +1486,16 @@ export default function QAPIPage() {
                           <td className="text-center py-3 px-4 text-[#9E8F75]">{dept.incidents}</td>
                           <td className="text-center py-3 px-4">
                             <span className={`px-2 py-1 rounded text-sm font-medium ${
-                              dept.compliance >= 95 ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
+                              dept.compliance >= 95 ? 'bg-[rgba(201,168,76,0.04)] text-green-400' : 'bg-[rgba(201,168,76,0.04)] text-[#5A5040]'
                             }`}>
                               {dept.compliance}%
                             </span>
                           </td>
                           <td className="text-center py-3 px-4">
                             <span className={`px-3 py-1 rounded-full text-sm font-bold ${
-                              dept.overall === 'A+' ? 'bg-green-600 text-white' :
+                              dept.overall === 'A+' ? 'bg-green-500 text-white' :
                               dept.overall === 'A' ? 'bg-green-500 text-white' :
-                              'bg-yellow-500 text-white'
+                              'bg-[rgba(201,168,76,0.12)] text-white'
                             }`}>
                               {dept.overall}
                             </span>
@@ -1511,27 +1511,27 @@ export default function QAPIPage() {
               <div className="mb-8">
                 <h2 className="text-xl font-bold text-[#9E8F75] mb-4 border-b-2 border-[rgba(201,168,76,0.22)] pb-2">Action Items & Recommendations</h2>
                 <div className="space-y-3">
-                  <div className="flex items-start gap-3 p-4 bg-green-50 rounded-lg border border-green-200">
-                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-3 p-4 bg-[rgba(201,168,76,0.04)] rounded-lg border border-[rgba(201,168,76,0.22)]">
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-semibold text-green-900">Continue Fall Prevention Program</p>
-                      <p className="text-sm text-green-800">Program showing excellent results with 58% reduction in incidents. Recommend expansion to all units.</p>
+                      <p className="font-semibold text-green-400">Continue Fall Prevention Program</p>
+                      <p className="text-sm text-green-400">Program showing excellent results with 58% reduction in incidents. Recommend expansion to all units.</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 p-4 bg-amber-900/20 rounded-lg border border-blue-200">
+                  <div className="flex items-start gap-3 p-4 bg-amber-900/20 rounded-lg border border-[rgba(201,168,76,0.22)]">
                     <Info className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-semibold text-blue-900">Monitor Medication Safety Project</p>
+                      <p className="font-semibold text-[#9E8F75]">Monitor Medication Safety Project</p>
                       <p className="text-sm text-[#E8C060]">Barcode scanning implementation on track. Next milestone: Smart pump integration by Q2 2026.</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                    <AlertCircle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-3 p-4 bg-[rgba(201,168,76,0.04)] rounded-lg border border-[rgba(201,168,76,0.22)]">
+                    <AlertCircle className="w-5 h-5 text-[#5A5040] flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-semibold text-yellow-900">Address Staffing Risk</p>
-                      <p className="text-sm text-yellow-800">Critical staffing shortage remains highest risk (score: 20). Accelerate recruitment and retention initiatives.</p>
+                      <p className="font-semibold text-[#5A5040]">Address Staffing Risk</p>
+                      <p className="text-sm text-[#5A5040]">Critical staffing shortage remains highest risk (score: 20). Accelerate recruitment and retention initiatives.</p>
                     </div>
                   </div>
                 </div>
@@ -1565,7 +1565,7 @@ export default function QAPIPage() {
                 { name: 'Risk Management', desc: 'Risk assessments and mitigation status', icon: AlertTriangle, color: 'orange' },
                 { name: 'PIP Project Status', desc: 'Performance improvement initiatives', icon: Target, color: 'indigo' },
               ].map((template, index) => (
-                <div key={index} className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-blue-400 hover:shadow-md transition-all cursor-pointer">
+                <div key={index} className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-[rgba(201,168,76,0.22)] hover:shadow-md transition-all cursor-pointer">
                   <div className={`p-2 bg-${template.color}-100 rounded-lg inline-block mb-3`}>
                     <template.icon className={`w-6 h-6 text-${template.color}-600`} />
                   </div>
@@ -1580,7 +1580,7 @@ export default function QAPIPage() {
           </div>
 
           {/* Custom Chart Builder */}
-          <div className="bg-[rgba(201,168,76,0.08)] p-6 rounded border-2 border-purple-200">
+          <div className="bg-[rgba(201,168,76,0.08)] p-6 rounded border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-start gap-4">
               <Zap className="w-8 h-8 text-amber-600" />
               <div className="flex-1">
@@ -1601,7 +1601,7 @@ export default function QAPIPage() {
       {activeTab === 'import' && (
         <div className="space-y-6">
           {/* Import Type Selection */}
-          <div className="bg-[rgba(201,168,76,0.08)] p-6 rounded border-2 border-purple-200">
+          <div className="bg-[rgba(201,168,76,0.08)] p-6 rounded border-2 border-[rgba(201,168,76,0.22)]">
             <h2 className="text-2xl font-bold text-[#9E8F75] mb-2">Import External Data</h2>
             <p className="text-[#9E8F75] mb-4">
               Easily import data from SurveyMonkey, spreadsheets, or other external sources into your QAPI system.
@@ -1656,7 +1656,7 @@ export default function QAPIPage() {
                       className={`p-4 border-2 rounded-lg transition-all text-left ${
                         selectedFileType === format.type
                           ? 'border-amber-500/40 bg-amber-900/20'
-                          : 'border-[rgba(201,168,76,0.22)] hover:border-blue-300'
+                          : 'border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)]'
                       }`}
                     >
                       <format.icon className={`w-8 h-8 mb-2 ${
@@ -1669,7 +1669,7 @@ export default function QAPIPage() {
                 </div>
 
                 {/* Upload Area */}
-                <div className="border-2 border-dashed border-[rgba(201,168,76,0.22)] rounded p-8 text-center hover:border-blue-400 transition-all cursor-pointer bg-[#110F0B]">
+                <div className="border-2 border-dashed border-[rgba(201,168,76,0.22)] rounded p-8 text-center hover:border-[rgba(201,168,76,0.22)] transition-all cursor-pointer bg-[#110F0B]">
                   <Upload className="w-12 h-12 text-[#9E8F75] mx-auto mb-3" />
                   <p className="text-lg font-semibold text-[#9E8F75] mb-1">Drag and drop your file here</p>
                   <p className="text-sm text-[#9E8F75] mb-4">or click to browse</p>
@@ -1694,7 +1694,7 @@ export default function QAPIPage() {
                   ].map((dataType) => (
                     <div
                       key={dataType.type}
-                      className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-blue-400 hover:shadow-md transition-all cursor-pointer"
+                      className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-[rgba(201,168,76,0.22)] hover:shadow-md transition-all cursor-pointer"
                     >
                       <div className={`p-2 bg-${dataType.color}-100 rounded-lg inline-block mb-3`}>
                         <dataType.icon className={`w-6 h-6 text-${dataType.color}-600`} />
@@ -1732,7 +1732,7 @@ export default function QAPIPage() {
               </div>
 
               {/* Download Templates */}
-              <div className="bg-amber-900/20 p-6 rounded border-2 border-blue-200">
+              <div className="bg-amber-900/20 p-6 rounded border-2 border-[rgba(201,168,76,0.22)]">
                 <div className="flex items-start gap-4">
                   <Download className="w-8 h-8 text-amber-400 flex-shrink-0" />
                   <div className="flex-1">
@@ -1816,13 +1816,13 @@ export default function QAPIPage() {
                       color: 'indigo'
                     },
                   ].map((integration, index) => (
-                    <div key={index} className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-blue-400 hover:shadow-md transition-all">
+                    <div key={index} className="p-4 border-2 border-[rgba(201,168,76,0.22)] rounded-lg hover:border-[rgba(201,168,76,0.22)] hover:shadow-md transition-all">
                       <div className="flex items-start justify-between mb-3">
                         <div className={`p-2 bg-${integration.color}-100 rounded-lg`}>
                           <integration.icon className={`w-6 h-6 text-${integration.color}-600`} />
                         </div>
                         <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
-                          integration.status === 'Available' ? 'bg-green-100 text-green-700' : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75]'
+                          integration.status === 'Available' ? 'bg-[rgba(201,168,76,0.04)] text-green-400' : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75]'
                         }`}>
                           {integration.status}
                         </span>
@@ -1845,7 +1845,7 @@ export default function QAPIPage() {
               </div>
 
               {/* API Documentation */}
-              <div className="bg-[rgba(201,168,76,0.08)] p-6 rounded border-2 border-indigo-200">
+              <div className="bg-[rgba(201,168,76,0.08)] p-6 rounded border-2 border-[rgba(201,168,76,0.22)]">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-amber-600 rounded-lg">
                     <Link className="w-6 h-6 text-white" />
@@ -1880,7 +1880,7 @@ export default function QAPIPage() {
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-[#9E8F75] mb-2">Data Type</label>
-                  <select className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500">
+                  <select className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]">
                     <option>Patient Satisfaction Score</option>
                     <option>Safety Incident</option>
                     <option>Quality Metric</option>
@@ -1895,21 +1895,21 @@ export default function QAPIPage() {
                     <input 
                       type="text" 
                       placeholder="e.g., SurveyMonkey Report #12345"
-                      className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500"
+                      className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-[#9E8F75] mb-2">Date Collected</label>
                     <input 
                       type="date" 
-                      className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500"
+                      className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                     />
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-[#9E8F75] mb-2">Department</label>
-                  <select className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500">
+                  <select className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]">
                     <option>Emergency</option>
                     <option>ICU</option>
                     <option>Nursing</option>
@@ -1925,7 +1925,7 @@ export default function QAPIPage() {
                     <input 
                       type="number" 
                       placeholder="85"
-                      className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500"
+                      className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                     />
                   </div>
                   <div>
@@ -1933,7 +1933,7 @@ export default function QAPIPage() {
                     <input 
                       type="number" 
                       placeholder="90"
-                      className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500"
+                      className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                     />
                   </div>
                   <div>
@@ -1941,7 +1941,7 @@ export default function QAPIPage() {
                     <input 
                       type="text" 
                       placeholder="%"
-                      className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500"
+                      className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                     />
                   </div>
                 </div>
@@ -1951,7 +1951,7 @@ export default function QAPIPage() {
                   <textarea 
                     rows={4}
                     placeholder="Additional context or details about this data..."
-                    className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500"
+                    className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]"
                   />
                 </div>
 
@@ -1996,7 +1996,7 @@ export default function QAPIPage() {
                       <td className="py-3 px-4 text-sm text-[#9E8F75]">{import_.type}</td>
                       <td className="text-center py-3 px-4 text-sm font-semibold text-[#9E8F75]">{import_.records}</td>
                       <td className="text-center py-3 px-4">
-                        <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">
+                        <span className="px-3 py-1 bg-[rgba(201,168,76,0.04)] text-green-400 rounded-full text-xs font-semibold">
                           {import_.status}
                         </span>
                       </td>

@@ -72,7 +72,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
       id: 'employees',
       title: 'Employee Management Hub',
       description: 'Manage your entire workforce from one place. Track skills, certifications, training, and performance.',
-      icon: <Users className="w-12 h-12 text-green-600" />,
+      icon: <Users className="w-12 h-12 text-green-400" />,
       features: [
         'Complete employee profiles with photos',
         'Skills and competency tracking',
@@ -117,7 +117,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
       id: 'compliance',
       title: 'Compliance Tracking',
       description: 'Stay compliant across industries with built-in tracking for healthcare, OSHA, food service, and more.',
-      icon: <Shield className="w-12 h-12 text-red-600" />,
+      icon: <Shield className="w-12 h-12 text-red-400" />,
       features: [
         'Multi-industry compliance modules',
         'Healthcare (CMS, Joint Commission, HIPAA)',
@@ -162,7 +162,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
       id: 'customization',
       title: 'Personalize Your Experience',
       description: 'Make NyxTitan yours! Choose from 27 beautiful themes and customize the interface to match your brand.',
-      icon: <Settings className="w-12 h-12 text-pink-600" />,
+      icon: <Settings className="w-12 h-12 text-[#9E8F75]" />,
       features: [
         '27 pre-built themes (light & dark)',
         'Seasonal themes (spring, summer, autumn, winter)',
@@ -202,7 +202,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <Confetti />
-      <div className="lux-app-bg rounded shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col border border-purple-700">
+      <div className="lux-app-bg rounded shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col border border-[rgba(201,168,76,0.22)]">
         {/* Header */}
         <div className="p-4 border-b border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center justify-between mb-0">
@@ -212,13 +212,13 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
                 {/* Logo removed as requested */}
               </div>
               <h2 className="text-lg font-extrabold text-white drop-shadow-xl text-center mb-0">Welcome to NyxTitan</h2>
-              <span className="text-base font-bold text-pink-200 tracking-widest drop-shadow text-center" style={{ textShadow: '0 0 8px #a78bfa, 0 0 2px #fff' }}>
+              <span className="text-base font-bold text-[#9E8F75] tracking-widest drop-shadow text-center" style={{ textShadow: '0 0 8px #a78bfa, 0 0 2px #fff' }}>
                 Business Management. Forged for Titans.
               </span>
             </div>
             <button
               onClick={onSkip}
-              className="p-2 hover:bg-purple-100 rounded-lg transition-all border border-purple-200"
+              className="p-2 hover:bg-[rgba(201,168,76,0.04)] rounded-lg transition-all border border-[rgba(201,168,76,0.22)]"
               aria-label="Close walkthrough"
             >
               <X className="w-6 h-6 text-amber-600" />
@@ -245,9 +245,9 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
                 onClick={() => handleStepClick(index)}
                 className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold transition-all shadow-lg border-2 mt-1 cursor-pointer ${
                   index === currentStep
-                    ? 'bg-[rgba(201,168,76,0.08)] text-white scale-110 border-pink-300 ring-4 ring-purple-300'
+                    ? 'bg-[rgba(201,168,76,0.08)] text-white scale-110 border-[rgba(201,168,76,0.22)] ring-4 ring-[rgba(201,168,76,0.45)]'
                     : completedSteps.has(index) || index <= currentStep
-                    ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white border-green-300 hover:ring-2 hover:ring-purple-400'
+                    ? 'bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white border-[rgba(201,168,76,0.22)] hover:ring-2 hover:ring-[rgba(201,168,76,0.45)]'
                     : 'bg-[rgba(201,168,76,0.08)] text-gray-200 border-[rgba(201,168,76,0.22)] hover:bg-[rgba(201,168,76,0.04)] opacity-60 cursor-not-allowed'
                 }`}
                 style={{ boxShadow: index === currentStep ? '0 0 16px #a78bfa' : undefined }}
@@ -271,7 +271,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
             {/* Title and Description */}
             {/* Only show step title if not welcome step */}
             {currentStep !== 0 && (
-              <h3 className="text-3xl font-bold text-pink-200 mb-4 text-center drop-shadow" style={{ textShadow: '0 0 8px #a78bfa, 0 0 2px #fff' }}>
+              <h3 className="text-3xl font-bold text-[#9E8F75] mb-4 text-center drop-shadow" style={{ textShadow: '0 0 8px #a78bfa, 0 0 2px #fff' }}>
                 {currentStepData.title}
               </h3>
             )}
@@ -279,7 +279,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
               {currentStepData.description}
             </p>
             {/* Features List */}
-            <div className="bg-gradient-to-br from-[#070604] to-[#070604] rounded p-6 mb-6">
+            <div className="bg-[#110F0B] rounded p-6 mb-6">
               <h4 className="font-bold text-[#9E8F75] mb-2 flex items-center gap-2 text-lg">
                 <Sparkles className="w-5 h-5 text-amber-400" />
                 Key Features:

@@ -1,4 +1,4 @@
-﻿// Industry-specific compliance sections for NyxTitan
+// Industry-specific compliance sections for NyxTitan
 import { Shield, AlertTriangle, CheckCircle, Clock, FileText, ExternalLink } from 'lucide-react';
 
 export function OSHASection({ oshaView, setOshaView }: { oshaView: 'general' | 'recordkeeping' | 'training', setOshaView: (view: 'general' | 'recordkeeping' | 'training') => void }) {
@@ -108,7 +108,7 @@ function OSHAGeneralSection() {
       {/* Overview Banner */}
       <div className="p-6 rounded shadow-lg border-l-4 border-[#C9A84C]" style={{ background: 'var(--card-bg)' }}>
         <div className="flex items-start gap-4">
-          <Shield className="h-8 w-8 text-orange-500 flex-shrink-0 mt-1" />
+          <Shield className="h-8 w-8 text-[#9E8F75] flex-shrink-0 mt-1" />
           <div>
             <h3 className="text-2xl font-bold mb-2" style={{ color: 'var(--header-text)' }}>
               OSHA Compliance Tracker
@@ -117,7 +117,7 @@ function OSHAGeneralSection() {
               Occupational Safety and Health Administration (OSHA) regulations ensure workplace safety. 
               Violations can result in citations ranging from $15,625 per violation (serious) to $156,259 per violation (willful/repeated).
             </p>
-            <div className="flex items-center gap-2 text-sm bg-orange-500/10 text-orange-500 p-3 rounded-lg">
+            <div className="flex items-center gap-2 text-sm bg-[rgba(201,168,76,0.06)] text-[#9E8F75] p-3 rounded-lg">
               <AlertTriangle className="h-4 w-4 flex-shrink-0" />
               <span className="font-semibold">
                 Current compliance rate: 83% - 1 non-compliant item requires immediate action
@@ -134,10 +134,10 @@ function OSHAGeneralSection() {
             key={index}
             className={`p-6 rounded shadow-lg border-l-4 ${
               req.status === 'compliant' 
-                ? 'border-green-500' 
+                ? 'border-[rgba(201,168,76,0.22)]' 
                 : req.status === 'warning'
-                ? 'border-yellow-500'
-                : 'border-red-500'
+                ? 'border-[rgba(201,168,76,0.22)]'
+                : 'border-[rgba(201,168,76,0.22)]'
             }`}
             style={{ background: 'var(--card-bg)' }}
           >
@@ -149,7 +149,7 @@ function OSHAGeneralSection() {
                     req.status === 'compliant' 
                       ? 'bg-green-500 text-white' 
                       : req.status === 'warning'
-                      ? 'bg-yellow-500 text-white'
+                      ? 'bg-[rgba(201,168,76,0.12)] text-white'
                       : 'bg-red-500 text-white'
                   }`}>
                     {req.status === 'compliant' ? '✓ COMPLIANT' : req.status === 'warning' ? '⚠ WARNING' : '✗ NON-COMPLIANT'}
@@ -166,7 +166,7 @@ function OSHAGeneralSection() {
               </div>
               <div className="p-3 rounded-lg" style={{ background: 'var(--calendar-bg)' }}>
                 <div className="opacity-70 mb-1">Next Due</div>
-                <div className={`font-semibold ${req.nextDue === 'Overdue' ? 'text-red-500' : ''}`}>
+                <div className={`font-semibold ${req.nextDue === 'Overdue' ? 'text-red-400' : ''}`}>
                   {req.nextDue}
                 </div>
               </div>
@@ -253,16 +253,16 @@ function OSHARecordkeepingSection() {
           Records must be maintained for 5 years and posted annually from February 1 - April 30.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="p-4 rounded-lg bg-green-500/10 border border-green-500">
-            <div className="text-3xl font-bold text-green-500 mb-1">12</div>
+          <div className="p-4 rounded-lg bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)]">
+            <div className="text-3xl font-bold text-green-400 mb-1">12</div>
             <div className="text-sm">Total Recordable Cases (2025)</div>
           </div>
           <div className="p-4 rounded-lg bg-amber-600/10 border border-amber-500/40">
             <div className="text-3xl font-bold text-amber-400 mb-1">3.2</div>
             <div className="text-sm">DART Rate (Days Away, Restricted, or Transfer)</div>
           </div>
-          <div className="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500">
-            <div className="text-3xl font-bold text-yellow-500 mb-1">8.5</div>
+          <div className="p-4 rounded-lg bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)]">
+            <div className="text-3xl font-bold text-[#C9A84C] mb-1">8.5</div>
             <div className="text-sm">Total Case Incident Rate (TCIR)</div>
           </div>
         </div>
@@ -277,7 +277,7 @@ function OSHARecordkeepingSection() {
                 <div className="flex items-center gap-3 mb-2">
                   <span className="text-sm font-mono bg-amber-600/20 text-amber-400 px-3 py-1 rounded font-bold">{item.form}</span>
                   <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                    item.status === 'current' ? 'bg-green-500 text-white' : 'bg-yellow-500 text-white'
+                    item.status === 'current' ? 'bg-green-500 text-white' : 'bg-[rgba(201,168,76,0.12)] text-white'
                   }`}>
                     {item.status === 'current' ? '✓ CURRENT' : '⚠ ACTION NEEDED'}
                   </span>
@@ -305,10 +305,10 @@ function OSHARecordkeepingSection() {
 
       {/* Action Items */}
       <div className="p-6 rounded shadow-lg border-l-4 border-[#C9A84C]" style={{ background: 'var(--card-bg)' }}>
-        <h3 className="text-xl font-bold mb-4 text-yellow-500">⚡ Upcoming Deadlines</h3>
+        <h3 className="text-xl font-bold mb-4 text-[#C9A84C]">⚡ Upcoming Deadlines</h3>
         <ul className="space-y-3">
           <li className="flex items-start gap-3 p-3 rounded-lg" style={{ background: 'var(--calendar-bg)' }}>
-            <Clock className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-1" />
+            <Clock className="h-5 w-5 text-[#C9A84C] flex-shrink-0 mt-1" />
             <div>
               <div className="font-semibold">Complete and certify Form 300A by February 1, 2026</div>
               <div className="text-sm opacity-70">Annual summary must be posted in conspicuous location until April 30</div>
@@ -355,8 +355,8 @@ function OSHATrainingSection() {
             <div className="text-3xl font-bold text-amber-500 mb-1">89%</div>
             <div className="text-sm">Overall Training Compliance</div>
           </div>
-          <div className="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500">
-            <div className="text-3xl font-bold text-yellow-500 mb-1">14</div>
+          <div className="p-4 rounded-lg bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)]">
+            <div className="text-3xl font-bold text-[#C9A84C] mb-1">14</div>
             <div className="text-sm">Employees Need Retraining</div>
           </div>
         </div>
@@ -375,7 +375,7 @@ function OSHATrainingSection() {
                 </div>
                 <span className={`px-4 py-2 rounded-full text-sm font-bold ${
                   complianceRate === 100 ? 'bg-green-500 text-white' : 
-                  complianceRate >= 90 ? 'bg-yellow-500 text-white' : 
+                  complianceRate >= 90 ? 'bg-[rgba(201,168,76,0.12)] text-white' : 
                   'bg-red-500 text-white'
                 }`}>
                   {training.compliant}/{training.employees} Trained
@@ -392,8 +392,8 @@ function OSHATrainingSection() {
                 </div>
               </div>
               {complianceRate < 100 && (
-                <div className="bg-yellow-500/10 border border-yellow-500 p-3 rounded-lg text-sm">
-                  <span className="font-semibold text-yellow-500">⚠ Action Needed:</span> {training.employees - training.compliant} employee(s) require training
+                <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] p-3 rounded-lg text-sm">
+                  <span className="font-semibold text-[#C9A84C]">⚠ Action Needed:</span> {training.employees - training.compliant} employee(s) require training
                 </div>
               )}
             </div>

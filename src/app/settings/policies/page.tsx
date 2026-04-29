@@ -191,7 +191,7 @@ export default function PoliciesPage() {
             )}
             <button
               onClick={() => setShowPreview(!showPreview)}
-              className="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-[#E8C060] rounded-lg font-medium transition-all flex items-center gap-2"
+              className="px-4 py-2 bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.04)] text-[#E8C060] rounded-lg font-medium transition-all flex items-center gap-2"
             >
               <Eye className="w-4 h-4" />
               {showPreview ? 'Hide' : 'Show'} Preview
@@ -201,7 +201,7 @@ export default function PoliciesPage() {
               disabled={!hasChanges}
               className={`px-6 py-2 rounded-lg font-medium transition-all flex items-center gap-2 ${
                 hasChanges
-                  ? 'bg-green-600 hover:bg-green-700 text-white'
+                  ? 'bg-green-500 hover:bg-green-500 text-white'
                   : 'bg-gray-200 text-[#9E8F75] cursor-not-allowed'
               }`}
             >
@@ -213,12 +213,12 @@ export default function PoliciesPage() {
       </div>
 
       {/* Warning Banner */}
-      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-lg mb-8">
+      <div className="bg-[rgba(201,168,76,0.04)] border-l-4 border-[rgba(201,168,76,0.22)] p-4 rounded-lg mb-8">
         <div className="flex items-start gap-3">
-          <AlertCircle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
+          <AlertCircle className="w-5 h-5 text-[#5A5040] flex-shrink-0 mt-0.5" />
           <div>
-            <h3 className="font-semibold text-yellow-900 mb-1">Policy Changes Affect Entire System</h3>
-            <p className="text-sm text-yellow-800">
+            <h3 className="font-semibold text-[#5A5040] mb-1">Policy Changes Affect Entire System</h3>
+            <p className="text-sm text-[#5A5040]">
               Changes to policies will update accrual calculations, eligibility requirements, and approval workflows
               across all modules including Time-Off, Payroll, HR Management, and Reporting. Always review the preview
               before saving. Consider setting an effective date for future changes.
@@ -309,7 +309,7 @@ export default function PoliciesPage() {
                     setPtoPolicy({ ...ptoPolicy, accrualRate: parseFloat(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                 />
                 <p className="text-xs text-[#9E8F75] mt-1">Annual total: {calculateAnnualPTO().toFixed(1)} hours</p>
               </div>
@@ -324,7 +324,7 @@ export default function PoliciesPage() {
                     setPtoPolicy({ ...ptoPolicy, accrualFrequency: e.target.value as any });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                 >
                   <option value="weekly">Weekly</option>
                   <option value="biweekly">Bi-Weekly</option>
@@ -344,7 +344,7 @@ export default function PoliciesPage() {
                     setPtoPolicy({ ...ptoPolicy, maxAccrual: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                 />
                 <p className="text-xs text-[#9E8F75] mt-1">Accrual stops when this limit is reached</p>
               </div>
@@ -360,7 +360,7 @@ export default function PoliciesPage() {
                     setPtoPolicy({ ...ptoPolicy, maxCarryover: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                 />
                 <p className="text-xs text-[#9E8F75] mt-1">Maximum hours that roll over to next year</p>
               </div>
@@ -386,7 +386,7 @@ export default function PoliciesPage() {
                     setPtoPolicy({ ...ptoPolicy, probationPeriod: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                 />
                 <p className="text-xs text-[#9E8F75] mt-1">Days before eligible to use PTO</p>
               </div>
@@ -403,7 +403,7 @@ export default function PoliciesPage() {
                     setPtoPolicy({ ...ptoPolicy, minimumIncrement: parseFloat(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                 />
                 <p className="text-xs text-[#9E8F75] mt-1">Smallest unit of PTO that can be requested</p>
               </div>
@@ -419,7 +419,7 @@ export default function PoliciesPage() {
                     setPtoPolicy({ ...ptoPolicy, requireAdvanceNotice: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                 />
                 <p className="text-xs text-[#9E8F75] mt-1">Days in advance PTO must be requested</p>
               </div>
@@ -466,7 +466,7 @@ export default function PoliciesPage() {
                 <div className="space-y-2">
                   {ptoPolicy.approvalChain.map((role, index) => (
                     <div key={index} className="flex items-center gap-2">
-                      <span className="bg-blue-100 text-[#E8C060] px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-[rgba(201,168,76,0.04)] text-[#E8C060] px-3 py-1 rounded-full text-sm font-medium">
                         {index + 1}. {role}
                       </span>
                       <button
@@ -475,7 +475,7 @@ export default function PoliciesPage() {
                           setPtoPolicy({ ...ptoPolicy, approvalChain: newChain });
                           setHasChanges(true);
                         }}
-                        className="text-red-600 hover:text-red-700"
+                        className="text-red-400 hover:text-red-400"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
@@ -502,7 +502,7 @@ export default function PoliciesPage() {
           {/* Blackout Dates */}
           <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
             <h2 className="text-xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
-              <AlertCircle className="w-5 h-5 text-red-600" />
+              <AlertCircle className="w-5 h-5 text-red-400" />
               Blackout Dates
             </h2>
             <p className="text-sm text-[#9E8F75] mb-4">Dates when PTO requests are not allowed</p>
@@ -527,7 +527,7 @@ export default function PoliciesPage() {
                       setPtoPolicy({ ...ptoPolicy, blackoutDates: newDates });
                       setHasChanges(true);
                     }}
-                    className="text-red-600 hover:text-red-700"
+                    className="text-red-400 hover:text-red-400"
                   >
                     <Trash2 className="w-4 h-4" />
                   </button>
@@ -553,7 +553,7 @@ export default function PoliciesPage() {
         <div className="space-y-6">
           <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
             <h2 className="text-xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
-              <Clock className="w-5 h-5 text-red-600" />
+              <Clock className="w-5 h-5 text-red-400" />
               Sick Leave Accrual Settings
             </h2>
             
@@ -570,7 +570,7 @@ export default function PoliciesPage() {
                     setSickPolicy({ ...sickPolicy, accrualRate: parseFloat(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                 />
                 <p className="text-xs text-[#9E8F75] mt-1">Annual total: {calculateAnnualSick().toFixed(1)} hours</p>
               </div>
@@ -585,7 +585,7 @@ export default function PoliciesPage() {
                     setSickPolicy({ ...sickPolicy, accrualFrequency: e.target.value as any });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                 >
                   <option value="weekly">Weekly</option>
                   <option value="biweekly">Bi-Weekly</option>
@@ -605,7 +605,7 @@ export default function PoliciesPage() {
                     setSickPolicy({ ...sickPolicy, maxAccrual: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                 />
               </div>
 
@@ -621,7 +621,7 @@ export default function PoliciesPage() {
                     setSickPolicy({ ...sickPolicy, carryoverMax: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent disabled:bg-[rgba(201,168,76,0.06)]"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent disabled:bg-[rgba(201,168,76,0.06)]"
                 />
                 <label className="flex items-center mt-2">
                   <input
@@ -691,7 +691,7 @@ export default function PoliciesPage() {
                       setSickPolicy({ ...sickPolicy, documentationThreshold: parseInt(e.target.value) });
                       setHasChanges(true);
                     }}
-                    className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                   />
                   <p className="text-xs text-[#9E8F75] mt-1">Doctor's note required after this many days</p>
                 </div>
@@ -773,7 +773,7 @@ export default function PoliciesPage() {
                       setSickPolicy({ ...sickPolicy, negativeBalanceLimit: parseInt(e.target.value) });
                       setHasChanges(true);
                     }}
-                    className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                   />
                   <p className="text-xs text-[#9E8F75] mt-1">Maximum negative hours allowed (e.g., -16)</p>
                 </div>
@@ -804,7 +804,7 @@ export default function PoliciesPage() {
                     setFmlaPolicy({ ...fmlaPolicy, eligibilityMonths: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                 />
                 <p className="text-xs text-[#9E8F75] mt-1">Federal requirement: 12 months</p>
               </div>
@@ -820,7 +820,7 @@ export default function PoliciesPage() {
                     setFmlaPolicy({ ...fmlaPolicy, eligibilityHours: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                 />
                 <p className="text-xs text-[#9E8F75] mt-1">Federal requirement: 1,250 hours</p>
               </div>
@@ -836,7 +836,7 @@ export default function PoliciesPage() {
                     setFmlaPolicy({ ...fmlaPolicy, maxWeeksPerYear: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                 />
                 <p className="text-xs text-[#9E8F75] mt-1">Federal requirement: 12 weeks</p>
               </div>
@@ -897,12 +897,12 @@ export default function PoliciesPage() {
             </div>
           </div>
 
-          <div className="bg-amber-900/20 border-l-4 border-blue-400 p-4 rounded-lg">
+          <div className="bg-amber-900/20 border-l-4 border-[rgba(201,168,76,0.22)] p-4 rounded-lg">
             <div className="flex items-start gap-3">
               <Info className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
               <div>
-                <h3 className="font-semibold text-blue-900 mb-1">FMLA Compliance Note</h3>
-                <p className="text-sm text-blue-800">
+                <h3 className="font-semibold text-[#9E8F75] mb-1">FMLA Compliance Note</h3>
+                <p className="text-sm text-[#9E8F75]">
                   FMLA is a federal law with specific requirements. These settings should align with DOL regulations.
                   Consult with legal counsel before modifying FMLA policies. Non-compliance can result in penalties.
                 </p>
@@ -956,7 +956,7 @@ export default function PoliciesPage() {
                       setBereavementPolicy({ ...bereavementPolicy, eligibleRelationships: newRels });
                       setHasChanges(true);
                     }}
-                    className="text-red-600 hover:text-red-700"
+                    className="text-red-400 hover:text-red-400"
                   >
                     <Trash2 className="w-4 h-4" />
                   </button>
@@ -1014,7 +1014,7 @@ export default function PoliciesPage() {
         <div className="space-y-6">
           <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
             <h2 className="text-xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-green-600" />
+              <Calendar className="w-5 h-5 text-green-400" />
               Company Holidays
             </h2>
             
@@ -1064,7 +1064,7 @@ export default function PoliciesPage() {
                       setHolidayCalendar({ ...holidayCalendar, holidays: newHolidays });
                       setHasChanges(true);
                     }}
-                    className="text-red-600 hover:text-red-700"
+                    className="text-red-400 hover:text-red-400"
                   >
                     <Trash2 className="w-4 h-4" />
                   </button>
@@ -1098,7 +1098,7 @@ export default function PoliciesPage() {
                     setHolidayCalendar({ ...holidayCalendar, floatingHolidays: parseInt(e.target.value) });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                 />
                 <p className="text-xs text-[#9E8F75] mt-1">Personal holidays employees can schedule</p>
               </div>
@@ -1114,7 +1114,7 @@ export default function PoliciesPage() {
                     setHolidayCalendar({ ...holidayCalendar, eligibilityRequirement: e.target.value });
                     setHasChanges(true);
                   }}
-                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                   placeholder="e.g., 90 days of employment"
                 />
               </div>
@@ -1125,7 +1125,7 @@ export default function PoliciesPage() {
 
       {/* Policy Impact Preview */}
       {showPreview && (
-        <div className="bg-[rgba(201,168,76,0.08)] p-6 rounded shadow-md border-2 border-purple-200">
+        <div className="bg-[rgba(201,168,76,0.08)] p-6 rounded shadow-md border-2 border-[rgba(201,168,76,0.22)]">
           <h2 className="text-xl font-bold text-[#9E8F75] mb-4 flex items-center gap-2">
             <Eye className="w-5 h-5 text-amber-600" />
             Policy Impact Preview
@@ -1157,19 +1157,19 @@ export default function PoliciesPage() {
               <h3 className="font-semibold text-[#9E8F75] mb-2">System Impact</h3>
               <ul className="space-y-2 text-sm text-[#C9A84C]">
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
                   Time-off accruals will recalculate
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
                   Approval workflows will update
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
                   Payroll integrations will sync
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
                   Reporting dashboards will reflect changes
                 </li>
               </ul>
@@ -1192,10 +1192,10 @@ export default function PoliciesPage() {
 
       {/* Success Message */}
       {!hasChanges && (
-        <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-lg">
+        <div className="bg-[rgba(201,168,76,0.04)] border-l-4 border-[rgba(201,168,76,0.22)] p-4 rounded-lg">
           <div className="flex items-center gap-3">
-            <CheckCircle className="w-5 h-5 text-green-600" />
-            <p className="text-sm text-green-800 font-medium">All policies are up to date and active system-wide.</p>
+            <CheckCircle className="w-5 h-5 text-green-400" />
+            <p className="text-sm text-green-400 font-medium">All policies are up to date and active system-wide.</p>
           </div>
         </div>
       )}

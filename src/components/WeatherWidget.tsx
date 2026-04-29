@@ -25,13 +25,13 @@ export default function WeatherWidget() {
   }, []);
 
   return (
-    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6 shadow-sm flex items-center gap-4">
+    <div className="bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg p-4 mt-6 shadow-sm flex items-center gap-4">
       <div>
-        <div className="text-2xl font-bold text-blue-600">{weather?.temp}°F</div>
-        <div className="text-blue-500 font-semibold">{weather?.description}</div>
+        <div className="text-2xl font-bold text-[#9E8F75]">{weather?.temp}°F</div>
+        <div className="text-[#9E8F75] font-semibold">{weather?.description}</div>
         <div className="text-xs text-amber-400">{weather?.city}</div>
       </div>
-      <div className="ml-4 text-sm text-blue-700 italic">
+      <div className="ml-4 text-sm text-[#9E8F75] italic">
         <span role="img" aria-label="weather joke">🌦️</span> {joke}
       </div>
     </div>

@@ -94,7 +94,7 @@ export default function TemplateGallery() {
     <Card className="max-w-2xl mx-auto mt-8 p-6 shadow-lg border border-gray-200">
       <h2 className="text-2xl font-bold mb-4">Template & Form Gallery</h2>
       <p className="mb-2 text-sm text-[#9E8F75]">All templates are HIPAA & legally compliant. Documents are securely stored and access-controlled.</p>
-      {error && <div className="text-red-500 mb-2">{error}</div>}
+      {error && <div className="text-red-400 mb-2">{error}</div>}
       <Input
         placeholder="Search templates..."
         value={searchTerm}

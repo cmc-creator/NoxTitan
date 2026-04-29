@@ -126,11 +126,11 @@ export default function GuildAdminPage() {
   };
 
   const getLevelIcon = (levelName: string) => {
-    if (levelName === 'Grandmaster') return <Crown className="w-5 h-5 text-yellow-400" />;
+    if (levelName === 'Grandmaster') return <Crown className="w-5 h-5 text-[#C9A84C]" />;
     if (levelName === 'Master') return <Star className="w-5 h-5 text-amber-400" />;
     if (levelName === 'Expert') return <Trophy className="w-5 h-5 text-amber-400" />;
     if (levelName === 'Journeyman') return <Shield className="w-5 h-5 text-[#C9A84C] 400" />;
-    if (levelName === 'Apprentice') return <Target className="w-5 h-5 text-orange-400" />;
+    if (levelName === 'Apprentice') return <Target className="w-5 h-5 text-[#9E8F75]" />;
     return <Zap className="w-5 h-5 text-[#9E8F75]" />;
   };
 
@@ -155,7 +155,7 @@ export default function GuildAdminPage() {
         <div className="mb-8 flex items-center justify-between">
           <div>
             <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
-              <Crown className="w-10 h-10 text-yellow-400" />
+              <Crown className="w-10 h-10 text-[#C9A84C]" />
               Guild Administration
             </h1>
             <p className="text-[#9E8F75]">Manage gamification, XP, achievements, and rewards</p>
@@ -181,10 +181,10 @@ export default function GuildAdminPage() {
             </div>
             <div className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-6">
               <div className="flex items-center gap-2 mb-2">
-                <Zap className="w-5 h-5 text-yellow-400" />
+                <Zap className="w-5 h-5 text-[#C9A84C]" />
                 <span className="text-sm text-[#9E8F75]">Total XP</span>
               </div>
-              <div className="text-3xl font-bold text-yellow-400">{stats.totalXPAwarded.toLocaleString()}</div>
+              <div className="text-3xl font-bold text-[#C9A84C]">{stats.totalXPAwarded.toLocaleString()}</div>
             </div>
             <div className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-6">
               <div className="flex items-center gap-2 mb-2">
@@ -195,10 +195,10 @@ export default function GuildAdminPage() {
             </div>
             <div className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-6">
               <div className="flex items-center gap-2 mb-2">
-                <Clock className="w-5 h-5 text-orange-400" />
+                <Clock className="w-5 h-5 text-[#9E8F75]" />
                 <span className="text-sm text-[#9E8F75]">Active Streaks</span>
               </div>
-              <div className="text-3xl font-bold text-orange-400">{stats.activeStreaks}</div>
+              <div className="text-3xl font-bold text-[#9E8F75]">{stats.activeStreaks}</div>
             </div>
             <div className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-6">
               <div className="flex items-center gap-2 mb-2">
@@ -264,7 +264,7 @@ export default function GuildAdminPage() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-bold text-yellow-400">{member.totalXP.toLocaleString()}</div>
+                      <div className="text-2xl font-bold text-[#C9A84C]">{member.totalXP.toLocaleString()}</div>
                       <div className="text-sm text-[#9E8F75]">XP</div>
                     </div>
                   </div>
@@ -282,7 +282,7 @@ export default function GuildAdminPage() {
                         <div className="text-white font-semibold">{log.employee.firstName} {log.employee.lastName}</div>
                         <div className="text-xs text-[#9E8F75]">{log.source}</div>
                       </div>
-                      <div className="flex items-center gap-1 text-yellow-400 font-bold">
+                      <div className="flex items-center gap-1 text-[#C9A84C] font-bold">
                         <Zap className="w-4 h-4" />
                         +{log.amount}
                       </div>
@@ -363,8 +363,8 @@ export default function GuildAdminPage() {
                           </div>
                           <span className="text-[#9E8F75]">•</span>
                           <div className="flex items-center gap-1">
-                            <Clock className="w-4 h-4 text-orange-400" />
-                            <span className="text-orange-400 font-semibold">{member.streak} day streak</span>
+                            <Clock className="w-4 h-4 text-[#9E8F75]" />
+                            <span className="text-[#9E8F75] font-semibold">{member.streak} day streak</span>
                           </div>
                         </div>
                       </div>
@@ -372,7 +372,7 @@ export default function GuildAdminPage() {
 
                     <div className="flex items-center gap-6">
                       <div className="text-right">
-                        <div className="text-3xl font-bold text-yellow-400">{member.totalXP.toLocaleString()}</div>
+                        <div className="text-3xl font-bold text-[#C9A84C]">{member.totalXP.toLocaleString()}</div>
                         <div className="text-sm text-[#9E8F75]">Total XP</div>
                       </div>
                       <button
@@ -432,7 +432,7 @@ export default function GuildAdminPage() {
                       <div className="text-xs text-[#9E8F75]">{new Date(log.createdAt).toLocaleString()}</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 text-xl font-bold text-yellow-400">
+                  <div className="flex items-center gap-2 text-xl font-bold text-[#C9A84C]">
                     <Zap className="w-5 h-5" />
                     +{log.amount}
                   </div>
@@ -459,7 +459,7 @@ export default function GuildAdminPage() {
                     <div className="text-5xl mb-2">{achievement.icon}</div>
                     <h3 className="text-xl font-bold text-white mb-1">{achievement.name}</h3>
                     <span className={`text-xs font-bold px-2 py-1 rounded ${
-                      achievement.rarity === 'LEGENDARY' ? 'bg-yellow-600' :
+                      achievement.rarity === 'LEGENDARY' ? 'bg-[rgba(201,168,76,0.12)]' :
                       achievement.rarity === 'EPIC' ? 'bg-amber-600' :
                       achievement.rarity === 'RARE' ? 'bg-amber-600' :
                       achievement.rarity === 'UNCOMMON' ? 'bg-[#110F0B] 600' :
@@ -470,7 +470,7 @@ export default function GuildAdminPage() {
                   </div>
                   <p className="text-sm text-[#9E8F75] mb-4 text-center">{achievement.description}</p>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-2 text-yellow-400">
+                    <div className="flex items-center gap-2 text-[#C9A84C]">
                       <Zap className="w-4 h-4" />
                       <span className="font-bold">+{achievement.xpReward} XP</span>
                     </div>

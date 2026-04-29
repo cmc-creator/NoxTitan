@@ -153,7 +153,7 @@ export default function IdeaBoard() {
               </h1>
               <p className="text-[#9E8F75] text-lg">Share your brilliant ideas and help shape our future!</p>
             </div>
-            <button className="px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-bold transition-all shadow-lg shadow-yellow-500/30 flex items-center gap-2">
+            <button className="px-6 py-3 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white rounded-lg font-bold transition-all shadow-lg shadow-[rgba(201,168,76,0.2)] flex items-center gap-2">
               <Plus className="w-5 h-5" />
               Submit Idea
             </button>
@@ -162,16 +162,16 @@ export default function IdeaBoard() {
 
         {/* Stats Banner */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-yellow-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-yellow-200 text-sm mb-1">Total Ideas</div>
+                <div className="text-[#F0EBE0] text-sm mb-1">Total Ideas</div>
                 <div className="text-3xl font-bold text-white">127</div>
               </div>
-              <Lightbulb className="w-12 h-12 text-yellow-400 opacity-50" />
+              <Lightbulb className="w-12 h-12 text-[#C9A84C] opacity-50" />
             </div>
           </div>
-          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-green-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-[#C9A84C] was-green-200 text-sm mb-1">Implemented</div>
@@ -189,10 +189,10 @@ export default function IdeaBoard() {
               <TrendingUp className="w-12 h-12 text-amber-400 opacity-50" />
             </div>
           </div>
-          <div className="bg-[#110F0B] from-REMOVED-900/50 to-pink-900/50 rounded p-5 border-2 border-red-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-pink-900/50 rounded p-5 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-red-200 text-sm mb-1">Your Ideas</div>
+                <div className="text-[#F0EBE0] text-sm mb-1">Your Ideas</div>
                 <div className="text-3xl font-bold text-white">3</div>
               </div>
               <Heart className="w-12 h-12 text-red-400 opacity-50" />
@@ -308,9 +308,9 @@ export default function IdeaBoard() {
         </div>
 
         {/* Motivation Footer */}
-        <div className="mt-8 bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-yellow-500/30 text-center">
-          <h3 className="text-2xl font-bold text-yellow-200 mb-2">💡 Your Voice Matters!</h3>
-          <p className="text-yellow-100 text-lg">Every idea has the power to make our workplace better. Keep them coming!</p>
+        <div className="mt-8 bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)] text-center">
+          <h3 className="text-2xl font-bold text-[#F0EBE0] mb-2">💡 Your Voice Matters!</h3>
+          <p className="text-[#F0EBE0] text-lg">Every idea has the power to make our workplace better. Keep them coming!</p>
         </div>
       </div>
     </div>

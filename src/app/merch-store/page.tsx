@@ -201,7 +201,7 @@ export default function MerchStorePage() {
             <div className="flex items-center gap-4">
               {guildProfile && (
                 <div className="text-right">
-                  <div className="text-2xl font-bold text-yellow-400">
+                  <div className="text-2xl font-bold text-[#C9A84C]">
                     {guildProfile.totalXP.toLocaleString()} XP
                   </div>
                   <div className="text-xs text-[#9E8F75]">Available</div>
@@ -238,7 +238,7 @@ export default function MerchStorePage() {
 
         {/* Cart Checkout */}
         {checkoutOpen && cart.length > 0 && (
-          <div className="bg-[rgba(201,168,76,0.04)] border-2 border-pink-500 rounded p-6 mb-8">
+          <div className="bg-[rgba(201,168,76,0.04)] border-2 border-[rgba(201,168,76,0.22)] rounded p-6 mb-8">
             <h2 className="text-2xl font-bold text-white mb-4">Your Cart</h2>
             <div className="space-y-3 mb-6">
               {cart.map(cartItem => (
@@ -255,7 +255,7 @@ export default function MerchStorePage() {
                       <h3 className="text-white font-bold">{cartItem.item.name}</h3>
                       <div className="flex items-center gap-4 text-sm text-[#9E8F75]">
                         {paymentMethod === 'GUILD_XP' && cartItem.item.redeemableWithXP ? (
-                          <span className="text-yellow-400 font-bold">{cartItem.item.xpCost} XP each</span>
+                          <span className="text-[#C9A84C] font-bold">{cartItem.item.xpCost} XP each</span>
                         ) : (
                           <span className="text-[#C9A84C] 400 font-bold">${cartItem.item.price.toFixed(2)} each</span>
                         )}
@@ -271,7 +271,7 @@ export default function MerchStorePage() {
                   </div>
                   <div className="text-right">
                     {paymentMethod === 'GUILD_XP' && cartItem.item.redeemableWithXP ? (
-                      <div className="text-xl font-bold text-yellow-400">
+                      <div className="text-xl font-bold text-[#C9A84C]">
                         {(cartItem.item.xpCost! * cartItem.quantity).toLocaleString()} XP
                       </div>
                     ) : (
@@ -294,7 +294,7 @@ export default function MerchStorePage() {
               <div className="flex justify-between items-center text-2xl font-bold text-white">
                 <span>Total:</span>
                 {paymentMethod === 'GUILD_XP' ? (
-                  <span className="text-yellow-400">{getCartXP().toLocaleString()} XP</span>
+                  <span className="text-[#C9A84C]">{getCartXP().toLocaleString()} XP</span>
                 ) : (
                   <span className="text-[#C9A84C] 400">${getCartTotal().toFixed(2)}</span>
                 )}
@@ -320,7 +320,7 @@ export default function MerchStorePage() {
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {items.map(item => (
-            <div key={item.id} className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded overflow-hidden hover:border-pink-500/50 transition-all">
+            <div key={item.id} className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded overflow-hidden hover:border-[rgba(201,168,76,0.22)] transition-all">
               <div className="aspect-square bg-[rgba(201,168,76,0.04)] flex items-center justify-center">
                 {item.imageUrl ? (
                   <img src={item.imageUrl} alt={item.name} className="w-full h-full object-cover" />
@@ -337,8 +337,8 @@ export default function MerchStorePage() {
                 <div className="flex items-center justify-between mb-4">
                   {paymentMethod === 'GUILD_XP' && item.redeemableWithXP ? (
                     <div className="flex items-center gap-2">
-                      <Zap className="w-5 h-5 text-yellow-400" />
-                      <span className="text-xl font-bold text-yellow-400">{item.xpCost}</span>
+                      <Zap className="w-5 h-5 text-[#C9A84C]" />
+                      <span className="text-xl font-bold text-[#C9A84C]">{item.xpCost}</span>
                     </div>
                   ) : (
                     <div className="flex items-center gap-2">
@@ -361,7 +361,7 @@ export default function MerchStorePage() {
                 </button>
 
                 {item.redeemableWithXP && (
-                  <div className="flex items-center gap-1 justify-center mt-2 text-xs text-yellow-400">
+                  <div className="flex items-center gap-1 justify-center mt-2 text-xs text-[#C9A84C]">
                     <Award className="w-3 h-3" />
                     <span>XP Redeemable</span>
                   </div>

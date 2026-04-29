@@ -125,12 +125,12 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
   return (
     <div className="space-y-6">
       {/* Header with Stats */}
-      <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-pink-500/30">
+      <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
         <div className="flex items-center gap-3 mb-4">
-          <Gift className="w-8 h-8 text-pink-400" />
+          <Gift className="w-8 h-8 text-[#9E8F75]" />
           <div>
             <h2 className="text-2xl font-bold text-white">XP Donation System</h2>
-            <p className="text-pink-200">Share your success with teammates who inspire you!</p>
+            <p className="text-[#9E8F75]">Share your success with teammates who inspire you!</p>
           </div>
         </div>
 
@@ -140,20 +140,20 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
             <p className="text-3xl font-bold text-white">{userDonationStats.xpBalance}</p>
             <p className="text-sm text-[#9E8F75]">Your XP Balance</p>
           </div>
-          <div className="bg-green-500/20 rounded-lg p-4 text-center border border-green-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-4 text-center border border-[rgba(201,168,76,0.22)]">
             <Heart className="w-6 h-6 text-green-400 mx-auto mb-1" />
             <p className="text-3xl font-bold text-white">{userDonationStats.remainingThisYear}</p>
-            <p className="text-sm text-green-200">Can Donate This Year</p>
+            <p className="text-sm text-[#F0EBE0]">Can Donate This Year</p>
           </div>
           <div className="bg-amber-500/20 rounded-lg p-4 text-center border border-amber-500/40/30">
             <TrendingUp className="w-6 h-6 text-amber-400 mx-auto mb-1" />
             <p className="text-3xl font-bold text-white">{userDonationStats.yearlyGiven}</p>
             <p className="text-sm text-[#F0EBE0]/70">Donated This Year</p>
           </div>
-          <div className="bg-yellow-500/20 rounded-lg p-4 text-center border border-yellow-500/30">
-            <Award className="w-6 h-6 text-yellow-400 mx-auto mb-1" />
+          <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-4 text-center border border-[rgba(201,168,76,0.22)]">
+            <Award className="w-6 h-6 text-[#C9A84C] mx-auto mb-1" />
             <p className="text-3xl font-bold text-white">{userDonationStats.yearlyReceived}</p>
-            <p className="text-sm text-yellow-200">Received This Year</p>
+            <p className="text-sm text-[#F0EBE0]">Received This Year</p>
           </div>
         </div>
 
@@ -219,9 +219,9 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
       {activeTab === 'give' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Donation Form */}
-          <div className="lux-card/80 backdrop-blur-xl rounded p-6 border-2 border-pink-500/30">
+          <div className="lux-card/80 backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-              <Gift className="w-6 h-6 text-pink-400" />
+              <Gift className="w-6 h-6 text-[#9E8F75]" />
               Donate XP to Someone Special
             </h3>
 
@@ -272,7 +272,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
                 />
                 <div className="flex justify-between mt-2">
                   <span className="text-sm text-[#9E8F75]">10 XP</span>
-                  <span className="text-lg font-bold text-pink-400">{selectedAmount} XP</span>
+                  <span className="text-lg font-bold text-[#9E8F75]">{selectedAmount} XP</span>
                   <span className="text-sm text-[#9E8F75]">{currentLimit.singleMax} XP max</span>
                 </div>
               </div>
@@ -291,18 +291,18 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
 
               {/* Warnings */}
               {selectedAmount > userDonationStats.remainingThisYear && (
-                <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-3 flex items-start gap-2">
+                <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg p-3 flex items-start gap-2">
                   <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-red-200">
+                  <p className="text-sm text-[#F0EBE0]">
                     This exceeds your annual limit! You can only donate {userDonationStats.remainingThisYear} more XP this year.
                   </p>
                 </div>
               )}
 
               {selectedAmount > userDonationStats.xpBalance && (
-                <div className="bg-orange-500/20 border border-orange-500/30 rounded-lg p-3 flex items-start gap-2">
-                  <AlertCircle className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-orange-200">
+                <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg p-3 flex items-start gap-2">
+                  <AlertCircle className="w-5 h-5 text-[#9E8F75] flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-[#9E8F75]">
                     Insufficient XP balance! You only have {userDonationStats.xpBalance} XP available.
                   </p>
                 </div>
@@ -331,7 +331,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
                       <Users className="w-5 h-5 text-[#9E8F75]" />
                       <p className="font-bold text-white">{donation.recipient}</p>
                     </div>
-                    <p className="text-xl font-bold text-pink-400">-{donation.amount} XP</p>
+                    <p className="text-xl font-bold text-[#9E8F75]">-{donation.amount} XP</p>
                   </div>
                   <p className="text-sm text-[#9E8F75] italic mb-1">&ldquo;{donation.reason}&rdquo;</p>
                   <p className="text-xs text-[#9E8F75]">{donation.date}</p>
@@ -348,11 +348,11 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
           {receivedGifts.map(gift => (
             <div
               key={gift.id}
-              className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-green-500/30"
+              className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]"
             >
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-3">
-                  <Heart className="w-8 h-8 text-pink-400 fill-pink-400" />
+                  <Heart className="w-8 h-8 text-[#9E8F75] fill-pink-400" />
                   <div>
                     <p className="text-lg font-bold text-white">{gift.sender}</p>
                     <p className="text-sm text-[#9E8F75]">{gift.date}</p>
@@ -360,7 +360,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
                 </div>
                 <div className="text-right">
                   <p className="text-3xl font-bold text-green-400">+{gift.amount} XP</p>
-                  <p className="text-xs text-green-200">Gifted</p>
+                  <p className="text-xs text-[#F0EBE0]">Gifted</p>
                 </div>
               </div>
               <div className="bg-[#110F0B]/50 rounded-lg p-3">
@@ -387,9 +387,9 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
                 <p className="text-[#F0EBE0]/70 font-semibold">Annual Donation Limit</p>
                 <p className="text-xs text-[#9E8F75] mt-2">Resets January 1st each year</p>
               </div>
-              <div className="bg-pink-500/20 rounded-lg p-6 text-center border border-pink-500/30">
+              <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-6 text-center border border-[rgba(201,168,76,0.22)]">
                 <p className="text-5xl font-bold text-white mb-2">{currentLimit.singleMax}</p>
-                <p className="text-pink-200 font-semibold">Max Per Single Gift</p>
+                <p className="text-[#9E8F75] font-semibold">Max Per Single Gift</p>
                 <p className="text-xs text-[#9E8F75] mt-2">Per transaction limit</p>
               </div>
             </div>
@@ -439,7 +439,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <AlertCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+                <AlertCircle className="w-6 h-6 text-[#C9A84C] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-white font-semibold">No Refunds or Reversals</p>
                   <p className="text-sm text-[#9E8F75]">Once donated, XP cannot be returned. Double-check before sending!</p>

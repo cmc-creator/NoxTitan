@@ -39,7 +39,7 @@ export default function WellnessHub() {
         </div>
 
         {/* Wellness Score Card */}
-        <div className="bg-[#110F0B] from-REMOVED-900/50 to-red-900/50 rounded p-8 border-2 border-pink-500/30 mb-6 relative overflow-hidden">
+        <div className="bg-[#110F0B] from-REMOVED-900/50 to-red-900/50 rounded p-8 border-2 border-[rgba(201,168,76,0.22)] mb-6 relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-10">
             <Heart className="w-64 h-64 text-white" />
           </div>
@@ -65,13 +65,13 @@ export default function WellnessHub() {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-orange-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center justify-between mb-2">
-              <Activity className="w-8 h-8 text-orange-400" />
+              <Activity className="w-8 h-8 text-[#9E8F75]" />
               <span className="text-[#C9A84C] was-green-400 text-sm font-bold">↑ 12%</span>
             </div>
             <div className="text-2xl font-bold text-white mb-1">8,547</div>
-            <div className="text-orange-200 text-sm">Steps Today</div>
+            <div className="text-[#9E8F75] text-sm">Steps Today</div>
           </div>
           <div className="bg-[rgba(201,168,76,0.06)] rounded p-5 border-2 border-amber-500/40/30">
             <div className="flex items-center justify-between mb-2">
@@ -89,10 +89,10 @@ export default function WellnessHub() {
             <div className="text-2xl font-bold text-white mb-1">85%</div>
             <div className="text-[#F0EBE0]/70 text-sm">Mood Score</div>
           </div>
-          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-green-500/30">
+          <div className="bg-[#110F0B] from-REMOVED-900/50 to-emerald-900/50 rounded p-5 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center justify-between mb-2">
               <Coffee className="w-8 h-8 text-[#C9A84C] was-green-400" />
-              <span className="text-yellow-400 text-sm font-bold">Perfect</span>
+              <span className="text-[#C9A84C] text-sm font-bold">Perfect</span>
             </div>
             <div className="text-2xl font-bold text-white mb-1">3</div>
             <div className="text-[#C9A84C] was-green-200 text-sm">Break Time!</div>
@@ -123,15 +123,15 @@ export default function WellnessHub() {
                   <p className="text-[#9E8F75] text-sm mb-3">Get expert advice on budgeting, debt, and planning</p>
                   <div className="text-amber-400 text-sm font-bold">Available 24/7</div>
                 </div>
-                <div className="bg-[#110F0B] from-REMOVED-900/40 to-emerald-900/40 rounded-lg p-4 border border-green-500/30">
+                <div className="bg-[#110F0B] from-REMOVED-900/40 to-emerald-900/40 rounded-lg p-4 border border-[rgba(201,168,76,0.22)]">
                   <div className="text-[#C9A84C] was-green-300 font-semibold mb-2">Legal Support</div>
                   <p className="text-[#9E8F75] text-sm mb-3">Free consultations on legal matters</p>
                   <div className="text-[#C9A84C] was-green-400 text-sm font-bold">30 mins free</div>
                 </div>
-                <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-4 border border-orange-500/30">
-                  <div className="text-orange-300 font-semibold mb-2">Work-Life Balance</div>
+                <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-4 border border-[rgba(201,168,76,0.22)]">
+                  <div className="text-[#9E8F75] font-semibold mb-2">Work-Life Balance</div>
                   <p className="text-[#9E8F75] text-sm mb-3">Resources for childcare, eldercare, and more</p>
-                  <div className="text-orange-400 text-sm font-bold">Always here</div>
+                  <div className="text-[#9E8F75] text-sm font-bold">Always here</div>
                 </div>
               </div>
 
@@ -151,7 +151,7 @@ export default function WellnessHub() {
             <div className="lux-card/80 rounded p-6 border-2 border-amber-500/40/30">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-                  <Trophy className="w-6 h-6 text-yellow-400" />
+                  <Trophy className="w-6 h-6 text-[#C9A84C]" />
                   Active Challenges
                 </h2>
                 <button className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-semibold text-sm">
@@ -160,7 +160,7 @@ export default function WellnessHub() {
               </div>
 
               <div className="space-y-4">
-                <div className="bg-[#110F0B] from-REMOVED-900/40 to-emerald-900/40 rounded-lg p-4 border border-green-500/30">
+                <div className="bg-[#110F0B] from-REMOVED-900/40 to-emerald-900/40 rounded-lg p-4 border border-[rgba(201,168,76,0.22)]">
                   <div className="flex items-start justify-between mb-3">
                     <div>
                       <div className="text-lg font-bold text-white mb-1">🚶 10,000 Steps Challenge</div>
@@ -217,10 +217,10 @@ export default function WellnessHub() {
           {/* Right Column */}
           <div className="space-y-6">
             {/* Gym Membership */}
-            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-orange-500/30">
+            <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
               <div className="text-3xl mb-3">💪</div>
               <h3 className="text-xl font-bold text-white mb-2">Gym Membership</h3>
-              <p className="text-orange-200 text-sm mb-4">Company-paid membership at any major gym!</p>
+              <p className="text-[#9E8F75] text-sm mb-4">Company-paid membership at any major gym!</p>
               <div className="bg-[#110F0B]/50 rounded-lg p-3 mb-4">
                 <div className="text-[#9E8F75] text-xs mb-1">Your Gym</div>
                 <div className="text-white font-semibold">FitLife Fitness Center</div>
@@ -289,7 +289,7 @@ export default function WellnessHub() {
         </div>
 
         {/* Encouragement Banner */}
-        <div className="mt-8 bg-[#110F0B] from-REMOVED-900/30 to-red-900/30 rounded p-6 border-2 border-pink-500/30 text-center">
+        <div className="mt-8 bg-[#110F0B] from-REMOVED-900/30 to-red-900/30 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] text-center">
           <h3 className="text-2xl font-bold text-[#C9A84C] was-pink-200 mb-2">💖 You Matter!</h3>
           <p className="text-[#C9A84C] was-pink-100 text-lg">Taking care of yourself isn't selfish - it's essential. We're proud of you for being here!</p>
         </div>

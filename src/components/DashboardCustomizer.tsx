@@ -152,12 +152,12 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                           onClick={() => toggleTile(tile.id)}
                           className={`p-2 rounded-lg transition-all ${
                             tile.enabled
-                              ? 'bg-green-500/20 hover:bg-green-500/30'
+                              ? 'bg-[rgba(201,168,76,0.06)] hover:bg-[rgba(201,168,76,0.06)]'
                               : 'bg-[rgba(201,168,76,0.08)] hover:bg-[rgba(201,168,76,0.08)]'
                           }`}
                         >
                           {tile.enabled ? (
-                            <Eye className="w-4 h-4 text-green-300" />
+                            <Eye className="w-4 h-4 text-[#F0EBE0]" />
                           ) : (
                             <EyeOff className="w-4 h-4 text-[#9E8F75]" />
                           )}
@@ -199,10 +199,10 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                     key={idx}
                     className={`p-5 rounded border-2 ${
                       suggestion.priority === 'high'
-                        ? 'bg-red-500/10 border-red-400/30'
+                        ? 'bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]'
                         : suggestion.priority === 'medium'
-                        ? 'bg-yellow-500/10 border-yellow-400/30'
-                        : 'bg-amber-600/10 border-blue-400/30'
+                        ? 'bg-[rgba(201,168,76,0.06)] border-[rgba(201,168,76,0.22)]'
+                        : 'bg-amber-600/10 border-[rgba(201,168,76,0.22)]'
                     }`}
                   >
                     <div className="flex items-start justify-between">
@@ -213,10 +213,10 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
                             <h4 className="text-xl font-bold text-white">{tile.name}</h4>
                             <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${
                               suggestion.priority === 'high'
-                                ? 'bg-red-500/30 text-red-200'
+                                ? 'bg-[rgba(201,168,76,0.06)] text-[#F0EBE0]'
                                 : suggestion.priority === 'medium'
-                                ? 'bg-yellow-500/30 text-yellow-200'
-                                : 'bg-amber-600/30 text-blue-200'
+                                ? 'bg-[rgba(201,168,76,0.06)] text-[#F0EBE0]'
+                                : 'bg-amber-600/30 text-[#9E8F75]'
                             }`}>
                               {suggestion.priority.toUpperCase()} PRIORITY
                             </span>
@@ -251,12 +251,12 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
         )}
 
         {/* HIPAA & Legal Compliance */}
-        <div className="mt-6 p-4 bg-red-500/10 border border-red-400/30 rounded-lg">
+        <div className="mt-6 p-4 bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg">
           <div className="flex items-start gap-3">
             <div className="text-red-400 text-xl">⚠️</div>
             <div>
-              <p className="text-red-300 font-semibold mb-1">Privacy & Compliance</p>
-              <p className="text-red-200 text-sm">
+              <p className="text-[#F0EBE0] font-semibold mb-1">Privacy & Compliance</p>
+              <p className="text-[#F0EBE0] text-sm">
                 All customizations must comply with HIPAA regulations, state laws, and federal guidelines. 
                 Patient health information (PHI) must never be shared in customizable fields. 
                 The system automatically prevents violations of privacy and security policies.

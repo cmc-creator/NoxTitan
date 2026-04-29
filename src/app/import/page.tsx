@@ -215,7 +215,7 @@ export default function ImportPage() {
                       <div className="text-xs text-[#9E8F75]">Data Accuracy</div>
                     </div>
                     <div className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-3">
-                      <div className="text-2xl font-bold text-orange-400">Free</div>
+                      <div className="text-2xl font-bold text-[#9E8F75]">Free</div>
                       <div className="text-xs text-[#9E8F75]">Migration Help</div>
                     </div>
                   </div>
@@ -312,7 +312,7 @@ export default function ImportPage() {
         {/* Step 2: Upload (Simplified for demo) */}
         {activeStep === 'upload' && (
           <div className="space-y-6">
-            <div className="p-12 border-2 border-dashed border-[rgba(201,168,76,0.22)] rounded text-center hover:border-amber-500/40 transition-all cursor-pointer" style={{ background: 'var(--card-bg)' }}>
+            <div className="p-12 border-2 border-dashed border-[rgba(201,168,76,0.22)] rounded text-center hover:border-[rgba(201,168,76,0.45)] transition-all cursor-pointer" style={{ background: 'var(--card-bg)' }}>
               <Upload className="w-16 h-16 mx-auto mb-4 text-amber-400" />
               <h3 className="text-2xl font-bold text-white mb-2">Drop your file here or click to browse</h3>
               <p className="text-[#9E8F75] mb-4">Supports CSV, Excel (.xlsx, .xls), and JSON files up to 50MB</p>
@@ -426,8 +426,8 @@ export default function ImportPage() {
                 <div className="text-3xl font-bold text-[#C9A84C] 400">122</div>
                 <div className="text-sm text-[#9E8F75]">Valid Records</div>
               </div>
-              <div className="p-4 rounded bg-yellow-500/20 border border-yellow-500/50">
-                <div className="text-3xl font-bold text-yellow-400">3</div>
+              <div className="p-4 rounded bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)]">
+                <div className="text-3xl font-bold text-[#C9A84C]">3</div>
                 <div className="text-sm text-[#9E8F75]">Warnings</div>
               </div>
               <div className="p-4 rounded bg-[#110F0B] 500/20 border border-[rgba(201,168,76,0.22)] 500/50">
@@ -456,11 +456,11 @@ export default function ImportPage() {
                       <tr key={index} className="border-b border-[rgba(201,168,76,0.22)]">
                         <td className="py-3 px-4">
                           {row.status === 'valid' && <CheckCircle className="w-5 h-5 text-[#C9A84C] 400" />}
-                          {row.status === 'warning' && <AlertCircle className="w-5 h-5 text-yellow-400" />}
+                          {row.status === 'warning' && <AlertCircle className="w-5 h-5 text-[#C9A84C]" />}
                           {row.status === 'error' && <AlertCircle className="w-5 h-5 text-[#9E8F75] 400" />}
                         </td>
                         <td className="py-3 px-4 text-white">{row.firstName}</td>
-                        <td className="py-3 px-4 text-white">{row.lastName || <span className="text-yellow-400">Missing</span>}</td>
+                        <td className="py-3 px-4 text-white">{row.lastName || <span className="text-[#C9A84C]">Missing</span>}</td>
                         <td className="py-3 px-4 text-white">{row.status === 'error' ? <span className="text-[#9E8F75] 400">{row.email}</span> : row.email}</td>
                         <td className="py-3 px-4 text-white">{row.department}</td>
                         <td className="py-3 px-4 text-white">{row.role}</td>

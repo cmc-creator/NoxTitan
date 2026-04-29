@@ -108,7 +108,7 @@ export default function OnboardingPage() {
         {step === 1 && (
           <div className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-8">
             <h1 className="text-3xl font-bold text-white mb-4 flex items-center gap-3">
-              <Sparkles className="w-8 h-8 text-yellow-400" />
+              <Sparkles className="w-8 h-8 text-[#C9A84C]" />
               Welcome to NyxTitan!
             </h1>
             <p className="text-[#9E8F75] mb-6">Let's get you set up. First, what's your role?</p>

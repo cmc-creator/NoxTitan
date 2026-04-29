@@ -76,28 +76,28 @@ export default function EmployeeSelfService() {
         {/* Quick Actions */}
         <div className="grid grid-cols-4 gap-4 mb-8">
           <button className="bg-[rgba(201,168,76,0.06)]/50/50 rounded p-4 border-2 border-amber-500/40/30 transition-all flex items-center gap-3 group">
-            <Calendar className="w-8 h-8 text-amber-400 group-hover:scale-110 transition-transform" />
+            <Calendar className="w-8 h-8 text-amber-400 group- transition-transform" />
             <div className="text-left">
               <div className="text-white font-bold">Request Time Off</div>
               <div className="text-xs text-[#9E8F75]">120 hrs PTO available</div>
             </div>
           </button>
           <button className="bg-[rgba(201,168,76,0.06)]/50/50 rounded p-4 border-2 border-[rgba(201,168,76,0.22)] transition-all flex items-center gap-3 group">
-            <Download className="w-8 h-8 text-[#9E8F75] group-hover:scale-110 transition-transform" />
+            <Download className="w-8 h-8 text-[#9E8F75] group- transition-transform" />
             <div className="text-left">
               <div className="text-white font-bold">Get Pay Stub</div>
               <div className="text-xs text-[#9E8F75]">Latest: Jan 1, 2026</div>
             </div>
           </button>
           <button className="bg-[rgba(201,168,76,0.04)]/50/50 rounded p-4 border-2 border-amber-500/40/30 transition-all flex items-center gap-3 group">
-            <Heart className="w-8 h-8 text-pink-400 group-hover:scale-110 transition-transform" />
+            <Heart className="w-8 h-8 text-[#9E8F75] group- transition-transform" />
             <div className="text-left">
               <div className="text-white font-bold">Update Benefits</div>
               <div className="text-xs text-[#9E8F75]">Open enrollment</div>
             </div>
           </button>
-          <button className="bg-[rgba(201,168,76,0.06)]/50/50 rounded p-4 border-2 border-orange-500/30 transition-all flex items-center gap-3 group">
-            <Edit className="w-8 h-8 text-orange-400 group-hover:scale-110 transition-transform" />
+          <button className="bg-[rgba(201,168,76,0.06)]/50/50 rounded p-4 border-2 border-[rgba(201,168,76,0.22)] transition-all flex items-center gap-3 group">
+            <Edit className="w-8 h-8 text-[#9E8F75] group- transition-transform" />
             <div className="text-left">
               <div className="text-white font-bold">Update Profile</div>
               <div className="text-xs text-[#9E8F75]">Keep info current</div>
@@ -183,14 +183,14 @@ export default function EmployeeSelfService() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3 col-span-2">
-                  <MapPin className="w-6 h-6 text-orange-400 mt-1" />
+                  <MapPin className="w-6 h-6 text-[#9E8F75] mt-1" />
                   <div>
                     <label className="text-sm text-[#9E8F75] mb-1 block">Address</label>
                     <div className="text-lg text-white">{employee.address}</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 col-span-2">
-                  <Users className="w-6 h-6 text-pink-400 mt-1" />
+                  <Users className="w-6 h-6 text-[#9E8F75] mt-1" />
                   <div>
                     <label className="text-sm text-[#9E8F75] mb-1 block">Emergency Contact</label>
                     <div className="text-lg text-white">{employee.emergencyContact}</div>
@@ -280,16 +280,16 @@ export default function EmployeeSelfService() {
 
         {/* Benefits Tab */}
         {activeTab === 'benefits' && (
-          <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-pink-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">My Benefits</h2>
-              <button className="px-4 py-2 bg-pink-600 hover:bg-pink-500 text-white rounded-lg font-semibold">
+              <button className="px-4 py-2 bg-[rgba(201,168,76,0.12)] hover:bg-[rgba(201,168,76,0.12)] text-white rounded-lg font-semibold">
                 Change Benefits
               </button>
             </div>
             <div className="space-y-4">
               {benefits.map((benefit, idx) => (
-                <div key={idx} className="bg-[#110F0B]/50 rounded-lg p-5 border border-[rgba(201,168,76,0.22)] hover:border-pink-500 transition-all">
+                <div key={idx} className="bg-[#110F0B]/50 rounded-lg p-5 border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
@@ -334,7 +334,7 @@ export default function EmployeeSelfService() {
 
         {/* Documents Tab */}
         {activeTab === 'documents' && (
-          <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-orange-500/30">
+          <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <h2 className="text-2xl font-bold text-white mb-6">My Documents</h2>
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-[#110F0B]/50 rounded-lg p-5 border border-[rgba(201,168,76,0.22)]">

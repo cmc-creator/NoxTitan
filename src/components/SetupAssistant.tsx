@@ -305,7 +305,7 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
   const currentStepData = guide.steps[currentStep];
 
   return (
-    <div className="bg-gradient-to-br from-[#070604] to-[#070604] rounded p-6 border-2 border-amber-500/40">
+    <div className="bg-[#110F0B] rounded p-6 border-2 border-amber-500/40">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
@@ -314,13 +314,13 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
           </div>
           <div>
             <h3 className="text-xl font-bold text-white">AI Setup Assistant</h3>
-            <p className="text-sm text-blue-200">I'll guide you step-by-step to find your {guide.name} API key</p>
+            <p className="text-sm text-[#9E8F75]">I'll guide you step-by-step to find your {guide.name} API key</p>
           </div>
         </div>
         <button
           onClick={() => setVoiceEnabled(!voiceEnabled)}
           className={`p-2 rounded-lg transition-colors ${
-            voiceEnabled ? 'bg-green-600 text-white' : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75]'
+            voiceEnabled ? 'bg-green-500 text-white' : 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75]'
           }`}
           title={voiceEnabled ? 'Voice guidance ON' : 'Voice guidance OFF'}
         >
@@ -331,7 +331,7 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Steps Sidebar */}
         <div className="lg:col-span-1">
-          <h4 className="text-sm font-bold text-blue-200 mb-3">STEPS ({guide.steps.length})</h4>
+          <h4 className="text-sm font-bold text-[#9E8F75] mb-3">STEPS ({guide.steps.length})</h4>
           <div className="space-y-2">
             {guide.steps.map((step, idx) => (
               <button
@@ -341,7 +341,7 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
                   currentStep === idx
                     ? 'bg-amber-600 text-white scale-105'
                     : currentStep > idx
-                    ? 'bg-green-600/30 text-green-200 hover:bg-green-600/50'
+                    ? 'bg-[rgba(201,168,76,0.06)] text-[#F0EBE0] hover:bg-[rgba(201,168,76,0.06)]'
                     : 'bg-[rgba(201,168,76,0.06)]/50 text-[#9E8F75] hover:bg-[rgba(201,168,76,0.06)]/50'
                 }`}
               >
@@ -381,12 +381,12 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
 
             {/* Highlight */}
             {currentStepData.highlight && (
-              <div className="bg-yellow-900/30 border border-yellow-500/50 rounded-lg p-3 mb-4">
+              <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg p-3 mb-4">
                 <div className="flex items-start gap-2">
-                  <span className="text-yellow-400 text-lg">👉</span>
+                  <span className="text-[#C9A84C] text-lg">👉</span>
                   <div>
-                    <div className="text-xs font-bold text-yellow-400 mb-1">LOOK FOR THIS:</div>
-                    <div className="text-sm text-yellow-200">{currentStepData.highlight}</div>
+                    <div className="text-xs font-bold text-[#C9A84C] mb-1">LOOK FOR THIS:</div>
+                    <div className="text-sm text-[#F0EBE0]">{currentStepData.highlight}</div>
                   </div>
                 </div>
               </div>
@@ -394,12 +394,12 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
 
             {/* Important Note */}
             {currentStepData.important && (
-              <div className="bg-red-900/30 border border-red-500/50 rounded-lg p-3 mb-4">
+              <div className="bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg p-3 mb-4">
                 <div className="flex items-start gap-2">
                   <span className="text-red-400 text-lg">⚠️</span>
                   <div>
                     <div className="text-xs font-bold text-red-400 mb-1">IMPORTANT:</div>
-                    <div className="text-sm text-red-200">{currentStepData.important}</div>
+                    <div className="text-sm text-[#F0EBE0]">{currentStepData.important}</div>
                   </div>
                 </div>
               </div>
@@ -463,12 +463,12 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
           </div>
 
           {/* Quick Tips */}
-          <div className="mt-4 bg-green-900/30 border border-green-500/50 rounded-lg p-4">
+          <div className="mt-4 bg-[rgba(201,168,76,0.06)] border border-[rgba(201,168,76,0.22)] rounded-lg p-4">
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-green-400 mt-0.5" />
               <div>
                 <div className="text-sm font-bold text-green-400 mb-1">Pro Tips:</div>
-                <ul className="text-xs text-green-200 space-y-1">
+                <ul className="text-xs text-[#F0EBE0] space-y-1">
                   <li>• Take a screenshot of your API key before leaving the page</li>
                   <li>• Store it in a password manager for safekeeping</li>
                   <li>• Never share your API key publicly or in chat/email</li>

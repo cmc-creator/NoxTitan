@@ -231,12 +231,12 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
       <div className="fixed bottom-6 left-6 z-50 group">
         <button
           onClick={() => setIsOpen(true)}
-          className="relative w-24 h-24 rounded-full shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center transition-all hover:scale-110 overflow-hidden"
+          className="relative w-24 h-24 rounded-full shadow-2xl hover:shadow-[rgba(201,168,76,0.2)] flex items-center justify-center transition-all overflow-hidden"
           style={{background: 'transparent'}}
           aria-label="Open Nox AI Assistant"
           title="Nox - Voice & Strategic AI Assistant"
         >
-          <img src="/nox-logo.png" alt="Nox" className="w-full h-full object-contain group-hover:scale-110 transition-transform" style={{imageRendering: 'crisp-edges'}} />
+          <img src="/nox-logo.png" alt="Nox" className="w-full h-full object-contain group- transition-transform" style={{imageRendering: 'crisp-edges'}} />
           {isListening && (
             <div className="absolute inset-0 rounded-full bg-red-500 animate-ping opacity-75"></div>
           )}
@@ -258,12 +258,12 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-28 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-40 border-2 border-white/30"
+          className="fixed bottom-6 right-28 bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] text-white p-4 rounded-full shadow-2xl transition-transform z-40 border-2 border-white/30"
           title="Nox - Voice AI Assistant"
         >
           <div className="relative">
             <Sparkles className="h-7 w-7" />
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
           </div>
         </button>
       )}
@@ -282,7 +282,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
           </div>
           <div>
             <h3 className="text-white font-bold">🌙 Nox AI Assistant</h3>
-            <p className="text-xs text-blue-100">Voice-enabled • Always learning</p>
+            <p className="text-xs text-[#9E8F75]">Voice-enabled • Always learning</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -322,7 +322,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
             >
               <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
               <p className={`text-xs mt-1 ${
-                msg.role === 'user' ? 'text-blue-100' : 'text-[#9E8F75]'
+                msg.role === 'user' ? 'text-[#9E8F75]' : 'text-[#9E8F75]'
               }`}>
                 {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
               </p>
@@ -351,7 +351,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
               onKeyPress={handleKeyPress}
               placeholder="Ask me anything or click the mic..."
               rows={1}
-              className="w-full px-4 py-3 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded text-white placeholder-stone-500 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20 resize-none"
+              className="w-full px-4 py-3 bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded text-white placeholder-stone-500 focus:outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] resize-none"
             />
           </div>
           <button
@@ -359,7 +359,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
             disabled={isLoading}
             className={`p-3 rounded transition-all disabled:opacity-50 ${
               isListening
-                ? 'bg-red-600 hover:bg-red-700 animate-pulse'
+                ? 'bg-red-500 hover:bg-red-500'
                 : 'bg-[rgba(201,168,76,0.04)] hover:bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)]'
             }`}
             title={isListening ? 'Stop listening' : 'Start voice input'}
@@ -382,7 +382,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
         
         {isListening && (
           <div className="mt-2 flex items-center gap-2 text-xs text-red-400">
-            <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
             Listening... Speak now
           </div>
         )}

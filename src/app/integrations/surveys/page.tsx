@@ -305,7 +305,7 @@ export default function SurveyIntegrationsPage() {
                       <input
                         type={showApiKey === selectedPlatform ? 'text' : 'password'}
                         placeholder="Enter your API key..."
-                        className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500 pr-12"
+                        className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] pr-12"
                       />
                       <button
                         onClick={() => setShowApiKey(showApiKey === selectedPlatform ? null : selectedPlatform)}
@@ -345,7 +345,7 @@ export default function SurveyIntegrationsPage() {
                     <label className="block text-sm font-medium text-[#C9A84C] mb-2">
                       Sync Frequency
                     </label>
-                    <select className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500">
+                    <select className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)]">
                       <option value="realtime">Real-time (with webhook)</option>
                       <option value="5">Every 5 minutes</option>
                       <option value="15">Every 15 minutes</option>
