@@ -266,11 +266,11 @@ export default function EmployeeDetailPage({ params }: { params: { id: string } 
 
   const getSkillLevelColor = (level: string) => {
     switch (level) {
-      case 'expert': return 'bg-purple-500/20 text-purple-400';
-      case 'advanced': return 'bg-blue-500/20 text-blue-400';
-      case 'intermediate': return 'bg-green-500/20 text-green-400';
-      case 'beginner': return 'bg-amber-500/20 text-amber-400';
-      default: return 'bg-gray-500/20 text-gray-400';
+      case 'expert': return 'bg-[rgba(201,168,76,0.15)] text-[#C9A84C]';
+      case 'advanced': return 'bg-[rgba(201,168,76,0.10)] text-[#C9A84C]';
+      case 'intermediate': return 'bg-[rgba(201,168,76,0.06)] text-[#9E8F75]';
+      case 'beginner': return 'bg-[rgba(201,168,76,0.04)] text-[#9E8F75]';
+      default: return 'bg-[rgba(201,168,76,0.04)] text-[#5A5040]';
     }
   };
 
