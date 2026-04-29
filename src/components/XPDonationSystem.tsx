@@ -125,7 +125,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
   return (
     <div className="space-y-6">
       {/* Header with Stats */}
-      <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
+      <div className="bg-[rgba(201,168,76,0.06)]  rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
         <div className="flex items-center gap-3 mb-4">
           <Gift className="w-8 h-8 text-[#9E8F75]" />
           <div>
@@ -219,7 +219,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
       {activeTab === 'give' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Donation Form */}
-          <div className="lux-card/80 backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
+          <div className="lux-card/80  rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <Gift className="w-6 h-6 text-[#9E8F75]" />
               Donate XP to Someone Special
@@ -321,7 +321,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
           </div>
 
           {/* Recent Donations */}
-          <div className="lux-card/80 backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
+          <div className="lux-card/80  rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <h3 className="text-xl font-bold text-white mb-4">Recent Donations</h3>
             <div className="space-y-3">
               {recentDonations.map(donation => (
@@ -348,7 +348,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
           {receivedGifts.map(gift => (
             <div
               key={gift.id}
-              className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]"
+              className="bg-[rgba(201,168,76,0.06)]  rounded p-6 border-2 border-[rgba(201,168,76,0.22)]"
             >
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-3">
@@ -375,7 +375,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
       {activeTab === 'limits' && (
         <div className="space-y-6">
           {/* Your Limits */}
-          <div className="bg-[rgba(201,168,76,0.04)] backdrop-blur-xl rounded p-6 border-2 border-amber-500/40/30">
+          <div className="bg-[rgba(201,168,76,0.04)]  rounded p-6 border-2 border-amber-500/40/30">
             <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
               <Lock className="w-6 h-6 text-amber-400" />
               Your Donation Limits ({userRole.charAt(0).toUpperCase() + userRole.slice(1)})
@@ -400,7 +400,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
           </div>
 
           {/* Rules & Guidelines */}
-          <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
+          <div className="bg-[rgba(201,168,76,0.06)]  rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <h3 className="text-xl font-bold text-white mb-4">Donation Rules & Guidelines</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
@@ -449,7 +449,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
           </div>
 
           {/* Why These Limits? */}
-          <div className="lux-card/80 backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
+          <div className="lux-card/80  rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <h3 className="text-xl font-bold text-white mb-4">Why Do We Have Donation Limits?</h3>
             <div className="space-y-3 text-[#9E8F75]">
               <p>💡 <strong>Prevents System Gaming:</strong> Without limits, users could trade XP to artificially boost rankings.</p>

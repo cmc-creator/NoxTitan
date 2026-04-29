@@ -77,7 +77,7 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
   };
 
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 bg-black/60  z-50 flex items-center justify-center p-4">
       <div className="lux-card rounded p-6 max-w-6xl w-full border-2 border-amber-500/30 shadow-2xl max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">

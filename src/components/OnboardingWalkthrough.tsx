@@ -200,7 +200,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
   const progress = ((currentStep + 1) / steps.length) * 100;
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 bg-black/50  z-50 flex items-center justify-center p-4">
       <Confetti />
       <div className="lux-app-bg rounded shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col border border-[rgba(201,168,76,0.22)]">
         {/* Header */}

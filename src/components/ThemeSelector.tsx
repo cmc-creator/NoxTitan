@@ -87,7 +87,7 @@ export default function ThemeSelector() {
         {/* Dark/Light Mode Toggle */}
         <button
           onClick={toggleDarkMode}
-          className="flex items-center gap-2 px-3 py-2 bg-[#110F0B]/10 backdrop-blur-sm text-white rounded-lg hover:bg-[#110F0B]/20 transition-all border border-white/20"
+          className="flex items-center gap-2 px-3 py-2 bg-[#110F0B]/10  text-white rounded-lg hover:bg-[#110F0B]/20 transition-all border border-white/20"
           title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
         >
           {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -96,7 +96,7 @@ export default function ThemeSelector() {
         {/* Theme Customizer */}
         <button 
           onClick={() => setShowPanel(!showPanel)}
-          className="flex items-center gap-2 px-4 py-2 bg-[#110F0B]/10 backdrop-blur-sm text-white rounded-lg hover:bg-[#110F0B]/20 transition-all border border-white/20"
+          className="flex items-center gap-2 px-4 py-2 bg-[#110F0B]/10  text-white rounded-lg hover:bg-[#110F0B]/20 transition-all border border-white/20"
         >
           <Palette className="h-5 w-5" />
           <span className="hidden md:inline">Customize</span>
@@ -104,7 +104,7 @@ export default function ThemeSelector() {
       </div>
 
       {showPanel && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/50  z-50 flex items-center justify-center p-4">
           <div className="bg-[#110F0B] rounded shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden border border-[rgba(201,168,76,0.22)]">
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-[rgba(201,168,76,0.22)]">

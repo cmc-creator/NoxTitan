@@ -178,7 +178,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
     <div className="space-y-6">
       {/* Header with Key Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
+        <div className="bg-[rgba(201,168,76,0.06)]  rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center justify-between mb-2">
             <Target className="w-6 h-6 text-green-400" />
             <TrendingUp className="w-5 h-5 text-[#F0EBE0]" />
@@ -188,7 +188,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
           <p className="text-xs text-green-400 mt-1">+{successMetrics.current90DayRetention - successMetrics.industryAvg90Day}% vs industry</p>
         </div>
 
-        <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
+        <div className="bg-[rgba(201,168,76,0.06)]  rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center justify-between mb-2">
             <Heart className="w-6 h-6 text-[#9E8F75]" />
             <TrendingUp className="w-5 h-5 text-[#9E8F75]" />
@@ -198,7 +198,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
           <p className="text-xs text-[#9E8F75] mt-1">+{successMetrics.current1YearRetention - successMetrics.industryAvg1Year}% vs industry</p>
         </div>
 
-        <div className="bg-[rgba(201,168,76,0.04)] backdrop-blur-xl rounded p-4 border-2 border-amber-500/40/30">
+        <div className="bg-[rgba(201,168,76,0.04)]  rounded p-4 border-2 border-amber-500/40/30">
           <div className="flex items-center justify-between mb-2">
             <Clock className="w-6 h-6 text-amber-400" />
           </div>
@@ -207,7 +207,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
           <p className="text-xs text-[#9E8F75] mt-1">Target: {successMetrics.targetOnboardingTime} weeks</p>
         </div>
 
-        <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
+        <div className="bg-[rgba(201,168,76,0.06)]  rounded p-4 border-2 border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center justify-between mb-2">
             <Users className="w-6 h-6 text-[#C9A84C]" />
           </div>
@@ -266,7 +266,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
           {activeOnboarding.map((employee) => (
             <div
               key={employee.id}
-              className={`bg-gradient-to-br backdrop-blur-xl rounded p-6 border-2 ${
+              className={`  rounded p-6 border-2 ${
                 employee.status === 'excellent'
                   ? 'from-green-500/20 to-emerald-500/20 border-[rgba(201,168,76,0.22)]'
                   : employee.status === 'needs-attention'
@@ -378,7 +378,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
           {retentionRisks.map((employee) => (
             <div
               key={employee.id}
-              className={`bg-gradient-to-br backdrop-blur-xl rounded p-6 border-2 ${
+              className={`  rounded p-6 border-2 ${
                 employee.riskLevel === 'high'
                   ? 'from-red-500/20 to-orange-500/20 border-[rgba(201,168,76,0.22)]'
                   : 'from-yellow-500/20 to-orange-500/20 border-[rgba(201,168,76,0.22)]'
@@ -454,7 +454,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
           ))}
 
           {retentionRisks.length === 0 && (
-            <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-12 border-2 border-[rgba(201,168,76,0.22)] text-center">
+            <div className="bg-[rgba(201,168,76,0.06)]  rounded p-12 border-2 border-[rgba(201,168,76,0.22)] text-center">
               <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-white mb-2">No High-Risk Employees!</h3>
               <p className="text-[#9E8F75]">Your team retention is looking excellent. Keep up the great work!</p>
@@ -467,7 +467,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
       {activeTab === 'analytics' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Onboarding Checklist */}
-          <div className="lux-card/80 backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
+          <div className="lux-card/80  rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
             <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
               <FileText className="w-6 h-6 text-[#9E8F75]" />
               Onboarding Checklist Template
@@ -491,7 +491,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
 
           {/* Best Practices & Insights */}
           <div className="space-y-6">
-            <div className="bg-[rgba(201,168,76,0.04)] backdrop-blur-xl rounded p-6 border-2 border-amber-500/40/30">
+            <div className="bg-[rgba(201,168,76,0.04)]  rounded p-6 border-2 border-amber-500/40/30">
               <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <Award className="w-6 h-6 text-amber-400" />
                 Best Practices
@@ -522,7 +522,7 @@ export default function OnboardingRetentionHub({ role = 'manager' }: OnboardingR
               </div>
             </div>
 
-            <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
+            <div className="bg-[rgba(201,168,76,0.06)]  rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
               <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <TrendingUp className="w-6 h-6 text-[#9E8F75]" />
                 Your Performance vs Industry

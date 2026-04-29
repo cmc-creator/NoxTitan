@@ -194,7 +194,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
     <div className="space-y-6">
       {/* Notifications Section */}
       {showNotifications && notifications.length > 0 && (
-        <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
+        <div className="bg-[rgba(201,168,76,0.06)]  rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center gap-3 mb-4">
             <AlertCircle className="w-6 h-6 text-[#C9A84C]" />
             <h3 className="text-xl font-bold text-white">Talent Action Items</h3>
@@ -256,7 +256,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
         {topTalent.map((employee) => (
           <div
             key={employee.id}
-            className="lux-card/80 backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all cursor-pointer"
+            className="lux-card/80  rounded p-6 border-2 border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all cursor-pointer"
             onClick={() => setSelectedEmployee(employee)}
           >
             {/* Header */}
@@ -329,7 +329,7 @@ export default function TalentIdentificationSystem({ managerId, showNotification
 
       {/* Detailed View Modal */}
       {selectedEmployee && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/70  z-50 flex items-center justify-center p-4">
           <div className="lux-card rounded p-8 max-w-4xl w-full border-2 border-[rgba(201,168,76,0.22)] shadow-2xl max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-4">

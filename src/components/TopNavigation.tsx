@@ -49,13 +49,13 @@ export default function TopNavigation() {
   };
   
   return (
-    <nav className="w-full flex items-center justify-between px-6 py-3 bg-[rgba(201,168,76,0.08)] backdrop-blur-xl shadow-2xl sticky top-0 z-50 border-b border-amber-500/30">
+    <nav className="w-full flex items-center justify-between px-6 py-3 bg-[rgba(201,168,76,0.08)]  shadow-2xl sticky top-0 z-50 border-b border-amber-500/30">
       <div className="flex items-center gap-3">
         {/* Logo and placeholder removed as requested */}
         <Link href="/" className="flex items-center gap-2 text-4xl md:text-5xl font-black text-white tracking-tight text-pop-strong">
           <span className="relative inline-block transform transition-transform duration-300">
             {/* Base metallic text with lighter purple-tinted chrome */}
-            <span className="text-transparent bg-clip-text bg-[#110F0B]"
+            <span className="text-[#C9A84C] bg-[#110F0B]"
                   style={{
                     textShadow: `
                       0 1px 0 rgba(255,255,255,0.9),
@@ -73,7 +73,7 @@ export default function TopNavigation() {
               NyxTitan
             </span>
             {/* Top highlight shine */}
-            <span className="absolute inset-0 text-transparent bg-clip-text bg-[#110F0B] opacity-90"
+            <span className="absolute inset-0 text-[#C9A84C] bg-[#110F0B] opacity-90"
                   style={{ WebkitTextStroke: '0px' }}>
               NyxTitan
             </span>
@@ -92,7 +92,7 @@ export default function TopNavigation() {
                   textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.7)',
                   boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2), 0 0 15px rgba(168,85,247,0.6)'
                 }}>
-            <span className="text-transparent bg-clip-text bg-[#110F0B]"
+            <span className="text-[#C9A84C] bg-[#110F0B]"
                   style={{
                     WebkitTextStroke: '0.5px rgba(168,85,247,0.4)',
                     filter: 'brightness(1.5)'
@@ -105,7 +105,7 @@ export default function TopNavigation() {
       <div className="hidden md:flex items-center gap-6 text-base font-semibold">
         <Link href="/dashboard" className="relative px-5 py-2.5 rounded-lg border-2 border-amber-400 bg-[#110F0B] hover:border-[rgba(201,168,76,0.45)] hover:shadow-[rgba(201,168,76,0.2)] transition-all group shadow-[rgba(201,168,76,0.2)] flex items-center gap-2">
           <Zap className="w-4 h-4 text-[#E8C060]" />
-          <span className="text-transparent bg-clip-text bg-[#110F0B] font-bold"
+          <span className="text-[#C9A84C] bg-[#110F0B] font-bold"
                 style={{
                   textShadow: '0 1px 3px rgba(0,0,0,0.9), 0 0 20px rgba(168,85,247,0.8)',
                   WebkitTextStroke: '0.5px rgba(168,85,247,0.4)',
@@ -115,7 +115,7 @@ export default function TopNavigation() {
           </span>
         </Link>
         <Link href="/calendar" className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-[#110F0B]/30 hover:border-[rgba(201,168,76,0.45)] hover:shadow-[rgba(201,168,76,0.2)] transition-all group">
-          <span className="text-transparent bg-clip-text bg-[#110F0B]"
+          <span className="text-[#C9A84C] bg-[#110F0B]"
                 style={{
                   textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.6)',
                   WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
@@ -125,7 +125,7 @@ export default function TopNavigation() {
           </span>
         </Link>
         <Link href="/hr" className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-[#110F0B]/30 hover:border-[rgba(201,168,76,0.45)] hover:shadow-[rgba(201,168,76,0.2)] transition-all group">
-          <span className="text-transparent bg-clip-text bg-[#110F0B]"
+          <span className="text-[#C9A84C] bg-[#110F0B]"
                 style={{
                   textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.6)',
                   WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
@@ -136,7 +136,7 @@ export default function TopNavigation() {
         </Link>
 
         <Link href="/compliance" className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-[#110F0B]/30 hover:border-[rgba(201,168,76,0.45)] hover:shadow-[rgba(201,168,76,0.2)] transition-all group">
-          <span className="text-transparent bg-clip-text bg-[#110F0B]"
+          <span className="text-[#C9A84C] bg-[#110F0B]"
                 style={{
                   textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.6)',
                   WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
@@ -153,7 +153,7 @@ export default function TopNavigation() {
             onMouseEnter={() => setEnterpriseMenuOpen(true)}
             className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-[#110F0B]/30 hover:border-[rgba(201,168,76,0.45)] hover:shadow-[rgba(201,168,76,0.2)] transition-all group flex items-center gap-2"
           >
-            <span className="text-transparent bg-clip-text bg-[#110F0B]"
+            <span className="text-[#C9A84C] bg-[#110F0B]"
                   style={{
                     textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.6)',
                     WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
@@ -166,7 +166,7 @@ export default function TopNavigation() {
           {enterpriseMenuOpen && (
             <div className="absolute top-full mt-2 right-0 min-w-[200px] bg-[rgba(201,168,76,0.08)] border-2 border-amber-500/40 rounded-lg shadow-[rgba(201,168,76,0.2)] z-50">
               <Link href="/qapi" className="block px-4 py-3 hover:bg-amber-900/40 border-b border-amber-500/20 transition-colors text-center">
-                <span className="text-transparent bg-clip-text bg-[#110F0B]"
+                <span className="text-[#C9A84C] bg-[#110F0B]"
                       style={{
                         textShadow: '0 1px 2px rgba(0,0,0,0.8)',
                         WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
@@ -176,7 +176,7 @@ export default function TopNavigation() {
                 </span>
               </Link>
               <Link href="/vault" className="block px-4 py-3 hover:bg-amber-900/40 border-b border-amber-500/20 transition-colors text-center">
-                <span className="text-transparent bg-clip-text bg-[#110F0B]"
+                <span className="text-[#C9A84C] bg-[#110F0B]"
                       style={{
                         textShadow: '0 1px 2px rgba(0,0,0,0.8)',
                         WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
@@ -186,7 +186,7 @@ export default function TopNavigation() {
                 </span>
               </Link>
               <Link href="/sentinel" className="block px-4 py-3 hover:bg-amber-900/40 border-b border-amber-500/20 transition-colors text-center">
-                <span className="text-transparent bg-clip-text bg-[#110F0B]"
+                <span className="text-[#C9A84C] bg-[#110F0B]"
                       style={{
                         textShadow: '0 1px 2px rgba(0,0,0,0.8)',
                         WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
@@ -196,7 +196,7 @@ export default function TopNavigation() {
                 </span>
               </Link>
               <Link href="/oracle" className="block px-4 py-3 hover:bg-amber-900/40 transition-colors text-center">
-                <span className="text-transparent bg-clip-text bg-[#110F0B]"
+                <span className="text-[#C9A84C] bg-[#110F0B]"
                       style={{
                         textShadow: '0 1px 2px rgba(0,0,0,0.8)',
                         WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
@@ -216,7 +216,7 @@ export default function TopNavigation() {
             onMouseEnter={() => setFinanceMenuOpen(true)}
             className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-[#110F0B]/30 hover:border-[rgba(201,168,76,0.45)] hover:shadow-[rgba(201,168,76,0.2)] transition-all group flex items-center gap-2"
           >
-            <span className="text-transparent bg-clip-text bg-[#110F0B]"
+            <span className="text-[#C9A84C] bg-[#110F0B]"
                   style={{
                     textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.6)',
                     WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
@@ -229,7 +229,7 @@ export default function TopNavigation() {
           {financeMenuOpen && (
             <div className="absolute top-full mt-2 right-0 min-w-[200px] bg-[rgba(201,168,76,0.08)] border-2 border-amber-500/40 rounded-lg shadow-[rgba(201,168,76,0.2)] z-50">
               <Link href="/payroll" className="block px-4 py-3 hover:bg-amber-900/40 border-b border-amber-500/20 transition-colors text-center">
-                <span className="text-transparent bg-clip-text bg-[#110F0B]"
+                <span className="text-[#C9A84C] bg-[#110F0B]"
                       style={{
                         textShadow: '0 1px 2px rgba(0,0,0,0.8)',
                         WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
@@ -239,7 +239,7 @@ export default function TopNavigation() {
                 </span>
               </Link>
               <Link href="/accounting" className="block px-4 py-3 hover:bg-amber-900/40 transition-colors text-center">
-                <span className="text-transparent bg-clip-text bg-[#110F0B]"
+                <span className="text-[#C9A84C] bg-[#110F0B]"
                       style={{
                         textShadow: '0 1px 2px rgba(0,0,0,0.8)',
                         WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
@@ -253,7 +253,7 @@ export default function TopNavigation() {
         </div>
         
         <Link href="/analytics" className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-[#110F0B]/30 hover:border-[rgba(201,168,76,0.45)] hover:shadow-[rgba(201,168,76,0.2)] transition-all group">
-          <span className="text-transparent bg-clip-text bg-[#110F0B]"
+          <span className="text-[#C9A84C] bg-[#110F0B]"
                 style={{
                   textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.6)',
                   WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
@@ -264,7 +264,7 @@ export default function TopNavigation() {
         </Link>
         <Link href="/activities" className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-[#110F0B]/30 hover:border-[rgba(201,168,76,0.45)] hover:shadow-[rgba(201,168,76,0.2)] transition-all group flex items-center gap-2">
           <Gamepad2 className="w-4 h-4 text-[#E8C060]" />
-          <span className="text-transparent bg-clip-text bg-[#110F0B]"
+          <span className="text-[#C9A84C] bg-[#110F0B]"
                 style={{
                   textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.6)',
                   WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
@@ -275,7 +275,7 @@ export default function TopNavigation() {
         </Link>
         <Link href="/guild/admin" className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-[#110F0B]/30 hover:border-[rgba(201,168,76,0.45)] hover:shadow-[rgba(201,168,76,0.2)] transition-all group flex items-center gap-2">
           <Crown className="w-4 h-4 text-[#E8C060]" />
-          <span className="text-transparent bg-clip-text bg-[#110F0B]"
+          <span className="text-[#C9A84C] bg-[#110F0B]"
                 style={{
                   textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.6)',
                   WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',
@@ -295,7 +295,7 @@ export default function TopNavigation() {
         </button>
         <Link href="/settings" className="relative px-4 py-2 rounded-lg border-2 border-amber-500/40 bg-[#110F0B]/30 hover:border-[rgba(201,168,76,0.45)] hover:shadow-[rgba(201,168,76,0.2)] transition-all group flex items-center gap-2">
           <Settings className="w-4 h-4 text-[#E8C060]" />
-          <span className="text-transparent bg-clip-text bg-[#110F0B]"
+          <span className="text-[#C9A84C] bg-[#110F0B]"
                 style={{
                   textShadow: '0 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(168,85,247,0.6)',
                   WebkitTextStroke: '0.5px rgba(168,85,247,0.3)',

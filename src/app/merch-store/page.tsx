@@ -169,10 +169,10 @@ export default function MerchStorePage() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-block relative mb-6">
-            <div className="absolute inset-0 bg-[#110F0B] 500 blur-3xl opacity-50"></div>
+            <div className="absolute inset-0 bg-[#110F0B] 500  opacity-50"></div>
             <ShoppingBag className="w-20 h-20 text-[#C9A84C] 300 relative" />
           </div>
-          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-[#110F0B] from-REMOVED-300 via-stone-900 to-amber-800 mb-4">
+          <h1 className="text-6xl font-bold text-[#C9A84C] mb-4" style={{fontFamily: "'Cormorant Garamond', serif"}}>
             Merch Store
           </h1>
           <p className="text-xl text-[#F0EBE0]/70 mb-6">

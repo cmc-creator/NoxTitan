@@ -193,7 +193,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
             {/* Preview */}
             <div className={`${themes.find(t => t.id === settings.theme)?.colors} rounded p-6 text-white`}>
               <h3 className="text-xl font-bold mb-3">Preview Your Basecamp</h3>
-              <div className="bg-[#110F0B]/20 backdrop-blur-sm rounded-lg p-4 flex items-center gap-4">
+              <div className="bg-[#110F0B]/20  rounded-lg p-4 flex items-center gap-4">
                 <div className="text-4xl">{settings.basebotAvatar}</div>
                 <div>
                   <p className="font-bold text-lg">Hi, I'm {settings.basebotName}!</p>

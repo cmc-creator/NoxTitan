@@ -602,7 +602,7 @@ export default function ThemeCustomizer() {
       </div>
 
       {showCustomizer && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-fade-in">
+        <div className="fixed inset-0 bg-black/70  flex items-center justify-center z-50 p-4 animate-fade-in">
           <div className="bg-[#110F0B] rounded shadow-2xl w-full max-w-6xl max-h-[95vh] overflow-hidden border-2 border-[rgba(201,168,76,0.22)] animate-slide-up">
             <div className="bg-[rgba(201,168,76,0.08)] p-6 flex items-center justify-between relative overflow-hidden">
               <div className="absolute inset-0 bg-[rgba(201,168,76,0.05)]"></div>

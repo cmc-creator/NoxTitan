@@ -82,7 +82,7 @@ export default function UnifiedDashboard() {
           <div className="space-y-3 relative z-10">
             {/* Open Incidents Notification */}
             <Link href="/qapi?filter=open" className="block">
-              <div className="p-3 sm:p-4 bg-[rgba(201,168,76,0.06)] backdrop-blur-sm rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all cursor-pointer group min-h-[44px]">
+              <div className="p-3 sm:p-4 bg-[rgba(201,168,76,0.06)]  rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all cursor-pointer group min-h-[44px]">
                 <div className="flex items-start justify-between gap-2">
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2 mb-2">
@@ -104,7 +104,7 @@ export default function UnifiedDashboard() {
 
             {/* Expiring Certifications Notification */}
             <Link href="/employees?filter=expiring-certs" className="block">
-              <div className="p-4 backdrop-blur-sm rounded-sm transition-all cursor-pointer group" style={{ background: 'rgba(42,28,8,0.55)', border: '1px solid rgba(140,90,15,0.32)' }}>
+              <div className="p-4  rounded-sm transition-all cursor-pointer group" style={{ background: 'rgba(42,28,8,0.55)', border: '1px solid rgba(140,90,15,0.32)' }}>
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
@@ -1215,7 +1215,7 @@ export default function UnifiedDashboard() {
           <div className="glass-tile glass-tile-yellow p-6">
             <h2 className="text-xl font-bold text-white mb-4 relative z-10">Quick Actions</h2>
             <div className="space-y-3 relative z-10">
-              <Link href="/qapi?tab=reports" className="block p-4 bg-[#110F0B]/5 backdrop-blur-sm rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-[rgba(201,168,76,0.45)] transition-all">
+              <Link href="/qapi?tab=reports" className="block p-4 bg-[#110F0B]/5  rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-[rgba(201,168,76,0.45)] transition-all">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <BarChart3 className="w-5 h-5 text-amber-400" />
@@ -1228,7 +1228,7 @@ export default function UnifiedDashboard() {
                 </div>
               </Link>
 
-              <Link href="/time-off" className="block p-4 bg-[#110F0B]/5 backdrop-blur-sm rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-[rgba(201,168,76,0.45)] transition-all">
+              <Link href="/time-off" className="block p-4 bg-[#110F0B]/5  rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-[rgba(201,168,76,0.45)] transition-all">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <Clock className="w-5 h-5 text-[#C9A84C]" />
@@ -1241,7 +1241,7 @@ export default function UnifiedDashboard() {
                 </div>
               </Link>
 
-              <Link href="/qapi?tab=incidents" className="block p-4 bg-[#110F0B]/5 backdrop-blur-sm rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-[rgba(201,168,76,0.22)] transition-all">
+              <Link href="/qapi?tab=incidents" className="block p-4 bg-[#110F0B]/5  rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-[rgba(201,168,76,0.22)] transition-all">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <AlertTriangle className="w-5 h-5 text-[#F0EBE0]" />
@@ -1254,7 +1254,7 @@ export default function UnifiedDashboard() {
                 </div>
               </Link>
 
-              <Link href="/compliance" className="block p-4 bg-[#110F0B]/5 backdrop-blur-sm rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-[rgba(201,168,76,0.22)] transition-all">
+              <Link href="/compliance" className="block p-4 bg-[#110F0B]/5  rounded-lg hover:bg-[#110F0B]/10 border border-white/10 hover:border-[rgba(201,168,76,0.22)] transition-all">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-[#F0EBE0]" />
@@ -1274,7 +1274,7 @@ export default function UnifiedDashboard() {
         <div className="glass-tile glass-tile-gold p-6">
           <h2 className="text-xl font-bold text-white mb-4 relative z-10">Notifications & Alerts</h2>
           <div className="space-y-3 relative z-10">
-            <div className="p-4 bg-[rgba(201,168,76,0.06)] backdrop-blur-sm rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all">
+            <div className="p-4 bg-[rgba(201,168,76,0.06)]  rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all">
               <div className="flex items-start gap-3">
                 <AlertTriangle className="w-5 h-5 text-[#F0EBE0] mt-0.5" />
                 <div>
@@ -1285,7 +1285,7 @@ export default function UnifiedDashboard() {
               </div>
             </div>
 
-            <div className="p-4 bg-[rgba(201,168,76,0.06)] backdrop-blur-sm rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all">
+            <div className="p-4 bg-[rgba(201,168,76,0.06)]  rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all">
               <div className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-[#F0EBE0] mt-0.5" />
                 <div>
@@ -1296,7 +1296,7 @@ export default function UnifiedDashboard() {
               </div>
             </div>
 
-            <div className="p-4 bg-amber-600/10 backdrop-blur-sm rounded-lg border border-amber-600/30 hover:border-[rgba(201,168,76,0.45)] transition-all">
+            <div className="p-4 bg-amber-600/10  rounded-lg border border-amber-600/30 hover:border-[rgba(201,168,76,0.45)] transition-all">
               <div className="flex items-start gap-3">
                 <Users className="w-5 h-5 text-amber-400 mt-0.5" />
                 <div>
@@ -1307,7 +1307,7 @@ export default function UnifiedDashboard() {
               </div>
             </div>
 
-            <div className="p-4 bg-[rgba(201,168,76,0.06)] backdrop-blur-sm rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all">
+            <div className="p-4 bg-[rgba(201,168,76,0.06)]  rounded-lg border border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all">
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-[#F0EBE0] mt-0.5" />
                 <div>

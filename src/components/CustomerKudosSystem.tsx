@@ -150,7 +150,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
+      <div className="bg-[rgba(201,168,76,0.06)]  rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
         <div className="flex items-center gap-3 mb-3">
           <Award className="w-8 h-8 text-[#C9A84C]" />
           <div>
@@ -221,7 +221,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           {pendingKudos.map(kudos => (
             <div
               key={kudos.id}
-              className={`lux-card/80 backdrop-blur-xl rounded p-6 border-2 ${
+              className={`lux-card/80  rounded p-6 border-2 ${
                 kudos.priority === 'high' 
                   ? 'border-[rgba(201,168,76,0.22)]' 
                   : 'border-[rgba(201,168,76,0.22)]'
@@ -344,7 +344,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
           {approvedKudos.map(kudos => (
             <div
               key={kudos.id}
-              className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-4 border-2 border-[rgba(201,168,76,0.22)]"
+              className="bg-[rgba(201,168,76,0.06)]  rounded p-4 border-2 border-[rgba(201,168,76,0.22)]"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -368,7 +368,7 @@ export default function CustomerKudosSystem({ industry = 'healthcare' }: Custome
 
       {/* Standalone Recognition Form */}
       {activeTab === 'standalone' && (
-        <div className="bg-[rgba(201,168,76,0.04)] backdrop-blur-xl rounded p-6 border-2 border-amber-500/40/30">
+        <div className="bg-[rgba(201,168,76,0.04)]  rounded p-6 border-2 border-amber-500/40/30">
           <h3 className="text-2xl font-bold text-white mb-4">Give Recognition</h3>
           <p className="text-[#F0EBE0]/70 mb-6">Managers and admins can give instant recognition, or recommend employees for customer feedback.</p>
           

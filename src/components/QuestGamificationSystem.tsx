@@ -198,7 +198,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
   return (
     <div className="space-y-6">
       {/* Player Stats Header */}
-      <div className={`${themes[selectedTheme].colors} backdrop-blur-xl rounded p-6 border-2 border-white/20 shadow-2xl`}>
+      <div className={`${themes[selectedTheme].colors}  rounded p-6 border-2 border-white/20 shadow-2xl`}>
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-4">
             <div className="text-6xl">{themes[selectedTheme].icon}</div>
@@ -215,7 +215,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
           <select
             value={selectedTheme}
             onChange={(e) => setSelectedTheme(e.target.value as any)}
-            className="bg-[#110F0B]/10 backdrop-blur-sm text-white rounded-lg px-4 py-2 border border-white/20 font-semibold"
+            className="bg-[#110F0B]/10  text-white rounded-lg px-4 py-2 border border-white/20 font-semibold"
           >
             {Object.entries(themes).map(([key, theme]) => (
               <option key={key} value={key} className="bg-[#110F0B]">
@@ -244,27 +244,27 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
 
         {/* Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          <div className="bg-[#110F0B]/10 backdrop-blur-sm rounded-lg p-3 text-center">
+          <div className="bg-[#110F0B]/10  rounded-lg p-3 text-center">
             <Gem className="w-6 h-6 text-[#9E8F75] mx-auto mb-1" />
             <p className="text-2xl font-bold text-white">{playerStats.gems}</p>
             <p className="text-xs text-white/70">{themes[selectedTheme].currency}</p>
           </div>
-          <div className="bg-[#110F0B]/10 backdrop-blur-sm rounded-lg p-3 text-center">
+          <div className="bg-[#110F0B]/10  rounded-lg p-3 text-center">
             <Trophy className="w-6 h-6 text-[#C9A84C] mx-auto mb-1" />
             <p className="text-2xl font-bold text-white">{playerStats.artifacts}</p>
             <p className="text-xs text-white/70">Artifacts Found</p>
           </div>
-          <div className="bg-[#110F0B]/10 backdrop-blur-sm rounded-lg p-3 text-center">
+          <div className="bg-[#110F0B]/10  rounded-lg p-3 text-center">
             <Award className="w-6 h-6 text-amber-400 mx-auto mb-1" />
             <p className="text-2xl font-bold text-white">{playerStats.achievements}</p>
             <p className="text-xs text-white/70">Achievements</p>
           </div>
-          <div className="bg-[#110F0B]/10 backdrop-blur-sm rounded-lg p-3 text-center">
+          <div className="bg-[#110F0B]/10  rounded-lg p-3 text-center">
             <Flame className="w-6 h-6 text-[#9E8F75] mx-auto mb-1" />
             <p className="text-2xl font-bold text-white">{playerStats.streakDays}</p>
             <p className="text-xs text-white/70">Day Streak</p>
           </div>
-          <div className="bg-[#110F0B]/10 backdrop-blur-sm rounded-lg p-3 text-center">
+          <div className="bg-[#110F0B]/10  rounded-lg p-3 text-center">
             <Star className="w-6 h-6 text-[#C9A84C] mx-auto mb-1" />
             <p className="text-2xl font-bold text-white">#{leaderboard.find(p => p.isCurrentUser)?.rank}</p>
             <p className="text-xs text-white/70">Team Rank</p>
@@ -325,7 +325,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
         <div className="space-y-6">
           {/* Completed Today */}
           {completedToday.length > 0 && (
-            <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
+            <div className="bg-[rgba(201,168,76,0.06)]  rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Zap className="w-6 h-6 text-[#C9A84C]" />
                 Quests Completed Today! 🎉
@@ -350,7 +350,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
           )}
 
           {/* Manager Challenge */}
-          <div className={`${managerChallenge.status === 'winning' ? 'from-stone-900/40 to-pink-900/40 border-amber-500/40/30' : 'from-red-900/40 to-orange-900/40 border-[rgba(201,168,76,0.22)]'} backdrop-blur-xl rounded p-6 border-2`}>
+          <div className={`${managerChallenge.status === 'winning' ? 'from-stone-900/40 to-pink-900/40 border-amber-500/40/30' : 'from-red-900/40 to-orange-900/40 border-[rgba(201,168,76,0.22)]'}  rounded p-6 border-2`}>
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
                 <Users className="w-6 h-6 text-amber-400" />
@@ -382,7 +382,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
           {/* Quest List */}
           <div className="grid grid-cols-1 gap-4">
             {activeQuests.map(quest => (
-              <div key={quest.id} className="lux-card/80 backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all">
+              <div key={quest.id} className="lux-card/80  rounded p-6 border-2 border-[rgba(201,168,76,0.22)] hover:border-[rgba(201,168,76,0.22)] transition-all">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-start gap-4 flex-1">
                     <div className="text-5xl">{quest.icon}</div>
@@ -504,7 +504,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
       {/* Treasure Chest Tab */}
       {activeTab === 'treasure' && (
         <div>
-          <div className="bg-[rgba(201,168,76,0.06)] backdrop-blur-xl rounded p-6 border-2 border-[rgba(201,168,76,0.22)] mb-6">
+          <div className="bg-[rgba(201,168,76,0.06)]  rounded p-6 border-2 border-[rgba(201,168,76,0.22)] mb-6">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-1">Your Treasure</h3>

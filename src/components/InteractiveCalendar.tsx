@@ -1119,7 +1119,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* Settings Modal */}
       {showSettings && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowSettings(false)}>
+        <div className="fixed inset-0 bg-black/70  z-50 flex items-center justify-center p-4" onClick={() => setShowSettings(false)}>
           <div className="bg-[rgba(201,168,76,0.08)] rounded shadow-2xl border-2 border-amber-500/50 max-w-2xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             {/* Header */}
             <div className="sticky top-0 bg-[rgba(201,168,76,0.08)] p-6 border-b-2 border-amber-500 flex items-center justify-between">
@@ -1395,7 +1395,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* AI Auto-Scheduler Modal */}
       {showAIScheduler && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowAIScheduler(false)}>
+        <div className="fixed inset-0 bg-black/70  z-50 flex items-center justify-center p-4" onClick={() => setShowAIScheduler(false)}>
           <div className="bg-[rgba(201,168,76,0.08)] rounded shadow-2xl border-2 border-amber-500/50 max-w-3xl w-full" onClick={(e) => e.stopPropagation()}>
             <div className="bg-[#110F0B] p-6 border-b-2 border-amber-500">
               <div className="flex items-center justify-between">
@@ -1493,7 +1493,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* Shift Marketplace Modal */}
       {showMarketplace && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowMarketplace(false)}>
+        <div className="fixed inset-0 bg-black/70  z-50 flex items-center justify-center p-4" onClick={() => setShowMarketplace(false)}>
           <div className="bg-[rgba(201,168,76,0.08)] rounded shadow-2xl border-2 border-[rgba(201,168,76,0.22)] max-w-4xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             <div className="sticky top-0 bg-[rgba(201,168,76,0.08)] p-6 border-b-2 border-[rgba(201,168,76,0.22)]">
               <div className="flex items-center justify-between">
@@ -1665,7 +1665,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* Quick Bonus Offer Modal */}
       {showBonusOffer && selectedShiftForBonus && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowBonusOffer(false)}>
+        <div className="fixed inset-0 bg-black/70  z-50 flex items-center justify-center p-4" onClick={() => setShowBonusOffer(false)}>
           <div className="bg-[rgba(201,168,76,0.08)] rounded shadow-2xl border-2 border-[rgba(201,168,76,0.22)] max-w-md w-full" onClick={(e) => e.stopPropagation()}>
             <div className="bg-[rgba(201,168,76,0.08)] p-6 border-b-2 border-[rgba(201,168,76,0.22)]">
               <div className="flex items-center justify-between">
@@ -1789,7 +1789,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* Templates Modal */}
       {showTemplates && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowTemplates(false)}>
+        <div className="fixed inset-0 bg-black/70  z-50 flex items-center justify-center p-4" onClick={() => setShowTemplates(false)}>
           <div className="flex flex-col" style={{ background: '#110F0B', borderRadius: '4px', border: '1px solid rgba(201,168,76,0.28)', boxShadow: '0 24px 64px rgba(0,0,0,0.8)', maxWidth: '48rem', width: '100%' }} onClick={(e) => e.stopPropagation()}>
             <div className="p-6 flex items-center justify-between" style={{ background: 'linear-gradient(135deg, #1A130A 0%, #110F0B 100%)', borderBottom: '1px solid rgba(201,168,76,0.22)' }}>
               <div className="flex items-center justify-between">
@@ -2211,7 +2211,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
       
       {/* Shift Swap Requests Modal */}
       {showSwapRequests && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowSwapRequests(false)}>
+        <div className="fixed inset-0 bg-black/70  z-50 flex items-center justify-center p-4" onClick={() => setShowSwapRequests(false)}>
           <div className="bg-[rgba(201,168,76,0.08)] rounded shadow-2xl border-2 border-amber-500/40/50 max-w-3xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             <div className="sticky top-0 bg-[rgba(201,168,76,0.08)] p-6 border-b-2 border-amber-500/40">
               <div className="flex items-center justify-between">
@@ -2282,7 +2282,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* Time-Off Approval Modal */}
       {showTimeOffApproval && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowTimeOffApproval(false)}>
+        <div className="fixed inset-0 bg-black/70  z-50 flex items-center justify-center p-4" onClick={() => setShowTimeOffApproval(false)}>
           <div className="bg-[rgba(201,168,76,0.08)] rounded shadow-2xl border-2 border-[rgba(201,168,76,0.22)] max-w-3xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             <div className="sticky top-0 bg-[rgba(201,168,76,0.08)] p-6 border-b-2 border-[rgba(201,168,76,0.22)]">
               <div className="flex items-center justify-between">
@@ -2349,7 +2349,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
 
       {/* PTO Donation Modal */}
       {showPTODonations && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowPTODonations(false)}>
+        <div className="fixed inset-0 bg-black/70  z-50 flex items-center justify-center p-4" onClick={() => setShowPTODonations(false)}>
           <div className="bg-[rgba(201,168,76,0.08)] rounded shadow-2xl border-2 border-[rgba(201,168,76,0.22)] max-w-5xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             <div className="sticky top-0 bg-[rgba(201,168,76,0.08)] p-6 border-b-2 border-[rgba(201,168,76,0.22)]">
               <div className="flex items-center justify-between">

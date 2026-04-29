@@ -744,7 +744,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
       <div className="min-h-screen p-8">
         {/* Progress Bar */}
         <div className="max-w-5xl mx-auto mb-8">
-          <div className="bg-[#110F0B]/10 backdrop-blur-sm rounded-full h-3 mb-4">
+          <div className="bg-[#110F0B]/10  rounded-full h-3 mb-4">
             <div
               className="bg-[rgba(201,168,76,0.08)] h-full rounded-full transition-all duration-300"
               style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}

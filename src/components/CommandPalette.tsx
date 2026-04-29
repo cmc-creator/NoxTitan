@@ -114,7 +114,7 @@ export default function CommandPalette() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-start justify-center pt-[20vh] bg-black/60 backdrop-blur-sm">
+    <div className="fixed inset-0 z-[9999] flex items-start justify-center pt-[20vh] bg-black/60 ">
       <div className="w-full max-w-2xl bg-[#110F0B] rounded shadow-2xl border border-amber-500/40/30 overflow-hidden">
         {/* Search Input */}
         <div className="flex items-center gap-3 p-4 border-b border-[rgba(201,168,76,0.22)]">

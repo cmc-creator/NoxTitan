@@ -38,12 +38,7 @@ export default function WellnessHub() {
           </Link>
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-4xl font-black text-transparent bg-clip-text bg-[#110F0B] from-REMOVED-200 via-rose-200 to-pink-200 mb-2"
-                  style={{
-                    textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(236,72,153,0.6)',
-                    WebkitTextStroke: '1px rgba(236,72,153,0.3)',
-                    filter: 'brightness(1.4)'
-                  }}>
+              <h1 className="text-4xl font-black text-[#C9A84C] mb-2" style={{fontFamily: "'Cormorant Garamond', serif"}}>
                 Employee Wellness Hub
               </h1>
               <p className="text-[#C9A84C] 200">Holistic health, mental wellness & work-life balance</p>
