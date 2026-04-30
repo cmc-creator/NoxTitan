@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import Link from 'next/link';
 import { Gem, Lock, Crown, Gamepad2, Sparkles, Vault, Shield, Tent, ClipboardList, PenLine, GraduationCap, Trophy, Bot, ShoppingBag, Lightbulb, TrendingUp } from 'lucide-react';
