@@ -127,12 +127,13 @@ export default function LandingPage() {
           <p style={{ color: TEXTDIM, fontSize: '15px', maxWidth: '580px', textAlign: 'center', marginBottom: '36px', lineHeight: 1.7 }}>
             Explore our interactive walkthrough — scheduling, payroll, compliance, and more in one platform.
           </p>
-          <div style={{ width: '100%', border: `1px solid ${GBORDER}`, borderRadius: '4px', overflow: 'hidden', boxShadow: `0 0 48px rgba(201,168,76,0.08)` }}>
+          <div style={{ width: '100%', border: `1px solid ${GBORDER}`, borderRadius: '4px', overflow: 'hidden', boxShadow: `0 0 48px rgba(201,168,76,0.08)`, position: 'relative', height: '92vh' }}>
             <iframe
               src="https://cmc-creator.github.io/NyxTitan/"
               title="NyxTitan Interactive Walkthrough"
               allowFullScreen
-              style={{ width: '100%', minHeight: '92vh', background: '#000', display: 'block', border: 'none' }}
+              scrolling="no"
+              style={{ width: '100%', height: 'calc(92vh + 80px)', marginTop: '-80px', background: '#000', display: 'block', border: 'none', overflow: 'hidden' }}
             />
           </div>
         </div>
