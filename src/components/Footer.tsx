@@ -1,6 +1,12 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
+
 export default function Footer() {
+  const pathname = usePathname();
+  const publicPages = ['/', '/landing', '/pricing', '/signup', '/login'];
+  if (publicPages.includes(pathname)) return null;
+
   const currentYear = new Date().getFullYear();
 
   return (
