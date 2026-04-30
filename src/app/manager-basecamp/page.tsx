@@ -138,7 +138,7 @@ export default function ManagerBasecamp() {
  {/* Logo */}
  <div className="flex items-center gap-3">
  <Mountain className="w-8 h-8 text-amber-400" />
- <span className="text-2xl font-black text-[#C9A84C]
+ <span className="text-2xl font-black text-[#C9A84C]">
  Manager Basecamp
  </span>
  </div>

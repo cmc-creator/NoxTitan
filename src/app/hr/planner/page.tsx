@@ -710,7 +710,7 @@ export default function HRPlanner() {
  <div className="bg-[#110F0B] border-2 border-[rgba(201,168,76,0.22)] rounded w-full max-w-4xl max-h-[90vh] overflow-y-auto">
  <div className="p-6 border-b border-[rgba(201,168,76,0.22)] sticky top-0 bg-[#110F0B]/95 z-10">
  <div className="flex items-center justify-between">
- <h2 className="text-2xl font-bold text-[#C9A84C]
+ <h2 className="text-2xl font-bold text-[#C9A84C]">
  Planner Settings
  </h2>
  <button

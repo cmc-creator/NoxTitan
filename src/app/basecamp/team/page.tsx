@@ -124,7 +124,7 @@ export default function TeamDirectory() {
  <div className="max-w-7xl mx-auto px-6 py-4">
  <Link href="/basecamp" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
  <Mountain className="w-8 h-8 text-[#9E8F75]" />
- <span className="text-2xl font-black text-[#C9A84C]
+ <span className="text-2xl font-black text-[#C9A84C]">
  Your Basecamp
  </span>
  </Link>

@@ -123,7 +123,7 @@ export default function Basecamp() {
  {/* Logo */}
  <div className="flex items-center gap-3">
  <Mountain className="w-8 h-8 text-[#9E8F75]" />
- <span className="text-2xl font-black text-[#C9A84C]
+ <span className="text-2xl font-black text-[#C9A84C]">
  Your Basecamp
  </span>
  </div>
