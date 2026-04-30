@@ -196,7 +196,7 @@ export default function Kudos() {
  onClick={() => setSelectedBadge(badge.id)}
  className={`p-3 rounded-lg border-2 transition-all ${
  selectedBadge === badge.id
- ? ${badge.color}` border-white text-white scale-105`
+ ? `${badge.color} border-white text-white scale-105`
  : 'bg-[#110F0B] border-[rgba(201,168,76,0.22)] text-[#9E8F75] hover:border-[rgba(201,168,76,0.22)]'
  }`}
  >

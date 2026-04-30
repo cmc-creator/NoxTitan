@@ -82,7 +82,7 @@ export default function HRAnalytics() {
  {/* Key Metrics */}
  <div className="grid grid-cols-4 gap-4 mb-8">
  {metrics.map((metric, idx) => (
- <div key={idx} className={${metric.color}` rounded p-6 border-2 border-white/10`}>
+ <div key={idx} className={`${metric.color} rounded p-6 border-2 border-white/10`}>
  <div className="text-white/80 text-sm mb-1">{metric.label}</div>
  <div className="text-4xl font-bold text-white mb-2">{metric.value}</div>
  <div className={`flex items-center gap-1 text-sm ${

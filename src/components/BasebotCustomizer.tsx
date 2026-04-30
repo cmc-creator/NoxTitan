@@ -264,7 +264,7 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
                 <h3 className="text-lg font-bold text-white">Live Preview</h3>
               </div>
 
-              <div className={${config.color}` rounded p-6 border-2 border-white/20 shadow-2xl`}>
+              <div className={`${config.color} rounded p-6 border-2 border-white/20 shadow-2xl`}>
                 {/* Avatar */}
                 <div className="text-center mb-6">
                   <div className="text-8xl mb-3">{config.avatar}</div>
