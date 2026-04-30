@@ -192,7 +192,7 @@ export default function ThemeSelector() {
                               : 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]/50 hover:border-[rgba(201,168,76,0.22)]'
                           }`}
                         >
-                          <div className={`w-full h-24 rounded-lg `${t.colors}` shadow-lg mb-3`}></div>
+                          <div className={`w-full h-24 rounded-lg ${t.colors} shadow-lg mb-3`}></div>
                           <div className="text-white font-bold text-base">{t.name}</div>
                           {theme === t.id && (
                             <div className="absolute top-2 right-2 bg-amber-500 text-white rounded-full p-1">
@@ -224,7 +224,7 @@ export default function ThemeSelector() {
                                   : 'border-[rgba(201,168,76,0.22)] bg-[rgba(201,168,76,0.06)]/50 hover:border-[rgba(201,168,76,0.22)]'
                               }`}
                             >
-                              <div className={`w-full h-20 rounded-lg `${t.colors}` shadow-lg mb-3`}></div>
+                              <div className={`w-full h-20 rounded-lg ${t.colors} shadow-lg mb-3`}></div>
                               <div className="text-white font-medium text-sm">{t.name}</div>
                               {theme === t.id && (
                                 <div className="absolute top-2 right-2 bg-amber-500 text-white rounded-full p-1">

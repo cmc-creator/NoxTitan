@@ -82,7 +82,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
                         : 'border-gray-300 hover:border-[rgba(201,168,76,0.45)]'
                     }`}
                   >
-                    <div className={`h-12 rounded-lg `${theme.colors}` mb-2`} />
+                    <div className={`h-12 rounded-lg ${theme.colors} mb-2`} />
                     <p className="text-sm font-semibold text-[#9E8F75]">{theme.name}</p>
                   </button>
                 ))}

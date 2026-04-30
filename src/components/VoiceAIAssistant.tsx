@@ -272,7 +272,7 @@ export default function VoiceAIAssistant({ context = 'dashboard', userRole = 'hr
       {isOpen && (
         <div className={`fixed bottom-6 left-6 w-[420px] h-[600px] bg-[#110F0B] border-2 rounded shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom-8`} style={{borderColor: customColor.includes('purple') ? '#a855f7' : '#8b5cf6'}}>
       {/* Header */}
-      <div className={`flex items-center justify-between p-4 border-b border-[rgba(201,168,76,0.22)] `${customColor}}>
+      <div className={`flex items-center justify-between p-4 border-b border-[rgba(201,168,76,0.22)] ${customColor}`}>
         <div className="flex items-center gap-3">
           <div className="relative w-10 h-10 rounded-full flex items-center justify-center text-2xl overflow-hidden" style={{background: 'transparent'}}>
             {customAvatar}

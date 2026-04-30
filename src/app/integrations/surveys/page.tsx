@@ -185,7 +185,7 @@ export default function SurveyIntegrationsPage() {
               >
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center gap-4">
-                    <div className={`w-16 h-16 `${info.color}` rounded flex items-center justify-center text-4xl`}>
+                    <div className={`w-16 h-16 ${info.color} rounded flex items-center justify-center text-4xl`}>
                       {info.icon}
                     </div>
                     <div>

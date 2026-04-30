@@ -218,7 +218,7 @@ export default function BasebotCustomizer({ onSave, onClose }: BasebotCustomizer
                         : ''
                     }`}
                   >
-                    <div className={`h-full rounded-lg `${color.gradient}` flex items-center justify-center`}>
+                    <div className={`h-full rounded-lg ${color.gradient} flex items-center justify-center`}>
                       <span className="text-white font-bold text-sm">{color.name}</span>
                     </div>
                   </button>

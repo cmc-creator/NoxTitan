@@ -197,7 +197,7 @@ export default function ManagerAcademyPage() {
  }`}
  >
  <div className="flex items-start justify-between mb-4">
- <div className={`p-3 rounded-lg `${module.color}}>
+ <div className={`p-3 rounded-lg ${module.color}`}>
  {module.icon}
  </div>
  {isCompleted ? (
@@ -226,7 +226,7 @@ export default function ManagerAcademyPage() {
  e.stopPropagation();
  handleCompleteModule(module.id);
  }}
- className={`mt-4 w-full py-2 `${module.color}` text-white rounded-lg font-semibold hover:opacity-90 transition-all`}
+ className={`mt-4 w-full py-2 ${module.color} text-white rounded-lg font-semibold hover:opacity-90 transition-all`}
  >
  Start Module
  </button>

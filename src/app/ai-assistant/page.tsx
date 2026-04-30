@@ -221,7 +221,7 @@ export default function AIAssistantPage() {
                 onClick={() => setSelectedFeature(feature.id === selectedFeature ? null : feature.id)}
                 className="bg-[#110F0B] rounded shadow-md hover:shadow-xl transition-all cursor-pointer overflow-hidden"
               >
-                <div className={${feature.color}` p-6 text-white`}>
+                <div className={`${feature.color} p-6 text-white`}>
                   <div className="mb-4">{feature.icon}</div>
                   <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
                   <p className="text-sm opacity-90">{feature.description}</p>

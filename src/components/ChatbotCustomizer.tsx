@@ -77,7 +77,7 @@ export default function ChatbotCustomizer() {
         {/* Titan Customization */}
         <div className="bg-[#110F0B] rounded-lg p-6 border-2 border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center gap-3 mb-4">
-            <div className={`w-12 h-12 rounded-full `${preferences.titan.color}` flex items-center justify-center text-2xl`}>
+            <div className={`w-12 h-12 rounded-full ${preferences.titan.color} flex items-center justify-center text-2xl`}>
               {preferences.titan.avatar}
             </div>
             <div>
@@ -124,7 +124,7 @@ export default function ChatbotCustomizer() {
                       : 'border-gray-300 hover:border-gray-400'
                   }`}
                 >
-                  <div className={`h-6 rounded `${color.value}` mb-1`}></div>
+                  <div className={`h-6 rounded ${color.value} mb-1`}></div>
                   <p className="text-xs text-[#9E8F75] text-center">{color.text}</p>
                   {preferences.titan.color === color.value && (
                     <Check className="absolute top-1 right-1 w-4 h-4 text-[#9E8F75]" />
@@ -138,7 +138,7 @@ export default function ChatbotCustomizer() {
         {/* Nox Customization */}
         <div className="bg-[#110F0B] rounded-lg p-6 border-2 border-[rgba(201,168,76,0.22)]">
           <div className="flex items-center gap-3 mb-4">
-            <div className={`w-12 h-12 rounded-full `${preferences.nox.color}` flex items-center justify-center text-2xl`}>
+            <div className={`w-12 h-12 rounded-full ${preferences.nox.color} flex items-center justify-center text-2xl`}>
               {preferences.nox.avatar}
             </div>
             <div>
@@ -185,7 +185,7 @@ export default function ChatbotCustomizer() {
                       : 'border-gray-300 hover:border-gray-400'
                   }`}
                 >
-                  <div className={`h-6 rounded `${color.value}` mb-1`}></div>
+                  <div className={`h-6 rounded ${color.value} mb-1`}></div>
                   <p className="text-xs text-[#9E8F75] text-center">{color.text}</p>
                   {preferences.nox.color === color.value && (
                     <Check className="absolute top-1 right-1 w-4 h-4 text-amber-600" />

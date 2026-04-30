@@ -99,7 +99,7 @@ export default function DepartmentsPortalPage() {
                 className="bg-[#110F0B] rounded shadow-lg p-8 hover:shadow-2xl transition-all cursor-pointer group"
               >
                 <div className="flex items-start justify-between mb-6">
-                  <div className={`w-16 h-16 `${dept.color}` rounded flex items-center justify-center group- transition-transform`}>
+                  <div className={`w-16 h-16 ${dept.color} rounded flex items-center justify-center group- transition-transform`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-right">
@@ -114,7 +114,7 @@ export default function DepartmentsPortalPage() {
                 <p className="text-[#9E8F75]">{dept.description}</p>
 
                 <div className="mt-6 pt-6 border-t">
-                  <button className={`w-full px-6 py-3 `${dept.color}` text-white rounded-lg font-medium group-hover:shadow-lg transition-shadow`}>
+                  <button className={`w-full px-6 py-3 ${dept.color} text-white rounded-lg font-medium group-hover:shadow-lg transition-shadow`}>
                     Open Portal →
                   </button>
                 </div>
