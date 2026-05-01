@@ -1,6 +1,6 @@
 'use client';
 
-import React from "react";
+import React, { useState } from "react";
 import Link from 'next/link';
 import { Gem, Lock, Crown, Gamepad2, Sparkles, Vault, Shield, Tent, ClipboardList, PenLine, GraduationCap, Trophy, Bot, ShoppingBag, Lightbulb, TrendingUp } from 'lucide-react';
 
@@ -70,16 +70,37 @@ const cardStyle: React.CSSProperties = {
 };
 
 export default function LandingPage() {
+  const [contactData, setContactData] = useState({ name: '', email: '', size: '', pain: '' });
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+
+  function handleContactSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const subject = encodeURIComponent('NyxTitan Demo Request');
+    const body = encodeURIComponent(
+      `Name: ${contactData.name}\nEmail: ${contactData.email}\nEmployees: ${contactData.size}\nChallenges: ${contactData.pain}`
+    );
+    window.open(`mailto:info@nyxtitan.com?subject=${subject}&body=${body}`);
+    setContactSubmitted(true);
+  }
+
   return (
     <div style={{ minHeight: '100vh', width: '100%', background: BGMAIN, color: TEXTPRIMARY }}>
       {/* Top Bar */}
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 32px', borderBottom: `1px solid ${GBORDER}` }}>
-        <Link href="/signup?vip=true" style={goldBtnStyle}>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Gem size={14} /> VIP Access</span>
-        </Link>
-        <Link href="/login" style={outlineBtnStyle}>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Lock size={14} /> Login</span>
-        </Link>
+      <div style={{ width: '100%', display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', padding: '16px 32px', borderBottom: `1px solid ${GBORDER}` }}>
+        <div>
+          <Link href="/signup?vip=true" style={goldBtnStyle}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Gem size={14} /> VIP Access</span>
+          </Link>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center' }}>
+          <img src="/titanlogo.png" alt="NyxTitan" style={{ height: '32px', width: 'auto', objectFit: 'contain' }} />
+          <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, letterSpacing: '0.25em', color: G }}>NYXTITAN</span>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <Link href="/login" style={outlineBtnStyle}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Lock size={14} /> Login</span>
+          </Link>
+        </div>
       </div>
 
       {/* Hero */}
@@ -296,7 +317,7 @@ export default function LandingPage() {
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 700, color: TEXTPRIMARY, textAlign: 'center', marginBottom: '56px', letterSpacing: '0.06em' }}>
             Hear from the Titans.
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))', gap: '24px', width: '100%' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '24px', width: '100%' }}>
             {[
               { stars: '★★★★★', quote: '"Migrating to NyxTitan was the single most impactful operational decision we\'ve made in a decade. The speed and clarity we now have is unmatched."', name: 'Sarah Chen', title: 'CTO, Apex Dynamics' },
               { stars: '★★★★★', quote: '"We eliminated 12 different SaaS subscriptions and gained exponentially more control. NyxTitan isn\'t just software; it\'s a competitive advantage."', name: 'Marcus Thorne', title: 'CEO, OmniCorp Global' },
@@ -330,44 +351,62 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <form style={{ background: BGCARD, border: `1px solid ${GBORDER}`, borderRadius: '4px', padding: '40px', display: 'flex', flexDirection: 'column', gap: '24px' }}
-            action="mailto:info@nyxtitan.com" method="post" encType="text/plain">
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px' }}>
-              <div>
-                <label style={{ display: 'block', color: TEXTDIM, fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px' }}>Full Name</label>
-                <input type="text" name="name" required
-                  style={{ width: '100%', padding: '12px 16px', background: BGMAIN, border: `1px solid ${GBORDER}`, borderRadius: '4px', color: TEXTPRIMARY, fontSize: '14px', outline: 'none', boxSizing: 'border-box' }} />
+          {contactSubmitted ? (
+            <div style={{ background: BGCARD, border: `1px solid ${GBORDER}`, borderRadius: '4px', padding: '56px 40px', textAlign: 'center' }}>
+              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '36px', color: G, marginBottom: '12px' }}>✦</div>
+              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '24px', fontWeight: 700, color: TEXTPRIMARY, marginBottom: '10px' }}>Message Sent</h3>
+              <p style={{ color: TEXTDIM, fontSize: '15px', lineHeight: 1.7 }}>
+                Your email client should open with a pre-filled message to{' '}
+                <a href="mailto:info@nyxtitan.com" style={{ color: G, textDecoration: 'none' }}>info@nyxtitan.com</a>.
+                We&apos;ll be in touch shortly.
+              </p>
+            </div>
+          ) : (
+            <form
+              onSubmit={handleContactSubmit}
+              style={{ background: BGCARD, border: `1px solid ${GBORDER}`, borderRadius: '4px', padding: '40px', display: 'flex', flexDirection: 'column', gap: '24px' }}
+            >
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px' }}>
+                <div>
+                  <label style={{ display: 'block', color: TEXTDIM, fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px' }}>Full Name</label>
+                  <input type="text" required value={contactData.name}
+                    onChange={(e) => setContactData(d => ({ ...d, name: e.target.value }))}
+                    style={{ width: '100%', padding: '12px 16px', background: BGMAIN, border: `1px solid ${GBORDER}`, borderRadius: '4px', color: TEXTPRIMARY, fontSize: '14px', outline: 'none', boxSizing: 'border-box' }} />
+                </div>
+                <div>
+                  <label style={{ display: 'block', color: TEXTDIM, fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px' }}>Work Email</label>
+                  <input type="email" required value={contactData.email}
+                    onChange={(e) => setContactData(d => ({ ...d, email: e.target.value }))}
+                    style={{ width: '100%', padding: '12px 16px', background: BGMAIN, border: `1px solid ${GBORDER}`, borderRadius: '4px', color: TEXTPRIMARY, fontSize: '14px', outline: 'none', boxSizing: 'border-box' }} />
+                </div>
               </div>
+
               <div>
-                <label style={{ display: 'block', color: TEXTDIM, fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px' }}>Work Email</label>
-                <input type="email" name="email" required
-                  style={{ width: '100%', padding: '12px 16px', background: BGMAIN, border: `1px solid ${GBORDER}`, borderRadius: '4px', color: TEXTPRIMARY, fontSize: '14px', outline: 'none', boxSizing: 'border-box' }} />
+                <label style={{ display: 'block', color: TEXTDIM, fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px' }}>How Many Employees?</label>
+                <select value={contactData.size}
+                  onChange={(e) => setContactData(d => ({ ...d, size: e.target.value }))}
+                  style={{ width: '100%', padding: '12px 16px', background: BGMAIN, border: `1px solid ${GBORDER}`, borderRadius: '4px', color: TEXTPRIMARY, fontSize: '14px', outline: 'none' }}>
+                  <option value="">Select Size</option>
+                  <option value="1-50">1–50 Employees</option>
+                  <option value="51-200">51–200 Employees</option>
+                  <option value="201-500">201–500 Employees</option>
+                  <option value="500+">500+ Employees</option>
+                </select>
               </div>
-            </div>
 
-            <div>
-              <label style={{ display: 'block', color: TEXTDIM, fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px' }}>How Many Employees?</label>
-              <select name="company-size"
-                style={{ width: '100%', padding: '12px 16px', background: BGMAIN, border: `1px solid ${GBORDER}`, borderRadius: '4px', color: TEXTPRIMARY, fontSize: '14px', outline: 'none' }}>
-                <option value="">Select Size</option>
-                <option value="1-50">1–50 Employees</option>
-                <option value="51-200">51–200 Employees</option>
-                <option value="201-500">201–500 Employees</option>
-                <option value="500+">500+ Employees</option>
-              </select>
-            </div>
+              <div>
+                <label style={{ display: 'block', color: TEXTDIM, fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px' }}>Challenges You&apos;re Facing (Optional)</label>
+                <textarea rows={4} placeholder="Scheduling conflicts, payroll errors, compliance issues..."
+                  value={contactData.pain}
+                  onChange={(e) => setContactData(d => ({ ...d, pain: e.target.value }))}
+                  style={{ width: '100%', padding: '12px 16px', background: BGMAIN, border: `1px solid ${GBORDER}`, borderRadius: '4px', color: TEXTPRIMARY, fontSize: '14px', outline: 'none', resize: 'vertical', boxSizing: 'border-box' }} />
+              </div>
 
-            <div>
-              <label style={{ display: 'block', color: TEXTDIM, fontSize: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px' }}>Challenges You&apos;re Facing (Optional)</label>
-              <textarea name="pain-points" rows={4} placeholder="Scheduling conflicts, payroll errors, compliance issues..."
-                style={{ width: '100%', padding: '12px 16px', background: BGMAIN, border: `1px solid ${GBORDER}`, borderRadius: '4px', color: TEXTPRIMARY, fontSize: '14px', outline: 'none', resize: 'vertical', boxSizing: 'border-box' }} />
-            </div>
-
-            <button type="submit" style={{ ...goldBtnStyle, width: '100%', textAlign: 'center', fontSize: '14px', padding: '16px' }}>
-              Get Started — Request Demo
-            </button>
-          </form>
+              <button type="submit" style={{ ...goldBtnStyle, width: '100%', textAlign: 'center', fontSize: '14px', padding: '16px' }}>
+                Get Started — Request Demo
+              </button>
+            </form>
+          )}
         </div>
       </section>
 
@@ -378,7 +417,7 @@ export default function LandingPage() {
         </h2>
         <Link href="#contact" style={goldBtnStyle}>Request Executive Demo</Link>
         <p style={{ color: TEXTDIM, fontSize: '13px', textAlign: 'center' }}>
-          &copy; 2024 NyxTitan™. A solution provided by Connie Michelle Consulting &amp; Business Solutions LLC. All rights reserved.
+          &copy; 2026 NyxTitan™. A solution provided by Connie Michelle Consulting &amp; Business Solutions LLC. All rights reserved.
         </p>
         <div style={{ display: 'flex', gap: '24px' }}>
           <Link href="/privacy" style={{ color: G, fontSize: '13px', textDecoration: 'none' }}>Privacy Policy</Link>

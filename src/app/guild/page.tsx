@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Trophy, Zap, Gift, Award, Target, TrendingUp, Star, Crown, Shield, Flame, Users, Clock } from 'lucide-react';
+import FeatureGate from '@/components/FeatureGate';
 
 interface GuildMember {
   id: string;
@@ -59,7 +60,7 @@ interface Leaderboard {
   totalXP: number;
 }
 
-export default function GuildPage() {
+function GuildPage() {
   const [profile, setProfile] = useState<GuildMember | null>(null);
   const [recentActivity, setRecentActivity] = useState<XPActivity[]>([]);
   const [achievements, setAchievements] = useState<Achievement[]>([]);
@@ -425,6 +426,14 @@ export default function GuildPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function GuildPageWrapper() {
+  return (
+    <FeatureGate feature="guild" featureName="Guild Gamification System">
+      <GuildPage />
+    </FeatureGate>
   );
 }
 

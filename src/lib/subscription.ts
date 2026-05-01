@@ -90,3 +90,12 @@ export const TIER_LIMITS = {
 } as const;
 
 export type SubscriptionTier = keyof typeof TIER_LIMITS;
+
+export function hasFeature(
+  tier: string | undefined | null,
+  feature: keyof typeof TIER_LIMITS.VIP.features
+): boolean {
+  const normalized = (tier?.toUpperCase() ?? 'PROFESSIONAL') as SubscriptionTier;
+  const limits = TIER_LIMITS[normalized] ?? TIER_LIMITS.PROFESSIONAL;
+  return !!limits.features[feature];
+}

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Sparkles, TrendingUp, TrendingDown, AlertTriangle, Users, Clock, Target, Award, Shield, Brain } from 'lucide-react';
+import FeatureGate from '@/components/FeatureGate';
 
 interface Prophecy {
   id: string;
@@ -60,7 +61,7 @@ function getProphecyIcon(type: string) {
   }
 }
 
-export default function OraclePage() {
+function OraclePage() {
   const [prophecies, setProphecies] = useState<Prophecy[]>([]);
   const [topRisks,   setTopRisks]   = useState<RiskScore[]>([]);
   const [insights,   setInsights]   = useState<Insight[]>([]);
@@ -350,5 +351,13 @@ export default function OraclePage() {
 
       </div>
     </div>
+  );
+}
+
+export default function OraclePageWrapper() {
+  return (
+    <FeatureGate feature="oracleAI" featureName="Oracle Predictive AI">
+      <OraclePage />
+    </FeatureGate>
   );
 }

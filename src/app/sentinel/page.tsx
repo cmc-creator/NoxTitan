@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Shield, UserCheck, Clock, AlertTriangle, Bell, TrendingUp, Users, Upload, Eye, Lock, Camera, Activity } from 'lucide-react';
+import FeatureGate from '@/components/FeatureGate';
 
 const STAT_CARDS = [
   { key: 'currentlyInBuilding', label: 'In Building Now',    icon: Users,         accent: true  },
@@ -35,7 +36,7 @@ interface ActiveVisitor {
   status: string;
 }
 
-export default function SentinelPage() {
+function SentinelPage() {
   const [stats, setStats] = useState<VisitorStats>({
     currentlyInBuilding: 0,
     todayTotal: 0,
@@ -320,6 +321,14 @@ export default function SentinelPage() {
 
       </div>
     </div>
+  );
+}
+
+export default function SentinelPageWrapper() {
+  return (
+    <FeatureGate feature="sentinel" featureName="Sentinel Visitor Management">
+      <SentinelPage />
+    </FeatureGate>
   );
 }
 

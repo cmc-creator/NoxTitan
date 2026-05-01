@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Package, Plus, Search, Filter, Barcode, MapPin, User, Calendar, TrendingUp, AlertCircle, CheckCircle, DollarSign, FileSignature } from 'lucide-react';
+import FeatureGate from '@/components/FeatureGate';
 
 interface Asset {
  id: string;
@@ -27,7 +28,7 @@ interface Asset {
  purchaseDate?: string;
 }
 
-export default function AssetVaultPage() {
+function AssetVaultPage() {
  const [assets, setAssets] = useState<Asset[]>([]);
  const [loading, setLoading] = useState(true);
  const [searchTerm, setSearchTerm] = useState('');
@@ -336,6 +337,14 @@ export default function AssetVaultPage() {
  </div>
  </div>
  );
+}
+
+export default function AssetVaultPageWrapper() {
+  return (
+    <FeatureGate feature="assetVault" featureName="Asset Vault">
+      <AssetVaultPage />
+    </FeatureGate>
+  );
 }
 
 
