@@ -87,7 +87,7 @@ export default function LandingPage() {
         <img
           src="/titanlogo.png"
           alt="NyxTitan"
-          style={{ height: '80px', width: 'auto', objectFit: 'contain', marginBottom: '24px', filter: 'drop-shadow(0 4px 20px rgba(201,168,76,0.35))' }}
+          style={{ height: '140px', width: 'auto', objectFit: 'contain', marginBottom: '28px', filter: 'drop-shadow(0 6px 32px rgba(201,168,76,0.45))' }}
         />
         <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(42px, 7vw, 82px)', fontWeight: 700, letterSpacing: '0.35em', color: G, margin: '0 0 16px', lineHeight: 1.1 }}>
           NYXTITAN
