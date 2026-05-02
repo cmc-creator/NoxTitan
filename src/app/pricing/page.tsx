@@ -160,9 +160,9 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
-                <button className="pricing-btn-outline" style={{ width: '100%', padding: '12px', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', letterSpacing: '0.08em' }}>
+                <Link href="/signup?tier=PROFESSIONAL" className="pricing-btn-outline" style={{ width: '100%', padding: '12px', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', letterSpacing: '0.08em', display: 'block', textAlign: 'center', textDecoration: 'none' }}>
                   Start Free Trial
-                </button>
+                </Link>
               </div>
 
               <div className="pricing-card-featured" style={{ background: '#110F0B', borderRadius: '4px', padding: '32px' }}>
@@ -183,9 +183,9 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
-                <button className="pricing-btn-filled" style={{ width: '100%', padding: '12px', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', letterSpacing: '0.08em' }}>
+                <Link href="/signup?tier=PROFESSIONAL" className="pricing-btn-filled" style={{ width: '100%', padding: '12px', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', letterSpacing: '0.08em', display: 'block', textAlign: 'center', textDecoration: 'none' }}>
                   Start Free Trial
-                </button>
+                </Link>
               </div>
 
               <div className="pricing-card" style={{ background: '#110F0B', borderRadius: '4px', padding: '32px' }}>
@@ -203,9 +203,9 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
-                <button className="pricing-btn-outline" style={{ width: '100%', padding: '12px', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', letterSpacing: '0.08em' }}>
+                <Link href="/signup?tier=PROFESSIONAL" className="pricing-btn-outline" style={{ width: '100%', padding: '12px', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', letterSpacing: '0.08em', display: 'block', textAlign: 'center', textDecoration: 'none' }}>
                   Start Free Trial
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -229,9 +229,9 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
-                <button className="pricing-btn-outline" style={{ width: '100%', padding: '12px', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', letterSpacing: '0.08em' }}>
+                <Link href="/signup?tier=PROFESSIONAL" className="pricing-btn-outline" style={{ width: '100%', padding: '12px', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', letterSpacing: '0.08em', display: 'block', textAlign: 'center', textDecoration: 'none' }}>
                   Start Free Trial
-                </button>
+                </Link>
               </div>
 
               <div className="pricing-card-featured" style={{ background: '#110F0B', borderRadius: '4px', padding: '32px' }}>
@@ -252,9 +252,9 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
-                <button className="pricing-btn-filled" style={{ width: '100%', padding: '12px', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', letterSpacing: '0.08em' }}>
+                <Link href="/signup?tier=ENTERPRISE" className="pricing-btn-filled" style={{ width: '100%', padding: '12px', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', letterSpacing: '0.08em', display: 'block', textAlign: 'center', textDecoration: 'none' }}>
                   Start Free Trial
-                </button>
+                </Link>
               </div>
 
               <div className="pricing-card" style={{ background: '#110F0B', borderRadius: '4px', padding: '32px' }}>
@@ -272,9 +272,9 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
-                <button className="pricing-btn-outline" style={{ width: '100%', padding: '12px', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', letterSpacing: '0.08em' }}>
+                <Link href="/signup?tier=TITAN" className="pricing-btn-outline" style={{ width: '100%', padding: '12px', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', letterSpacing: '0.08em', display: 'block', textAlign: 'center', textDecoration: 'none' }}>
                   Contact Sales
-                </button>
+                </Link>
               </div>
             </div>
           </div>

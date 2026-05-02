@@ -10,13 +10,16 @@ function SignupForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const isVIP = searchParams.get('vip') === 'true';
+  const tierParam = searchParams.get('tier');
+  const validTiers = ['PROFESSIONAL', 'ENTERPRISE', 'TITAN'];
+  const defaultTier = isVIP ? 'TITAN' : (tierParam && validTiers.includes(tierParam) ? tierParam : 'PROFESSIONAL');
   
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     confirmPassword: '',
-    tier: isVIP ? 'TITAN' : 'PROFESSIONAL',
+    tier: defaultTier,
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -24,8 +27,10 @@ function SignupForm() {
   useEffect(() => {
     if (isVIP) {
       setFormData(prev => ({ ...prev, tier: 'TITAN' }));
+    } else if (tierParam && validTiers.includes(tierParam)) {
+      setFormData(prev => ({ ...prev, tier: tierParam }));
     }
-  }, [isVIP]);
+  }, [isVIP, tierParam]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({

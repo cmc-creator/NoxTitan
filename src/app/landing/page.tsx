@@ -86,19 +86,36 @@ export default function LandingPage() {
   return (
     <div style={{ minHeight: '100vh', width: '100%', background: BGMAIN, color: TEXTPRIMARY }}>
       {/* Top Bar */}
-      <div style={{ width: '100%', display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', padding: '16px 32px', borderBottom: `1px solid ${GBORDER}` }}>
-        <div>
-          <Link href="/signup?vip=true" style={goldBtnStyle}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Gem size={14} /> VIP Access</span>
+      {/* Desktop: 3-column grid | Mobile: row with brand center, buttons compact */}
+      <div style={{ width: '100%', borderBottom: `1px solid ${GBORDER}` }}>
+        {/* Desktop nav */}
+        <div className="hidden sm:grid" style={{ gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', padding: '16px 32px' }}>
+          <div>
+            <Link href="/signup?vip=true" style={goldBtnStyle}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Gem size={14} /> VIP Access</span>
+            </Link>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center' }}>
+            <img src="/titanlogo.png" alt="NyxTitan" style={{ height: '32px', width: 'auto', objectFit: 'contain' }} />
+            <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, letterSpacing: '0.25em', color: G }}>NYXTITAN</span>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Link href="/login" style={outlineBtnStyle}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Lock size={14} /> Login</span>
+            </Link>
+          </div>
+        </div>
+        {/* Mobile nav */}
+        <div className="flex sm:hidden" style={{ alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px' }}>
+          <Link href="/signup?vip=true" style={{ ...goldBtnStyle, padding: '9px 14px', fontSize: '12px', letterSpacing: '0.08em' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><Gem size={12} /> VIP</span>
           </Link>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center' }}>
-          <img src="/titanlogo.png" alt="NyxTitan" style={{ height: '32px', width: 'auto', objectFit: 'contain' }} />
-          <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, letterSpacing: '0.25em', color: G }}>NYXTITAN</span>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <Link href="/login" style={outlineBtnStyle}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Lock size={14} /> Login</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <img src="/titanlogo.png" alt="NyxTitan" style={{ height: '26px', width: 'auto', objectFit: 'contain' }} />
+            <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '15px', fontWeight: 700, letterSpacing: '0.2em', color: G }}>NYXTITAN</span>
+          </div>
+          <Link href="/login" style={{ ...outlineBtnStyle, padding: '9px 14px', fontSize: '12px', letterSpacing: '0.08em' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><Lock size={12} /> Login</span>
           </Link>
         </div>
       </div>

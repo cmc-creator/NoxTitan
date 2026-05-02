@@ -1,6 +1,6 @@
 'use client';
 
-import { User, LogOut, Crown, Zap, TrendingUp, Sparkles, Settings, Menu, X } from 'lucide-react';
+import { User, LogOut, Crown, Zap, TrendingUp, Sparkles, Settings, Menu, X, Bell } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -117,6 +117,18 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
               <User className="h-4 w-4" />
               <span className="text-xs font-medium hidden md:inline" style={{ letterSpacing: '1px' }}>Admin User</span>
             </button>
+            
+            {/* Notifications Bell */}
+            <Link href="/notifications"
+              className="relative flex items-center justify-center gap-2 px-3 py-2 transition-colors border min-h-[40px]"
+              style={{ color: '#C9A84C', borderColor: 'rgba(201,168,76,0.2)', borderRadius: '2px' }}
+              title="Notifications"
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(201,168,76,0.08)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent'; }}
+            >
+              <Bell className="h-4 w-4" />
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-bold leading-none" style={{ fontSize: '9px' }}>3</span>
+            </Link>
             
             {/* Settings Button */}
             <Link href="/settings"
