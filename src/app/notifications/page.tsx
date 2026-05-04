@@ -1,91 +1,89 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Bell, CheckCircle, AlertCircle, Info, Clock, TrendingUp, Users, Award, Calendar } from 'lucide-react';
 
+interface UINotification {
+  id: string | number;
+  type: string;
+  icon: React.ElementType;
+  title: string;
+  message: string;
+  time: string;
+  unread: boolean;
+}
+
+function iconForType(type: string): React.ElementType {
+  switch (type) {
+    case 'success': return CheckCircle;
+    case 'warning': return AlertCircle;
+    case 'award': return Award;
+    case 'schedule': return Calendar;
+    case 'team': return Users;
+    case 'trend': return TrendingUp;
+    default: return Bell;
+  }
+}
+
+function relativeTime(dateStr: string): string {
+  const diff = Date.now() - new Date(dateStr).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 60) return `${mins} minute${mins !== 1 ? 's' : ''} ago`;
+  const hours = Math.floor(mins / 60);
+  if (hours < 24) return `${hours} hour${hours !== 1 ? 's' : ''} ago`;
+  const days = Math.floor(hours / 24);
+  return `${days} day${days !== 1 ? 's' : ''} ago`;
+}
+
 export default function NotificationsPage() {
-  const [notifications, setNotifications] = useState([
-    {
-      id: 1,
-      type: 'success',
-      icon: CheckCircle,
-      title: 'Customer Recognition Approved',
-      message: 'You awarded 50 XP to Jessica Williams for exceptional patient care',
-      time: '5 minutes ago',
-      unread: true,
-    },
-    {
-      id: 2,
-      type: 'info',
-      icon: TrendingUp,
-      title: 'Talent Identified',
-      message: 'Michael Chen has been flagged as a high performer - consider for promotion',
-      time: '1 hour ago',
-      unread: true,
-    },
-    {
-      id: 3,
-      type: 'warning',
-      icon: AlertCircle,
-      title: 'Retention Risk Alert',
-      message: 'Amanda Rodriguez showing signs of disengagement - schedule 1:1 meeting',
-      time: '3 hours ago',
-      unread: true,
-    },
-    {
-      id: 4,
-      type: 'info',
-      icon: Users,
-      title: 'New Employee Onboarding',
-      message: 'Sarah Johnson starts tomorrow - onboarding checklist ready',
-      time: '5 hours ago',
-      unread: false,
-    },
-    {
-      id: 5,
-      type: 'success',
-      icon: Award,
-      title: 'Quest Completed',
-      message: 'You earned 100 XP and 25 gems for completing "Perfect Week" quest!',
-      time: '1 day ago',
-      unread: false,
-    },
-    {
-      id: 6,
-      type: 'info',
-      icon: Calendar,
-      title: 'Schedule Change Request',
-      message: 'David Park requested shift swap for Thursday - needs approval',
-      time: '1 day ago',
-      unread: false,
-    },
-    {
-      id: 7,
-      type: 'info',
-      icon: Bell,
-      title: 'Time-Off Request',
-      message: 'Emily Foster submitted PTO request for next week',
-      time: '2 days ago',
-      unread: false,
-    },
-    {
-      id: 8,
-      type: 'info',
-      icon: Clock,
-      title: 'Timesheet Reminder',
-      message: 'Don\'t forget to submit your timesheet by Friday 5 PM',
-      time: '3 days ago',
-      unread: false,
-    },
-  ]);
+  const [notifications, setNotifications] = useState<UINotification[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/notifications')
+      .then(r => r.json())
+      .then((data: any[]) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setNotifications(data.map(n => ({
+            id: n.id,
+            type: n.type || 'info',
+            icon: iconForType(n.type || 'info'),
+            title: n.title,
+            message: n.message,
+            time: relativeTime(n.createdAt),
+            unread: !n.isRead,
+          })));
+        }
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, []);
 
   const markAllAsRead = () => {
     setNotifications(prev => prev.map(n => ({ ...n, unread: false })));
+    fetch('/api/notifications', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'markAllRead' }),
+    }).catch(() => {});
   };
 
   const clearAll = () => {
     setNotifications([]);
+    fetch('/api/notifications', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'clearAll' }),
+    }).catch(() => {});
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen p-8 flex items-center justify-center" style={{ background: '#070604' }}>
+        <p style={{ color: '#9E8F75' }}>Loading notifications...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen p-8" style={{ background: '#070604' }}>

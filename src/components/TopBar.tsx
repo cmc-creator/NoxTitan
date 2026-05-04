@@ -2,7 +2,7 @@
 
 import { User, LogOut, Crown, Zap, TrendingUp, Sparkles, Settings, Menu, X, Bell } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface TopBarProps {
   userTier?: 'VIP' | 'PROFESSIONAL' | 'ENTERPRISE' | 'TITAN';
@@ -11,6 +11,18 @@ interface TopBarProps {
 
 export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopBarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [unreadCount, setUnreadCount] = useState(0);
+
+  useEffect(() => {
+    fetch('/api/notifications')
+      .then(r => r.json())
+      .then((data: any[]) => {
+        if (Array.isArray(data)) {
+          setUnreadCount(data.filter(n => !n.isRead).length);
+        }
+      })
+      .catch(() => {});
+  }, []);
   
   const tierColors = {
     VIP: 'bg-[rgba(201,168,76,0.08)]',
@@ -127,7 +139,9 @@ export default function TopBar({ userTier = 'PROFESSIONAL', onMenuToggle }: TopB
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent'; }}
             >
               <Bell className="h-4 w-4" />
-              <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-bold leading-none" style={{ fontSize: '9px' }}>3</span>
+              {unreadCount > 0 && (
+                <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-bold leading-none" style={{ fontSize: '9px' }}>{unreadCount > 99 ? '99+' : unreadCount}</span>
+              )}
             </Link>
             
             {/* Settings Button */}

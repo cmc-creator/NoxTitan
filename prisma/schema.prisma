@@ -153,6 +153,7 @@ model Employee {
   phone         String?
   position      String?
   hourlyRate    Float?
+  isActive      Boolean        @default(true)
   color         String?        // For calendar display
   avatar        String?        // Profile picture URL or base64
 

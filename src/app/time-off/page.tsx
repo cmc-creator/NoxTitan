@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Check, X, Clock } from 'lucide-react';
 
 interface TimeOffRequest {
@@ -14,35 +14,41 @@ interface TimeOffRequest {
 }
 
 export default function TimeOffPage() {
-  const [requests] = useState<TimeOffRequest[]>([
-    {
-      id: '1',
-      employeeName: 'John Doe',
-      startDate: '2026-01-15',
-      endDate: '2026-01-17',
-      reason: 'Family vacation',
-      status: 'PENDING',
-      submittedAt: '2025-12-28',
-    },
-    {
-      id: '2',
-      employeeName: 'Jane Smith',
-      startDate: '2026-02-01',
-      endDate: '2026-02-01',
-      reason: 'Medical appointment',
-      status: 'APPROVED',
-      submittedAt: '2025-12-25',
-    },
-    {
-      id: '3',
-      employeeName: 'Mike Johnson',
-      startDate: '2026-01-20',
-      endDate: '2026-01-22',
-      reason: 'Personal',
-      status: 'PENDING',
-      submittedAt: '2025-12-29',
-    },
-  ]);
+  const [requests, setRequests] = useState<TimeOffRequest[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/time-off')
+      .then(r => r.json())
+      .then((data: any[]) => {
+        if (Array.isArray(data)) {
+          setRequests(data.map(r => ({
+            id: r.id,
+            employeeName: r.employee
+              ? `${r.employee.firstName} ${r.employee.lastName}`
+              : 'Unknown',
+            startDate: r.startDate,
+            endDate: r.endDate,
+            reason: r.reason || '',
+            status: r.status as 'PENDING' | 'APPROVED' | 'REJECTED',
+            submittedAt: r.createdAt ? r.createdAt.split('T')[0] : '',
+          })));
+        }
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, []);
+
+  const handleAction = async (id: string, status: 'APPROVED' | 'REJECTED') => {
+    const res = await fetch(`/api/time-off/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status }),
+    });
+    if (res.ok) {
+      setRequests(prev => prev.map(r => r.id === id ? { ...r, status } : r));
+    }
+  };
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -70,6 +76,14 @@ export default function TimeOffPage() {
     }
   };
 
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <p style={{ color: '#9E8F75' }}>Loading requests...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
       <div>
@@ -83,7 +97,7 @@ export default function TimeOffPage() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-[#9E8F75]">Pending</p>
-              <p className="text-3xl font-bold text-[#5A5040] mt-2">2</p>
+              <p className="text-3xl font-bold text-[#5A5040] mt-2">{requests.filter(r => r.status === 'PENDING').length}</p>
             </div>
             <div className="bg-[rgba(201,168,76,0.04)] p-3 rounded-lg">
               <Clock className="h-6 w-6 text-[#5A5040]" />
@@ -95,7 +109,7 @@ export default function TimeOffPage() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-[#9E8F75]">Approved</p>
-              <p className="text-3xl font-bold text-green-400 mt-2">1</p>
+              <p className="text-3xl font-bold text-green-400 mt-2">{requests.filter(r => r.status === 'APPROVED').length}</p>
             </div>
             <div className="bg-[rgba(201,168,76,0.04)] p-3 rounded-lg">
               <Check className="h-6 w-6 text-green-400" />
@@ -106,8 +120,8 @@ export default function TimeOffPage() {
         <div className="lux-card rounded p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-[#9E8F75]">This Month</p>
-              <p className="text-3xl font-bold text-amber-400 mt-2">3</p>
+              <p className="text-sm font-medium text-[#9E8F75]">Total</p>
+              <p className="text-3xl font-bold text-amber-400 mt-2">{requests.length}</p>
             </div>
             <div className="bg-[rgba(201,168,76,0.04)] p-3 rounded-lg">
               <Clock className="h-6 w-6 text-amber-400" />
@@ -185,10 +199,16 @@ export default function TimeOffPage() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                       {request.status === 'PENDING' && (
                         <div className="flex gap-2">
-                          <button className="text-green-400 hover:text-green-400">
+                          <button
+                            onClick={() => handleAction(request.id, 'APPROVED')}
+                            className="text-green-400 hover:text-green-300"
+                          >
                             Approve
                           </button>
-                          <button className="text-red-400 hover:text-red-400">
+                          <button
+                            onClick={() => handleAction(request.id, 'REJECTED')}
+                            className="text-red-400 hover:text-red-300"
+                          >
                             Reject
                           </button>
                         </div>

@@ -5,17 +5,11 @@ import ThemeCustomizer from '@/components/ThemeCustomizer';
 import DraggableDecorations from '@/components/DraggableDecorations';
 import { Calendar, Download, Filter, Info, Home, Settings } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const GOLD = 'rgba(201,168,76,0.22)';
 const GOLD_HOVER = 'rgba(201,168,76,0.45)';
 const CARD_BG = '#110F0B';
-
-const quickInfo = [
-  { label: "Today's Weather", value: '72°F', sub: 'Partly Cloudy', icon: '⛅' },
-  { label: 'Scheduled Today', value: '24', sub: 'Employees Clocked In', icon: '👥' },
-  { label: 'Open Shifts', value: '3', sub: 'Need Coverage', icon: '📋' },
-];
 
 const metrics = [
   { label: 'Budget Hours', value: '2,080', sub: 'This Week' },
@@ -27,6 +21,38 @@ const metrics = [
 
 export default function CalendarPage() {
   const [showSettings, setShowSettings] = useState(false);
+  const [scheduledToday, setScheduledToday] = useState<number | null>(null);
+  const [totalEmployees, setTotalEmployees] = useState<number | null>(null);
+
+  useEffect(() => {
+    // Fetch today's shifts to count scheduled employees
+    const now = new Date();
+    const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate()).toISOString();
+    const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59).toISOString();
+    fetch(`/api/shifts?startDate=${startOfDay}&endDate=${endOfDay}`)
+      .then(r => r.json())
+      .then((data: any[]) => {
+        if (Array.isArray(data)) {
+          const uniqueEmployees = new Set(data.map(s => s.employeeId)).size;
+          setScheduledToday(uniqueEmployees);
+        }
+      })
+      .catch(() => {});
+
+    // Fetch total employees for context
+    fetch('/api/employees')
+      .then(r => r.json())
+      .then((data: any[]) => {
+        if (Array.isArray(data)) setTotalEmployees(data.length);
+      })
+      .catch(() => {});
+  }, []);
+
+  const quickInfo = [
+    { label: "Today's Date", value: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' }), sub: new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric' }), icon: '📅' },
+    { label: 'Scheduled Today', value: scheduledToday !== null ? String(scheduledToday) : '—', sub: totalEmployees !== null ? `of ${totalEmployees} Employees` : 'Employees with shifts', icon: '👥' },
+    { label: 'Total Employees', value: totalEmployees !== null ? String(totalEmployees) : '—', sub: 'Active Staff', icon: '📋' },
+  ];
 
   const handlePrint = () => window.print();
   const handleExportPDF = () => alert('Export to PDF functionality would be implemented here');

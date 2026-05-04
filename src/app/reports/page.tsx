@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   FileText, 
   Download, 
@@ -64,146 +64,47 @@ export default function ReportsPage() {
   const [statusFilter, setStatusFilter] = useState('all');
   const [employeeSearch, setEmployeeSearch] = useState('');
   const [reportType, setReportType] = useState<'absenteeism' | 'pto' | 'sick' | 'approvals'>('absenteeism');
+  const [liveKpis, setLiveKpis] = useState<{ totalEmployees: number; totalShifts: number; totalTimeOffRequests: number } | null>(null);
 
-  // Mock data - would come from database
-  const absenteeismData: AbsenteeismRecord[] = [
-    {
-      id: '1',
-      employeeId: 'E001',
-      employeeName: 'John Doe',
-      department: 'Nursing',
-      date: '2025-12-15',
-      type: 'PTO',
-      hours: 8,
-      status: 'APPROVED',
-      requestedDate: '2025-12-01',
-      approvedBy: 'Sarah Chen',
-      approvedDate: '2025-12-02',
-      responseTime: 24
-    },
-    {
-      id: '2',
-      employeeId: 'E002',
-      employeeName: 'Jane Smith',
-      department: 'Emergency',
-      date: '2025-12-18',
-      type: 'SICK',
-      hours: 8,
-      status: 'APPROVED',
-      requestedDate: '2025-12-17',
-      approvedBy: 'Sarah Chen',
-      approvedDate: '2025-12-17',
-      responseTime: 4
-    },
-    {
-      id: '3',
-      employeeId: 'E003',
-      employeeName: 'Mike Johnson',
-      department: 'Radiology',
-      date: '2026-01-10',
-      type: 'PTO',
-      hours: 16,
-      status: 'PENDING',
-      requestedDate: '2025-12-20',
-      responseTime: 0
-    },
-    {
-      id: '4',
-      employeeId: 'E004',
-      employeeName: 'Sarah Williams',
-      department: 'Laboratory',
-      date: '2025-11-22',
-      type: 'SICK',
-      hours: 4,
-      status: 'NO_RESPONSE',
-      requestedDate: '2025-11-20',
-      responseTime: 168, // 7 days
-      notes: 'Manager on vacation during request period'
-    },
-    {
-      id: '5',
-      employeeId: 'E005',
-      employeeName: 'David Brown',
-      department: 'Emergency',
-      date: '2025-12-01',
-      type: 'FMLA',
-      hours: 40,
-      status: 'APPROVED',
-      requestedDate: '2025-11-15',
-      approvedBy: 'HR Director',
-      approvedDate: '2025-11-17',
-      responseTime: 48
-    },
-    {
-      id: '6',
-      employeeId: 'E006',
-      employeeName: 'Emily Davis',
-      department: 'Nursing',
-      date: '2025-12-10',
-      type: 'BEREAVEMENT',
-      hours: 24,
-      status: 'APPROVED',
-      requestedDate: '2025-12-08',
-      approvedBy: 'Sarah Chen',
-      approvedDate: '2025-12-08',
-      responseTime: 2
-    },
-    {
-      id: '7',
-      employeeId: 'E001',
-      employeeName: 'John Doe',
-      department: 'Nursing',
-      date: '2025-11-05',
-      type: 'SICK',
-      hours: 8,
-      status: 'APPROVED',
-      requestedDate: '2025-11-04',
-      approvedBy: 'Sarah Chen',
-      approvedDate: '2025-11-04',
-      responseTime: 3
-    },
-    {
-      id: '8',
-      employeeId: 'E007',
-      employeeName: 'Chris Wilson',
-      department: 'Administration',
-      date: '2025-12-24',
-      type: 'PTO',
-      hours: 8,
-      status: 'DENIED',
-      requestedDate: '2025-12-10',
-      deniedReason: 'Coverage shortage during holiday week',
-      responseTime: 24
-    },
-    {
-      id: '9',
-      employeeId: 'E002',
-      employeeName: 'Jane Smith',
-      department: 'Emergency',
-      date: '2025-10-15',
-      type: 'SICK',
-      hours: 8,
-      status: 'APPROVED',
-      requestedDate: '2025-10-14',
-      approvedBy: 'Sarah Chen',
-      approvedDate: '2025-10-14',
-      responseTime: 5
-    },
-    {
-      id: '10',
-      employeeId: 'E002',
-      employeeName: 'Jane Smith',
-      department: 'Emergency',
-      date: '2025-09-22',
-      type: 'SICK',
-      hours: 8,
-      status: 'APPROVED',
-      requestedDate: '2025-09-21',
-      approvedBy: 'Sarah Chen',
-      approvedDate: '2025-09-21',
-      responseTime: 6
-    },
-  ];
+  // Fetch live KPI data
+  useEffect(() => {
+    fetch('/api/analytics', { headers: { 'x-user-role': 'admin' } })
+      .then(r => r.json())
+      .then(data => { if (data?.kpis) setLiveKpis(data.kpis); })
+      .catch(() => {});
+  }, []);
+
+  // Real time-off records from the API
+  const [absenteeismData, setAbsenteeismData] = useState<AbsenteeismRecord[]>([]);
+
+  useEffect(() => {
+    fetch('/api/time-off')
+      .then(r => r.json())
+      .then((data: any[]) => {
+        if (Array.isArray(data)) {
+          setAbsenteeismData(data.map((r, i) => {
+            const startMs = new Date(r.startDate).getTime();
+            const endMs = new Date(r.endDate).getTime();
+            const days = Math.max(1, Math.ceil((endMs - startMs) / 86400000) + 1);
+            const apiStatus = r.status === 'REJECTED' ? 'DENIED' : r.status;
+            return {
+              id: r.id,
+              employeeId: r.employeeId || `E${String(i + 1).padStart(3, '0')}`,
+              employeeName: r.employee
+                ? `${r.employee.firstName} ${r.employee.lastName}`
+                : 'Unknown',
+              department: '',
+              date: r.startDate ? r.startDate.split('T')[0] : '',
+              type: 'PTO' as AbsenteeismRecord['type'],
+              hours: days * 8,
+              status: apiStatus as AbsenteeismRecord['status'],
+              requestedDate: r.createdAt ? r.createdAt.split('T')[0] : '',
+            };
+          }));
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   // Employee statistics
   const employeeStats: EmployeeStats[] = [
