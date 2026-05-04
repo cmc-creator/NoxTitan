@@ -79,12 +79,31 @@ export default function ProfilePage() {
     return null;
   }
 
-  const handleSave = () => {
-    // In production, this would save to backend
-    console.log('Saving profile:', formData);
+  const handleSave = async () => {
+    try {
+      const res = await fetch('/api/profile', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+        }),
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        setUploadStatus({ type: 'error', message: err.error || 'Failed to save profile' });
+        setTimeout(() => setUploadStatus(null), 3000);
+        return;
+      }
+    } catch {
+      setUploadStatus({ type: 'error', message: 'Network error — please try again' });
+      setTimeout(() => setUploadStatus(null), 3000);
+      return;
+    }
     if (avatarFile) {
       console.log('Uploading avatar:', avatarFile.name);
-      // In production, upload avatar to backend/cloud storage
+      // Avatar upload to cloud storage would go here
     }
     setIsEditing(false);
     setAvatarFile(null);

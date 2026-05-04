@@ -1,9 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import { Bell, CheckCircle, AlertCircle, Info, Clock, TrendingUp, Users, Award, Calendar } from 'lucide-react';
 
 export default function NotificationsPage() {
-  const notifications = [
+  const [notifications, setNotifications] = useState([
     {
       id: 1,
       type: 'success',
@@ -76,14 +77,14 @@ export default function NotificationsPage() {
       time: '3 days ago',
       unread: false,
     },
-  ];
+  ]);
 
   const markAllAsRead = () => {
-    console.log('Marking all as read');
+    setNotifications(prev => prev.map(n => ({ ...n, unread: false })));
   };
 
   const clearAll = () => {
-    console.log('Clearing all notifications');
+    setNotifications([]);
   };
 
   return (

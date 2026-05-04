@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Plus, Search, Edit, Trash2, Mail, Phone, Upload, User as UserIcon, UserX, UserCheck, AlertCircle, X } from 'lucide-react';
 
 interface Employee {
@@ -29,8 +29,42 @@ export default function EmployeesPage() {
  const [showDeactivateModal, setShowDeactivateModal] = useState(false);
  const [employeeToDeactivate, setEmployeeToDeactivate] = useState<Employee | null>(null);
  const [deactivationReason, setDeactivationReason] = useState('');
- const [employees, setEmployees] = useState<Employee[]>([
- {
+ const [employees, setEmployees] = useState<Employee[]>([]);
+ const [loading, setLoading] = useState(true);
+ const [fetchError, setFetchError] = useState<string | null>(null);
+
+ useEffect(() => {
+   fetch('/api/employees')
+     .then(r => r.json())
+     .then((data: any[]) => {
+       if (Array.isArray(data)) {
+         setEmployees(data.map(e => ({
+           id: e.id,
+           firstName: e.firstName,
+           lastName: e.lastName,
+           email: e.email,
+           phone: e.phone || '',
+           position: e.position || '',
+           hourlyRate: e.hourlyRate ? parseFloat(e.hourlyRate) : 0,
+           isActive: true,
+           department: '',
+           color: e.color || '#3b82f6',
+           avatar: e.avatar || undefined,
+           employmentType: 'full-time' as const,
+           weeklyHourLimit: 40,
+           overtimeThreshold: 40,
+         })));
+       }
+       setLoading(false);
+     })
+     .catch(() => {
+       setFetchError('Failed to load employees');
+       setLoading(false);
+     });
+ }, []);
+
+ // ------ PLACEHOLDER ONLY: keeps legacy demo data for reference ------
+ const _legacyDemo = [{
  id: '1',
  firstName: 'John',
  lastName: 'Doe',
@@ -41,10 +75,10 @@ export default function EmployeesPage() {
  isActive: true,
  department: 'Operations',
  color: '#3b82f6',
- employmentType: 'full-time',
+ employmentType: 'full-time' as const,
  weeklyHourLimit: 40,
  overtimeThreshold: 40,
- notes: 'Senior manager with 8 years experience. Certified in OSHA compliance and emergency response protocols.'
+ notes: 'Senior manager with 8 years experience.'
  },
  {
  id: '2',
@@ -192,7 +226,8 @@ export default function EmployeesPage() {
  overtimeThreshold: 20,
  notes: 'Software development consultant. 1099 contractor. Specialized in database optimization and cloud migrations. 90 day contract ending March 2026.'
  },
- ]);
+ ];
+ void _legacyDemo; // unused, kept for reference only
  const [showAddModal, setShowAddModal] = useState(false);
  const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(null);
  const fileInputRef = useRef<HTMLInputElement>(null);
@@ -212,28 +247,54 @@ export default function EmployeesPage() {
  }
  };
 
- const handleSaveEmployee = (e: React.FormEvent<HTMLFormElement>) => {
+ const handleSaveEmployee = async (e: React.FormEvent<HTMLFormElement>) => {
  e.preventDefault();
  const formData = new FormData(e.currentTarget);
  const employmentType = formData.get('employmentType') as 'full-time' | 'part-time' | 'prn' | 'per-diem' | 'contract';
  const weeklyHourLimit = parseInt(formData.get('weeklyHourLimit') as string);
- const newEmployee: Employee = {
- id: Date.now().toString(),
+ const body = {
  firstName: formData.get('firstName') as string,
  lastName: formData.get('lastName') as string,
  email: formData.get('email') as string,
- phone: formData.get('phone') as string,
- position: formData.get('position') as string,
- hourlyRate: parseFloat(formData.get('hourlyRate') as string),
+ phone: formData.get('phone') as string || undefined,
+ position: formData.get('position') as string || undefined,
+ hourlyRate: parseFloat(formData.get('hourlyRate') as string) || undefined,
+ color: formData.get('color') as string || undefined,
+ };
+ try {
+ const res = await fetch('/api/employees', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify(body),
+ });
+ if (res.ok) {
+ const created = await res.json();
+ const newEmployee: Employee = {
+ id: created.id,
+ firstName: created.firstName,
+ lastName: created.lastName,
+ email: created.email,
+ phone: created.phone || '',
+ position: created.position || '',
+ hourlyRate: created.hourlyRate ? parseFloat(created.hourlyRate) : 0,
  isActive: true,
- department: formData.get('department') as string,
- color: formData.get('color') as string,
+ department: formData.get('department') as string || '',
+ color: created.color || '#3b82f6',
  employmentType,
  weeklyHourLimit,
  overtimeThreshold: weeklyHourLimit,
  avatar: selectedEmployee?.avatar,
  };
- setEmployees([...employees, newEmployee]);
+ setEmployees(prev => [...prev, newEmployee]);
+ } else {
+ const err = await res.json();
+ alert(err.error || 'Failed to add employee');
+ return;
+ }
+ } catch {
+ alert('Network error — please try again');
+ return;
+ }
  setShowAddModal(false);
  setSelectedEmployee(null);
  };
@@ -286,6 +347,12 @@ export default function EmployeesPage() {
 
  return (
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+ {loading && (
+ <div className="text-center py-12" style={{ color: '#9E8F75' }}>Loading employees...</div>
+ )}
+ {fetchError && (
+ <div className="text-center py-12 text-red-400">{fetchError}</div>
+ )}
  <div className="lux-page-header flex items-center justify-between">
  <div>
  <h2 className="lux-page-title">Employees</h2>

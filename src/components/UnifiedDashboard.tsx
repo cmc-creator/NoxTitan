@@ -22,20 +22,28 @@ export default function UnifiedDashboard() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [settingsComponent, setSettingsComponent] = useState('');
   const [showOnboarding, setShowOnboarding] = useState(false);
+  const [liveStats, setLiveStats] = useState<{
+    totalEmployees: number;
+    totalShifts: number;
+    totalTimeOffRequests: number;
+  } | null>(null);
 
   useEffect(() => {
     const tier = localStorage.getItem('tier') || 'PROFESSIONAL';
     setUserTier(tier);
-    // Ensure dark mode is default
     if (typeof document !== 'undefined') {
       document.documentElement.classList.add('dark');
     }
-    
-    // Check if user has completed onboarding
     const hasCompletedOnboarding = localStorage.getItem('onboardingCompleted');
     if (!hasCompletedOnboarding) {
       setShowOnboarding(true);
     }
+
+    // Fetch real DB stats
+    fetch('/api/analytics', { headers: { 'x-user-role': 'admin' } })
+      .then(r => r.json())
+      .then(data => { if (data?.kpis) setLiveStats(data.kpis); })
+      .catch(() => {}); // fail silently, dataHub values remain as fallback
   }, []);
 
   const handleOnboardingComplete = () => {
@@ -135,7 +143,7 @@ export default function UnifiedDashboard() {
                   <Users className="w-6 h-6" style={{ color: '#C9A84C' }} />
                 </div>
               </div>
-              <h3 className="text-3xl font-bold text-white mb-1 relative z-10">{dashboardData.employees.active}</h3>
+              <h3 className="text-3xl font-bold text-white mb-1 relative z-10">{liveStats?.totalEmployees ?? dashboardData.employees.active}</h3>
               <p className="text-[#F0EBE0] font-semibold relative z-10">Active Employees</p>
               <p className="text-sm text-gray-200 mt-2 relative z-10">Avg Performance: {dashboardData.employees.avgPerformance.toFixed(1)}%</p>
               <p className="text-xs text-[#C9A84C] mt-1 relative z-10">{dashboardData.employees.total - dashboardData.employees.active} on leave</p>
@@ -150,7 +158,7 @@ export default function UnifiedDashboard() {
                   <Calendar className="w-6 h-6" style={{ color: '#C9A84C' }} />
                 </div>
               </div>
-              <h3 className="text-3xl font-bold text-white mb-1 relative z-10">{dashboardData.scheduling.upcomingShifts}</h3>
+              <h3 className="text-3xl font-bold text-white mb-1 relative z-10">{liveStats?.totalShifts ?? dashboardData.scheduling.upcomingShifts}</h3>
               <p className="text-[#F0EBE0] font-semibold relative z-10">Upcoming Shifts</p>
               <p className="text-sm text-gray-200 mt-2 relative z-10">Coverage: {dashboardData.scheduling.coverageRate}%</p>
               <p className="text-xs text-[#C9A84C] mt-1 relative z-10">{dashboardData.scheduling.totalShifts - dashboardData.scheduling.completedShifts} open shifts</p>
@@ -165,7 +173,7 @@ export default function UnifiedDashboard() {
                   <Clock className="w-6 h-6" style={{ color: '#C9A84C' }} />
                 </div>
               </div>
-              <h3 className="text-3xl font-bold text-white mb-1 relative z-10">{dashboardData.timeOff.pending}</h3>
+              <h3 className="text-3xl font-bold text-white mb-1 relative z-10">{liveStats?.totalTimeOffRequests ?? dashboardData.timeOff.pending}</h3>
               <p className="text-[#F0EBE0] font-semibold relative z-10">Pending Requests</p>
               <p className="text-sm text-gray-200 mt-2 relative z-10">{dashboardData.timeOff.approved} approved this month</p>
               <p className="text-xs text-[#C9A84C] mt-1 relative z-10">{dashboardData.timeOff.denied || 2} denied</p>
