@@ -503,7 +503,7 @@ export default function GuildAdminPage() {
             </div>
             <div className="bg-[rgba(201,168,76,0.06)]/50 border border-[rgba(201,168,76,0.22)] rounded p-6">
               <p className="text-[#9E8F75] text-center py-12">
-                Reward management interface coming soon. You'll be able to create, edit, and manage XP-based rewards here.
+                Reward management interface coming soon. You&apos;ll be able to create, edit, and manage XP-based rewards here.
               </p>
             </div>
           </div>

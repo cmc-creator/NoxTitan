@@ -35,7 +35,7 @@ export default function Benefits() {
  }}>
  Your Benefits
  </h1>
- <p className="text-[#9E8F75] text-lg">We've got you covered - because you're worth it! 💚</p>
+ <p className="text-[#9E8F75] text-lg">We&apos;ve got you covered - because you&apos;re worth it! 💚</p>
  </div>
 
  {/* Benefits Summary Cards */}
@@ -167,7 +167,7 @@ export default function Benefits() {
  </div>
 
  {/* Coverage Details */}
- <h3 className="text-lg font-bold text-white mb-3">What's Covered:</h3>
+ <h3 className="text-lg font-bold text-white mb-3">What&apos;s Covered:</h3>
  <div className="space-y-3">
  <div className="flex items-center gap-3 text-[#9E8F75]">
  <div className="w-6 h-6 bg-[#110F0B] was-green-600 rounded-full flex items-center justify-center text-white text-xs">✓</div>
@@ -222,7 +222,7 @@ export default function Benefits() {
  <div>
  <div className="text-[#9E8F75] text-sm mb-1">Company Match</div>
  <div className="text-3xl font-bold text-white">6%</div>
- <div className="text-[#9E8F75] text-sm mt-1">You're maxing it out! 🎉</div>
+ <div className="text-[#9E8F75] text-sm mt-1">You&apos;re maxing it out! 🎉</div>
  </div>
  </div>
 

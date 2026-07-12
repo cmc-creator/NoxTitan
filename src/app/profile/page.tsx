@@ -807,7 +807,7 @@ export default function ProfilePage() {
                     My Availability
                   </h3>
                   <p className="text-[#9E8F75] text-sm mb-4">
-                    Mark dates or times when you're unavailable. Managers will be alerted if they try to schedule you during these times.
+                    Mark dates or times when you&apos;re unavailable. Managers will be alerted if they try to schedule you during these times.
                   </p>
 
                   {/* Add Unavailable Button */}
@@ -954,7 +954,7 @@ export default function ProfilePage() {
                       <CalendarDays className="w-12 h-12 text-[#9E8F75] mx-auto mb-3" />
                       <p className="text-[#9E8F75]">No unavailable times marked.</p>
                       <p className="text-sm text-[#9E8F75] mt-1">
-                        You're available for all shifts. Mark specific dates when you can't work.
+                        You&apos;re available for all shifts. Mark specific dates when you can&apos;t work.
                       </p>
                     </div>
                   )}

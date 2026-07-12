@@ -377,7 +377,7 @@ function RecognitionSection() {
         {/* Leaderboard */}
         <div className="p-6 rounded shadow-lg" style={{ background: 'var(--card-bg)' }}>
           <h3 className="text-xl font-bold mb-4" style={{ color: 'var(--header-text)' }}>
-            🏅 This Month's Leaders
+            🏅 This Month&apos;s Leaders
           </h3>
           <div className="space-y-3">
             <div className="flex items-center gap-3 p-3 rounded-lg" style={{ background: 'var(--calendar-bg)' }}>
@@ -418,7 +418,7 @@ function RecognitionSection() {
                 <div>
                   <strong>{rec.from}</strong> recognized <strong>{rec.to}</strong>
                 </div>
-                <div className="opacity-80 mt-1">"{rec.reason}"</div>
+                <div className="opacity-80 mt-1">&quot;{rec.reason}&quot;</div>
                 <div className="text-sm opacity-50 mt-2">{rec.time}</div>
               </div>
             </div>

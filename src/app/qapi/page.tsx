@@ -32,7 +32,8 @@ import {
   Upload,
   Link,
   Table,
-  FileSpreadsheet
+  FileSpreadsheet,
+  Key
 } from 'lucide-react';
 
 interface Incident {
@@ -1709,23 +1710,23 @@ export default function QAPIPage() {
               {/* Field Mapping Preview */}
               <div className="bg-[#110F0B] p-6 rounded shadow-md border border-[rgba(201,168,76,0.22)]">
                 <h3 className="text-xl font-bold text-[#9E8F75] mb-4">Field Mapping (Preview)</h3>
-                <p className="text-sm text-[#9E8F75] mb-4">After uploading, you'll map your data fields to our system fields</p>
+                <p className="text-sm text-[#9E8F75] mb-4">After uploading, you&apos;ll map your data fields to our system fields</p>
                 <div className="bg-[#110F0B] p-4 rounded-lg border border-[rgba(201,168,76,0.22)]">
                   <div className="space-y-2">
                     <div className="flex items-center justify-between p-3 bg-[#110F0B] rounded border border-[rgba(201,168,76,0.22)]">
-                      <span className="font-medium text-[#9E8F75]">Your Field: "Satisfaction Score"</span>
+                      <span className="font-medium text-[#9E8F75]">Your Field: &quot;Satisfaction Score&quot;</span>
                       <ArrowRight className="w-5 h-5 text-[#9E8F75]" />
-                      <span className="font-medium text-amber-400">QAPI Field: "Current Value"</span>
+                      <span className="font-medium text-amber-400">QAPI Field: &quot;Current Value&quot;</span>
                     </div>
                     <div className="flex items-center justify-between p-3 bg-[#110F0B] rounded border border-[rgba(201,168,76,0.22)]">
-                      <span className="font-medium text-[#9E8F75]">Your Field: "Date Collected"</span>
+                      <span className="font-medium text-[#9E8F75]">Your Field: &quot;Date Collected&quot;</span>
                       <ArrowRight className="w-5 h-5 text-[#9E8F75]" />
-                      <span className="font-medium text-amber-400">QAPI Field: "Last Updated"</span>
+                      <span className="font-medium text-amber-400">QAPI Field: &quot;Last Updated&quot;</span>
                     </div>
                     <div className="flex items-center justify-between p-3 bg-[#110F0B] rounded border border-[rgba(201,168,76,0.22)]">
-                      <span className="font-medium text-[#9E8F75]">Your Field: "Department"</span>
+                      <span className="font-medium text-[#9E8F75]">Your Field: &quot;Department&quot;</span>
                       <ArrowRight className="w-5 h-5 text-[#9E8F75]" />
-                      <span className="font-medium text-amber-400">QAPI Field: "Department"</span>
+                      <span className="font-medium text-amber-400">QAPI Field: &quot;Department&quot;</span>
                     </div>
                   </div>
                 </div>

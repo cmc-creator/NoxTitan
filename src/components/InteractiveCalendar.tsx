@@ -1549,7 +1549,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
                     <Trophy className="w-5 h-5 text-[#C9A84C]" />
-                    <h3 className="font-bold text-[#F0EBE0]">This Week's Bonus Leaders</h3>
+                    <h3 className="font-bold text-[#F0EBE0]">This Week&apos;s Bonus Leaders</h3>
                   </div>
                   <span className="text-xs text-[#F0EBE0]">Resets Monday 12:00 AM</span>
                 </div>
@@ -2394,7 +2394,7 @@ export default function InteractiveCalendar({ showSettings: externalShowSettings
                                 <div className="text-sm text-[#9E8F75]">{mockEmployees.find(e => e.id === request.recipientId)?.department}</div>
                               </div>
                             </div>
-                            <div className="text-sm text-[#9E8F75] italic mb-3 pl-12">"{request.reason}"</div>
+                            <div className="text-sm text-[#9E8F75] italic mb-3 pl-12">&quot;{request.reason}&quot;</div>
                             
                             {/* Progress Bar */}
                             <div className="mb-3">

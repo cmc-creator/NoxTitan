@@ -269,8 +269,8 @@ export default function TeamDirectory() {
 
  {/* Encouragement Footer */}
  <div className="mt-8 bg-[#110F0B] from-REMOVED-900/30 to-amber-900/30 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] text-center">
- <h3 className="text-2xl font-bold text-[#C9A84C] was-pink-200 mb-2">💜 You're part of something special!</h3>
- <p className="text-[#C9A84C] was-pink-100 text-lg">Every person here makes our team amazing. Don't be shy - say hi!</p>
+ <h3 className="text-2xl font-bold text-[#C9A84C] was-pink-200 mb-2">💜 You&apos;re part of something special!</h3>
+ <p className="text-[#C9A84C] was-pink-100 text-lg">Every person here makes our team amazing. Don&apos;t be shy - say hi!</p>
  </div>
  </div>
  </div>

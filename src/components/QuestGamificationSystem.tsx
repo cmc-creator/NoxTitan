@@ -356,7 +356,7 @@ export default function QuestGamificationSystem({ userId, userRole, industry = '
                 <Users className="w-6 h-6 text-amber-400" />
                 <div>
                   <h3 className="text-xl font-bold text-white">Team vs Manager Challenge!</h3>
-                  <p className="text-sm text-[#F0EBE0]/70">Beat {managerChallenge.manager}'s score</p>
+                  <p className="text-sm text-[#F0EBE0]/70">Beat {managerChallenge.manager}&apos;s score</p>
                 </div>
               </div>
               <div className="text-right">

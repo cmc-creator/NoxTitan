@@ -136,7 +136,7 @@ export default function SetupWizard({ onComplete, onSkip }: SetupWizardProps) {
               </p>
             </div>
             <div className="bg-[rgba(201,168,76,0.15)] hover:bg-[rgba(201,168,76,0.22)] border border-[rgba(201,168,76,0.45)] rounded p-6 max-w-2xl mx-auto">
-              <h3 className="text-xl font-bold text-[#9E8F75] mb-3">What we'll set up:</h3>
+              <h3 className="text-xl font-bold text-[#9E8F75] mb-3">What we&apos;ll set up:</h3>
               <ul className="space-y-2 text-left">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />

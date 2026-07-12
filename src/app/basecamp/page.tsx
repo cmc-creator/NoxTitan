@@ -225,7 +225,7 @@ export default function Basecamp() {
  <Bell className="w-5 h-5 text-amber-400 mt-0.5" />
  <div>
  <p className="text-[#C9A84C] was-blue-200 font-semibold">Thank you for sharing</p>
- <p className="text-amber-400 text-sm mt-1">HR and your manager have been notified and will reach out to support you. You're not alone. 💙</p>
+ <p className="text-amber-400 text-sm mt-1">HR and your manager have been notified and will reach out to support you. You&apos;re not alone. 💙</p>
  </div>
  </div>
  </div>
@@ -385,7 +385,7 @@ export default function Basecamp() {
  <span className="text-2xl font-bold text-white">12</span>
  </div>
  <div className="text-[#F0EBE0]/70 font-semibold">Day Streak!</div>
- <div className="text-xs text-[#C9A84C] mt-1">You're on fire! 🔥</div>
+ <div className="text-xs text-[#C9A84C] mt-1">You&apos;re on fire! 🔥</div>
  </div>
 
  <div className="bg-[rgba(201,168,76,0.06)] rounded p-4 border-2 border-amber-500/40/30">
@@ -567,7 +567,7 @@ export default function Basecamp() {
  <p className="font-semibold text-white">You</p>
  <span className="text-xs text-[#9E8F75]">15 min ago</span>
  </div>
- <p className="text-[#9E8F75] text-sm mb-2">"Flat tire on way to work, will be 20 min late 🚗"</p>
+ <p className="text-[#9E8F75] text-sm mb-2">&quot;Flat tire on way to work, will be 20 min late 🚗&quot;</p>
  <div className="flex items-center gap-2 text-xs">
  <div className="flex items-center gap-1 text-[#C9A84C] was-green-400">
  <UserCheck className="w-3 h-3" />
@@ -633,7 +633,7 @@ export default function Basecamp() {
  <div className="p-4 bg-amber-500/10 rounded-lg border border-amber-400/40/30">
  <div className="flex items-center gap-2 mb-2">
  <div className="w-3 h-3 bg-amber-400 rounded"></div>
- <p className="font-semibold text-white">Reminder: Mom's Birthday</p>
+ <p className="font-semibold text-white">Reminder: Mom&apos;s Birthday</p>
  </div>
  <p className="text-sm text-[#9E8F75]">Sat, Jan 17 • All Day</p>
  <p className="text-xs text-[#C9A84C] mt-1">Personal reminder</p>
@@ -678,7 +678,7 @@ export default function Basecamp() {
  <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-[rgba(201,168,76,0.22)]">
  <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
  <Calendar className="w-6 h-6 text-[#9E8F75]" />
- Today's Schedule
+ Today&apos;s Schedule
  </h2>
  <div className="space-y-3">
  <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-4 border border-[rgba(201,168,76,0.22)]">
@@ -727,7 +727,7 @@ export default function Basecamp() {
  <div className="text-[#C9A84C] text-xs">2 hours ago</div>
  </div>
  </div>
- <div className="text-[#F0EBE0] mb-2">"What if we had themed lunch Fridays? 🌮🍕🍜"</div>
+ <div className="text-[#F0EBE0] mb-2">&quot;What if we had themed lunch Fridays? 🌮🍕🍜&quot;</div>
  <div className="flex items-center gap-3 text-sm">
  <button className="text-[#9E8F75] hover:text-[#9E8F75] flex items-center gap-1">
  <Star className="w-4 h-4" /> 24 votes
@@ -770,7 +770,7 @@ export default function Basecamp() {
  {/* Personality Picker */}
  {showPersonalityPicker && (
  <div className="mb-4 p-4 bg-[#110F0B]/50 rounded-lg border border-amber-400/40/30">
- <h3 className="text-sm font-bold text-white mb-3">Choose Titan's Personality:</h3>
+ <h3 className="text-sm font-bold text-white mb-3">Choose Titan&apos;s Personality:</h3>
  <div className="grid grid-cols-2 gap-2 mb-3">
  {Object.entries(titanPersonalities).map(([key, personality]) => (
  <button
@@ -897,11 +897,11 @@ export default function Basecamp() {
  <div className="space-y-3">
  <div className="bg-[#110F0B]/50 rounded-lg p-3 border border-[rgba(201,168,76,0.22)]">
  <div className="text-[#F0EBE0] text-sm mb-1">Sarah gave you kudos!</div>
- <div className="text-[#9E8F75] text-xs">"Amazing teamwork on the project! 🌟"</div>
+ <div className="text-[#9E8F75] text-xs">&quot;Amazing teamwork on the project! 🌟&quot;</div>
  </div>
  <div className="bg-[#110F0B]/50 rounded-lg p-3 border border-[rgba(201,168,76,0.22)]">
  <div className="text-[#F0EBE0] text-sm mb-1">Team achievement!</div>
- <div className="text-[#9E8F75] text-xs">"100% on-time delivery this month! 🎉"</div>
+ <div className="text-[#9E8F75] text-xs">&quot;100% on-time delivery this month! 🎉&quot;</div>
  </div>
  </div>
  </div>
@@ -974,7 +974,7 @@ export default function Basecamp() {
  <div className="space-y-3">
  <div className="bg-[#110F0B]/50 rounded-lg p-3 border border-amber-500/40/20">
  <div className="text-amber-400 text-sm font-semibold mb-1">🎉 Team Outing Friday!</div>
- <div className="text-[#9E8F75] text-xs">Join us for bowling at 6 PM. Pizza's on us!</div>
+ <div className="text-[#9E8F75] text-xs">Join us for bowling at 6 PM. Pizza&apos;s on us!</div>
  </div>
  <div className="bg-[#110F0B]/50 rounded-lg p-3 border border-amber-500/40/20">
  <div className="text-amber-400 text-sm font-semibold mb-1">📚 New Training Available</div>

@@ -413,8 +413,8 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-white font-semibold">Can't Exceed Your Balance</p>
-                  <p className="text-sm text-[#9E8F75]">You can only donate XP you've actually earned through work</p>
+                  <p className="text-white font-semibold">Can&apos;t Exceed Your Balance</p>
+                  <p className="text-sm text-[#9E8F75]">You can only donate XP you&apos;ve actually earned through work</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -455,7 +455,7 @@ export default function XPDonationSystem({ userId, userRole }: XPDonationSystemP
               <p>💡 <strong>Prevents System Gaming:</strong> Without limits, users could trade XP to artificially boost rankings.</p>
               <p>💡 <strong>Maintains XP Value:</strong> Scarcity keeps XP meaningful and rewards actually valuable.</p>
               <p>💡 <strong>Encourages Earning:</strong> Users should earn XP through work, not just receive gifts.</p>
-              <p>💡 <strong>Fair Competition:</strong> Leaderboards stay fair when users can't farm XP through donations.</p>
+              <p>💡 <strong>Fair Competition:</strong> Leaderboards stay fair when users can&apos;t farm XP through donations.</p>
               <p>💡 <strong>Thoughtful Recognition:</strong> Limited donations mean each gift is more meaningful and intentional.</p>
             </div>
           </div>

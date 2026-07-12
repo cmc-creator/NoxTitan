@@ -264,7 +264,7 @@ export default function PerformanceReviews() {
  <span className="text-white font-bold ml-2">{feedback.rating}</span>
  </div>
  </div>
- <div className="text-[#9E8F75] italic">"{feedback.comment}"</div>
+ <div className="text-[#9E8F75] italic">&quot;{feedback.comment}&quot;</div>
  </div>
  ))}
  </div>

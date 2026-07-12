@@ -60,7 +60,7 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
               Welcome to Your Basecamp, {employeeName}! 🎉
             </h1>
             <p className="text-[#F0EBE0]/70 text-xl">
-              Let's personalize your workspace and meet your AI companion
+              Let&apos;s personalize your workspace and meet your AI companion
             </p>
           </div>
 
@@ -196,9 +196,9 @@ export default function BasecampBuilder({ onComplete, employeeName = 'there' }: 
               <div className="bg-[#110F0B]/20  rounded-lg p-4 flex items-center gap-4">
                 <div className="text-4xl">{settings.basebotAvatar}</div>
                 <div>
-                  <p className="font-bold text-lg">Hi, I'm {settings.basebotName}!</p>
+                  <p className="font-bold text-lg">Hi, I&apos;m {settings.basebotName}!</p>
                   <p className="text-sm opacity-90">
-                    I'm your {settings.basebotPersonality} AI companion. Ready for your {adventures.find(a => a.id === settings.adventureMode)?.name} adventure?
+                    I&apos;m your {settings.basebotPersonality} AI companion. Ready for your {adventures.find(a => a.id === settings.adventureMode)?.name} adventure?
                   </p>
                 </div>
               </div>

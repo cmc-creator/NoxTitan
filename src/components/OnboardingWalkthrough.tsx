@@ -320,7 +320,7 @@ export default function OnboardingWalkthrough({ onComplete, onSkip }: Onboarding
             {currentStep === 7 && (
               <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
                 <p className="text-sm text-amber-900">
-                  <strong>💡 Pro Tip:</strong> New managers should start with "From Colleague to Manager" and "Essential Communication Skills" courses.
+                  <strong>💡 Pro Tip:</strong> New managers should start with &quot;From Colleague to Manager&quot; and &quot;Essential Communication Skills&quot; courses.
                 </p>
               </div>
             )}

@@ -190,7 +190,7 @@ function OraclePage() {
                   </div>
 
                   <div style={{ background: 'rgba(201,168,76,0.04)', border: '1px solid rgba(201,168,76,0.12)', borderRadius: '4px', padding: '12px 16px', marginBottom: '14px' }}>
-                    <p style={{ color: '#F0EBE0', fontSize: '0.88rem', fontStyle: 'italic', lineHeight: 1.6 }}>"{prophecy.prediction}"</p>
+                    <p style={{ color: '#F0EBE0', fontSize: '0.88rem', fontStyle: 'italic', lineHeight: 1.6 }}>&quot;{prophecy.prediction}&quot;</p>
                   </div>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '14px' }}>

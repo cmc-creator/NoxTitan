@@ -172,7 +172,7 @@ export default function ManagerAcademyPage() {
  {progressPercent === 100 && (
  <div className="mt-6 bg-[#110F0B]/20 rounded p-4 text-center">
  <Award className="w-8 h-8 text-[#F0EBE0] mx-auto mb-2" />
- <p className="text-white font-bold text-lg">🎉 Congratulations! You've completed Manager Academy!</p>
+ <p className="text-white font-bold text-lg">🎉 Congratulations! You&apos;ve completed Manager Academy!</p>
  <p className="text-[#F0EBE0] text-sm mt-1">Certificate available in your profile</p>
  </div>
  )}
@@ -251,7 +251,7 @@ export default function ManagerAcademyPage() {
  <span className="text-2xl">🙏</span>
  <div>
  <h4 className="font-bold text-white mb-1">Put People First</h4>
- <p className="text-sm text-[#F0EBE0]/70">Your team's wellbeing and growth come before results</p>
+ <p className="text-sm text-[#F0EBE0]/70">Your team&apos;s wellbeing and growth come before results</p>
  </div>
  </div>
  <div className="flex items-start gap-3">
@@ -264,7 +264,7 @@ export default function ManagerAcademyPage() {
  <div className="flex items-start gap-3">
  <span className="text-2xl">💪</span>
  <div>
- <h4 className="font-bold text-white mb-1">Empower, Don't Control</h4>
+ <h4 className="font-bold text-white mb-1">Empower, Don&apos;t Control</h4>
  <p className="text-sm text-[#F0EBE0]/70">Trust your team and give them autonomy</p>
  </div>
  </div>

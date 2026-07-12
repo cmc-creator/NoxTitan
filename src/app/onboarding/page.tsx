@@ -111,7 +111,7 @@ export default function OnboardingPage() {
               <Sparkles className="w-8 h-8 text-[#C9A84C]" />
               Welcome to NyxTitan!
             </h1>
-            <p className="text-[#9E8F75] mb-6">Let's get you set up. First, what's your role?</p>
+            <p className="text-[#9E8F75] mb-6">Let&apos;s get you set up. First, what&apos;s your role?</p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <button

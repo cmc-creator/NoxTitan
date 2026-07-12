@@ -34,8 +34,8 @@ describe('Login Page', () => {
   it('displays correct demo credentials', () => {
     render(<MockLoginPage />)
     
-    expect(screen.getByText('demo@nyxtitan.com')).toBeInTheDocument()
-    expect(screen.getByText('demo123456')).toBeInTheDocument()
+    expect(screen.getByText(/demo@nyxtitan\.com/)).toBeInTheDocument()
+    expect(screen.getByText(/demo123456/)).toBeInTheDocument()
   })
 
   it('has a submit button', () => {
@@ -59,7 +59,7 @@ describe('Application Branding', () => {
   it('uses correct demo email domain', () => {
     render(<MockLoginPage />)
     
-    const demoEmail = screen.getByText('demo@nyxtitan.com')
+    const demoEmail = screen.getByText(/demo@nyxtitan\.com/)
     expect(demoEmail).toBeInTheDocument()
     expect(demoEmail.textContent).toContain('nyxtitan.com')
   })

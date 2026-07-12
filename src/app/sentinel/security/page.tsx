@@ -178,7 +178,7 @@ export default function SecurityPage() {
  <Activity className="w-8 h-8 text-amber-400" />
  <span className="text-4xl font-bold text-amber-400">{stats.todayEvents}</span>
  </div>
- <p className="text-[#C9A84C] font-semibold">Today's Events</p>
+ <p className="text-[#C9A84C] font-semibold">Today&apos;s Events</p>
  </div>
 
  <div className="col-span-2 bg-[rgba(201,168,76,0.06)] border border-amber-500/40/50 rounded p-6">

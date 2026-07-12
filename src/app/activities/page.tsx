@@ -647,7 +647,7 @@ export default function ActivitiesPage() {
           <div className="p-6">
             <h2 className="text-2xl font-bold text-white mb-6">Activity Leaderboard</h2>
             <p className="text-[#9E8F75] text-center py-12">
-              Leaderboard coming soon! Track who's most engaged with team activities.
+              Leaderboard coming soon! Track who&apos;s most engaged with team activities.
             </p>
           </div>
         )}

@@ -314,7 +314,7 @@ export default function SetupAssistant({ platform, onApiKeyFound }: SetupAssista
           </div>
           <div>
             <h3 className="text-xl font-bold text-white">AI Setup Assistant</h3>
-            <p className="text-sm text-[#9E8F75]">I'll guide you step-by-step to find your {guide.name} API key</p>
+            <p className="text-sm text-[#9E8F75]">I&apos;ll guide you step-by-step to find your {guide.name} API key</p>
           </div>
         </div>
         <button

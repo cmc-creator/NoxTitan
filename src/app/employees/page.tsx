@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { Plus, Search, Edit, Trash2, Mail, Phone, Upload, User as UserIcon, UserX, UserCheck, AlertCircle, X } from 'lucide-react';
 
@@ -700,7 +701,7 @@ export default function EmployeesPage() {
  <div className="ml-3">
  <p className="text-sm text-[#5A5040]">
  You have <span className="font-semibold">3 of 10</span> employees on the Free tier.
- <a href="/" className="font-medium underline ml-2">Upgrade to add more</a>
+ <Link href="/" className="font-medium underline ml-2">Upgrade to add more</Link>
  </p>
  </div>
  </div>

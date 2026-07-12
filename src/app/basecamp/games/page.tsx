@@ -53,7 +53,7 @@ export default function Games() {
  <div className="bg-[rgba(201,168,76,0.06)] rounded p-6 border-2 border-[rgba(201,168,76,0.22)] mb-6">
  <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
  <Trophy className="w-6 h-6 text-[#C9A84C]" />
- This Month's Champions
+ This Month&apos;s Champions
  </h2>
  <div className="space-y-3">
  {leaderboard.map((player) => (
@@ -68,7 +68,7 @@ export default function Games() {
  <div>
  <div className={`font-bold ${player.rank === 3 ? 'text-[#9E8F75] text-lg' : 'text-white'}`}>
  #{player.rank} {player.name}
- {player.rank === 3 && <span className="ml-2 text-[#9E8F75] text-sm">(That's you! 🎉)</span>}
+ {player.rank === 3 && <span className="ml-2 text-[#9E8F75] text-sm">(That&apos;s you! 🎉)</span>}
  </div>
  <div className="text-[#9E8F75] text-sm">{player.points} points</div>
  </div>
@@ -94,7 +94,7 @@ export default function Games() {
  <div className="bg-[#110F0B] was-blue-900/30 rounded-lg p-5 mb-4 border border-amber-500/40/30">
  <div className="text-amber-400 text-sm font-semibold mb-2">Question of the Day:</div>
  <div className="text-white text-lg font-medium mb-4">
- What's the only food that never spoils? 🤔
+ What&apos;s the only food that never spoils? 🤔
  </div>
  <div className="grid grid-cols-2 gap-3 mb-4">
  <button 
@@ -128,7 +128,7 @@ export default function Games() {
  {triviaScore > 0 ? '🎉 Correct! You\'re a genius!' : '❌ Not quite! But you\'re still awesome!'}
  </div>
  <div className="text-[#9E8F75] text-sm">
- The answer is Honey! Archaeologists have found 3,000-year-old honey that's still edible! 🍯
+ The answer is Honey! Archaeologists have found 3,000-year-old honey that&apos;s still edible! 🍯
  </div>
  <div className="text-[#9E8F75] font-bold mt-2">+{triviaScore} points!</div>
  </div>
@@ -213,7 +213,7 @@ export default function Games() {
  </div>
 
  <div className="bg-[#110F0B] was-pink-900/30 rounded-lg p-5 mb-4 border border-[rgba(201,168,76,0.22)]">
- <div className="text-[#C9A84C] was-pink-300 text-sm font-semibold mb-3">Today's Question:</div>
+ <div className="text-[#C9A84C] was-pink-300 text-sm font-semibold mb-3">Today&apos;s Question:</div>
  <div className="text-white text-lg font-medium mb-4">
  Would you rather...
  </div>
@@ -243,7 +243,7 @@ export default function Games() {
  <div className="bg-[rgba(201,168,76,0.06)] rounded-lg p-5 mb-4 border border-[rgba(201,168,76,0.22)]">
  <div className="text-[#9E8F75] text-sm font-semibold mb-3">Type this sentence as fast as you can:</div>
  <div className="text-white text-lg font-mono mb-4 bg-[#110F0B] p-4 rounded border border-[rgba(201,168,76,0.22)]">
- "The quick brown fox jumps over the lazy dog"
+ &quot;The quick brown fox jumps over the lazy dog&quot;
  </div>
  <input
  type="text"
@@ -275,7 +275,7 @@ export default function Games() {
  <div className="text-[#F0EBE0] font-bold">📸 Photo Scavenger Hunt</div>
  <div className="px-3 py-1 bg-[#110F0B] was-green-600 text-white rounded-full text-xs font-bold">ACTIVE</div>
  </div>
- <div className="text-[#9E8F75] text-sm mb-2">Find and photograph: "Something purple"</div>
+ <div className="text-[#9E8F75] text-sm mb-2">Find and photograph: &quot;Something purple&quot;</div>
  <div className="text-[#C9A84C] text-xs">12 teams participating • 3 days left</div>
  </div>
 

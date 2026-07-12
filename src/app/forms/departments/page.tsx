@@ -138,7 +138,7 @@ export default function DepartmentsPortalPage() {
               <div className="text-4xl mb-3">📤</div>
               <h3 className="text-xl font-bold mb-2">Upload & Store</h3>
               <p className="text-[#F0EBE0]">
-                Drop in forms you've created externally. Keep everything organized in one place
+                Drop in forms you&apos;ve created externally. Keep everything organized in one place
               </p>
             </div>
             <div>

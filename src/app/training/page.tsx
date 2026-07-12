@@ -543,7 +543,7 @@ export default function TrainingPage() {
                       These courses are specifically designed to help you make a successful transition from individual contributor to leader.
                     </p>
                     <p className="text-[#C9A84C] font-semibold">
-                      💡 Recommended: Start with "From Colleague to Manager" and "Essential Communication Skills for Managers"
+                      💡 Recommended: Start with &quot;From Colleague to Manager&quot; and &quot;Essential Communication Skills for Managers&quot;
                     </p>
                   </div>
                 </div>

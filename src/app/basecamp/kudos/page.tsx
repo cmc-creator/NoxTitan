@@ -130,7 +130,7 @@ export default function Kudos() {
  <div>
  <div className="text-[#C9A84C] was-pink-200 text-sm mb-1">You Received</div>
  <div className="text-3xl font-bold text-white">23</div>
- <div className="text-[#C9A84C] was-pink-400 text-xs mt-1">You're loved! 💕</div>
+ <div className="text-[#C9A84C] was-pink-400 text-xs mt-1">You&apos;re loved! 💕</div>
  </div>
  <Heart className="w-12 h-12 text-[#C9A84C] was-pink-400 opacity-50" />
  </div>
@@ -303,7 +303,7 @@ export default function Kudos() {
  Teams that recognize each other are 5x happier at work!
  </p>
  <p className="text-[#F0EBE0] text-sm">
- (We made that stat up, but it sounds right, doesn't it? 😄)
+ (We made that stat up, but it sounds right, doesn&apos;t it? 😄)
  </p>
  </div>
  </div>

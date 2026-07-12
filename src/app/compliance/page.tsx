@@ -1072,7 +1072,7 @@ export default function CompliancePage() {
                     <h3 className="text-xl font-bold mb-2 text-white">Active Compliance Monitoring</h3>
                     <p className="text-[#9E8F75] mb-4">
                       NyxTitan AI continuously monitors 2,500+ federal and state regulations across 12 industries. 
-                      You'll be automatically notified of changes that affect your business.
+                      You&apos;ll be automatically notified of changes that affect your business.
                     </p>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                       <div className="bg-[rgba(201,168,76,0.06)]/50 rounded-lg p-3">
@@ -2442,7 +2442,7 @@ function PriceTransparencySection() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-amber-400 flex-shrink-0">5.</span>
-                  <span>Display clear "Last Updated" date and establish annual update schedule</span>
+                  <span>Display clear &quot;Last Updated&quot; date and establish annual update schedule</span>
                 </li>
               </ul>
             </div>

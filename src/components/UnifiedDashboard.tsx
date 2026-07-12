@@ -484,7 +484,7 @@ export default function UnifiedDashboard() {
                     <Award className="w-5 h-5 text-[#E8C060] mt-0.5" />
                     <div className="flex-1">
                       <p className="font-semibold text-white text-sm">Emergency Team completed Challenge</p>
-                      <p className="text-xs text-gray-200 mt-1">"Perfect Week" - 7 days no tardiness</p>
+                      <p className="text-xs text-gray-200 mt-1">&quot;Perfect Week&quot; - 7 days no tardiness</p>
                       <p className="text-xs text-[#E8C060] mt-1">+500 points • 2 hours ago</p>
                     </div>
                   </div>
@@ -504,7 +504,7 @@ export default function UnifiedDashboard() {
                     <Star className="w-5 h-5 text-amber-400 mt-0.5" />
                     <div className="flex-1">
                       <p className="font-semibold text-white text-sm">New basecamp created</p>
-                      <p className="text-xs text-gray-200 mt-1">"Night Shift Warriors" by Maria Garcia</p>
+                      <p className="text-xs text-gray-200 mt-1">&quot;Night Shift Warriors&quot; by Maria Garcia</p>
                       <p className="text-xs text-[#E8C060] mt-1">12 members • 1 day ago</p>
                     </div>
                   </div>
@@ -731,7 +731,7 @@ export default function UnifiedDashboard() {
           <div className="glass-tile glass-tile-gold p-6">
             <div className="flex items-center gap-2 mb-4 relative z-10">
               <Cake className="w-6 h-6 text-amber-400" />
-              <h2 className="text-xl font-bold text-white">This Week's Milestones</h2>
+              <h2 className="text-xl font-bold text-white">This Week&apos;s Milestones</h2>
             </div>
             <div className="space-y-3 relative z-10">
               <div className="p-3 bg-amber-500/10 rounded-lg border border-amber-600/30 hover:border-[rgba(201,168,76,0.45)] transition-all">
@@ -917,7 +917,7 @@ export default function UnifiedDashboard() {
             <div className="space-y-2 relative z-10">
               <div className="p-3 bg-amber-500/10 rounded-lg border border-amber-600/30">
                 <p className="font-semibold text-white text-sm">4.2 / 5.0</p>
-                <p className="text-xs text-gray-200 mt-1">This month's avg rating</p>
+                <p className="text-xs text-gray-200 mt-1">This month&apos;s avg rating</p>
               </div>
               <Link href="/team-culture" className="block p-3 bg-[#110F0B]/5 rounded-lg border border-white/10 hover:border-[rgba(201,168,76,0.22)] transition-all text-center">
                 <p className="text-sm font-semibold text-[#E8C060]">View Insights →</p>
@@ -1298,7 +1298,7 @@ export default function UnifiedDashboard() {
                 <Clock className="w-5 h-5 text-[#F0EBE0] mt-0.5" />
                 <div>
                   <p className="font-semibold text-white">8 Time Off Requests Pending</p>
-                  <p className="text-sm text-gray-200 mt-1">Approval needed for next week's schedule</p>
+                  <p className="text-sm text-gray-200 mt-1">Approval needed for next week&apos;s schedule</p>
                   <p className="text-xs text-[#C9A84C] mt-1">5 hours ago</p>
                 </div>
               </div>

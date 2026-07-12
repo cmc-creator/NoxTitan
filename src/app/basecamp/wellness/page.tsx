@@ -40,7 +40,7 @@ export default function WellnessHub() {
  <div className="flex items-center justify-between mb-6">
  <div>
  <h2 className="text-3xl font-bold text-white mb-2">Your Wellness Score</h2>
- <p className="text-[#C9A84C] was-pink-200">You're doing great! Keep it up! 🌟</p>
+ <p className="text-[#C9A84C] was-pink-200">You&apos;re doing great! Keep it up! 🌟</p>
  </div>
  <div className="text-center">
  <div className="text-6xl font-black text-white mb-2">{wellnessScore}</div>
@@ -101,7 +101,7 @@ export default function WellnessHub() {
  <Heart className="w-8 h-8 text-amber-400" />
  <div>
  <h2 className="text-2xl font-bold text-white">Employee Assistance Program (EAP)</h2>
- <p className="text-[#9E8F75]">Confidential support 24/7 - we're here for you!</p>
+ <p className="text-[#9E8F75]">Confidential support 24/7 - we&apos;re here for you!</p>
  </div>
  </div>
 
@@ -284,7 +284,7 @@ export default function WellnessHub() {
  {/* Encouragement Banner */}
  <div className="mt-8 bg-[#110F0B] from-REMOVED-900/30 to-red-900/30 rounded p-6 border-2 border-[rgba(201,168,76,0.22)] text-center">
  <h3 className="text-2xl font-bold text-[#C9A84C] was-pink-200 mb-2">💖 You Matter!</h3>
- <p className="text-[#C9A84C] was-pink-100 text-lg">Taking care of yourself isn't selfish - it's essential. We're proud of you for being here!</p>
+ <p className="text-[#C9A84C] was-pink-100 text-lg">Taking care of yourself isn&apos;t selfish - it&apos;s essential. We&apos;re proud of you for being here!</p>
  </div>
  </div>
  </div>

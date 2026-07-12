@@ -169,7 +169,7 @@ export default function HRPlanner() {
  
  {/* Date Display */}
  <div className="text-right bg-[rgba(201,168,76,0.06)]/50 border-2 border-[rgba(201,168,76,0.22)] rounded-lg px-4 py-2">
- <div className="text-sm text-[#9E8F75] mb-1">Today's Date</div>
+ <div className="text-sm text-[#9E8F75] mb-1">Today&apos;s Date</div>
  <div className="text-xl font-bold text-white">Jan 5, 2026</div>
  <div className="text-xs text-[#9E8F75]">Sunday</div>
  </div>
@@ -808,7 +808,7 @@ export default function HRPlanner() {
  onChange={(e) => setSettings({...settings, defaultView: e.target.value})}
  className="w-full bg-[rgba(201,168,76,0.04)] border border-[rgba(201,168,76,0.22)] rounded-lg px-4 py-2 text-white"
  >
- <option value="today">Today's Tasks</option>
+ <option value="today">Today&apos;s Tasks</option>
  <option value="reminders">Manager Reminders</option>
  <option value="deadlines">Upcoming Deadlines</option>
  <option value="recurring">Recurring Tasks</option>

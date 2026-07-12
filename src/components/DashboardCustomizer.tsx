@@ -242,8 +242,8 @@ export default function DashboardCustomizer({ onClose, userType }: DashboardCust
               }) && (
                 <div className="p-8 text-center">
                   <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
-                  <p className="text-xl font-bold text-white mb-2">You're all set!</p>
-                  <p className="text-[#9E8F75]">No new suggestions at this time. We'll notify you when we have more recommendations.</p>
+                  <p className="text-xl font-bold text-white mb-2">You&apos;re all set!</p>
+                  <p className="text-[#9E8F75]">No new suggestions at this time. We&apos;ll notify you when we have more recommendations.</p>
                 </div>
               )}
             </div>

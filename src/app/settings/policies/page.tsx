@@ -649,7 +649,7 @@ export default function PoliciesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-[#C9A84C] mb-2">
-                  Require Documentation (Doctor's Note)
+                  Require Documentation (Doctor&apos;s Note)
                 </label>
                 <div className="flex items-center gap-3">
                   <label className="flex items-center">
@@ -693,7 +693,7 @@ export default function PoliciesPage() {
                     }}
                     className="w-full px-4 py-2 border border-[rgba(201,168,76,0.22)] rounded-lg focus:ring-2 focus:ring-[rgba(201,168,76,0.45)] focus:border-transparent"
                   />
-                  <p className="text-xs text-[#9E8F75] mt-1">Doctor's note required after this many days</p>
+                  <p className="text-xs text-[#9E8F75] mt-1">Doctor&apos;s note required after this many days</p>
                 </div>
               )}
 

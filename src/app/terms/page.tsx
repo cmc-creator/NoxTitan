@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function TermsPage() {
   return (
     <div className="min-h-screen lux-app-bg p-8">
@@ -8,7 +10,7 @@ export default function TermsPage() {
         <div className="space-y-6 text-[#9E8F75]">
           <section>
             <h2 className="text-2xl font-bold text-[#C9A84C] mb-3">1. Acceptance of Terms</h2>
-            <p>By accessing and using NyxTitan™ ("the Platform"), you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use the Platform.</p>
+            <p>By accessing and using NyxTitan™ (&quot;the Platform&quot;), you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use the Platform.</p>
           </section>
 
           <section>
@@ -62,7 +64,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-2xl font-bold text-[#C9A84C] mb-3">9. Limitation of Liability</h2>
-            <p>NyxTitan is provided "as is" without warranties of any kind. To the maximum extent permitted by law, Connie Michelle Consulting & Business Solutions LLC shall not be liable for indirect, incidental, or consequential damages arising from use of the Platform.</p>
+            <p>NyxTitan is provided &quot;as is&quot; without warranties of any kind. To the maximum extent permitted by law, Connie Michelle Consulting & Business Solutions LLC shall not be liable for indirect, incidental, or consequential damages arising from use of the Platform.</p>
           </section>
 
           <section>
@@ -92,7 +94,7 @@ export default function TermsPage() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-[rgba(201,168,76,0.22)]">
-          <a href="/" className="text-amber-400 hover:text-[#C9A84C] font-semibold">← Back to Home</a>
+          <Link href="/" className="text-amber-400 hover:text-[#C9A84C] font-semibold">← Back to Home</Link>
         </div>
       </div>
     </div>

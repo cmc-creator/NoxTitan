@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen lux-app-bg p-8">
@@ -62,7 +64,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#C9A84C] mb-3">7. Children's Privacy</h2>
+            <h2 className="text-2xl font-bold text-[#C9A84C] mb-3">7. Children&apos;s Privacy</h2>
             <p>NyxTitan is not intended for users under 18 years of age. We do not knowingly collect information from children.</p>
           </section>
 
@@ -83,7 +85,7 @@ export default function PrivacyPage() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-[rgba(201,168,76,0.22)]">
-          <a href="/" className="text-amber-400 hover:text-[#C9A84C] font-semibold">← Back to Home</a>
+          <Link href="/" className="text-amber-400 hover:text-[#C9A84C] font-semibold">← Back to Home</Link>
         </div>
       </div>
     </div>

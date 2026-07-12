@@ -368,7 +368,7 @@ export default function LearningHub() {
 
  {/* Encouragement Banner */}
  <div className="mt-8 bg-[rgba(201,168,76,0.04)] rounded p-6 border-2 border-amber-500/40/30 text-center">
- <h3 className="text-2xl font-bold text-[#F0EBE0]/70 mb-2">🚀 You're doing amazing!</h3>
+ <h3 className="text-2xl font-bold text-[#F0EBE0]/70 mb-2">🚀 You&apos;re doing amazing!</h3>
  <p className="text-[#F0EBE0] text-lg">Every course completed is a step toward your best self. Keep learning!</p>
  </div>
  </div>

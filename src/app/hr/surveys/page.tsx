@@ -356,7 +356,7 @@ export default function EmployeeSurveysPage() {
 
  <div className="bg-amber-600/10 border border-amber-500/40/30 rounded-lg p-4">
  <p className="text-sm text-amber-400">
- 💡 <strong>Auto-Schedule:</strong> The survey will automatically be scheduled based on the employee's hire date + {formData.dayMilestone} days.
+ 💡 <strong>Auto-Schedule:</strong> The survey will automatically be scheduled based on the employee&apos;s hire date + {formData.dayMilestone} days.
  </p>
  </div>
 

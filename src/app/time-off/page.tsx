@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Check, X, Clock } from 'lucide-react';
 
@@ -233,7 +234,7 @@ export default function TimeOffPage() {
           <div className="ml-3">
             <p className="text-sm text-[#E8C060]">
               Time-off request management is a <span className="font-semibold">Gold tier feature</span>.
-              <a href="/" className="font-medium underline ml-2">Upgrade now</a> to enable this functionality.
+              <Link href="/" className="font-medium underline ml-2">Upgrade now</Link> to enable this functionality.
             </p>
           </div>
         </div>

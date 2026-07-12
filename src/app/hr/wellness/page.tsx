@@ -162,7 +162,7 @@ export default function WellnessHub() {
 
               {/* Fitness Tracking */}
               <div className="bg-[rgba(201,168,76,0.06)]/50 rounded p-6 border-2 border-amber-500/40/30">
-                <h3 className="text-xl font-bold text-white mb-4">This Week's Activity</h3>
+                <h3 className="text-xl font-bold text-white mb-4">This Week&apos;s Activity</h3>
                 <div className="space-y-4">
                   <div>
                     <div className="flex items-center justify-between mb-2">

@@ -185,7 +185,7 @@ export default function RecognitionPage() {
                     Recognize Your Team in Seconds
                   </h2>
                   <p style={{ color: TEXT_DIM }}>
-                    Choose from ready-made templates or create a custom recognition. Make someone's day!
+                    Choose from ready-made templates or create a custom recognition. Make someone&apos;s day!
                   </p>
                 </div>
               </div>
